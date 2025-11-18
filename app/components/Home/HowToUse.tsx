@@ -144,16 +144,16 @@ const HowToUse = () => {
                   }`}
                 >
                   <div className="flex flex-col items-start text-left space-y-[25px] relative">
-                    <div className="absolute -left-5 -top-5">
+                    <div className="absolute -left-5 -top-5 z-0">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
-                    <span className="text-[#4F60FA] text-[10px] md:text-[14px] font-normal leading-5 text-base">
+                    <span className="text-[#4F60FA] text-[10px] md:text-[14px] font-normal leading-5 text-base relative z-10">
                       /{index + 1}
                     </span>
-                    <h3 className="text-white text-2xl font-medium leading-7">
+                    <h3 className="text-white text-2xl font-medium leading-7 relative z-10">
                       {slides[index].title}
                     </h3>
-                    <p className="text-[#CAC9D1] text-[14px] leading-5">
+                    <p className="text-[#CAC9D1] text-[14px] leading-5 relative z-10">
                       {slides[index].description}
                     </p>
                   </div>
@@ -164,16 +164,16 @@ const HowToUse = () => {
 
           {/* Mobile: show only active content centered */}
           <div className="flex flex-col md:hidden items-center justify-center relative">
-            <div className="absolute -left-5 -top-5">
+            <div className="absolute -left-5 -top-5 z-0">
               <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
             </div>
-            <span className="text-[#4F60FA] text-[10px] md:text-[14px] font-normal leading-5 text-base">
+            <span className="text-[#4F60FA] text-[10px] md:text-[14px] font-normal leading-5 text-base relative z-10">
               /{slides[activeSlide].id}
             </span>
-            <h3 className="text-white text-xl sm:text-2xl font-medium leading-7 text-center">
+            <h3 className="text-white text-xl sm:text-2xl font-medium leading-7 text-center relative z-10">
               {slides[activeSlide].title}
             </h3>
-            <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] leading-5 text-center mt-2">
+            <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] leading-5 text-center mt-2 relative z-10">
               {slides[activeSlide].description}
             </p>
           </div>
