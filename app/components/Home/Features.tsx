@@ -118,11 +118,11 @@ export default function Features() {
           <motion.div
             variants={itemVariants}
             style={{
-              borderRadius: "12px",
-              background:
-                "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
-              border: "1px solid transparent",
-            }}
+  borderRadius: "12px",
+  background: 
+    "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
+  border: "1px solid transparent",
+}}
             className="p-[32px]"
           >
             <motion.div variants={fadeInVariants}>
@@ -168,11 +168,11 @@ export default function Features() {
           <motion.div
             variants={itemVariants}
             style={{
-              borderRadius: "12px",
-              background:
-                "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
-              border: "1px solid transparent",
-            }}
+  borderRadius: "12px",
+  background: 
+    "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
+  border: "1px solid transparent",
+}}
             className="relative px-3 sm:px-0 pt-[32px] z-100"
           >
             <motion.div variants={fadeInVariants}>
@@ -230,16 +230,16 @@ export default function Features() {
         <motion.div
           variants={itemVariants}
           style={{
-            borderRadius: "12px",
-            background:
-              "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
-            border: "1px solid transparent",
-          }}
-          className="w-full container relative pt-[32px] px-3 sm:px-[72px] mt-[24px]"
+  borderRadius: "12px",
+  background: 
+    "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
+  border: "1px solid transparent",
+}}
+          className="w-full  container bg-white relative pt-[32px] px-3 sm:px-[72px] mt-[24px]"
         >
           <motion.div
             variants={containerVariants}
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center  justify-center"
           >
             <motion.div variants={itemVariants}>
               <Image
@@ -300,11 +300,11 @@ export default function Features() {
         <motion.div
           variants={itemVariants}
           style={{
-            borderRadius: "12px",
-            background:
-              "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
-            border: "1px solid transparent",
-          }}
+  borderRadius: "12px",
+  background: 
+    "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
+  border: "1px solid transparent",
+}}
           className="w-full py-11 container mx-auto px-2 sm:px-[84px] flex gap-3 sm:gap-0  overflow-hidden flex-col md:flex-row items-center justify-between relative"
         >
           <motion.div variants={fadeInVariants} className="absolute top-0">

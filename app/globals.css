@@ -38,7 +38,7 @@ body {
 .custom-border {
   position: relative;
   border-radius: 50px; /* Rounded full for circular items */
-  background: #00031C;
+  /* background: #00031C; */
   padding: 12px 20px;
   display: flex;
   align-items: center;
@@ -94,46 +94,11 @@ body {
 }
 
 .gradient-border {
-  position: relative;
-  border-radius: 8px;
-  background: #00031C;
-}
-
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, #00031C, #BEADEO, #00031C);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* For rounded-full version (like your benefits grid) */
-.gradient-border-rounded {
-  position: relative;
-  border-radius: 50px;
-  background: #00031C;
-}
-
-.gradient-border-rounded::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, #00031C, #BEADEO0, #00031C);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background: 
+    linear-gradient(#14122C, #14122C) padding-box,
+    linear-gradient(90deg, #4542E0, #14122C) border-box;
 }
 
 /* .custom-b{
@@ -145,3 +110,21 @@ body {
   border: 1px solid transparent;
 } */
 
+.plans {
+  position: relative;
+  /* min-width: 300px; */
+  /* min-height: 200px; */
+  background: linear-gradient(135deg, #05061D, #080D2B, #0D0C2E);
+  border-radius: 12px;
+  /* padding: 20px; */
+}
+
+.plans::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #3F49D8, #1F1B48, #00041E);
+  border-radius: 14px;
+  z-index: -1;
+  filter: blur(1px);
+}
