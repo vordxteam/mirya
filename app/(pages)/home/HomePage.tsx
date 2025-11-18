@@ -1,17 +1,19 @@
-'use client'
-import Demo from '@/app/components/Home/Demo'
-import HeroSection from '@/app/components/Home/HeroSection'
-import Features from '@/app/components/Home/Features'
-import React from 'react'
+"use client";
+import Demo from "@/app/components/Home/Demo";
+import HeroSection from "@/app/components/Home/HeroSection";
+import Features from "@/app/components/Home/Features";
+import React from "react";
+import HowToUse from "@/app/components/Home/HowToUse";
 
 const HomePage = () => {
   return (
     <div>
       <HeroSection />
-      <Demo/>
-      <Features/>
+      <Demo />
+      <HowToUse />
+      <Features />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
