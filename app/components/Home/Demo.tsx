@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GradientButton from "@/app/ui/GradientButton";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -297,21 +298,12 @@ export default function Demo(): React.ReactElement {
             and completely reliable.
           </motion.div>
 
-          <motion.div
-            className="rounded-full p-0.5 cursor-pointer z-100 mt-6"
-            style={{
-              background:
-                "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
-            }}
-            variants={itemVariants}
-          >
-            <Link
+          <GradientButton
+              label="Get A Demo"
               href="#"
-              className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full cursor-pointer"
-            >
-              Get A Demo
-            </Link>
-          </motion.div>
+              bgColor="black"
+              textColor="#fff"
+            />
 
           <motion.div className="pt-12" variants={containerVariants}>
             <div className="benefits-grid">

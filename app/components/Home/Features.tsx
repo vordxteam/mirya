@@ -1,69 +1,149 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import GradientButton from "@/app/ui/GradientButton";
+
+// Animation variants
+const containerVariants: Variants = {
+  offscreen: {
+    opacity: 0,
+    y: 50,
+  },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  offscreen: {
+    opacity: 0,
+    y: 30,
+  },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      duration: 1,
+    },
+  },
+};
+
+const fadeInVariants: Variants = {
+  offscreen: {
+    opacity: 0,
+  },
+  onscreen: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 export default function Features() {
   return (
     <>
-      <div className="flex justify-center">
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInVariants}
+        className="flex justify-center"
+      >
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
-      </div>
+      </motion.div>
 
-      <div className="pt-[60px] px-[80px] flex flex-col items-center 
-      ">
-        <Image
-          src="/images/gradient1.png"
-          alt="gradient"
-          width={181}
-          height={94}
-          className="absolute left-[45%] top-0"
-        />
-        <Image
-          src="/images/gradient2.png"
-          alt="gradient"
-          width={458}
-          height={318}
-          className="absolute hidden sm:block left-[35%] bottom-0"
-        />
-        <div className="flex gap-5 items-center">
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+        className="pt-[60px] px-2 sm:px-[80px] flex flex-col items-center"
+      >
+        <motion.div variants={fadeInVariants}>
+          <Image
+            src="/images/gradient1.png"
+            alt="gradient"
+            width={181}
+            height={94}
+            className="absolute left-[45%] top-0"
+          />
+        </motion.div>
+        <motion.div variants={fadeInVariants}>
+          <Image
+            src="/images/gradient2.png"
+            alt="gradient"
+            width={458}
+            height={318}
+            className="absolute hidden sm:block left-[35%] bottom-0"
+          />
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="flex gap-5 items-center">
           <Image src="/images/blur.svg" alt="gradient1" height={8} width={8} />
           <h5 className="heading-5 font-regular text-[#959EFE]">Features</h5>
           <Image src="/images/blur.svg" alt="gradient1" height={8} width={8} />
-        </div>
-        <div className="flex flex-col gap-6 items-center pt-3">
-          <h1 className="heading-1 font-medium text-[#FFFFFF] max-w-[682px] text-center">
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          className="flex flex-col gap-6 items-center pt-3"
+        >
+          <motion.h1
+            variants={itemVariants}
+            className="heading-1 font-medium text-[#FFFFFF] max-w-[682px] text-center"
+          >
             Powerful Features That Make Automation Effortless
-          </h1>
-          <h6 className="headin-6 font-regular text-[#CAC9D1] max-w-[568px] text-center">
+          </motion.h1>
+          <motion.h6
+            variants={itemVariants}
+            className="headin-6 font-regular text-[#CAC9D1] max-w-[568px] text-center"
+          >
             Discover how MIRYA thinks, learns, and executes like a human —
             without code, complexity, or integrations.
-          </h6>
-        </div>
-        <div className="pt-[64px]  flex flex-col md:flex-row gap-6">
-          <div
+          </motion.h6>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          className="pt-[64px] flex flex-col md:flex-row gap-6 relative"
+        >
+          <motion.div
+            variants={itemVariants}
             style={{
               borderRadius: "12px",
               background:
                 "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
               border: "1px solid transparent",
             }}
-            className="relative p-[32px] "
+            className="p-[32px]"
           >
-            <Image
-              src="/images/bg-blur.png"
-              alt="gradient"
-              width={303}
-              height={108}
-              className="absolute right-0 top-0"
-            />
-            <div className="flex flex-col sm:flex-row items-center sm:items-start  gap-6">
+            <motion.div variants={fadeInVariants}>
               <Image
-                src="/images/card-img1.png"
-                alt="Card image"
-                height={124}
-                width={124}
+                src="/images/blur4.png"
+                alt="gradient"
+                width={458}
+                height={318}
+                className="absolute left-[30%] top-[65%] z-[-10]"
               />
-              <div className="space-y-2 pb-7">
+            </motion.div>
+            <div className="flex relative flex-col sm:flex-row items-center sm:items-start gap-6">
+              <motion.div variants={itemVariants}>
+                <Image
+                  src="/images/card-img1.png"
+                  alt="Card image"
+                  height={124}
+                  width={124}
+                />
+              </motion.div>
+              <motion.div variants={itemVariants} className="space-y-2 pb-7">
                 <h3 className="heading-3 font-medium text-[#F4F7FF]">
                   Secure, Scalable & Fully Yours
                 </h3>
@@ -73,40 +153,48 @@ export default function Features() {
                   entire platform with your own branding—without hidden costs or
                   limitations.
                 </p>
-              </div>
+              </motion.div>
             </div>
-            <Image
-              src="/images/card.png"
-              alt="Graph image"
-              height={259}
-              width={566}
-            />
-          </div>
-          <div
+            <motion.div variants={itemVariants}>
+              <Image
+                src="/images/card.png"
+                alt="Graph image"
+                height={259}
+                width={566}
+              />
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
             style={{
               borderRadius: "12px",
               background:
                 "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
               border: "1px solid transparent",
             }}
-            className="relative px-3 sm:px-0 pt-[32px] "
+            className="relative px-3 sm:px-0 pt-[32px] z-100"
           >
-            <Image
-              src="/images/bg-blur.png"
-              alt="gradient"
-              width={303}
-              height={108}
-              className="absolute right-0 top-0"
-            />
-            <div className="flex flex-col sm:flex-row items-center sm:items-start  gap-6">
+            <motion.div variants={fadeInVariants}>
               <Image
-                src="/images/card3.png"
-                alt="Card image"
-                height={124}
-                width={124}
-                className="ml-[32px]"
+                src="/images/bg-blur.png"
+                alt="gradient"
+                width={303}
+                height={108}
+                className="absolute right-0 top-0"
               />
-              <div className="space-y-2 pb-7">
+            </motion.div>
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              <motion.div variants={itemVariants}>
+                <Image
+                  src="/images/card3.png"
+                  alt="Card image"
+                  height={124}
+                  width={124}
+                  className="ml-[32px]"
+                />
+              </motion.div>
+              <motion.div variants={itemVariants} className="space-y-2 pb-7">
                 <h3 className="heading-3 font-medium text-[#F4F7FF]">
                   Universal Compatibility
                 </h3>
@@ -116,41 +204,141 @@ export default function Features() {
                   interfaces, no tool changes. Your existing software stays the
                   same; MIRYA automates everything.
                 </p>
-              </div>
+              </motion.div>
             </div>
             <div className="flex flex-col sm:flex-row items-center sm:items-end">
-              <Image
-                src="/images/robo.png"
-                alt="Card image"
-                height={134}
-                width={134}
-              />
-              <Image
-                src="/images/card2.png"
-                alt="Card image"
-                height={259}
-                width={566}
-              />
+              <motion.div variants={itemVariants}>
+                <Image
+                  src="/images/robo.png"
+                  alt="Card image"
+                  height={134}
+                  width={134}
+                />
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <Image
+                  src="/images/card2.png"
+                  alt="Card image"
+                  height={259}
+                  width={566}
+                />
+              </motion.div>
             </div>
-          </div>
-        </div>
-        <div
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
           style={{
             borderRadius: "12px",
             background:
               "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
             border: "1px solid transparent",
           }}
-          className="w-full pt-[32px] px-[72px] mt-[24px]"
+          className="w-full relative pt-[32px] px-3 sm:px-[72px] mt-[24px]"
         >
-        <div className="flex flex-col items-center justify-center">
-          <Image src='/images/card4.png' alt="Card" height={124} width={124} />
-          <div>
-          </div>
-          <h3 className="heading-3 font-medium">Human-Level Intelligence & Zero-Code Learning</h3>
-        </div>
-        </div>
-      </div>
+          <motion.div
+            variants={containerVariants}
+            className="flex flex-col items-center justify-center"
+          >
+            <motion.div variants={itemVariants}>
+              <Image
+                src="/images/card4.png"
+                alt="Card"
+                height={124}
+                width={124}
+              />
+            </motion.div>
+            <motion.h3
+              variants={itemVariants}
+              className="heading-3 font-medium text-center sm:text-start text-[#F4F7FF]"
+            >
+              Human-Level Intelligence & Zero-Code Learning
+            </motion.h3>
+            <motion.p
+              variants={itemVariants}
+              className="heading-6 pt-2 font-regular text-[#CAC9D1] max-w-[742px] text-center"
+            >
+              MIRYA learns tasks by simply watching you work. It understands
+              screens, interprets data, and builds smart automations without
+              writing a single line of code. Just record once, and MIRYA handles
+              the rest with human-like precision.
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="mt-[32px] relative w-full h-[400px]"
+          >
+            <Image
+              src="/images/main-img.png"
+              alt="Main image"
+              fill
+              className="rounded-lg"
+            />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInVariants}
+        className="flex justify-center items-center mt-[60px] mb-[40px]"
+      >
+        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
+      </motion.div>
+
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+        className="sm:px-20 px-3"
+      >
+        <motion.div
+          variants={itemVariants}
+          style={{
+            borderRadius: "12px",
+            background:
+              "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
+            border: "1px solid transparent",
+          }}
+          className="w-full py-11 px-2 sm:px-[84px] flex gap-3 sm:gap-0  overflow-hidden flex-col md:flex-row items-center justify-between relative"
+        >
+          <motion.div variants={fadeInVariants} className="absolute top-0">
+            <div>
+              <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+            </div>
+          </motion.div>
+          <motion.div
+            variants={fadeInVariants}
+            className="absolute right-16 bottom-0"
+          >
+            <Image src="/images/blur3.png" alt="blur" height={71} width={181} />
+          </motion.div>
+          <motion.div
+            variants={itemVariants}
+            className="heading-5 font-regular text-[#F4F7FF]"
+          >
+            <p>Simple. Intelligent. Autonomous.</p>
+            <p>
+              MIRYA connects and controls any system, any app, any process —
+              with zero code..
+            </p>
+            <p>Built for business users. Powered by Cognitive AI.</p>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <GradientButton
+              label="Get A Demo"
+              href="#"
+              bgColor="#0274FE"
+              textColor="#fff"
+            />
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </>
   );
 }
