@@ -57,7 +57,7 @@ export default function Features() {
         variants={fadeInVariants}
         className="flex justify-center"
       >
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
+        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </motion.div>
 
       <motion.div
@@ -235,7 +235,7 @@ export default function Features() {
               "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
             border: "1px solid transparent",
           }}
-          className="w-full relative pt-[32px] px-3 sm:px-[72px] mt-[24px]"
+          className="w-full container relative pt-[32px] px-3 sm:px-[72px] mt-[24px]"
         >
           <motion.div
             variants={containerVariants}
@@ -287,7 +287,7 @@ export default function Features() {
         variants={fadeInVariants}
         className="flex justify-center items-center mt-[60px] mb-[40px]"
       >
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
+        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </motion.div>
 
       <motion.div
@@ -305,7 +305,7 @@ export default function Features() {
               "linear-gradient(#00031C, #00031C) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
             border: "1px solid transparent",
           }}
-          className="w-full py-11 px-2 sm:px-[84px] flex gap-3 sm:gap-0  overflow-hidden flex-col md:flex-row items-center justify-between relative"
+          className="w-full py-11 container mx-auto px-2 sm:px-[84px] flex gap-3 sm:gap-0  overflow-hidden flex-col md:flex-row items-center justify-between relative"
         >
           <motion.div variants={fadeInVariants} className="absolute top-0">
             <div>

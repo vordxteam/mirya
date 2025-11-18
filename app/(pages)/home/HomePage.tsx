@@ -4,7 +4,6 @@ import HeroSection from "@/app/components/Home/HeroSection";
 import Features from "@/app/components/Home/Features";
 import React from "react";
 import HowToUse from "@/app/components/Home/HowToUse";
-import Benefits from "@/app/components/Home/Benefits";
 
 const HomePage = () => {
   return (
@@ -13,7 +12,6 @@ const HomePage = () => {
       <Demo/>
       <HowToUse/>
       <Features/>
-      <Benefits/>
     </div>
   );
 };

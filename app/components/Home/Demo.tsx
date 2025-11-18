@@ -199,7 +199,7 @@ export default function Demo(): React.ReactElement {
   return (
     <>
       <div className="flex justify-center">
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
+        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.5px]"></div>
       </div>
       <div
         className="pt-[60px] py-100 pb-[229px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain"
