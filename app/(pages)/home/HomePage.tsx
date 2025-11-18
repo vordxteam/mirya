@@ -4,6 +4,7 @@ import HeroSection from "@/app/components/Home/HeroSection";
 import Features from "@/app/components/Home/Features";
 import React from "react";
 import HowToUse from "@/app/components/Home/HowToUse";
+import Faq from "@/app/components/Home/Faq";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <Demo />
       <HowToUse />
       <Features />
+      <Faq />
     </div>
   );
 };

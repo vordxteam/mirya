@@ -71,7 +71,7 @@ const HowToUse = () => {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-[30px] sm:text-[48px] font-medium leading-[38px] sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] text-center pb-3 sm:pb-6">
+        <h1 className="text-[30px] sm:text-[48px] font-medium leading-[38px] sm:leading-14 tracking-[-1.44px] max-w-[972px] text-center pb-3 sm:pb-6">
           How MIRYA Works
         </h1>
 
