@@ -1,14 +1,16 @@
-import About from '@/app/components/Home/About'
-import HeroSection from '@/app/components/Home/HeroSection'
-import React from 'react'
+import About from "@/app/components/Home/About";
+import HeroSection from "@/app/components/Home/HeroSection";
+import HowToUse from "@/app/components/Home/HowToUse";
+import React from "react";
 
 const HomePage = () => {
   return (
     <div>
       <HeroSection />
-      <About/>
+      <About />
+      <HowToUse />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
