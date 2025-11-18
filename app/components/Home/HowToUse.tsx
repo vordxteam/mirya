@@ -54,7 +54,7 @@ const HowToUse = () => {
   };
 
   return (
-    <div className="px-5 sm:px-10 md:px-[72px] pt-[72px] pb-[53px] max-w-[1440px] m-auto">
+    <div className="px-5 sm:px-10 md:px-[72px] pt-[72px] sm:pb-[53px] max-w-[1440px] m-auto">
       <div className="flex flex-col items-center justify-center">
         {/* Top Title Row */}
         <div className="pb-3 flex items-center justify-center gap-5">
@@ -180,7 +180,7 @@ const HowToUse = () => {
         </div>
 
         {/* Spacer */}
-        <div className="h-[250px] md:h-[200px]"></div>
+        <div className=" hidden sm:block h-[250px] md:h-[200px]"></div>
       </div>
     </div>
   );

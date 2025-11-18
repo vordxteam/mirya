@@ -6,6 +6,8 @@ import React from "react";
 import HowToUse from "@/app/components/Home/HowToUse";
 import Faq from "@/app/components/Home/Faq";
 import Benefits from "@/app/components/Home/Benefits";
+import Indicator from "@/app/components/Home/Indicator";
+import Plans from "@/app/components/Home/Plans";
 
 const HomePage = () => {
   return (
@@ -15,6 +17,8 @@ const HomePage = () => {
       <HowToUse />
       <Features />
       <Benefits />
+      <Indicator/>
+      <Plans/>
       <Faq />
     </div>
   );
