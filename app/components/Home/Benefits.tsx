@@ -19,7 +19,7 @@ const Benefits = () => {
                 alt="line"
               />
               <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal text-center">
-                FAQs
+                Benefits
               </h1>
               <Image
                 src="/images/right-line.png"
@@ -30,14 +30,15 @@ const Benefits = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-[30px] sm:text-[48px] font-medium leading-[38px] sm:leading-14 tracking-[-1.44px] max-w-[548px] text-center pb-3 sm:pb-6">
-              Get answers to your questions in our FAQ's
+            <h1 className="text-[30px] sm:text-[48px] font-medium leading-[38px] sm:leading-14 tracking-[-1.44px] max-w-[668px] text-center pb-3 sm:pb-6">
+              See the difference intelligent automation makes
             </h1>
 
             {/* Subheading */}
-            <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[510px]">
-              Find quick answers to your questions below, or reach out to our
-              support team for more help!
+            <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[700px]">
+              From time savings to error-free execution, MIRYA delivers
+              measurable improvements across every part of your
+              workflow—instantly and without complexity.
             </p>
           </div>
         </div>
