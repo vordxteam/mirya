@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GradientButton from "@/app/ui/GradientButton";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -197,130 +198,136 @@ export default function Demo(): React.ReactElement {
 
   return (
     <>
- <div className="flex justify-center">
+      <div className="flex justify-center">
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
-        </div>
-            <div className="pt-[60px] py-100 pb-[229px] flex flex-col items-center relative overflow-hidden">
-      <div className="bg-[#00031C"></div>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={backgroundVariants}
-        transition={{ duration: 0.8 }}
+      </div>
+      <div
+        className="pt-[60px] py-100 pb-[229px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain"
       >
-        <Image
-          src="/images/gradient1.png"
-          alt="gradient"
-          width={181}
-          height={94}
-          className="absolute left-[45%] top-0"
-        />
-        <Image
-          src="/images/gradient2.png"
-          alt="gradient"
-          width={458}
-          height={318}
-          className="absolute left-[35%] bottom-[30%]"
-        />
-        <Image
+        <div className="bg-[#00031C"></div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={backgroundVariants}
+          transition={{ duration: 0.8 }}
+        >
+          <Image
+            src="/images/gradient1.png"
+            alt="gradient"
+            width={181}
+            height={94}
+            className="absolute left-[45%] top-0"
+          />
+          <Image
+            src="/images/gradient2.png"
+            alt="gradient"
+            width={458}
+            height={318}
+            className="absolute left-[35%] bottom-[30%]"
+          />
+          {/* <Image
           src="/images/main-gradient.png"
           alt="gradient"
           width={1440}
           height={331}
           className="absolute bottom-0"
-        />
-      </motion.div>
-
-      <motion.div
-        variants={dashVariants}
-        initial="hidden"
-        animate="visible"
-        className="absolute bottom-0"
-      >
-        <Image src="/images/dash.png" alt="dash" width={530} height={121} />
-      </motion.div>
-
-      <motion.div
-        variants={pointerVariants}
-        initial="hidden"
-        animate="visible"
-        className="absolute bottom-0"
-      >
-        <Image
-          src="/images/gradient-pointer.png"
-          alt="gradient pointer"
-          width={40}
-          height={42}
-        />
-      </motion.div>
-
-      <motion.div
-        className="w-full flex flex-col items-center"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-      >
-        <motion.div className="flex gap-5 items-center" variants={itemVariants}>
-          <Image src="/images/blur.svg" alt="gradient1" height={8} width={8} />
-          <h5 className="heading-5 font-regular text-[#959EFE]">
-            Simple. Intelligent. Autonomous
-          </h5>
-          <Image src="/images/blur.svg" alt="gradient1" height={8} width={8} />
+        /> */}
         </motion.div>
 
         <motion.div
-          ref={paragraphRef}
-          className="pt-3 text-[20px] md:text-[36px] font-medium text-white max-w-[1093px] text-center"
-          variants={itemVariants}
+          variants={dashVariants}
+          initial="hidden"
+          animate="visible"
+          className="absolute bottom-0"
         >
-          MIRYA is your all-in-one automation platform that connects and
-          controls any system, any app, any process with zero code. MIRYA
-          doesn&apos;t just follow instructions — it understands data,
-          identifies patterns, and makes smart decisions in real time. It
-          performs every task just like a human - only faster, more precise and
-          completely reliable.
+          <Image src="/images/dash.png" alt="dash" width={530} height={121} />
         </motion.div>
 
         <motion.div
-          className="rounded-full p-0.5 cursor-pointer z-100 mt-6"
-          style={{
-            background:
-              "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
-          }}
-          variants={itemVariants}
+          variants={pointerVariants}
+          initial="hidden"
+          animate="visible"
+          className="absolute bottom-0"
         >
-          <Link
-            href="#"
-            className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full cursor-pointer"
+          <Image
+            src="/images/gradient-pointer.png"
+            alt="gradient pointer"
+            width={40}
+            height={42}
+          />
+        </motion.div>
+
+        <motion.div
+          className="w-full flex flex-col items-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <motion.div
+            className="flex gap-5 items-center"
+            variants={itemVariants}
           >
-            Get A Demo
-          </Link>
-        </motion.div>
+            <Image
+              src="/images/blur.svg"
+              alt="gradient1"
+              height={8}
+              width={8}
+            />
+            <h5 className="heading-5 font-regular text-[#959EFE]">
+              Simple. Intelligent. Autonomous
+            </h5>
+            <Image
+              src="/images/blur.svg"
+              alt="gradient1"
+              height={8}
+              width={8}
+            />
+          </motion.div>
 
-        <motion.div className="pt-12" variants={containerVariants}>
-          <div className="benefits-grid">
-            {benefits.map((item, index) => (
-              <motion.div
-                key={item.id}
-                className="custom-border"
-                variants={benefitItemVariants}
-                custom={index}
-              >
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  height={14}
-                  width={14}
-                  className="flex-shrink-0"
-                />
-                <p className="benefit-text">{item.title}</p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            ref={paragraphRef}
+            className="pt-3 text-[20px] md:text-[36px] font-medium text-white max-w-[1093px] text-center"
+            variants={itemVariants}
+          >
+            MIRYA is your all-in-one automation platform that connects and
+            controls any system, any app, any process with zero code. MIRYA
+            doesn&apos;t just follow instructions — it understands data,
+            identifies patterns, and makes smart decisions in real time. It
+            performs every task just like a human - only faster, more precise
+            and completely reliable.
+          </motion.div>
+
+          <GradientButton
+              label="Get A Demo"
+              href="#"
+              bgColor="black"
+              textColor="#fff"
+            />
+
+          <motion.div className="pt-12" variants={containerVariants}>
+            <div className="benefits-grid">
+              {benefits.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  className="custom-border"
+                  variants={benefitItemVariants}
+                  custom={index}
+                >
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    height={14}
+                    width={14}
+                    className="flex-shrink-0"
+                  />
+                  <p className="benefit-text">{item.title}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </div>
+      </div>
     </>
   );
 }
