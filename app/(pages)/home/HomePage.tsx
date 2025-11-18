@@ -4,14 +4,18 @@ import HeroSection from "@/app/components/Home/HeroSection";
 import Features from "@/app/components/Home/Features";
 import React from "react";
 import HowToUse from "@/app/components/Home/HowToUse";
+import Faq from "@/app/components/Home/Faq";
+// import Benefits from "@/app/components/Home/Benefits";
 
 const HomePage = () => {
   return (
     <div>
-      <HeroSection/>
-      <Demo/>
-      <HowToUse/>
-      <Features/>
+      <HeroSection />
+      <Demo />
+      <HowToUse />
+      <Features />
+      {/* <Benefits /> */}
+      <Faq />
     </div>
   );
 };

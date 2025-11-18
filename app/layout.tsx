@@ -4,6 +4,7 @@ import "./globals.css";
 import "./ui/typography.css";
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
+import CTA from "./Layout/CTA";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={`${poppins.className} antialiased`}>
         <Header />
         {children}
+        <CTA />
         <Footer />
       </body>
     </html>
