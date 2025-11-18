@@ -127,7 +127,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, #00031C, #BEADEO, #00031C);
+  background: linear-gradient(135deg, #00031C, #BEADEO0, #00031C);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -136,9 +136,12 @@ body {
   pointer-events: none;
 }
 
-.custom-b{
-  border: 1px solid;
-  border-image: linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) 1;
+/* .custom-b{
+   position: relative;
   border-radius: 12px;
-}
+  background: 
+    linear-gradient(#00031C, #00031C) padding-box,
+    linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box;
+  border: 1px solid transparent;
+} */
 
