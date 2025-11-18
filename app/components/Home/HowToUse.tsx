@@ -71,7 +71,7 @@ const HowToUse = () => {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-[38px] sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] text-center pb-3 sm:pb-6">
+        <h1 className="text-[30px] sm:text-[48px] font-medium leading-[38px] sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] text-center pb-3 sm:pb-6">
           How MIRYA Works
         </h1>
 
@@ -144,6 +144,12 @@ const HowToUse = () => {
                   }`}
                 >
                   <div className="flex flex-col items-start text-left space-y-[25px] relative">
+                    <div className="absolute -left-5 -top-5">
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                    </div>
+                    <span className="text-[#4F60FA] text-[10px] md:text-[14px] font-normal leading-5 text-base">
+                      /{index + 1}
+                    </span>
                     <h3 className="text-white text-2xl font-medium leading-7">
                       {slides[index].title}
                     </h3>
@@ -157,7 +163,13 @@ const HowToUse = () => {
           </div>
 
           {/* Mobile: show only active content centered */}
-          <div className="flex flex-col md:hidden items-center justify-center">
+          <div className="flex flex-col md:hidden items-center justify-center relative">
+            <div className="absolute -left-5 -top-5">
+              <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+            </div>
+            <span className="text-[#4F60FA] text-[10px] md:text-[14px] font-normal leading-5 text-base">
+              /{slides[activeSlide].id}
+            </span>
             <h3 className="text-white text-xl sm:text-2xl font-medium leading-7 text-center">
               {slides[activeSlide].title}
             </h3>
