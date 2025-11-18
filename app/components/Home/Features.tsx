@@ -131,7 +131,7 @@ export default function Features() {
                 alt="gradient"
                 width={458}
                 height={318}
-                className="absolute left-[30%] top-[65%] z-[-10]"
+                className="absolute hidden sm:block left-[30%] top-[65%] z-[-10]"
               />
             </motion.div>
             <div className="flex relative flex-col sm:flex-row items-center sm:items-start gap-6">

@@ -180,7 +180,7 @@ const HowToUse = () => {
         </div>
 
         {/* Spacer */}
-        <div className="h-[250px] md:h-[200px]"></div>
+        <div className=" hidden sm:block h-[250px] md:h-[200px]"></div>
       </div>
     </div>
   );
