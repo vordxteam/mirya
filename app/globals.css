@@ -4,3 +4,141 @@ body {
   background: #00031c;
   color: white;
 }
+.custom-border {
+  position: relative;
+  padding: 20px; /* Adjust as needed */
+  border-radius: 8px; /* Adjust as needed */
+}
+
+.custom-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 1px;
+  
+  /* Linear Gradient as specified */
+  background: linear-gradient(135deg, 
+    #38385D, 
+    #22223C, 
+    #686DDD, 
+    #22223C, 
+    #38385D
+  );
+  
+  /* Inner alignment */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+/* Custom border styles */
+.custom-border {
+  position: relative;
+  border-radius: 50px; /* Rounded full for circular items */
+  background: #00031C;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: fit-content;
+}
+
+.custom-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, 
+    #38385D, 
+    #22223C, 
+    #686DDD, 
+    #22223C, 
+    #38385D
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Layout container */
+.benefits-grid {
+  padding-top: 3rem; /* pt-12 */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem; /* gap-4 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual benefit item */
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  padding: 0.75rem 1rem; /* p-3 */
+}
+
+.benefit-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 8px;
+  background: #00031C;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #00031C, #BEADEO, #00031C);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* For rounded-full version (like your benefits grid) */
+.gradient-border-rounded {
+  position: relative;
+  border-radius: 50px;
+  background: #00031C;
+}
+
+.gradient-border-rounded::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #00031C, #BEADEO, #00031C);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.custom-b{
+  border: 1px solid;
+  border-image: linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) 1;
+  border-radius: 12px;
+}
+
