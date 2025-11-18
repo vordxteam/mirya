@@ -1,8 +1,11 @@
 import React from 'react'
+import Faqpage from './Faqpage'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+        <Faqpage />
+    </div>
   )
 }
 
