@@ -55,11 +55,12 @@ export default function Features() {
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInVariants}
-        className="flex justify-center"
+        className="flex justify-center relative"
       >
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </motion.div>
 
+      
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -86,10 +87,14 @@ export default function Features() {
           />
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex gap-5 items-center">
+        <motion.div variants={itemVariants} className="flex relative gap-5 items-center">
           <Image src="/images/blur.svg" alt="gradient1" height={8} width={8} />
           <h5 className="heading-5 font-regular text-[#959EFE]">Features</h5>
           <Image src="/images/blur.svg" alt="gradient1" height={8} width={8} />
+          <div className="absolute -top-16 -left-3 -z-10">
+            <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+          </div>
+
         </motion.div>
 
         <motion.div

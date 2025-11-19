@@ -103,7 +103,7 @@ export default function Demo(): React.ReactElement {
     ScrollTrigger.create({
       trigger: element,
       start: "top 10%",
-      end: "bottom 40%",
+      end: "bottom 30%",
       scrub: true,
       onUpdate: (self) => {
         const progress = self.progress;
@@ -201,13 +201,14 @@ export default function Demo(): React.ReactElement {
       <div className="flex justify-center">
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.5px]"></div>
       </div>
-      <div className="pt-[60px] py-100 pb-[90px] sm:pb-[229px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
+      <div className=" py-15  flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
         <div className="bg-[#00031C"></div>
         <motion.div
           initial="hidden"
           animate="visible"
           variants={backgroundVariants}
           transition={{ duration: 0.8 }}
+          className="relative"
         >
           <Image
             src="/images/gradient1.png"
@@ -232,28 +233,9 @@ export default function Demo(): React.ReactElement {
         /> */}
         </motion.div>
 
-        <motion.div
-          variants={dashVariants}
-          initial="hidden"
-          animate="visible"
-          className="absolute bottom-0"
-        >
-          <Image src="/images/dash.png" alt="dash" width={530} height={121} />
-        </motion.div>
+            
 
-        <motion.div
-          variants={pointerVariants}
-          initial="hidden"
-          animate="visible"
-          className="absolute bottom-0"
-        >
-          <Image
-            src="/images/gradient-pointer.png"
-            alt="gradient pointer"
-            width={40}
-            height={42}
-          />
-        </motion.div>
+        
 
         <motion.div
           className="w-full flex flex-col items-center"
@@ -267,19 +249,19 @@ export default function Demo(): React.ReactElement {
             variants={itemVariants}
           >
             <Image
-              src="/images/blur.svg"
+              src="/images/left-line.png"
               alt="gradient1"
               height={8}
-              width={8}
+              width={73}
             />
             <h5 className="heading-5 font-regular text-[#959EFE]">
               Simple. Intelligent. Autonomous
             </h5>
             <Image
-              src="/images/blur.svg"
+              src="/images/right-line.png"
               alt="gradient1"
               height={8}
-              width={8}
+              width={73}
             />
           </motion.div>
 
@@ -295,15 +277,16 @@ export default function Demo(): React.ReactElement {
             performs every task just like a human - only faster, more precise
             and completely reliable.
           </motion.div>
-
+            <div className="pt-6">
           <GradientButton
             label="Get A Demo"
             href="#"
             bgColor="black"
             textColor="#fff"
+            
           />
-
-          <motion.div className="pt-12" variants={containerVariants}>
+</div>
+          <motion.div className="" variants={containerVariants}>
             <div className="benefits-grid">
               {benefits.map((item, index) => (
                 <motion.div
@@ -324,6 +307,27 @@ export default function Demo(): React.ReactElement {
               ))}
             </div>
           </motion.div>
+          <motion.div
+          variants={dashVariants}
+          initial="hidden"
+          animate="visible"
+          className="bottom-0"
+        >
+          <Image src="/images/dash.png" alt="dash" width={530} height={121} />
+        </motion.div>
+        <motion.div
+          variants={pointerVariants}
+          initial="hidden"
+          animate="visible"
+          className="-mt-10"
+        >
+          <Image
+            src="/images/gradient-pointer.png"
+            alt="gradient pointer"
+            width={40}
+            height={42}
+          />
+        </motion.div>
         </motion.div>
       </div>
     </>

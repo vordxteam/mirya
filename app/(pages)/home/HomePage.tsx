@@ -21,9 +21,9 @@ const HomePage = () => {
       <BuildForYou/>
       <Benefits />
       <Testimonials/>
-      <Indicator/>
-      <Plans/>
-      <Faq />
+      {/* <Indicator/> */}
+      {/* <Plans/> */}
+      {/* <Faq /> */}
     </div>
   );
 };

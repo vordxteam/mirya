@@ -6,6 +6,43 @@ import React from "react";
 import GradientButton from "../ui/GradientButton";
 
 const Footer = () => {
+
+    const footerLinks = [
+  {
+    title: "Pages",
+    childs: [
+      { id: 1, name: "Product", href: "/about" },
+      { id: 1, name: "Contact", href: "#" },
+      { id: 2, name: "Articles", href: "/articles" },
+      { id: 3, name: "Careers", href: "#" }
+    ]
+  },
+  {
+    title: "TECHNOLOGY",
+    childs: [
+      { id: 4, name: "MIRYA vs n8n", href: "#" },
+      { id: 5, name: "MIRYA vs n8n", href: "#" },
+      { id: 6, name: "MIRYA vs n8n", href: "#" },
+      { id: 7, name: "John user test", href: "#" }
+    ]
+  },
+  {
+    title: "LEGAL",
+    childs: [
+      { id: 8, name: "Privacy Policy", href: "#" },
+      { id: 9, name: "Security", href: "#" },
+      { id: 10, name: "Imprint", href: "#" }
+    ]
+  },
+  {
+    title: "CONNECT",
+    childs: [
+      { id: 11, name: "Youtube", href: "#" },
+      { id: 12, name: "Twitter", href: "#" }
+    ]
+  }
+];
+
   const handleBackToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -89,7 +126,7 @@ const Footer = () => {
                   textColor="#fff"
                 />
               </div>
-              <div className="flex items-center gap-4 mt-8">
+              {/* <div className="flex items-center gap-4 mt-8">
                 <Link
                   href="https://www.facebook.com/"
                   target="_blank"
@@ -129,9 +166,30 @@ const Footer = () => {
                     alt="Website"
                   />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
+
+          <div className="flex flex-col md:flex-row justify-between gap-8 pt-[58px] w-full">
+  {footerLinks.map((section, index) => (
+    <div key={index} className="">
+      <h3 className="text-[#FFFFFF80] heading-6 font-regular leading-5 mb-4">
+        {section.title}
+      </h3>
+      <div className="flex flex-col gap-[14px]">
+        {section.childs.map((link) => (
+          <Link
+            key={link.id}
+            href={link.href}
+            className={`heading-6 font-regular text-[#FFFFFF] ${link.name === "John user test" ? "underline":""}`}
+          >
+            {link.name}
+          </Link>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
 
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row items-center justify-between mt-16 md:mt-[157px] gap-4">
