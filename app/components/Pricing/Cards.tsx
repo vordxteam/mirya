@@ -145,7 +145,7 @@ export default function Cards({ active }: { active: string }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 onClick={() => setActivePlanId(item.id)}
-                className={`bg-[#090b26]  max-w-[300px] md:max-w-[396px]  px-[32px] pt-[72px] pb-[48px] rounded- plans relative cursor-pointer transition-all ${
+                className={`bg-[#090b26] w-full md:max-w-[396px]  px-[32px] pt-[72px] pb-[48px] rounded- plans relative cursor-pointer transition-all ${
                   activePlanId === item.id
                     ? "ring-2 ring-[#4F60FA] -mt-20 shadow-lg shadow-[#4F60FA]/30"
                     : ""

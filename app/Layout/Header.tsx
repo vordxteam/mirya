@@ -77,7 +77,7 @@ const linkItemVariants = {
 
         {/* Desktop Get Started Button */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-5">
-          <button className="text-[#73799B] heading-5 underline cursor-pointer hover:text-white">Signin</button>
+          <button className="text-white heading-5 underline cursor-pointer hover:text-white">Signin</button>
           <div
             className="rounded-full p-0.5"
             style={{
