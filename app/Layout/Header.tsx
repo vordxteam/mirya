@@ -22,25 +22,25 @@ export default function Header() {
   const pathname = usePathname();
 
   // Animation variants
- const sidebarVariants = {
-  closed: { x: "100%" },
-  open: { x: 0 }
-};
+  const sidebarVariants = {
+    closed: { x: "100%" },
+    open: { x: 0 },
+  };
 
-const overlayVariants = {
-  closed: { opacity: 0 },
-  open: { opacity: 1 }
-};
+  const overlayVariants = {
+    closed: { opacity: 0 },
+    open: { opacity: 1 },
+  };
 
-const linkContainerVariants = {
-  closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
-  open: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
-};
+  const linkContainerVariants = {
+    closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
+    open: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+  };
 
-const linkItemVariants = {
-  closed: { opacity: 0, x: 20 },
-  open: { opacity: 1, x: 0 }
-};
+  const linkItemVariants = {
+    closed: { opacity: 0, x: 20 },
+    open: { opacity: 1, x: 0 },
+  };
   return (
     <header className="">
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between p-6 lg:py-[26px] lg:px-20">
@@ -76,8 +76,10 @@ const linkItemVariants = {
         </div>
 
         {/* Desktop Get Started Button */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-5">
-          <button className="text-white heading-5 underline cursor-pointer hover:text-white">Signin</button>
+        <div className="hidden lg:flex items-center lg:flex-1 lg:justify-end gap-5">
+          <Link href="/coming-soon" className="text-white heading-5 underline cursor-pointer hover:text-white">
+            Signin
+          </Link>
           <div
             className="rounded-full p-0.5"
             style={{
@@ -86,7 +88,7 @@ const linkItemVariants = {
             }}
           >
             <Link
-              href="#"
+              href="/contact"
               className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full"
             >
               Get Started
@@ -132,7 +134,11 @@ const linkItemVariants = {
             >
               {/* Header */}
               <div className="flex items-center justify-between">
-                <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+                <Link
+                  href="/"
+                  className="-m-1.5 p-1.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <Image
                     src="/images/logo.svg"
                     width={132}
@@ -161,10 +167,7 @@ const linkItemVariants = {
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
-                    <motion.div
-                      key={link.href}
-                      variants={linkItemVariants}
-                    >
+                    <motion.div key={link.href} variants={linkItemVariants}>
                       <Link
                         href={link.href}
                         onClick={() => setMobileMenuOpen(false)}
@@ -189,7 +192,7 @@ const linkItemVariants = {
               >
                 {/* Signin Button */}
                 <motion.div variants={linkItemVariants}>
-                  <button 
+                  <button
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#73799B] text-[18px] font-normal underline cursor-pointer hover:text-white w-full text-left py-2"
                   >
