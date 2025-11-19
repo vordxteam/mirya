@@ -298,7 +298,7 @@ export default function Features() {
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
-          className="sm:px-20 px-3"
+          className="sm:px-9 px-3"
         >
           <motion.div
             variants={itemVariants}

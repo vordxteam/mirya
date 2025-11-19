@@ -53,11 +53,11 @@ export default function Indicator() {
   ];
 
   return (
-    <div className="sm:pt-[60px] pb-">
+    <div className="sm:pt-[60px] ">
       <div className="flex justify-center">
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </div>
-      <div className="max-w-[1440px] m-auto X">
+      <div className="max-w-[1440px] m-auto z-[1000]">
         <div className="px-5 sm:px-10 md:px-20 py-[60px] relative bg-[url('/images/bg-img.png')] bg-no-repeat bg-bottom-left ">
           <div className=" flex-col bg-[url('/images/bg-img.png')] bg-no-repeat bg-bottom-left bg-contain">
             <div className="absolute top-0 right-40 hidden md:block z-[-10] rotate-45">

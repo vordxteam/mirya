@@ -3,6 +3,10 @@ import React from "react";
 
 const Benefits = () => {
   return (
+    <>
+    <div className="flex justify-center">
+        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.5px]"></div>
+      </div>
     <div className="bg-[#00031C] overflow-hidden">
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 md:px-20 py-[60px]">
         {/* Top Section */}
@@ -103,6 +107,7 @@ const Benefits = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

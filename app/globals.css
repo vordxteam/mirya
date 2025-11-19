@@ -100,7 +100,12 @@ body {
     linear-gradient(#14122C, #14122C) padding-box,
     linear-gradient(90deg, #4542E0, #14122C) border-box;
 }
-
+.non-rounded {
+   border: 1px solid transparent;
+  background: 
+    linear-gradient(#14122C, #14122C) padding-box,
+    linear-gradient(90deg, #00031C, #8EA0E0 , #00031C) border-box;
+}
 /* .custom-b{
    position: relative;
   border-radius: 12px;
@@ -127,4 +132,12 @@ body {
   border-radius: 14px;
   z-index: -1;
   filter: blur(1px);
+}
+/* Add to your global CSS */
+.slide-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(10px);
 }
