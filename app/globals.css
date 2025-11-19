@@ -115,6 +115,13 @@ body {
   border: 1px solid transparent;
 } */
 
+.non-rounded1 {
+   border: 1px solid transparent;
+  background: 
+    linear-gradient(#14122C, #14122C) padding-box,
+    linear-gradient(0deg, #463BBF, #9C96E3 , #463BBF) border-box;
+}
+
 .plans {
   position: relative;
   /* min-width: 300px; */

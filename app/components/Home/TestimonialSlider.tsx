@@ -290,8 +290,7 @@ export default function TestimonialSlider() {
                   transform: `${style.transform}`,
                   opacity: style.opacity,
                   transformStyle: 'preserve-3d',
-                  pointerEvents: style.pointerEvents || 'auto',
-                }}
+                pointerEvents: (style.pointerEvents as React.CSSProperties['pointerEvents']) || 'auto',                }}
               >
                 <div className="relative bg-gradient-to-b from-[#1F1B48] to-[#00041E] rounded-2xl p-4 sm:p-6 lg:p-[23px] shadow-2xl overflow-hidden h-full">
                   {/* Wavy pattern overlay */}  
