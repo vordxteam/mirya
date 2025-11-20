@@ -130,7 +130,7 @@ export default function Header() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed inset-y-0 right-0 z-50 w-full sm:max-w-sm bg-[#00031C] p-6 overflow-y-auto lg:hidden"
+              className="fixed inset-y-0 right-0 z-100000 w-full sm:max-w-sm bg-[#00031C] p-6 overflow-y-auto lg:hidden"
             >
               {/* Header */}
               <div className="flex items-center justify-between">
@@ -192,12 +192,13 @@ export default function Header() {
               >
                 {/* Signin Button */}
                 <motion.div variants={linkItemVariants}>
-                  <button
+                  <Link
+                  href="/coming-soon"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#73799B] text-[18px] font-normal underline cursor-pointer hover:text-white w-full text-left py-2"
                   >
                     Signin
-                  </button>
+                  </Link>
                 </motion.div>
 
                 {/* Get Started Button */}
@@ -210,7 +211,7 @@ export default function Header() {
                     }}
                   >
                     <Link
-                      href="#"
+                      href="/contact"
                       className="inline-block text-[16px] font-normal text-white py-2 px-6 bg-[#00031C] rounded-full w-full text-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >

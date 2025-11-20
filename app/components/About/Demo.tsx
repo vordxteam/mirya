@@ -238,7 +238,7 @@ export default function Demo(): React.ReactElement {
           variants={dashVariants}
           initial="hidden"
           animate="visible"
-          className="absolute bottom-0"
+          className="absolute bottom-[60px]"
         >
           <Image src="/images/dash.png" alt="dash" width={530} height={121} />
         </motion.div>
@@ -247,7 +247,7 @@ export default function Demo(): React.ReactElement {
           variants={pointerVariants}
           initial="hidden"
           animate="visible"
-          className="absolute bottom-0"
+          className="absolute bottom-[60px]"
         >
           <Image
             src="/images/gradient-pointer.png"
@@ -314,7 +314,7 @@ export default function Demo(): React.ReactElement {
                     alt={item.title}
                     height={14}
                     width={14}
-                    className="flex-shrink-0"
+                    className="shrink-0"
                   />
                   <p className="benefit-text">{item.title}</p>
                 </motion.div>
