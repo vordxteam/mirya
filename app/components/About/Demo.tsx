@@ -275,7 +275,7 @@ export default function Demo(): React.ReactElement {
               width={8}
             />
             <h5 className="heading-5 font-regular text-[#959EFE]">
-              Simple. Intelligent. Autonomous
+              Who We Are
             </h5>
             <Image
               src="/images/blur.svg"
@@ -287,15 +287,10 @@ export default function Demo(): React.ReactElement {
 
           <motion.div
             ref={paragraphRef}
-            className="pt-3 text-[20px] md:text-[36px] font-medium text-white max-w-[1093px] text-center"
+            className="pt-3 text-[20px] md:text-[36px] leading-12 font-medium text-white max-w-[1190px] text-center mb-6"
             variants={itemVariants}
           >
-            MIRYA is your all-in-one automation platform that connects and
-            controls any system, any app, any process with zero code. MIRYA
-            doesn&apos;t just follow instructions — it understands data,
-            identifies patterns, and makes smart decisions in real time. It
-            performs every task just like a human - only faster, more precise
-            and completely reliable.
+           MIRYA is more than an automation tool we are a team on a mission to make intelligent automation accessible, effortless, and reliable. We believe that technology should work for humans, not the other way around. Our platform connects and controls any system, any app, and any process, learning from your actions to execute workflows with precision and speed.
           </motion.div>
 
           <GradientButton

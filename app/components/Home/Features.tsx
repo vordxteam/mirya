@@ -103,13 +103,13 @@ export default function Features() {
         >
           <motion.h1
             variants={itemVariants}
-            className="heading-1 font-medium text-[#FFFFFF] max-w-[682px] text-center"
+            className="heading-1 font-medium text-[#FFFFFF] max-w-[700px] text-center"
           >
-            Powerful Features That Make Automation Effortless
+            Powerful Features That Make <br /> Automation Effortless
           </motion.h1>
           <motion.h6
             variants={itemVariants}
-            className="headin-6 font-regular text-[#CAC9D1] max-w-[568px] text-center"
+            className="text-[14px] font-regular text-[#CAC9D1] max-w-[568px] text-center"
           >
             Discover how MIRYA thinks, learns, and executes like a human —
             without code, complexity, or integrations.
@@ -129,7 +129,7 @@ export default function Features() {
                   "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
                 border: "1px solid transparent",
               }}
-              className="p-[32px]"
+              className="p-8"
             >
               <motion.div variants={fadeInVariants}>
                 <Image
@@ -137,7 +137,7 @@ export default function Features() {
                   alt="gradient"
                   width={458}
                   height={318}
-                  className="absolute hidden sm:block left-[30%] top-[65%] z-[-10]"
+                  className="absolute hidden sm:block left-[30%] top-[65%] -z-10"
                 />
               </motion.div>
               <div className="flex relative flex-col sm:flex-row items-center sm:items-start gap-6">
@@ -317,7 +317,7 @@ export default function Features() {
           >
             <motion.div variants={fadeInVariants} className="absolute top-0">
               <div>
-                <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
             </motion.div>
             <motion.div

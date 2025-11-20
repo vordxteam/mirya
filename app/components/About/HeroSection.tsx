@@ -84,7 +84,7 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/left-line.png" width={73} height={8} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            About Us
+           About Product
           </h1>
           <Image
             src="/images/right-line.png"
@@ -94,11 +94,10 @@ const HeroSection = () => {
           />
         </div>
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] w-full text-center pb-3 sm:pb-6">
-          Automation That Thinks, Learns <br /> & Works Like a Human
+         Meet MIRYA-Your Always On Automation Intelligence
         </h1>
-        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center">
-          Find quick answers to your questions below, or reach out to our
-          support team for more help!
+        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[648px]">
+          Connect systems, streamline workflows, and let MIRYA handle every task with precision. No code, no interfaces—just smart automation that thinks, adapts, and executes like a human.
         </p>
         <div className="flex items-center justify-center gap-3">
           <div

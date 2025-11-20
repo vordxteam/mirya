@@ -22,7 +22,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
       className="rounded-full p-[1.8px]"
       style={{
         background:
-          "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+          "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
       }}
     >
       <Link

@@ -96,7 +96,7 @@ const HeroSection = () => {
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[824px] w-full text-center pb-3 sm:pb-6">
           Explore Ideas, Trends and Deep Research
         </h1>
-        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center">
+        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
           Elevate your thinking with expert articles, AI-driven analysis, and
           the latest research tools wherever content creation meets innovation.
         </p>

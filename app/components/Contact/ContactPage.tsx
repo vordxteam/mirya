@@ -1,3 +1,4 @@
+import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,26 +10,30 @@ export default function ContactPage() {
       img: "/images/location.png",
       title: "Location",
       value: "Los Angeles, CA",
+      link: "https://www.google.com/maps?q=Los+Angeles,+CA",
     },
     {
       id: 2,
       img: "/images/phone.png",
       title: "Phone",
       value: "+1 (208) 120-802",
+      link: "tel:+1208120802",
     },
     {
       id: 3,
       img: "/images/mail.png",
       title: "Email Address",
       value: "mirya@gmail.com",
+      link: "mailto:mirya@gmail.com",
     },
   ];
+
   return (
     <>
       <div className="flex justify-center">
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
       </div>
-      <div className="flex flex-col items-center pt-15 relative px-3 sm:px-[80px] max-w-[1440px] m-auto">
+      <div className="flex flex-col items-center pt-15 relative px-3 sm:px-20 max-w-[1440px] m-auto">
         <div className="absolute top-0 z-[-1000]">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
@@ -36,8 +41,14 @@ export default function ContactPage() {
         {/* Fixed Container */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full pb-15">
           {data.map((item) => (
-            <div key={item.id} className="flex-1 min-w-0">
-              <div className="non-rounded1 p-1 rounded-lg">
+            <a
+              key={item.id}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 min-w-0"
+            >
+              <div className="non-rounded1 p-1 rounded-lg cursor-pointer transition-all hover:scale-[1.02]">
                 <div className="bg-[#050A29] flex flex-col rounded-lg justify-center items-center gap-5 p-7 w-full h-full">
                   <Image
                     src={item.img}
@@ -53,15 +64,16 @@ export default function ContactPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
-        <div className="py-[64px] w-full flex flex-col md:flex-row justify-between gap-8 md:gap-12">
+
+        <div className="py-16 w-full flex flex-col md:flex-row justify-between gap-8 md:gap-12">
           {/* Left Section - Improved spacing */}
           <div className="flex flex-col justify-between space-y-8 md:space-y-12">
             <div className="space-y-8">
               <div className="space-y-6">
-                <h1 className="text-[40px] leading-[44px] font-medium">
+                <h1 className="text-[40px] leading-11 font-medium">
                   Get in Touch
                 </h1>
                 <p className="text-FFFFFF99 font-regular heading-4 font-regular max-w-[490px] text-[#FFFFFF99]">
@@ -71,36 +83,49 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="">
+            <div>
               <div className="space-y-3">
                 <p className="heading-4 font-medium text-white">Availability</p>
                 <p className="heading-5 font-medium text-white">
                   Sunday – Thursday, 9 AM to 6 PM
                 </p>
               </div>
+
               <p className="heading-4 font-medium text-white pt-6 mt-6">
                 Follow us
               </p>
+
               <div className="flex gap-3 pt-5">
-                <Image
-                  src="/images/facebook.png"
-                  alt="facebook"
-                  height={52}
-                  width={52}
-                />
-                <Image
-                  src="/images/instagram.png"
-                  alt="instagram"
-                  height={52}
-                  width={52}
-                />
-                <Image src="/images/X.png" alt="X" height={52} width={52} />
-                <Image
-                  src="/images/linkedin.png"
-                  alt="linkedin"
-                  height={52}
-                  width={52}
-                />
+                <Link href="https://www.facebook.com/" target="_blank">
+                  <Image
+                    src="/images/facebook.png"
+                    alt="facebook"
+                    height={52}
+                    width={52}
+                  />
+                </Link>
+
+                <Link href="https://www.instagram.com/" target="_blank">
+                  <Image
+                    src="/images/instagram.png"
+                    alt="instagram"
+                    height={52}
+                    width={52}
+                  />
+                </Link>
+
+                <Link href="https://twitter.com/" target="_blank">
+                  <Image src="/images/X.png" alt="X" height={52} width={52} />
+                </Link>
+
+                <Link href="https://www.linkedin.com/" target="_blank">
+                  <Image
+                    src="/images/linkedin.png"
+                    alt="linkedin"
+                    height={52}
+                    width={52}
+                  />
+                </Link>
               </div>
             </div>
           </div>
@@ -115,7 +140,7 @@ export default function ContactPage() {
                 <input
                   type="text"
                   placeholder="Full name"
-                  className="outline outline-[#FFFFFF33] p-4 rounded-lg xl:w-[512px]"
+                  className="outline outline-[#FFFFFF33] p-4 rounded-lg xl:w-lg"
                 />
                 <div className="flex gap-3">
                   <input
@@ -174,6 +199,24 @@ export default function ContactPage() {
                     Privacy Policy
                   </Link>
                 </label>
+              </div>
+              <div
+                className="rounded-full p-px w-full mt-10"
+                style={{
+                  background:
+                    "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
+                }}
+              >
+                <Link
+                  href="#"
+                  className="font-normal w-full flex items-center justify-center py-2 px-5 rounded-full"
+                  style={{
+                    background: "#0274FE",
+                    color: "white",
+                  }}
+                >
+                  Get A Demo
+                </Link>
               </div>
             </div>
           </div>

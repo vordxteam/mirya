@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import GradientButton from "@/app/ui/GradientButton";
 import { motion, Variants } from "framer-motion";
-import Image from 'next/image';
-import Comparison from './Comparison';
+import Image from "next/image";
+import Comparison from "./Comparison";
 
 export default function Cards({ active }: { active: string }) {
-    const planData = {
+  const planData = {
     monthly: [
       {
         id: 1,
@@ -122,32 +122,40 @@ export default function Cards({ active }: { active: string }) {
     ],
   };
 
-//    const [activeTab, setActiveTab] = useState("monthly");
-    const [activePlanId, setActivePlanId] = useState<number | null>(null);
-    
-    const currentPlans = planData[active as keyof typeof planData];
+  //    const [activeTab, setActiveTab] = useState("monthly");
+  const [activePlanId, setActivePlanId] = useState<number | null>(null);
 
+  const currentPlans = planData[active as keyof typeof planData];
 
   return (
     <>
-    <div className='z-[10000] bg-[#00031c]  relative pb-20'>
-       <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="grid max-w-[1440px] mx-auto  relative sm:grid-cols-2 lg:grid-cols-3 gap-25 sm:gap-10 pt-[152px] px-2 md:px-[86px]  md:pt-[152px]"
-          >
-            {currentPlans.map((item, index) => (
+      <div className="z-[10000] bg-[#00031c]  relative pb-20">
+        <motion.div
+          key={active}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="grid max-w-[1440px] mx-auto  relative sm:grid-cols-2 lg:grid-cols-3 gap-25 sm:gap-10 pt-[152px] px-2 md:px-[86px]  md:pt-[152px]"
+        >
+          {currentPlans.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              onClick={() => setActivePlanId(item.id)}
+              style={{
+                background:
+                  "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
+              }}
+              className={`rounded-3xl p-px transition-all ${
+                index === 1 ? "-translate-y-6 md:-translate-y-[86px]" : ""
+              }`}
+            >
               <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                onClick={() => setActivePlanId(item.id)}
-                className={`bg-[#090b26] w-full md:max-w-[396px]  px-[32px] pt-[72px] pb-[48px] rounded- plans relative cursor-pointer transition-all ${
+                className={`bg-[#090b26] w-full md:max-w-[396px]  px-8 pt-[72px] pb-11 rounded-3xl relative cursor-pointer transition-all ${
                   activePlanId === item.id
-                    ? "ring-2 ring-[#4F60FA] -mt-20 shadow-lg shadow-[#4F60FA]/30"
+                    ? "ring-2 ring-[#4F60FA] shadow-lg shadow-[#4F60FA]/30"
                     : ""
                 }`}
               >
@@ -213,10 +221,11 @@ export default function Cards({ active }: { active: string }) {
                   />
                 </div>
               </motion.div>
-            ))}
-          </motion.div>
-    </div>
-          <Comparison/>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+      <Comparison />
     </>
-  )
+  );
 }

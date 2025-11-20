@@ -97,7 +97,7 @@ const HeroSection = () => {
           Our Guide To Your <br />
           Frequently Asked Questions
         </h1>
-        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center">
+        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
           Find quick answers to your questions below, or reach out to our
           support team for more help!
         </p>

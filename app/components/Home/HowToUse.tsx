@@ -76,7 +76,7 @@ const HowToUse = () => {
         </h1>
 
         {/* Subheading */}
-        <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[820px]">
+        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[721px]">
           Effortless automation starts with MIRYA — no coding, no configuration,
           no waiting. Just drag & drop your ideas, record your workflow, or
           speak your commands as your digital teammate learns and acts.

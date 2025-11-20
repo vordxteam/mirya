@@ -233,10 +233,6 @@ export default function Demo(): React.ReactElement {
         /> */}
         </motion.div>
 
-            
-
-        
-
         <motion.div
           className="w-full flex flex-col items-center"
           variants={containerVariants}
@@ -254,7 +250,7 @@ export default function Demo(): React.ReactElement {
               height={8}
               width={73}
             />
-            <h5 className="heading-5 font-regular text-[#959EFE]">
+            <h5 className="heading-5 font-regular text-[#959EFE] text-center">
               Simple. Intelligent. Autonomous
             </h5>
             <Image
@@ -267,7 +263,7 @@ export default function Demo(): React.ReactElement {
 
           <motion.div
             ref={paragraphRef}
-            className="pt-3 text-[20px] md:text-[36px] font-medium text-white max-w-[1093px] text-center"
+            className="pt-3 text-[20px] md:text-[36px] font-medium text-white max-w-[1093px] text-center px-5"
             variants={itemVariants}
           >
             MIRYA is your all-in-one automation platform that connects and
@@ -277,15 +273,14 @@ export default function Demo(): React.ReactElement {
             performs every task just like a human - only faster, more precise
             and completely reliable.
           </motion.div>
-            <div className="pt-6">
-          <GradientButton
-            label="Get A Demo"
-            href="#"
-            bgColor="black"
-            textColor="#fff"
-            
-          />
-</div>
+          <div className="pt-6">
+            <GradientButton
+              label="Get A Demo"
+              href="#"
+              bgColor="black"
+              textColor="#fff"
+            />
+          </div>
           <motion.div className="" variants={containerVariants}>
             <div className="benefits-grid">
               {benefits.map((item, index) => (
@@ -300,7 +295,7 @@ export default function Demo(): React.ReactElement {
                     alt={item.title}
                     height={14}
                     width={14}
-                    className="flex-shrink-0"
+                    className="shrink-0"
                   />
                   <p className="benefit-text">{item.title}</p>
                 </motion.div>
@@ -308,26 +303,26 @@ export default function Demo(): React.ReactElement {
             </div>
           </motion.div>
           <motion.div
-          variants={dashVariants}
-          initial="hidden"
-          animate="visible"
-          className="bottom-0"
-        >
-          <Image src="/images/dash.png" alt="dash" width={530} height={121} />
-        </motion.div>
-        <motion.div
-          variants={pointerVariants}
-          initial="hidden"
-          animate="visible"
-          className="-mt-10"
-        >
-          <Image
-            src="/images/gradient-pointer.png"
-            alt="gradient pointer"
-            width={40}
-            height={42}
-          />
-        </motion.div>
+            variants={dashVariants}
+            initial="hidden"
+            animate="visible"
+            className="bottom-0"
+          >
+            <Image src="/images/dash.png" alt="dash" width={530} height={121} />
+          </motion.div>
+          <motion.div
+            variants={pointerVariants}
+            initial="hidden"
+            animate="visible"
+            className="-mt-10"
+          >
+            <Image
+              src="/images/gradient-pointer.png"
+              alt="gradient pointer"
+              width={40}
+              height={42}
+            />
+          </motion.div>
         </motion.div>
       </div>
     </>

@@ -1,3 +1,4 @@
+import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -5,7 +6,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center pt-10 px-2 md:px-10 bg-[url('/images/herobg.png')] bg-no-repeat bg-bottom bg-cover relative">
+      <div className="flex flex-col items-center justify-center pt-10 px-2 md:px-10 bg-[url('/images/herobg.png')] bg-no-repeat bg-bottom bg-contain relative">
         <div className="absolute top-0">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
@@ -22,29 +23,21 @@ const HeroSection = () => {
           />
         </div>
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] w-full text-center pb-3 sm:pb-6">
-          Automate Anything. <br /> No Code. On Premise. No Limits.
+          Automation That Thinks, Learns & Works Like a Human
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center">
           Turn complex workflows into simple, intelligent automations — in
           hours, not weeks.
         </p>
         <div className="flex items-center justify-center gap-3">
+          <GradientButton
+            label="Get A Demo"
+            href="#"
+            bgColor="#0274FE"
+            textColor="#fff"
+          />
           <div
-            className="rounded-full p-0.5"
-            style={{
-              background:
-                "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
-            }}
-          >
-            <Link
-              href="#"
-              className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#0274FE] rounded-full"
-            >
-              Get A Demo
-            </Link>
-          </div>
-          <div
-            className="rounded-full p-0.5"
+            className="rounded-full p-[1.5px]"
             style={{
               background:
                 "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",

@@ -47,8 +47,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#00031C]">
-      <div className="bg-[url('/images/footer-bg.png')] bg-no-repeat bg-cover">
+    <footer className="bg-[#00031C] w-full">
+      <div className="bg-[url('/images/footer-bg1.png')] bg-no-repeat bg-cover bg-bottom">
         <div className="px-5 sm:px-10 md:px-20 pt-[63px] pb-[52px] max-w-[1440px] m-auto">
           <div className="flex flex-col md:flex-row items-start justify-between gap-10 md:gap-0">
             {/* Logo & Description */}

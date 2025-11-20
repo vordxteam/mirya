@@ -60,8 +60,8 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`
-                  relative text-[16px] font-normal transition-colors duration-300
-                  ${isActive ? "text-white" : "text-[#73799B]"}
+                  relative text-[16px] transition-colors duration-300
+                  ${isActive ? "text-white font-medium" : "text-[#73799B]  font-normal"}
                   hover:text-white
                   after:absolute after:-bottom-1 after:left-0 after:h-0.5 
                   after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529] 
@@ -77,7 +77,7 @@ export default function Header() {
 
         {/* Desktop Get Started Button */}
         <div className="hidden lg:flex items-center lg:flex-1 lg:justify-end gap-5">
-          <Link href="/coming-soon" className="text-white heading-5 underline cursor-pointer hover:text-white">
+          <Link href="/coming-soon" className="text-white text-[14px] underline cursor-pointer hover:text-white">
             Signin
           </Link>
           <div

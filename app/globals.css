@@ -16,22 +16,21 @@ body {
   inset: 0;
   border-radius: 999px;
   padding: 1px;
-  
+
   /* Linear Gradient as specified */
-  background: linear-gradient(135deg, 
-    #38385D, 
-    #22223C, 
-    #686DDD, 
-    #22223C, 
-    #38385D
+  background: linear-gradient(
+    135deg,
+    #38385d,
+    #22223c,
+    #686ddd,
+    #22223c,
+    #38385d
   );
-  
+
   /* Inner alignment */
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
 }
 
 /* Custom border styles */
@@ -52,18 +51,17 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, 
-    #38385D, 
-    #22223C, 
-    #686DDD, 
-    #22223C, 
-    #38385D
+  background: linear-gradient(
+    135deg,
+    #38385d,
+    #22223c,
+    #686ddd,
+    #22223c,
+    #38385d
   );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
   pointer-events: none;
 }
 
@@ -74,7 +72,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem; /* gap-4 */
-  max-width: 1200px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
@@ -87,24 +85,23 @@ body {
 }
 
 .benefit-text {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
-  color: #FFFFFF;
+  line-height: 16px;
+  color: #ffffff;
   white-space: nowrap;
 }
 
 .gradient-border {
   border-radius: 9999px;
   border: 1px solid transparent;
-  background: 
-    linear-gradient(#14122C, #14122C) padding-box,
-    linear-gradient(90deg, #4542E0, #14122C) border-box;
+  background: linear-gradient(#14122c, #14122c) padding-box,
+    linear-gradient(90deg, #4542e0, #14122c) border-box;
 }
 .non-rounded {
-   border: 1px solid transparent;
-  background: 
-    linear-gradient(#14122C, #14122C) padding-box,
-    linear-gradient(90deg, #00031C, #8EA0E0 , #00031C) border-box;
+  border: 1px solid transparent;
+  background: linear-gradient(#14122c, #14122c) padding-box,
+    linear-gradient(90deg, #00031c, #8ea0e0, #00031c) border-box;
 }
 /* .custom-b{
    position: relative;
@@ -116,26 +113,25 @@ body {
 } */
 
 .non-rounded1 {
-   border: 1px solid transparent;
-  background: 
-    linear-gradient(#14122C, #14122C) padding-box,
-    linear-gradient(0deg, #463BBF, #9C96E3 , #463BBF) border-box;
+  border: 1px solid transparent;
+  background: linear-gradient(#14122c, #14122c) padding-box,
+    linear-gradient(0deg, #463bbf, #9c96e3, #463bbf) border-box;
 }
 
 .plans {
   position: relative;
   /* min-width: 300px; */
   /* min-height: 200px; */
-  background: linear-gradient(135deg, #05061D, #080D2B, #0D0C2E);
+  background: linear-gradient(135deg, #05061d, #080d2b, #0d0c2e);
   border-radius: 12px;
   /* padding: 20px; */
 }
 
 .plans::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -2px;
-  background: linear-gradient(135deg, #3F49D8, #1F1B48, #00041E);
+  background: linear-gradient(135deg, #3f49d8, #1f1b48, #00041e);
   border-radius: 14px;
   z-index: -1;
   filter: blur(1px);

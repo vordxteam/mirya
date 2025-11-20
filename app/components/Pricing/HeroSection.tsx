@@ -106,11 +106,11 @@ const HeroSection = () => {
           actionable insights—so you can get more done with less effort.
         </p>
         <div className="flex justify-center pt-10">
-          <div className="inline-flex bg-transparent custom-border max-w-[222px] p-2">
+          <div className="inline-flex bg-transparent custom-border max-w-[222px] py-2">
             <motion.button
               onClick={() => setActiveTab("monthly")}
               className={`bg-[#00041e] rounded-full px-6 py-[6px] cursor-pointer ${
-                activeTab === "monthly" ? "gradient-border" : ""
+                activeTab === "monthly" ? "gradient-border font-medium" : "font-normal"
               }`}
               animate={{
                 color: activeTab === "monthly" ? "#4F60FA" : "#CAC9D1",
@@ -122,7 +122,7 @@ const HeroSection = () => {
             <motion.button
               onClick={() => setActiveTab("annual")}
               className={`bg-[#00041E] px-6 py-[6px] rounded-full cursor-pointer ${
-                activeTab === "annual" ? "gradient-border" : ""
+                activeTab === "annual" ? "gradient-border font-medium" : "font-normal"
               }`}
               animate={{
                 color: activeTab === "annual" ? "#4F60FA" : "#CAC9D1",

@@ -157,7 +157,7 @@ const Faq = () => {
                   <h2 className="text-white text-2xl md:text-[32px] font-medium leading-9 tracking-[-1.44px]">
                     {section.category}
                   </h2>
-                  <p className="text-[#CAC9D1] text-sm md:text-base mt-3">
+                  <p className="text-[#CAC9D1] text-sm mt-3 max-w-[413px] leading-5">
                     {section.description}
                   </p>
                 </div>
@@ -202,7 +202,7 @@ const Faq = () => {
                             : "max-h-0 opacity-0"
                         } overflow-hidden`}
                       >
-                        <div className="pt-3 text-[#CAC9D1] text-sm md:text-base leading-relaxed">
+                        <div className="pt-3 text-[#CAC9D1] font-light text-sm leading-5">
                           {item.answer}
                         </div>
                       </div>
