@@ -105,7 +105,7 @@ export default function Features() {
             variants={itemVariants}
             className="heading-1 font-medium text-[#FFFFFF] max-w-[700px] text-center"
           >
-            Powerful Features That Make <br /> Automation Effortless
+            Powerful features that make <br /> automation effortless
           </motion.h1>
           <motion.h6
             variants={itemVariants}

@@ -33,7 +33,7 @@ const HowToUse = () => {
       title: "Improve & Scale",
       description:
         "Customize, repeat, or expand your automation across entire teams or departments. Zero code. Zero complexity. Maximum impact.",
-      image: "/images/how3.png",
+      image: "/images/how4.png",
     },
   ];
 
