@@ -1,11 +1,14 @@
-import HeroSection from '@/app/components/Pricing/HeroSection'
-import Image from 'next/image'
-import React from 'react'
+import ChoosePlan from "@/app/components/Pricing/ChoosePlan";
+import Comparison from "@/app/components/Pricing/Comparison";
+import HeroSection from "@/app/components/Pricing/HeroSection";
+import React from "react";
 
 export default function Pricing() {
   return (
     <>
-    <HeroSection/>
+      <HeroSection />
+      <ChoosePlan />
+      <Comparison />
     </>
-  )
+  );
 }

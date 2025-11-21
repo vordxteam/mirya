@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} antialiased overflow-x-hidden`}>
         <Header />
-        {children}
+        <div className="pt-[124px]">{children}</div>
         <CTA />
         <Footer />
       </body>

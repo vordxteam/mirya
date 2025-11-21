@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import GradientButton from "@/app/ui/GradientButton";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import Comparison from "./Comparison";
 
 export default function Cards({ active }: { active: string }) {
   const planData = {
@@ -135,7 +134,7 @@ export default function Cards({ active }: { active: string }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="grid max-w-[1440px] mx-auto  relative sm:grid-cols-2 lg:grid-cols-3 gap-25 sm:gap-10 pt-[152px] px-2 md:px-[86px]  md:pt-[152px]"
+          className="grid max-w-[1440px] mx-auto  relative md:grid-cols-2 lg:grid-cols-3 gap-25 sm:gap-10 pt-[152px] px-2 md:px-[86px]  md:pt-[152px]"
         >
           {currentPlans.map((item, index) => (
             <motion.div
@@ -149,7 +148,7 @@ export default function Cards({ active }: { active: string }) {
                   "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
               }}
               className={`rounded-3xl p-px transition-all ${
-                index === 1 ? "-translate-y-6 md:-translate-y-[86px]" : ""
+                index === 1 ? "translate-y-0 lg:-translate-y-[86px]" : ""
               }`}
             >
               <motion.div
@@ -225,7 +224,6 @@ export default function Cards({ active }: { active: string }) {
           ))}
         </motion.div>
       </div>
-      <Comparison />
     </>
   );
 }

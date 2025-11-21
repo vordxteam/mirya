@@ -1,9 +1,15 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import How1Card from "./HowtouseAnimations/How1Card";
+import How2Card from "./HowtouseAnimations/How2Card";
+import How3Card from "./HowtouseAnimations/How3Card";
+import How4Card from "./HowtouseAnimations/How4Card";
 
 const HowToUse = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const slidesRef = useRef<HTMLDivElement | null>(null);
 
   const slides = [
@@ -12,39 +18,60 @@ const HowToUse = () => {
       title: "Record Your Workflow",
       description:
         "Complete your task just as you normally would, and MIRYA watches how you work clicks, keystrokes, decisions, and all.",
-      image: "/images/how1.png",
     },
     {
       id: 2,
       title: "Understands the Logic",
       description:
         "MIRYA observes the critical decision patterns, understands the steps it sees, and automatically builds a smart logic flow under the hood.",
-      image: "/images/how2.png",
     },
     {
       id: 3,
       title: "Run it Automatically",
       description:
         "Now MIRYA performs the task for you across any system, app, browser, or environment with the same intelligence and adaptability as a human.",
-      image: "/images/how3.png",
     },
     {
       id: 4,
       title: "Improve & Scale",
       description:
         "Customize, repeat, or expand your automation across entire teams or departments. Zero code. Zero complexity. Maximum impact.",
-      image: "/images/how4.png",
     },
   ];
 
-  // Auto-play functionality
+  const slideComponents = [
+    <How2Card />,
+    <How1Card />,
+    <How3Card />,
+    <How4Card />,
+  ];
+
+  // Observe section visibility
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setInView(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-play only when visible
+  useEffect(() => {
+    if (!inView) return;
+
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
+    }, 6000);
 
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [inView, slides.length]);
 
   const handleSlideClick = (index: number) => {
     setActiveSlide(index);
@@ -54,12 +81,15 @@ const HowToUse = () => {
   };
 
   return (
-    <div className="px-5 sm:px-10 md:px-[72px] pt-[72px] sm:pb-[53px] max-w-[1440px] m-auto bg-[#00031c] z-100">
+    <div
+      ref={sectionRef}
+      className="px-5 sm:px-10 md:px-[72px] pt-[72px] sm:pb-[53px] max-w-[1440px] m-auto bg-[#00031c] z-100"
+    >
       <div className="flex flex-col items-center justify-center">
-        {/* Top Title Row */}
+        {/* Title Row */}
         <div className="pb-3 flex items-center justify-center gap-5">
           <Image src="/images/left-line.png" width={73} height={8} alt="line" />
-          <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal text-center">
+          <h1 className="text-[#959EFE] text-[12px] sm:text-[16px]">
             How to Use
           </h1>
           <Image
@@ -71,18 +101,17 @@ const HowToUse = () => {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-[30px] sm:text-[48px] font-medium leading-[38px] sm:leading-14 tracking-[-1.44px] max-w-[972px] text-center pb-3 sm:pb-6">
+        <h1 className="text-[30px] sm:text-[48px] font-medium text-center pb-3 sm:pb-6">
           How MIRYA Works
         </h1>
 
-        {/* Subheading */}
-        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[721px]">
+        <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] text-center max-w-[721px] pb-8">
           Effortless automation starts with MIRYA — no coding, no configuration,
           no waiting. Just drag & drop your ideas, record your workflow, or
           speak your commands as your digital teammate learns and acts.
         </p>
 
-        {/* Slider Image */}
+        {/* Slider */}
         <div
           className="w-full rounded-3xl p-[0.5px]"
           style={{
@@ -90,26 +119,21 @@ const HowToUse = () => {
               "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
           }}
         >
-          <div className="bg-[url('/images/background-2.png')] bg-no-repeat bg-cover bg-center w-full rounded-3xl relative overflow-hidden">
+          <div className="bg-[url('/images/background-2.png')] bg-cover rounded-3xl relative overflow-hidden">
             <div
-              className="flex items-center justify-center sm:pt-20 relative z-10"
+              className="flex items-center justify-center sm:pt-[58px]"
               ref={slidesRef}
             >
-              <div className="relative w-full max-w-[648px] h-[286px]  sm:h-[440px]">
-                {slides.map((slide, index) => (
+              <div className="relative w-full max-w-[648px] h-[286px] sm:h-[510px]">
+                {slides.map((_, index) => (
                   <div
-                    key={slide.id}
-                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-700 ${
                       activeSlide === index ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <Image
-                      src={slide.image}
-                      width={648}
-                      height={440}
-                      alt={slide.title}
-                      className="object-contain"
-                    />
+                    {/* FORCE REMOUNT TO RESTART ANIMATION */}
+                    <div key={activeSlide}>{slideComponents[index]}</div>
                   </div>
                 ))}
               </div>
@@ -117,44 +141,40 @@ const HowToUse = () => {
           </div>
         </div>
 
-        {/* Progress bars and Content Section */}
-        <div className="mt-3 sm:mt-6 w-full">
-          {/* Desktop: show lines */}
-          <div className=" flex items-center w-full relative">
-            {slides.map((_, index) => (
+        {/* Progress + Content */}
+        <div className="mt-4 sm:mt-8 w-full">
+          <div className="flex items-center w-full relative">
+            {slides.map((slide, index) => (
               <div key={index} className="flex-1 relative">
                 <button
                   onClick={() => handleSlideClick(index)}
-                  className="w-full h-0.5 rounded-full overflow-hidden bg-[#45557C] cursor-pointer transition-all hover:bg-[#5565AC]"
-                  aria-label={`Go to slide ${index + 1}`}
+                  className="relative w-full h-0.5 bg-[#45557C] hover:bg-[#5565AC] rounded-full
+             cursor-pointer
+             after:absolute after:inset-0 after:h-[250px] after:w-full after:top-1/2 after:-translate-y-1/2
+             after:cursor-pointer after:bg-transparent"
                 >
                   <div
-                    className={`h-full transition-all duration-300 ${
+                    className={`h-full transition-all ${
                       activeSlide === index ? "bg-[#4F60FA] w-full" : "w-0"
                     }`}
-                  ></div>
+                  />
                 </button>
 
-                {/* Slide Content under line */}
+                {/* Desktop Content */}
                 <div
-                  className={`absolute top-12 left-0 right-0 transition-all duration-700 ease-in-out hidden md:block ${
+                  className={`absolute top-12 left-0 right-0 hidden md:block transition-all ${
                     activeSlide === index
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-4 pointer-events-none"
                   }`}
                 >
-                  <div className="flex flex-col items-start text-left space-y-[25px] relative">
-                    <div className="absolute -left-5 -top-5 z-0">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
-                    </div>
-                    <span className="text-[#4F60FA] text-[10px] md:text-[14px] font-normal leading-5 text-base relative z-10">
-                      /{index + 1}
-                    </span>
-                    <h3 className="text-white text-2xl font-medium leading-7 relative z-10">
-                      {slides[index].title}
+                  <div className="flex flex-col text-left space-y-4 relative">
+                    <span className="text-[#4F60FA] text-sm">/{index + 1}</span>
+                    <h3 className="text-white text-2xl font-medium">
+                      {slide.title}
                     </h3>
-                    <p className="text-[#CAC9D1] text-[14px] leading-5 relative z-10">
-                      {slides[index].description}
+                    <p className="text-[#CAC9D1] text-sm">
+                      {slide.description}
                     </p>
                   </div>
                 </div>
@@ -162,25 +182,21 @@ const HowToUse = () => {
             ))}
           </div>
 
-          {/* Mobile: show only active content centered */}
-          <div className="flex flex-col md:hidden items-center justify-center relative">
-            <div className="absolute -left-5 -top-5 z-0">
-              <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
-            </div>
-            <span className="text-[#4F60FA] text-[10px] md:text-[14px] font-normal leading-5 text-base relative z-10">
+          {/* Mobile Content */}
+          <div className="flex flex-col md:hidden items-center mt-6">
+            <span className="text-[#4F60FA] text-sm">
               /{slides[activeSlide].id}
             </span>
-            <h3 className="text-white text-xl sm:text-2xl font-medium leading-7 text-center relative z-10">
+            <h3 className="text-white text-xl font-medium mt-2">
               {slides[activeSlide].title}
             </h3>
-            <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] leading-5 text-center mt-2 relative z-10">
+            <p className="text-[#CAC9D1] text-[14px] text-center mt-1">
               {slides[activeSlide].description}
             </p>
           </div>
         </div>
 
-        {/* Spacer */}
-        <div className=" hidden sm:block h-[250px] md:h-[200px]"></div>
+        <div className="hidden sm:block h-[200px]"></div>
       </div>
     </div>
   );

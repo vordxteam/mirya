@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/16/solid";
 
@@ -20,6 +20,17 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const pathname = usePathname();
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 5);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Animation variants
   const sidebarVariants = {
@@ -42,8 +53,17 @@ export default function Header() {
     open: { opacity: 1, x: 0 },
   };
   return (
-    <header className="">
-      <nav className="mx-auto flex max-w-[1440px] items-center justify-between p-6 lg:py-[26px] lg:px-20">
+    <motion.header
+      animate={{
+        backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
+        backgroundColor: scrolled
+          ? "rgba(0,0,0,0.35)" // darker look for black theme
+          : "rgba(0,0,0,0)",
+      }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="fixed z-50000 w-full top-0"
+    >
+      <nav className="mx-auto flex max-w-[1440px] items-center justify-between p-6 lg:py-[26px] xl:px-20">
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
@@ -61,7 +81,11 @@ export default function Header() {
                 href={link.href}
                 className={`
                   relative text-[16px] transition-colors duration-300
-                  ${isActive ? "text-white font-medium" : "text-[#73799B]  font-normal"}
+                  ${
+                    isActive
+                      ? "text-white font-medium"
+                      : "text-[#73799B]  font-normal"
+                  }
                   hover:text-white
                   after:absolute after:-bottom-1 after:left-0 after:h-0.5 
                   after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529] 
@@ -77,7 +101,10 @@ export default function Header() {
 
         {/* Desktop Get Started Button */}
         <div className="hidden lg:flex items-center lg:flex-1 lg:justify-end gap-5">
-          <Link href="/coming-soon" className="text-white text-[14px] underline cursor-pointer hover:text-white">
+          <Link
+            href="/coming-soon"
+            className="text-white text-[14px] underline cursor-pointer hover:text-white"
+          >
             Signin
           </Link>
           <div
@@ -193,7 +220,7 @@ export default function Header() {
                 {/* Signin Button */}
                 <motion.div variants={linkItemVariants}>
                   <Link
-                  href="/coming-soon"
+                    href="/coming-soon"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-[#73799B] text-[18px] font-normal underline cursor-pointer hover:text-white w-full text-left py-2"
                   >
@@ -224,6 +251,6 @@ export default function Header() {
           </>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }
