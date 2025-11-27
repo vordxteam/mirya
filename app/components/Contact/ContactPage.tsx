@@ -35,11 +35,11 @@ export default function ContactPage() {
       </div>
       <div className="flex flex-col items-center pt-15 relative px-3 sm:px-20 max-w-[1440px] m-auto">
         <div className="absolute top-0 z-[-1000]">
-          <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+          <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[90px] w-[181px] h-[94px]"></div>
         </div>
 
         {/* Fixed Container */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full pb-15">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full pb-15">
           {data.map((item) => (
             <a
               key={item.id}
@@ -66,9 +66,9 @@ export default function ContactPage() {
               </div>
             </a>
           ))}
-        </div>
+        </div> */}
 
-        <div className="py-16 w-full flex flex-col md:flex-row justify-between gap-8 md:gap-12">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-8 md:gap-12">
           {/* Left Section - Improved spacing */}
           <div className="flex flex-col justify-between space-y-8 md:space-y-12">
             <div className="space-y-8">
@@ -132,7 +132,7 @@ export default function ContactPage() {
 
           {/* Right Section - Contact Form */}
           <div className=" non-rounded1 p-1 rounded-lg">
-            <div className="bg-[#080E34] rounded-lg p-7">
+            <div className="bg-[#080E34] rounded-lg p-3 sm:p-7">
               <h3 className="heading-3 font-regular text-white">
                 Send Message
               </h3>

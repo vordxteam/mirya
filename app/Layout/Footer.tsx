@@ -22,15 +22,15 @@ const Footer = () => {
         { id: 5, name: "MIRYA vs n8n", href: "/coming-soon" },
         { id: 6, name: "MIRYA vs n8n", href: "/coming-soon" },
         { id: 7, name: "MIRYA vs n8n", href: "/coming-soon" },
-        { id: 8, name: "John user test", href: "/coming-soon" },
+        { id: 8, name: "Join user test", href: "/user-testing" },
       ],
     },
     {
       title: "LEGAL",
       childs: [
-        { id: 9, name: "Privacy Policy", href: "/coming-soon" },
-        { id: 10, name: "Security", href: "/coming-soon" },
-        { id: 11, name: "Imprint", href: "/coming-soon" },
+        { id: 9, name: "Privacy Policy", href: "/privacy-policy" },
+        { id: 10, name: "Security", href: "/security" },
+        { id: 11, name: "Imprint", href: "/imprint" },
       ],
     },
     {

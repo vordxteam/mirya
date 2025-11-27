@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GradientButton from "@/app/ui/GradientButton";
 // import Cards from "./Cards";
 
 const HeroSection = () => {
@@ -85,7 +84,7 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/left-line.png" width={73} height={8} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Contact Us
+            User Testing
           </h1>
           <Image
             src="/images/right-line.png"
@@ -95,27 +94,14 @@ const HeroSection = () => {
           />
         </div>
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[708px] w-full text-center pb-3 sm:pb-6">
-          Get in Touch With the MIRYA Team
+          Become MIRYA Research Participant
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
-          Tell us what you’re looking for, and we’ll point you in the right
-          direction. Fast, friendly, and tailored support always.
+          We are looking for participants to help us shape the future of MIRYA.
+          If you are interested in taking part in research activities fill your
+          details out below. By submitting this form, you agree to our privacy
+          policy.
         </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <GradientButton
-            label="Get A Demo"
-            href="#"
-            bgColor="#0274FE"
-            textColor="#fff"
-          />
-          <GradientButton
-            label="Get A Demo"
-            href="#"
-            bgColor="#00031C"
-            textColor="#fff"
-          />
-        </div>
 
         <div className="relative">
           <motion.div

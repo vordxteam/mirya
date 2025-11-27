@@ -1,13 +1,14 @@
-import ContactPage from '@/app/components/Contact/ContactPage'
-import HeroSection from '@/app/components/Contact/HeroSection'
-import React from 'react'
+import ContactCards from "@/app/components/Contact/ContactCards";
+import ContactPage from "@/app/components/Contact/ContactPage";
+import HeroSection from "@/app/components/Contact/HeroSection";
+import React from "react";
 
 export default function Contact() {
-    
   return (
     <div>
-      <HeroSection/>
-      <ContactPage/>
+      <HeroSection />
+      <ContactPage />
+      <ContactCards />
     </div>
-  )
+  );
 }
