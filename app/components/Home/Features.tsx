@@ -179,7 +179,7 @@ export default function Features() {
                   "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
                 border: "1px solid transparent",
               }}
-              className="relative px-3 sm:px-0 pt-8 z-100"
+              className="relative px-3 sm:px-0 pt-8"
             >
               <motion.div variants={fadeInVariants}>
                 <Image

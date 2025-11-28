@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/articles", label: "Article" },
   { href: "/pricing", label: "Pricing" },
   { href: "/industries", label: "Industries" },
-  { href: "/faq", label: "FAQ" },
+  // { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -21,6 +21,10 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const pathname = usePathname();
+
+  const [open, setOpen] = useState(false);
+const [selected, setSelected] = useState({ label: "English", flag: "/images/britain.png" });
+
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -49,6 +53,22 @@ export default function Header() {
     open: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
   };
 
+  // Add this useEffect hook after your existing useEffect for scroll
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    // Close dropdown if click is outside the dropdown and language selector
+    if (open && !target.closest('.language-selector')) {
+      setOpen(false);
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, [open]);
+
   const linkItemVariants = {
     closed: { opacity: 0, x: 20 },
     open: { opacity: 1, x: 0 },
@@ -73,7 +93,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-8">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -101,28 +121,69 @@ export default function Header() {
         </div>
 
         {/* Desktop Get Started Button */}
-        <div className="hidden lg:flex items-center lg:flex-1 lg:justify-end gap-5">
-          <Link
-            href="/coming-soon"
-            className="text-white text-[14px] underline cursor-pointer hover:text-white"
-          >
-            Signin
-          </Link>
-          <div
-            className="rounded-full p-0.5"
-            style={{
-              background:
-                "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+       <div className="hidden lg:flex items-center lg:flex-1 lg:justify-end gap-5">
+  <div className="relative text-white language-selector">
+    <div
+      onClick={() => setOpen(!open)}
+      className="rounded-lg cursor-pointer flex items-center gap-1 justify-between"
+    >
+      <span className="flex items-center gap-2 heading-6">
+        {selected.label}
+      </span>
+      <Image src='/images/dropdown.svg' alt="dropdown" width={20} height={10} />
+    </div>
+
+    {open && (
+      <div 
+        className="absolute top-full left-0 w-[150px] mt-1 bg-[#050925] border border-transparent rounded-lg overflow-hidden z-50"
+        style={{
+          background: 'linear-gradient(#050925, #050925) padding-box, conic-gradient(from 0deg at 50% 50%, #00031c, #8ea0e0, #00031c) border-box',
+          border: '1px solid transparent'
+        }}
+      >
+        {[
+          { label: "English", flag: "/images/british.png" },
+          { label: "German", flag: "/images/german.png" },
+          { label: "Turkish", flag: "/images/turkish.png" },
+        ].map((item) => (
+          <div 
+            key={item.label}
+            onClick={(e) => {
+              e.stopPropagation(); // This prevents the event from bubbling up
+              setSelected(item);
+              setOpen(false);
             }}
+            className="px-3 py-2 flex items-center heading-7 font-normal gap-2 cursor-pointer border-b border-[#FFFFFF1F] last:border-none hover:bg-white/10"
           >
-            <Link
-              href="/contact"
-              className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full"
-            >
-              Get Started
-            </Link>
+            <Image src={item.flag} alt={item.label} width={16} height={11} /> 
+            {item.label}
           </div>
-        </div>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <Link
+    href="/coming-soon"
+    className="text-white text-[14px] underline cursor-pointer hover:text-white"
+  >
+    Signin
+  </Link>
+  <div
+    className="rounded-full p-0.5"
+    style={{
+      background:
+        "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+    }}
+  >
+    <Link
+      href="/contact"
+      className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full"
+    >
+      Get Started
+    </Link>
+  </div>
+</div>
 
         {/* Mobile Menu Button (Burger) */}
         <div className="flex lg:hidden">
@@ -254,4 +315,9 @@ export default function Header() {
       </AnimatePresence>
     </motion.header>
   );
-}
+}<style jsx>{`
+                .non-rounded2 {
+                  background: linear-gradient(#4542e0, #4542e0) padding-box,
+                    linear-gradient(0deg, #00031c, #8ea0e0, #00031c) border-box;
+                }
+              `}</style>

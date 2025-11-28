@@ -10,34 +10,28 @@ const Footer = () => {
     {
       title: "Pages",
       childs: [
-        { id: 1, name: "Product", href: "/about" },
-        { id: 2, name: "Contact", href: "/contact" },
-        { id: 3, name: "Articles", href: "/articles" },
-        { id: 4, name: "Careers", href: "/coming-soon" },
+        { id: 1, name: "Product", href: "/about", img : "" },
+        { id: 2, name: "Contact", href: "/contact", img : "" },
+        { id: 3, name: "FAQs", href: "/faq", img : "" },
+        { id: 4, name: "Careers", href: "/coming-soon", img : "" },
       ],
     },
     {
       title: "TECHNOLOGY",
       childs: [
-        { id: 5, name: "MIRYA vs n8n", href: "/coming-soon" },
-        { id: 6, name: "MIRYA vs n8n", href: "/coming-soon" },
-        { id: 7, name: "MIRYA vs n8n", href: "/coming-soon" },
-        { id: 8, name: "Join user test", href: "/user-testing" },
+        { id: 5, name: "MIRYA vs n8n", href: "/coming-soon", img : "" },
+        { id: 6, name: "MIRYA vs n8n", href: "/coming-soon", img : "" },
+        { id: 7, name: "MIRYA vs n8n", href: "/coming-soon", img : "" },
+        { id: 8, name: "Join user test", href: "/user-testing", img : "" },
       ],
     },
+    
     {
-      title: "LEGAL",
+      title: "CONTACT",
       childs: [
-        { id: 9, name: "Privacy Policy", href: "/privacy-policy" },
-        { id: 10, name: "Security", href: "/security" },
-        { id: 11, name: "Imprint", href: "/imprint" },
-      ],
-    },
-    {
-      title: "CONNECT",
-      childs: [
-        { id: 12, name: "Youtube", href: "https://www.youtube.com/" },
-        { id: 13, name: "Twitter", href: "https://x.com" },
+        { id: 12, name: "mirya@gmail.com", href: "mailto:mirya@gmail.com", img : "/images/mail.svg" },
+        { id: 13, name: "+1 (208) 120-802", href: "tel:+1 (208) 120-802" , img : "/images/phone.svg" },
+        { id: 13, name: "Los Angeles, CA", href: "https://www.google.com/maps/place/Los+Angeles,+CA,+USA/@34.0206084,-118.7413971,10z/data=!3m1!4b1!4m6!3m5!1s0x80c2c75ddc27da13:0xe22fdf6f254608f4!8m2!3d34.0549076!4d-118.242643!16s%2Fm%2F030qb3t?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" , img : "/images/location.svg" },
       ],
     },
   ];
@@ -47,178 +41,100 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#00031C] w-full">
+    <footer className="bg-[#00031C] w-full z-[-100000] ">
       <div className="bg-[url('/images/footer-bg1.png')] bg-no-repeat bg-cover bg-bottom">
         <div className="px-5 sm:px-10 md:px-20 pt-[63px] pb-[52px] max-w-[1440px] m-auto">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-10 md:gap-0">
-            {/* Logo & Description */}
-            <div className="space-y-3 flex-1">
-              <Image
-                src="/images/footer-logo.png"
-                width={199}
-                height={60}
-                alt="logo"
+          <div className="flex flex-col pb-5 sm:pb-[62px] border-b border-[#FFFFFF52] sm:flex-row items-center justify-between">
+            <h3 className="heading-3 font-semibold text-[#FFFFFF] max-w-[320px]">
+              Join our newsletter to keep up to date with us!
+            </h3>
+            <div className="flex flex-col sm:flex-row  gap-3">
+              <div className="relative mt-3 sm:mt-0">
+              <input
+                type="text"
+                placeholder="Enter your email"
+                className=" pl-[54px] pr-6 py-[14px] border border-[#FFFFFF3D] rounded-full w-full lg:w-[360px]"
               />
-              <p className="max-w-[353px] w-full text-[#CAC9D1] text-[14px] font-normal leading-5">
-                Revolutionize the writing industry by making high-quality
-                content generation faster
-              </p>
-            </div>
-
-            {/* Contact Info */}
-            <div className="flex flex-col gap-[22px] flex-1">
-              <div className="space-y-1.5">
-                <h1 className="text-[#73799B] text-[16px] font-normal leading-5">
-                  Email
-                </h1>
-                <Link
-                  href="mailto:mirya@gmail.com"
-                  className="text-[#F4F7FF] text-[18px] font-normal leading-6"
-                >
-                  mirya@gmail.com
-                </Link>
+              <Image src='/images/person.svg' width={20} height={20} alt="person" className="absolute top-4 left-6"/>
               </div>
-              <div className="space-y-1.5">
-                <h1 className="text-[#73799B] text-[16px] font-normal leading-5">
-                  Phone number
-                </h1>
-                <Link
-                  href="tel:+1208120802"
-                  className="text-[#F4F7FF] text-[18px] font-normal leading-6"
-                >
-                  +1 (208) 120-802
-                </Link>
-              </div>
-              <div className="space-y-1.5">
-                <h1 className="text-[#73799B] text-[16px] font-normal leading-5">
-                  Location
-                </h1>
-                <Link
-                  href="https://www.google.com/maps?q=Los+Angeles,+CA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#F4F7FF] text-[18px] font-normal leading-6"
-                >
-                  Los Angeles, CA
-                </Link>
-              </div>
-            </div>
-
-            {/* Newsletter & Social */}
-            <div className="flex flex-col flex-1 w-full max-w-[300px]">
-              <div className="pb-6 w-full">
-                <label className="text-[#73799B] text-[16px] font-normal leading-5">
-                  Subscribe to our newsletter
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  className="border-t-0 border-x-0 border-b border-[#CAC9D1] h-9 outline-none w-full bg-transparent text-white px-2 mt-2"
-                />
-              </div>
-              <div className="w-fit">
-                <GradientButton
-                  label="Submit"
-                  href="#"
-                  bgColor="#00031C"
-                  textColor="#fff"
-                />
-              </div>
-              {/* <div className="flex items-center gap-4 mt-8">
-                <Link
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-pointer rounded-full w-12 h-12 flex items-center justify-center border border-[#9A9DC1] bg-transparent hover:bg-[#0274FE] transition-all"
-                >
-                  <Image
-                    src="/images/facebook.svg"
-                    width={24}
-                    height={24}
-                    alt="Facebook"
-                  />
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-pointer rounded-full w-12 h-12 flex items-center justify-center border border-[#9A9DC1] bg-transparent hover:bg-[#0274FE] transition-all"
-                >
-                  <Image
-                    src="/images/linkedin.svg"
-                    width={24}
-                    height={24}
-                    alt="LinkedIn"
-                  />
-                </Link>
-                <Link
-                  href="https://www.globe.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-pointer rounded-full w-12 h-12 flex items-center justify-center border border-[#9A9DC1] bg-transparent hover:bg-[#0274FE] transition-all"
-                >
-                  <Image
-                    src="/images/global.svg"
-                    width={24}
-                    height={24}
-                    alt="Website"
-                  />
-                </Link>
-              </div> */}
+              <button
+                className="
+    text-white 
+    font-normal
+    py-3 
+    px-6
+    cursor-pointer 
+    rounded-full 
+    relative 
+    overflow-hidden z-0
+  "
+                style={{
+                  background:
+                    "linear-gradient(#0274FE, #0274FE) padding-box, linear-gradient(135deg, #8ea0e0, #00031c) border-box",
+                  border: "2px solid transparent",
+                }}
+              >
+                Subscribe
+              </button>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8 pt-[58px] w-full">
-            {footerLinks.map((section, index) => (
-              <div key={index} className="">
-                <h3 className="text-[#FFFFFF80] heading-6 font-regular leading-5 mb-4">
-                  {section.title}
-                </h3>
-                <div className="flex flex-col gap-[14px]">
-                  {section.childs.map((link) => (
-                    <Link
-                      key={link.id}
-                      href={link.href}
-                      className={`heading-6 font-regular text-[#FFFFFF] ${
-                        link.name === "John user test" ? "underline" : ""
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
+              <div className="flex flex-col sm:flex-row w-full justify-between py-6 border-b border-b-[#FFFFFF52]">
+                  <div className="flex flex-col  justify-between gap-18">
+                    <Image src='/images/guarantee.png' alt="Guarantee card" height={56} width={100} />
+                    <Image src='/images/footer-logo1.png' alt="Guarantee card" height={100} width={274} />
+                  </div>
+
+          <div className="flex flex-col md:flex-row mt-3 sm:mt-0  justify-end  gap-18 w-full">
+           {footerLinks.map((section, index) => (
+  <div key={index} className="">
+    <h3 className="text-[#FFFFFF80] heading-5 font-medium leading-5 mb-4">
+      {section.title}
+    </h3>
+    <div className="flex flex-col gap-[14px]">
+      {section.childs.map((link) => (
+        <div key={link.id} className="flex gap-2 items-center">
+          {link.img && (
+            <Image 
+              src={link.img} 
+              width={20} 
+              height={20} 
+              alt={`${link.name} icon`}
+            />
+          )}
+          <Link
+            href={link.href}
+            className={`heading-5 font-normal  text-[#FFFFFF] ${
+              link.name === "Join user test" ? "underline" : ""
+            }`}
+          >
+            {link.name}
+          </Link>
+        </div>
+      ))}
+    </div>
+  </div>
+))}
+          </div>
           </div>
 
           {/* Bottom Section */}
-          <div className="flex flex-col md:flex-row items-center justify-between mt-16 md:mt-[157px] gap-4">
-            <p className="max-w-[466px] text-[#F4F7FF] text-[14px] md:text-[16px] font-normal leading-5 text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center justify-between pt-10 gap-4">
+            <p className=" text-[#F4F7FF] heading-6 font-normal leading-5 text-center md:text-left">
               © 2024 Copyright - Nexux | Designed by "WordPress River" | License
               | Powered by WordPress
             </p>
-            <button
-              onClick={handleBackToTop}
-              className="cursor-pointer flex items-center gap-2 text-[#F4F7FF] text-[16px] font-normal leading-5 hover:underline"
-            >
-              <span>Back To Top</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M12 5L18 11M12 5L6 11M12 5V19"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+            <div className="flex gap-3">
+            <div className="flex gap-3 border-r border-r-[#FFFFFF33] pr-2">
+              <Link href='/privacy-policy' className="heading-6 font-normal white">Privacy Policy</Link>
+            </div>
+            <div className="flex gap-3 border-r border-r-[#FFFFFF33] pr-2">
+              <Link href='/security' className="heading-6 font-normal white">Security</Link>
+            </div>
+            <div className="flex gap-3 border-r border-r-[#FFFFFF33] pr-2">
+              <Link href='/imprint' className="heading-6 font-normal white">Imprint</Link>
+            </div>
+            </div>
           </div>
         </div>
       </div>

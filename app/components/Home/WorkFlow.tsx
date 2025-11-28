@@ -5,7 +5,7 @@ import WorkFlowAnimation from "./HowtouseAnimations/WorkFlowAnimation";
 
 const WorkFlow = () => {
   return (
-    <div className="bg-[#00031C] relative z-10">
+    <div className="bg-[#00031C] relative">
       <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-5 lg:items-center max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-10 sm:py-[60px] relative overflow-hidden">
         {/* Background blur */}
         <div className="absolute top-24 left-1/2 lg:left-[422px] -translate-x-1/2 lg:translate-x-0 -z-10">

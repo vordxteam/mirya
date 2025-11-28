@@ -132,7 +132,7 @@ export default function BuildForYouSlider() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full  max-w-[464px]  h-[570px]"
+      className="relative w-full  max-w-[464px] z-0 h-[570px]"
       style={{
         cursor: isDragging ? "grabbing" : "grab",
       }}
