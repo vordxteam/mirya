@@ -157,10 +157,10 @@ const BenefitCard: React.FC<CardProps> = ({
             <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
           </div>
 
-          <h1 className="text-[#F4F7FF] text-[18px] sm:text-[20px] font-semibold leading-6 relative z-10">
+          <h1 className="text-[#F4F7FF] text-[18px] sm:text-[20px] font-semibold leading-6 relative ">
             {title}
           </h1>
-          <p className="text-[#CAC9D1] text-[14px] leading-5 relative z-10">
+          <p className="text-[#CAC9D1] text-[14px] leading-5 relative ">
             {description}
           </p>
         </div>

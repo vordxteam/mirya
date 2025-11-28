@@ -119,6 +119,12 @@ body {
   background: linear-gradient(#14122c, #14122c) padding-box,
     linear-gradient(90deg, #00031c, #8ea0e0, #00031c) border-box;
 }
+
+.non-rounded2 {
+  border: 1px solid transparent;
+  background: linear-gradient(#14122C, #4542E0) padding-box,
+    linear-gradient(0deg, #00031c, #8ea0e0, #00031c) border-box;
+}
 /* .custom-b{
    position: relative;
   border-radius: 12px;
@@ -159,4 +165,18 @@ body {
 
 .backdrop-blur {
   backdrop-filter: blur(10px);
+}
+
+
+.hide-scrollbar {
+  /* Hide scrollbar for IE, Edge */
+  -ms-overflow-style: none;
+  
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  
+  /* Hide scrollbar for Chrome, Safari, Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

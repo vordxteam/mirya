@@ -5,7 +5,7 @@ const Cards = () => {
   const cardsData = [
     {
       id: 1,
-      icon: "/images/icon1.png",
+      icon: "/images/icon1.svg",
       title: "What are the system requirements for using Nexux?",
       description:
         "Nexux runs smoothly on all modern devices with no heavy setup. Just a stable internet connection and an updated browser are all you need...",
@@ -13,58 +13,58 @@ const Cards = () => {
     },
     {
       id: 2,
-      icon: "/images/icon2.png",
-      title: "How do I integrate Nexux with third-party apps?",
+      icon: "/images/icon2.svg",
+      title: "How can I update my account information?",
       description:
-        "Easily connect Nexux with popular third-party tools and apps for seamless workflow automation.",
+        "Nexux runs smoothly on all modern devices with no heavy setup. Just a stable internet connection and an updated browser are all you need...",
       linkText: "Learn More",
     },
     {
       id: 3,
-      icon: "/images/icon3.png",
-      title: "Is there a free trial available?",
+      icon: "/images/icon3.svg",
+      title: "What are the first steps to take after signing up?",
       description:
-        "Yes! You can try Nexux free for 14 days and explore all features with no credit card required.",
+       "Nexux runs smoothly on all modern devices with no heavy setup. Just a stable internet connection and an updated browser are all you need...",
       linkText: "Learn More",
     },
     {
       id: 4,
-      icon: "/images/icon4.png",
-      title: "How secure is my data on Nexux?",
+      icon: "/images/icon4.svg",
+      title: "How can I integrate Nexux with other tools?",
       description:
-        "Nexux uses industry-standard encryption and secure servers to keep your data safe at all times.",
+        "Nexux runs smoothly on all modern devices with no heavy setup. Just a stable internet connection and an updated browser are all you need...",
       linkText: "Learn More",
     },
     {
       id: 5,
-      icon: "/images/icon5.png",
-      title: "Can I customize my dashboard?",
+      icon: "/images/icon5.svg",
+      title: "Where can I find tutorials or user guides?",
       description:
-        "Personalize your dashboard with widgets, themes, and layouts to match your workflow preferences.",
+        "Nexux runs smoothly on all modern devices with no heavy setup. Just a stable internet connection and an updated browser are all you need...",
       linkText: "Learn More",
     },
     {
       id: 6,
-      icon: "/images/icon6.png",
-      title: "Does Nexux support multiple users?",
+      icon: "/images/icon6.svg",
+      title: "What should I do if I encounter a technical issue?",
       description:
-        "Yes! Invite team members and manage roles, permissions, and collaborative tasks efficiently.",
+        "Nexux runs smoothly on all modern devices with no heavy setup. Just a stable internet connection and an updated browser are all you need...",
       linkText: "Learn More",
     },
     {
       id: 7,
-      icon: "/images/icon7.png",
-      title: "What kind of customer support is available?",
+      icon: "/images/icon7.svg",
+      title: "How do I invite team members to collaborate on the platform?",
       description:
-        "Our support team is available 24/7 via chat, email, and phone to help you with any issues.",
+        "Nexux runs smoothly on all modern devices with no heavy setup. Just a stable internet connection and an updated browser are all you need...",
       linkText: "Learn More",
     },
     {
       id: 8,
-      icon: "/images/icon8.png",
+      icon: "/images/icon8.svg",
       title: "How do I upgrade my plan?",
       description:
-        "Easily upgrade or downgrade your subscription anytime through your account settings without interruptions.",
+        "Nexux runs smoothly on all modern devices with no heavy setup. Just a stable internet connection and an updated browser are all you need...",
       linkText: "Learn More",
     },
   ];
