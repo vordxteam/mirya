@@ -10,6 +10,7 @@ export default function CTAConditional() {
   const ctaExclusion = [
     '/privacy',
     '/security',
+    '/sales-form',
   ];
 
   // Check if current path is in exclusion list

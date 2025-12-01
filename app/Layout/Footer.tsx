@@ -41,7 +41,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#00031C] w-full z-[-100000] ">
+    <footer className="bg-[#00031C] w-full relative z-[-1] ">
       <div className="bg-[url('/images/footer-bg1.png')] bg-no-repeat bg-cover bg-bottom">
         <div className="px-5 sm:px-10 md:px-20 pt-[63px] pb-[52px] max-w-[1440px] m-auto">
           <div className="flex flex-col pb-5 sm:pb-[62px] border-b border-[#FFFFFF52] sm:flex-row items-center justify-between">
@@ -53,7 +53,7 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Enter your email"
-                className=" pl-[54px] pr-6 py-[14px] border border-[#FFFFFF3D] rounded-full w-full lg:w-[360px]"
+                className=" pl-[54px] heading-6 font-normal pr-6 py-[14px] border border-[#FFFFFF3D] rounded-full w-full lg:w-[360px]"
               />
               <Image src='/images/person.svg' width={20} height={20} alt="person" className="absolute top-4 left-6"/>
               </div>
@@ -66,7 +66,7 @@ const Footer = () => {
     cursor-pointer 
     rounded-full 
     relative 
-    overflow-hidden z-0
+    overflow-hidden 
   "
                 style={{
                   background:
@@ -104,9 +104,7 @@ const Footer = () => {
           )}
           <Link
             href={link.href}
-            className={`heading-5 font-normal  text-[#FFFFFF] ${
-              link.name === "Join user test" ? "underline" : ""
-            }`}
+            className={`heading-5 font-normal  text-[#FFFFFF] `}
           >
             {link.name}
           </Link>
