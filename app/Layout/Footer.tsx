@@ -13,7 +13,7 @@ const Footer = () => {
         { id: 1, name: "Product", href: "/about", img : "" },
         { id: 2, name: "Contact", href: "/contact", img : "" },
         { id: 3, name: "FAQs", href: "/faq", img : "" },
-        { id: 4, name: "Careers", href: "/coming-soon", img : "" },
+        { id: 4, name: "Careers", href: "/careers", img : "" },
       ],
     },
     {
@@ -121,8 +121,7 @@ const Footer = () => {
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row items-center justify-between pt-10 gap-4">
             <p className=" text-[#F4F7FF] heading-6 font-normal leading-5 text-center md:text-left">
-              © 2024 Copyright - Nexux | Designed by "WordPress River" | License
-              | Powered by WordPress
+             © 2024 Copyright - MIRYA
             </p>
             <div className="flex gap-3">
             <div className="flex gap-3 border-r border-r-[#FFFFFF33] pr-2">

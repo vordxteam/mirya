@@ -1,44 +1,67 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const DetailsPanel = () => {
   return (
-    <div className="py-[60px] px-2 sm:px-20">
+    <div className="px-2 relative sm:px-20">
+      <div className="absolute top-24 z-[-1] left-[40%]">
+            <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[71px]"></div>
+          </div>
+      <div className="p-px max-w-[964px] mx-auto rounded-[16px]" style={{
+                background:
+                  "linear-gradient(0deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
+              }}>
+      <div className="flex items-start gap-4 px-8 py-6 overflow-hidden bg-[#00031C] rounded-[16px] relative">
+        <Image src='/images/reward.png' alt="reward" height={72} width={72} />
+        <div className="space-y-3 ">
+        <p className="heading-3 font-medium text-[#F4F7FF]">Your Rewards for Joining MIRYA User Testing</p>
+        <p className="heading-6 font-normal max-w-[709px]">You’ll receive free access to MIRYA, early access to new features, and exclusive discounts on paid plans after completing your user test.</p>
+        </div>
+         <div className="absolute top-3 left-50">
+            <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[71px]"></div>
+          </div>
+           <div className="absolute bottom-0 right-0">
+            <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[71px]"></div>
+          </div>
+      </div>
+      </div>
+      <div className="py-15"> 
       <div
-        className="max-w-[1440px] m-auto rounded-lg p-px"
+        className="max-w-[964px] m-auto  rounded-lg p-px"
         style={{
           background: "linear-gradient(91deg, #4542E0 5.02%, #14122C 95.9%)",
         }}
       >
-        <div className="px-4 sm:px-8 py-6 space-y-6 bg-[#080E34] rounded-lg">
+        <div className="px-4  sm:px-8 py-6 space-y-6 bg-[#080E34] rounded-lg">
           <h1 className="heading-3 font-normal">Fill out the details below.</h1>
           <div className="grid grid-cols-2 gap-x-3 gap-y-4">
-            <input type="text" placeholder="First name" className="input-box" />
-            <input type="text" placeholder="Last name" className="input-box" />
+            <input type="text" placeholder="First name" className="input-box placeholder:text-[#FFFFFFE0]" />
+            <input type="text" placeholder="Last name" className="input-box placeholder:text-[#FFFFFFE0]" />
             <input
               type="text"
               placeholder="Phone number"
-              className="input-box"
+              className="input-box placeholder:text-[#FFFFFFE0]"
             />
             <input
               type="text"
               placeholder="Business email"
-              className="input-box"
+              className="input-box placeholder:text-[#FFFFFFE0]"
             />
             <input
               type="text"
               placeholder="Company name"
-              className="input-box"
+              className="input-box placeholder:text-[#FFFFFFE0]"
             />
             <input
               type="text"
               placeholder="Company website"
-              className="input-box"
+              className="input-box placeholder:text-[#FFFFFFE0]"
             />
-            <input type="text" placeholder="Occupation" className="input-box" />
-            <input type="text" placeholder="Job/Title" className="input-box" />
-            <input type="text" placeholder="Location" className="input-box" />
-            <input type="text" placeholder="Address" className="input-box" />
+            <input type="text" placeholder="Occupation" className="input-box placeholder:text-[#FFFFFFE0]" />
+            <input type="text" placeholder="Job/Title" className="input-box placeholder:text-[#FFFFFFE0]" />
+            <input type="text" placeholder="Location" className="input-box placeholder:text-[#FFFFFFE0]" />
+            <input type="text" placeholder="Address" className="input-box placeholder:text-[#FFFFFFE0]" />
             <div className="rounded-lg border-[#FFFFFF33] border p-4 space-y-4 col-span-2 sm:col-span-1">
               <h1 className="text-[#FFFFFFE0] text-[16px] leading-5">
                 How many number of employees do you have?
@@ -449,8 +472,9 @@ const DetailsPanel = () => {
 
             <div className="flex items-center gap-1 col-span-2 sm:col-span-1">
               <input type="checkbox" />
-              <label className="">
-                I agree to the
+              <label className="flex gap-1">
+                <p>I agree to the</p>
+                
                 <Link
                   href="#"
                   className="text-[#0274FE] text-[16px] leading-5 underline "
@@ -466,7 +490,7 @@ const DetailsPanel = () => {
               className="rounded-full p-px w-full"
               style={{
                 background:
-                  "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
+                  "linear-gradient(0deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
               }}
             >
               <Link
@@ -500,6 +524,7 @@ const DetailsPanel = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

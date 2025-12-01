@@ -86,7 +86,7 @@ useEffect(() => {
     >
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between p-6 lg:py-[26px] xl:px-20">
         {/* Logo */}
-        <div className="flex lg:flex-1">
+        <div className="flex">
           <Link href="/" className="-m-1.5 p-1.5">
             <Image src="/images/logo.svg" width={132} height={40} alt="logo" />
           </Link>
@@ -121,7 +121,7 @@ useEffect(() => {
         </div>
 
         {/* Desktop Get Started Button */}
-       <div className="hidden lg:flex items-center lg:flex-1 lg:justify-end gap-5">
+       <div className="hidden lg:flex items-center  lg:justify-end gap-5">
   <div className="relative text-white language-selector">
     <div
       onClick={() => setOpen(!open)}
@@ -219,7 +219,7 @@ useEffect(() => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed inset-y-0 right-0 z-100000 w-full sm:max-w-sm bg-[#00031C] p-6 overflow-y-auto lg:hidden"
+              className="fixed inset-y-0 right-0 z-100000 w-full sm:max-w-sm bg-[#00031C] p-6 overflow-y-auto lg:hidden h-[100vh]"
             >
               {/* Header */}
               <div className="flex items-center justify-between">
