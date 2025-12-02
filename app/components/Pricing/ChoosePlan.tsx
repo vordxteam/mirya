@@ -73,7 +73,7 @@ const ChoosePlan = () => {
                 }}
               >
                 <Link
-                  href="#"
+                  href="/start-up"
                   className="font-normal py-2 px-5 rounded-full w-full flex items-center justify-center"
                   style={{
                     background: "#00031C",

@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Jobs() {
+export default function CurrentOpening() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const allJobs = [
@@ -128,11 +128,10 @@ export default function Jobs() {
             />
           </div>
           <h1 className="heading-1 font-medium max-w-[824px] w-full text-center pb-3 sm:pb-6">
-            Job Openings at MIRYA
+            Current job opening at MIRYA
           </h1>
           <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[547px]">
-            Discover opportunities across engineering, marketing, and operations
-            as we build the future of intelligent automation.{" "}
+           Discover opportunities across engineering, marketing, and operations as we build the future of intelligent automation.
           </p>
 
           <div className="flex flex-row items-start overflow-x-auto max-w-full justify-start gap-3 scrollbar-hide px-4 py-2">

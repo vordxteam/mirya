@@ -41,9 +41,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#00031C] w-full relative z-[-1] ">
+    <footer className="bg-[#00031C] w-full relative z-0 ">
       <div className="bg-[url('/images/footer-bg1.png')] bg-no-repeat bg-cover bg-bottom">
-        <div className="px-5 sm:px-10 md:px-20 pt-[63px] pb-[52px] max-w-[1440px] m-auto">
+        <div className="px-5 z-0 relative sm:px-10 md:px-20 pt-[63px] pb-[52px] max-w-[1440px] m-auto">
           <div className="flex flex-col pb-5 sm:pb-[62px] border-b border-[#FFFFFF52] sm:flex-row items-center justify-between">
             <h3 className="heading-3 font-semibold text-[#FFFFFF] max-w-[320px]">
               Join our newsletter to keep up to date with us!

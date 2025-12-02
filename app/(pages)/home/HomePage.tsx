@@ -89,7 +89,7 @@ const HomePage = () => {
         }
       {
         cookiesOpen && (
-          <div className="flex justify-between w-full px-6 fixed bottom-10">
+          <div className="flex justify-between w-full px-6 fixed bottom-10 z-10">
           <Cookies onClose={handleCookies}/>
           </div>
         )
@@ -97,7 +97,7 @@ const HomePage = () => {
 
       {
         chatOpen && (
-          <div className="flex justify-between  px-6 fixed bottom-10 right-0">
+          <div className="flex justify-between  px-6 fixed bottom-10 right-0 z-10">
           <Chatbot onClose={handleChat}/>
           </div>
         )
