@@ -42,7 +42,7 @@ const ChoosePlan = () => {
 
       <div className="grid lg:grid-cols-3 gap-5 mt-12 pb-[60px] overflow-hidden bg-[#00031c] relative z-10">
         <div className="">
-          <h1 className="text-[#F4F7FF] text-[40px] font-medium leading-12 max-w-[412px] w-full">
+          <h1 className="text-[#F4F7FF] text-[40px] font-medium leading-12 max-w-[500px] w-full capitalize">
             Need a plan that fits you better?
           </h1>
         </div>
@@ -86,8 +86,6 @@ const ChoosePlan = () => {
             </div>
           </div>
         </div>
-
-       
       </div>
     </div>
   );

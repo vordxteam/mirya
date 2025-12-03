@@ -1,3 +1,4 @@
+import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import React from "react";
 
@@ -101,6 +102,10 @@ const Benefits = () => {
             className="col-span-12 md:col-span-6 xl:col-span-6"
           />
         </div>
+
+        <div className="flex items-center justify-center w-full mt-8">
+            <GradientButton label="Get Started" href="/contact" bgColor="#0274FE" />
+          </div>
       </div>
     </div>
   );

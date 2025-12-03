@@ -273,14 +273,14 @@ export default function Demo(): React.ReactElement {
             performs every task just like a human - only faster, more precise
             and completely reliable.
           </motion.div>
-          <div className="pt-6">
+          {/* <div className="pt-6">
             <GradientButton
               label="Get A Demo"
               href="#"
               bgColor="black"
               textColor="#fff"
             />
-          </div>
+          </div> */}
           <motion.div className="" variants={containerVariants}>
             <div className="benefits-grid">
               {benefits.map((item, index) => (

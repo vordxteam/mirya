@@ -31,8 +31,8 @@ const HeroSection = () => {
         </p>
         <div className="flex items-center justify-center gap-3">
           <GradientButton
-            label="Get A Demo"
-            href="#"
+            label="Get Started"
+            href="/contact"
             bgColor="#0274FE"
             textColor="#fff"
           />

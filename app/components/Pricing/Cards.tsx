@@ -176,7 +176,7 @@ export default function Cards({ active }: { active: string }) {
                 <p className="pt-3 heading-6 font-regular text-[#CAC9D1] max-w-[332px]">
                   {item.description}
                 </p>
-                <div className="mt-3 bg-linear-to-r from-[#1A1A3B] via-[#A68BEE] to-[#1A1A3B]  h-px"></div>
+                <div className="mt-3 bg-linear-to-r from-[#9e9ebb] via-[#A68BEE] to-[#1A1A3B]  h-px"></div>
                 <div className="pt-[46px]">
                   {item.features.map((feature, featureIndex) => (
                     <div

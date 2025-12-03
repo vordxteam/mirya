@@ -5,6 +5,7 @@ import How1Card from "./HowtouseAnimations/How1Card";
 import How2Card from "./HowtouseAnimations/How2Card";
 import How3Card from "./HowtouseAnimations/How3Card";
 import How4Card from "./HowtouseAnimations/How4Card";
+import GradientButton from "@/app/ui/GradientButton";
 
 const HowToUse = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -111,9 +112,16 @@ const HowToUse = () => {
           speak your commands as your digital teammate learns and acts.
         </p>
 
+        <GradientButton
+          label="Get Started Now"
+          href="/contact"
+          bgColor="black"
+          textColor="#fff"
+        />
+
         {/* Slider */}
         <div
-          className="w-full rounded-3xl p-[0.5px]"
+          className="w-full rounded-3xl p-[0.5px] mt-16"
           style={{
             background:
               "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
