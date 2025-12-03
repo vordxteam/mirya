@@ -295,7 +295,7 @@ export default function Demo(): React.ReactElement {
 
           <GradientButton
             label="Get Started"
-            href="#"
+            href="/contact"
             bgColor="#0274FE"
             textColor="#fff"
           />

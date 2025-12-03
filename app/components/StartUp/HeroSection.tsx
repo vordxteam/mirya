@@ -14,7 +14,7 @@ const HeroSection = () => {
       "Built for early-stage teams that want to automate smarter, and scale faster.",
     price: "€399",
     period: " /per month",
-    btnColor: "#00031C",
+    btnColor: "#0274FE",
     btnText: "Get Started",
     msgTitle : "All the essentials to automate",
     msgDiscription : "The Startup Plan includes everything you need to eliminate manual work, unlock productivity, and automate your first end-to-end processes with MIRYA.",
@@ -141,7 +141,7 @@ const HeroSection = () => {
         bgColor={cardData.btnColor}
         label={cardData.btnText}
         textColor="white"
-        href="#"
+        href="/contact"
       />
       </div>
     </div>

@@ -64,11 +64,10 @@ const Form = () => {
           />
         </div>
         <h1 className="heading-1 font-medium tracking-[-1.44px] max-w-[972px] w-full text-center pb-3 sm:pb-6">
-         Application Form
+         Apply to Join MIRYA
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-8 text-center max-w-[580px]">
-          We're excited to learn more about you! Please fill out the form below with your details, experience, and motivation for joining our team.
-        </p>
+Share your experience, skills, and background so we can understand how you fit into our team. Fill out the form below to submit your application.        </p>
        
 
        

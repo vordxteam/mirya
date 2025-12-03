@@ -12,7 +12,7 @@ export default function JobDetails() {
       </div>
       <div className="space-y-8">
         <h3 className="heading-3 font-medium text-white text-start">Key Responsibilities</h3>
-        <ul className='list-disc pl-6 text-[#FFFFFFCC] heading-4 font-normal'>
+        <ul className='list-disc space-y-3 pl-6 text-[#FFFFFFCC] heading-4 font-normal'>
             <li>Architect and develop core platform services, modules, and backend systems</li>
             <li>Implement automation logic, workflow execution engines, and integrations</li>
             <li>Build secure, performant APIs and data structures</li>
@@ -23,7 +23,7 @@ export default function JobDetails() {
       </div>
       <div className="space-y-8">
         <h3 className="heading-3 font-medium text-white text-start">Requirements:</h3>
-        <ul className='list-disc pl-6 text-[#FFFFFFCC] heading-4 font-normal'>
+        <ul className='list-disc space-y-3 pl-6 text-[#FFFFFFCC] heading-4 font-normal'>
             <li>4+ years of professional engineering experience.</li>
             <li>Strong proficiency in modern backend languages (Node.js, Python, Go, or similar).</li>
             <li>Experience with cloud-native environments (Azure, AWS, or GCP).</li>

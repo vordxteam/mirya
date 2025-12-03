@@ -47,7 +47,7 @@ const WorkFlow = () => {
           </p>
 
           <div className="w-fit mx-auto lg:mx-0">
-            <GradientButton label="Get Started" href="#" bgColor="#00031C" />
+            <GradientButton label="Get Started" href="/contact" bgColor="#00031C" />
           </div>
         </div>
 

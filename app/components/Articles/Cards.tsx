@@ -67,6 +67,14 @@ const Cards = () => {
         "Nexux runs smoothly on all modern devices with no heavy setup. Just a stable internet connection and an updated browser are all you need...",
       linkText: "Learn More",
     },
+    {
+      id: 9,
+      icon: "/images/icon9.svg",
+      title: "How can I customize my workflows in MIRYA?",
+      description:
+        "Drag-and-drop actions, map data, define triggers, add branching rules, and build smart automation logic tailored to your operations. MIRYA puts full customization in your hands — no code needed.",
+      linkText: "Learn More",
+    },
   ];
 
   return (

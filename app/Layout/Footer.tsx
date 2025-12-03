@@ -31,7 +31,7 @@ const Footer = () => {
       childs: [
         { id: 12, name: "mirya@gmail.com", href: "mailto:mirya@gmail.com", img : "/images/mail.svg" },
         { id: 13, name: "+1 (208) 120-802", href: "tel:+1 (208) 120-802" , img : "/images/phone.svg" },
-        { id: 13, name: "Los Angeles, CA", href: "https://www.google.com/maps/place/Los+Angeles,+CA,+USA/@34.0206084,-118.7413971,10z/data=!3m1!4b1!4m6!3m5!1s0x80c2c75ddc27da13:0xe22fdf6f254608f4!8m2!3d34.0549076!4d-118.242643!16s%2Fm%2F030qb3t?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" , img : "/images/location.svg" },
+        { id: 14, name: "Los Angeles, CA", href: "https://www.google.com/maps/place/Los+Angeles,+CA,+USA/@34.0206084,-118.7413971,10z/data=!3m1!4b1!4m6!3m5!1s0x80c2c75ddc27da13:0xe22fdf6f254608f4!8m2!3d34.0549076!4d-118.242643!16s%2Fm%2F030qb3t?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" , img : "/images/location.svg" },
       ],
     },
   ];
@@ -104,6 +104,7 @@ const Footer = () => {
           )}
           <Link
             href={link.href}
+            target={ link.id === 14 ? "_blank" : "" }
             className={`heading-5 font-normal  text-[#FFFFFF] `}
           >
             {link.name}

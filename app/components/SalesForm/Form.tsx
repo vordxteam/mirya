@@ -277,8 +277,9 @@ Share a few details and our team will get back to you with tailored guidance.
               "linear-gradient(0deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
           }}
         >
+          <Link href='/enquiry-form'>
           <button
-            className="font-normal py-2 px-5 rounded-full w-full flex items-center justify-center"
+            className="font-normal cursor-pointer py-2 px-5 rounded-full w-full flex items-center justify-center"
             style={{
               background: "#00031C",
               color: "white",
@@ -286,6 +287,7 @@ Share a few details and our team will get back to you with tailored guidance.
           >
             Cancel
           </button>
+          </Link>
         </div>
         <div
           className="rounded-full p-px w-full"
@@ -295,7 +297,7 @@ Share a few details and our team will get back to you with tailored guidance.
           }}
         >
           <button
-            className="flex items-center justify-center font-normal py-2 px-5 rounded-full w-full"
+            className="flex items-center cursor-pointer justify-center font-normal py-2 px-5 rounded-full w-full"
             style={{
               background: "#0274FE",
               color: "white",
