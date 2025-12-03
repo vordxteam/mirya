@@ -78,7 +78,7 @@ const HeroSection = () => {
   };
   return (
     <div className="">
-<div className="flex z-100 bg-[#00031c] flex-col items-center justify-center sm:pb-[75px] mt-[151px] px-2 md:px-10 bg-[url('/images/form-bg.png')] bg-lightgray bg-[length:100%_132.927%] bg-[position:0px_-216px] bg-no-repeat relative before:absolute before:inset-0 before:bg-black/40 before:-z-10">
+<div className="flex z-100 bg-[#00031c] flex-col items-center justify-center sm:pb-[75px] pt-[151px] px-2 md:px-10 bg-[url('/images/form-bg.png')] bg-lightgray bg-[length:100%_132.927%] bg-[position:0px_-216px] bg-no-repeat relative before:absolute before:inset-0 before:bg-black/40 before:-z-10">
         <div className="absolute top-0">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>

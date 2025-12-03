@@ -215,7 +215,7 @@ export default function ContactPage() {
                     color: "white",
                   }}
                 >
-                  Get A Demo
+                  Submit
                 </Link>
               </div>
             </div>

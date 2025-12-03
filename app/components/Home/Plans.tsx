@@ -26,6 +26,7 @@ export default function Plans() {
         btnColor: "#00031C",
         btnText: "Get Started",
         img: "/images/plan1.png",
+        
       },
       {
         id: 2,

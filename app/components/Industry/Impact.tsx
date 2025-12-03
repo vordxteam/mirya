@@ -37,7 +37,7 @@ const Impact = () => {
             <div className="w-fit">
               <GradientButton
                 label="Get A Demo"
-                href="#"
+                href="/user-testing"
                 bgColor="#00031C"
                 textColor="#fff"
               />

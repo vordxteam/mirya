@@ -14,7 +14,7 @@ const CTA = () => {
         </p>
         <GradientButton
           label="Get Started"
-          href="#"
+          href="/contact"
           bgColor="#fff"
           textColor="#0274FE"
         />

@@ -345,7 +345,7 @@ export default function Features() {
             <motion.div variants={itemVariants}>
               <GradientButton
                 label="Get A Demo"
-                href="#"
+                href="/user-testing"
                 bgColor="#0274FE"
                 textColor="#fff"
               />

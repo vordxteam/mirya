@@ -39,7 +39,7 @@ export default function Cards({ active }: { active: string }) {
         price: "€399",
         period: " /per month",
         btnColor: "#0274FE",
-        btnText: "Get Started",
+        btnText: "Contact Us",
         img: "/images/plan2.png",
       },
       {

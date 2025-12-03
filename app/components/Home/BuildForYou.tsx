@@ -37,7 +37,7 @@ export default function BuildForYou() {
             industries and enhance human experiences.
           </p>
           <div className="w-[172px]">
-            <GradientButton label="Contact Us Now" href="#" bgColor="#00031C" />
+            <GradientButton label="Contact Us Now" href="/contact" bgColor="#00031C" />
           </div>
         </div>
         <BuildForYouSlider />

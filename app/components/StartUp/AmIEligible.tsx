@@ -57,7 +57,9 @@ export default function AmIEligible() {
                 <div className="absolute bottom-0 right-0">
                  <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[71px]"></div>
                </div>
-               <GradientButton label='Start Now' bgColor='#0274FE' href='#' textColor='#FFFFFF' />
+               <div className='relative z-10'>
+               <GradientButton label='Start Now' bgColor='#0274FE' href='/contact' textColor='#FFFFFF' />
+               </div>
            </div>
            </div>
     </div>
