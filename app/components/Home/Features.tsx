@@ -274,7 +274,7 @@ export default function Features() {
 
             <motion.div
               variants={itemVariants}
-              className="mt-[32px] relative w-full h-[400px]"
+              className="mt-8 relative w-full h-[400px]"
             >
               <Image
                 src="/images/main-img.png"

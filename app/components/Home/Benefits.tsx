@@ -108,7 +108,11 @@ const Benefits = () => {
           </div>
 
           <div className="flex items-center justify-center w-full mt-8">
-            <GradientButton label="Get Started" href="/contact" bgColor="#0274FE" />
+            <GradientButton
+              label="Get Started"
+              href="/contact"
+              bgColor="#0274FE"
+            />
           </div>
         </div>
       </div>

@@ -105,7 +105,7 @@ const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <GradientButton
-            label="Get A Demo"
+            label="Get Started"
             href="/user-testing"
             bgColor="#0274FE"
             textColor="#fff"

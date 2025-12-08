@@ -3,64 +3,93 @@ import React from "react";
 
 export default function Comparison() {
   const columns = [
+    { key: "mirya", label: "Mirya" },
     { key: "n8n", label: "n8n" },
     { key: "powerAutomate", label: "Power Automate" },
-    { key: "aiAgent", label: "AI Agent" },
-    { key: "mirya", label: "Mirya" },
+    { key: "aiAgent", label: "Agentic Kit" },
   ];
 
   const comparisonData = [
     {
-      name: "Visual Workflow",
-      n8n: true,
-      powerAutomate: true,
-      aiAgent: true,
-      mirya: true,
+      name: "True No-Code (usually without IT skills",
+      mirya: "Yes",
+      n8n: "Low Code",
+      powerAutomate: "Low Code",
+      aiAgent: "No",
     },
     {
-      name: "Built in Content Generation",
-      n8n: false,
-      powerAutomate: false,
-      aiAgent: false,
-      mirya: true,
+      name: "On Premise Execution on any Workstation",
+      mirya: "Yes",
+      n8n: "Self Host",
+      powerAutomate: "Mostly Cloud",
+      aiAgent: "No",
     },
     {
-      name: "Plagiarism Detection",
-      n8n: false,
-      powerAutomate: false,
-      aiAgent: false,
-      mirya: true,
+      name: "Human Like Desktop + Web Automation (No API Needed)",
+      mirya: "Yes",
+      n8n: "No",
+      powerAutomate: "Limited UI",
+      aiAgent: "No",
     },
     {
-      name: "Audit Logs",
-      n8n: false,
-      powerAutomate: false,
-      aiAgent: false,
-      mirya: true,
+      name: "Fully Automation Process Recording (Desktop + Web)",
+      mirya: "Yes",
+      n8n: "No",
+      powerAutomate: "No",
+      aiAgent: "No",
     },
     {
-      name: "Designed for Research Workflows",
-      n8n: false,
-      powerAutomate: false,
-      aiAgent: false,
-      mirya: true,
+      name: "API Dependent",
+      n8n: "Yes-Works Fully without API",
+      powerAutomate: "No-API/Webhook Dependent",
+      aiAgent: "No-API Connector Required",
+      mirya: "No-LLM &API Based",
     },
     {
-      name: "Low Code",
-      n8n: true,
-      powerAutomate: true,
-      aiAgent: false,
-      mirya: false,
+      name: "API Support",
+      mirya: "Yes",
+      n8n: "Yes",
+      powerAutomate: "Yes",
+      aiAgent: "Yes",
+    },
+    {
+      name: "Autonomous Bots (Schedule + independent)",
+      mirya: "Yes",
+      n8n: "No",
+      powerAutomate: "Partial",
+      aiAgent: "No",
+    },
+    {
+      name: "Integrated AI Decision Engine",
+      mirya: "Yes",
+      n8n: "Plugin-based",
+      powerAutomate: "Add-ons",
+      aiAgent: "Yes",
+    },
+    {
+      name: "Local Encryption of Credentials, Files & Variables",
+      mirya: "Yes",
+      n8n: "Depends on Hosting",
+      powerAutomate: "Depends on Tenent",
+      aiAgent: "No",
+    },
+    {
+      name: "Learnable in 2 Days without any Technical Background",
+      mirya: "Yes",
+      n8n: "No",
+      powerAutomate: "No",
+      aiAgent: "No",
     },
   ];
 
-  const renderFeatureValue = (value: boolean) => {
-    if (value) {
-      return (
-        <Image src="/images/true.png" alt="Available" height={28} width={28} />
-      );
-    }
-    return <div className="w-5 h-0.5 bg-gray-500 rounded-full" />;
+  const renderFeatureValue = (value: string) => {
+    return (
+      <span
+        className={`text-[16px] md:text-[20px] font-medium leading-7 text-center`}
+      >
+        {value}
+      </span>
+    );
   };
 
   return (
@@ -141,7 +170,7 @@ export default function Comparison() {
                   </span>
 
                   {renderFeatureValue(
-                    feature[col.key as keyof typeof feature] as boolean
+                    feature[col.key as keyof typeof feature] as string
                   )}
                 </div>
               ))}

@@ -74,7 +74,7 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px] sm:text-[32px] font-medium leading-7 sm:leading-8">
+                        <h1 className="text-[24px]  font-medium leading-7 ">
                           No Interface Required
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
@@ -109,7 +109,7 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px] sm:text-[32px] font-medium leading-7 sm:leading-8">
+                        <h1 className="text-[24px]  font-medium leading-7 ">
                           On-Premise Deployment
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
@@ -144,7 +144,7 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px] sm:text-[32px] font-medium leading-7 sm:leading-8">
+                        <h1 className="text-[24px]  font-medium leading-7 ">
                           UI Recording
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
@@ -179,7 +179,7 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px] sm:text-[32px] font-medium leading-7 sm:leading-8">
+                        <h1 className="text-[24px]  font-medium leading-7 ">
                           Human-Like Intelligence
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
@@ -214,7 +214,7 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px] sm:text-[32px] font-medium leading-7 sm:leading-8">
+                        <h1 className="text-[24px]  font-medium leading-7 ">
                           Zero Code Automation
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
@@ -249,7 +249,7 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px] sm:text-[32px] font-medium leading-7 sm:leading-8">
+                        <h1 className="text-[24px]  font-medium leading-7 ">
                           Full White-Label
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
@@ -284,7 +284,7 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px] sm:text-[32px] font-medium leading-7 sm:leading-8">
+                        <h1 className="text-[24px]  font-medium leading-7 ">
                           Multi-System Compatibility
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
@@ -319,7 +319,7 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px] sm:text-[32px] font-medium leading-7 sm:leading-8">
+                        <h1 className="text-[24px]  font-medium leading-7 ">
                           Transparent Pricing
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">

@@ -4,12 +4,12 @@ import React, { useRef, useState, useEffect } from "react";
 
 export default function LifeAtMirya() {
   const images = [
-    '/images/slide1.jpg',
-    '/images/slide2.jpg',
-    '/images/slide3.jpg',
-    '/images/slide4.jpg',
+    "/images/slide1.jpg",
+    "/images/slide2.jpg",
+    "/images/slide3.jpg",
+    "/images/slide4.jpg",
   ];
-  
+
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -20,15 +20,15 @@ export default function LifeAtMirya() {
   // Auto scroll animation
   const autoScroll = () => {
     if (!sliderRef.current || isDragging || isHovered) return;
-    
+
     const speed = 0.5; // Adjust speed here
     sliderRef.current.scrollLeft += speed;
-    
+
     // Reset to start for infinite effect
     if (sliderRef.current.scrollLeft >= sliderRef.current.scrollWidth / 2) {
       sliderRef.current.scrollLeft = 0;
     }
-    
+
     animationRef.current = requestAnimationFrame(autoScroll);
   };
 
@@ -75,12 +75,10 @@ export default function LifeAtMirya() {
     setIsDragging(false);
   };
 
-  
-
   useEffect(() => {
     // Start auto scroll
     animationRef.current = requestAnimationFrame(autoScroll);
-    
+
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
@@ -89,7 +87,7 @@ export default function LifeAtMirya() {
   }, [isDragging, isHovered]);
 
   return (
-    <div className="w-full mx-auto max-w-[1500px] overflow-hidden" >
+    <div className="w-full mx-auto max-w-[1500px] overflow-hidden">
       <div className="flex justify-center relative">
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </div>
@@ -118,17 +116,17 @@ export default function LifeAtMirya() {
         </p>
 
         {/* Draggable Full-Width Marquee */}
-        <div 
+        <div
           ref={sliderRef}
           className={`w-full overflow-x-auto overflow-y-hidden scrollbar-hide ${
-            isDragging ? 'cursor-grabbing' : 'cursor-grab'
+            isDragging ? "cursor-grabbing" : "cursor-grab"
           }`}
           onMouseDown={handleMouseDown}
           onMouseLeave={handleMouseLeave}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovered(true)}
-        //   onMouseLeave={() => setIsHovered(false)}
+          //   onMouseLeave={() => setIsHovered(false)}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -136,12 +134,12 @@ export default function LifeAtMirya() {
           <div className="flex gap-4 md:gap-6 min-w-max px-4 md:px-6">
             {/* First set */}
             {images.map((src, index) => (
-              <div 
+              <div
                 key={`img-${index}-1`}
                 className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[400px] lg:w-[450px] xl:w-[500px]"
               >
                 <div className="relative overflow-hidden rounded-xl h-[180px] sm:h-[200px] md:h-[227px] w-full group">
-                  <Image 
+                  <Image
                     src={src}
                     alt={`Slide ${index + 1}`}
                     fill
@@ -154,12 +152,12 @@ export default function LifeAtMirya() {
             ))}
             {/* Second set for infinite effect */}
             {images.map((src, index) => (
-              <div 
+              <div
                 key={`img-${index}-2`}
                 className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[400px] lg:w-[450px] xl:w-[500px]"
               >
                 <div className="relative overflow-hidden rounded-xl h-[180px] sm:h-[200px] md:h-[227px] w-full group">
-                  <Image 
+                  <Image
                     src={src}
                     alt={`Slide ${index + 1}`}
                     fill
@@ -183,7 +181,7 @@ export default function LifeAtMirya() {
           }
         `}</style>
       </div>
-       <div className="flex justify-center relative">
+      <div className="flex justify-center relative">
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </div>
     </div>
