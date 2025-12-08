@@ -10,7 +10,7 @@ import Cards from "./Cards";
 const HeroSection = () => {
   const paragraphRef = useRef<HTMLDivElement>(null);
 
-     const [activeTab, setActiveTab] = useState("monthly");
+    const [activeTab, setActiveTab] = useState<"monthly" | "annual">("monthly");
   
 
   useEffect(() => {
