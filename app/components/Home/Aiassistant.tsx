@@ -7,7 +7,6 @@ const Aiassistant = () => {
     <div className="bg-[#00031C] relative">
       <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-[84px] items-start max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-12 sm:py-[60px] relative overflow-hidden">
 
-        {/* LEFT TEXT CONTENT */}
         <div className="max-w-[726px] w-full">
           <div className="max-w-[510px] mx-auto lg:mx-0 text-center lg:text-left">
 
