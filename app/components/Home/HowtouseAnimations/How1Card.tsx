@@ -17,18 +17,22 @@ interface NodeProps {
 
 function BgMg() {
   return (
-    <div
-      className="absolute z-10 -bottom-0.5 h-[349px] left-1/2 translate-x-[-50%] w-[648px]"
-      data-name="bg mg"
-    >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <Image
-          width={500}
-          height={500}
-          alt="image"
-          className="absolute left-0 max-w-none size-full top-0"
-          src="/images/animation1.png"
-        />
+    <div className="relative grid place-items-center">
+      <div className="relative grid place-items-center scale-75 sm:scale-90 md:scale-100">
+        <div
+          className="absolute z-10 -bottom-0.5 h-[349px] left-1/2 translate-x-[-50%] w-[648px]"
+          data-name="bg mg"
+        >
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <Image
+              width={500}
+              height={500}
+              alt="image"
+              className="absolute left-0 max-w-none size-full top-0"
+              src="/images/animation1.png"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

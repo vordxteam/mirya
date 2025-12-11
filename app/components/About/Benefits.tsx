@@ -34,7 +34,7 @@ const Benefits = () => {
 
           {/* Main Heading */}
           <h1 className="text-[26px] sm:text-[40px] md:text-[48px] font-medium leading-tight tracking-[-1.44px] max-w-[668px] pb-3 sm:pb-6">
-            See the difference intelligent automation makes
+            See The difference Intelligent Automation Makes{" "}
           </h1>
 
           {/* Subtitle */}
@@ -104,8 +104,12 @@ const Benefits = () => {
         </div>
 
         <div className="flex items-center justify-center w-full mt-8">
-            <GradientButton label="Get Started" href="/contact" bgColor="#0274FE" />
-          </div>
+          <GradientButton
+            label="Get Started"
+            href="/contact"
+            bgColor="#0274FE"
+          />
+        </div>
       </div>
     </div>
   );

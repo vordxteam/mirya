@@ -97,7 +97,7 @@ const HomePage = () => {
 
       {
         chatOpen && (
-          <div className="flex justify-between  px-6 fixed bottom-10 right-0 z-10">
+          <div className="flex justify-between  px-6 fixed bottom-8 right-0 z-10">
           <Chatbot onClose={handleChat}/>
           </div>
         )

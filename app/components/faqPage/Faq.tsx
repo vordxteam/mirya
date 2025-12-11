@@ -202,7 +202,7 @@ const Faq = () => {
                             : "max-h-0 opacity-0"
                         } overflow-hidden`}
                       >
-                        <div className="pt-3 text-[#CAC9D1] font-light text-sm leading-5">
+                        <div className="pt-3 text-[#CAC9D1] font-light text-[16px] leading-5">
                           {item.answer}
                         </div>
                       </div>

@@ -128,7 +128,7 @@ export default function Jobs() {
             />
           </div>
           <h1 className="heading-1 font-medium max-w-[824px] w-full text-center pb-3 sm:pb-6">
-            Job Openings at MIRYA
+            Job Openings At MIRYA
           </h1>
           <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[547px]">
             Discover opportunities across engineering, marketing, and operations

@@ -6,10 +6,12 @@ const AiPowered = () => {
   return (
     <div className="bg-[#00031C] overflow-hidden">
       <div className="px-2 md:px-20 py-[60px] space-y-16 max-w-[1440px] m-auto relative">
-         <div className="absolute top-[175px] left-[419px]">
+        {/* Background blur with z-index and pointer-events-none */}
+        <div className="absolute top-[175px] left-[419px] z-0 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#5935E94D] blur-[50px] w-[458px] h-[318px]"></div>
         </div>
-        <div className="flex flex-col items-center justify-center space-y-6">
+
+        <div className="flex flex-col items-center justify-center space-y-6 relative z-10">
           <div className="flex items-center gap-5">
             <Image
               src="/images/left-line.png"
@@ -28,13 +30,15 @@ const AiPowered = () => {
             />
           </div>
           <h1 className="text-[30px] sm:text-[40px] md:text-[48px] font-medium leading-10 sm:leading-14 tracking-[-1.44px] max-w-[716px] w-full text-center">
-            What MIRYA automate
+            What MIRYA Automate
           </h1>
           <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 text-center max-w-[400px]">
-            MIRYA’s automation intelligence works across your existing tools and
+            MIRYA's automation intelligence works across your existing tools and
             systems, powering end-to-end flows.
           </p>
-          <div>
+
+          {/* Button wrapper with higher z-index and pointer-events-auto */}
+          <div className="relative z-20">
             <GradientButton
               label="Automate With MIRYA"
               href="#"
@@ -44,7 +48,7 @@ const AiPowered = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center max-w-7xl gap-6 w-full">
+        <div className="flex flex-wrap items-center justify-center max-w-7xl gap-6 w-full relative z-10">
           <div
             className="rounded-lg p-px w-full md:w-fit"
             style={{

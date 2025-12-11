@@ -61,7 +61,7 @@ export default function Services() {
           />
         </div>
         <h1 className="heading-1 font-medium w-full text-center pb-3 sm:pb-6 max-w-[750px]">
-          Professional services for high impact automation
+          Professional Services For High Impact Automation
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 text-center max-w-[676px]">
           Whether you're launching your first workflow or scaling automation

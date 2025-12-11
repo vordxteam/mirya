@@ -103,7 +103,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row w-full justify-between py-6 border-b border-b-[#FFFFFF52]">
-            <div className="flex flex-col  justify-between gap-18">
+            <div className="flex flex-col  justify-between sm:gap-18 gap-4">
               <Image
                 src="/images/guarantee.png"
                 alt="Guarantee card"
@@ -115,6 +115,8 @@ const Footer = () => {
                 alt="Guarantee card"
                 height={100}
                 width={274}
+                      className="w-[179px] sm:w-[274px]"
+
               />
             </div>
 

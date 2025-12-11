@@ -38,8 +38,7 @@ const Chooseus = () => {
 
               {/* Main Heading */}
               <h1 className="text-[30px] sm:text-[48px] font-medium leading-[38px] sm:leading-14 tracking-[-1.44px] max-w-[686px] text-center pb-3 sm:pb-6">
-                The values that drive us
-              </h1>
+The Values That Drive Us              </h1>
 
               {/* Subheading */}
               <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] font-normal leading-5 text-center max-w-[606px]">

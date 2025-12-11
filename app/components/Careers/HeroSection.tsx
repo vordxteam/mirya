@@ -102,13 +102,24 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <GradientButton
-            label="Join Our Team"
-            href="#"
-            bgColor="#0274FE"
-            textColor="#fff"
-          />
-         
+        <div
+  className="rounded-full p-[1.8px]"
+  style={{
+    background:
+      "linear-gradient(90deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
+  }}
+>
+  <button
+    className="flex items-center justify-center gap-2 
+               rounded-[40px] px-6 py-3 text-white text-[16px] font-medium"
+    style={{
+      backgroundColor: "#0274FE",
+    }}
+  >
+    Join Our Team
+  </button>
+</div>
+
         </div>
 
         <div className="relative">

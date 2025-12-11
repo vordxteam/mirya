@@ -1,4 +1,3 @@
-import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import React from "react";
 
@@ -50,7 +49,7 @@ const industriesData = [
 const IndustriesSection = () => {
   return (
     <div>
-      <div className="px-2 lg:px-20 py-[60px] space-y-16 max-w-[1440px] m-auto relative">
+      <div className="px-2 lg:px-20 py-[60px] sm:space-y-16 space-y-8 max-w-[1440px] m-auto relative">
         {/* Header */}
         <div className="flex flex-col items-center justify-center">
           <div className="flex items-center gap-5 pb-3">
@@ -72,20 +71,15 @@ const IndustriesSection = () => {
           </div>
 
           <h1 className="text-[30px] sm:text-[40px] md:text-[48px] font-medium leading-10 sm:leading-14 tracking-[-1.44px] max-w-[716px] w-full text-center pb-3 md:pb-6">
-            Industries we empower
+            Industries we Empower
           </h1>
 
-          <p className="text-[#CAC9D1] text-[14px] font-normal pb-3 md:pb-6 leading-5 text-center max-w-[606px]">
+          <p className="text-[#CAC9D1] text-[14px] font-normal  leading-5 text-center max-w-[606px]">
             From high-volume back office operations to customer facing workflows
             MIRYA adapts to every environment and every industry with ease.
           </p>
 
-          <GradientButton
-            label="Automate With MIRYA"
-            href="#"
-            bgColor="#00031C"
-            textColor="#fff"
-          />
+         
         </div>
 
         {/* Cards */}

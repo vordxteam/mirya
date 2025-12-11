@@ -74,7 +74,7 @@ export default function ContactPage() {
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-[40px] leading-11 font-medium">
-                  Get in Touch
+                  Get In Touch
                 </h1>
                 <p className="text-FFFFFF99 font-regular heading-4 font-regular max-w-[490px] text-[#FFFFFF99]">
                   "Have questions or need help with your order? We're here to

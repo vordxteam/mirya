@@ -26,7 +26,7 @@ const Impact = () => {
               />
             </div>
             <h1 className="text-[30px] sm:text-[40px] md:text-[48px] pb-3 sm:pb-6 font-medium leading-10 sm:leading-14 tracking-[-1.44px] max-w-[500px] w-full text-start">
-              Where MIRYA creates real impact
+              Where MIRYA Creates Real Impact
             </h1>
             <p className="text-[#CAC9D1] pb-3 sm:pb-6 text-[14px] font-normal leading-5 text-start max-w-[510px]">
               MIRYA brings intelligent, no-code automation to organizations that

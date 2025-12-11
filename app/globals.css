@@ -41,8 +41,8 @@ body {
 .custom-border {
   position: relative;
   border-radius: 50px; /* Rounded full for circular items */
-  /* background: #00031C; */
-  padding: 12px 20px;
+ background: #00031C !important; 
+   padding: 12px 20px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -133,6 +133,8 @@ body {
     linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box;
   border: 1px solid transparent;
 } */
+ 
+
 
 .non-rounded1 {
   border: 1px solid transparent;
@@ -188,3 +190,5 @@ body {
     max-width: 50%;
   }
 }
+
+

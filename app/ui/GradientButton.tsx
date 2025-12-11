@@ -27,7 +27,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
     >
       <Link
         href={href}
-        className="inline-block font-normal py-2 px-5 rounded-full"
+        className="inline-block font-normal py-2 px-5 rounded-full cursor-pointer"
         style={{
           background: bgColor,
           color: textColor,

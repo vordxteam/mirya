@@ -186,7 +186,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
 
               <div className="mt-3 h-px bg-gradient-to-r from-[#9e9ebb] via-[#A68BEE] to-[#1A1A3B]" />
 
-              <div className="pt-[46px] space-y-4">
+              <div className="pt-[40px] space-y-4">
                 {item.features.map((feature, i) => (
                   <div key={i} className="flex gap-3 items-start">
                     <Image
@@ -213,7 +213,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
                   </div>
                 ) : (
                   <p
-                    className="text-[24px] font-medium leading-8 max-w-[300px]
+                    className="text-[24px] font-medium leading-7 max-w-[276px]
                       bg-linear-to-r from-[#789EFF] to-[#3A38AA]
                       bg-clip-text text-transparent"
                   >
