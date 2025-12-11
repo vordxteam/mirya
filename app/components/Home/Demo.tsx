@@ -578,19 +578,19 @@ export default function Demo(): React.ReactElement {
             variants={itemVariants}
           >
             <Image
-              src="/images/left-line.png"
+              src="/images/label2.svg"
               alt="gradient1"
-              height={8}
-              width={73}
+              height={16}
+              width={78}
             />
             <h5 className="heading-5 font-regular text-[#959EFE] text-center">
               Simple. Intelligent. Autonomous
             </h5>
             <Image
-              src="/images/right-line.png"
+              src="/images/label.svg"
               alt="gradient1"
-              height={8}
-              width={73}
+              height={16}
+              width={78}
             />
           </motion.div>
 

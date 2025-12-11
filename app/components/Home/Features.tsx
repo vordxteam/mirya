@@ -371,7 +371,7 @@
 //   );
 // }
 
-'use client';
+"use client";
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
@@ -470,19 +470,19 @@ export default function Features() {
           variants={itemVariants}
           className="flex relative gap-5 items-center"
         >
-          <Image 
-            src="/images/blur.svg" 
-            alt="gradient1" 
-            height={8} 
-            width={8}
+          <Image
+            src="/images/label2.svg"
+            alt="gradient1"
+           height={16}
+            width={78}
             priority={true}
           />
           <h5 className="heading-5 font-regular text-[#959EFE]">Features</h5>
-          <Image 
-            src="/images/blur.svg" 
-            alt="gradient1" 
-            height={8} 
-            width={8}
+          <Image
+            src="/images/label.svg"
+            alt="gradient1"
+            height={16}
+            width={78}
             priority={true}
           />
           <div className="absolute -top-16 -left-3 -z-10">

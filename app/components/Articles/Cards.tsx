@@ -79,7 +79,7 @@ const Cards = () => {
 
   return (
     <div className="bg-[#00031C] relative z-10">
-      <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 py-[60px] overflow-hidden relative">
+      <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 pb-[60px] sm:pt-[60px] pt-0 overflow-hidden relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {cardsData.map((card) => (
             <div key={card.id}>

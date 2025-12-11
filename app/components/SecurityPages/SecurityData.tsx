@@ -4,7 +4,7 @@ import React from "react";
 const SecurityData = () => {
   return (
     <div className="max-w-[1440px] m-auto">
-      <div className="px-5 sm:px-20 py-[60px] space-y-16">
+      <div className="px-5 sm:px-20 pt-0 pb-[60px] sm:pt-[60px] space-y-16">
         <div className="space-y-6">
           <h1 className="heading-1 font-medium">Summary of key Points</h1>
           <div>

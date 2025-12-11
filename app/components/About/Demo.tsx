@@ -201,9 +201,9 @@ export default function Demo(): React.ReactElement {
   return (
     <>
       <div className="flex justify-center">
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
-      </div>12
-      <div className="pt-[60px] py-100 px-5 sm:px-20 pb-[229px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
+        <div className=" bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
+      </div>
+      <div className="pt-[60px] py-100 px-5 sm:px-20 pb-5 sm:pb-[229px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
         <div className="bg-[#00031C"></div>
         <motion.div
           initial="hidden"
@@ -269,19 +269,19 @@ export default function Demo(): React.ReactElement {
             variants={itemVariants}
           >
             <Image
-              src="/images/blur.svg"
+              src="/images/label2.svg"
               alt="gradient1"
-              height={8}
-              width={8}
+              height={16}
+              width={78}
             />
             <h5 className="heading-5 font-regular text-[#959EFE]">
               Who We Are
             </h5>
             <Image
-              src="/images/blur.svg"
+              src="/images/label.svg"
               alt="gradient1"
-              height={8}
-              width={8}
+              height={16}
+              width={78}
             />
           </motion.div>
 

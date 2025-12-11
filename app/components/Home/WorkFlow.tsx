@@ -13,9 +13,9 @@ const WorkFlow = () => {
         <div className="max-w-[490px] mx-auto lg:mx-0 text-center lg:text-left">
           <div className="pb-3 flex items-center justify-center lg:justify-start gap-3 sm:gap-5">
             <Image
-              src="/images/left-line.png"
+              src="/images/label2.svg"
               width={73}
-              height={8}
+              height={16}
               alt="line"
               className="w-[50px] sm:w-[73px]"
             />
@@ -23,9 +23,9 @@ const WorkFlow = () => {
               MIRYA Workflow
             </h1>
             <Image
-              src="/images/right-line.png"
-              width={73}
-              height={8}
+              src="/images/label.svg"
+              width={78}
+              height={16}
               alt="line"
               className="w-[50px] sm:w-[73px]"
             />

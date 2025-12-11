@@ -53,19 +53,15 @@ const IndustriesSection = () => {
         {/* Header */}
         <div className="flex flex-col items-center justify-center">
           <div className="flex items-center gap-5 pb-3">
-            <Image
-              src="/images/left-line.png"
-              width={73}
-              height={8}
-              alt="line"
-            />
+                     <Image src="/images/label2.svg" width={78} height={16} alt="line" />
+           
             <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
               Industries
             </h1>
             <Image
-              src="/images/right-line.png"
-              width={73}
-              height={8}
+              src="/images/label.svg"
+              width={78}
+              height={16}
               alt="line"
             />
           </div>

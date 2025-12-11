@@ -5,7 +5,7 @@ import React from "react";
 const AiPowered = () => {
   return (
     <div className="bg-[#00031C] overflow-hidden">
-      <div className="px-2 md:px-20 py-[60px] space-y-16 max-w-[1440px] m-auto relative">
+      <div className="px-2 md:px-20 pb-[60px] pt-0 sm:pt-[60px] space-y-16 max-w-[1440px] m-auto relative">
         {/* Background blur with z-index and pointer-events-none */}
         <div className="absolute top-[175px] left-[419px] z-0 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#5935E94D] blur-[50px] w-[458px] h-[318px]"></div>
@@ -13,19 +13,15 @@ const AiPowered = () => {
 
         <div className="flex flex-col items-center justify-center space-y-6 relative z-10">
           <div className="flex items-center gap-5">
-            <Image
-              src="/images/left-line.png"
-              width={73}
-              height={8}
-              alt="line"
-            />
+                    <Image src="/images/label2.svg" width={78} height={16} alt="line" />
+          
             <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
               AI-Powered Decisions
             </h1>
             <Image
-              src="/images/right-line.png"
-              width={73}
-              height={8}
+              src="/images/label.svg"
+              width={78}
+              height={16}
               alt="line"
             />
           </div>

@@ -83,16 +83,12 @@ const HeroSection = () => {
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">
-          <Image src="/images/left-line.png" width={73} height={8} alt="line" />
+          <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
             Team
           </h1>
-          <Image
-            src="/images/right-line.png"
-            width={73}
-            height={8}
-            alt="line"
-          />
+                   <Image src="/images/label.svg" width={78} height={16} alt="line" />
+         
         </div>
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[824px] w-full text-center pb-3 sm:pb-6">
          Join Us to Build Intelligent Automation
