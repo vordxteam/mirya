@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "badge": "Über das Produkt",
+    "title": "Lernen Sie MIRYA kennen – Ihre immer aktive Automatisierungsintelligenz",
+    "subtitle": "Verbinden Sie Systeme, optimieren Sie Workflows und lassen Sie MIRYA jede Aufgabe präzise erledigen. Kein Code, keine Schnittstellen – einfach intelligente Automatisierung, die denkt, sich anpasst und wie ein Mensch ausführt.",
+    "years": "Seit über 10 Jahren Exzellenz liefern"
+  },
+
+  "demo": {
+    "badge": "Wer wir sind",
+    "title": "MIRYA ist mehr als ein Automatisierungstool – wir sind ein Team mit der Mission, intelligente Automatisierung zugänglich, mühelos und zuverlässig zu machen. Wir glauben, dass Technologie für Menschen arbeiten sollte, nicht umgekehrt. Unsere Plattform verbindet und steuert jedes System, jede App und jeden Prozess – und lernt aus Ihren Aktionen, um Workflows mit höchster Präzision und Geschwindigkeit auszuführen.",
+    "benefits": [
+      "Keine Programmierkenntnisse erforderlich",
+      "Schnittstellenunabhängig – keine API nötig",
+      "On-Premise oder Cloud",
+      "Aufnehmen & Automatisieren",
+      "Bereit in 24 Stunden",
+      "White-Label-fähig",
+      "Drag & Drop visuelle Oberfläche",
+      "ROI in nur 4–6 Wochen",
+      "Analytics-Dashboard",
+      "Virtueller KI-Assistent",
+      "Autonome Bots",
+      "Intelligente PDF-Reports"
+    ]
+  },
+
+  "benefits": {
+    "Benefits": "Vorteile",
+    "title": "Erleben Sie den Unterschied, den intelligente Automatisierung macht",
+    "subtitle": "Von Zeitersparnis bis hin zu fehlerfreier Ausführung – MIRYA liefert messbare Verbesserungen in jedem Teil Ihres Workflows. Sofort und ohne Komplexität.",
+    "cards": [
+      {
+        "title": "Alles automatisieren, ohne etwas zu verändern",
+        "desc": "Keine Neugestaltung von Workflows oder Umbau von Systemen nötig. MIRYA arbeitet mit dem, was Sie bereits haben."
+      },
+      {
+        "title": "Hunderte Stunden sparen",
+        "desc": "Befreien Sie Ihr Team von repetitiver Arbeit und lassen Sie MIRYA alle operativen Aufgaben sofort übernehmen."
+      },
+      {
+        "title": "Fehlerfreie Ausführung",
+        "desc": "Beseitigen Sie menschliche Fehler und Inkonsistenzen. Ihre Prozesse laufen jedes Mal auf die gleiche zuverlässige Weise."
+      },
+      {
+        "title": "Effizienz & Produktivität steigern",
+        "desc": "MIRYA automatisiert repetitive Aufgaben sofort und ermöglicht Ihrem Team, sich auf wertvolle Arbeit zu konzentrieren. Prozesse laufen schneller, reibungsloser und mit konstanter Genauigkeit."
+      },
+      {
+        "title": "Umsetzbare Erkenntnisse",
+        "desc": "Durch das Verständnis Ihrer Workflows und Datenmuster hebt MIRYA Verbesserungspotenziale hervor und liefert klare Einblicke zur Leistungsoptimierung."
+      }
+    ]
+  },
+
+  "different": {
+    "badge": "Was MIRYA anders macht",
+    "title": "Im Gegensatz zu herkömmlichen Automatisierungstools folgt MIRYA nicht nur Anweisungen – es versteht, lernt und passt sich an. Bei MIRYA brauchen Sie keine APIs, Dashboards oder Programmierkenntnisse. Es interagiert visuell mit Ihren bestehenden Systemen, imitiert menschliches Verhalten und liefert dabei Geschwindigkeit, Zuverlässigkeit und Genauigkeit weit über manuelle Arbeit hinaus."
+  },
+
+  "chooseus": {
+    "badge": "Warum MIRYA wählen",
+    "title": "Die Werte, die uns antreiben",
+    "subtitle": "Im Gegensatz zu herkömmlichen Automatisierungstools folgt MIRYA nicht nur Anweisungen – es versteht, lernt und passt sich an. Mit MIRYA benötigen Sie keine APIs, Dashboards oder Programmierkenntnisse.",
+    "cards": [
+      {
+        "title": "Keine Schnittstelle erforderlich",
+        "desc": "Arbeitet mit Ihren bestehenden Tools genau wie ein Mensch es tun würde – keine APIs, keine Integrationsbeschränkungen."
+      },
+      {
+        "title": "On-Premise-Bereitstellung",
+        "desc": "Behalten Sie Ihre Daten privat. MIRYA läuft vollständig in Ihrer Umgebung – ohne Cloud-Abhängigkeit."
+      },
+      {
+        "title": "UI-Aufnahme",
+        "desc": "Bringen Sie MIRYA die Aufgabe einfach bei, indem Sie sie ausführen. Es lernt, zeichnet auf und erstellt die Automatisierung intelligent."
+      },
+      {
+        "title": "Menschliche Intelligenz",
+        "desc": "Versteht Bildschirme, liest Daten, erkennt Muster und trifft Entscheidungen in Echtzeit."
+      },
+      {
+        "title": "Zero-Code-Automatisierung",
+        "desc": "Wenn Sie Ihren Computer bedienen können, können Sie auch MIRYA nutzen. Keine Programmierung nötig."
+      },
+      {
+        "title": "Komplettes White-Label",
+        "desc": "Machen Sie MIRYA zu Ihrem eigenen Produkt: Logo, Farben, Domain und Benutzererlebnis – maßgeschne für Kunden oder interne Teams."
+      },
+      {
+        "title": "Multi-System-Kompatibilität",
+        "desc": "Funktioniert mit Web-Apps, Desktop-Apps, Altsystemen und internen Tools."
+      },
+      {
+        "title": "Transparente Preise",
+        "desc": "Klare, planbare Preise. Keine versteckten Kosten oder Lizenzüberraschungen."
+      }
+    ]
+  },
+
+  "button": "Loslegen"
+}

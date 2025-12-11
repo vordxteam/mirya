@@ -287,7 +287,7 @@ export default function Demo(): React.ReactElement {
 
           <motion.div
             ref={paragraphRef}
-            className="pt-3  text-[20px] md:text-[36px] leading-8 font-medium text-white max-w-[1190px] text-center mb-6"
+            className="pt-3  text-[20px] md:text-[36px] leading-8 sm:leading-[48px] font-medium text-white max-w-[1190px] text-center mb-6"
             variants={itemVariants}
           >
            MIRYA is more than an automation tool we are a team on a mission to make intelligent automation accessible, effortless, and reliable. We believe that technology should work for humans, not the other way around. Our platform connects and controls any system, any app, and any process, learning from your actions to execute workflows with precision and speed.

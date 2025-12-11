@@ -115,7 +115,7 @@ const HowToUse = () => {
         <GradientButton
           label="Get Started Now"
           href="/contact"
-          bgColor="black"
+          bgColor="#00031C"
           textColor="#fff"
         />
 
