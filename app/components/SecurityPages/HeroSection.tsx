@@ -77,21 +77,17 @@ const HeroSection = () => {
   };
   return (
     <div>
-      <div className="flex flex-col items-center justify-center pb-[75px] pt-10 px-2 md:px-10 bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain relative">
+      <div className="flex flex-col items-center justify-center pb-[75px] pt-0 sm:pt-10 px-2 md:px-10 bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain relative">
         <div className="absolute top-0">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">
-          <Image src="/images/left-line.png" width={73} height={8} alt="line" />
+          <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
             Security
           </h1>
-          <Image
-            src="/images/right-line.png"
-            width={73}
-            height={8}
-            alt="line"
-          />
+                   <Image src="/images/label.svg" width={78} height={16} alt="line" />
+         
         </div>
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-2xl w-full text-center pb-3 sm:pb-6">
           MIRYA Security Policy
@@ -102,9 +98,14 @@ const HeroSection = () => {
         <div className="flex items-center justify-center gap-3">
           <div
             className="rounded-full p-[0.8]"
-            style={{
-              background:
-                "linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)",
+           style={{
+              border: "1px solid transparent",
+              backgroundImage: `
+      linear-gradient(#00031C, #00031C), 
+      linear-gradient(to right, #38385D, #22223C, #686DDD, #22223C, #38385D)
+    `,
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
             }}
           >
             <Link

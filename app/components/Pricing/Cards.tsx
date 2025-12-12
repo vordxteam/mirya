@@ -138,7 +138,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="grid max-w-[1440px] mx-auto md:grid-cols-2 lg:grid-cols-3 gap-10 pt-[152px] px-2 md:px-[86px]"
+        className="grid max-w-[1440px] mx-auto md:grid-cols-2 lg:grid-cols-3 gap-10 pt-17 sm:pt-[152px] px-2 md:px-[86px]"
       >
         {currentPlans.map((item, index) => (
           <motion.div

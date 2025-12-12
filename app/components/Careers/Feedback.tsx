@@ -84,11 +84,11 @@ export default function Feedback() {
   return (
     <div className="flex flex-col bg-[#00031C] items-center max-w-[1440px] mx-auto py-5 sm:py-15 px-3 sm:px-20">
       <div className="pb-3 flex items-center gap-5">
-        <img src="/images/left-line.png" width={73} height={8} alt="line" />
+          <Image src="/images/label2.svg" width={78} height={16} alt="line" />
         <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
           Team Feedback
         </h1>
-        <img src="/images/right-line.png" width={73} height={8} alt="line" />
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
       </div>
       <div className="space-y-3 sm:space-y-6">
         <h1 className="heading-1 font-medium max-w-[824px] w-full text-center">

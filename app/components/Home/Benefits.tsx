@@ -20,25 +20,25 @@ const Benefits = () => {
             {/* Title */}
             <div className="pb-3 flex items-center justify-center gap-5">
               <Image
-                src="/images/left-line.png"
-                width={73}
-                height={8}
+                src="/images/label2.svg"
+                width={78}
+                height={16}
                 alt="line"
               />
               <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal">
                 Benefits
               </h1>
               <Image
-                src="/images/right-line.png"
-                width={73}
-                height={8}
+                src="/images/label.svg"
+                width={78}
+                height={16}
                 alt="line"
               />
             </div>
 
             {/* Main Heading */}
             <h1 className="text-[26px] sm:text-[40px] md:text-[48px] font-medium leading-tight tracking-[-1.44px] max-w-[668px] pb-3 sm:pb-6">
-              See the difference intelligent automation makes
+              See The Difference Intelligent Automation Makes
             </h1>
 
             {/* Subtitle */}

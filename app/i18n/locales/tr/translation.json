@@ -1,0 +1,24 @@
+{
+  "navbar": {
+    "home": "Ana Sayfa",
+    "product": "Ürün",
+    "article": "Makale",
+    "pricing": "Fiyatlandırma",
+    "industries": "Endüstriler",
+    "contact": "İletişim"
+  },
+  "header": {
+    "signin": "Giriş Yap",
+    "getStarted": "Başlayın",
+    "language": "Dil"
+  },
+  "hero": {
+    "title": "Web Sitemize Hoş Geldiniz",
+    "subtitle": "Harika deneyimler oluşturuyoruz"
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları"
+  }
+}

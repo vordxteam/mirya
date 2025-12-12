@@ -1,3 +1,328 @@
+// "use client";
+
+// import Link from "next/link";
+// import { usePathname } from "next/navigation";
+// import Image from "next/image";
+// import { useEffect, useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { XMarkIcon, Bars3Icon } from "@heroicons/react/16/solid";
+
+// const navLinks = [
+//   { href: "/", label: "Home" },
+//   { href: "/about", label: "Product" },
+//   { href: "/articles", label: "Article" },
+//   { href: "/pricing", label: "Pricing" },
+//   { href: "/industries", label: "Industries" },
+//   // { href: "/faq", label: "FAQ" },
+//   { href: "/contact", label: "Contact" },
+// ];
+
+// export default function Header() {
+//   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+//   const pathname = usePathname();
+
+//   const [open, setOpen] = useState(false);
+// const [selected, setSelected] = useState({ label: "English", flag: "/images/britain.png" });
+
+//   const [scrolled, setScrolled] = useState(false);
+
+//   useEffect(() => {
+//     const onScroll = () => {
+//       setScrolled(window.scrollY > 5);
+//     };
+
+//     window.addEventListener("scroll", onScroll);
+//     return () => window.removeEventListener("scroll", onScroll);
+//   }, []);
+
+//   // Animation variants
+//   const sidebarVariants = {
+//     closed: { x: "100%" },
+//     open: { x: 0 },
+//   };
+
+//   const overlayVariants = {
+//     closed: { opacity: 0 },
+//     open: { opacity: 1 },
+//   };
+
+//   const linkContainerVariants = {
+//     closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
+//     open: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+//   };
+
+//   // Add this useEffect hook after your existing useEffect for scroll
+// useEffect(() => {
+//   const handleClickOutside = (event: MouseEvent) => {
+//     const target = event.target as HTMLElement;
+//     // Close dropdown if click is outside the dropdown and language selector
+//     if (open && !target.closest('.language-selector')) {
+//       setOpen(false);
+//     }
+//   };
+
+//   document.addEventListener('mousedown', handleClickOutside);
+//   return () => {
+//     document.removeEventListener('mousedown', handleClickOutside);
+//   };
+// }, [open]);
+
+//   const linkItemVariants = {
+//     closed: { opacity: 0, x: 20 },
+//     open: { opacity: 1, x: 0 },
+//   };
+//   return (
+//     <motion.header
+//       animate={{
+//         backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
+//         backgroundColor: scrolled
+//           ? "rgba(0,0,0,0.35)" // darker look for black theme
+//           : "rgba(0,0,0,0)",
+//       }}
+//       transition={{ duration: 0.3, ease: "easeOut" }}
+//       className="fixed z-50000 w-full top-0"
+//     >
+//       <nav className="mx-auto flex max-w-[1440px] items-center justify-between p-6 lg:py-[26px] xl:px-20">
+//         {/* Logo */}
+//         <div className="flex">
+//           <Link href="/" className="-m-1.5 p-1.5">
+//             <Image src="/images/logo.svg" width={132} height={40} alt="logo" />
+//           </Link>
+//         </div>
+
+//         {/* Desktop Links */}
+//         <div className="hidden lg:flex lg:gap-x-8">
+//           {navLinks.map((link) => {
+//             const isActive = pathname === link.href;
+//             return (
+//               <Link
+//                 key={link.href}
+//                 href={link.href}
+//                 className={`
+//                   relative text-[16px] transition-colors duration-300
+//                   ${
+//                     isActive
+//                       ? "text-white font-medium"
+//                       : "text-[#73799B]  font-normal"
+//                   }
+//                   hover:text-white
+//                   after:absolute after:-bottom-1 after:left-0 after:h-0.5
+//                   after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529]
+//                   hover:after:w-full after:transition-all after:duration-300
+//                   ${isActive ? "after:w-full" : ""}
+//                 `}
+//               >
+//                 {link.label}
+//               </Link>
+//             );
+//           })}
+//         </div>
+
+//         {/* Desktop Get Started Button */}
+//        <div className="hidden lg:flex items-center  lg:justify-end gap-5">
+//   <div className="relative text-white language-selector">
+//     <div
+//       onClick={() => setOpen(!open)}
+//       className="rounded-lg cursor-pointer flex items-center gap-1 justify-between"
+//     >
+//       <span className="flex items-center gap-2 heading-6">
+//         {selected.label}
+//       </span>
+//       <Image src='/images/dropdown.svg' alt="dropdown" width={20} height={10} />
+//     </div>
+
+//     {open && (
+//       <div
+//         className="absolute top-full left-0 w-[150px] mt-1 bg-[#050925] border border-transparent rounded-lg overflow-hidden z-50"
+//         style={{
+//           background: 'linear-gradient(#050925, #050925) padding-box, conic-gradient(from 0deg at 50% 50%, #00031c, #8ea0e0, #00031c) border-box',
+//           border: '1px solid transparent'
+//         }}
+//       >
+//         {[
+//           { label: "English", flag: "/images/british.png" },
+//           { label: "German", flag: "/images/german.png" },
+//           { label: "Turkish", flag: "/images/turkish.png" },
+//         ].map((item) => (
+//           <div
+//             key={item.label}
+//             onClick={(e) => {
+//               e.stopPropagation(); // This prevents the event from bubbling up
+//               setSelected(item);
+//               setOpen(false);
+//             }}
+//             className="px-3 py-2 flex items-center heading-7 font-normal gap-2 cursor-pointer border-b border-[#FFFFFF1F] last:border-none hover:bg-white/10"
+//           >
+//             <Image src={item.flag} alt={item.label} width={16} height={11} />
+//             {item.label}
+//           </div>
+//         ))}
+//       </div>
+//     )}
+//   </div>
+
+//   <Link
+//     href="/coming-soon"
+//     className="text-white text-[14px] underline cursor-pointer hover:text-white"
+//   >
+//     Signin
+//   </Link>
+//   <div
+//     className="rounded-full p-0.5"
+//     style={{
+//       background:
+//         "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+//     }}
+//   >
+//     <Link
+//       href="/contact"
+//       className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full"
+//     >
+//       Get Started
+//     </Link>
+//   </div>
+// </div>
+
+//         {/* Mobile Menu Button (Burger) */}
+//         <div className="flex lg:hidden">
+//           <button
+//             type="button"
+//             onClick={() => setMobileMenuOpen(true)}
+//             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+//           >
+//             <Bars3Icon className="h-6 w-6" />
+//           </button>
+//         </div>
+//       </nav>
+
+//       {/* Mobile Sidebar with Framer Motion */}
+//       <AnimatePresence>
+//         {mobileMenuOpen && (
+//           <>
+//             {/* Overlay */}
+//             <motion.div
+//               key="overlay"
+//               variants={overlayVariants}
+//               initial="closed"
+//               animate="open"
+//               exit="closed"
+//               className="fixed inset-0 z-50 bg-black/50 lg:hidden"
+//               onClick={() => setMobileMenuOpen(false)}
+//             />
+
+//             {/* Sidebar */}
+//             <motion.div
+//               key="sidebar"
+//               variants={sidebarVariants}
+//               initial="closed"
+//               animate="open"
+//               exit="closed"
+//               className="fixed inset-y-0 right-0 z-100000 w-full sm:max-w-sm bg-[#00031C] p-6 overflow-y-auto lg:hidden h-[100vh]"
+//             >
+//               {/* Header */}
+//               <div className="flex items-center justify-between">
+//                 <Link
+//                   href="/"
+//                   className="-m-1.5 p-1.5"
+//                   onClick={() => setMobileMenuOpen(false)}
+//                 >
+//                   <Image
+//                     src="/images/logo.svg"
+//                     width={132}
+//                     height={40}
+//                     alt="logo"
+//                   />
+//                 </Link>
+
+//                 <button
+//                   type="button"
+//                   onClick={() => setMobileMenuOpen(false)}
+//                   className="-m-2.5 rounded-md p-2.5 text-gray-400"
+//                 >
+//                   <XMarkIcon className="h-6 w-6" />
+//                 </button>
+//               </div>
+
+//               {/* Links */}
+//               <motion.div
+//                 variants={linkContainerVariants}
+//                 initial="closed"
+//                 animate="open"
+//                 exit="closed"
+//                 className="mt-8 space-y-4"
+//               >
+//                 {navLinks.map((link) => {
+//                   const isActive = pathname === link.href;
+//                   return (
+//                     <motion.div key={link.href} variants={linkItemVariants}>
+//                       <Link
+//                         href={link.href}
+//                         onClick={() => setMobileMenuOpen(false)}
+//                         className={`block text-[18px] font-normal py-2 ${
+//                           isActive ? "text-white" : "text-[#73799B]"
+//                         }`}
+//                       >
+//                         {link.label}
+//                       </Link>
+//                     </motion.div>
+//                   );
+//                 })}
+//               </motion.div>
+
+//               {/* Mobile Signin and Get Started Buttons */}
+//               <motion.div
+//                 variants={linkContainerVariants}
+//                 initial="closed"
+//                 animate="open"
+//                 exit="closed"
+//                 className="mt-8 space-y-4"
+//               >
+//                 {/* Signin Button */}
+//                 <motion.div variants={linkItemVariants}>
+//                   <Link
+//                     href="/coming-soon"
+//                     onClick={() => setMobileMenuOpen(false)}
+//                     className="text-[#73799B] text-[18px] font-normal underline cursor-pointer hover:text-white w-full text-left py-2"
+//                   >
+//                     Signin
+//                   </Link>
+//                 </motion.div>
+
+//                 {/* Get Started Button */}
+//                 <motion.div variants={linkItemVariants}>
+//                   <div
+//                     className="rounded-full p-0.5 inline-block w-full"
+//                     style={{
+//                       background:
+//                         "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+//                     }}
+//                   >
+//                     <Link
+//                       href="/contact"
+//                       className="inline-block text-[16px] font-normal text-white py-2 px-6 bg-[#00031C] rounded-full w-full text-center"
+//                       onClick={() => setMobileMenuOpen(false)}
+//                     >
+//                       Get Started
+//                     </Link>
+//                   </div>
+//                 </motion.div>
+//               </motion.div>
+//             </motion.div>
+//           </>
+//         )}
+//       </AnimatePresence>
+//     </motion.header>
+//   );
+// }<style jsx>{`
+//                 .non-rounded2 {
+//                   background: linear-gradient(#4542e0, #4542e0) padding-box,
+//                     linear-gradient(0deg, #00031c, #8ea0e0, #00031c) border-box;
+//                 }
+//               `}</style>
+
+
+// app/Layout/Header.tsx (Your Final Perfect Version)
 "use client";
 
 import Link from "next/link";
@@ -6,6 +331,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/16/solid";
+import { useTranslation } from "react-i18next";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -13,31 +339,55 @@ const navLinks = [
   { href: "/articles", label: "Article" },
   { href: "/pricing", label: "Pricing" },
   { href: "/industries", label: "Industries" },
-  // { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
-export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const languages = [
+  { code: "en", label: "English", flag: "/images/british.png" },
+  { code: "de", label: "German", flag: "/images/german.png" },
+  { code: "tr", label: "Turkish", flag: "/images/turkish.png" },
+] as const;
 
+export default function Header() {
+  const { i18n } = useTranslation();
   const pathname = usePathname();
 
-  const [open, setOpen] = useState(false);
-const [selected, setSelected] = useState({ label: "English", flag: "/images/britain.png" });
-
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
+  // Get current language from i18n
+  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
+  const isClient = typeof window !== "undefined";
 
+  // Close dropdown when clicking outside
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 5);
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!(e.target as HTMLElement).closest('.language-selector')) {
+        setDropdownOpen(false);
+      }
     };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
+  // Scroll effect for header background
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 5);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Animation variants
+  // Change language function
+  const changeLanguage = (code: string) => {
+    i18n.changeLanguage(code);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("language", code);
+    }
+    setDropdownOpen(false);
+  };
+
+  // Animation variants from original header
   const sidebarVariants = {
     closed: { x: "100%" },
     open: { x: 0 },
@@ -53,26 +403,11 @@ const [selected, setSelected] = useState({ label: "English", flag: "/images/brit
     open: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
   };
 
-  // Add this useEffect hook after your existing useEffect for scroll
-useEffect(() => {
-  const handleClickOutside = (event: MouseEvent) => {
-    const target = event.target as HTMLElement;
-    // Close dropdown if click is outside the dropdown and language selector
-    if (open && !target.closest('.language-selector')) {
-      setOpen(false);
-    }
-  };
-
-  document.addEventListener('mousedown', handleClickOutside);
-  return () => {
-    document.removeEventListener('mousedown', handleClickOutside);
-  };
-}, [open]);
-
   const linkItemVariants = {
     closed: { opacity: 0, x: 20 },
     open: { opacity: 1, x: 0 },
   };
+
   return (
     <motion.header
       animate={{
@@ -92,7 +427,7 @@ useEffect(() => {
           </Link>
         </div>
 
-        {/* Desktop Links */}
+        {/* Desktop Links - Original styling */}
         <div className="hidden lg:flex lg:gap-x-8">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -108,8 +443,8 @@ useEffect(() => {
                       : "text-[#73799B]  font-normal"
                   }
                   hover:text-white
-                  after:absolute after:-bottom-1 after:left-0 after:h-0.5 
-                  after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529] 
+                  after:absolute after:-bottom-1 after:left-0 after:h-0.5
+                  after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529]
                   hover:after:w-full after:transition-all after:duration-300
                   ${isActive ? "after:w-full" : ""}
                 `}
@@ -120,70 +455,84 @@ useEffect(() => {
           })}
         </div>
 
-        {/* Desktop Get Started Button */}
-       <div className="hidden lg:flex items-center  lg:justify-end gap-5">
-  <div className="relative text-white language-selector">
-    <div
-      onClick={() => setOpen(!open)}
-      className="rounded-lg cursor-pointer flex items-center gap-1 justify-between"
-    >
-      <span className="flex items-center gap-2 heading-6">
-        {selected.label}
-      </span>
-      <Image src='/images/dropdown.svg' alt="dropdown" width={20} height={10} />
-    </div>
+        {/* Desktop Right Side - Original styling with multilingual */}
+        <div className="hidden lg:flex items-center lg:justify-end gap-5">
+          {/* Language Selector - Original styling with multilingual functionality */}
+          {isClient ? (
+            <div className="relative text-white language-selector">
+              <div
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="rounded-lg cursor-pointer flex items-center gap-1 justify-between"
+              >
+                <span className="flex items-center gap-2 heading-6">
+                  <Image
+                    src={currentLang.flag}
+                    alt={currentLang.label}
+                    width={16}
+                    height={11}
+                    className="rounded-sm"
+                  />
+                  {currentLang.label}
+                </span>
+                <Image src='/images/dropdown.svg' alt="dropdown" width={20} height={10} />
+              </div>
 
-    {open && (
-      <div 
-        className="absolute top-full left-0 w-[150px] mt-1 bg-[#050925] border border-transparent rounded-lg overflow-hidden z-50"
-        style={{
-          background: 'linear-gradient(#050925, #050925) padding-box, conic-gradient(from 0deg at 50% 50%, #00031c, #8ea0e0, #00031c) border-box',
-          border: '1px solid transparent'
-        }}
-      >
-        {[
-          { label: "English", flag: "/images/british.png" },
-          { label: "German", flag: "/images/german.png" },
-          { label: "Turkish", flag: "/images/turkish.png" },
-        ].map((item) => (
-          <div 
-            key={item.label}
-            onClick={(e) => {
-              e.stopPropagation(); // This prevents the event from bubbling up
-              setSelected(item);
-              setOpen(false);
-            }}
-            className="px-3 py-2 flex items-center heading-7 font-normal gap-2 cursor-pointer border-b border-[#FFFFFF1F] last:border-none hover:bg-white/10"
+              {dropdownOpen && (
+                <div
+                  className="absolute top-full left-0 w-[150px] mt-1 bg-[#050925] border border-transparent rounded-lg overflow-hidden z-50"
+                  style={{
+                    background: 'linear-gradient(#050925, #050925) padding-box, conic-gradient(from 0deg at 50% 50%, #00031c, #8ea0e0, #00031c) border-box',
+                    border: '1px solid transparent'
+                  }}
+                >
+                  {languages.map((lang) => (
+                    <div
+                      key={lang.code}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        changeLanguage(lang.code);
+                      }}
+                      className="px-3 py-2 flex items-center heading-7 font-normal gap-2 cursor-pointer border-b border-[#FFFFFF1F] last:border-none hover:bg-white/10"
+                    >
+                      <Image src={lang.flag} alt={lang.label} width={16} height={11} className="rounded-sm" />
+                      {lang.label}
+                      {i18n.language === lang.code && (
+                        <span className="ml-auto text-[#4A56FF]">✓</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            // Skeleton loader during SSR
+            <div className="w-[100px] h-[40px] bg-gray-800 rounded-lg animate-pulse"></div>
+          )}
+
+          {/* Sign In - Original styling */}
+          <Link
+            href="/coming-soon"
+            className="text-white text-[14px] underline cursor-pointer hover:text-white"
           >
-            <Image src={item.flag} alt={item.label} width={16} height={11} /> 
-            {item.label}
+            Signin
+          </Link>
+          
+          {/* Get Started Button - Original styling */}
+          <div
+            className="rounded-full p-0.5"
+            style={{
+              background:
+                "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+            }}
+          >
+            <Link
+              href="/contact"
+              className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full"
+            >
+              Get Started
+            </Link>
           </div>
-        ))}
-      </div>
-    )}
-  </div>
-
-  <Link
-    href="/coming-soon"
-    className="text-white text-[14px] underline cursor-pointer hover:text-white"
-  >
-    Signin
-  </Link>
-  <div
-    className="rounded-full p-0.5"
-    style={{
-      background:
-        "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
-    }}
-  >
-    <Link
-      href="/contact"
-      className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full"
-    >
-      Get Started
-    </Link>
-  </div>
-</div>
+        </div>
 
         {/* Mobile Menu Button (Burger) */}
         <div className="flex lg:hidden">
@@ -197,7 +546,7 @@ useEffect(() => {
         </div>
       </nav>
 
-      {/* Mobile Sidebar with Framer Motion */}
+      {/* Mobile Sidebar with Framer Motion - Original styling */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
@@ -271,6 +620,49 @@ useEffect(() => {
                 })}
               </motion.div>
 
+              {/* Mobile Language Selector */}
+              <motion.div
+                variants={linkContainerVariants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                className="mt-8 space-y-4"
+              >
+                <motion.div variants={linkItemVariants}>
+                  <div className="h-px bg-white/10 my-4" />
+                  <p className="text-[#73799B] text-sm">Language</p>
+                  <div className="space-y-2">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          changeLanguage(lang.code);
+                          setMobileMenuOpen(false);
+                        }}
+                        className={`flex items-center gap-3 w-full py-2 px-3 rounded-lg transition
+                          ${
+                            i18n.language === lang.code
+                              ? "bg-white/10 text-white"
+                              : "text-[#73799B]"
+                          }`}
+                      >
+                        <Image
+                          src={lang.flag}
+                          width={24}
+                          height={16}
+                          alt=""
+                          className="rounded"
+                        />
+                        <span className="text-[16px]">{lang.label}</span>
+                        {i18n.language === lang.code && (
+                          <span className="ml-auto text-[#4A56FF]">✓</span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              </motion.div>
+
               {/* Mobile Signin and Get Started Buttons */}
               <motion.div
                 variants={linkContainerVariants}
@@ -315,9 +707,4 @@ useEffect(() => {
       </AnimatePresence>
     </motion.header>
   );
-}<style jsx>{`
-                .non-rounded2 {
-                  background: linear-gradient(#4542e0, #4542e0) padding-box,
-                    linear-gradient(0deg, #00031c, #8ea0e0, #00031c) border-box;
-                }
-              `}</style>
+}

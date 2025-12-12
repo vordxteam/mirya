@@ -1,0 +1,24 @@
+{
+  "navbar": {
+    "home": "Home",
+    "product": "Product",
+    "article": "Article",
+    "pricing": "Pricing",
+    "industries": "Industries",
+    "contact": "Contact"
+  },
+  "header": {
+    "signin": "Signin",
+    "getStarted": "Get Started",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Welcome to Our Website",
+    "subtitle": "Building amazing experiences"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "hero": {
+    "badge": "Ürün Hakkında",
+    "title": "MIRYA ile Tanışın – Her Zaman Aktif Otomasyon Zekanız",
+    "subtitle": "Sistemleri bağlayın, iş akışlarını sadeleştirin ve MIRYA'nın her görevi kusursuz hassasiyetle yapmasına izin verin. Kod yok, arayüz yok — sadece düşünen, uyum sağlayan ve insan gibi çalışan akıllı otomasyon.",
+    "years": "10+ Yıldır Mükemmeliyet Sunuyoruz"
+  },
+  "demo": {
+    "badge": "Biz Kimiz",
+    "title": "MIRYA sadece bir otomasyon aracı değil; akıllı otomasyonu herkes için erişilebilir, kolay ve güvenilir hale getirme misyonu olan bir ekibiz. Teknolojinin insan için çalışması gerektiğine inanıyoruz. Platformumuz her sistemi, her uygulamayı ve her süreci bağlar, kontrol eder; sizin hareketlerinizden öğrenerek iş akışlarını yüksek hassasiyet ve hızla yürütür.",
+    "benefits": [
+      "Programlama bilgisi gerekmez",
+      "Arayüz bağımsız — API gerekmez",
+      "On-Premise veya Bulut",
+      "Kaydet & Otomatize Et",
+      "24 saatte hazır",
+      "White Label hazır",
+      "Sürükle-Bırak Görsel Arayüz",
+      "4-6 haftada ROI",
+      "Analitik Panel",
+      "Sanal Yapay Zeka Asistanı",
+      "Otonom Botlar",
+      "Akıllı PDF Raporlar"
+    ]
+  },
+  "benefits": {
+    "Benefits": "Avantajlar",
+    "title": "Akıllı Otomasyonun Yarattığı Farkı Görün",
+    "subtitle": "Zaman tasarrufundan hatasız çalışmaya kadar MIRYA, iş akışınızın her aşamasında ölçülebilir iyileştirmeler sunar — anında ve karmaşasız.",
+    "cards": [
+      {
+        "title": "Hiçbir Şeyi Değiştirmeden Her Şeyi Otomatize Edin",
+        "desc": "İş akışlarını yeniden tasarlamaya veya sistemleri yeniden kurmaya gerek yok. MIRYA elinizdekilerle çalışır."
+      },
+      {
+        "title": "Yüzlerce Saat Kazanın",
+        "desc": "Ekibinizi tekrarlayan işlerden kurtarın, MIRYA tüm operasyonel görevleri anında üstlensin."
+      },
+      {
+        "title": "Sıfır Hata ile Çalışma",
+        "desc": "İnsan hatalarını ve tutarsızlıkları ortadan kaldırın. Süreçleriniz her zaman aynı güvenilir şekilde çalışır."
+      },
+      {
+        "title": "Verimliliği ve Üretkenliği Artırın",
+        "desc": "MIRYA tekrarlayan görevleri anında otomatikleştirir, ekibinizin yüksek değerli işlere odaklanmasını sağlar. Süreçler daha hızlı, daha akıcı ve tutarlı doğrulukla çalışır."
+      },
+      {
+        "title": "Harekete Geçilebilir İçgörüler",
+        "desc": "İş akışlarınızı ve veri modellerinizi anlayarak iyileştirme fırsatlarını ortaya çıkarır, performansı optimize etmeniz için net içgörüler sunar."
+      }
+    ]
+  },
+  "different": {
+    "badge": "MIRYA'yı Farklı Kılan Nedir",
+    "title": "Geleneksel otomasyon araçlarının aksine MIRYA sadece talimat takip etmez — anlar, öğrenir ve uyum sağlar. API'ye, dashboard'a ya da programlama bilgisine ihtiyacınız yok. Mevcut sistemlerinizle görsel olarak etkileşime girer, insan davranışını taklit eder ve manuel çalışmanın çok ötesinde hız, güvenilirlik ve doğruluk sunar."
+  },
+  "chooseus": {
+    "badge": "Neden Bizi Seçmelisiniz",
+    "title": "Bizi Yönlendiren Değerler",
+    "subtitle": "Geleneksel otomasyon araçlarının aksine MIRYA sadece talimat izlemez — anlar, öğrenir ve kendini geliştirir. API, dashboard veya kod bilgisi gerekmez.",
+    "cards": [
+      {
+        "title": "Arayüz Gerektirmez",
+        "desc": "Mevcut araçlarınızla tam bir insan gibi çalışır — API yok, entegrasyon sınırı yok."
+      },
+      {
+        "title": "On-Premise Kurulum",
+        "desc": "Verilerinizi güvende tutun. MIRYA tamamen kendi ortamınızda çalışır — bulut bağımlılığı yok."
+      },
+      {
+        "title": "Arayüz Kaydı (UI Recording)",
+        "desc": "Görevleri sadece yaparak MIRYA'ya öğretin. Otomasyonu akıllıca kaydeder ve oluşturur."
+      },
+      {
+        "title": "İnsan Benzeri Zeka",
+        "desc": "Ekranları anlar, verileri okur, kalıpları tanır ve gerçek zamanlı karar verir."
+      },
+      {
+        "title": "Sıfır Kod Otomasyonu",
+        "desc": "Bilgisayar kullanmayı biliyorsanız MIRYA'yı da bilirsiniz. Programlama gerekmez."
+      },
+      {
+        "title": "Tam White-Label",
+        "desc": "MIRYA'yı kendi markanız yapın: logo, renkler, alan adı ve deneyim — müşteriler veya iç ekipler için özel."
+      },
+      {
+        "title": "Çoklu Sistem Uyumluluğu",
+        "desc": "Web uygulamaları, masaüstü uygulamaları, eski sistemler ve özel iç araçlarla çalışır."
+      },
+      {
+        "title": "Şeffaf Fiyatlandırma",
+        "desc": "Net ve öngörülebilir fiyatlandırma. Gizli maliyet veya lisans sürprizi yok."
+      }
+    ]
+  },
+  "button": "Başla"
+}

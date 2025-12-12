@@ -84,19 +84,19 @@ const HowToUse = () => {
   return (
     <div
       ref={sectionRef}
-      className="px-5 sm:px-10 md:px-[72px] pt-[72px] sm:pb-[53px] max-w-[1440px] m-auto bg-[#00031c] z-100"
+      className="px-5 sm:px-10 md:px-[72px] pt-0 sm:pt-[72px] sm:pb-[53px] max-w-[1440px] m-auto bg-[#00031c] z-100"
     >
       <div className="flex flex-col items-center justify-center">
         {/* Title Row */}
         <div className="pb-3 flex items-center justify-center gap-5">
-          <Image src="/images/left-line.png" width={73} height={8} alt="line" />
+          <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px]">
             How to Use
           </h1>
           <Image
-            src="/images/right-line.png"
-            width={73}
-            height={8}
+            src="/images/label.svg"
+            width={78}
+            height={16}
             alt="line"
           />
         </div>
@@ -115,7 +115,7 @@ const HowToUse = () => {
         <GradientButton
           label="Get Started Now"
           href="/contact"
-          bgColor="black"
+          bgColor="#00031C"
           textColor="#fff"
         />
 

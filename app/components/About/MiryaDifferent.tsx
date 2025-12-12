@@ -242,25 +242,25 @@ export default function MiryaDifferent(): React.ReactElement {
             variants={itemVariants}
           >
             <Image
-              src="/images/blur.svg"
+              src="/images/label2.svg"
               alt="gradient1"
-              height={8}
-              width={8}
+              height={16}
+              width={78}
             />
             <h5 className="heading-5 font-regular text-[#959EFE]">
               What Makes MIRYA Different
             </h5>
             <Image
-              src="/images/blur.svg"
+              src="/images/label.svg"
               alt="gradient1"
-              height={8}
-              width={8}
+              height={16}
+              width={78}
             />
           </motion.div>
 
           <motion.div
             ref={paragraphRef}
-            className="pt-3 text-[20px] md:text-[36px] leading-8 font-medium text-white max-w-[1190px]          
+            className="pt-3 text-[20px] md:text-[36px] leading-8 sm:leading-[48px] font-medium text-white max-w-[1190px]          
     text-justify hyphens-auto md:text-center mb-6"
             variants={itemVariants}
           >

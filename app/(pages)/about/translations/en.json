@@ -1,0 +1,97 @@
+{
+  "hero": {
+    "badge": "About Product",
+    "title": "Meet MIRYA-Your Always On Automation Intelligence",
+    "subtitle": "Connect systems, streamline workflows, and let MIRYA handle every task with precision. No code, no interfaces—just smart automation that thinks, adapts, and executes like a human.",
+    "years": "Delivering Excellence for Over 10+ Years"
+  },
+  "demo": {
+    "badge": "Who We Are",
+    "title": "MIRYA is more than an automation tool we are a team on a mission to make intelligent automation accessible, effortless, and reliable. We believe that technology should work for humans, not the other way around. Our platform connects and controls any system, any app, and any process, learning from your actions to execute workflows with precision and speed.",
+    "benefits": [
+      "No programming skills required",
+      "Interface-independent — no API needed",
+      "On-Premise or Cloud",
+      "Record & Automate",
+      "Ready in 24 hours",
+      "White Label ready",
+      "Drag & Drop Visual Interface",
+      "ROI in just 4–6 weeks",
+      "Analytics Dashboard",
+      "Virtual AI Assistant",
+      "Autonomous Bots",
+      "Smart PDF Reports"
+    ]
+  },
+  "benefits": {
+    "Benefits": "Benefits",
+    "title": "See The difference Intelligent Automation Makes",
+    "subtitle": "From time savings to error-free execution, MIRYA delivers measurable improvements across every part of your workflow—instantly and without complexity.",
+    "cards": [
+      {
+        "title": "Automate Everything Without Changing Anything",
+        "desc": "No need to redesign workflows or rebuild systems. MIRYA works with what you already have."
+      },
+      {
+        "title": "Save Hundreds of Hours",
+        "desc": "Free your team from repetitive work and let MIRYA handle all operational tasks instantly."
+      },
+      {
+        "title": "Zero-Error Execution",
+        "desc": "Remove human errors and inconsistencies. Your processes run the same reliable way — every time."
+      },
+      {
+        "title": "Boost Efficiency & Productivity",
+        "desc": "MIRYA automates repetitive tasks instantly, allowing your team to focus on high-value work. Processes run faster, smoother, and with consistent accuracy."
+      },
+      {
+        "title": "Actionable Insights",
+        "desc": "By understanding your workflows and data patterns, MIRYA highlights opportunities for improvement and provides clear insights that help you optimize performance."
+      }
+    ]
+  },
+  "different": {
+    "badge": "What Makes MIRYA Different",
+    "title": "Unlike traditional automation tools, MIRYA doesn't just follow instructions — it understands, learns, and adapts. With MIRYA, you don't need APIs, dashboards, or programming knowledge. It interacts with your existing systems visually, mimicking human behavior, while delivering speed, reliability, and accuracy far beyond what manual work can achieve."
+  },
+  "chooseus": {
+    "badge": "Why Choose Us",
+    "title": "The Values That Drive Us",
+    "subtitle": "Unlike traditional automation tools, MIRYA doesn't just follow instructions it understands, learns, and adapts. With MIRYA, you don't need APIs, dashboards, or programming knowledge.",
+    "cards": [
+      {
+        "title": "No Interface Required",
+        "desc": "Works with your existing tools exactly as a human would — no APIs, no integration limitations."
+      },
+      {
+        "title": "On-Premise Deployment",
+        "desc": "Keep your data private. MIRYA runs fully inside your environment — no cloud dependency."
+      },
+      {
+        "title": "UI Recording",
+        "desc": "Teach MIRYA by simply performing the task. It learns, records, and builds the automation intelligently."
+      },
+      {
+        "title": "Human-Like Intelligence",
+        "desc": "Understands screens, reads data, interprets patterns, and makes decisions in real time."
+      },
+      {
+        "title": "Zero Code Automation",
+        "desc": "If you know how to use your computer, you know how to use MIRYA. No programming needed."
+      },
+      {
+        "title": "Full White-Label",
+        "desc": "Brand MIRYA as your own: logo, colors, domain, and experience — tailored for clients or internal teams."
+      },
+      {
+        "title": "Multi-System Compatibility",
+        "desc": "Works across web apps, desktop apps, legacy systems, and custom internal tools."
+      },
+      {
+        "title": "Transparent Pricing",
+        "desc": "Clear, predictable pricing. No hidden costs or licensing surprises."
+      }
+    ]
+  },
+  "button": "Get Started"
+}

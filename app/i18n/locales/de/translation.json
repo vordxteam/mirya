@@ -1,0 +1,24 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "product": "Produkt",
+    "article": "Artikel",
+    "pricing": "Preise",
+    "industries": "Branchen",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "signin": "Anmelden",
+    "getStarted": "Loslegen",
+    "language": "Sprache"
+  },
+  "hero": {
+    "title": "Willkommen auf unserer Website",
+    "subtitle": "Erstaunliche Erlebnisse schaffen"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  }
+}

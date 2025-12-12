@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -201,9 +201,9 @@ export default function Demo(): React.ReactElement {
   return (
     <>
       <div className="flex justify-center">
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
-      </div>12
-      <div className="pt-[60px] py-100 px-5 sm:px-20 pb-[229px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
+        <div className=" bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
+      </div>
+      <div className="pt-[60px] py-100 px-5 sm:px-20 pb-5 sm:pb-[229px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
         <div className="bg-[#00031C"></div>
         <motion.div
           initial="hidden"
@@ -216,14 +216,15 @@ export default function Demo(): React.ReactElement {
             alt="gradient"
             width={181}
             height={94}
-            className="absolute left-[45%] top-0"
+            className="absolute left-[45%] top-0 pointer-events-none"
           />
+
           <Image
             src="/images/gradient2.png"
             alt="gradient"
             width={458}
             height={318}
-            className="absolute left-[35%] bottom-[30%]"
+            className="absolute left-[35%] bottom-[30%] pointer-events-none"
           />
           {/* <Image
           src="/images/main-gradient.png"
@@ -234,28 +235,29 @@ export default function Demo(): React.ReactElement {
         /> */}
         </motion.div>
 
-        <motion.div
-          variants={dashVariants}
-          initial="hidden"
-          animate="visible"
-          className="absolute bottom-[60px]"
-        >
-          <Image src="/images/dash.png" alt="dash" width={530} height={121} />
-        </motion.div>
+      <motion.div
+  variants={dashVariants}
+  initial="hidden"
+  animate="visible"
+  className="absolute bottom-[60px] pointer-events-none"
+>
+  <Image src="/images/dash.png" alt="dash" width={530} height={121} />
+</motion.div>
 
-        <motion.div
-          variants={pointerVariants}
-          initial="hidden"
-          animate="visible"
-          className="absolute bottom-[60px]"
-        >
-          <Image
-            src="/images/gradient-pointer.png"
-            alt="gradient pointer"
-            width={40}
-            height={42}
-          />
-        </motion.div>
+
+      <motion.div
+  variants={pointerVariants}
+  initial="hidden"
+  animate="visible"
+  className="absolute bottom-[60px] pointer-events-none"
+>
+  <Image
+    src="/images/gradient-pointer.png"
+    alt="gradient pointer"
+    width={40}
+    height={42}
+  />
+</motion.div>
 
         <motion.div
           className="w-full flex flex-col items-center"
@@ -269,28 +271,33 @@ export default function Demo(): React.ReactElement {
             variants={itemVariants}
           >
             <Image
-              src="/images/blur.svg"
+              src="/images/label2.svg"
               alt="gradient1"
-              height={8}
-              width={8}
+              height={16}
+              width={78}
             />
             <h5 className="heading-5 font-regular text-[#959EFE]">
               Who We Are
             </h5>
             <Image
-              src="/images/blur.svg"
+              src="/images/label.svg"
               alt="gradient1"
-              height={8}
-              width={8}
+              height={16}
+              width={78}
             />
           </motion.div>
 
           <motion.div
             ref={paragraphRef}
-            className="pt-3  text-[20px] md:text-[36px] leading-8 font-medium text-white max-w-[1190px] text-center mb-6"
+            className="pt-3  text-[20px] md:text-[36px] leading-8 sm:leading-[48px] font-medium text-white max-w-[1190px] text-center mb-6"
             variants={itemVariants}
           >
-           MIRYA is more than an automation tool we are a team on a mission to make intelligent automation accessible, effortless, and reliable. We believe that technology should work for humans, not the other way around. Our platform connects and controls any system, any app, and any process, learning from your actions to execute workflows with precision and speed.
+            MIRYA is more than an automation tool we are a team on a mission to
+            make intelligent automation accessible, effortless, and reliable. We
+            believe that technology should work for humans, not the other way
+            around. Our platform connects and controls any system, any app, and
+            any process, learning from your actions to execute workflows with
+            precision and speed.
           </motion.div>
 
           <GradientButton

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GradientButton from "@/app/ui/GradientButton";
+import Link from "next/link";
 // import Cards from "./Cards";
 
 const HeroSection = () => {
@@ -83,43 +84,41 @@ const HeroSection = () => {
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">
-          <Image src="/images/left-line.png" width={73} height={8} alt="line" />
+          <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
             Team
           </h1>
-          <Image
-            src="/images/right-line.png"
-            width={73}
-            height={8}
-            alt="line"
-          />
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[824px] w-full text-center pb-3 sm:pb-6">
-         Join Us to Build Intelligent Automation
+          Join Us to Build Intelligent Automation
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[824px]">
-          At MIRYA, we’re creating automation that works the way people think — intuitive, fast, and human-centered. If you want to solve meaningful problems and shape a new era of work, we’d love to have you on our team.
+          At MIRYA, we’re creating automation that works the way people think —
+          intuitive, fast, and human-centered. If you want to solve meaningful
+          problems and shape a new era of work, we’d love to have you on our
+          team.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <div
-  className="rounded-full p-[1.8px]"
-  style={{
-    background:
-      "linear-gradient(90deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
-  }}
->
-  <button
-    className="flex items-center justify-center gap-2 
-               rounded-[40px] px-6 py-3 text-white text-[16px] font-medium"
-    style={{
-      backgroundColor: "#0274FE",
-    }}
-  >
-    Join Our Team
-  </button>
-</div>
-
+          <div
+            className="rounded-full p-[1.8px]"
+            style={{
+              background:
+                "linear-gradient(90deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
+            }}
+          >
+            <Link
+            href={'/contact'}
+              className="flex items-center justify-center gap-2 
+               rounded-[40px] px-6 py-3 text-white text-[16px] font-medium cursor-pointer" 
+              style={{
+                backgroundColor: "#0274FE",
+              }}
+            >
+              Join Our Team
+            </Link>
+          </div>
         </div>
 
         <div className="relative">
@@ -146,7 +145,13 @@ const HeroSection = () => {
             />
           </motion.div>
         </div>
-        <Image src='/images/herosection-img.jpg' alt="Hersection" width={1200} height={380} className="-mt-7 z-10 rounded-2xl" />
+        <Image
+          src="/images/herosection-img.jpg"
+          alt="Hersection"
+          width={1200}
+          height={380}
+          className="-mt-7 z-10 rounded-2xl"
+        />
       </div>
     </div>
   );
