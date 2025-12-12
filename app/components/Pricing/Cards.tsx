@@ -221,7 +221,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
                   </div>
                 ) : (
                   <p
-                    className="text-[24px] font-medium leading-7 max-w-[276px]
+                    className="text-[24px] font-medium leading-7 max-w-[298px]
                       bg-linear-to-r from-[#789EFF] to-[#3A38AA]
                       bg-clip-text text-transparent"
                   >
