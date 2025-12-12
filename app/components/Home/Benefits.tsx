@@ -38,7 +38,7 @@ const Benefits = () => {
 
             {/* Main Heading */}
             <h1 className="text-[26px] sm:text-[40px] md:text-[48px] font-medium leading-tight tracking-[-1.44px] max-w-[668px] pb-3 sm:pb-6">
-              See the difference intelligent automation makes
+              See The Difference Intelligent Automation Makes
             </h1>
 
             {/* Subtitle */}

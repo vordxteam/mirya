@@ -67,7 +67,7 @@ const IndustriesSection = () => {
           </div>
 
           <h1 className="text-[30px] sm:text-[40px] md:text-[48px] font-medium leading-10 sm:leading-14 tracking-[-1.44px] max-w-[716px] w-full text-center pb-3 md:pb-6">
-            Industries we Empower
+            Industries We Empower
           </h1>
 
           <p className="text-[#CAC9D1] text-[14px] font-normal  leading-5 text-center max-w-[606px]">

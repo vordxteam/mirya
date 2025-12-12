@@ -34,7 +34,7 @@ export default function Testimonials() {
 
           {/* Main Heading */}
           <h1 className="text-[26px] text-center sm:text-[40px] md:text-[48px] font-medium leading-tight tracking-[-1.44px] max-w-[668px] pb-3 sm:pb-6">
-            Reviews from customers who use MIRYA
+            Reviews From Customers Who Use MIRYA
           </h1>
 
           {/* Subtitle */}
