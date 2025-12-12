@@ -18,7 +18,6 @@ const Aiassistant = () => {
                 width={78}
                 height={16}
                 alt="line"
-                className="w-[45px] sm:w-[73px]"
               />
               <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal">
                 AI Assistance
@@ -28,7 +27,6 @@ const Aiassistant = () => {
                 width={78}
                 height={16}
                 alt="line"
-                className="w-[45px] sm:w-[73px]"
               />
             </div>
 

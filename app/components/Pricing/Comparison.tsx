@@ -85,7 +85,7 @@ export default function Comparison() {
   const renderFeatureValue = (value: string) => {
     return (
       <span
-        className={`text-[16px] md:text-[20px] font-medium leading-7 text-center`}
+        className={`text-[14px] md:text-[20px] font-medium leading-7 text-center`}
       >
         {value}
       </span>
@@ -159,7 +159,7 @@ export default function Comparison() {
             </p>
 
             {/* Values for each platform → 8 columns */}
-            <div className="col-span-12 md:col-span-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="col-span-12 md:col-span-8 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {columns.map((col) => (
                 <div
                   key={col.key}

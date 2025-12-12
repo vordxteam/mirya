@@ -84,7 +84,7 @@ const HowToUse = () => {
   return (
     <div
       ref={sectionRef}
-      className="px-5 sm:px-10 md:px-[72px] pt-0 sm:pt-[72px] sm:pb-[53px] max-w-[1440px] m-auto bg-[#00031c] z-100"
+      className="px-5 sm:px-10 md:px-[72px] pt-0 sm:pt-[72px] sm:pb-[53px] pb-5 max-w-[1440px] m-auto bg-[#00031c] z-100"
     >
       <div className="flex flex-col items-center justify-center">
         {/* Title Row */}
