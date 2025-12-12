@@ -307,7 +307,7 @@ export default function Demo(): React.ReactElement {
             textColor="#fff"
           />
 
-          <motion.div className="pt-12" variants={containerVariants}>
+          <motion.div className="" variants={containerVariants}>
             <div className="benefits-grid">
               {benefits.map((item, index) => (
                 <motion.div

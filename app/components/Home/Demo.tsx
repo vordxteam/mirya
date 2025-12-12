@@ -596,7 +596,7 @@ export default function Demo(): React.ReactElement {
 
           <motion.div
             ref={paragraphRef}
-            className="pt-3 text-[20px] md:text-[36px] font-medium text-white max-w-[1093px] text-center px-5 relative z-10"
+            className="pt-3 text-[20px] md:text-[36px] sm:leading-[48px] leading-8 font-medium text-white max-w-[1108px] text-center px-5 relative z-10"
             variants={itemVariants}
           >
             MIRYA is your all-in-one automation platform that connects and
@@ -606,8 +606,6 @@ export default function Demo(): React.ReactElement {
             performs every task just like a human - only faster, more precise
             and completely reliable.
           </motion.div>
-          
-          {/* Benefits grid with z-index to appear above background light */}
           <motion.div className="relative z-10" variants={containerVariants}>
             <div className="benefits-grid">
               {benefits.map((item, index) => (

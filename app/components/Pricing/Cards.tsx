@@ -63,7 +63,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
           "Full customization brand name, logo and colors",
           "Lifetime support",
           "Sell the platform as your own product",
-          "Quick deployment with minimal setup",
+          " Quick deployment with minimal setup start automating immediately    ",
           "Dedicated account management",
         ],
         btnColor: "#00031C",
@@ -173,20 +173,29 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
                 alt={item.title}
                 width={76}
                 height={76}
-                className="absolute -top-[5%] left-40"
+                className="absolute h-auto -top-[5%] left-40"
               />
 
               <h3 className="heading-3 font-semibold text-[#F4F7FF]">
                 {item.title}
               </h3>
 
-              <p className="pt-3 heading-6 text-[#CAC9D1] max-w-[332px]">
-                {item.description}
-              </p>
-
-              <div className="mt-3 h-px bg-gradient-to-r from-[#9e9ebb] via-[#A68BEE] to-[#1A1A3B]" />
-
-              <div className="pt-[40px] space-y-4">
+              {index === 1 ? (
+                <>
+                  <div className="mt-3 h-px bg-gradient-to-r from-[#9e9ebb] via-[#A68BEE] to-[#1A1A3B]" />
+                  <p className="pt-3 heading-6 text-[#CAC9D1] max-w-[332px]">
+                    {item.description}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="pt-3 heading-6 text-[#CAC9D1] max-w-[332px]">
+                    {item.description}
+                  </p>
+                  <div className="mt-3 h-px bg-gradient-to-r from-[#9e9ebb] via-[#A68BEE] to-[#1A1A3B]" />
+                </>
+              )}
+              <div className="pt-[40px] space-y-5">
                 {item.features.map((feature, i) => (
                   <div key={i} className="flex gap-3 items-start">
                     <Image
@@ -194,20 +203,19 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
                       alt="bullet"
                       width={24}
                       height={24}
+                      className="h-6 w-6"
                     />
-                    <span className="text-[#F4F7FF] heading-6">{feature}</span>
+                    <span className="text-[#F4F7FF]  heading-6">{feature}</span>
                   </div>
                 ))}
               </div>
-
-              {/* ✅ Pricing Section */}
-              <div className="pt-[46px]">
+              <div className="pt-[40px]">
                 {item.price ? (
                   <div className="flex items-end">
-                    <span className="heading-1 font-medium text-transparent bg-gradient-to-r from-[#789EFF] via-[#3A38AA] to-[#3A38AA] bg-clip-text">
+                    <span className="heading-1 font-medium text-transparent h-14 bg-gradient-to-r from-[#789EFF] via-[#3A38AA] to-[#3A38AA] bg-clip-text">
                       {item.price},
                     </span>
-                    <span className="text-[#73799B] heading-5">
+                    <span className="text-[#73799B] heading-5 mb-2 ml-2">
                       {item.period}
                     </span>
                   </div>
