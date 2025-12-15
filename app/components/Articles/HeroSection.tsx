@@ -84,8 +84,7 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Articles
-          </h1>
+MIRYA Academy          </h1>
           <Image
             src="/images/label.svg"
             width={78}
@@ -97,8 +96,7 @@ const HeroSection = () => {
           Explore Ideas, Trends and Deep Research
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
-          Elevate your thinking with expert articles, AI-driven analysis, and
-          the latest research tools wherever content creation meets innovation.
+         Elevate your thinking with expert articles, AI-driven analysis, and the latest research tools  wherever content creation meets innovation.
         </p>
         <div className="flex items-center justify-center gap-3">
           <div
