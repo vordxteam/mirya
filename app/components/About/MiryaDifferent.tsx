@@ -261,7 +261,7 @@ export default function MiryaDifferent(): React.ReactElement {
           <motion.div
             ref={paragraphRef}
             className="pt-3 text-[20px] md:text-[36px] leading-8 sm:leading-[48px] font-medium text-white max-w-[1190px]          
-    text-justify hyphens-auto md:text-center mb-6"
+    text-center mb-6"
             variants={itemVariants}
           >
             Unlike traditional automation tools, MIRYA doesn’t just follow

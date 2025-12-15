@@ -14,21 +14,19 @@ const Aiassistant = () => {
             {/* Section Tag */}
             <div className="pb-3 flex items-center justify-center lg:justify-start gap-3 sm:gap-5">
               <Image
-                src="/images/left-line.png"
-                width={73}
-                height={8}
+                src="/images/label2.svg"
+                width={78}
+                height={16}
                 alt="line"
-                className="w-[45px] sm:w-[73px]"
               />
               <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal">
                 AI Assistance
               </h1>
               <Image
-                src="/images/right-line.png"
-                width={73}
-                height={8}
+                src="/images/label.svg"
+                width={78}
+                height={16}
                 alt="line"
-                className="w-[45px] sm:w-[73px]"
               />
             </div>
 

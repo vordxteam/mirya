@@ -273,7 +273,7 @@
 //             performs every task just like a human - only faster, more precise
 //             and completely reliable.
 //           </motion.div>
-         
+
 //           <motion.div className="" variants={containerVariants}>
 //             <div className="benefits-grid">
 //               {benefits.map((item, index) => (
@@ -321,7 +321,6 @@
 //     </>
 //   );
 // }
-
 
 import Image from "next/image";
 import Link from "next/link";
@@ -526,23 +525,23 @@ export default function Demo(): React.ReactElement {
       <div className="flex justify-center">
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.5px]"></div>
       </div>
-      <div className="py-15 flex flex-col items-center relative overflow-hidden">
+      <div className="py-15  flex flex-col items-center relative overflow-hidden">
         {/* Background gradient image */}
-        <div 
+        <div
           className="absolute inset-0 bg-no-repeat bg-bottom bg-contain -z-10"
           style={{
             backgroundImage: "url('/images/main-gradient.png')",
-            pointerEvents: 'none'
+            pointerEvents: "none",
           }}
         ></div>
-        
+
         <div className="bg-[#00031C"></div>
-        
+
         {/* Background light between sections */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#5935E94D] blur-[90px] w-[458px] h-[318px]"></div>
         </div>
-        
+
         <motion.div
           initial="hidden"
           animate="visible"
@@ -567,7 +566,7 @@ export default function Demo(): React.ReactElement {
         </motion.div>
 
         <motion.div
-          className="w-full flex flex-col items-center relative z-10"
+          className="w-full flex flex-col items-center relative px-5  z-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -596,7 +595,7 @@ export default function Demo(): React.ReactElement {
 
           <motion.div
             ref={paragraphRef}
-            className="pt-3 text-[20px] md:text-[36px] font-medium text-white max-w-[1093px] text-center px-5 relative z-10"
+            className="pt-3 text-[20px] md:text-[36px] sm:leading-[48px] leading-8 font-medium text-white max-w-[1108px] text-center  relative z-10"
             variants={itemVariants}
           >
             MIRYA is your all-in-one automation platform that connects and
@@ -606,8 +605,6 @@ export default function Demo(): React.ReactElement {
             performs every task just like a human - only faster, more precise
             and completely reliable.
           </motion.div>
-          
-          {/* Benefits grid with z-index to appear above background light */}
           <motion.div className="relative z-10" variants={containerVariants}>
             <div className="benefits-grid">
               {benefits.map((item, index) => (
@@ -629,7 +626,7 @@ export default function Demo(): React.ReactElement {
               ))}
             </div>
           </motion.div>
-          
+
           <motion.div
             variants={dashVariants}
             initial="hidden"
@@ -638,7 +635,7 @@ export default function Demo(): React.ReactElement {
           >
             <Image src="/images/dash.png" alt="dash" width={530} height={121} />
           </motion.div>
-          
+
           <motion.div
             variants={pointerVariants}
             initial="hidden"
