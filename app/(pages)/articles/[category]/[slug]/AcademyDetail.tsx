@@ -139,7 +139,7 @@ const AcademyDetailPage = () => {
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px] leading-6">
           <div className="lg:col-span-3 ">
-            <div className="py-4 sticky top-21">
+            <div className="pt-4 sticky top-21">
               <h2 className="text-[#FFFFFF99] text-[14px] font-normal leading-4 mb-4">
                 {articleData.title}
               </h2>
@@ -147,8 +147,8 @@ const AcademyDetailPage = () => {
                 {articleData.sidebar.map((item) => {
                   const isExpanded = expandedItems.has(item.id);
                   const isActive =
-                    activeSection === item.id || // direct-access item or a parent itself
-                    expandedItems.has(item.id) || // currently expanded dropdown
+                    activeSection === item.id || 
+                    expandedItems.has(item.id) ||
                     (!expandedItems.size && lastActiveParent === item.id);
                   return (
                     <div key={item.id}>
