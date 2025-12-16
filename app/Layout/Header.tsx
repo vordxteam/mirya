@@ -321,8 +321,8 @@
 //                 }
 //               `}</style>
 
-
 // app/Layout/Header.tsx (Your Final Perfect Version)
+
 "use client";
 
 import Link from "next/link";
@@ -336,7 +336,7 @@ import { useTranslation } from "react-i18next";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "Product" },
-  { href: "/articles", label: "Article" },
+  { href: "/articles", label: "Academy" },
   { href: "/pricing", label: "Pricing" },
   { href: "/industries", label: "Industries" },
   { href: "/contact", label: "Contact" },
@@ -355,15 +355,16 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
+
   // Get current language from i18n
-  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
+  const currentLang =
+    languages.find((l) => l.code === i18n.language) || languages[0];
   const isClient = typeof window !== "undefined";
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (!(e.target as HTMLElement).closest('.language-selector')) {
+      if (!(e.target as HTMLElement).closest(".language-selector")) {
         setDropdownOpen(false);
       }
     };
@@ -371,14 +372,12 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Scroll effect for header background
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 5);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Change language function
   const changeLanguage = (code: string) => {
     i18n.changeLanguage(code);
     if (typeof window !== "undefined") {
@@ -387,7 +386,6 @@ export default function Header() {
     setDropdownOpen(false);
   };
 
-  // Animation variants from original header
   const sidebarVariants = {
     closed: { x: "100%" },
     open: { x: 0 },
@@ -430,7 +428,10 @@ export default function Header() {
         {/* Desktop Links - Original styling */}
         <div className="hidden lg:flex lg:gap-x-8">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
             return (
               <Link
                 key={link.href}
@@ -474,15 +475,21 @@ export default function Header() {
                   />
                   {currentLang.label}
                 </span>
-                <Image src='/images/dropdown.svg' alt="dropdown" width={20} height={10} />
+                <Image
+                  src="/images/dropdown.svg"
+                  alt="dropdown"
+                  width={20}
+                  height={10}
+                />
               </div>
 
               {dropdownOpen && (
                 <div
                   className="absolute top-full left-0 w-[150px] mt-1 bg-[#050925] border border-transparent rounded-lg overflow-hidden z-50"
                   style={{
-                    background: 'linear-gradient(#050925, #050925) padding-box, conic-gradient(from 0deg at 50% 50%, #00031c, #8ea0e0, #00031c) border-box',
-                    border: '1px solid transparent'
+                    background:
+                      "linear-gradient(#050925, #050925) padding-box, conic-gradient(from 0deg at 50% 50%, #00031c, #8ea0e0, #00031c) border-box",
+                    border: "1px solid transparent",
                   }}
                 >
                   {languages.map((lang) => (
@@ -494,7 +501,13 @@ export default function Header() {
                       }}
                       className="px-3 py-2 flex items-center heading-7 font-normal gap-2 cursor-pointer border-b border-[#FFFFFF1F] last:border-none hover:bg-white/10"
                     >
-                      <Image src={lang.flag} alt={lang.label} width={16} height={11} className="rounded-sm" />
+                      <Image
+                        src={lang.flag}
+                        alt={lang.label}
+                        width={16}
+                        height={11}
+                        className="rounded-sm"
+                      />
                       {lang.label}
                       {i18n.language === lang.code && (
                         <span className="ml-auto text-[#4A56FF]">✓</span>
@@ -516,7 +529,7 @@ export default function Header() {
           >
             Signin
           </Link>
-          
+
           {/* Get Started Button - Original styling */}
           <div
             className="rounded-full p-0.5"
@@ -603,7 +616,10 @@ export default function Header() {
                 className="mt-8 space-y-4"
               >
                 {navLinks.map((link) => {
-                  const isActive = pathname === link.href;
+                  const isActive =
+                    link.href === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(link.href);
                   return (
                     <motion.div key={link.href} variants={linkItemVariants}>
                       <Link
