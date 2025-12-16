@@ -58,7 +58,7 @@ const HeroSection = () => {
             </Link>
           </div>
         </div>
-        <div className="mt-10 shadow-[0_0_20px_0_rgba(2,116,254,0.32)] rounded-3xl bg-white">
+        <div className="mt-2.5 shadow-[0_0_20px_0_rgba(2,116,254,0.32)] rounded-3xl bg-white">
           <Image
             src="/images/mirya2.png"
             width={1200}
