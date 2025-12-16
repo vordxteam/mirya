@@ -147,7 +147,7 @@ const AcademyDetailPage = () => {
                 {articleData.sidebar.map((item) => {
                   const isExpanded = expandedItems.has(item.id);
                   const isActive =
-                    activeSection === item.id || 
+                    activeSection === item.id ||
                     expandedItems.has(item.id) ||
                     (!expandedItems.size && lastActiveParent === item.id);
                   return (
@@ -160,7 +160,7 @@ const AcademyDetailPage = () => {
                             handleSectionClick(item.id);
                           }
                         }}
-                        className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 ${
+                        className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
                           isActive
                             ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
                             : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
@@ -201,7 +201,7 @@ const AcademyDetailPage = () => {
                             <button
                               key={subItem.id}
                               onClick={() => handleSectionClick(subItem.id)}
-                              className={`w-full max-w-[211px] whitespace-nowrap text-left px-2 py-2 rounded-lg text-[14px] leading-5 font-light transition-all relative ${
+                              className={`w-full max-w-[211px] whitespace-nowrap text-left px-2 py-2 rounded-lg text-[14px] leading-5 font-light transition-all relative cursor-pointer ${
                                 activeSection === subItem.id
                                   ? "bg-[rgba(17,106,248,0.12)] text-[#116AF8]"
                                   : "text-[#FFFFFFE0] hover:bg-[rgba(17,106,248,0.12)] hover:text-[#116AF8]"
