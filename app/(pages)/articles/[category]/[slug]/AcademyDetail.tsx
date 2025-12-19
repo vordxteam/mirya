@@ -22,6 +22,8 @@ interface Subsection {
   content?: string;
   features?: string;
   headingOne?: string;
+  featureHeading?: string;
+  featureDescription?: string;
   headingOneDescription?: string;
   headingTwo?: string;
   headingTwoDescription?: string;
@@ -130,10 +132,8 @@ const AcademyDetailPage = () => {
     return item.subItems.some((subItem) => subItem.id === activeSection);
   };
 
-  const currentContent = articleData.content[activeSection] || {
-    title: "Content Coming Soon",
-    content: "This section is under development.",
-  };
+  const currentContent = articleData.content[activeSection] || {};
+
   return (
     <div className="bg-[#00031C] min-h-screen">
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 pb-20">
@@ -219,6 +219,7 @@ const AcademyDetailPage = () => {
               </nav>
             </div>
           </div>
+
           <div className="lg:col-span-7 lg:col-start-4">
             <div className="flex items-center gap-3 text-[14px] font-normal leading-5 text-[#FFFFFF99] mb-12">
               <Link
@@ -245,9 +246,10 @@ const AcademyDetailPage = () => {
                 {articleData.title}
               </span>
             </div>
+
             <div>
               <div className="mb-12">
-                <h1 className=" text-[32px] sm:text-[48px] font-medium leading-14 mb-6">
+                <h1 className="text-[32px] sm:text-[48px] font-medium leading-14 mb-6">
                   {currentContent.title}
                 </h1>
                 <p className="text-[#FFFFFF99] text-[16px] leading-5 font-normal mb-12">
@@ -283,13 +285,24 @@ const AcademyDetailPage = () => {
                   currentContent.subsections.map((subsection, idx) => (
                     <div key={idx} className="space-y-5">
                       {subsection.title && (
-                        <h2 className=" text-[24px] leading-8 font-semibold">
+                        <h2 className="text-[24px] leading-8 font-semibold">
                           {subsection.title}
                         </h2>
                       )}
                       {subsection.content && (
                         <p className="text-[16px] leading-6 font-normal w-full max-w-[661px]">
                           {subsection.content}
+                        </p>
+                      )}
+
+                      {subsection.featureHeading && (
+                        <h3 className="text-[20px] leading-7 font-semibold mt-1 mb-0">
+                          {subsection.featureHeading}
+                        </h3>
+                      )}
+                      {subsection.featureDescription && (
+                        <p className="text-[16px] leading-5 font-normal mt-3">
+                          {subsection.featureDescription}
                         </p>
                       )}
 
@@ -387,7 +400,7 @@ const AcademyDetailPage = () => {
                       {subsection.secondSection && (
                         <div>
                           {subsection.secondSection.subHeading && (
-                            <h3 className=" text-[24px] leading-8 font-semibold mb-5">
+                            <h3 className="text-[24px] leading-8 font-semibold mb-5">
                               {subsection.secondSection.subHeading}
                             </h3>
                           )}

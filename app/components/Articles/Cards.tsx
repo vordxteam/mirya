@@ -144,7 +144,7 @@ const Cards = () => {
       icon: "/images/icon3.svg",
       title: "Getting Started",
       description:
-        "MIRYA runs in the cloud and works on any modern device with an internet connection. No servers, heavy setup, or installation required — j...",
+        "Set up Mirya quickly and start automating in minutes. Learn the basics, install the agent, and run your first workflow with confidence.",
       linkText: "Learn More",
     },
     {
@@ -154,7 +154,7 @@ const Cards = () => {
       icon: "/images/academy2.svg",
       title: "MIRYA Tutorials",
       description:
-        "You can easily edit your company, billing, and user details in the Account Settings panel. All updates apply instantly and are securely encryp...",
+        "Step-by-step guides to build, test, and scale automations. From beginner workflows to advanced logic, learn Mirya the practical way.",
       linkText: "Learn More",
     },
     {
@@ -164,7 +164,7 @@ const Cards = () => {
       icon: "/images/academy3.svg",
       title: "Process Use Cases",
       description:
-        "Start by exploring pre-built workflows, connecting your apps, and recording your first process. MIRYA guides you step-by-step so you can auto...",
+        "Step-by-step guides to build, test, and scale automations. From beginner workflows to advanced logic, learn Mirya the practical way.",
       linkText: "Learn More",
     },
     {
@@ -174,7 +174,7 @@ const Cards = () => {
       icon: "/images/academy4.svg",
       title: "Best Practices",
       description:
-        "MIRYA connects seamlessly with ERP, CRM, HR, financial systems, shared mailboxes, databases, and legacy apps. Use API, triggers, forms, or dire...",
+        "Explore real-world automation examples across finance, HR, operations, and more. See how Mirya handles end-to-end processes in production en...",
       linkText: "Learn More",
     },
     {
@@ -184,7 +184,7 @@ const Cards = () => {
       icon: "/images/icon6.svg",
       title: "Trouble Shooting & Support Guides",
       description:
-        "Visit MIRYA Academy for tutorials, templates, best practices, and video walkthroughs. Learn how to...",
+        "Quickly diagnose and resolve automation issues.Find solutions for common errors, logs, debuggi...",
       linkText: "Learn More",
     },
     {
@@ -194,7 +194,7 @@ const Cards = () => {
       icon: "/images/academy5.svg",
       title: "Updates, Release & Roadmap",
       description:
-        "Our support team and help center are available anytime. Report issues, request debugging assistance, or schedule a live troubleshooting se...",
+        "Stay informed about new features,improvements, and fixes.See what’s shipping now, what’s next,  and what the community is shaping.",
       linkText: "Learn More",
     },
     {
@@ -204,7 +204,7 @@ const Cards = () => {
       icon: "/images/icon7.svg",
       title: "Community Hub",
       description:
-        "MIRYA connects seamlessly with ERP, CRM, HR, financial systems, shared mailboxes, databases, and legacy apps. Use API, triggers, forms, or dire...",
+        "Connect with other Mirya users and automation experts. Ask questions, share workflows, and learn from real production experiences.",
       linkText: "Learn More",
     },
   ];

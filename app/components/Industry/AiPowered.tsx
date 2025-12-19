@@ -63,7 +63,7 @@ const AiPowered = () => {
                 <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
                   Reads & understands documents
                 </h1>
-                <p className="opacity-80 body-5 tracking-[-0.2px] max-w-[271px]">
+                <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
                   MIRYA automatically reads, interprets, and extracts meaning
                   from emails, PDFs, forms, spreadsheets, and even messy
                   unstructured documents.
@@ -90,7 +90,7 @@ const AiPowered = () => {
                 <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
                   Updates & validates systems
                 </h1>
-                <p className="opacity-80 body-5 tracking-[-0.2px] max-w-[271px]">
+                <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
                   From ERP and CRM platforms to HR software and long-standing
                   legacy systems, MIRYA ensures every application stays
                   up-to-date and synchronized.
@@ -117,7 +117,7 @@ const AiPowered = () => {
                 <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
                   Makes intelligent decisions
                 </h1>
-                <p className="opacity-80 body-5 tracking-[-0.2px] max-w-[271px]">
+                <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
                   It evaluates business rules, interprets numerical data,
                   applies logical conditions, understands natural language, and
                   identifies patterns within complex workflows.
@@ -125,6 +125,82 @@ const AiPowered = () => {
               </div>
             </div>
           </div>
+
+ <div
+            className="rounded-lg p-px w-full md:w-fit"
+            style={{
+              background:
+                "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
+            }}
+          >
+            <div className="rounded-lg p-4 bg-[#050A29] flex items-center gap-5">
+              <Image
+                src="/images/automation6.png"
+                width={56}
+                height={56}
+                alt="automate"
+              />
+              <div className="space-y-1">
+                <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
+                 Handles Edge Cases Automatically
+                </h1>
+                <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
+                 When data is missing, formats change, or systems behave unexpectedly, MIRYA adapts using logic, retries, and fallback paths instead of failing silently.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="rounded-lg p-px w-full md:w-fit"
+            style={{
+              background:
+                "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
+            }}
+          >
+            <div className="rounded-lg p-4 bg-[#050A29] flex items-center gap-5">
+              <Image
+                src="/images/automation6.png"
+                width={56}
+                height={56}
+                alt="automate"
+              />
+              <div className="space-y-1">
+                <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
+                 Learns From Outcomes
+                </h1>
+                <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
+                 MIRYA observes results, detects patterns, and refines decisions—helping workflows become smarter, more accurate, and more efficient with every run.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="rounded-lg p-px w-full md:w-fit"
+            style={{
+              background:
+                "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
+            }}
+          >
+            <div className="rounded-lg p-4 bg-[#050A29] flex items-center gap-5">
+              <Image
+                src="/images/automation6.png"
+                width={56}
+                height={56}
+                alt="automate"
+              />
+              <div className="space-y-1">
+                <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
+                 Built for Reliability at Scale
+                </h1>
+                <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
+                Designed to run mission-critical automations continuously with built-in recovery, logging, and error handling that keep processes stable—even under high volume and long runtimes.
+                </p>
+              </div>
+            </div>
+          </div>
+
 
           <div
             className="rounded-lg p-px w-full md:w-fit"
@@ -144,7 +220,7 @@ const AiPowered = () => {
                 <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
                   Coordinates workflows
                 </h1>
-                <p className="opacity-80 body-5 tracking-[-0.2px] max-w-[271px] ">
+                <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px] ">
                   Multi stage workflows become simple when MIRYA takes over. It
                   captures inputs, configures the required steps, automates
                   execution, and continuously monitors results.
@@ -171,7 +247,7 @@ const AiPowered = () => {
                 <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
                   Operates software like a human
                 </h1>
-                <p className="opacity-80 body-5 tracking-[-0.2px] max-w-[271px]">
+                <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
                   MIRYA interacts with software applications just as a human
                   would: clicking, typing, selecting, navigating, and processing
                   data.

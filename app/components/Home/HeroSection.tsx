@@ -6,10 +6,11 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center pt-0 sm:pt-10 px-5 md:px-10 bg-[url('/images/herobg.png')] bg-no-repeat bg-bottom bg-contain relative">
-        <div className="absolute top-0">
-          <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+      <div className="relative z-10 flex flex-col items-center justify-center pt-0 sm:pt-10 px-5 md:px-10 bg-[url('/images/herobg.png')] bg-no-repeat bg-bottom bg-contain">
+        <div className="absolute top-0 inset-x-0 flex justify-center pointer-events-none z-0">
+          <div className="rounded-[68.75px] bg-[#4F60FA] opacity-[0.45] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
+
         <div className="pb-3 flex items-center gap-5">
           <Image
             src="/images/label2.svg"
@@ -18,9 +19,20 @@ const HeroSection = () => {
             width={78}
             priority={true}
           />
-          <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Cognitive AI Driven
-          </h1>
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/content.svg"
+              alt="gradient1"
+              height={32}
+              width={121}
+              priority={true}
+            />
+
+            <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
+              Made in Germany
+            </h1>
+          </div>
+
           <Image
             src="/images/label.svg"
             alt="gradient1"

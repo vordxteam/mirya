@@ -86,7 +86,7 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Team
+            Careers At MIRYA
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>

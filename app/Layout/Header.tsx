@@ -336,9 +336,10 @@ import { useTranslation } from "react-i18next";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "Product" },
-  { href: "/articles", label: "Academy" },
+    { href: "/industries", label: "Industries" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/industries", label: "Industries" },
+
+  { href: "/articles", label: "Academy" },
   { href: "/contact", label: "Contact" },
 ];
 

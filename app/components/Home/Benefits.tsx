@@ -55,33 +55,44 @@ const Benefits = () => {
             <BenefitCard
               title="Automate Everything Without Changing Anything"
               description="No need to redesign workflows or rebuild systems. MIRYA works with what you already have."
-              image="/images/benefit1.svg"
-              imageWidth={380}
-              imageHeight={238}
+              image="/images/benefit-1.svg"
+              imageWidth={488}
+              imageHeight={352}
               glowPosition="left"
-              className="col-span-12 md:col-span-6 xl:col-span-4"
+              className="col-span-12 md:col-span-6 xl:col-span-4 "
+               imageTranslate="w-[100%] translate-x-10 -translate-y-6" 
+                 imagePaddingBottom="pb-0"
+
             />
 
             {/* Card 2 */}
             <BenefitCard
               title="Save Hundreds of Hours"
               description="Free your team from repetitive work and let MIRYA handle all operational tasks instantly."
-              image="/images/benefit2.svg"
-              imageWidth={410}
-              imageHeight={165}
+              image="/images/benefit-2.svg"
+              imageWidth={351}
+              imageHeight={470}
               glowPosition="center"
               className="col-span-12 md:col-span-6 xl:col-span-4"
+                             imageTranslate=" translate-x-5 translate-y-0" 
+
+                imagePaddingBottom="pb-0"
+
             />
 
             {/* Card 3 */}
             <BenefitCard
               title="Zero-Error Execution"
               description="Remove human errors and inconsistencies. Your processes run the same reliable way — every time."
-              image="/images/benefit3.svg"
-              imageWidth={410}
-              imageHeight={165}
+              image="/images/benefit-3.svg"
+              imageWidth={351}
+              imageHeight={299}
               glowPosition="right"
               className="col-span-12 md:col-span-6 xl:col-span-4"
+                             imageTranslate=" translate-x-5 -translate-y-2" 
+
+                imagePaddingBottom="pb-0"
+
             />
 
             {/* Card 4 (full width on desktop) */}
@@ -132,6 +143,8 @@ interface CardProps {
   imageHeight: number;
   glowPosition?: "left" | "center" | "right";
   className?: string;
+  imageTranslate?: string;
+   imagePaddingBottom?: string; 
 }
 
 const BenefitCard: React.FC<CardProps> = ({
@@ -142,6 +155,8 @@ const BenefitCard: React.FC<CardProps> = ({
   imageHeight,
   glowPosition = "center",
   className = "",
+  imageTranslate,
+  imagePaddingBottom
 }) => {
   return (
     <>
@@ -152,8 +167,8 @@ const BenefitCard: React.FC<CardProps> = ({
             "linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)",
         }}
       >
-        <div className="bg-[#050925] rounded-xl flex flex-col justify-between h-full overflow-hidden">
-          <div className="relative p-4 sm:p-8 space-y-4">
+        <div className="bg-[#050925] rounded-xl flex flex-col justify-between h-[418px] overflow-hidden">
+          <div className="relative p-4 sm:p-8 0 space-y-4">
             {/* Glow */}
             <div
               className={`absolute top-10 ${
@@ -175,13 +190,13 @@ const BenefitCard: React.FC<CardProps> = ({
             </p>
           </div>
 
-          <div className="flex items-center justify-center pb-8">
+<div className={`flex items-center justify-center ${imagePaddingBottom || "pb-8"}`}>
             <Image
               src={image}
               width={imageWidth}
               height={imageHeight}
               alt={title}
-              className="max-w-full h-auto"
+              className={`max-w-full h-auto ${imageTranslate || ""}`}
             />
           </div>
         </div>
