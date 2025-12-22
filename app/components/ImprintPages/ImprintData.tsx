@@ -48,7 +48,7 @@ const ImprintData = () => {
 
           <div className="text-[#F4F7FF] opacity-80 body-3 space-y-2">
             <p>Responsible for content in accordance with § 55 Abs. 2 RStV:</p>
-            <p>
+            <p className="sm:mb-[60px] mb-[40px]">
               [Name of Responsible Person, typically same as managing director],
               address above
             </p>
@@ -104,7 +104,7 @@ const ImprintData = () => {
 
         {/* Copyright Notice Section */}
         <div className="space-y-6">
-          <h1 className="heading-1 font-medium text-white">Copyright Notice</h1>
+          <h1 className="heading-1 font-medium text-white sm:mt-[60px] mt-[40px]">Copyright Notice</h1>
 
           <div className="text-[#F4F7FF] opacity-80 body-3 space-y-4">
             <p>

@@ -26,7 +26,7 @@ export default function Services() {
     },
     {
       id: 4,
-      title: "2-day MIRYA Expert Training",
+      title: "2-Day MIRYA Expert Training",
       discription:
         "Deep-dive training for power users complex process building, multi-step workflows, decision logic & integrations, scaling automation across departments.Perfect for teams aiming to become fully self-sufficient.",
       link: "#",

@@ -27,7 +27,7 @@ export default function BuildForYou() {
 
           {/* Main Heading */}
           <h1 className="heading-1 font-medium  tracking-[-1.44px] max-w-[430px] text-start pb-3 sm:pb-6">
-            What we have built for you
+            What We Have Built For You
           </h1>
 
           {/* Subheading */}

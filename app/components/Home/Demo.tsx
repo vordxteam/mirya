@@ -405,49 +405,92 @@ export default function Demo(): React.ReactElement {
     },
   ];
 
-  const paragraphRef = useRef<HTMLDivElement>(null);
+  // const paragraphRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const element = paragraphRef.current;
-    if (!element) return;
+  // useEffect(() => {
+  //   const element = paragraphRef.current;
+  //   if (!element) return;
 
-    const text = element.textContent || "";
-    const words = text.split(" ");
+  //   const text = element.textContent || "";
+  //   const words = text.split(" ");
 
-    element.innerHTML = "";
-    const spans: HTMLSpanElement[] = words.map((word, i) => {
-      const span = document.createElement("span");
-      span.textContent = word + (i < words.length - 1 ? " " : "");
-      span.style.color = "#FFFFFF";
-      span.style.display = "inline";
-      element.appendChild(span);
-      return span;
-    });
+  //   element.innerHTML = "";
+  //   const spans: HTMLSpanElement[] = words.map((word, i) => {
+  //     const span = document.createElement("span");
+  //     span.textContent = word + (i < words.length - 1 ? " " : "");
+  //     span.style.color = "#FFFFFF";
+  //     span.style.display = "inline";
+  //     element.appendChild(span);
+  //     return span;
+  //   });
 
-    ScrollTrigger.create({
+  //   ScrollTrigger.create({
+  //     trigger: element,
+  //     start: "top 20%",
+  //     end: "bottom 30%",
+  //     scrub: true,
+  //     onUpdate: (self) => {
+  //       const progress = self.progress;
+  //       const totalSpans = spans.length;
+
+  //       spans.forEach((span, index) => {
+  //         const spanProgress = index / totalSpans;
+  //         if (progress >= spanProgress) {
+  //           span.style.color = "#73799B";
+  //         } else {
+  //           span.style.color = "#FFFFFF";
+  //         }
+  //       });
+  //     },
+  //   });
+
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
+
+const paragraphRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const element = paragraphRef.current;
+  if (!element) return;
+
+  const text = element.textContent || "";
+  const words = text.split(" ");
+
+  // 1. Prepare the spans
+  element.innerHTML = "";
+  const spans = words.map((word, i) => {
+    const span = document.createElement("span");
+    span.textContent = word + (i < words.length - 1 ? " " : "");
+    span.style.color = "#FFFFFF"; // Initial color
+    element.appendChild(span);
+    return span;
+  });
+
+ const tl = gsap.timeline({
+    scrollTrigger: {
       trigger: element,
-      start: "top 10%",
-      end: "bottom 30%",
-      scrub: true,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const totalSpans = spans.length;
+      start: "top 30%", 
+      
+      end: "bottom 20%", 
+      
+      scrub: 1.5,
+    },
+  });
 
-        spans.forEach((span, index) => {
-          const spanProgress = index / totalSpans;
-          if (progress >= spanProgress) {
-            span.style.color = "#73799B";
-          } else {
-            span.style.color = "#FFFFFF";
-          }
-        });
-      },
-    });
+  // 3. Animate each span color
+  tl.to(spans, {
+    color: "#73799B",
+    stagger: 0.1,      
+    ease: "none",      
+  });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+  return () => {
+    tl.kill();
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+  };
+}, []);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -501,7 +544,7 @@ export default function Demo(): React.ReactElement {
       y: 0,
       transition: {
         duration: 0.8,
-        delay: 0.3,
+        delay: 0.8,
       },
     },
   };

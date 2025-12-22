@@ -193,41 +193,44 @@ if (typeof window !== "undefined") {
 }
 
 const HeroSection = () => {
-  const paragraphRef = useRef<HTMLDivElement>(null);
+  // const paragraphRef = useRef<HTMLDivElement>(null);
 const { t } = useAbout();
   // Scroll-triggered word-by-word color animation
-  useEffect(() => {
-    const element = paragraphRef.current;
-    if (!element) return;
+ const paragraphRef = useRef<HTMLDivElement>(null);
 
-    const text = element.textContent || "";
-    const words = text.split(" ");
+useEffect(() => {
+  const element = paragraphRef.current;
+  if (!element) return;
 
-    element.innerHTML = "";
-    const spans: HTMLSpanElement[] = words.map((word, i) => {
-      const span = document.createElement("span");
-      span.textContent = word + (i < words.length - 1 ? " " : "");
-      span.style.color = "#FFFFFF";
-      span.style.display = "inline";
-      element.appendChild(span);
-      return span;
-    });
+  const text = element.textContent || "";
+  const words = text.split(" ");
 
-    ScrollTrigger.create({
+  element.innerHTML = "";
+  const spans = words.map((word, i) => {
+    const span = document.createElement("span");
+    span.textContent = word + (i < words.length - 1 ? " " : "");
+    span.style.color = "#FFFFFF"; // Initial color
+    element.appendChild(span);
+    return span;
+  });
+
+ const tl = gsap.timeline({
+    scrollTrigger: {
       trigger: element,
-      start: "top 10%",
-      end: "bottom 40%",
-      scrub: true,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const totalSpans = spans.length;
+      start: "top 30%", 
+      
+      end: "bottom 20%", 
+      
+      scrub: 1.5,
+    },
+  });
 
-        spans.forEach((span, index) => {
-          const spanProgress = index / totalSpans;
-          span.style.color = progress >= spanProgress ? "#73799B" : "#FFFFFF";
-        });
-      },
-    });
+  tl.to(spans, {
+    color: "#73799B",
+    stagger: 0.1,      
+    ease: "none",      
+  });
+
 
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, [t]); // ← re-run when language changes!

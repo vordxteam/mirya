@@ -2,7 +2,7 @@ import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+import CustomCheckbox from "@/app/components/CustomCheckbox";
 export default function ContactPage() {
   const data = [
     {
@@ -90,10 +90,8 @@ export default function ContactPage() {
                   Sunday – Thursday, 9 AM to 6 PM
                 </p>
               </div>
-
-              <p className="heading-4 font-medium text-white pt-6 mt-6">
-                Follow us
-              </p>
+              <hr className="text-[#FFFFFF1F] my-6 max-w-[591px] w-full" />
+              <p className="heading-4 font-medium text-white ">Follow us</p>
 
               <div className="flex gap-3 pt-5">
                 <Link href="https://www.facebook.com/" target="_blank">
@@ -185,20 +183,19 @@ export default function ContactPage() {
                   className="outline resize-none outline-[#FFFFFF33] p-4 rounded-lg w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 />
               </div>
-              <div className="flex pt-4 gap-1">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" className="h-5 w-5" />
-
-                  <span className="text-white text-[12px] sm:text-[16px]">
-                    I agree to the
+              <div className="mt-4">
+              <CustomCheckbox
+                className="col-span-2 sm:col-span-1"
+                label={
+                  <span className="flex flex-wrap gap-1">
+                    <span>I agree to the</span>
+                    <Link href="#" className="text-[#0274FE] underline">
+                      Privacy Policy
+                    </Link>
+                    <span>.</span>
                   </span>
-                  <Link
-                    href="#"
-                    className="text-[#0274FE] text-[12px] sm:text-[16px] underline"
-                  >
-                    Privacy Policy
-                  </Link>
-                </label>
+                }
+              />
               </div>
               <div
                 className="rounded-full p-px w-full mt-10"

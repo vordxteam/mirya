@@ -173,7 +173,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
                 alt={item.title}
                 width={76}
                 height={76}
-                className="absolute h-auto -top-[5%] left-40"
+                className="absolute h-auto -top-[5%] left-38"
               />
 
               <h3 className="heading-3 font-semibold text-[#F4F7FF]">

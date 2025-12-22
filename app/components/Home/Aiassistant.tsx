@@ -32,7 +32,7 @@ const Aiassistant = () => {
 
             {/* Main Heading */}
             <h1 className="heading-1 font-medium tracking-[-1.44px] pb-3 sm:pb-6 leading-tight">
-              Meet your intelligent virtual assistant
+              Meet Your Intelligent Virtual Assistant
             </h1>
 
             {/* Subheading */}

@@ -307,22 +307,18 @@ const DetailsPanel = () => {
                 </div>
               </div>
 
-           <CustomCheckbox
-  className="col-span-2 sm:col-span-1"
-  label={
-    <span className="flex flex-wrap gap-1">
-      <span>I agree to the</span>
-      <Link
-        href="#"
-        className="text-[#0274FE] underline"
-      >
-        Privacy Policy
-      </Link>
-      <span>.</span>
-    </span>
-  }
-/>
-
+              <CustomCheckbox
+                className="col-span-2 sm:col-span-1"
+                label={
+                  <span className="flex flex-wrap gap-1">
+                    <span>I agree to the</span>
+                    <Link href="#" className="text-[#0274FE] underline">
+                      Privacy Policy
+                    </Link>
+                    <span>.</span>
+                  </span>
+                }
+              />
             </div>
             <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3">
               <div
