@@ -8,35 +8,43 @@ export default function Comparison() {
     { key: "powerAutomate", label: "Power Automate" },
     { key: "aiAgent", label: "Agentic Kit" },
   ];
+  type ComparisonRow = {
+  name: string;
+  mirya?: FeatureValue;
+  n8n?: FeatureValue;
+  powerAutomate?: FeatureValue;
+  aiAgent?: FeatureValue;
+};
 
-  const comparisonData = [
+
+const comparisonData: ComparisonRow[] = [
     {
       name: "True No-Code (usually without IT skills",
-      mirya: "Yes",
+      mirya: { type: "icon", icon: "check" },
       n8n: "Low Code",
       powerAutomate: "Low Code",
-      aiAgent: "No",
+      aiAgent: { type: "icon", icon: "cross" },
     },
     {
       name: "On Premise Execution on any Workstation",
-      mirya: "Yes",
+      mirya: { type: "icon", icon: "check" },
       n8n: "Self Host",
       powerAutomate: "Mostly Cloud",
-      aiAgent: "No",
+      aiAgent: { type: "icon", icon: "cross" },
     },
     {
       name: "Human Like Desktop + Web Automation (No API Needed)",
-      mirya: "Yes",
+      mirya: { type: "icon", icon: "check" },
       n8n: "No",
       powerAutomate: "Limited UI",
-      aiAgent: "No",
+      aiAgent: { type: "icon", icon: "cross" },
     },
     {
       name: "Fully Automation Process Recording (Desktop + Web)",
-      mirya: "Yes",
+      mirya: { type: "icon", icon: "check" },
       n8n: "No",
       powerAutomate: "No",
-      aiAgent: "No",
+      aiAgent: { type: "icon", icon: "cross" },
     },
     {
       name: "API Dependent",
@@ -47,49 +55,76 @@ export default function Comparison() {
     },
     {
       name: "API Support",
-      mirya: "Yes",
+      mirya: { type: "icon", icon: "check" },
       n8n: "Yes",
       powerAutomate: "Yes",
-      aiAgent: "Yes",
+      aiAgent: { type: "icon", icon: "check" },
     },
     {
       name: "Autonomous Bots (Schedule + independent)",
-      mirya: "Yes",
+      mirya: { type: "icon", icon: "check" },
       n8n: "No",
       powerAutomate: "Partial",
-      aiAgent: "No",
+      aiAgent: { type: "icon", icon: "cross" },
     },
     {
       name: "Integrated AI Decision Engine",
-      mirya: "Yes",
+      mirya: { type: "icon", icon: "check" },
       n8n: "Plugin-based",
       powerAutomate: "Add-ons",
-      aiAgent: "Yes",
+      aiAgent: { type: "icon", icon: "cross" },
     },
     {
       name: "Local Encryption of Credentials, Files & Variables",
-      mirya: "Yes",
+      mirya: { type: "icon", icon: "check" },
       n8n: "Depends on Hosting",
       powerAutomate: "Depends on Tenent",
-      aiAgent: "No",
+      aiAgent: { type: "icon", icon: "cross" },
     },
     {
       name: "Learnable in 2 Days without any Technical Background",
-      mirya: "Yes",
+      mirya: { type: "icon", icon: "check" },
       n8n: "No",
       powerAutomate: "No",
-      aiAgent: "No",
+      aiAgent: { type: "icon", icon: "cross" },
     },
   ];
+  type FeatureValue =
+    | string
+    | {
+        type: "icon";
+        icon: "check" | "cross";
+      };
+  const renderFeatureValue = (value: FeatureValue) => {
+    // 👉 Explicit icon from JSON
+    if (typeof value === "object" && value.type === "icon") {
+      return (
+        <Image
+          src={
+            value.icon === "check" ? "/images/green-tick.svg" : "/images/cross-icon.svg"
+          }
+          alt={value.icon}
+          width={28}
+          height={28}
+        />
+      );
+    }
 
-  const renderFeatureValue = (value: string) => {
-    return (
-      <span
-        className={`text-[14px] md:text-[20px] font-medium leading-7 text-center`}
-      >
-        {value}
-      </span>
-    );
+    // 👉 Auto Yes / No handling
+    if (value === "Yes") {
+      return <Image src="/images/green-tick.svg" alt="Yes" width={28} height={28} />;
+    }
+
+    if (value === "No") {
+      return <Image src="/images/cross-icon.svg" alt="No" width={28} height={28} />;
+    }
+
+   return (
+  <span className="text-[14px] md:text-[20px] font-medium text-center text-[#F4F7FF]">
+    {String(value)}
+  </span>
+);
+
   };
 
   return (
@@ -154,7 +189,7 @@ export default function Comparison() {
             className="grid grid-cols-12 gap-4 bg-[#FFFFFF14] rounded-lg p-5 items-center"
           >
             {/* Feature Name → 4 columns */}
-            <p className="text-[#F4F7FF] text-[20px] font-medium col-span-12 md:col-span-4">
+            <p className="text-[#F4F7FF] text-[20px] font-medium col-span-12 md:col-span-4 w-full max-w-[365px]">
               {feature.name}
             </p>
 
@@ -170,7 +205,7 @@ export default function Comparison() {
                   </span>
 
                   {renderFeatureValue(
-                    feature[col.key as keyof typeof feature] as string
+                    feature[col.key as keyof typeof feature] as FeatureValue
                   )}
                 </div>
               ))}

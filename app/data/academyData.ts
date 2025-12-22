@@ -25,6 +25,8 @@ const academyData = {
           { id: "configuration", title: "Initial Configuration" },
         ],
       },
+
+
       {
         id: "first-automation",
         title: "Build Your First Automation",
@@ -283,35 +285,268 @@ const academyData = {
           },
         ],
       },
-      installation: {
-        title: "Installation & Setup",
-        content:
-          "Get a quick introduction to Mirya, understand how no-code automation works, and learn the essential steps to begin building powerful workflows.",
+      "premise": {
+        title: "Getting Started",
+        heading: "Installation & Setup",
+        heading_content: "Get a quick introduction to Mirya, understand how no-code automation works, and learn the essential steps to begin building powerful workflows.",
         rightCard: {
           title: "On this Page",
           items: [
-            { text: "Introduction to No-Code Automation" },
-            { text: "Quick Tour of the MIRYA Interface" },
-            { text: "How the Academy Is Structured" },
-            { text: "Your First Steps After Login" },
+            { text: "Cloud vs. On-Premise Overview" },
+            { text: "Cloud Features" },
+            { text: "On-Premise Features" },
+            { text: "Cost Comparison" },
+          ],
+        },
+        subsections: [
+          {
+            title: "Cloud vs. On-Premise Overview",
+            content: "Mirya supports two deployment options designed to fit different business environments:",
+            featureHeading: "Cloud",
+            featureDescription: "Mirya Cloud offers the easiest and fastest way to get started.",
+
+            title_bulletPoints: [
+              "No servers or IT maintenance needed.",
+              "Automatic updates and performance optimizations.",
+              "Secure, scalable infrastructure managed by MIRYA.",
+              "Perfect for organizations that want quick onboarding and minimal setup.",
+            ],
+            short_description:
+              "It enables anyone — regardless of technical background — to automate real business workflows quickly.",
+            secondSection: {
+              subHeading: "On-Premise",
+              subHeadingContent: "For organizations with strict security or data-sovereignty requirements, Mirya can be deployed on your own internal servers.",
+              bulletPoints: [
+                {
+                  description: "Full control over infrastructure and data"
+                },
+                {
+                  description: "Custom security and network configurations"
+                },
+                {
+                  description: "IT-managed updates, scaling, and maintenance"
+                },
+              ],
+              short_description:
+                "It enables anyone — regardless of technical background — to automate real business workflows quickly.",
+            },
+          },
+        ],
+      },
+
+      "guide": {
+        title: "Getting Started",
+        heading: "Installation & Setup",
+        heading_content: "Get a quick introduction to Mirya, understand how no-code automation works, and learn the essential steps to begin building powerful workflows.",
+        rightCard: {
+          title: "On this Page",
+          items: [
+            { text: "Step-by-Step Installation Guide" },
+            { text: "Create Your Workspace" },
+            { text: "Install the MIRYA Agent" },
+            { text: "Authenticate & Connect" },
+            { text: "Run Environment Check" },
+
+            { text: "Finalize Setup" },
 
           ],
         },
-        bulletPoints: [
-          "Create your MIRYA account",
-          "Set up your workspace",
-          "Connect your first application",
-          "Configure user permissions",
+        subsections: [
+          {
+            title: "Step-by-Step Installation Guide",
+            content:
+              " Follow these steps to properly set up your Mirya environment:",
+
+            headingOne: "Create Your Workspace",
+            headingOneDescription:
+              "Start by creating your Mirya workspace, which acts as the central hub for all your automations, bots, settings, and integrations. If you're using Mirya Cloud, simply sign in through the web portal and create a new workspace within your organization. For on-premise setups, initialize your local environment by installing the required Mirya services on your server.",
+
+
+            // features:
+            //   "No-code automation inside MIRYA helps businesses streamline operations through several core modules:",
+            headingTwo: "Install the MIRYA Agent",
+            headingTwoDescription:
+              "The Mirya Agent is required for running local automations—especially those involving desktop applications, Excel operations, PDF processing, web browsers, or file handling. Install the Mirya Agent on any machine where automated tasks will be executed, whether that’s your personal workstation, a VM, or a dedicated bot machine.",
+
+    secondSection: {
+            subHeading: "Your First Steps After Login",
+            subHeadingContent:
+              "To help you start strong, follow this recommended sequence:",
+            features: "No-code automation helps businesses:",
+            bulletPoints: [
+              {
+                title: "Explore the dashboard",
+                description:
+                  "and familiarize yourself with the main sections.",
+              },
+              {
+                title: "Open the Workflow Builder",
+                description: "and review the action categories.",
+              },
+              {
+                title: "Try a basic automation,",
+                description:
+                  "such as opening a website or reading an Excel file.",
+              },
+              {
+                title: "Run your workflow,",
+                description:
+                  "observe the logs, and understand how each step executes",
+              },
+              {
+                title: "Browse the Tutorials section",
+                description:
+                  "to explore practical examples for your department.",
+              },
+              {
+                title: "Create your first bot",
+                description: "and schedule it to run automatically.",
+              },
+            ],
+          }
+          },
+         
+        ],
+     
+      },
+
+      "requirements": {
+        title: "Getting Started",
+        heading: "Installation & Setup",
+        heading_content: "Get a quick introduction to Mirya, understand how no-code automation works, and learn the essential steps to begin building powerful workflows.",
+        rightCard: {
+          title: "On this Page",
+          items: [
+            { text: "Minimum Hardware Requirements" },
+            { text: "Software Dependencies" },
+            { text: "Network Requirements" },
+            { text: "Performance Recommendations" },
+          ],
+        },
+        subsections: [
+          {
+            title: "Getting Started",
+            content: "These specifications ensure Mirya runs basic automation workflows. For optimal performance with complex automations, consider the recommended requirements.",
+            secondSection: {
+              subHeading: "Hardware Specifications",
+              bulletPoints: [
+                {
+                  title: "Processor:",
+                  description: "Intel i3 or equivalent, 2.0 GHz minimum"
+                },
+                {
+                  title: "RAM:",
+                  description: "8 GB minimum, 16 GB recommended"
+                },
+                {
+                  title: "Storage:",
+                  description: "10 GB free space (SSD recommended)"
+                },
+                {
+                  title: "Display:",
+                  description: "1920x1080 resolution minimum"
+                },
+              ],
+            },
+          },
         ],
       },
-      "first-automation": {
-        title: "Build Your First Automation",
-        content:
-          "Learn how to create your first automation workflow from scratch. This hands-on tutorial will guide you through the process step by step.",
+
+      "systems": {
+        title: "Getting Started",
+        heading: "Installation & Setup",
+        heading_content: "Get a quick introduction to Mirya, understand how no-code automation works, and learn the essential steps to begin building powerful workflows.",
+        rightCard: {
+          title: "On this Page",
+          items: [
+            { text: "Database Connections" },
+            { text: "API Integration Setup" },
+            { text: "File System Access" },
+            { text: "Network Configuration" },
+          ],
+        },
+        subsections: [
+          {
+            title: "Getting Started",
+            content: "Mirya supports connections to various database systems including SQL Server, MySQL, PostgreSQL, Oracle, and MongoDB. Configure database connections to read and write data directly from your automation workflows.",
+            secondSection: {
+              subHeading: "Supported Database Systems",
+              bulletPoints: [
+                {
+                  title: "SQL Server:",
+                  description: "Full support for 2012 and later versions"
+                },
+                {
+                  title: "MySQL/MariaDB:",
+                  description: "Version 5.6 and above"
+                },
+                {
+                  title: "PostgreSQL:",
+                  description: "Version 9.5 and above"
+                },
+                {
+                  title: "Oracle:",
+                  description: "11g and later versions"
+                },
+              ],
+            },
+          },
+        ],
+      },
+
+      "configuration": {
+        title: "Getting Started",
+        heading: "Installation & Setup",
+        heading_content: "Get a quick introduction to Mirya, understand how no-code automation works, and learn the essential steps to begin building powerful workflows.",
+        rightCard: {
+          title: "On this Page",
+          items: [
+            { text: "User Account Setup" },
+            { text: "License Activation" },
+            { text: "Environment Configuration" },
+            { text: "Security Settings" },
+          ],
+        },
+        subsections: [
+          {
+            title: "Initial Setup Wizard",
+            content: "After installation, Mirya launches a configuration wizard that guides you through essential setup steps. This includes license activation, admin account creation, and basic environment configuration.",
+            title_bulletPoints: [
+              "Create administrator account",
+              "Activate your license",
+              "Configure database connections",
+              "Set up default directories",
+              "Configure security settings",
+            ],
+          },
+        ],
+      },
+
+      // You can also add content for "first-automation" subitems if needed
+      "workflow": {
+        title: "Workflow",
+        heading: "Creating Your First Workflow",
+        heading_content: "Learn how to build a basic workflow in Mirya from scratch using the visual designer.",
+        // ... add content similar to above
+      },
+
+      "process": {
+        title: "Drag-and-Drop Process",
+        heading: "Visual Process Design",
+        heading_content: "Master the drag-and-drop interface for creating automation processes without coding.",
+        // ... add content similar to above
+      },
+
+      "debugging": {
+        title: "Running & Debugging",
+        heading: "Testing and Troubleshooting Workflows",
+        heading_content: "Learn how to run, test, and debug your automation workflows to ensure they work correctly.",
+        // ... add content similar to above
       },
     },
-
   },
+
+
   troubleshooting: {
     title: "Trouble Shooting & Support Guides",
     category: "academy",

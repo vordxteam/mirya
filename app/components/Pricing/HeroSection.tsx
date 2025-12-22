@@ -111,7 +111,7 @@ const HeroSection = () => {
               }}
               transition={{ duration: 0.3 }}
             >
-              Monthly
+              Half Yearly
             </motion.button>
             <motion.button
               onClick={() => setActiveTab("annual")}
