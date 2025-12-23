@@ -40,7 +40,11 @@ const ChoosePlan = () => {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-5 mt-12 pb-[60px] overflow-hidden bg-[#00031c] relative z-10">
+      <div
+        className="mt-12 pb-[60px] overflow-hidden bg-[#00031c] relative z-10
+                flex flex-col gap-6
+                lg:flex-row lg:items-center lg:justify-between"
+      >
         <div className="">
           <h1 className="text-[#F4F7FF] text-[40px] font-medium leading-12 max-w-[500px] w-full capitalize">
             Need a plan that fits you better?
@@ -53,16 +57,16 @@ const ChoosePlan = () => {
               background:
                 "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
             }}
-            className="rounded-xl p-px h-[235px]"
+            className="rounded-xl p-px h-[235px] max-w-[493px] w-full"
           >
             <div className="px-8 py-6 bg-[#11238F] rounded-2xl flex flex-col justify-between h-full">
               <div>
                 <h1 className="text-[#F4F7FF] text-[28px] font-medium leading-8">
-                  Start-up Plan
+                  Start-up Plan - 25% off
                 </h1>
                 <p className="text-[#CAC9D1] text-[14px] font-normal leading-5">
                   Growing team under 20 employees? See if you qualify for our
-                  Start-up Plan and get 50% off the Pro Plan.
+                  Start-up Plan and get 25% off the Pro Plan.
                 </p>
               </div>
               <div

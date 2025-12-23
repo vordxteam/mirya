@@ -92,38 +92,37 @@ export default function MiryaDifferent(): React.ReactElement {
     const text = element.textContent || "";
     const words = text.split(" ");
 
+    // 1. Prepare the spans
     element.innerHTML = "";
-    const spans: HTMLSpanElement[] = words.map((word, i) => {
+    const spans = words.map((word, i) => {
       const span = document.createElement("span");
       span.textContent = word + (i < words.length - 1 ? " " : "");
-      span.style.color = "#FFFFFF";
-      span.style.display = "inline";
+      span.style.color = "#FFFFFF"; // Initial color
       element.appendChild(span);
       return span;
     });
 
-    ScrollTrigger.create({
-      trigger: element,
-      start: "top 10%",
-      end: "bottom 40%",
-      scrub: true,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const totalSpans = spans.length;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: element,
+        start: "top 30%",
 
-        spans.forEach((span, index) => {
-          const spanProgress = index / totalSpans;
-          if (progress >= spanProgress) {
-            span.style.color = "#73799B";
-          } else {
-            span.style.color = "#FFFFFF";
-          }
-        });
+        end: "bottom 20%",
+
+        scrub: 1.5,
       },
     });
 
+    // 3. Animate each span color
+    tl.to(spans, {
+      color: "#73799B",
+      stagger: 0.1,
+      ease: "none",
+    });
+
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      tl.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 
@@ -238,7 +237,7 @@ export default function MiryaDifferent(): React.ReactElement {
           viewport={{ once: true, margin: "-50px" }}
         >
           <motion.div
-            className="flex gap-5 items-center"
+            className=" sm:gap-5 gap-2 flex items-center justify-center"
             variants={itemVariants}
           >
             <Image
@@ -247,7 +246,7 @@ export default function MiryaDifferent(): React.ReactElement {
               height={16}
               width={78}
             />
-            <h5 className="heading-5 font-regular text-[#959EFE]">
+            <h5 className="heading-5 font-regular text-[#959EFE] text-center">
               What Makes MIRYA Different
             </h5>
             <Image

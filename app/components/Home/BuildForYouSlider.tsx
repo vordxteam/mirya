@@ -161,7 +161,7 @@ export default function BuildForYouSlider() {
             }}
           >
             <div className="p-1 rounded-xl">
-              <div className="pt-7 px-7 bg-[#050925] overflow-hidden rounded-xl relative slide-shadow">
+              <div className="pt-7 px-7 bg-[#050925] overflow-hidden rounded-xl relative slide-shadow select-none cursor-grab active:cursor-grabbing">
                 <div className="absolute top-0  left-0">
                   <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                 </div>
@@ -178,7 +178,7 @@ export default function BuildForYouSlider() {
                   alt={slide.title}
                   width={393}
                   height={589}
-                  className="mt-[13px]"
+                  className="mt-[13px] pointer-events-none select-none"
                   priority={isActive}
                 />
               </div>

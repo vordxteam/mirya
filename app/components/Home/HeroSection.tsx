@@ -11,7 +11,7 @@ const HeroSection = () => {
           <div className="rounded-[68.75px] bg-[#4F60FA] opacity-[0.45] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
 
-        <div className="pb-3 flex items-center gap-5">
+        <div className="pb-3 flex items-center gap-2 sm:gap-5">
           <Image
             src="/images/label2.svg"
             alt="gradient1"

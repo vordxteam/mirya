@@ -93,7 +93,7 @@ const HeroSection = () => {
             alt="line"
           />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[716px] w-full text-center pb-3 sm:pb-6">
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[716px] w-full text-center sm:px-0 px-4 pb-3 sm:pb-6">
           Where MIRYA Creates Real Impact
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">

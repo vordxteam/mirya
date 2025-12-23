@@ -160,7 +160,7 @@ const AiPowered = () => {
           >
             <div className="rounded-lg p-4 bg-[#050A29] flex items-center gap-5">
               <Image
-                src="/images/automation6.png"
+                src="/images/automation7.png"
                 width={56}
                 height={56}
                 alt="automate"
@@ -185,7 +185,7 @@ const AiPowered = () => {
           >
             <div className="rounded-lg p-4 bg-[#050A29] flex items-center gap-5">
               <Image
-                src="/images/automation6.png"
+                src="/images/automation8.png"
                 width={56}
                 height={56}
                 alt="automate"

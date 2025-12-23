@@ -1,29 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import React, { useState, useEffect } from "react";
-import academyData from "@/app/data/academyData";
-
-// Define types for the data structure
+import { usePathname, useParams } from "next/navigation";
+// Import your API client
+import { categoryApi, Page } from "@/app/api/academy"; // <-- added Page here
+import React, { useState, useEffect, useCallback } from "react";
 interface SubItem {
   id: string;
   title: string;
 }
-
 interface SidebarItem {
   id: string;
   title: string;
+  slug: string; // Add this
   subItems?: SubItem[];
 }
-
 interface Subsection {
   title?: string;
   content?: string;
   features?: string;
-  headingOne?: string;
   featureHeading?: string;
   featureDescription?: string;
+  headingOne?: string;
   headingOneDescription?: string;
   headingTwo?: string;
   headingTwoDescription?: string;
@@ -37,10 +35,7 @@ interface Subsection {
     subHeading?: string;
     subHeadingContent?: string;
     features?: string;
-    bulletPoints?: Array<{
-      title: string;
-      description: string;
-    }>;
+    bulletPoints?: Array<{ title: string; description: string }>;
     short_description?: string;
   };
 }
@@ -51,60 +46,158 @@ interface ContentItem {
   content?: string;
   heading_content?: string;
   subsections?: Subsection[];
-  rightCard?: {
-    title: string;
-    items: Array<{ text: string }>;
-  };
+  rightCard?: { title: string; items: Array<{ text: string }> };
 }
-
 interface ArticleData {
   title: string;
   category: string;
   lastUpdated: string;
   sidebar: SidebarItem[];
-  content: {
-    [key: string]: ContentItem;
-  };
-  rightCard: {
-    title: string;
-    items: Array<{ text: string }>;
-  };
+  content: { [key: string]: ContentItem };
+  rightCard: { title: string; items: Array<{ text: string }> };
 }
-
-type AcademyData = {
-  [key: string]: ArticleData;
-};
-
-const typedAcademyData = academyData as unknown as AcademyData;
 const AcademyDetailPage = () => {
   const params = useParams();
   const slug = params.slug as string;
-  const [activeParent, setActiveParent] = useState<string>("");
-  const [lastActiveParent, setLastActiveParent] = useState<string>("");
 
-  const articleData = typedAcademyData[slug];
+  const [articleData, setArticleData] = useState<ArticleData | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
   const [activeSection, setActiveSection] = useState<string>("");
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+  const [lastActiveParent, setLastActiveParent] = useState<string>("");
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    if (articleData && articleData.sidebar.length > 0) {
-      const firstItem = articleData.sidebar[0];
-      if (firstItem.subItems && firstItem.subItems.length > 0) {
-        const firstSubItemId = firstItem.subItems[0].id;
-        setActiveSection(firstSubItemId);
-        setExpandedItems(new Set([firstItem.id]));
-      } else {
-        setActiveSection(firstItem.id);
+  // --- 2. The Detail Fetch Function ---
+  // Wrapped in useCallback to prevent unnecessary re-renders
+  const fetchPageDetail = useCallback(
+    async (pageSlug: string, sectionId: string) => {
+      try {
+        const response = await categoryApi.getDetailBySlug(pageSlug);
+        const detailData = response.data.data;
+
+        const transformedSubsections = detailData.content.map((block: any) => ({
+          title: block.heading || "",
+          content:
+            block.elements.find((el: any) => el.type === "description")
+              ?.value || "",
+          featureHeading:
+            block.elements.find((el: any) => el.type === "feature")?.value ||
+            "",
+          headingOne:
+            block.elements.find((el: any) => el.type === "h1")?.value || "",
+          headingTwo:
+            block.elements.find((el: any) => el.type === "h2")?.value || "",
+          headingThree:
+            block.elements.find((el: any) => el.type === "h3")?.value || "",
+        }));
+
+        setArticleData((prev) => {
+          if (!prev) return prev;
+          return {
+            ...prev,
+            content: {
+              ...prev.content,
+              [sectionId]: {
+                // Use sectionId as key to match activeSection
+                title: detailData.title,
+                heading_content: detailData.short_description,
+                subsections: transformedSubsections,
+                rightCard: {
+                  title: "On this page",
+                  items:
+                    detailData.content[0]?.elements
+                      .filter((el: any) => el.type.startsWith("h"))
+                      .map((el: any) => ({ text: el.value })) || [],
+                },
+              },
+            },
+          };
+        });
+      } catch (err) {
+        console.error("Error fetching page detail:", err);
       }
-    }
-  }, [articleData]);
+    },
+    []
+  );
 
-  if (!articleData) {
+  // --- 3. Initial Fetch (Updated to include slug and first page detail) ---
+  useEffect(() => {
+    if (!slug) return;
+
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await categoryApi.getById(slug);
+        const categoryData = response.data.data[0];
+        if (!categoryData) throw new Error("Category not found");
+
+        const sidebarItems = categoryData.pages.map((page: any) => ({
+          id: page.id.toString(),
+          title: page.title,
+          slug: page.slug, // Map slug from API
+        }));
+
+        setArticleData({
+          title: categoryData.category.title,
+          category: categoryData.category.title,
+          lastUpdated: "Recently",
+          sidebar: sidebarItems,
+          content: {}, // Start with empty content
+          rightCard: { title: "On this page", items: [] },
+        });
+
+        // Set first page active and fetch its details immediately
+        if (categoryData.pages[0]) {
+          const firstPage = categoryData.pages[0];
+          const firstId = firstPage.id.toString();
+          setActiveSection(firstId);
+          fetchPageDetail(firstPage.slug, firstId);
+        }
+      } catch (err) {
+        setError((err as Error).message || "Failed to load data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [slug, fetchPageDetail]);
+
+  const toggleExpand = (itemId: string) => {
+    if (expandedItems.has(itemId)) {
+      setExpandedItems(new Set());
+      setActiveParent("");
+    } else {
+      setExpandedItems(new Set([itemId]));
+      setActiveParent(itemId);
+      setLastActiveParent(itemId);
+    }
+  };
+
+  const handleSectionClick = (sectionId: string, sectionSlug: string) => {
+    setActiveSection(sectionId);
+    // Only fetch if we don't already have the content for this ID
+    if (!articleData?.content[sectionId]) {
+      fetchPageDetail(sectionSlug, sectionId);
+    }
+  };
+  // --- Loading & Error States ---
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#00031C] flex items-center justify-center">
+        <div className="text-white animate-pulse">
+          Loading Academy Content...
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !articleData) {
     return (
       <div className="min-h-screen bg-[#00031C] flex items-center justify-center">
         <div className="text-white text-center">
-          <h1 className="text-2xl mb-4">Article not found</h1>
+          <h1 className="text-2xl mb-4">{error || "Article not found"}</h1>
           <Link href="/articles" className="text-[#0F73FE] hover:underline">
             Back to Articles
           </Link>
@@ -112,28 +205,8 @@ const AcademyDetailPage = () => {
       </div>
     );
   }
-  const toggleExpand = (itemId: string) => {
-    if (expandedItems.has(itemId)) {
-      setExpandedItems(new Set()); // collapse all
-      setActiveParent(""); // clear activeParent
-    } else {
-      setExpandedItems(new Set([itemId]));
-      setActiveParent(itemId);
-      setLastActiveParent(itemId); // remember last dropdown
-    }
-  };
-
-  const handleSectionClick = (sectionId: string) => {
-    setActiveSection(sectionId);
-  };
-
-  const hasActiveChild = (item: SidebarItem) => {
-    if (!item.subItems) return false;
-    return item.subItems.some((subItem) => subItem.id === activeSection);
-  };
 
   const currentContent = articleData.content[activeSection] || {};
-
   return (
     <div className="bg-[#00031C] min-h-screen">
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 pb-20">
@@ -157,7 +230,8 @@ const AcademyDetailPage = () => {
                           if (item.subItems) {
                             toggleExpand(item.id);
                           } else {
-                            handleSectionClick(item.id);
+                            // PASS THE SLUG HERE
+                            handleSectionClick(item.id, item.slug);
                           }
                         }}
                         className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${

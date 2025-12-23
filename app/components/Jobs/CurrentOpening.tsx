@@ -1,5 +1,4 @@
 "use client";
-import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -142,7 +141,7 @@ export default function CurrentOpening() {
                 initial="inactive"
                 animate={activeCategory === category ? "active" : "inactive"}
                 onClick={() => setActiveCategory(category)}
-                className={`py-3 w-[151px] rounded-xl cursor-pointer border flex-shrink-0 ${
+                className={`py-3 w-[151px] rounded-xl cursor-pointer border shrink-0 ${
                   activeCategory === category
                     ? "bg-[#1A1257] border-[#4F60FA52]"
                     : "bg-[#FFFFFF1F]"

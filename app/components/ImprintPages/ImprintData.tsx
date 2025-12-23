@@ -15,12 +15,12 @@ const ImprintData = () => {
         {/* Company Information */}
         <div className="space-y-6">
           <div>
-            <h2 className="heading-2 font-semibold text-white">mirya.ai</h2>
+            <h2 className="heading-2 font-semibold text-white mt-6">mirya.ai</h2>
             <p className="text-[#F4F7FF] opacity-80 body-3">is a product of</p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="heading-3 font-semibold text-white">MIRYA GmbH</h3>
+            <h3 className="heading-3 font-semibold text-white mt-6">MIRYA GmbH</h3>
             <div className="text-[#F4F7FF] opacity-80 body-3 space-y-1">
               <p>[Your Street Name & Number]</p>
               <p>[Postal Code, City], Germany</p>

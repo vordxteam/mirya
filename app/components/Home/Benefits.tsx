@@ -60,9 +60,8 @@ const Benefits = () => {
               imageHeight={352}
               glowPosition="left"
               className="col-span-12 md:col-span-6 xl:col-span-4 "
-               imageTranslate="w-[100%] translate-x-10 -translate-y-6" 
-                 imagePaddingBottom="pb-0"
-
+              imageTranslate="w-[100%] translate-x-10 -translate-y-6"
+              imagePaddingBottom="pb-0"
             />
 
             {/* Card 2 */}
@@ -73,11 +72,9 @@ const Benefits = () => {
               imageWidth={351}
               imageHeight={470}
               glowPosition="center"
-              className="col-span-12 md:col-span-6 xl:col-span-4"
-                             imageTranslate=" translate-x-5 translate-y-0" 
-
-                imagePaddingBottom="pb-0"
-
+              className="col-span-12 md:col-span-6 xl:col-span-4 "
+              imageTranslate=" translate-x-5 translate-y-0"
+              imagePaddingBottom="pb-0 "
             />
 
             {/* Card 3 */}
@@ -89,10 +86,8 @@ const Benefits = () => {
               imageHeight={299}
               glowPosition="right"
               className="col-span-12 md:col-span-6 xl:col-span-4"
-                             imageTranslate=" translate-x-5 -translate-y-2" 
-
-                imagePaddingBottom="pb-0"
-
+              imageTranslate=" translate-x-5 -translate-y-2 "
+              imagePaddingBottom="pb-0"
             />
 
             {/* Card 4 (full width on desktop) */}
@@ -144,7 +139,7 @@ interface CardProps {
   glowPosition?: "left" | "center" | "right";
   className?: string;
   imageTranslate?: string;
-   imagePaddingBottom?: string; 
+  imagePaddingBottom?: string;
 }
 
 const BenefitCard: React.FC<CardProps> = ({
@@ -156,7 +151,7 @@ const BenefitCard: React.FC<CardProps> = ({
   glowPosition = "center",
   className = "",
   imageTranslate,
-  imagePaddingBottom
+  imagePaddingBottom,
 }) => {
   return (
     <>
@@ -190,7 +185,11 @@ const BenefitCard: React.FC<CardProps> = ({
             </p>
           </div>
 
-<div className={`flex items-center justify-center ${imagePaddingBottom || "pb-8"}`}>
+          <div
+            className={`flex items-center justify-center ${
+              imagePaddingBottom || "pb-8"
+            }`}
+          >
             <Image
               src={image}
               width={imageWidth}
