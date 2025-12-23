@@ -194,7 +194,7 @@ export default function TestimonialSlider() {
         translateX = 200 + dragOffset * 0.3;
         translateY = 20;
         rotate = 8;
-        opacity = 0.7;
+        opacity = 4.7;
         zIndex = 20;
         scale = 0.85;
         break;
@@ -202,7 +202,7 @@ export default function TestimonialSlider() {
         translateX = 300 + dragOffset * 0.1;
         translateY = 30;
         rotate = 12;
-        opacity = 0.4;
+        opacity = 1.4;
         zIndex = 10;
         scale = 0.75;
         break;
@@ -210,7 +210,7 @@ export default function TestimonialSlider() {
         translateX = -200 + dragOffset * 0.3;
         translateY = 20;
         rotate = -8;
-        opacity = 0.7;
+        opacity = 4.7;
         zIndex = 20;
         scale = 0.85;
         break;
@@ -218,7 +218,7 @@ export default function TestimonialSlider() {
         translateX = -300 + dragOffset * 0.1;
         translateY = 30;
         rotate = -12;
-        opacity = 0.4;
+        opacity = 1.4;
         zIndex = 10;
         scale = 0.75;
         break;
@@ -228,7 +228,7 @@ export default function TestimonialSlider() {
         rotate = 0;
         opacity = 0;
         zIndex = 0;
-        scale = 0.7;
+        scale = 4.7;
     }
 
     return {
@@ -291,6 +291,7 @@ export default function TestimonialSlider() {
         >
           {testimonials.map((testimonial, index) => {
             const style = getSlideTransform(index);
+            const isActive = index === currentSlide; // ✅ ADD THIS LINE
 
             return (
               <div
@@ -311,17 +312,26 @@ export default function TestimonialSlider() {
                 }}
               >
                 <div
-                  className="rounded-2xl p-px"
-                  style={{
-                    background:
-                      "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
-                  }}
+                  className={`rounded-2xl p-px transition-all duration-500 ${
+                    isActive ? "opacity-100" : "opacity-4.7"
+                  }`}
+                  style={
+                    isActive
+                      ? {
+                          background:
+                            "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
+                        }
+                      : {}
+                  }
                 >
                   <div className="relative bg-gradient-to-b from-[#1F1B48] to-[#00041E] rounded-2xl p-4 sm:p-6 lg:p-[22px] shadow-2xl overflow-hidden h-full">
                     {/* Wavy pattern overlay */}
-                    <div className="absolute z-0 -top-16 left-10">
-                      <div className="rounded-[68.75px] bg-[#5935E999] blur-[70px] w-[181px] h-[94px]"></div>
-                    </div>
+                    {isActive && (
+                      <div className="absolute z-0 -top-16 left-1/2 -translate-x-1/2">
+                        <div className="rounded-full bg-[#5935E9] blur-[90px] w-[220px] h-[110px] opacity-80" />
+                      </div>
+                    )}
+
                     <div
                       className="absolute inset-0 opacity-20"
                       style={{
@@ -376,14 +386,14 @@ export default function TestimonialSlider() {
               onClick={() => setCurrentSlide(index)}
               className={`rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? "bg-blue-500"
-                  : "bg-gray-600 hover:bg-gray-500"
+                  ? "bg-[#4F60FA] shadow-[0_0_12px_0_rgba(57,115,233,0.64)]"
+                  : "bg-[#1C263B99] hover:bg-gray-500"
               } ${
                 screenSize === "mobile"
                   ? "w-2 h-2 sm:w-3 sm:h-3"
                   : index === currentSlide
-                  ? "w-8 sm:w-12 h-1"
-                  : "w-6 sm:w-8 h-1"
+                  ? "w-80 sm:w-112 h-1"
+                  : "w-80 sm:w-112 h-1"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
