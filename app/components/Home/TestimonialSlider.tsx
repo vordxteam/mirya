@@ -122,7 +122,6 @@ export default function TestimonialSlider() {
       (index - currentSlide + testimonials.length) % testimonials.length;
 
     if (screenSize === "mobile") {
-      // Mobile layout - only show current slide
       const translateX = (index - currentSlide) * 100;
 
       return {
@@ -134,7 +133,6 @@ export default function TestimonialSlider() {
     }
 
     if (screenSize === "tablet") {
-      // Tablet layout - simplified carousel with fewer visible cards
       let translateX = 0;
       let opacity = 0;
       let zIndex = 0;
@@ -324,7 +322,7 @@ export default function TestimonialSlider() {
                       : {}
                   }
                 >
-                  <div className="relative bg-gradient-to-b from-[#1F1B48] to-[#00041E] rounded-2xl p-4 sm:p-6 lg:p-[22px] shadow-2xl overflow-hidden h-full">
+                  <div className="relative bg-gradient-to-b from-[#1F1B48] select-none to-[#00041E] rounded-2xl p-4 sm:p-6 lg:p-[22px] shadow-2xl overflow-hidden h-full">
                     {/* Wavy pattern overlay */}
                     {isActive && (
                       <div className="absolute z-0 -top-16 left-1/2 -translate-x-1/2">
@@ -366,7 +364,7 @@ export default function TestimonialSlider() {
                             src="/images/person.png"
                             alt={`${testimonial.author}'s avatar`}
                             fill
-                            className="object-cover rounded-full"
+                            className="object-cover rounded-full pointer-events-none select-none"
                           />
                         </div>
                       </div>

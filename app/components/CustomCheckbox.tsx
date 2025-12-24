@@ -9,6 +9,7 @@ interface CustomCheckboxProps {
   name?: string;
   value?: string;
   className?: string;
+  labelClassName?: string;
 }
 
 const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
@@ -18,9 +19,10 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
   name,
   value,
   className = "",
+  labelClassName = "text-[14px] leading-5",
 }) => {
   return (
-    <label className={`flex items-start gap-2 cursor-pointer ${className}`}>
+<label className={`flex items-center gap-2 cursor-pointer ${className}`}>
       {/* Checkbox */}
       <input
         type="checkbox"
@@ -31,8 +33,10 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
         value={value}
       />
 
-      <div className="w-4 h-4 mt-[2px] border border-white rounded flex items-center justify-center
-                      peer-checked:[&_svg]:opacity-100">
+      <div
+        className="w-4 h-4 mt-[2px] border border-white rounded flex items-center justify-center
+                      peer-checked:[&_svg]:opacity-100"
+      >
         <svg
           className="w-3 h-3 text-white opacity-0 transition-opacity"
           viewBox="0 0 24 24"
@@ -47,7 +51,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
       </div>
 
       {/* Label Content */}
-      <div className="text-[#FFFFFFB2] text-[14px] leading-5 select-none">
+      <div className={`text-[#FFFFFFB2] select-none ${labelClassName}`}>
         {label}
       </div>
     </label>

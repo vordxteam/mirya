@@ -143,9 +143,9 @@ useEffect(() => {
  const tl = gsap.timeline({
     scrollTrigger: {
       trigger: element,
-      start: "top 30%", 
+      start: "top 80%", 
       
-      end: "bottom 20%", 
+      end: "bottom 40%", 
       
       scrub: 1.5,
     },

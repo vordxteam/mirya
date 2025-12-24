@@ -12,8 +12,8 @@ const HeroSection = () => {
     title: "Start-Up Plan",
     description:
       "Built for early-stage teams that want to automate smarter, and scale faster.",
-    price: "€399",
-    period: " /per month",
+    price: "€ 299,",
+    period: "  /-25%",
     btnColor: "#0274FE",
     btnText: "Get Started",
     msgTitle : "All the essentials to automate",

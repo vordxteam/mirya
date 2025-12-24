@@ -80,17 +80,17 @@ const HeroSection = () => {
   return (
     <div className="">
       <div className="flex z-100 bg-[#00031c] flex-col items-center justify-center sm:pb-[75px] pt-0 sm:pt-10 px-2 md:px-10 bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain relative">
-        <div className="absolute top-0">
+        <div className="absolute top-0 -z-10 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
-        <Link href='/contact' className="pb-3 flex items-center gap-5">
+        {/* Change <Link> to <div> to remove the pointer cursor */}
+        <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
             Contact Us
           </h1>
-                   <Image src="/images/label.svg" width={78} height={16} alt="line" />
-         
-        </Link>
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
+        </div>
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[708px] w-full text-center pb-3 sm:pb-6">
           Get in Touch With the MIRYA Team
         </h1>
@@ -99,7 +99,7 @@ const HeroSection = () => {
           direction. Fast, friendly, and tailored support always.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+        {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <GradientButton
             label="Get Started"
             href="/user-testing"
@@ -112,7 +112,7 @@ const HeroSection = () => {
             bgColor="#00031C"
             textColor="#fff"
           />
-        </div>
+        </div> */}
 
         <div className="relative">
           <motion.div
@@ -121,14 +121,20 @@ const HeroSection = () => {
             animate="visible"
             className=" bottom-0"
           >
-            <Image src="/images/dash.png" alt="dash" width={530} height={121} />
+            <Image
+              src="/images/dash.png"
+              alt="dash"
+              width={530}
+              height={121}
+              className="-translate-y-14"
+            />
           </motion.div>
 
           <motion.div
             variants={pointerVariants}
             initial="hidden"
             animate="visible"
-            className="bottom-0 left-[50%] absolute"
+            className="bottom-14 left-[50%] absolute"
           >
             <Image
               src="/images/gradient-pointer.png"

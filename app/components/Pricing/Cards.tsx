@@ -21,7 +21,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
     monthly: [
       {
         id: 1,
-        title: "Professional",
+        title: "Most popular",
         description:
           "Ideal for Individuals or small teams beginning their automation journey.",
         features: [
@@ -31,8 +31,8 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
           "On cloud",
           "24/7 customer service",
         ],
-        price: "€299",
-        period: " /per month",
+        price: "€23,94",
+        period: "/per Half Yearly",
         btnColor: "#00031C",
         btnText: "Get Started",
         img: "/images/plan1.png",
@@ -173,7 +173,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
                 alt={item.title}
                 width={76}
                 height={76}
-                className="absolute h-auto -top-[5%] left-38"
+                className="absolute h-auto -top-[5%] left-40"
               />
 
               <h3 className="heading-3 font-semibold text-[#F4F7FF]">

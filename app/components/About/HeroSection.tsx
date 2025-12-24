@@ -185,55 +185,50 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useAbout } from "@/app/hooks/useAboutTranslation"; // ← correct path
+import { useAbout } from "@/app/hooks/useAboutTranslation";
 import gsap from "gsap";
-// Register plugin once
+
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 const HeroSection = () => {
-  // const paragraphRef = useRef<HTMLDivElement>(null);
-const { t } = useAbout();
-  // Scroll-triggered word-by-word color animation
- const paragraphRef = useRef<HTMLDivElement>(null);
+  const { t } = useAbout();
+  const paragraphRef = useRef<HTMLDivElement>(null);
 
-useEffect(() => {
-  const element = paragraphRef.current;
-  if (!element) return;
+  useEffect(() => {
+    const element = paragraphRef.current;
+    if (!element) return;
 
-  const text = element.textContent || "";
-  const words = text.split(" ");
+    const text = element.textContent || "";
+    const words = text.split(" ");
 
-  element.innerHTML = "";
-  const spans = words.map((word, i) => {
-    const span = document.createElement("span");
-    span.textContent = word + (i < words.length - 1 ? " " : "");
-    span.style.color = "#FFFFFF"; // Initial color
-    element.appendChild(span);
-    return span;
-  });
+    element.innerHTML = "";
+    const spans = words.map((word, i) => {
+      const span = document.createElement("span");
+      span.textContent = word + (i < words.length - 1 ? " " : "");
+      span.style.color = "#FFFFFF"; 
+      element.appendChild(span);
+      return span;
+    });
 
- const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: element,
-      start: "top 30%", 
-      
-      end: "bottom 20%", 
-      
-      scrub: 1.5,
-    },
-  });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%", 
+        end: "bottom 40%", 
+        scrub: 1.5,
+      },
+    });
 
-  tl.to(spans, {
-    color: "#73799B",
-    stagger: 0.1,      
-    ease: "none",      
-  });
-
+    tl.to(spans, {
+      color: "#73799B",
+      stagger: 0.1,      
+      ease: "none",      
+    });
 
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
-  }, [t]); // ← re-run when language changes!
+  }, [t]);
 
   const dashVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
@@ -248,7 +243,8 @@ useEffect(() => {
   return (
     <div>
       <div className="flex flex-col items-center justify-center pb-[75px] pt-0 sm:pt-10 px-2 md:px-10 bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain relative">
-        <div className="absolute top-0">
+        
+        <div className="absolute top-0 -z-10 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]" />
         </div>
 

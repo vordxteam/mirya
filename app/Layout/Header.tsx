@@ -336,9 +336,8 @@ import { useTranslation } from "react-i18next";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "Product" },
-    { href: "/industries", label: "Industries" },
+  { href: "/industries", label: "Industries" },
   { href: "/pricing", label: "Pricing" },
-
   { href: "/articles", label: "Academy" },
   { href: "/contact", label: "Contact" },
 ];
@@ -356,6 +355,16 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 5);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Get current language from i18n
   const currentLang =
@@ -412,7 +421,7 @@ export default function Header() {
       animate={{
         backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
         backgroundColor: scrolled
-          ? "rgba(0,0,0,0.35)" // darker look for black theme
+          ? "rgba(0,0,0,0.35)" 
           : "rgba(0,0,0,0)",
       }}
       transition={{ duration: 0.3, ease: "easeOut" }}

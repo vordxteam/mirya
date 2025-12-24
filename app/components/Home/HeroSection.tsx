@@ -11,7 +11,7 @@ const HeroSection = () => {
           <div className="rounded-[68.75px] bg-[#4F60FA] opacity-[0.45] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
 
-        <div className="pb-3 flex items-center gap-5">
+        <div className="pb-3 flex items-center gap-2 sm:gap-5">
           <Image
             src="/images/label2.svg"
             alt="gradient1"
@@ -70,14 +70,29 @@ const HeroSection = () => {
             </Link>
           </div>
         </div>
-        <div className="mt-2.5 shadow-[0_0_20px_0_rgba(2,116,254,0.32)] rounded-3xl bg-white">
-          <Image
-            src="/images/mirya2.png"
-            width={1200}
-            height={833}
-            alt="MIRYA"
-          />
-        </div>
+      <div
+  className="p-px rounded-3xl mt-2.5 shadow-[0_0_20px_0_rgba(2,116,254,0.32)]"
+  style={{
+    background:
+      "linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)",
+  }}
+>
+  {/* Inner container (transparent) */}
+  <div className="relative rounded-3xl overflow-hidden flex items-center justify-center">
+    {/* Glow effect at top center */}
+   
+
+    {/* Image */}
+    <Image
+      src="/images/mirya2.png"
+      width={1200}
+      height={833}
+      alt="MIRYA"
+      className="max-w-full h-auto rounded-3xl"
+    />
+  </div>
+</div>
+
       </div>
     </div>
   );

@@ -78,7 +78,7 @@ const HeroSection = () => {
   return (
     <div>
       <div className="flex flex-col items-center justify-center pb-[75px] pt-0 sm:pt-10 px-2 md:px-10 bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain relative">
-        <div className="absolute top-0">
+        <div className="absolute top-0 -z-10 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">
@@ -93,7 +93,7 @@ const HeroSection = () => {
             alt="line"
           />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[716px] w-full text-center pb-3 sm:pb-6">
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[716px] w-full text-center sm:px-0 px-4 pb-3 sm:pb-6">
           Where MIRYA Creates Real Impact
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">

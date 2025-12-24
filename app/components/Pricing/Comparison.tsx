@@ -72,7 +72,7 @@ const comparisonData: ComparisonRow[] = [
       mirya: { type: "icon", icon: "check" },
       n8n: "Plugin-based",
       powerAutomate: "Add-ons",
-      aiAgent: { type: "icon", icon: "cross" },
+      aiAgent: { type: "icon", icon: "check" },
     },
     {
       name: "Local Encryption of Credentials, Files & Variables",
@@ -120,7 +120,7 @@ const comparisonData: ComparisonRow[] = [
     }
 
    return (
-  <span className="text-[14px] md:text-[20px] font-medium text-center text-[#F4F7FF]">
+  <span className="text-[14px] md:text-[18px] font-normal leading-[22px] text-center text-[#F4F7FF]">
     {String(value)}
   </span>
 );
@@ -130,7 +130,7 @@ const comparisonData: ComparisonRow[] = [
   return (
     <div className="pt-[60px] max-w-[1440px] mx-auto flex flex-col items-center relative">
       {/* Background Blur */}
-      <div className="absolute top-0">
+      <div className="absolute top-0 -z-10 pointer-events-none">
         <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] z-[-1000] blur-[50px] w-[307px] h-[94px]"></div>
       </div>
 

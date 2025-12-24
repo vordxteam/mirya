@@ -38,66 +38,139 @@ const HomePage = () => {
     }
   }, []); // Empty dependency array = run only once on mount
 
+  // return (
+
+  //   <div>
+  //     <HeroSection />
+  //     <Demo />
+  //     <HowToUse />
+  //     <WorkFlow />
+  //     <Features />
+  //     <BuildForYou />
+  //     <Benefits />
+  //     <Aiassistant />
+  //     <Testimonials />
+  //     {!cookiesOpen && !chatOpen && (
+  //       <>
+  //         <Image
+  //           src="/images/cookies.png"
+  //           onClick={handleCookies}
+  //           alt="Cookies"
+  //           height={64}
+  //           width={64}
+  //           className="cursor-pointer fixed bottom-3 left-7 z-`999999999999999`"
+  //         />
+
+  //         <div className="h-[52px] rounded-full fixed bottom-3 right-7 border border-transparent non-rounded2 p-[1px] z-10">
+  //           <div
+  //             onClick={handleChat}
+  //             className="flex  cursor-pointer items-center rounded-full gap-2 p-2 h-full bg-gradient-to-r from-[#14122C] to-[#4542E0]"
+  //           >
+  //             <Image
+  //               src="/images/chatbot.png"
+  //               alt="Chatbot"
+  //               height={28}
+  //               width={26}
+  //             />
+  //             <p className="heading-5 font-normal text-[#FFFFFF]">
+  //               Chat with Us
+  //             </p>
+  //           </div>
+  //         </div>
+
+  //         <style jsx>{`
+  //           .non-rounded2 {
+  //             background: linear-gradient(#4542e0, #4542e0) padding-box,
+  //               linear-gradient(0deg, #4542e0, #4542e0, #4542e0) border-box;
+  //           }
+  //         `}</style>
+  //       </>
+  //     )}
+  //     {cookiesOpen && (
+  //       <div className="flex justify-between w-full px-6 fixed bottom-10 z-10">
+  //         <Cookies onClose={handleCookies} />
+  //       </div>
+  //     )}
+
+  //     {chatOpen && (
+  //       <div className="flex justify-between  px-6 fixed bottom-8 right-0 z-10">
+  //         <Chatbot onClose={handleChat} />
+  //       </div>
+  //     )}
+  //   </div>
+  // );
+
+
   return (
-    <div>
-      <HeroSection />
-      <Demo />
-      <HowToUse />
-      <WorkFlow />
-      <Features />
-      <BuildForYou />
-      <Benefits />
-      <Aiassistant />
-      <Testimonials />
-      {!cookiesOpen && !chatOpen && (
-        <>
+  <div className="relative">
+    {/* Page Content */}
+    <HeroSection />
+    <Demo />
+    <HowToUse />
+    <WorkFlow />
+    <Features />
+    <BuildForYou />
+    <Benefits />
+    <Aiassistant />
+    <Testimonials />
+
+    {/* --- FLOATING OVERLAY UI --- */}
+    
+    {/* Permanent Cookie Icon Overlay */}
+    <Image
+      src="/images/cookies.png"
+      onClick={handleCookies}
+      alt="Cookies"
+      height={64}
+      width={64}
+      // Fixed: corrected z-index syntax and added fixed positioning
+      className="cursor-pointer fixed bottom-3 left-7 z-[9999] hover:scale-110 transition-transform"
+    />
+
+    {/* Chatbot Toggle Button */}
+    {!chatOpen && (
+      <div className="h-[52px] rounded-full fixed bottom-3 right-7 border border-transparent non-rounded2 p-[1px] z-[9999]">
+        <div
+          onClick={handleChat}
+          className="flex cursor-pointer items-center rounded-full gap-2 p-2 h-full bg-gradient-to-r from-[#14122C] to-[#4542E0]"
+        >
           <Image
-            src="/images/cookies.png"
-            onClick={handleCookies}
-            alt="Cookies"
-            height={64}
-            width={64}
-            className="cursor-pointer fixed bottom-3 left-7 z-`999999999999999`"
+            src="/images/chatbot.png"
+            alt="Chatbot"
+            height={28}
+            width={26}
           />
-
-          <div className="h-[52px] rounded-full fixed bottom-3 right-7 border border-transparent non-rounded2 p-[1px] z-10">
-            <div
-              onClick={handleChat}
-              className="flex  cursor-pointer items-center rounded-full gap-2 p-2 h-full bg-gradient-to-r from-[#14122C] to-[#4542E0]"
-            >
-              <Image
-                src="/images/chatbot.png"
-                alt="Chatbot"
-                height={28}
-                width={26}
-              />
-              <p className="heading-5 font-normal text-[#FFFFFF]">
-                Chat with Us
-              </p>
-            </div>
-          </div>
-
-          <style jsx>{`
-            .non-rounded2 {
-              background: linear-gradient(#4542e0, #4542e0) padding-box,
-                linear-gradient(0deg, #4542e0, #4542e0, #4542e0) border-box;
-            }
-          `}</style>
-        </>
-      )}
-      {cookiesOpen && (
-        <div className="flex justify-between w-full px-6 fixed bottom-10 z-10">
-          <Cookies onClose={handleCookies} />
+          <p className="heading-5 font-normal text-[#FFFFFF]">Chat with Us</p>
         </div>
-      )}
+      </div>
+    )}
 
-      {chatOpen && (
-        <div className="flex justify-between  px-6 fixed bottom-8 right-0 z-10">
-          <Chatbot onClose={handleChat} />
+    {/* Cookie Modal/Popup */}
+    {cookiesOpen && (
+      <div className="fixed inset-0 bg-black/20 z-[10000] flex items-end justify-center pb-10 pointer-events-none">
+        <div className="pointer-events-auto w-full px-6">
+           <Cookies onClose={handleCookies} />
         </div>
-      )}
-    </div>
-  );
+      </div>
+    )}
+
+    {/* Chatbot Window */}
+    {chatOpen && (
+      <div className="fixed bottom-8 right-6 z-[10000]">
+        <Chatbot onClose={handleChat} />
+      </div>
+    )}
+
+    <style jsx>{`
+      .non-rounded2 {
+        background: linear-gradient(#4542e0, #4542e0) padding-box,
+          linear-gradient(0deg, #4542e0, #4542e0, #4542e0) border-box;
+      }
+    `}</style>
+  </div>
+);
 };
+
+
 
 export default HomePage;

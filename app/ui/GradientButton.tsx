@@ -19,7 +19,9 @@ const GradientButton: React.FC<GradientButtonProps> = ({
 }) => {
   return (
     <div
-      className="rounded-full p-[1.8px]"
+      /* Added p-[1px] for even thickness, w-fit to prevent stretching, 
+         and flex to center the content perfectly */
+      className="rounded-full p-[1px] w-fit flex items-center justify-center" 
       style={{
         background:
           "linear-gradient(0deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
@@ -27,7 +29,8 @@ const GradientButton: React.FC<GradientButtonProps> = ({
     >
       <Link
         href={href}
-        className="inline-block font-normal py-2 px-5 rounded-full cursor-pointer"
+        /* Changed to block and removed extra spacing issues */
+        className="block font-normal py-2 px-5 rounded-full cursor-pointer"
         style={{
           background: bgColor,
           color: textColor,

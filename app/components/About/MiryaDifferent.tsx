@@ -92,38 +92,37 @@ export default function MiryaDifferent(): React.ReactElement {
     const text = element.textContent || "";
     const words = text.split(" ");
 
+    // 1. Prepare the spans
     element.innerHTML = "";
-    const spans: HTMLSpanElement[] = words.map((word, i) => {
+    const spans = words.map((word, i) => {
       const span = document.createElement("span");
       span.textContent = word + (i < words.length - 1 ? " " : "");
-      span.style.color = "#FFFFFF";
-      span.style.display = "inline";
+      span.style.color = "#FFFFFF"; // Initial color
       element.appendChild(span);
       return span;
     });
 
-    ScrollTrigger.create({
-      trigger: element,
-      start: "top 10%",
-      end: "bottom 40%",
-      scrub: true,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const totalSpans = spans.length;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
 
-        spans.forEach((span, index) => {
-          const spanProgress = index / totalSpans;
-          if (progress >= spanProgress) {
-            span.style.color = "#73799B";
-          } else {
-            span.style.color = "#FFFFFF";
-          }
-        });
+        end: "bottom 40%",
+
+        scrub: 1.5,
       },
     });
 
+    // 3. Animate each span color
+    tl.to(spans, {
+      color: "#73799B",
+      stagger: 0.1,
+      ease: "none",
+    });
+
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      tl.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 
@@ -201,7 +200,7 @@ export default function MiryaDifferent(): React.ReactElement {
   return (
     <>
       <div className="flex justify-center">
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
+        <div className=" bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
       </div>
       <div className="py-[60px] px-5 sm:px-[60px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
         <div className="bg-[#00031C"></div>
@@ -211,7 +210,7 @@ export default function MiryaDifferent(): React.ReactElement {
           variants={backgroundVariants}
           transition={{ duration: 0.8 }}
         >
-          <div className="absolute -top-5 left-[45%]">
+          <div className="absolute -top-5 left-[45%] -z-10 pointer-events-none">
             <div className="rounded-[68.75px] bg-[#4F60FA] opacity-[0.6] blur-[90px] w-[181px] h-[94px]"></div>
           </div>
           <Image
@@ -219,7 +218,7 @@ export default function MiryaDifferent(): React.ReactElement {
             alt="gradient"
             width={458}
             height={318}
-            className="absolute left-[40%] bottom-[18%]"
+            className="absolute left-[40%] bottom-[18%] -z-10 pointer-events-none"
           />
           {/* <Image
           src="/images/main-gradient.png"
@@ -238,7 +237,7 @@ export default function MiryaDifferent(): React.ReactElement {
           viewport={{ once: true, margin: "-50px" }}
         >
           <motion.div
-            className="flex gap-5 items-center"
+            className=" sm:gap-5 gap-2 flex items-center justify-center"
             variants={itemVariants}
           >
             <Image
@@ -247,7 +246,7 @@ export default function MiryaDifferent(): React.ReactElement {
               height={16}
               width={78}
             />
-            <h5 className="heading-5 font-regular text-[#959EFE]">
+            <h5 className="heading-5 font-regular text-[#959EFE] text-center">
               What Makes MIRYA Different
             </h5>
             <Image
