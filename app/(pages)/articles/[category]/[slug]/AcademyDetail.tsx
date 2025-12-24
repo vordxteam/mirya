@@ -1,61 +1,85 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useParams } from "next/navigation";
-// Import your API client
-import { categoryApi, Page } from "@/app/api/academy"; // <-- added Page here
-import React, { useState, useEffect, useCallback } from "react";
+import { useParams } from "next/navigation";
+import { categoryApi } from "@/app/api/academy";
+import React, { useState, useEffect, useCallback, ReactElement } from "react"; // Added ReactElement import
+
+interface ApiElement {
+  type: string;
+  value?: string;
+  checked?: boolean;
+}
+
+interface ApiContentBlock {
+  heading?: string;
+  heading_checked?: boolean;
+  elements: ApiElement[];
+}
+
+interface PageDetail {
+  id: number;
+  slug: string;
+  title: string;
+  content: ApiContentBlock[];
+  updated_at: string;
+}
+
 interface SubItem {
   id: string;
   title: string;
+  slug: string;
 }
+
 interface SidebarItem {
   id: string;
   title: string;
-  slug: string; // Add this
+  slug: string;
   subItems?: SubItem[];
 }
-interface Subsection {
-  title?: string;
-  content?: string;
-  features?: string;
-  featureHeading?: string;
-  featureDescription?: string;
-  headingOne?: string;
-  headingOneDescription?: string;
-  headingTwo?: string;
-  headingTwoDescription?: string;
-  headingThree?: string;
-  headingThreeDescription?: string;
-  headingFour?: string;
-  headingFourDescription?: string;
-  title_bulletPoints?: string[];
-  short_description?: string;
-  secondSection?: {
-    subHeading?: string;
-    subHeadingContent?: string;
-    features?: string;
-    bulletPoints?: Array<{ title: string; description: string }>;
-    short_description?: string;
-  };
+
+interface ProcessedContent {
+  blocks: ApiContentBlock[];
+  allHeadings: Array<{ text: string; id: string }>;
 }
 
 interface ContentItem {
   title: string;
-  heading?: string;
-  content?: string;
-  heading_content?: string;
-  subsections?: Subsection[];
+  content?: ProcessedContent;
   rightCard?: { title: string; items: Array<{ text: string }> };
 }
+
 interface ArticleData {
   title: string;
   category: string;
   lastUpdated: string;
+  updated_at: string;
   sidebar: SidebarItem[];
   content: { [key: string]: ContentItem };
   rightCard: { title: string; items: Array<{ text: string }> };
 }
+interface CategoryItem {
+  id: number;
+  main_category: {
+    id: number;
+    name: string;
+  };
+  category: {
+    id: number;
+    title: string;
+  };
+  pages: Page[];
+  updated_at: string;
+}
+
+interface Page {
+  id: number;
+  title: string;
+  slug: string;
+  content?: ApiContentBlock[];
+  updated_at: string;
+}
+
 const AcademyDetailPage = () => {
   const params = useParams();
   const slug = params.slug as string;
@@ -63,52 +87,62 @@ const AcademyDetailPage = () => {
   const [articleData, setArticleData] = useState<ArticleData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
   const [activeSection, setActiveSection] = useState<string>("");
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const [lastActiveParent, setLastActiveParent] = useState<string>("");
+  const hasFetched = React.useRef(false);
 
-  // --- 2. The Detail Fetch Function ---
-  // Wrapped in useCallback to prevent unnecessary re-renders
+  const formatBoldText = (text: string) => {
+    return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  };
+
   const fetchPageDetail = useCallback(
     async (pageSlug: string, sectionId: string) => {
       try {
         const response = await categoryApi.getDetailBySlug(pageSlug);
-        const detailData = response.data.data;
 
-        const transformedSubsections = detailData.content.map((block: any) => ({
-          title: block.heading || "",
-          content:
-            block.elements.find((el: any) => el.type === "description")
-              ?.value || "",
-          featureHeading:
-            block.elements.find((el: any) => el.type === "feature")?.value ||
-            "",
-          headingOne:
-            block.elements.find((el: any) => el.type === "h1")?.value || "",
-          headingTwo:
-            block.elements.find((el: any) => el.type === "h2")?.value || "",
-          headingThree:
-            block.elements.find((el: any) => el.type === "h3")?.value || "",
-        }));
+        if (!response?.data?.data) {
+          throw new Error("Invalid API response");
+        }
+
+        const detailData = response.data.data as unknown as PageDetail;
+
+        const allHeadings = detailData.content.flatMap(
+          (block: ApiContentBlock) =>
+            block.elements
+              .filter(
+                (el) =>
+                  el.type.startsWith("h") && el.value && el.value.trim() !== ""
+              )
+              .map((el) => {
+                const headingId =
+                  el.value
+                    ?.toLowerCase()
+                    .replace(/[^\w\s-]/g, "")
+                    .replace(/\s+/g, "-") || "";
+
+                return {
+                  text: el.value || "",
+                  id: headingId,
+                };
+              })
+        );
 
         setArticleData((prev) => {
           if (!prev) return prev;
           return {
             ...prev,
+            updated_at: detailData.updated_at,
             content: {
               ...prev.content,
               [sectionId]: {
-                // Use sectionId as key to match activeSection
                 title: detailData.title,
-                heading_content: detailData.short_description,
-                subsections: transformedSubsections,
+                content: {
+                  blocks: detailData.content,
+                  allHeadings,
+                },
                 rightCard: {
                   title: "On this page",
-                  items:
-                    detailData.content[0]?.elements
-                      .filter((el: any) => el.type.startsWith("h"))
-                      .map((el: any) => ({ text: el.value })) || [],
+                  items: allHeadings,
                 },
               },
             },
@@ -121,68 +155,219 @@ const AcademyDetailPage = () => {
     []
   );
 
-  // --- 3. Initial Fetch (Updated to include slug and first page detail) ---
   useEffect(() => {
-    if (!slug) return;
+    if (!slug || hasFetched.current) return;
 
+    hasFetched.current = true;
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await categoryApi.getById(slug);
-        const categoryData = response.data.data[0];
-        if (!categoryData) throw new Error("Category not found");
+        const response = await categoryApi.getById(Number(slug));
+        const apiData: CategoryItem[] = Array.isArray(response.data?.data)
+          ? response.data.data
+          : [];
 
-        const sidebarItems = categoryData.pages.map((page: any) => ({
-          id: page.id.toString(),
-          title: page.title,
-          slug: page.slug, // Map slug from API
+        const sidebarItems = apiData.map((item) => ({
+          id: item.category.id.toString(),
+          title: item.category.title,
+          slug: "",
+          subItems: item.pages.map((page) => ({
+            id: page.id.toString(),
+            title: page.title,
+            slug: page.slug,
+          })),
         }));
 
+        const firstCategory = apiData[0];
+
         setArticleData({
-          title: categoryData.category.title,
-          category: categoryData.category.title,
+          title: firstCategory.main_category.name,
+          category: firstCategory.category.title,
+          updated_at:
+            firstCategory.pages[0]?.updated_at || firstCategory.updated_at,
           lastUpdated: "Recently",
           sidebar: sidebarItems,
-          content: {}, // Start with empty content
+          content: {},
           rightCard: { title: "On this page", items: [] },
         });
 
-        // Set first page active and fetch its details immediately
-        if (categoryData.pages[0]) {
-          const firstPage = categoryData.pages[0];
-          const firstId = firstPage.id.toString();
-          setActiveSection(firstId);
-          fetchPageDetail(firstPage.slug, firstId);
+        if (firstCategory.pages[0]) {
+          const firstPage = firstCategory.pages[0];
+          setActiveSection(firstPage.id.toString());
+          setExpandedItems(new Set([firstCategory.category.id.toString()]));
+          fetchPageDetail(firstPage.slug, firstPage.id.toString());
         }
       } catch (err) {
-        setError((err as Error).message || "Failed to load data");
+        setError("Failed to load data");
       } finally {
         setLoading(false);
       }
     };
-
     fetchData();
   }, [slug, fetchPageDetail]);
 
   const toggleExpand = (itemId: string) => {
-    if (expandedItems.has(itemId)) {
-      setExpandedItems(new Set());
-      setActiveParent("");
-    } else {
-      setExpandedItems(new Set([itemId]));
-      setActiveParent(itemId);
-      setLastActiveParent(itemId);
-    }
+    setExpandedItems((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(itemId)) {
+        newSet.delete(itemId);
+      } else {
+        newSet.add(itemId);
+      }
+      return newSet;
+    });
   };
 
   const handleSectionClick = (sectionId: string, sectionSlug: string) => {
     setActiveSection(sectionId);
-    // Only fetch if we don't already have the content for this ID
     if (!articleData?.content[sectionId]) {
       fetchPageDetail(sectionSlug, sectionId);
     }
   };
-  // --- Loading & Error States ---
+
+  // Function to render elements based on type
+  const renderElement = (
+    el: ApiElement,
+    index: number,
+    blockIndex: number
+  ): ReactElement | null => {
+    const elementId =
+      el.value
+        ?.toLowerCase()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-") || `element-${blockIndex}-${index}`;
+
+    switch (el.type) {
+      case "h1":
+        return (
+          <h1
+            key={index}
+            id={elementId}
+            className="text-[32px] leading-10 font-semibold mt-10 mb-4 scroll-mt-24"
+          >
+            {el.value}
+          </h1>
+        );
+
+      case "h2":
+        return (
+          <h2
+            key={index}
+            id={elementId}
+            className="text-[24px] leading-8 font-semibold mt-8 mb-3 scroll-mt-24"
+          >
+            {el.value}
+          </h2>
+        );
+
+      case "h3":
+        return (
+          <h3
+            key={index}
+            id={elementId}
+            className="text-[20px] leading-7 font-semibold mt-6 mb-2 scroll-mt-24"
+          >
+            {el.value}
+          </h3>
+        );
+
+      case "h4":
+        return (
+          <h4
+            key={index}
+            id={elementId}
+            className="text-[18px] leading-6 font-semibold mt-4 mb-2"
+          >
+            {el.value}
+          </h4>
+        );
+
+      case "description":
+        if (!el.value?.trim()) return null;
+        return (
+          <p
+            key={index}
+            className="text-[16px] leading-6 text-[#FFFFFFCC] mb-4 max-w-[634px] whitespace-pre-line"
+          >
+            {el.value}
+          </p>
+        );
+
+      case "feature":
+        if (!el.value?.trim()) return null;
+        return (
+          <li
+            key={index}
+            className="list-disc text-[16px] leading-6 text-[#F4F7FF] ml-5"
+            dangerouslySetInnerHTML={{
+              __html: formatBoldText(el.value || ""),
+            }}
+          />
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  // Function to render a content block
+  const renderContentBlock = (block: ApiContentBlock, blockIndex: number) => {
+    const elements = block.elements;
+    const renderedElements: ReactElement[] = [];
+    let currentFeatureList: ReactElement[] = [];
+
+    for (let i = 0; i < elements.length; i++) {
+      const el = elements[i];
+
+      if (el.type === "feature") {
+        const rendered = renderElement(el, i, blockIndex);
+        if (rendered) {
+          currentFeatureList.push(rendered);
+        }
+
+        if (i === elements.length - 1 || elements[i + 1]?.type !== "feature") {
+          renderedElements.push(
+            <ul
+              key={`feature-list-${blockIndex}-${i}`}
+              className="space-y-2 mb-4"
+            >
+              {currentFeatureList}
+            </ul>
+          );
+          currentFeatureList = [];
+        }
+      } else {
+        if (currentFeatureList.length > 0) {
+          renderedElements.push(
+            <ul
+              key={`feature-list-${blockIndex}-${i}`}
+              className="space-y-2 mb-4"
+            >
+              {currentFeatureList}
+            </ul>
+          );
+          currentFeatureList = [];
+        }
+
+        const rendered = renderElement(el, i, blockIndex);
+        if (rendered) {
+          renderedElements.push(rendered);
+        }
+      }
+    }
+
+    return (
+      <div key={blockIndex} className="space-y-4 mb-8">
+        {renderedElements}
+
+        {/* Add separator between blocks except the last one */}
+        {blockIndex < (currentContent.content?.blocks?.length || 0) - 1 && (
+          <div className="my-8 border-t border-[#FFFFFF1F]" />
+        )}
+      </div>
+    );
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#00031C] flex items-center justify-center">
@@ -207,6 +392,7 @@ const AcademyDetailPage = () => {
   }
 
   const currentContent = articleData.content[activeSection] || {};
+
   return (
     <div className="bg-[#00031C] min-h-screen">
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 pb-20">
@@ -219,10 +405,10 @@ const AcademyDetailPage = () => {
               <nav className="space-y-2">
                 {articleData.sidebar.map((item) => {
                   const isExpanded = expandedItems.has(item.id);
-                  const isActive =
+                  const isParentActive =
                     activeSection === item.id ||
-                    expandedItems.has(item.id) ||
-                    (!expandedItems.size && lastActiveParent === item.id);
+                    item.subItems?.some((sub) => sub.id === activeSection);
+
                   return (
                     <div key={item.id}>
                       <button
@@ -230,12 +416,11 @@ const AcademyDetailPage = () => {
                           if (item.subItems) {
                             toggleExpand(item.id);
                           } else {
-                            // PASS THE SLUG HERE
                             handleSectionClick(item.id, item.slug);
                           }
                         }}
                         className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
-                          isActive
+                          isParentActive
                             ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
                             : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
                         }`}
@@ -261,20 +446,23 @@ const AcademyDetailPage = () => {
                           )}
                         </div>
                       </button>
-                      {item.subItems && expandedItems.has(item.id) && (
-                        <div className="relative space-y-2">
+
+                      {item.subItems && isExpanded && (
+                        <div className="relative space-y-2 mb-4">
                           <div
                             className="absolute top-1 bg-[#116AF8] rounded"
                             style={{
                               left: "12px",
                               width: "1px",
-                              height: `${item.subItems.length * 40}px`,
+                              height: `${item.subItems.length * 36}px`,
                             }}
                           />
                           {item.subItems.map((subItem) => (
                             <button
                               key={subItem.id}
-                              onClick={() => handleSectionClick(subItem.id)}
+                              onClick={() =>
+                                handleSectionClick(subItem.id, subItem.slug)
+                              }
                               className={`w-full max-w-[211px] whitespace-nowrap text-left px-2 py-2 rounded-lg text-[14px] leading-5 font-light transition-all relative cursor-pointer ${
                                 activeSection === subItem.id
                                   ? "bg-[rgba(17,106,248,0.12)] text-[#116AF8]"
@@ -324,200 +512,36 @@ const AcademyDetailPage = () => {
             <div>
               <div className="mb-12">
                 <h1 className="text-[32px] sm:text-[48px] font-medium leading-14 mb-6">
-                  {currentContent.title}
+                  {currentContent.title || articleData.title}
                 </h1>
                 <p className="text-[#FFFFFF99] text-[16px] leading-5 font-normal mb-12">
-                  Last Updated {articleData.lastUpdated}
+                  Last Updated{" "}
+                  {articleData.updated_at
+                    ? new Date(articleData.updated_at).toLocaleDateString(
+                        "en-US",
+                        {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        }
+                      )
+                    : "—"}
                 </p>
               </div>
 
               <div className="">
-                <div>
-                  {currentContent.heading && (
-                    <h2 className="text-[20px] leading-6 font-medium mb-4">
-                      {currentContent.heading}
-                    </h2>
+                {/* Render content blocks dynamically */}
+                {currentContent.content?.blocks &&
+                  currentContent.content.blocks.map((block, blockIndex) =>
+                    renderContentBlock(block, blockIndex)
                   )}
-                </div>
-                <div>
-                  {currentContent.content && (
-                    <p className="text-[16px] leading-5 font-normal text-[#FFFFFFCC]">
-                      {currentContent.content}
-                    </p>
-                  )}
-                </div>
 
-                <div>
-                  {currentContent.heading_content && (
-                    <p className="text-[16px] leading-5 text-[#FFFFFFCC] mb-12 w-full max-w-[680px]">
-                      {currentContent.heading_content}
-                    </p>
-                  )}
-                </div>
-
-                {currentContent.subsections &&
-                  currentContent.subsections.map((subsection, idx) => (
-                    <div key={idx} className="space-y-5">
-                      {subsection.title && (
-                        <h2 className="text-[24px] leading-8 font-semibold">
-                          {subsection.title}
-                        </h2>
-                      )}
-                      {subsection.content && (
-                        <p className="text-[16px] leading-6 font-normal w-full max-w-[661px]">
-                          {subsection.content}
-                        </p>
-                      )}
-
-                      {subsection.featureHeading && (
-                        <h3 className="text-[20px] leading-7 font-semibold mt-1 mb-0">
-                          {subsection.featureHeading}
-                        </h3>
-                      )}
-                      {subsection.featureDescription && (
-                        <p className="text-[16px] leading-5 font-normal mt-3">
-                          {subsection.featureDescription}
-                        </p>
-                      )}
-
-                      {subsection.features && (
-                        <p className="text-[16px] leading-5 mb-5 text-white w-full max-w-[680px]">
-                          {subsection.features}
-                        </p>
-                      )}
-
-                      {subsection.headingOne && (
-                        <div className="my-8 border-t border-[#FFFFFF1F]" />
-                      )}
-
-                      {subsection.headingOne && (
-                        <div className="space-y-3">
-                          <h3 className="text-[20px] leading-7 font-semibold">
-                            {subsection.headingOne}
-                          </h3>
-                          <p className="text-[16px] leading-5 text-[#FFFFFFCC] max-w-[680px]">
-                            {subsection.headingOneDescription}
-                          </p>
-                        </div>
-                      )}
-
-                      {subsection.headingOne && subsection.headingTwo && (
-                        <div className="my-8 border-t border-[#FFFFFF1F]" />
-                      )}
-
-                      {subsection.headingTwo && (
-                        <div className="space-y-3">
-                          <h3 className="text-[20px] leading-7 font-semibold">
-                            {subsection.headingTwo}
-                          </h3>
-                          <p className="text-[16px] leading-5 text-[#FFFFFFCC] max-w-[680px]">
-                            {subsection.headingTwoDescription}
-                          </p>
-                        </div>
-                      )}
-
-                      {subsection.headingTwo && subsection.headingThree && (
-                        <div className="my-8 border-t border-[#FFFFFF1F]" />
-                      )}
-
-                      {subsection.headingThree && (
-                        <div className="space-y-3">
-                          <h3 className="text-[20px] leading-7 font-semibold">
-                            {subsection.headingThree}
-                          </h3>
-                          <p className="text-[16px] leading-5 text-[#FFFFFFCC] max-w-[680px]">
-                            {subsection.headingThreeDescription}
-                          </p>
-                        </div>
-                      )}
-
-                      {subsection.headingThree && subsection.headingFour && (
-                        <div className="my-8 border-t border-[#FFFFFF1F]" />
-                      )}
-
-                      {subsection.headingFour && (
-                        <div className="space-y-3">
-                          <h3 className="text-[20px] leading-7 font-semibold">
-                            {subsection.headingFour}
-                          </h3>
-                          <p className="text-[16px] leading-5 text-[#FFFFFFCC] max-w-[680px]">
-                            {subsection.headingFourDescription}
-                          </p>
-                        </div>
-                      )}
-
-                      {subsection.title_bulletPoints && (
-                        <ul className="space-y-1 ml-5">
-                          {subsection.title_bulletPoints.map(
-                            (point, pointIdx) => (
-                              <li
-                                key={pointIdx}
-                                className="text-[16px] leading-6 font-normal list-disc"
-                              >
-                                {point}
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      )}
-
-                      {subsection.short_description && (
-                        <p className="text-[16px] leading-6 font-normal mt-4 text-white w-full max-w-[661px]">
-                          {subsection.short_description}
-                        </p>
-                      )}
-
-                      {subsection.secondSection && (
-                        <div className="my-6 border-t border-[#FFFFFF1F]"></div>
-                      )}
-
-                      {subsection.secondSection && (
-                        <div>
-                          {subsection.secondSection.subHeading && (
-                            <h3 className="text-[24px] leading-8 font-semibold mb-5">
-                              {subsection.secondSection.subHeading}
-                            </h3>
-                          )}
-                          {subsection.secondSection.subHeadingContent && (
-                            <p className="text-[16px] leading-6 font-normal mt-4 text-white mb-6 w-full max-w-[680px]">
-                              {subsection.secondSection.subHeadingContent}
-                            </p>
-                          )}
-
-                          {subsection.secondSection.features && (
-                            <p className="mb-3 mt-6 text-[16px] leading-5 text-white">
-                              {subsection.secondSection.features}
-                            </p>
-                          )}
-                          {subsection.secondSection.bulletPoints && (
-                            <ul className="space-y-2 ml-5">
-                              {subsection.secondSection.bulletPoints.map(
-                                (point, idx) => (
-                                  <li
-                                    key={idx}
-                                    className="text-[16px] leading-6 list-disc text-[#F4F7FF]"
-                                  >
-                                    <span className="font-semibold text-[16px] leading-6 text-white">
-                                      {point.title}
-                                    </span>{" "}
-                                    <span className="font-normal text-[16px] leading-6">
-                                      {point.description}
-                                    </span>
-                                  </li>
-                                )
-                              )}
-                            </ul>
-                          )}
-
-                          {subsection.secondSection.short_description && (
-                            <p className="text-[16px] leading-6 font-normal mt-4 text-white w-full max-w-[661px]">
-                              {subsection.secondSection.short_description}
-                            </p>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                {/* If no content yet */}
+                {!currentContent.content && !loading && (
+                  <p className="text-[16px] leading-6 text-[#FFFFFFCC]">
+                    Content loading...
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -528,15 +552,16 @@ const AcademyDetailPage = () => {
                 {currentContent.rightCard?.title || "On this Page"}
               </h3>
               <div className="space-y-3">
-                {currentContent.rightCard?.items?.map((item, idx) => (
-                  <div
+                {currentContent.rightCard?.items?.map((item: any, idx) => (
+                  <a
                     key={idx}
-                    className="flex items-start text-[16px] text-[#FFFFFF99] leading-5 hover:text-[#0274FE] transition-colors cursor-pointer"
+                    href={`#${item.id}`}
+                    className="flex items-start text-[16px] text-[#FFFFFF99] leading-5 hover:text-[#0274FE] transition-colors cursor-pointer block"
                   >
                     <span className="leading-5 text-[14px] font-normal">
                       {item.text}
                     </span>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>

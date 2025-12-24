@@ -51,7 +51,7 @@ export default function Recommended() {
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </div>
       <div className="flex z-100 bg-[#00031C] flex-col items-center justify-center  pt-15 px-2 md:px-10  relative">
-        <div className="absolute top-0">
+        <div className="absolute top-0 -z-10 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">
@@ -82,7 +82,7 @@ export default function Recommended() {
             className="p-px"
           >
             <div className="p-6 space-y-3 bg-[#0a1560]  h-full overflow-hidden relative rounded-xl">
-              <div className="absolute top-6 left-30">
+              <div className="absolute top-6 left-30 -z-10 pointer-events-none">
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
 

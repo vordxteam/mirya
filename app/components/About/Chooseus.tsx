@@ -14,7 +14,7 @@ const Chooseus = () => {
         <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 py-[60px] overflow-hidden relative">
           <div className="relative">
             <div className="flex items-center justify-center flex-col">
-              <div className="absolute -top-20">
+              <div className="absolute -top-20 -z-10 pointer-events-none">
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
               {/* Top Title Row */}

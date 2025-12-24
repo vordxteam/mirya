@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Inter } from "next/font/google";
-
+import CustomCheckbox from "@/app/components/CustomCheckbox";
 const inter = Inter({
   variable: "--font-inter",
   weight: ["300", "400", "500", "600", "700"],
@@ -11,8 +11,8 @@ const inter = Inter({
 export default function Cookies({ onClose }: { onClose: () => void }) {
   return (
     <div className={`${inter.className}`}>
-      <div className="rounded-[20px] border border-transparent non-rounded2 p-[1px]">
-        <div className="rounded-[20px] gap-2 p-[19px] h-full bg-[#060B26] max-w-[426px] py-[19px] px-[23px]">
+      <div className="rounded-[20px] border border-transparent non-rounded2 p-[1px] max-w-[426px]">
+        <div className="rounded-[20px] gap-2 p-[19px] bg-[#060B26]">
           <div className="space-y-3">
             <div className="flex justify-between items-end">
               <h4 className="heading-4 font-light text-[#FFFFFF]">
@@ -35,30 +35,30 @@ export default function Cookies({ onClose }: { onClose: () => void }) {
               collected from your use of their services.
             </p>
             <div className="w-full flex items-center justify-between">
-              <div className="flex gap-2 items-center leading-[14px]">
-                <input type="checkbox" className="h-4 w-4" />
-                <p className="text-[6px] sm:text-[10px] font-light text-[#FFFFFFE5]">
-                  Strictly necessary
-                </p>
+              <div className="flex items-center leading-[14px]">
+                <CustomCheckbox
+                  label="Strictly necessary"
+                  labelClassName="text-[6px] sm:text-[10px] font-light text-[#FFFFFFE5]"
+                />
               </div>
-              <div className="flex gap-2 items-center leading-[14px]">
-                <input type="checkbox" className="h-4 w-4" />
-                <p className="text-[6px] sm:text-[10px] font-light text-[#FFFFFFE5]">
-                  Targeting only
-                </p>
+              <div className="flex  items-center leading-[14px]">
+                <CustomCheckbox
+                  label="Targeting only"
+                  labelClassName="text-[6px] sm:text-[10px] font-light text-[#FFFFFFE5]"
+                />
               </div>
-              <div className="flex gap-2 items-center leading-[14px]">
-                <input type="checkbox" className="h-4 w-4" />
-                <p className="text-[6px] sm:text-[10px] font-light text-[#FFFFFFE5]">
-                  Performance only
-                </p>
+              <div className="flex  items-center leading-[14px]">
+                <CustomCheckbox
+                  label="                  Performance only
+"
+                  labelClassName="text-[6px] sm:text-[10px] font-light text-[#FFFFFFE5]"
+                />
               </div>
             </div>
           </div>
 
           {/* Buttons section with responsive ordering */}
           <div className="pt-9 flex flex-col sm:flex-row w-full items-center justify-between gap-4">
-            
             {/* Accept All - Top on sm, Left on lg */}
             <div className="w-full sm:w-auto order-1 sm:order-1">
               <button

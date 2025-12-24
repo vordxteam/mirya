@@ -12,10 +12,10 @@ const ChoosePlan = () => {
         }}
         className="p-px rounded-2xl relative overflow-hidden"
       >
-        <div className="absolute top-5 left-1/5">
+        <div className="absolute top-5 left-1/5 ">
           <div className="rounded-[68.75px] bg-[#5935E999] z-[-1000] blur-[50px] w-[181px] h-[71px]"></div>
         </div>
-        <div className="absolute -bottom-5 right-10">
+        <div className="absolute -bottom-5 right-10 ">
           <div className="rounded-[68.75px] bg-[#5935E999] z-[-1000] blur-[50px] w-[181px] h-[71px]"></div>
         </div>
         <div className="bg-[#00031C] px-8 py-6 flex flex-col lg:flex-row gap-5 lg:items-center justify-between rounded-2xl">

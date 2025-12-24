@@ -130,7 +130,7 @@ const comparisonData: ComparisonRow[] = [
   return (
     <div className="pt-[60px] max-w-[1440px] mx-auto flex flex-col items-center relative">
       {/* Background Blur */}
-      <div className="absolute top-0">
+      <div className="absolute top-0 -z-10 pointer-events-none">
         <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] z-[-1000] blur-[50px] w-[307px] h-[94px]"></div>
       </div>
 

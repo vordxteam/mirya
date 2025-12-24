@@ -149,6 +149,8 @@
 
 // export default Cards;
 
+
+
 "use client";
 
 import Image from "next/image";
@@ -170,36 +172,35 @@ const Cards = () => {
   const [cardsData, setCardsData] = useState<CardItem[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    categoryApi
-      .getAll()
-      .then((res) => {
-        const rawData = res.data?.data || [];
-        const mappedData = rawData.map((item: any) => ({
-          id: item.id,
-          slug: item.slug,
-          title: item.name,
-          description: item.description,
-          icon: item.icon,
-          category: "academy",
-        }));
-        setCardsData(mappedData);
-      })
-      .catch((err) => console.error("Failed to fetch:", err))
-      .finally(() => setLoading(false));
-  }, []);
+const hasFetched = React.useRef(false);
 
-  const handleLearnMore = async (card: CardItem) => {
-    try {
-      // You are hitting this API successfully
-      const response = await categoryApi.getById(card.id);
-      console.log("API response:", response);
+useEffect(() => {
+  if (hasFetched.current) return;
 
-      router.push(`/articles/${card.category}/${card.id}`);
-    } catch (err) {
-      console.error("Failed to fetch:", err);
-    }
-  };
+  hasFetched.current = true;
+
+  categoryApi
+    .getAll()
+    .then((res) => {
+      const rawData = res.data?.data || [];
+      const mappedData = rawData.map((item: any) => ({
+        id: item.id,
+        slug: item.slug,
+        title: item.name,
+        description: item.description,
+        icon: item.icon,
+        category: "academy",
+      }));
+      setCardsData(mappedData);
+    })
+    .catch((err) => console.error("Failed to fetch:", err))
+    .finally(() => setLoading(false));
+}, []);
+
+const handleLearnMore = (card: CardItem) => {
+  router.push(`/articles/${card.category}/${card.id}`);
+};
+
 
   return (
     <div className="bg-[#00031C] relative z-10">

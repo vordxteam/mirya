@@ -13,7 +13,7 @@ const Benefits = () => {
           {/* Top Section */}
           <div className="relative flex flex-col items-center text-center">
             {/* Glow */}
-            <div className="absolute -top-16">
+            <div className="absolute -top-16 ">
               <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
             </div>
 
@@ -95,7 +95,7 @@ const Benefits = () => {
               title="Boost Efficiency & Productivity"
               description="MIRYA automates repetitive tasks instantly, allowing your team to focus on high-value work. Processes run faster, smoother, and with consistent accuracy."
               image="/images/benefit4.svg"
-              imageWidth={623}
+              imageWidth={550}
               imageHeight={219}
               glowPosition="left"
               className="col-span-12 md:col-span-6 xl:col-span-6"
@@ -110,6 +110,8 @@ const Benefits = () => {
               imageHeight={219}
               glowPosition="left"
               className="col-span-12 md:col-span-6 xl:col-span-6"
+                            imageTranslate=" translate-x-11 -translate-y-3 "
+
             />
           </div>
 
@@ -187,7 +189,7 @@ const BenefitCard: React.FC<CardProps> = ({
 
           <div
             className={`flex items-center justify-center ${
-              imagePaddingBottom || "pb-8"
+              imagePaddingBottom || "pb-[37px]"
             }`}
           >
             <Image

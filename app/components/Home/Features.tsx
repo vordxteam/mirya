@@ -440,7 +440,7 @@ export default function Features() {
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.1 }}
         variants={containerVariants}
-        className="pt-[60px] px-2 sm:px-[80px] flex flex-col items-center"
+        className="pt-[60px] px-4 sm:px-[80px] flex flex-col items-center"
       >
         {/* Optimized background images */}
         <div className="hidden sm:block">
@@ -485,7 +485,7 @@ export default function Features() {
             width={78}
             priority={true}
           />
-          <div className="absolute -top-16 -left-3 -z-10">
+          <div className="absolute -top-16 left-6 -z-10">
             <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
           </div>
         </motion.div>
@@ -498,7 +498,7 @@ export default function Features() {
             variants={itemVariants}
             className="heading-1 font-medium text-[#FFFFFF] max-w-[700px] text-center"
           >
-            Powerful Features That Make <br /> Automation Effortless
+            Powerful Features That Make Automation Effortless
           </motion.h1>
           <motion.h6
             variants={itemVariants}
@@ -565,6 +565,7 @@ export default function Features() {
                   width={566}
                   priority={false}
                   loading="lazy"
+                  className="rounded-[12px]"
                 />
               </div>
             </motion.div>
@@ -585,7 +586,7 @@ export default function Features() {
                   alt="gradient"
                   width={303}
                   height={108}
-                  className="absolute right-0 top-0"
+                  className="absolute right-0 top-0 rounded-[12px]"
                   priority={false}
                   loading="lazy"
                 />
@@ -631,6 +632,7 @@ export default function Features() {
                     width={566}
                     priority={false}
                     loading="lazy"
+                    className="rounded-[12px]"
                   />
                 </div>
               </div>
@@ -698,7 +700,7 @@ export default function Features() {
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
-          className="sm:px-9 px-3"
+          className="sm:px-20 px-3"
         >
           <div
             style={{
@@ -709,7 +711,7 @@ export default function Features() {
               `,
               border: "1px solid transparent",
             }}
-            className="w-full py-11 container mx-auto px-2 sm:px-[84px] flex gap-3 sm:gap-0 flex-col md:flex-row items-center justify-between relative"
+            className="w-full py-11 container mx-auto px-3 sm:px-[84px] flex gap-3 sm:gap-0 flex-col md:flex-row items-center justify-between relative"
           >
             <div className="absolute top-0 z-0">
               <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[94px] opacity-70"></div>

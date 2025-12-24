@@ -105,9 +105,9 @@ export default function MiryaDifferent(): React.ReactElement {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: element,
-        start: "top 30%",
+        start: "top 80%",
 
-        end: "bottom 20%",
+        end: "bottom 40%",
 
         scrub: 1.5,
       },
@@ -200,7 +200,7 @@ export default function MiryaDifferent(): React.ReactElement {
   return (
     <>
       <div className="flex justify-center">
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
+        <div className=" bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
       </div>
       <div className="py-[60px] px-5 sm:px-[60px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
         <div className="bg-[#00031C"></div>
@@ -210,7 +210,7 @@ export default function MiryaDifferent(): React.ReactElement {
           variants={backgroundVariants}
           transition={{ duration: 0.8 }}
         >
-          <div className="absolute -top-5 left-[45%]">
+          <div className="absolute -top-5 left-[45%] -z-10 pointer-events-none">
             <div className="rounded-[68.75px] bg-[#4F60FA] opacity-[0.6] blur-[90px] w-[181px] h-[94px]"></div>
           </div>
           <Image
@@ -218,7 +218,7 @@ export default function MiryaDifferent(): React.ReactElement {
             alt="gradient"
             width={458}
             height={318}
-            className="absolute left-[40%] bottom-[18%]"
+            className="absolute left-[40%] bottom-[18%] -z-10 pointer-events-none"
           />
           {/* <Image
           src="/images/main-gradient.png"

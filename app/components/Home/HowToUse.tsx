@@ -88,17 +88,13 @@ const HowToUse = () => {
     >
       <div className="flex flex-col items-center justify-center">
         {/* Title Row */}
+        
         <div className="pb-3 flex items-center justify-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px]">
             How to Use
           </h1>
-          <Image
-            src="/images/label.svg"
-            width={78}
-            height={16}
-            alt="line"
-          />
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
 
         {/* Main Heading */}
