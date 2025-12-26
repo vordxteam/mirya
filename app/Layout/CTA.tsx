@@ -1,17 +1,47 @@
+
+"use client";
 import React from "react";
+import { usePathname } from "next/navigation";
 import GradientButton from "../ui/GradientButton";
 
 const CTA = () => {
+  const pathname = usePathname();
+
+  const content = {
+    industries: {
+      h1: (
+        <>
+          Are you ready to automate <br /> with MIRYA?
+        </>
+      ),
+      p: "Let’s build your first automated workflow and unlock results within days. Book your free consultation today.",
+    },
+    default: {
+      h1: (
+        <>
+          Make Your Productivity <br /> More Efficient. From This Time.
+        </>
+      ),
+      p: "Harnessing the power of artificial intelligence to revolutionize industries and enhance human experiences.",
+    },
+  };
+
+  const isIndustriesPage = pathname.startsWith("/industries");
+  const currentContent = isIndustriesPage
+    ? content.industries
+    : content.default;
+
   return (
     <div className="bg-[url('/images/ctabg.png')] bg-cover bg-center bg-no-repeat">
       <div className="flex flex-col items-center justify-between gap-3 sm:gap-6 text-center px-3 sm:px-20 pt-[134px] pb-[152px]">
         <h1 className="text-[28px] md:text-[48px] font-medium leading-9 sm:leading-14 tracking-[-1.44px]">
-          Make Your Productivity <br /> More Efficient. From This Time.
+          {currentContent.h1}
         </h1>
+
         <p className="max-w-[510px] text-[14px] font-normal leading-5 text-[#CAC9D1]">
-          Harnessing the power of artificial intelligence to revolutionize
-          industries and enhance human experiences.
+          {currentContent.p}
         </p>
+
         <GradientButton
           label="Get Started"
           href="/contact"
