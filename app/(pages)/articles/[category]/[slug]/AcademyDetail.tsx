@@ -35,6 +35,7 @@ interface SidebarItem {
   id: string;
   title: string;
   slug: string;
+  isSinglePage: boolean;
   subItems?: SubItem[];
 }
 
@@ -167,16 +168,39 @@ const AcademyDetailPage = () => {
           ? response.data.data
           : [];
 
-        const sidebarItems = apiData.map((item) => ({
-          id: item.category.id.toString(),
-          title: item.category.title,
-          slug: "",
-          subItems: item.pages.map((page) => ({
-            id: page.id.toString(),
-            title: page.title,
-            slug: page.slug,
-          })),
-        }));
+        // const sidebarItems = apiData.map((item) => ({
+        //   id: item.category.id.toString(),
+        //   title: item.category.title,
+        //   slug: "",
+        //   subItems: item.pages.map((page) => ({
+        //     id: page.id.toString(),
+        //     title: page.title,
+        //     slug: page.slug,
+        //   })),
+        // }));
+        // Locate this section in your useEffect fetchData function
+        const sidebarItems = apiData.map((item) => {
+          // logic to determine if it's a single page
+          const isSingle =
+            item.pages.length === 1 &&
+            item.pages[0].title.toLowerCase() ===
+              item.category.title.toLowerCase();
+
+          return {
+            id: item.category.id.toString(),
+            title: item.category.title,
+            // Store the slug if it's a single page, otherwise empty
+            slug: isSingle ? item.pages[0].slug : "",
+            isSinglePage: isSingle, // New helper property
+            subItems: isSingle
+              ? undefined
+              : item.pages.map((page) => ({
+                  id: page.id.toString(),
+                  title: page.title,
+                  slug: page.slug,
+                })),
+          };
+        });
 
         const firstCategory = apiData[0];
 
@@ -402,7 +426,7 @@ const AcademyDetailPage = () => {
               <h2 className="text-[#FFFFFF99] text-[14px] font-normal leading-4 mb-4">
                 {articleData.title}
               </h2>
-              <nav className="space-y-2">
+              {/* <nav className="space-y-2">
                 {articleData.sidebar.map((item) => {
                   const isExpanded = expandedItems.has(item.id);
                   const isParentActive =
@@ -478,6 +502,95 @@ const AcademyDetailPage = () => {
                     </div>
                   );
                 })}
+              </nav> */}
+              <nav className="space-y-2">
+                {articleData.sidebar.map((item) => {
+                  const isExpanded = expandedItems.has(item.id);
+                  const isParentActive =
+                    activeSection === item.id ||
+                    item.subItems?.some((sub) => sub.id === activeSection);
+
+                  // 1. Check if it's a single page (using our new property)
+                  if (item.isSinglePage) {
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => handleSectionClick(item.id, item.slug)}
+                        className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
+                          activeSection === item.id
+                            ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                            : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                        }`}
+                      >
+                        {item.title}
+                      </button>
+                    );
+                  }
+
+                  // 2. Otherwise, render the existing Dropdown Logic
+                  return (
+                    <div key={item.id}>
+                      <button
+                        onClick={() => toggleExpand(item.id)}
+                        className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
+                          isParentActive
+                            ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                            : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span>{item.title}</span>
+                          <svg
+                            className={`w-4 h-4 transition-transform ${
+                              isExpanded ? "rotate-180" : ""
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </div>
+                      </button>
+
+                      {isExpanded && item.subItems && (
+                        <div className="relative space-y-2 mb-4">
+                          <div className="relative space-y-2 mb-4">
+                            <div
+                              className="absolute top-1 bg-[#116AF8] rounded"
+                              style={{
+                                left: "12px",
+                                width: "1px",
+                                height: `${item.subItems.length * 36}px`,
+                              }}
+                            />
+                            {item.subItems.map((subItem) => (
+                              <button
+                                key={subItem.id}
+                                onClick={() =>
+                                  handleSectionClick(subItem.id, subItem.slug)
+                                }
+                                className={`w-full max-w-[211px] whitespace-nowrap text-left px-2 py-2 rounded-lg text-[14px] leading-5 font-light transition-all relative cursor-pointer ${
+                                  activeSection === subItem.id
+                                    ? "bg-[rgba(17,106,248,0.12)] text-[#116AF8]"
+                                    : "text-[#FFFFFFE0] hover:bg-[rgba(17,106,248,0.12)] hover:text-[#116AF8]"
+                                }`}
+                                style={{ marginLeft: "24px" }}
+                              >
+                                {subItem.title}
+                              </button>
+                            ))}
+                          </div>{" "}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </nav>
             </div>
           </div>
@@ -512,7 +625,7 @@ const AcademyDetailPage = () => {
             <div>
               <div className="mb-12">
                 <h1 className="text-[32px] sm:text-[48px] font-medium leading-14 mb-6">
-                  { articleData.title}
+                  {articleData.title}
                 </h1>
                 <p className="text-[#FFFFFF99] text-[16px] leading-5 font-normal mb-12">
                   Last Updated{" "}

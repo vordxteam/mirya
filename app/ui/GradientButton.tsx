@@ -14,24 +14,23 @@ interface GradientButtonProps {
 const GradientButton: React.FC<GradientButtonProps> = ({
   label,
   href,
-  bgColor = "#00031C",
+  bgColor = "#0274FE",
   textColor = "#FFFFFF",
 }) => {
   return (
     <div
-      /* Added p-[1px] for even thickness, w-fit to prevent stretching, 
-         and flex to center the content perfectly */
-      className="rounded-full p-[1px] w-fit flex items-center justify-center" 
+      className="w-fit p-[1px]"
       style={{
+        borderRadius: "40px",
         background:
-          "linear-gradient(0deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
+          "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
       }}
     >
       <Link
         href={href}
-        /* Changed to block and removed extra spacing issues */
-        className="block font-normal py-2 px-5 rounded-full cursor-pointer"
+        className="block font-normal py-3 px-6 text-center"
         style={{
+          borderRadius: "40px",
           background: bgColor,
           color: textColor,
         }}

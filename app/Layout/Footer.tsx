@@ -85,25 +85,28 @@ const Footer = () => {
                   className="absolute top-4 left-6"
                 />
               </div>
-              <button
-                className="
-    text-white 
+           <button
+  className="
+    text-white
     font-normal
-    py-3 
+    py-3
     px-6
-    cursor-pointer 
-    rounded-full 
-    relative 
-    overflow-hidden 
+    cursor-pointer
+    relative
+    overflow-hidden
   "
-                style={{
-                  background:
-                    "linear-gradient(#0274FE, #0274FE) padding-box, linear-gradient(135deg, #8ea0e0, #00031c) border-box",
-                  border: "2px solid transparent",
-                }}
-              >
-                Subscribe
-              </button>
+  style={{
+    borderRadius: "40px",
+    background: `
+      linear-gradient(#0274FE, #0274FE) padding-box,
+      linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%) border-box
+    `,
+    border: "1px solid transparent",
+  }}
+>
+  Subscribe
+</button>
+
             </div>
           </div>
 

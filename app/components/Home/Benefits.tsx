@@ -92,10 +92,10 @@ const Benefits = () => {
 
             {/* Card 4 (full width on desktop) */}
             <BenefitCard
-              title="Boost Efficiency & Productivity"
+              title=""
               description="MIRYA automates repetitive tasks instantly, allowing your team to focus on high-value work. Processes run faster, smoother, and with consistent accuracy."
               image="/images/benefit4.svg"
-              imageWidth={550}
+              imageWidth={460}
               imageHeight={219}
               glowPosition="left"
               className="col-span-12 md:col-span-6 xl:col-span-6"
