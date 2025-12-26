@@ -267,7 +267,7 @@ const AcademyDetailPage = () => {
           <h1
             key={index}
             id={elementId}
-            className="text-[32px] leading-10 font-semibold mt-10 mb-4 scroll-mt-24"
+            className="text-[24px] leading-8 font-semibold mt-10 mb-4 scroll-mt-24"
           >
             {el.value}
           </h1>
@@ -278,7 +278,7 @@ const AcademyDetailPage = () => {
           <h2
             key={index}
             id={elementId}
-            className="text-[24px] leading-8 font-semibold mt-8 mb-3 scroll-mt-24"
+            className="text-[20px] leading-6 font-medium mt-8 mb-3 scroll-mt-24"
           >
             {el.value}
           </h2>
