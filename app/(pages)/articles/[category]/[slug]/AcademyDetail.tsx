@@ -23,6 +23,7 @@ interface PageDetail {
   title: string;
   content: ApiContentBlock[];
   updated_at: string;
+  short_description?: string; // ✅ add this
 }
 
 interface SubItem {
@@ -46,6 +47,8 @@ interface ProcessedContent {
 
 interface ContentItem {
   title: string;
+  shortDescription?: string; // ✅
+
   content?: ProcessedContent;
   rightCard?: { title: string; items: Array<{ text: string }> };
 }
@@ -92,16 +95,15 @@ const AcademyDetailPage = () => {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const hasFetched = React.useRef(false);
 
- const formatBoldText = (text: string) => {
-  if (!text) return "";
+  const formatBoldText = (text: string) => {
+    if (!text) return "";
 
-  let formatted = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+    let formatted = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 
-  formatted = formatted.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
+    formatted = formatted.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
 
-  return formatted;
-};
-
+    return formatted;
+  };
   const fetchPageDetail = useCallback(
     async (pageSlug: string, sectionId: string) => {
       try {
@@ -143,6 +145,8 @@ const AcademyDetailPage = () => {
               ...prev.content,
               [sectionId]: {
                 title: detailData.title,
+                shortDescription: detailData.short_description, // ✅ add this
+
                 content: {
                   blocks: detailData.content,
                   allHeadings,
@@ -184,6 +188,7 @@ const AcademyDetailPage = () => {
         //     slug: page.slug,
         //   })),
         // }));
+        // Locate this section in your useEffect fetchData function
         const sidebarItems = apiData.map((item) => {
           // logic to determine if it's a single page
           const isSingle =
@@ -194,6 +199,7 @@ const AcademyDetailPage = () => {
           return {
             id: item.category.id.toString(),
             title: item.category.title,
+            // Store the slug if it's a single page, otherwise empty
             slug: isSingle ? item.pages[0].slug : "",
             isSinglePage: isSingle, // New helper property
             subItems: isSingle
@@ -282,7 +288,7 @@ const AcademyDetailPage = () => {
           <h2
             key={index}
             id={elementId}
-            className="text-[20px] leading-6 font-medium mt-8 mb-3 scroll-mt-24"
+            className="text-[20px] leading-7 font-semibold mt-8 mb-3 scroll-mt-24"
           >
             {el.value}
           </h2>
@@ -293,7 +299,7 @@ const AcademyDetailPage = () => {
           <h3
             key={index}
             id={elementId}
-            className="text-[20px] leading-7 font-semibold mt-6 mb-2 scroll-mt-24"
+            className="text-[20px] leading-6 font-medium mt-6 mb-2 scroll-mt-24"
           >
             {el.value}
           </h3>
@@ -310,23 +316,24 @@ const AcademyDetailPage = () => {
           </h4>
         );
 
-      case "description":
-        if (!el.value?.trim()) return null;
-        return (
-          <p
-            key={index}
-            className="text-[16px] leading-6 text-[#FFFFFFCC] mb-4 max-w-[634px] whitespace-pre-line"
-          >
-            {el.value}
-          </p>
-        );
+     case "description":
+  if (!el.value?.trim()) return null;
+  return (
+    <p
+      key={index}
+      className="text-[16px] leading-6 text-[#FFFFFFCC] mb-4 max-w-[634px] whitespace-pre-line"
+      dangerouslySetInnerHTML={{
+        __html: formatBoldText(el.value || ""),
+      }}
+    />
+  );
 
       case "feature":
         if (!el.value?.trim()) return null;
         return (
           <li
             key={index}
-            className="list-disc text-[16px] leading-6 text-[#F4F7FF] ml-5"
+            className="list-disc text-[16px] leading-6 text-[#fff] ml-5"
             dangerouslySetInnerHTML={{
               __html: formatBoldText(el.value || ""),
             }}
@@ -390,7 +397,7 @@ const AcademyDetailPage = () => {
 
         {/* Add separator between blocks except the last one */}
         {blockIndex < (currentContent.content?.blocks?.length || 0) - 1 && (
-          <div className="my-8 border-t border-[#FFFFFF1F]" />
+          <div className="my-8 border-t w-full max-w-[600px] border-[#FFFFFF1F]" />
         )}
       </div>
     );
@@ -430,83 +437,7 @@ const AcademyDetailPage = () => {
               <h2 className="text-[#FFFFFF99] text-[14px] font-normal leading-4 mb-4">
                 {articleData.title}
               </h2>
-              {/* <nav className="space-y-2">
-                {articleData.sidebar.map((item) => {
-                  const isExpanded = expandedItems.has(item.id);
-                  const isParentActive =
-                    activeSection === item.id ||
-                    item.subItems?.some((sub) => sub.id === activeSection);
 
-                  return (
-                    <div key={item.id}>
-                      <button
-                        onClick={() => {
-                          if (item.subItems) {
-                            toggleExpand(item.id);
-                          } else {
-                            handleSectionClick(item.id, item.slug);
-                          }
-                        }}
-                        className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
-                          isParentActive
-                            ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
-                            : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
-                        }`}
-                      >
-                        <div className="flex items-center justify-between">
-                          <span>{item.title}</span>
-                          {item.subItems && (
-                            <svg
-                              className={`w-4 h-4 transition-transform ${
-                                isExpanded ? "rotate-180" : ""
-                              }`}
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                          )}
-                        </div>
-                      </button>
-
-                      {item.subItems && isExpanded && (
-                        <div className="relative space-y-2 mb-4">
-                          <div
-                            className="absolute top-1 bg-[#116AF8] rounded"
-                            style={{
-                              left: "12px",
-                              width: "1px",
-                              height: `${item.subItems.length * 36}px`,
-                            }}
-                          />
-                          {item.subItems.map((subItem) => (
-                            <button
-                              key={subItem.id}
-                              onClick={() =>
-                                handleSectionClick(subItem.id, subItem.slug)
-                              }
-                              className={`w-full max-w-[211px] whitespace-nowrap text-left px-2 py-2 rounded-lg text-[14px] leading-5 font-light transition-all relative cursor-pointer ${
-                                activeSection === subItem.id
-                                  ? "bg-[rgba(17,106,248,0.12)] text-[#116AF8]"
-                                  : "text-[#FFFFFFE0] hover:bg-[rgba(17,106,248,0.12)] hover:text-[#116AF8]"
-                              }`}
-                              style={{ marginLeft: "24px" }}
-                            >
-                              {subItem.title}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </nav> */}
               <nav className="space-y-2">
                 {articleData.sidebar.map((item) => {
                   const isExpanded = expandedItems.has(item.id);
@@ -659,6 +590,8 @@ const AcademyDetailPage = () => {
                     Content loading...
                   </p>
                 )}
+
+                <div className="mt-6 w-full max-w-[600px] border-t border-[#FFFFFF1F]" />
               </div>
             </div>
           </div>
@@ -675,7 +608,7 @@ const AcademyDetailPage = () => {
                     href={`#${item.id}`}
                     className="flex items-start text-[16px] text-[#FFFFFF99] leading-5 hover:text-[#0274FE] transition-colors cursor-pointer block"
                   >
-                    <span className="leading-5 text-[14px] font-normal">
+                    <span className="leading-5 text-[14px] font-normal truncate max-w-[160px] block">
                       {item.text}
                     </span>
                   </a>
