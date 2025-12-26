@@ -512,7 +512,7 @@ const AcademyDetailPage = () => {
             <div>
               <div className="mb-12">
                 <h1 className="text-[32px] sm:text-[48px] font-medium leading-14 mb-6">
-                  {currentContent.title || articleData.title}
+                  { articleData.title}
                 </h1>
                 <p className="text-[#FFFFFF99] text-[16px] leading-5 font-normal mb-12">
                   Last Updated{" "}

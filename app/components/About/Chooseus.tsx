@@ -60,7 +60,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
@@ -95,7 +95,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
@@ -130,7 +130,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
@@ -165,7 +165,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
@@ -200,7 +200,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
@@ -235,7 +235,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
@@ -270,7 +270,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
@@ -305,7 +305,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
@@ -339,7 +339,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
@@ -372,7 +372,7 @@ const Chooseus = () => {
                       "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
                   }}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8">
+                  <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
