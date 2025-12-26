@@ -64,7 +64,7 @@ const HeroSection = () => {
           >
             <Link
               href="/contact"
-              className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full"
+              className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
             >
               Contact Us
             </Link>

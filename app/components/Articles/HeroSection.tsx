@@ -109,42 +109,22 @@ const HeroSection = () => {
             }}
           >
             <div className="text-[12px] leading-4 flex items-center gap-2 font-normal text-white p-3 bg-[#00031C] rounded-full w-[264px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <path
-                  d="M14.0008 14L11.1074 11.1067"
-                  stroke="url(#paint0_linear_546_14254)"
-                  strokeWidth="1.33333"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z"
-                  stroke="url(#paint1_linear_546_14254)"
-                  strokeWidth="1.33333"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_546_14254"
-                    x1="12.568"
-                    y1="11.1017"
-                    x2="12.558"
-                    y2="14.005"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0.0029" stopColor="#463BBF" />
-                    <stop offset="0.681" stopColor="#9C96E3" />
-                    <stop offset="1" stopColor="#463BBF" />
-                  </linearGradient>
-                </defs>
-              </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M14.0027 13.9998L11.1094 11.1064" stroke="url(#paint0_linear_2225_10624)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="url(#paint1_linear_2225_10624)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="paint0_linear_2225_10624" x1="12.57" y1="11.1015" x2="12.5599" y2="14.0048" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0029" stop-color="#463BBF"/>
+      <stop offset="0.681" stop-color="#9C96E3"/>
+      <stop offset="1" stop-color="#463BBF"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_2225_10624" x1="7.38466" y1="1.98173" x2="7.34763" y2="12.6852" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0029" stop-color="#463BBF"/>
+      <stop offset="0.681" stop-color="#9C96E3"/>
+      <stop offset="1" stop-color="#463BBF"/>
+    </linearGradient>
+  </defs>
+</svg>
 
               <input
                 type="text"
