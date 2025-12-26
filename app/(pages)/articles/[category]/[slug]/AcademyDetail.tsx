@@ -92,9 +92,15 @@ const AcademyDetailPage = () => {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const hasFetched = React.useRef(false);
 
-  const formatBoldText = (text: string) => {
-    return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-  };
+ const formatBoldText = (text: string) => {
+  if (!text) return "";
+
+  let formatted = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+  formatted = formatted.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
+
+  return formatted;
+};
 
   const fetchPageDetail = useCallback(
     async (pageSlug: string, sectionId: string) => {
@@ -178,7 +184,6 @@ const AcademyDetailPage = () => {
         //     slug: page.slug,
         //   })),
         // }));
-        // Locate this section in your useEffect fetchData function
         const sidebarItems = apiData.map((item) => {
           // logic to determine if it's a single page
           const isSingle =
@@ -189,7 +194,6 @@ const AcademyDetailPage = () => {
           return {
             id: item.category.id.toString(),
             title: item.category.title,
-            // Store the slug if it's a single page, otherwise empty
             slug: isSingle ? item.pages[0].slug : "",
             isSinglePage: isSingle, // New helper property
             subItems: isSingle
