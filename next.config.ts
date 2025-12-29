@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "mirya.vordx.com",
-        pathname: "/**",
+        pathname: "/public/storage/**",
       },
     ],
   },

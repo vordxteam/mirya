@@ -3,7 +3,13 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { categoryApi } from "@/app/api/academy";
-import React, { useState, useEffect, useCallback, ReactElement, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  ReactElement,
+  useRef,
+} from "react";
 
 interface ApiElement {
   type: string;
@@ -93,7 +99,8 @@ const AcademyDetailPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  
+  const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+  const [showMobileRightSidebar, setShowMobileRightSidebar] = useState(false);
   const hasFetched = useRef(false);
   const centerContentRef = useRef<HTMLDivElement>(null); // Ref for scroll control
 
@@ -118,13 +125,21 @@ const AcademyDetailPage = () => {
         if (!response?.data?.data) throw new Error("Invalid API response");
 
         const detailData = response.data.data as unknown as PageDetail;
-        const allHeadings = detailData.content.flatMap((block: ApiContentBlock) =>
-          block.elements
-            .filter((el) => el.type.startsWith("h") && el.value && el.value.trim() !== "")
-            .map((el) => {
-              const headingId = el.value?.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-") || "";
-              return { text: el.value || "", id: headingId };
-            })
+        const allHeadings = detailData.content.flatMap(
+          (block: ApiContentBlock) =>
+            block.elements
+              .filter(
+                (el) =>
+                  el.type.startsWith("h") && el.value && el.value.trim() !== ""
+              )
+              .map((el) => {
+                const headingId =
+                  el.value
+                    ?.toLowerCase()
+                    .replace(/[^\w\s-]/g, "")
+                    .replace(/\s+/g, "-") || "";
+                return { text: el.value || "", id: headingId };
+              })
         );
 
         setArticleData((prev) => {
@@ -157,15 +172,29 @@ const AcademyDetailPage = () => {
       setLoading(true);
       try {
         const response = await categoryApi.getById(Number(slug));
-        const apiData: CategoryItem[] = Array.isArray(response.data?.data) ? response.data.data : [];
+        const apiData: CategoryItem[] = Array.isArray(response.data?.data)
+          ? response.data.data
+          : [];
         const sidebarItems = apiData.map((item) => {
-          const isSingle = item.pages.length === 1 && item.pages[0].title.toLowerCase() === item.category.title.toLowerCase();
+          const isSingle =
+            item.pages.length === 1 &&
+            item.pages[0].title.toLowerCase() ===
+              item.category.title.toLowerCase();
+
           return {
-            id: item.category.id.toString(),
+            // Prefix category IDs with 'cat-'
+            id: `cat-${item.category.id}`,
             title: item.category.title,
             slug: isSingle ? item.pages[0].slug : "",
             isSinglePage: isSingle,
-            subItems: isSingle ? undefined : item.pages.map((page) => ({ id: page.id.toString(), title: page.title, slug: page.slug })),
+            subItems: isSingle
+              ? undefined
+              : item.pages.map((page) => ({
+                  // Prefix page IDs with 'page-'
+                  id: `page-${page.id}`,
+                  title: page.title,
+                  slug: page.slug,
+                })),
           };
         });
 
@@ -173,7 +202,8 @@ const AcademyDetailPage = () => {
         setArticleData({
           title: firstCategory.main_category.name,
           category: firstCategory.category.title,
-          updated_at: firstCategory.pages[0]?.updated_at || firstCategory.updated_at,
+          updated_at:
+            firstCategory.pages[0]?.updated_at || firstCategory.updated_at,
           lastUpdated: "Recently",
           sidebar: sidebarItems,
           content: {},
@@ -182,9 +212,11 @@ const AcademyDetailPage = () => {
 
         if (firstCategory.pages[0]) {
           const firstPage = firstCategory.pages[0];
-          setActiveSection(firstPage.id.toString());
-          setExpandedItems(new Set([firstCategory.category.id.toString()]));
-          fetchPageDetail(firstPage.slug, firstPage.id.toString());
+          const firstPageId = `page-${firstPage.id}`; // Add prefix here
+
+          setActiveSection(firstPageId);
+          setExpandedItems(new Set([`cat-${firstCategory.category.id}`])); // Prefix here
+          fetchPageDetail(firstPage.slug, firstPageId);
         }
       } catch (err) {
         setError("Failed to load data");
@@ -211,20 +243,77 @@ const AcademyDetailPage = () => {
     }
   };
 
-  const renderElement = (el: ApiElement, index: number, blockIndex: number): ReactElement | null => {
-    const elementId = el.value?.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-") || `element-${blockIndex}-${index}`;
+  const renderElement = (
+    el: ApiElement,
+    index: number,
+    blockIndex: number
+  ): ReactElement | null => {
+    const elementId =
+      el.value
+        ?.toLowerCase()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-") || `element-${blockIndex}-${index}`;
     switch (el.type) {
-      case "h1": return <h1 key={index} id={elementId} className="text-[24px] leading-8 font-semibold mt-10 mb-4 scroll-mt-24">{el.value}</h1>;
-      case "h2": return <h2 key={index} id={elementId} className="max-w-[680px] w-full text-[20px] leading-7 font-semibold mt-8 mb-3 scroll-mt-24">{el.value}</h2>;
-      case "h3": return <h3 key={index} id={elementId} className="text-[20px] leading-6 font-medium mt-6 mb-2 scroll-mt-24">{el.value}</h3>;
-      case "h4": return <h4 key={index} id={elementId} className="text-[18px] leading-6 font-semibold mt-4 mb-2">{el.value}</h4>;
+      case "h1":
+        return (
+          <h1
+            key={index}
+            id={elementId}
+            className="text-[24px] leading-8 font-semibold mt-10 mb-4 scroll-mt-24"
+          >
+            {el.value}
+          </h1>
+        );
+      case "h2":
+        return (
+          <h2
+            key={index}
+            id={elementId}
+            className="max-w-[680px] w-full text-[20px] leading-7 font-semibold mt-8 mb-3 scroll-mt-24"
+          >
+            {el.value}
+          </h2>
+        );
+      case "h3":
+        return (
+          <h3
+            key={index}
+            id={elementId}
+            className="text-[20px] leading-6 font-medium mt-6 mb-2 scroll-mt-24"
+          >
+            {el.value}
+          </h3>
+        );
+      case "h4":
+        return (
+          <h4
+            key={index}
+            id={elementId}
+            className="text-[18px] leading-6 font-semibold mt-4 mb-2"
+          >
+            {el.value}
+          </h4>
+        );
       case "description":
         if (!el.value?.trim()) return null;
-        return <p key={index} className="text-[16px] leading-6 text-[#FFFFFFCC] mb-4 max-w-[646px] whitespace-pre-line" dangerouslySetInnerHTML={{ __html: formatBoldText(el.value || "") }} />;
+        return (
+          <p
+            key={index}
+            className="text-[16px] leading-6 text-[#FFFFFFCC] mb-4 max-w-[646px] whitespace-pre-line"
+            dangerouslySetInnerHTML={{ __html: formatBoldText(el.value || "") }}
+          />
+        );
       case "feature":
         if (!el.value?.trim()) return null;
-        return <li key={index} className="list-disc text-[16px] leading-6 text-[#fff] ml-5 max-w-[666px] w-full" dangerouslySetInnerHTML={{ __html: formatBoldText(el.value || "") }} />;
-      default: return null;
+        return (
+          <li
+            key={index}
+            className="list-disc text-[16px] leading-6 text-[#fff] ml-5 max-w-[666px] w-full"
+            dangerouslySetInnerHTML={{ __html: formatBoldText(el.value || "") }}
+          />
+        );
+      default:
+        return null;
     }
   };
 
@@ -238,12 +327,26 @@ const AcademyDetailPage = () => {
         const rendered = renderElement(el, i, blockIndex);
         if (rendered) currentFeatureList.push(rendered);
         if (i === elements.length - 1 || elements[i + 1]?.type !== "feature") {
-          renderedElements.push(<ul key={`feature-list-${blockIndex}-${i}`} className="space-y-2 mb-4">{currentFeatureList}</ul>);
+          renderedElements.push(
+            <ul
+              key={`feature-list-${blockIndex}-${i}`}
+              className="space-y-2 mb-4"
+            >
+              {currentFeatureList}
+            </ul>
+          );
           currentFeatureList = [];
         }
       } else {
         if (currentFeatureList.length > 0) {
-          renderedElements.push(<ul key={`feature-list-${blockIndex}-${i}`} className="space-y-2 mb-4">{currentFeatureList}</ul>);
+          renderedElements.push(
+            <ul
+              key={`feature-list-${blockIndex}-${i}`}
+              className="space-y-2 mb-4"
+            >
+              {currentFeatureList}
+            </ul>
+          );
           currentFeatureList = [];
         }
         const rendered = renderElement(el, i, blockIndex);
@@ -275,7 +378,9 @@ const AcademyDetailPage = () => {
       <div className="min-h-screen bg-[#00031C] flex items-center justify-center">
         <div className="text-white text-center">
           <h1 className="text-2xl mb-4">{error || "Article not found"}</h1>
-          <Link href="/articles" className="text-[#0F73FE] hover:underline">Back to Articles</Link>
+          <Link href="/articles" className="text-[#0F73FE] hover:underline">
+            Back to Articles
+          </Link>
         </div>
       </div>
     );
@@ -284,130 +389,292 @@ const AcademyDetailPage = () => {
   const currentContent = articleData.content[activeSection] || {};
 
   return (
-    <div className="bg-[#00031C] h-screen overflow-hidden">
+    <div className="bg-[#00031C] min-h-screen">
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px] leading-6 gap-8 h-full">
-          
-          {/* 1. LEFT SIDEBAR SCROLLER */}
-          <div className="hidden lg:block lg:col-span-3 h-full overflow-y-auto pt-4 custom-scrollbar">
-            <h2 className="text-[#FFFFFF99] text-[14px] font-normal leading-4 mb-4">
-              {articleData.title}
-            </h2>
-            <nav className="space-y-2 pb-20">
-              {articleData.sidebar.map((item) => {
-                const isExpanded = expandedItems.has(item.id);
-                const isParentActive = activeSection === item.id || item.subItems?.some((sub) => sub.id === activeSection);
+        {/* Mobile Sidebar Toggle Buttons */}
+        <div className="lg:hidden flex justify-between items-center py-4">
+          <button
+            onClick={() => setShowMobileSidebar(!showMobileSidebar)}
+            className="flex items-center gap-2 text-[#FFFFFF99] text-sm px-4 py-2 rounded-lg bg-[#00082F]"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            Menu
+          </button>
 
-                if (item.isSinglePage) {
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => handleSectionClick(item.id, item.slug)}
-                      className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
-                        activeSection === item.id ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white" : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
-                      }`}
-                    >
-                      {item.title}
-                    </button>
-                  );
-                }
+          <button
+            onClick={() => setShowMobileRightSidebar(!showMobileRightSidebar)}
+            className="flex items-center gap-2 text-[#FFFFFF99] text-sm px-4 py-2 rounded-lg bg-[#00082F]"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+            Contents
+          </button>
+        </div>
 
-                return (
-                  <div key={item.id}>
-                    <button
-                      onClick={() => toggleExpand(item.id)}
-                      className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
-                        isParentActive ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white" : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span>{item.title}</span>
-                        <svg className={`w-4 h-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+        <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px] leading-6 gap-4 lg:gap-8 h-full">
+          {/* 1. LEFT SIDEBAR - Show on mobile when toggled */}
+          <div
+            className={`${
+              showMobileSidebar ? "block" : "hidden"
+            } lg:block lg:col-span-3 h-full pt-4`}
+          >
+            <div className="lg:sticky lg:top-29 h-[calc(100vh-2rem)]">
+              <div className="h-full overflow-y-auto custom-scrollbar pr-2 bg-[#00031C] lg:bg-transparent">
+                <h2 className="text-[#FFFFFF99] text-[14px] font-normal leading-4 mb-4">
+                  {articleData.title}
+                </h2>
+                <nav className="space-y-2 pb-20">
+                  {articleData.sidebar.map((item) => {
+                    const isExpanded = expandedItems.has(item.id);
+                    const isParentActive = item.isSinglePage
+                      ? activeSection === item.id
+                      : item.subItems?.some((sub) => sub.id === activeSection);
+
+                    if (item.isSinglePage) {
+                      return (
+                        <button
+                          key={item.id}
+                          onClick={() => {
+                            handleSectionClick(item.id, item.slug);
+                            setShowMobileSidebar(false); // Close sidebar on mobile after selection
+                          }}
+                          className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
+                            activeSection === item.id
+                              ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                              : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                          }`}
+                        >
+                          {item.title}
+                        </button>
+                      );
+                    }
+
+                    return (
+                      <div key={item.id}>
+                        <button
+                          onClick={() => toggleExpand(item.id)}
+                          className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
+                            isParentActive
+                              ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                              : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <span>{item.title}</span>
+                            <svg
+                              className={`w-4 h-4 transition-transform ${
+                                isExpanded ? "rotate-180" : ""
+                              }`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                        {isExpanded && item.subItems && (
+                          <div className="relative space-y-2 mb-4 ml-2 border-l border-[#116AF8]">
+                            {item.subItems.map((subItem) => (
+                              <button
+                                key={subItem.id}
+                                onClick={() => {
+                                  handleSectionClick(subItem.id, subItem.slug);
+                                  setShowMobileSidebar(false); // Close sidebar on mobile after selection
+                                }}
+                                className={`w-full text-left px-3 ml-2 max-w-[230px] py-2 rounded-lg text-[14px] transition-all cursor-pointer ${
+                                  activeSection === subItem.id
+                                    ? "text-[#116AF8] bg-[#116af81f]"
+                                    : "text-[#FFFFFFE0] hover:text-[#116AF8]"
+                                }`}
+                              >
+                                {subItem.title}
+                              </button>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                    </button>
-                    {isExpanded && item.subItems && (
-                      <div className="relative space-y-2 mb-4 ml-6 border-l border-[#116AF8]">
-                        {item.subItems.map((subItem) => (
-                          <button
-                            key={subItem.id}
-                            onClick={() => handleSectionClick(subItem.id, subItem.slug)}
-                            className={`w-full text-left px-3 py-2 rounded-lg text-[14px] transition-all cursor-pointer ${
-                              activeSection === subItem.id ? "text-[#116AF8] bg-[#116af81f]" : "text-[#FFFFFFE0] hover:text-[#116AF8]"
-                            }`}
-                          >
-                            {subItem.title}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </nav>
+                    );
+                  })}
+                </nav>
+              </div>
+            </div>
           </div>
 
-          {/* 2. CENTER CONTENT SCROLLER */}
-          <div 
-            ref={centerContentRef} // ATTACHED REF HERE
-            className="col-span-1 lg:col-span-7 h-full overflow-y-auto pt-4 px-2 custom-scrollbar"
+          {/* 2. CENTER CONTENT - Adjust column span for mobile */}
+          <div
+            ref={centerContentRef}
+            className={`${
+              showMobileSidebar || showMobileRightSidebar ? "hidden" : "block"
+            } lg:block lg:col-span-7 h-full overflow-y-auto pt-4 custom-scrollbar`}
           >
             <div className="flex items-center gap-3 text-[14px] font-normal leading-5 text-[#FFFFFF99] mb-12">
-              <Link href="/articles" className="hover:text-[#0F73FE] transition-colors">MIRYA Academy</Link>
+              <Link
+                href="/articles"
+                className="hover:text-[#0F73FE] transition-colors"
+              >
+                MIRYA Academy
+              </Link>
               <span>{">"}</span>
               <span className="text-white">{articleData.title}</span>
             </div>
 
             <div className="pb-24">
               <div className="mb-12">
-                <h1 className="text-[32px] sm:text-[48px] font-medium leading-tight mb-6">{articleData.title}</h1>
+                <h1 className="text-[32px] sm:text-[48px] font-medium leading-tight mb-6">
+                  {articleData.title}
+                </h1>
                 <p className="text-[#FFFFFF99] text-[16px] leading-5 font-normal mb-12">
-                  Last Updated {articleData.updated_at ? new Date(articleData.updated_at).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : "—"}
+                  Last Updated{" "}
+                  {articleData.updated_at
+                    ? new Date(articleData.updated_at).toLocaleDateString(
+                        "en-US",
+                        { year: "numeric", month: "long", day: "numeric" }
+                      )
+                    : "—"}
                 </p>
               </div>
 
               <div>
-                {currentContent.content?.blocks ? currentContent.content.blocks.map((block, idx) => renderContentBlock(block, idx)) : (
+                {currentContent.content?.blocks ? (
+                  currentContent.content.blocks.map((block, idx) =>
+                    renderContentBlock(block, idx)
+                  )
+                ) : (
                   <div className="flex items-center justify-center py-20">
                     <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin" />
                   </div>
                 )}
-                <div className="mt-6 w-full max-w-[600px] border-t border-[#FFFFFF1F]" />
               </div>
             </div>
           </div>
 
-          {/* 3. RIGHT SIDE SCROLLER */}
-          <div className="hidden lg:block lg:col-span-2 h-full overflow-y-auto pt-4 custom-scrollbar">
-            <h3 className="text-white text-[16px] font-medium leading-5 mb-4">
-              {currentContent.rightCard?.title || "On this Page"}
-            </h3>
-            <div className="space-y-4 pb-20">
-              {currentContent.rightCard?.items?.map((item: any, idx) => (
-                <a
-                  key={idx}
-                  href={`#${item.id}`}
-                  className="block text-[14px] text-[#FFFFFF99] hover:text-[#0274FE] transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  {item.text}
-                </a>
-              ))}
+          {/* 3. RIGHT SIDEBAR - Show on mobile when toggled */}
+          <div
+            className={`${
+              showMobileRightSidebar ? "block" : "hidden"
+            } lg:block lg:col-span-2 h-full pt-4`}
+          >
+            <div className="lg:sticky lg:top-29 h-[calc(100vh-2rem)]">
+              <div className="h-full overflow-y-auto custom-scrollbar pl-2 bg-[#00031C] lg:bg-transparent">
+                <div className="flex justify-between items-center mb-4 lg:hidden">
+                  <h3 className="text-white text-[16px] font-medium leading-5">
+                    {currentContent.rightCard?.title || "On this Page"}
+                  </h3>
+                  <button
+                    onClick={() => setShowMobileRightSidebar(false)}
+                    className="text-[#FFFFFF99] hover:text-white"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <h3 className="text-white text-[16px] font-medium leading-5 mb-4 hidden lg:block">
+                  {currentContent.rightCard?.title || "On this Page"}
+                </h3>
+
+                <div className="space-y-4 pb-20">
+                  {currentContent.rightCard?.items?.map((item: any, idx) => (
+                    <a
+                      key={idx}
+                      href={`#${item.id}`}
+                      // Added 'truncate' and 'w-full'
+                      className="block text-[14px] text-[#FFFFFF99] hover:text-[#0274FE] transition-colors truncate w-full"
+                      title={item.text} // Good practice: shows full text on hover
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document
+                          .getElementById(item.id)
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                    >
+                      {item.text}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
-      
+
       <style jsx global>{`
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #ffffff1a; border-radius: 10px; }
-        .custom-scrollbar:hover::-webkit-scrollbar-thumb { background: #ffffff33; }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #ffffff1a;
+          border-radius: 10px;
+        }
+        .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+          background: #ffffff33;
+        }
+
+        /* Mobile sidebar overlay effect */
+        @media (max-width: 1023px) {
+          .block.lg\\:block {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 50;
+            background: rgba(0, 3, 28, 0.95);
+            padding: 1rem;
+            overflow-y: auto;
+          }
+
+          .block.lg\\:block:first-child {
+            /* Left sidebar specific styles */
+          }
+
+          .block.lg\\:block:last-child {
+            /* Right sidebar specific styles */
+          }
+        }
       `}</style>
     </div>
   );
