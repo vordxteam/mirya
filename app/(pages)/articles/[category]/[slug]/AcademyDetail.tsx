@@ -387,14 +387,15 @@ const AcademyDetailPage = () => {
 
   const currentContent = articleData.content[activeSection] || {};
 
-
   return (
     <div className="bg-[#00031C] min-h-screen">
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 h-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px] leading-6 gap-8 h-full">
           {/* 1. LEFT SIDEBAR SCROLLER with sticky positioning */}
           <div className="hidden lg:block lg:col-span-3 h-full pt-4">
-            <div className="sticky top-29 h-[calc(100vh-2rem)]"> {/* Add sticky wrapper */}
+            <div className="sticky top-29 h-[calc(100vh-2rem)]">
+              {" "}
+              {/* Add sticky wrapper */}
               <div className="h-full overflow-y-auto custom-scrollbar pr-2">
                 <h2 className="text-[#FFFFFF99] text-[14px] font-normal leading-4 mb-4">
                   {articleData.title}
@@ -525,7 +526,6 @@ const AcademyDetailPage = () => {
             </div>
           </div>
 
-          {/* 3. RIGHT SIDEBAR SCROLLER with sticky positioning */}
           <div className="hidden lg:block lg:col-span-2 h-full pt-4">
             <div className="sticky top-29 h-[calc(100vh-2rem)]">
               <div className="h-full overflow-y-auto custom-scrollbar pl-2">
@@ -537,7 +537,7 @@ const AcademyDetailPage = () => {
                     <a
                       key={idx}
                       href={`#${item.id}`}
-                      className="block text-[14px] text-[#FFFFFF99] hover:text-[#0274FE] transition-colors"
+                      className="block text-[14px] text-[#FFFFFF99] hover:text-[#0274FE] transition-colors truncate w-full"
                       onClick={(e) => {
                         e.preventDefault();
                         document
