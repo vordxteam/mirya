@@ -99,7 +99,8 @@ const AcademyDetailPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-
+  const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+  const [showMobileRightSidebar, setShowMobileRightSidebar] = useState(false);
   const hasFetched = useRef(false);
   const centerContentRef = useRef<HTMLDivElement>(null); // Ref for scroll control
 
@@ -390,13 +391,58 @@ const AcademyDetailPage = () => {
   return (
     <div className="bg-[#00031C] min-h-screen">
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px] leading-6 gap-8 h-full">
-          {/* 1. LEFT SIDEBAR SCROLLER with sticky positioning */}
-          <div className="hidden lg:block lg:col-span-3 h-full pt-4">
-            <div className="sticky top-29 h-[calc(100vh-2rem)]">
-              {" "}
-              {/* Add sticky wrapper */}
-              <div className="h-full overflow-y-auto custom-scrollbar pr-2">
+        {/* Mobile Sidebar Toggle Buttons */}
+        <div className="lg:hidden flex justify-between items-center py-4">
+          <button
+            onClick={() => setShowMobileSidebar(!showMobileSidebar)}
+            className="flex items-center gap-2 text-[#FFFFFF99] text-sm px-4 py-2 rounded-lg bg-[#00082F]"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            Menu
+          </button>
+
+          <button
+            onClick={() => setShowMobileRightSidebar(!showMobileRightSidebar)}
+            className="flex items-center gap-2 text-[#FFFFFF99] text-sm px-4 py-2 rounded-lg bg-[#00082F]"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+            Contents
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px] leading-6 gap-4 lg:gap-8 h-full">
+          {/* 1. LEFT SIDEBAR - Show on mobile when toggled */}
+          <div
+            className={`${
+              showMobileSidebar ? "block" : "hidden"
+            } lg:block lg:col-span-3 h-full pt-4`}
+          >
+            <div className="lg:sticky lg:top-29 h-[calc(100vh-2rem)]">
+              <div className="h-full overflow-y-auto custom-scrollbar pr-2 bg-[#00031C] lg:bg-transparent">
                 <h2 className="text-[#FFFFFF99] text-[14px] font-normal leading-4 mb-4">
                   {articleData.title}
                 </h2>
@@ -411,7 +457,10 @@ const AcademyDetailPage = () => {
                       return (
                         <button
                           key={item.id}
-                          onClick={() => handleSectionClick(item.id, item.slug)}
+                          onClick={() => {
+                            handleSectionClick(item.id, item.slug);
+                            setShowMobileSidebar(false); // Close sidebar on mobile after selection
+                          }}
                           className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
                             activeSection === item.id
                               ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
@@ -457,10 +506,11 @@ const AcademyDetailPage = () => {
                             {item.subItems.map((subItem) => (
                               <button
                                 key={subItem.id}
-                                onClick={() =>
-                                  handleSectionClick(subItem.id, subItem.slug)
-                                }
-                                className={`w-full text-left px-3 ml-2 max-w-[230px] w-full py-2 rounded-lg text-[14px] transition-all cursor-pointer ${
+                                onClick={() => {
+                                  handleSectionClick(subItem.id, subItem.slug);
+                                  setShowMobileSidebar(false); // Close sidebar on mobile after selection
+                                }}
+                                className={`w-full text-left px-3 ml-2 max-w-[230px] py-2 rounded-lg text-[14px] transition-all cursor-pointer ${
                                   activeSection === subItem.id
                                     ? "text-[#116AF8] bg-[#116af81f]"
                                     : "text-[#FFFFFFE0] hover:text-[#116AF8]"
@@ -479,10 +529,12 @@ const AcademyDetailPage = () => {
             </div>
           </div>
 
-          {/* 2. CENTER CONTENT SCROLLER - unchanged */}
+          {/* 2. CENTER CONTENT - Adjust column span for mobile */}
           <div
             ref={centerContentRef}
-            className="col-span-1 lg:col-span-7 h-full overflow-y-auto pt-4 px-2 custom-scrollbar"
+            className={`${
+              showMobileSidebar || showMobileRightSidebar ? "hidden" : "block"
+            } lg:block lg:col-span-7 h-full overflow-y-auto pt-4 custom-scrollbar`}
           >
             <div className="flex items-center gap-3 text-[14px] font-normal leading-5 text-[#FFFFFF99] mb-12">
               <Link
@@ -521,23 +573,54 @@ const AcademyDetailPage = () => {
                     <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin" />
                   </div>
                 )}
-                {/* <div className="mt-6 w-full max-w-[600px] border-t border-[#FFFFFF1F]" /> */}
               </div>
             </div>
           </div>
 
-          <div className="hidden lg:block lg:col-span-2 h-full pt-4">
-            <div className="sticky top-29 h-[calc(100vh-2rem)]">
-              <div className="h-full overflow-y-auto custom-scrollbar pl-2">
-                <h3 className="text-white text-[16px] font-medium leading-5 mb-4">
+          {/* 3. RIGHT SIDEBAR - Show on mobile when toggled */}
+          <div
+            className={`${
+              showMobileRightSidebar ? "block" : "hidden"
+            } lg:block lg:col-span-2 h-full pt-4`}
+          >
+            <div className="lg:sticky lg:top-29 h-[calc(100vh-2rem)]">
+              <div className="h-full overflow-y-auto custom-scrollbar pl-2 bg-[#00031C] lg:bg-transparent">
+                <div className="flex justify-between items-center mb-4 lg:hidden">
+                  <h3 className="text-white text-[16px] font-medium leading-5">
+                    {currentContent.rightCard?.title || "On this Page"}
+                  </h3>
+                  <button
+                    onClick={() => setShowMobileRightSidebar(false)}
+                    className="text-[#FFFFFF99] hover:text-white"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <h3 className="text-white text-[16px] font-medium leading-5 mb-4 hidden lg:block">
                   {currentContent.rightCard?.title || "On this Page"}
                 </h3>
+
                 <div className="space-y-4 pb-20">
                   {currentContent.rightCard?.items?.map((item: any, idx) => (
                     <a
                       key={idx}
                       href={`#${item.id}`}
+                      // Added 'truncate' and 'w-full'
                       className="block text-[14px] text-[#FFFFFF99] hover:text-[#0274FE] transition-colors truncate w-full"
+                      title={item.text} // Good practice: shows full text on hover
                       onClick={(e) => {
                         e.preventDefault();
                         document
@@ -568,6 +651,29 @@ const AcademyDetailPage = () => {
         }
         .custom-scrollbar:hover::-webkit-scrollbar-thumb {
           background: #ffffff33;
+        }
+
+        /* Mobile sidebar overlay effect */
+        @media (max-width: 1023px) {
+          .block.lg\\:block {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 50;
+            background: rgba(0, 3, 28, 0.95);
+            padding: 1rem;
+            overflow-y: auto;
+          }
+
+          .block.lg\\:block:first-child {
+            /* Left sidebar specific styles */
+          }
+
+          .block.lg\\:block:last-child {
+            /* Right sidebar specific styles */
+          }
         }
       `}</style>
     </div>
