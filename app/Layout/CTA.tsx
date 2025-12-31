@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
@@ -6,6 +5,12 @@ import GradientButton from "../ui/GradientButton";
 
 const CTA = () => {
   const pathname = usePathname();
+
+ 
+  const isArticleDetailPage =
+    pathname.startsWith("/articles/") && pathname !== "/articles";
+
+  if (isArticleDetailPage) return null;
 
   const content = {
     industries: {
