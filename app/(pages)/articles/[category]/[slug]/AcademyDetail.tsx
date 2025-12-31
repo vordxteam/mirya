@@ -445,7 +445,7 @@ const AcademyDetailPage = () => {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-            Contents
+            On This Page
           </button>
         </div>
 
