@@ -192,3 +192,7 @@ body {
 }
 
 
+/* Prevent browser from preserving scroll position */
+.no-scroll-anchor {
+  overflow-anchor: none;
+}

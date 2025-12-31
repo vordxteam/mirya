@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { categoryApi } from "@/app/api/academy";
+import SkeletonDetail, { ContentSkeleton } from "./SkeletonDetail";
 import React, {
   useState,
   useEffect,
@@ -98,26 +99,46 @@ const AcademyDetailPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const [showMobileSidebar, setShowMobileSidebar] = useState(false);
   const [showMobileRightSidebar, setShowMobileRightSidebar] = useState(false);
   const hasFetched = useRef(false);
   const centerContentRef = useRef<HTMLDivElement>(null); // Ref for scroll control
-
-  // Reset scroll to top of the middle container when activeSection changes
+  const [expandedItems, setExpandedItems] = useState<string | null>(null);
   useEffect(() => {
     if (centerContentRef.current) {
       centerContentRef.current.scrollTo({ top: 0, behavior: "instant" });
     }
+
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [activeSection]);
+
+  const linkify = (text: string) => {
+    if (!text) return "";
+
+    const urlRegex = /((https?:\/\/)|(www\.))[^\s/$.?#].[^\s]*/gi;
+
+    return text.replace(urlRegex, (url) => {
+      let href = url;
+      if (url.toLowerCase().startsWith("www.")) {
+        href = `https://${url}`;
+      }
+
+      return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#0F73FE] transition-colors">${url}</a>`;
+    });
+  };
 
   const formatBoldText = (text: string) => {
     if (!text) return "";
-    let formatted = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+    // First, convert links
+    let formatted = linkify(text);
+
+    // Then, convert bold markers (** or *)
+    formatted = formatted.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
     formatted = formatted.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
+
     return formatted;
   };
-
   const fetchPageDetail = useCallback(
     async (pageSlug: string, sectionId: string) => {
       try {
@@ -210,13 +231,19 @@ const AcademyDetailPage = () => {
           rightCard: { title: "On this page", items: [] },
         });
 
+        // ... inside fetchData ...
         if (firstCategory.pages[0]) {
           const firstPage = firstCategory.pages[0];
-          const firstPageId = `page-${firstPage.id}`; // Add prefix here
+          const firstSidebarItem = sidebarItems[0]; // The processed sidebar item
 
-          setActiveSection(firstPageId);
-          setExpandedItems(new Set([`cat-${firstCategory.category.id}`])); // Prefix here
-          fetchPageDetail(firstPage.slug, firstPageId);
+          const initialActiveId = firstSidebarItem.isSinglePage
+            ? firstSidebarItem.id
+            : `page-${firstPage.id}`;
+
+          setActiveSection(initialActiveId);
+
+          setExpandedItems(firstSidebarItem.id);
+          fetchPageDetail(firstPage.slug, initialActiveId);
         }
       } catch (err) {
         setError("Failed to load data");
@@ -228,14 +255,8 @@ const AcademyDetailPage = () => {
   }, [slug, fetchPageDetail]);
 
   const toggleExpand = (itemId: string) => {
-    setExpandedItems((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(itemId)) newSet.delete(itemId);
-      else newSet.add(itemId);
-      return newSet;
-    });
+    setExpandedItems((prev) => (prev === itemId ? null : itemId));
   };
-
   const handleSectionClick = (sectionId: string, sectionSlug: string) => {
     setActiveSection(sectionId);
     if (!articleData?.content[sectionId]) {
@@ -299,7 +320,7 @@ const AcademyDetailPage = () => {
         return (
           <p
             key={index}
-            className="text-[16px] leading-6 text-[#FFFFFFCC] mb-4 max-w-[646px] whitespace-pre-line"
+            className="text-[16px] leading-6 text-[#ffffff] mb-4 max-w-[646px] whitespace-pre-line"
             dangerouslySetInnerHTML={{ __html: formatBoldText(el.value || "") }}
           />
         );
@@ -363,15 +384,9 @@ const AcademyDetailPage = () => {
     );
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[#00031C] flex items-center justify-center">
-        <div className="relative">
-          <div className="absolute inset-0 w-10 h-10 rounded-full border-4 border-white border-t-transparent animate-spin" />
-        </div>
-      </div>
-    );
-  }
+ if (loading) {
+  return <SkeletonDetail />;
+}
 
   if (error || !articleData) {
     return (
@@ -443,12 +458,14 @@ const AcademyDetailPage = () => {
           >
             <div className="lg:sticky lg:top-29 h-[calc(100vh-2rem)]">
               <div className="h-full overflow-y-auto custom-scrollbar pr-2 bg-[#00031C] lg:bg-transparent">
-                <h2 className="text-[#FFFFFF99] text-[14px] font-normal leading-4 mb-4">
+                <h2 className="text-[#FFFFFF99] text-[12px] font-normal leading-4 mb-4">
                   {articleData.title}
                 </h2>
                 <nav className="space-y-2 pb-20">
                   {articleData.sidebar.map((item) => {
-                    const isExpanded = expandedItems.has(item.id);
+                    // Check if this specific item is the one stored in state
+                    const isExpanded = expandedItems === item.id;
+
                     const isParentActive = item.isSinglePage
                       ? activeSection === item.id
                       : item.subItems?.some((sub) => sub.id === activeSection);
@@ -459,12 +476,13 @@ const AcademyDetailPage = () => {
                           key={item.id}
                           onClick={() => {
                             handleSectionClick(item.id, item.slug);
-                            setShowMobileSidebar(false); // Close sidebar on mobile after selection
+                            setExpandedItems(null); // Close any open dropdowns when a single page is clicked
+                            setShowMobileSidebar(false);
                           }}
-                          className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
+                          className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-light transition-all mb-4 cursor-pointer ${
                             activeSection === item.id
-                              ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
-                              : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                              ? "bg-gradient-to-b from-[#00082F] to-[#116AF8] text-white font-normal"
+                              : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#116AF8] text-white"
                           }`}
                         >
                           {item.title}
@@ -510,9 +528,9 @@ const AcademyDetailPage = () => {
                                   handleSectionClick(subItem.id, subItem.slug);
                                   setShowMobileSidebar(false); // Close sidebar on mobile after selection
                                 }}
-                                className={`w-full text-left px-3 ml-2 max-w-[230px] py-2 rounded-lg text-[14px] transition-all cursor-pointer ${
+                                className={`w-full text-left px-3 ml-2 max-w-[230px] py-2 font-light rounded-lg text-[14px] transition-all cursor-pointer ${
                                   activeSection === subItem.id
-                                    ? "text-[#116AF8] bg-[#116af81f]"
+                                    ? "text-[#116AF8] bg-[#116af81f] font-normal"
                                     : "text-[#FFFFFFE0] hover:text-[#116AF8]"
                                 }`}
                               >
@@ -534,7 +552,7 @@ const AcademyDetailPage = () => {
             ref={centerContentRef}
             className={`${
               showMobileSidebar || showMobileRightSidebar ? "hidden" : "block"
-            } lg:block lg:col-span-7 h-full overflow-y-auto pt-4 custom-scrollbar`}
+            } lg:block lg:col-span-7 h-full overflow-y-auto overflow-x-hidden pt-4 custom-scrollbar`}
           >
             <div className="flex items-center gap-3 text-[14px] font-normal leading-5 text-[#FFFFFF99] mb-12">
               <Link
@@ -569,9 +587,9 @@ const AcademyDetailPage = () => {
                     renderContentBlock(block, idx)
                   )
                 ) : (
-                  <div className="flex items-center justify-center py-20">
-                    <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin" />
-                  </div>
+                 <div className="py-10">
+      <ContentSkeleton />
+    </div>
                 )}
               </div>
             </div>
@@ -619,7 +637,7 @@ const AcademyDetailPage = () => {
                       key={idx}
                       href={`#${item.id}`}
                       // Added 'truncate' and 'w-full'
-                      className="block text-[14px] text-[#FFFFFF99] hover:text-[#0274FE] transition-colors truncate w-full"
+                      className="block text-[16px] leading-5 text-[#FFFFFF] hover:text-[#0274FE] transition-colors truncate w-full"
                       title={item.text} // Good practice: shows full text on hover
                       onClick={(e) => {
                         e.preventDefault();
@@ -640,7 +658,8 @@ const AcademyDetailPage = () => {
 
       <style jsx global>{`
         .custom-scrollbar::-webkit-scrollbar {
-          width: 4px;
+          width: 2px;
+          display: none;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
           background: transparent;
@@ -681,3 +700,29 @@ const AcademyDetailPage = () => {
 };
 
 export default AcademyDetailPage;
+<style jsx global>{`
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 2px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #ffffff1a;
+    border-radius: 10px;
+
+    /* --- ADD THESE THREE LINES --- */
+    /* This creates a 50px invisible gap at the top and bottom of the thumb */
+    border-top: 50px solid rgba(0, 0, 0, 0);
+    border-bottom: 50px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+  }
+
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background: #ffffff33;
+    /* Re-apply background-clip on hover to ensure it stays short */
+    background-clip: padding-box;
+  }
+
+  /* ... rest of your existing mobile styles ... */
+`}</style>;
