@@ -53,7 +53,7 @@ export default function Jobs() {
       id: 6,
       title: "Content Strategist",
       discription:
-        "Full-Time • Remote / On-Site (Berlin, Lisbon, Lahore, Italy, Spain, UK, Los Angelas",
+        "",
       link: "#",
       category: "Marketing",
     },
@@ -103,21 +103,20 @@ export default function Jobs() {
   return (
     <div className="max-w-[1440px] mx-auto overflow-hidden">
       <div className=" px-3 sm:px-20">
-        <div className="flex justify-center relative">
+        <div className="flex justify-center relative ">
           <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
         </div>
         <div className="flex z-100 bg-[#00031C] flex-col items-center justify-center  pt-15 px-2 md:px-10  relative">
-          <div className="absolute top-0 z-[-1]">
+          <div className="absolute top-0 z-[-1] ">
             <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
           </div>
           <div className="pb-3 flex items-center gap-5">
-                      <Image src="/images/label2.svg" width={78} height={16} alt="line" />
-            
+            <Image src="/images/label2.svg" width={78} height={16} alt="line" />
+
             <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
               Jobs
             </h1>
-                     <Image src="/images/label.svg" width={78} height={16} alt="line" />
-           
+            <Image src="/images/label.svg" width={78} height={16} alt="line" />
           </div>
           <h1 className="heading-1 font-medium max-w-[824px] w-full text-center pb-3 sm:pb-6">
             Job Openings At MIRYA
@@ -176,11 +175,17 @@ export default function Jobs() {
                     </p>
                   </div>
 
-                  <Link href='/jobs/engineering' className="flex justify-between pt-6 items-center">
+                  <Link
+                    href="/jobs/engineering"
+                    className="flex justify-between pt-6 items-center"
+                  >
                     <p className="heading-5 font-normal text-[#0F73FE]">
                       Learn More
                     </p>
-                    <Link href="/jobs/engineering" className="cursor-pointer z-10">
+                    <Link
+                      href="/jobs/engineering"
+                      className="cursor-pointer z-10"
+                    >
                       <Image
                         src="/images/arrow-right.png"
                         alt="Learn more"
@@ -194,7 +199,7 @@ export default function Jobs() {
                     alt="Gradient"
                     height={71}
                     width={281}
-                    className="absolute top-0 right-3"
+                    className="absolute top-0 right-3 pointer-events-none z-0s"
                   />
                 </div>
               </motion.div>

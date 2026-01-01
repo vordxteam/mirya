@@ -1,0 +1,67 @@
+{
+  "cta": {
+    "industries": {
+      "h1": "MIRYA ile otomasyona hazır mısınız?",
+      "p": "İlk otomatik iş akışınızı oluşturalım ve birkaç gün içinde sonuçlar elde edin. Ücretsiz danışmanlığınızı bugün ayırtın."
+    },
+    "default": {
+      "h1": "Verimliliğinizi <br /> Daha Etkili Hale Getirin. Şimdi Başlayın.",
+      "p": "Endüstrileri dönüştürmek ve insan deneyimlerini geliştirmek için yapay zekanın gücünden yararlanın."
+    },
+    "button": "Başlayın"
+  },
+  "footer": {
+    "newsletter": "Güncel kalmak için bültenimize katılın!",
+    "inputPlaceholder": "E-posta adresinizi girin",
+    "subscribe": "Abone Ol",
+    "copyright": "© 2024 Copyright - MIRYA AI Tech GmbH",
+    "privacy": "Gizlilik Politikası",
+    "security": "Güvenlik",
+    "imprint": "İletişim",
+    "sections": {
+      "pages": {
+        "title": "Sayfalar",
+        "links": [
+          { "name": "Ürün", "href": "/about" },
+          { "name": "İletişim", "href": "/contact" },
+          { "name": "SSS", "href": "/faq" },
+          { "name": "Kariyer", "href": "/careers" }
+        ]
+      },
+      "technology": {
+        "title": "TEKNOLOJİ",
+        "links": [
+          { "name": "MIRYA vs n8n", "href": "/coming-soon" },
+          { "name": "MIRYA vs Power Automate", "href": "/coming-soon" },
+          { "name": "MIRYA vs Agentic Kit", "href": "/coming-soon" },
+          { "name": "Kullanıcı testine katıl", "href": "/user-testing" }
+        ]
+      },
+      "contact": {
+        "title": "İLETİŞİM",
+        "links": [
+          { "name": "info@mirya.ai", "href": "mailto:info@mirya.ai" },
+          { "name": "+49 (711) 12120-802", "href": "tel:+49 (711) 12120-802" },
+          { "name": "Berlin, Almanya", "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5" }
+        ]
+      }
+    }
+  },
+ 
+  "header": {
+    "logoAlt": "MIRYA Logo",
+    "links": [
+      { "name": "Anasayfa", "href": "/" },
+      { "name": "Ürünler", "href": "/about" },
+      { "name": "Endüstriler", "href": "/industries" },
+      { "name": "Fiyatlandırma", "href": "/pricing" },
+      { "name": "Akademi", "href": "/articles" },
+      { "name": "İletişim", "href": "/contact" }
+    ],
+    "button": "Başlayın",
+    "signin": "Giriş Yap",
+    "languageLabel": "Dil"
+  }
+
+
+}

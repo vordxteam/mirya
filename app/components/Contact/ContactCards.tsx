@@ -14,16 +14,17 @@ const ContactCards = () => {
             </p>
           </div>
           <div>
+            
             <div
               className="rounded-full p-px w-full"
               style={{
-                background:
-                  "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
-              }}
-            >
+                  background:
+                    "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+                }}
+              >
               <Link
                 href="/enquiry-form"
-                className="font-normal py-2 px-5 rounded-full w-full flex items-center justify-center"
+                className="font-normal py-3 px-6 rounded-full w-full flex items-center justify-center"
                 style={{
                   background: "#00031C",
                   color: "white",
@@ -47,14 +48,14 @@ const ContactCards = () => {
           <div>
             <div
               className="rounded-full p-px w-full"
-              style={{
-                background:
-                  "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
-              }}
-            >
+            style={{
+                  background:
+                    "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+                }}
+              >
               <Link
                 href="#"
-                className="font-normal py-2 px-5 rounded-full w-full flex items-center justify-center"
+                className="font-normal py-3 px-6 rounded-full w-full flex items-center justify-center"
                 style={{
                   background: "#00031C",
                   color: "white",

@@ -6,84 +6,16 @@ import React, { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GradientButton from "@/app/ui/GradientButton";
+import { useAbout } from "@/app/hooks/useAboutTranslation";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-interface Benefit {
-  id: number;
-  title: string;
-  img: string;
-}
-
 export default function MiryaDifferent(): React.ReactElement {
-  const benefits: Benefit[] = [
-    {
-      id: 1,
-      title: "No programming skills required",
-      img: "/images/star-red.png",
-    },
-    {
-      id: 2,
-      title: "Interface-independent — no API needed",
-      img: "/images/star-green.png",
-    },
-    {
-      id: 3,
-      title: "On-Premise or Cloud",
-      img: "/images/star-yellow.png",
-    },
-    {
-      id: 4,
-      title: "Record & Automate",
-      img: "/images/star-purple.png",
-    },
-    {
-      id: 5,
-      title: "Ready in 24 hours",
-      img: "/images/star-blue.png",
-    },
-    {
-      id: 7,
-      title: "White Label ready",
-      img: "/images/star-yellow.png",
-    },
-    {
-      id: 8,
-      title: "Drag & Drop Visual Interface",
-      img: "/images/star-red.png",
-    },
-    {
-      id: 9,
-      title: "ROI in just 4–6 weeks",
-      img: "/images/star-green.png",
-    },
-    {
-      id: 10,
-      title: "Analytics Dashboard",
-      img: "/images/star-yellow.png",
-    },
-    {
-      id: 11,
-      title: "Virtual AI Assistant",
-      img: "/images/star-purple.png",
-    },
-    {
-      id: 12,
-      title: "Autonomous Bots",
-      img: "/images/star-blue.png",
-    },
-    {
-      id: 13,
-      title: "Smart PDF Reports",
-      img: "/images/star-yellow.png",
-    },
-  ];
-
   const paragraphRef = useRef<HTMLDivElement>(null);
+  const { t } = useAbout();
 
   useEffect(() => {
     const element = paragraphRef.current;
@@ -151,52 +83,6 @@ export default function MiryaDifferent(): React.ReactElement {
     },
   };
 
-  const benefitItemVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const backgroundVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  const dashVariants: Variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        delay: 0.3,
-      },
-    },
-  };
-
-  const pointerVariants: Variants = {
-    hidden: { opacity: 0, x: 100, y: 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        delay: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <div className="flex justify-center">
@@ -204,31 +90,9 @@ export default function MiryaDifferent(): React.ReactElement {
       </div>
       <div className="py-[60px] px-5 sm:px-[60px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
         <div className="bg-[#00031C"></div>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={backgroundVariants}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="absolute -top-5 left-[45%] -z-10 pointer-events-none">
-            <div className="rounded-[68.75px] bg-[#4F60FA] opacity-[0.6] blur-[90px] w-[181px] h-[94px]"></div>
-          </div>
-          <Image
-            src="/images/gradient2.png"
-            alt="gradient"
-            width={458}
-            height={318}
-            className="absolute left-[40%] bottom-[18%] -z-10 pointer-events-none"
-          />
-          {/* <Image
-          src="/images/main-gradient.png"
-          alt="gradient"
-          width={1440}
-          height={331}
-          className="absolute bottom-0"
-        /> */}
-        </motion.div>
-
+        <div className="absolute top-[9%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+          <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[90px] w-[181px] h-[94px]"></div>
+        </div>
         <motion.div
           className="w-full flex flex-col items-center"
           variants={containerVariants}
@@ -247,7 +111,7 @@ export default function MiryaDifferent(): React.ReactElement {
               width={78}
             />
             <h5 className="heading-5 font-regular text-[#959EFE] text-center">
-              What Makes MIRYA Different
+              {t("different.badge")}
             </h5>
             <Image
               src="/images/label.svg"
@@ -263,12 +127,7 @@ export default function MiryaDifferent(): React.ReactElement {
     text-center mb-6"
             variants={itemVariants}
           >
-            Unlike traditional automation tools, MIRYA doesn’t just follow
-            instructions — it understands, learns, and adapts. With MIRYA, you
-            don’t need APIs, dashboards, or programming knowledge. It interacts
-            with your existing systems visually, mimicking human behavior, while
-            delivering speed, reliability, and accuracy far beyond what manual
-            work can achieve.
+            {t("different.title")}
           </motion.div>
         </motion.div>
       </div>

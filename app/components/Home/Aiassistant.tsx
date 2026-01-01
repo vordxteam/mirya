@@ -156,7 +156,7 @@
 // ];
 
 
-import GradientButton from "@/app/ui/GradientButton";
+import GradientBlackButton from "@/app/ui/GradientBlackButton";
 import Image from "next/image";
 import React from "react";
 
@@ -206,7 +206,7 @@ const Aiassistant = () => {
 
             {/* Button */}
             <div className="w-fit mx-auto lg:mx-0">
-              <GradientButton
+              <GradientBlackButton
                 label="Contact Us Now"
                 href="/contact"
                 bgColor="#00031C"

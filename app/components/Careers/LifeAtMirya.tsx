@@ -92,7 +92,7 @@ export default function LifeAtMirya() {
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </div>
       <div className="flex z-100 bg-[#00031C] flex-col items-center justify-center py-15  relative">
-        <div className="absolute top-0">
+        <div className="absolute top-0 pointer-events-none z-0">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">

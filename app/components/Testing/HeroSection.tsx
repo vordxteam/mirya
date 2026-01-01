@@ -78,7 +78,7 @@ const HeroSection = () => {
   return (
     <div className="">
       <div className="flex z-100 bg-[#00031c] flex-col items-center justify-center sm:pb-[75px] pt-10 px-2 md:px-10 bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain relative">
-        <div className="absolute top-0">
+        <div className="absolute top-0 -z-10 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">

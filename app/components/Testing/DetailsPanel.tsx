@@ -5,7 +5,7 @@ import CustomCheckbox from "../CustomCheckbox";
 const DetailsPanel = () => {
   return (
     <div className="px-2 relative sm:px-20">
-      <div className="absolute top-24 z-[-1] left-[40%]">
+      <div className="absolute top-24 z-[-1] left-[40%] ">
         <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[71px]"></div>
       </div>
       <div
@@ -27,7 +27,7 @@ const DetailsPanel = () => {
               test.
             </p>
           </div>
-          <div className="absolute top-3 left-50">
+          <div className="absolute top-3 left-50 pointer-events-none z-0">
             <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[71px]"></div>
           </div>
           <div className="absolute bottom-0 right-0">

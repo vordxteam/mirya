@@ -1,7 +1,14 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { useAbout } from "@/app/hooks/useAboutTranslation";
 
 const Chooseus = () => {
+  const { t } = useAbout();
+
+  const cards = t("chooseus.cards", {
+    returnObjects: true,
+  }) as { title: string; desc: string }[];
   return (
     <div
       className="p-0.5"
@@ -15,7 +22,7 @@ const Chooseus = () => {
           <div className="relative">
             <div className="flex items-center justify-center flex-col">
               <div className="absolute -top-20 -z-10 pointer-events-none">
-                <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
               {/* Top Title Row */}
               <div className="pb-3 flex items-center justify-center gap-5">
@@ -26,7 +33,7 @@ const Chooseus = () => {
                   alt="line"
                 />
                 <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal text-center">
-                  Why Choose Us
+                  {t("chooseus.badge")}
                 </h1>
                 <Image
                   src="/images/label.svg"
@@ -38,14 +45,12 @@ const Chooseus = () => {
 
               {/* Main Heading */}
               <h1 className="text-[30px] sm:text-[48px] font-medium leading-[38px] sm:leading-14 tracking-[-1.44px] max-w-[686px] text-center pb-3 sm:pb-6">
-                The Values That Drive Us{" "}
+                {t("chooseus.title")}
               </h1>
 
               {/* Subheading */}
               <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] font-normal leading-5 text-center max-w-[606px]">
-                Unlike traditional automation tools, MIRYA doesn’t just follow
-                instructions it understands, learns, and adapts. With MIRYA, you
-                don’t need APIs, dashboards, or programming knowledge.
+                {t("chooseus.subtitle")}
               </p>
             </div>
           </div>
@@ -62,7 +67,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -74,12 +79,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          No Interface Required
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[0]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          Works with your existing tools exactly as a human
-                          would — no APIs, no integration limitations.
+                          {cards[0]?.desc}
                         </p>
                       </div>
                     </div>
@@ -97,7 +101,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -109,12 +113,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          On-Premise Deployment
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[1]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          Keep your data private. MIRYA runs fully inside your
-                          environment — no cloud dependency.
+                          {cards[1]?.desc}
                         </p>
                       </div>
                     </div>
@@ -132,7 +135,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -144,12 +147,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          UI Recording
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[2]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          Teach MIRYA by simply performing the task. It learns,
-                          records, and builds the automation intelligently.
+                          {cards[2]?.desc}
                         </p>
                       </div>
                     </div>
@@ -167,7 +169,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -179,12 +181,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          Human-Like Intelligence
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[3]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          Understands screens, reads data, interprets patterns,
-                          and makes decisions in real time.{" "}
+                          {cards[3]?.desc}
                         </p>
                       </div>
                     </div>
@@ -202,7 +203,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -214,12 +215,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          Zero Code Automation
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[4]?.title}
                         </h1>
-                        <p className="text-[14px] md:text-[16px] font-normal leading-5 w-full max-w-[532px]w">
-                          If you know how to use your computer, you know how to
-                          use MIRYA. No programming needed.
+                        <p className="text-[14px] md:text-[16px] font-normal leading-5">
+                          {cards[4]?.desc}
                         </p>
                       </div>
                     </div>
@@ -237,7 +237,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -249,12 +249,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          Full White-Label
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[5]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          Brand MIRYA as your own: logo, colors, domain, and
-                          experience — tailored for clients or internal teams.
+                          {cards[5]?.desc}
                         </p>
                       </div>
                     </div>
@@ -272,7 +271,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -284,12 +283,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          Multi-System Compatibility
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[6]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          Works across web apps, desktop apps, legacy systems,
-                          and custom internal tools.
+                          {cards[6]?.desc}
                         </p>
                       </div>
                     </div>
@@ -307,7 +305,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -319,12 +317,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          Transparent Pricing
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[7]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          Clear, predictable pricing. No hidden costs or
-                          licensing surprises.
+                          {cards[7]?.desc}
                         </p>
                       </div>
                     </div>
@@ -341,7 +338,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -353,11 +350,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          Start-Up Offers
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[8]?.title}
                         </h1>
-                        <p className="text-[14px] md:text-[16px] font-normal leading-5 w-full max-w-[575px]">
-                          MIRYA’s startup offer gives you everything you need to automate early operations without heavy setup, large teams, or long onboarding cycles.
+                        <p className="text-[14px] md:text-[16px] font-normal leading-5">
+                          {cards[7]?.desc}
                         </p>
                       </div>
                     </div>
@@ -374,7 +371,7 @@ const Chooseus = () => {
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
                     <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -386,12 +383,11 @@ const Chooseus = () => {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h1 className="text-[24px]  font-medium leading-7 ">
-                          Built for Reliability
+                        <h1 className="text-[24px] font-medium leading-7">
+                          {cards[9]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          Designed for mission-critical automation with built-in
-                          recovery, logging, and stability at scale.{" "}
+                          {cards[7]?.desc}
                         </p>
                       </div>
                     </div>

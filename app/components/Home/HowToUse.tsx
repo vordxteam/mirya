@@ -5,8 +5,7 @@ import How1Card from "./HowtouseAnimations/How1Card";
 import How2Card from "./HowtouseAnimations/How2Card";
 import How3Card from "./HowtouseAnimations/How3Card";
 import How4Card from "./HowtouseAnimations/How4Card";
-import GradientButton from "@/app/ui/GradientButton";
-
+import Link from "next/link";
 const HowToUse = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [inView, setInView] = useState(false);
@@ -88,7 +87,7 @@ const HowToUse = () => {
     >
       <div className="flex flex-col items-center justify-center">
         {/* Title Row */}
-        
+
         <div className="pb-3 flex items-center justify-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px]">
@@ -108,13 +107,21 @@ const HowToUse = () => {
           speak your commands as your digital teammate learns and acts.
         </p>
 
-        <GradientButton
-          label="Get Started Now"
-          href="/contact"
-          bgColor="#00031C"
-          textColor="#fff"
-        />
-
+       
+        <div
+          className="rounded-full p-[1.5px]"
+          style={{
+            background:
+              "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+          }}
+        >
+          <Link
+            href="/contact"
+            className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
+          >
+            Get Started Now{" "}
+          </Link>
+        </div>
         {/* Slider */}
         <div
           className="w-full rounded-3xl p-[0.5px] mt-16"

@@ -129,17 +129,26 @@ export default function ContactPage() {
           </div>
 
           {/* Right Section - Contact Form */}
-          <div className=" non-rounded1 p-1 rounded-lg">
+
+          <div
+            className="rounded-lg p-px"
+            style={{
+              background:
+                "linear-gradient(91deg, #4542E0 5.02%, #14122C 95.9%)",
+            }}
+          >
             <div className="bg-[#080E34] rounded-lg p-3 sm:p-7">
               <h3 className="heading-3 font-regular text-white">
                 Send Message
               </h3>
+
               <div className="pt-6 flex flex-col gap-4">
                 <input
                   type="text"
                   placeholder="Full name"
                   className="outline outline-[#FFFFFF33] p-4 rounded-lg xl:w-lg"
                 />
+
                 <div className="flex gap-3">
                   <input
                     type="text"
@@ -149,54 +158,67 @@ export default function ContactPage() {
                   <input
                     type="number"
                     placeholder="Phone Number"
-                    className="outline appearance-auto outline-[#FFFFFF33] p-4 rounded-lg w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="outline outline-[#FFFFFF33] p-4 rounded-lg w-full
+          [&::-webkit-outer-spin-button]:appearance-none
+          [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
-                <select className="outline outline-[#FFFFFF33] p-4 rounded-lg w-full bg-transparent text-white cursor-pointer">
+
+                <select
+                  className="bg-transparent border border-[#FFFFFF33] rounded-lg px-4 py-3 text-[#FFFFFFE0] outline-none appearance-none cursor-pointer"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23FFFFFFE0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 1rem center",
+                    backgroundSize: "12px",
+                  }}
+                >
                   <option
                     value=""
                     disabled
                     selected
-                    className="text-gray-400 bg-[#00031C]"
+                    className="bg-[#080E34] text-gray-400"
                   >
                     Subject
                   </option>
-                  <option value="general" className="text-black bg-white">
+                  <option value="general" className="bg-[#080E34]">
                     General Inquiry
                   </option>
-                  <option value="support" className="text-black bg-white">
+                  <option value="support" className="bg-[#080E34]">
                     Technical Support
                   </option>
-                  <option value="billing" className="text-black bg-white">
+                  <option value="billing" className="bg-[#080E34]">
                     Billing Issue
                   </option>
-                  <option value="feedback" className="text-black bg-white">
+                  <option value="feedback" className="bg-[#080E34]">
                     Feedback
                   </option>
-                  <option value="other" className="text-black bg-white">
+                  <option value="other" className="bg-[#080E34]">
                     Other
                   </option>
                 </select>
+
                 <textarea
                   rows={8}
                   placeholder="Message..."
-                  className="outline resize-none outline-[#FFFFFF33] p-4 rounded-lg w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  className="outline resize-none outline-[#FFFFFF33] p-4 rounded-lg w-full"
                 />
               </div>
+
               <div className="mt-4">
-              <CustomCheckbox
-                className="col-span-2 sm:col-span-1"
-                label={
-                  <span className="flex flex-wrap gap-1">
-                    <span>I agree to the</span>
-                    <Link href="#" className="text-[#0274FE] underline">
-                      Privacy Policy
-                    </Link>
-                    <span>.</span>
-                  </span>
-                }
-              />
+                <CustomCheckbox
+                  label={
+                    <span className="flex flex-wrap gap-1">
+                      <span>I agree to the</span>
+                      <Link href="#" className="text-[#0274FE] underline">
+                        Privacy Policy
+                      </Link>
+                      <span>.</span>
+                    </span>
+                  }
+                />
               </div>
+
               <div
                 className="rounded-full p-px w-full mt-10"
                 style={{
@@ -207,10 +229,7 @@ export default function ContactPage() {
                 <Link
                   href="#"
                   className="font-normal w-full flex items-center justify-center py-2 px-5 rounded-full"
-                  style={{
-                    background: "#0274FE",
-                    color: "white",
-                  }}
+                  style={{ background: "#0274FE", color: "white" }}
                 >
                   Submit
                 </Link>

@@ -1,0 +1,64 @@
+{
+  "cta": {
+    "industries": {
+      "h1": "Sind Sie bereit, mit MIRYA zu automatisieren?",
+      "p": "Lassen Sie uns Ihren ersten automatisierten Workflow erstellen und innerhalb weniger Tage Ergebnisse erzielen. Buchen Sie noch heute Ihre kostenlose Beratung."
+    },
+    "default": {
+      "h1": "Machen Sie Ihre Produktivität <br /> effizienter. Ab sofort.",
+      "p": "Nutzen Sie die Kraft der künstlichen Intelligenz, um Branchen zu revolutionieren und menschliche Erfahrungen zu verbessern."
+    },
+    "button": "Loslegen"
+  },
+  "footer": {
+    "newsletter": "Abonnieren Sie unseren Newsletter, um auf dem Laufenden zu bleiben!",
+    "inputPlaceholder": "Geben Sie Ihre E-Mail ein",
+    "subscribe": "Abonnieren",
+    "copyright": "© 2024 Copyright - MIRYA AI Tech GmbH",
+    "privacy": "Datenschutz",
+    "security": "Sicherheit",
+    "imprint": "Impressum",
+    "sections": {
+      "pages": {
+        "title": "Seiten",
+        "links": [
+          { "name": "Produkt", "href": "/about" },
+          { "name": "Kontakt", "href": "/contact" },
+          { "name": "FAQs", "href": "/faq" },
+          { "name": "Karriere", "href": "/careers" }
+        ]
+      },
+      "technology": {
+        "title": "TECHNOLOGIE",
+        "links": [
+          { "name": "MIRYA vs n8n", "href": "/coming-soon" },
+          { "name": "MIRYA vs Power Automate", "href": "/coming-soon" },
+          { "name": "MIRYA vs Agentic Kit", "href": "/coming-soon" },
+          { "name": "Benutzertest beitreten", "href": "/user-testing" }
+        ]
+      },
+      "contact": {
+        "title": "KONTAKT",
+        "links": [
+          { "name": "info@mirya.ai", "href": "mailto:info@mirya.ai" },
+          { "name": "+49 (711) 12120-802", "href": "tel:+49 (711) 12120-802" },
+          { "name": "Berlin, Deutschland", "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5" }
+        ]
+      }
+    }
+  },
+  "header": {
+    "logoAlt": "MIRYA Logo",
+    "links": [
+      { "name": "Startseite", "href": "/" },
+      { "name": "Produkt", "href": "/about" },
+      { "name": "Branchen", "href": "/industries" },
+      { "name": "Preisgestaltung", "href": "/pricing" },
+      { "name": "Akademie", "href": "/articles" },
+      { "name": "Kontakt", "href": "/contact" }
+    ],
+    "button": "Loslegen",
+    "signin": "Anmelden",
+    "languageLabel": "Sprache"
+  }
+}

@@ -7,6 +7,7 @@ import { motion, Variants } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GradientButton from "@/app/ui/GradientButton";
+import { useAbout } from "@/app/hooks/useAboutTranslation";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -20,151 +21,130 @@ interface Benefit {
 }
 
 export default function Demo(): React.ReactElement {
-  const benefits: Benefit[] = [
-    {
-      id: 1,
-      title: "No programming skills required",
-      img: "/images/star-red.png",
-    },
-    {
-      id: 2,
-      title: "Interface-independent — no API needed",
-      img: "/images/star-green.png",
-    },
-    {
-      id: 3,
-      title: "On-Premise or Cloud",
-      img: "/images/star-yellow.png",
-    },
-    {
-      id: 4,
-      title: "Record & Automate",
-      img: "/images/star-purple.png",
-    },
-    {
-      id: 5,
-      title: "Ready in 24 hours",
-      img: "/images/star-blue.png",
-    },
-    {
-      id: 7,
-      title: "White Label ready",
-      img: "/images/star-yellow.png",
-    },
-    {
-      id: 8,
-      title: "Drag & Drop Visual Interface",
-      img: "/images/star-red.png",
-    },
-    {
-      id: 9,
-      title: "ROI in just 4–6 weeks",
-      img: "/images/star-green.png",
-    },
-    {
-      id: 10,
-      title: "Analytics Dashboard",
-      img: "/images/star-yellow.png",
-    },
-    {
-      id: 11,
-      title: "Virtual AI Assistant",
-      img: "/images/star-purple.png",
-    },
-    {
-      id: 12,
-      title: "Autonomous Bots",
-      img: "/images/star-blue.png",
-    },
-    {
-      id: 13,
-      title: "Smart PDF Reports",
-      img: "/images/star-yellow.png",
-    },
-  ];
+  // const benefits: Benefit[] = [
 
-  // const paragraphRef = useRef<HTMLDivElement>(null);
+  //   {
+  //     id: 1,
+  //     title: "No programming skills required",
+  //     img: "/images/star-red.png",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Interface-independent — no API needed",
+  //     img: "/images/star-green.png",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "On-Premise or Cloud",
+  //     img: "/images/star-yellow.png",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Record & Automate",
+  //     img: "/images/star-purple.png",
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Ready in 24 hours",
+  //     img: "/images/star-blue.png",
+  //   },
+  //   {
+  //     id: 7,
+  //     title: "White Label ready",
+  //     img: "/images/star-yellow.png",
+  //   },
+  //   {
+  //     id: 8,
+  //     title: "Drag & Drop Visual Interface",
+  //     img: "/images/star-red.png",
+  //   },
+  //   {
+  //     id: 9,
+  //     title: "ROI in just 4–6 weeks",
+  //     img: "/images/star-green.png",
+  //   },
+  //   {
+  //     id: 10,
+  //     title: "Analytics Dashboard",
+  //     img: "/images/star-yellow.png",
+  //   },
+  //   {
+  //     id: 11,
+  //     title: "Virtual AI Assistant",
+  //     img: "/images/star-purple.png",
+  //   },
+  //   {
+  //     id: 12,
+  //     title: "Autonomous Bots",
+  //     img: "/images/star-blue.png",
+  //   },
+  //   {
+  //     id: 13,
+  //     title: "Smart PDF Reports",
+  //     img: "/images/star-yellow.png",
+  //   },
+  // ];
+  const { t } = useAbout();
 
-  // useEffect(() => {
-  //   const element = paragraphRef.current;
-  //   if (!element) return;
+  const benefitsText = t("demo.benefits", {
+    returnObjects: true,
+  }) as string[];
 
-  //   const text = element.textContent || "";
-  //   const words = text.split(" ");
+  const benefits: Benefit[] = benefitsText.map((title, index) => ({
+    id: index + 1,
+    title,
+    img: [
+      "/images/star-red.png",
+      "/images/star-green.png",
+      "/images/star-yellow.png",
+      "/images/star-purple.png",
+      "/images/star-blue.png",
+    ][index % 5],
+  }));
 
-  //   element.innerHTML = "";
-  //   const spans: HTMLSpanElement[] = words.map((word, i) => {
-  //     const span = document.createElement("span");
-  //     span.textContent = word + (i < words.length - 1 ? " " : "");
-  //     span.style.color = "#FFFFFF";
-  //     span.style.display = "inline";
-  //     element.appendChild(span);
-  //     return span;
-  //   });
+  const paragraphRef = useRef<HTMLDivElement>(null);
 
-  //   ScrollTrigger.create({
-  //     trigger: element,
-  //     start: "top 10%",
-  //     end: "bottom 40%",
-  //     scrub: true,
-  //     onUpdate: (self) => {
-  //       const progress = self.progress;
-  //       const totalSpans = spans.length;
+  useEffect(() => {
+    const element = paragraphRef.current;
+    if (!element) return;
 
-  //       spans.forEach((span, index) => {
-  //         const spanProgress = index / totalSpans;
-  //         if (progress >= spanProgress) {
-  //           span.style.color = "#73799B";
-  //         } else {
-  //           span.style.color = "#FFFFFF";
-  //         }
-  //       });
-  //     },
-  //   });
-const paragraphRef = useRef<HTMLDivElement>(null);
+    const text = element.textContent || "";
+    const words = text.split(" ");
 
-useEffect(() => {
-  const element = paragraphRef.current;
-  if (!element) return;
+    // 1. Prepare the spans
+    element.innerHTML = "";
+    const spans = words.map((word, i) => {
+      const span = document.createElement("span");
+      span.textContent = word + (i < words.length - 1 ? " " : "");
+      span.style.color = "#FFFFFF"; // Initial color
+      element.appendChild(span);
+      return span;
+    });
 
-  const text = element.textContent || "";
-  const words = text.split(" ");
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
 
-  // 1. Prepare the spans
-  element.innerHTML = "";
-  const spans = words.map((word, i) => {
-    const span = document.createElement("span");
-    span.textContent = word + (i < words.length - 1 ? " " : "");
-    span.style.color = "#FFFFFF"; // Initial color
-    element.appendChild(span);
-    return span;
-  });
+        end: "bottom 40%",
 
- const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: element,
-      start: "top 80%", 
-      
-      end: "bottom 40%", 
-      
-      scrub: 1.5,
-    },
-  });
+        scrub: 1.5,
+      },
+    });
 
-  // 3. Animate each span color
-  tl.to(spans, {
-    color: "#73799B",
-    stagger: 0.1,      
-    ease: "none",      
-  });
+    // 3. Animate each span color
+    tl.to(spans, {
+      color: "#73799B",
+      stagger: 0.1,
+      ease: "none",
+    });
 
-  return () => {
-    tl.kill();
-    ScrollTrigger.getAll().forEach((t) => t.kill());
-  };
-}, []);
+    return () => {
+      tl.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
 
-  
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -256,7 +236,6 @@ useEffect(() => {
             height={94}
             className="absolute left-[45%] top-0 pointer-events-none"
           />
-
           <Image
             src="/images/gradient2.png"
             alt="gradient"
@@ -264,38 +243,29 @@ useEffect(() => {
             height={318}
             className="absolute left-[35%] bottom-[30%] pointer-events-none"
           />
-          {/* <Image
-          src="/images/main-gradient.png"
-          alt="gradient"
-          width={1440}
-          height={331}
-          className="absolute bottom-0"
-        /> */}
+        </motion.div>
+        <motion.div
+          variants={dashVariants}
+          initial="hidden"
+          animate="visible"
+          className="absolute bottom-[60px] pointer-events-none"
+        >
+          <Image src="/images/dash.png" alt="dash" width={530} height={121} />
         </motion.div>
 
-      <motion.div
-  variants={dashVariants}
-  initial="hidden"
-  animate="visible"
-  className="absolute bottom-[60px] pointer-events-none"
->
-  <Image src="/images/dash.png" alt="dash" width={530} height={121} />
-</motion.div>
-
-
-      <motion.div
-  variants={pointerVariants}
-  initial="hidden"
-  animate="visible"
-  className="absolute bottom-[60px] pointer-events-none"
->
-  <Image
-    src="/images/gradient-pointer.png"
-    alt="gradient pointer"
-    width={40}
-    height={42}
-  />
-</motion.div>
+        <motion.div
+          variants={pointerVariants}
+          initial="hidden"
+          animate="visible"
+          className="absolute bottom-[60px] pointer-events-none"
+        >
+          <Image
+            src="/images/gradient-pointer.png"
+            alt="gradient pointer"
+            width={40}
+            height={42}
+          />
+        </motion.div>
 
         <motion.div
           className="w-full flex flex-col items-center"
@@ -315,7 +285,7 @@ useEffect(() => {
               width={78}
             />
             <h5 className="heading-5 font-regular text-[#959EFE]">
-              Who We Are
+              {t("demo.badge")}
             </h5>
             <Image
               src="/images/label.svg"
@@ -330,16 +300,11 @@ useEffect(() => {
             className="pt-3  text-[20px] md:text-[36px] leading-8 sm:leading-[48px] font-medium text-white max-w-[1190px] text-center mb-6"
             variants={itemVariants}
           >
-            MIRYA is more than an automation tool we are a team on a mission to
-            make intelligent automation accessible, effortless, and reliable. We
-            believe that technology should work for humans, not the other way
-            around. Our platform connects and controls any system, any app, and
-            any process, learning from your actions to execute workflows with
-            precision and speed.
+            {t("demo.title")}
           </motion.div>
 
           <GradientButton
-            label="Get Started"
+            label={t("button")}
             href="/contact"
             bgColor="#0274FE"
             textColor="#fff"

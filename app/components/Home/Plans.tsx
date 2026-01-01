@@ -26,7 +26,6 @@ export default function Plans() {
         btnColor: "#00031C",
         btnText: "Get Started",
         img: "/images/plan1.png",
-        
       },
       {
         id: 2,
@@ -130,8 +129,8 @@ export default function Plans() {
   return (
     <div className="relative z-20 bg-[#00031C]">
       <div className='bg-[url("/images/bg-png.png")] bg-no-repeat  bg-top flex items-center justify-center py-[60px] relative'>
-        <div className="absolute -top-16 z-[-10] hidden sm:block">
-          <div className="rounded-[68.75px]  bg-[#4F60FA] blur-[100px] w-[550px] h-[286px] opacity-20 z-[-100]"></div>
+        <div className="absolute top-0 -z-10 pointer-events-none">
+          <div className="rounded-[68.75px] opacity-[0.6] bg-[#5935E9] blur-[50px] w-[181px] h-[94px]" />
         </div>
         <div>
           <div className="pb-3 flex items-center justify-center gap-5">

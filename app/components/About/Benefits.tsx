@@ -1,8 +1,16 @@
+"use client"
 import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import React from "react";
+import { useAbout } from "@/app/hooks/useAboutTranslation";
 
 const Benefits = () => {
+  const { t } = useAbout();
+
+  const cards = t("benefits.cards", {
+    returnObjects: true,
+  }) as { title: string; desc: string }[];
+
   return (
     <>
       <div className="flex justify-center">
@@ -26,7 +34,7 @@ const Benefits = () => {
                 alt="line"
               />
               <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal">
-                Benefits
+                {t("benefits.Benefits")}
               </h1>
               <Image
                 src="/images/label.svg"
@@ -38,23 +46,20 @@ const Benefits = () => {
 
             {/* Main Heading */}
             <h1 className="text-[26px] sm:text-[40px] md:text-[48px] font-medium leading-tight tracking-[-1.44px] max-w-[668px] pb-3 sm:pb-6">
-              See The Difference Intelligent Automation Makes
+              {t("benefits.title")}
             </h1>
 
             {/* Subtitle */}
             <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] leading-6 max-w-[700px] pb-8 sm:pb-12">
-              From time savings to error-free execution, MIRYA delivers
-              measurable improvements across every part of your
-              workflow—instantly and without complexity.
+              {t("benefits.subtitle")}
             </p>
           </div>
 
-          {/* Benefits Grid */}
           <div className="grid grid-cols-12 gap-6">
             {/* Card 1 */}
             <BenefitCard
-              title="Automate Everything Without Changing Anything"
-              description="No need to redesign workflows or rebuild systems. MIRYA works with what you already have."
+              title={cards[0]?.title}
+              description={cards[0]?.desc}
               image="/images/benefit-1.svg"
               imageWidth={488}
               imageHeight={352}
@@ -66,8 +71,8 @@ const Benefits = () => {
 
             {/* Card 2 */}
             <BenefitCard
-              title="Save Hundreds of Hours"
-              description="Free your team from repetitive work and let MIRYA handle all operational tasks instantly."
+               title={cards[1]?.title}
+              description={cards[1]?.desc}
               image="/images/benefit-2.svg"
               imageWidth={301}
               imageHeight={470}
@@ -79,8 +84,8 @@ const Benefits = () => {
 
             {/* Card 3 */}
             <BenefitCard
-              title="Zero-Error Execution"
-              description="Remove human errors and inconsistencies. Your processes run the same reliable way — every time."
+               title={cards[2]?.title}
+              description={cards[2]?.desc}
               image="/images/benefit-3.svg"
               imageWidth={301}
               imageHeight={299}
@@ -92,8 +97,8 @@ const Benefits = () => {
 
             {/* Card 4 (full width on desktop) */}
             <BenefitCard
-              title="Boost Efficiency & Productivity"
-              description="MIRYA automates repetitive tasks instantly, allowing your team to focus on high-value work. Processes run faster, smoother, and with consistent accuracy."
+              title={cards[3]?.title}
+  description={cards[3]?.desc}
               image="/images/benefit4.svg"
               imageWidth={460}
               imageHeight={219}
@@ -103,8 +108,8 @@ const Benefits = () => {
 
             {/* Card 5 (full width on desktop) */}
             <BenefitCard
-              title="Actionable Insights"
-              description="By understanding your workflows and data patterns, MIRYA highlights opportunities for improvement and provides clear insights that help you optimize performance."
+                title={cards[4]?.title}
+  description={cards[4]?.desc}
               image="/images/benefit5.svg"
               imageWidth={623}
               imageHeight={219}
@@ -116,7 +121,7 @@ const Benefits = () => {
 
           <div className="flex items-center justify-center w-full mt-8">
             <GradientButton
-              label="Get Started"
+              label={t("button")}
               href="/contact"
               bgColor="#0274FE"
             />

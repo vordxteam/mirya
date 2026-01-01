@@ -1,0 +1,68 @@
+{
+  "cta": {
+    "industries": {
+      "h1": "Are you ready to automate <br /> with MIRYA?",
+      "p": "Let’s build your first automated workflow and unlock results within days. Book your free consultation today."
+    },
+    "default": {
+      "h1": "Make Your Productivity <br /> More Efficient. From This Time.",
+      "p": "Harnessing the power of artificial intelligence to revolutionize industries and enhance human experiences."
+    },
+    "button": "Get Started"
+  },
+  "footer": {
+    "newsletter": "Join our newsletter to keep up to date with us!",
+    "inputPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "copyright": "© 2024 Copyright - MIRYA AI Tech GmbH",
+    "privacy": "Privacy Policy",
+    "security": "Security",
+    "imprint": "Imprint",
+    "sections": {
+      "pages": {
+        "title": "Pages",
+
+        "links": [
+          { "name": "Product", "href": "/about" },
+          { "name": "Contact", "href": "/contact" },
+          { "name": "FAQs", "href": "/faq" },
+          { "name": "Careers", "href": "/careers" }
+        ]
+      },
+      "technology": {
+        "title": "TECHNOLOGY",
+        "links": [
+          { "name": "MIRYA vs n8n", "href": "/coming-soon" },
+          { "name": "MIRYA vs Power Automate", "href": "/coming-soon" },
+          { "name": "MIRYA vs Agentic Kit", "href": "/coming-soon" },
+          { "name": "Join user test", "href": "/user-testing" }
+        ]
+      },
+      "contact": {
+        "title": "CONTACT",
+        "links": [
+          { "name": "info@mirya.ai", "href": "mailto:info@mirya.ai" },
+          { "name": "+49 (711) 12120-802", "href": "tel:+49 (711) 12120-802" },
+          {
+            "name": "Berlin, Germany",
+            "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5"
+          }
+        ]
+      }
+    }
+  },
+  "header": {
+    "logoAlt": "MIRYA Logo",
+    "links": [
+      { "name": "Home", "href": "/" },
+      { "name": "Product", "href": "/about" },
+      { "name": "Industries", "href": "/industries" },
+      { "name": "Pricing", "href": "/pricing" },
+      { "name": "Academy", "href": "/articles" },
+      { "name": "Contact", "href": "/contact" }
+    ],
+    "button": "Get Started",
+    "signin": "Signin",
+    "languageLabel": "Language"
+  }
+}
