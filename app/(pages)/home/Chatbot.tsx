@@ -209,7 +209,7 @@ export default function Chatbot({ onClose }: { onClose: () => void }) {
   return (
     <div className={` ${inter.className}`}>
       <div className="rounded-[20px] border border-transparent non-rounded p-[1px]">
-        <div className="rounded-[20px] h-[405px]   flex flex-col justify-between py-[19px] px-3 sm:px-[23px] gap-2 z-1000 relative bg-[#060B26]  md:w-[426px] md:h-[452px] ">
+        <div className="rounded-[20px] h-[405px]   flex flex-col justify-between py-[19px] px-3 sm:px-[23px] gap-9 z-1000 relative bg-[#060B26]  md:w-[426px] md:h-[452px] ">
           {/* Header */}
           <div className="w-full flex justify-between items-end ">
             <h4 className="text-xl font-light text-[#FFFFFF]">Chatbot</h4>

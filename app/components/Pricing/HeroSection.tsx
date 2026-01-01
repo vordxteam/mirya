@@ -97,8 +97,23 @@ const HeroSection = () => {
           Every plan unlocks intelligent automation, seamless execution, and
           actionable insights—so you can get more done with less effort.
         </p>
-        <div className="flex justify-center pt-10">
-          <div className="inline-flex bg-transparent custom-border max-w-[222px] py-2">
+        <div className="flex justify-center ">
+          {/* <div className="inline-flex bg-transparent custom-border max-w-[222px] py-2"> */}
+<div
+  className="
+    inline-flex
+    bg-transparent
+    max-w-[300px]
+    p-2
+    justify-center
+    items-center
+    gap-[3.99px]
+    rounded-[1000px]
+    border
+    border-[#1E2252]
+  "
+>
+
             <motion.button
               onClick={() => setActiveTab("monthly")}
               className={`bg-[#00041e] rounded-full px-6 py-[6px] cursor-pointer ${

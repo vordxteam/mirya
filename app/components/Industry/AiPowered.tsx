@@ -1,7 +1,7 @@
 import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import React from "react";
-
+import Link from "next/link";
 const AiPowered = () => {
   return (
     <div className="bg-[#00031C] overflow-hidden">
@@ -13,17 +13,12 @@ const AiPowered = () => {
 
         <div className="flex flex-col items-center justify-center space-y-6 relative z-10">
           <div className="flex items-center gap-5">
-                    <Image src="/images/label2.svg" width={78} height={16} alt="line" />
-          
+            <Image src="/images/label2.svg" width={78} height={16} alt="line" />
+
             <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
               AI-Powered Decisions
             </h1>
-            <Image
-              src="/images/label.svg"
-              width={78}
-              height={16}
-              alt="line"
-            />
+            <Image src="/images/label.svg" width={78} height={16} alt="line" />
           </div>
           <h1 className="text-[30px] sm:text-[40px] md:text-[48px] font-medium leading-10 sm:leading-14 tracking-[-1.44px] max-w-[716px] w-full text-center">
             What MIRYA Automate
@@ -35,12 +30,26 @@ const AiPowered = () => {
 
           {/* Button wrapper with higher z-index and pointer-events-auto */}
           <div className="relative z-20">
-            <GradientButton
+            {/* <GradientButton
               label="Automate With MIRYA"
               href="#"
               bgColor="#00031C"
               textColor="#fff"
-            />
+            /> */}
+            <div
+              className="rounded-full p-[1.5px]"
+              style={{
+                background:
+                  "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+              }}
+            >
+              <Link
+                href="/#"
+                className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
+              >
+                Automate With MIRYA{" "}
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -126,7 +135,7 @@ const AiPowered = () => {
             </div>
           </div>
 
- <div
+          <div
             className="rounded-lg p-px w-full md:w-fit"
             style={{
               background:
@@ -142,10 +151,12 @@ const AiPowered = () => {
               />
               <div className="space-y-1">
                 <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
-                 Handles Edge Cases Automatically
+                  Handles Edge Cases Automatically
                 </h1>
                 <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
-                 When data is missing, formats change, or systems behave unexpectedly, MIRYA adapts using logic, retries, and fallback paths instead of failing silently.
+                  When data is missing, formats change, or systems behave
+                  unexpectedly, MIRYA adapts using logic, retries, and fallback
+                  paths instead of failing silently.
                 </p>
               </div>
             </div>
@@ -167,10 +178,12 @@ const AiPowered = () => {
               />
               <div className="space-y-1">
                 <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
-                 Learns From Outcomes
+                  Learns From Outcomes
                 </h1>
                 <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
-                 MIRYA observes results, detects patterns, and refines decisions—helping workflows become smarter, more accurate, and more efficient with every run.
+                  MIRYA observes results, detects patterns, and refines
+                  decisions—helping workflows become smarter, more accurate, and
+                  more efficient with every run.
                 </p>
               </div>
             </div>
@@ -192,15 +205,16 @@ const AiPowered = () => {
               />
               <div className="space-y-1">
                 <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
-                 Built for Reliability at Scale
+                  Built for Reliability at Scale
                 </h1>
                 <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
-                Designed to run mission-critical automations continuously with built-in recovery, logging, and error handling that keep processes stable—even under high volume and long runtimes.
+                  Designed to run mission-critical automations continuously with
+                  built-in recovery, logging, and error handling that keep
+                  processes stable—even under high volume and long runtimes.
                 </p>
               </div>
             </div>
           </div>
-
 
           <div
             className="rounded-lg p-px w-full md:w-fit"

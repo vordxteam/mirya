@@ -331,16 +331,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/16/solid";
-import { useTranslation } from "react-i18next";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "Product" },
-  { href: "/industries", label: "Industries" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/articles", label: "Academy" },
-  { href: "/contact", label: "Contact" },
-];
+import { useLayoutTranslation } from "@/app/hooks/useLayoutTranslation";
 
 const languages = [
   { code: "en", label: "English", flag: "/images/british.png" },
@@ -349,53 +340,52 @@ const languages = [
 ] as const;
 
 export default function Header() {
-  const { i18n } = useTranslation();
-  const pathname = usePathname();
-
+  const { t, i18n } = useLayoutTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Get current language object
+  const currentLang =
+    languages.find((l) => l.code === i18n.language) || languages[0];
+  const isClient = typeof window !== "undefined";
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 5);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 5);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Get current language from i18n
-  const currentLang =
-    languages.find((l) => l.code === i18n.language) || languages[0];
-  const isClient = typeof window !== "undefined";
-
-  // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (!(e.target as HTMLElement).closest(".language-selector")) {
-        setDropdownOpen(false);
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (open && !target.closest(".language-selector")) {
+        setOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 5);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [open]);
 
   const changeLanguage = (code: string) => {
     i18n.changeLanguage(code);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("language", code);
-    }
-    setDropdownOpen(false);
+    if (typeof window !== "undefined") localStorage.setItem("language", code);
+    setOpen(false);
   };
 
+  // Translated nav links from your hook
+  const navLinks = t("header.links", { returnObjects: true }) as Array<{
+    href: string;
+    name: string;
+  }>;
+
+  // Animation variants from your first design
   const sidebarVariants = {
     closed: { x: "100%" },
     open: { x: 0 },
@@ -420,9 +410,7 @@ export default function Header() {
     <motion.header
       animate={{
         backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
-        backgroundColor: scrolled
-          ? "rgba(0,0,0,0.35)" 
-          : "rgba(0,0,0,0)",
+        backgroundColor: scrolled ? "rgba(0,0,0,0.35)" : "rgba(0,0,0,0)",
       }}
       transition={{ duration: 0.3, ease: "easeOut" }}
       className="fixed z-50000 w-full top-0"
@@ -435,13 +423,10 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Desktop Links - Original styling */}
+        {/* Desktop Links - Design 1 Style */}
         <div className="hidden lg:flex lg:gap-x-8">
           {navLinks.map((link) => {
-            const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
+            const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
@@ -451,7 +436,7 @@ export default function Header() {
                   ${
                     isActive
                       ? "text-white font-medium"
-                      : "text-[#73799B]  font-normal"
+                      : "text-[#73799B] font-normal"
                   }
                   hover:text-white
                   after:absolute after:-bottom-1 after:left-0 after:h-0.5
@@ -460,27 +445,28 @@ export default function Header() {
                   ${isActive ? "after:w-full" : ""}
                 `}
               >
-                {link.label}
+                {link.name}
               </Link>
             );
           })}
         </div>
 
-        {/* Desktop Right Side - Original styling with multilingual */}
+        {/* Desktop Right Side */}
+        {/* Desktop Right Side */}
         <div className="hidden lg:flex items-center lg:justify-end gap-5">
-          {/* Language Selector - Original styling with multilingual functionality */}
           {isClient ? (
             <div className="relative text-white language-selector">
               <div
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                onClick={() => setOpen(!open)}
                 className="rounded-lg cursor-pointer flex items-center gap-1 justify-between"
               >
                 <span className="flex items-center gap-2 heading-6">
+                  {/* ADDED THE IMAGE COMPONENT BELOW */}
                   <Image
                     src={currentLang.flag}
                     alt={currentLang.label}
-                    width={16}
-                    height={11}
+                    width={20}
+                    height={14}
                     className="rounded-sm"
                   />
                   {currentLang.label}
@@ -493,7 +479,7 @@ export default function Header() {
                 />
               </div>
 
-              {dropdownOpen && (
+              {open && (
                 <div
                   className="absolute top-full left-0 w-[150px] mt-1 bg-[#050925] border border-transparent rounded-lg overflow-hidden z-50"
                   style={{
@@ -502,24 +488,23 @@ export default function Header() {
                     border: "1px solid transparent",
                   }}
                 >
-                  {languages.map((lang) => (
+                  {languages.map((item) => (
                     <div
-                      key={lang.code}
+                      key={item.code}
                       onClick={(e) => {
                         e.stopPropagation();
-                        changeLanguage(lang.code);
+                        changeLanguage(item.code);
                       }}
                       className="px-3 py-2 flex items-center heading-7 font-normal gap-2 cursor-pointer border-b border-[#FFFFFF1F] last:border-none hover:bg-white/10"
                     >
                       <Image
-                        src={lang.flag}
-                        alt={lang.label}
+                        src={item.flag}
+                        alt={item.label}
                         width={16}
                         height={11}
-                        className="rounded-sm"
                       />
-                      {lang.label}
-                      {i18n.language === lang.code && (
+                      {item.label}
+                      {i18n.language === item.code && (
                         <span className="ml-auto text-[#4A56FF]">✓</span>
                       )}
                     </div>
@@ -528,19 +513,16 @@ export default function Header() {
               )}
             </div>
           ) : (
-            // Skeleton loader during SSR
-            <div className="w-[100px] h-[40px] bg-gray-800 rounded-lg animate-pulse"></div>
+            <div className="w-[80px] h-[20px] bg-white/5 animate-pulse rounded"></div>
           )}
 
-          {/* Sign In - Original styling */}
           <Link
             href="/coming-soon"
             className="text-white text-[14px] underline cursor-pointer hover:text-white"
           >
-            Signin
+            {t("header.signin", "Signin")}
           </Link>
 
-          {/* Get Started Button - Original styling */}
           <div
             className="rounded-full p-0.5"
             style={{
@@ -552,12 +534,12 @@ export default function Header() {
               href="/contact"
               className="inline-block text-[16px] font-normal text-white py-2 px-5 bg-[#00031C] rounded-full"
             >
-              Get Started
+              {t("header.button")}
             </Link>
           </div>
         </div>
 
-        {/* Mobile Menu Button (Burger) */}
+        {/* Mobile Menu Button */}
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -569,11 +551,10 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Sidebar with Framer Motion - Original styling */}
+      {/* Mobile Sidebar - Design 1 Style */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
-            {/* Overlay */}
             <motion.div
               key="overlay"
               variants={overlayVariants}
@@ -584,7 +565,6 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             />
 
-            {/* Sidebar */}
             <motion.div
               key="sidebar"
               variants={sidebarVariants}
@@ -593,7 +573,6 @@ export default function Header() {
               exit="closed"
               className="fixed inset-y-0 right-0 z-100000 w-full sm:max-w-sm bg-[#00031C] p-6 overflow-y-auto lg:hidden h-[100vh]"
             >
-              {/* Header */}
               <div className="flex items-center justify-between">
                 <Link
                   href="/"
@@ -617,7 +596,6 @@ export default function Header() {
                 </button>
               </div>
 
-              {/* Links */}
               <motion.div
                 variants={linkContainerVariants}
                 initial="closed"
@@ -626,10 +604,7 @@ export default function Header() {
                 className="mt-8 space-y-4"
               >
                 {navLinks.map((link) => {
-                  const isActive =
-                    link.href === "/"
-                      ? pathname === "/"
-                      : pathname.startsWith(link.href);
+                  const isActive = pathname === link.href;
                   return (
                     <motion.div key={link.href} variants={linkItemVariants}>
                       <Link
@@ -639,25 +614,21 @@ export default function Header() {
                           isActive ? "text-white" : "text-[#73799B]"
                         }`}
                       >
-                        {link.label}
+                        {link.name}
                       </Link>
                     </motion.div>
                   );
                 })}
-              </motion.div>
 
-              {/* Mobile Language Selector */}
-              <motion.div
-                variants={linkContainerVariants}
-                initial="closed"
-                animate="open"
-                exit="closed"
-                className="mt-8 space-y-4"
-              >
-                <motion.div variants={linkItemVariants}>
-                  <div className="h-px bg-white/10 my-4" />
-                  <p className="text-[#73799B] text-sm">Language</p>
-                  <div className="space-y-2">
+                {/* Mobile Language Selector Integration */}
+                <motion.div
+                  variants={linkItemVariants}
+                  className="pt-4 border-t border-white/10"
+                >
+                  <p className="text-[#73799B] text-sm mb-4">
+                    {t("header.languageLabel", "Language")}
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
@@ -665,51 +636,38 @@ export default function Header() {
                           changeLanguage(lang.code);
                           setMobileMenuOpen(false);
                         }}
-                        className={`flex items-center gap-3 w-full py-2 px-3 rounded-lg transition
-                          ${
-                            i18n.language === lang.code
-                              ? "bg-white/10 text-white"
-                              : "text-[#73799B]"
-                          }`}
+                        className={`flex items-center gap-2 py-2 px-3 rounded-lg border ${
+                          i18n.language === lang.code
+                            ? "border-[#4A56FF] bg-white/5 text-white"
+                            : "border-white/5 text-[#73799B]"
+                        }`}
                       >
                         <Image
                           src={lang.flag}
-                          width={24}
-                          height={16}
+                          width={20}
+                          height={14}
                           alt=""
-                          className="rounded"
+                          className="rounded-sm"
                         />
-                        <span className="text-[16px]">{lang.label}</span>
-                        {i18n.language === lang.code && (
-                          <span className="ml-auto text-[#4A56FF]">✓</span>
-                        )}
+                        <span className="text-[14px]">{lang.label}</span>
                       </button>
                     ))}
                   </div>
                 </motion.div>
-              </motion.div>
 
-              {/* Mobile Signin and Get Started Buttons */}
-              <motion.div
-                variants={linkContainerVariants}
-                initial="closed"
-                animate="open"
-                exit="closed"
-                className="mt-8 space-y-4"
-              >
-                {/* Signin Button */}
-                <motion.div variants={linkItemVariants}>
+                {/* Mobile Signin and Get Started */}
+                <motion.div
+                  variants={linkItemVariants}
+                  className="space-y-4 pt-4"
+                >
                   <Link
                     href="/coming-soon"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[#73799B] text-[18px] font-normal underline cursor-pointer hover:text-white w-full text-left py-2"
+                    className="text-[#73799B] text-[18px] font-normal underline cursor-pointer hover:text-white w-full text-left block py-2"
                   >
-                    Signin
+                    {t("header.signin", "Signin")}
                   </Link>
-                </motion.div>
 
-                {/* Get Started Button */}
-                <motion.div variants={linkItemVariants}>
                   <div
                     className="rounded-full p-0.5 inline-block w-full"
                     style={{
@@ -722,7 +680,7 @@ export default function Header() {
                       className="inline-block text-[16px] font-normal text-white py-2 px-6 bg-[#00031C] rounded-full w-full text-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Get Started
+                      {t("header.button")}
                     </Link>
                   </div>
                 </motion.div>
@@ -731,6 +689,12 @@ export default function Header() {
           </>
         )}
       </AnimatePresence>
+      <style jsx>{`
+        .non-rounded2 {
+          background: linear-gradient(#4542e0, #4542e0) padding-box,
+            linear-gradient(0deg, #00031c, #8ea0e0, #00031c) border-box;
+        }
+      `}</style>
     </motion.header>
   );
 }

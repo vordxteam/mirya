@@ -1,4 +1,4 @@
-import GradientButton from "@/app/ui/GradientButton";
+import GradientBlackButton from "@/app/ui/GradientBlackButton";
 import Image from "next/image";
 import React from "react";
 
@@ -35,7 +35,7 @@ const Impact = () => {
               service-driven industries MIRYA works everywhere.
             </p>
             <div className="w-fit">
-              <GradientButton
+              <GradientBlackButton
                 label="Get A Demo"
                 href="/user-testing"
                 bgColor="#00031C"

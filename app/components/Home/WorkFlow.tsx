@@ -1,4 +1,4 @@
-import GradientButton from "@/app/ui/GradientButton";
+import GradientBlackButton from "@/app/ui/GradientBlackButton";
 import Image from "next/image";
 import WorkFlowAnimation from "./HowtouseAnimations/WorkFlowAnimation";
 
@@ -40,7 +40,7 @@ const WorkFlow = () => {
           </p>
           
           <div className="w-fit mx-auto lg:mx-0 relative z-20">
-            <GradientButton
+            <GradientBlackButton
               label="Get Started"
               href="/contact"
               bgColor="#00031C"

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import BuildForYouSlider from "./BuildForYouSlider";
-import GradientButton from "@/app/ui/GradientButton";
+import GradientBlackButton from "@/app/ui/GradientBlackButton";
 
 export default function BuildForYou() {
   return (
@@ -36,7 +36,7 @@ export default function BuildForYou() {
             industries and enhance human experiences.
           </p>
           <div className="w-[172px]">
-            <GradientButton label="Contact Us Now" href="/contact" bgColor="#00031C" />
+            <GradientBlackButton label="Contact Us Now" href="/contact" bgColor="#00031C" />
           </div>
         </div>
         <BuildForYouSlider />

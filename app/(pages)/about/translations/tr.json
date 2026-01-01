@@ -90,6 +90,14 @@
       {
         "title": "Şeffaf Fiyatlandırma",
         "desc": "Net ve öngörülebilir fiyatlandırma. Gizli maliyet veya lisans sürprizi yok."
+      },
+      {
+        "title": "Start-Up Avantajları",
+        "desc": "Net ve öngörülebilir fiyatlandırma. Gizli maliyetler veya lisans sürprizleri yok."
+      },
+      {
+        "title": "Güvenilirlik İçin Tasarlandı",
+        "desc": "Kritik iş süreçleri için yüksek kararlılık, dayanıklılık ve güvenilirlik sunar."
       }
     ]
   },

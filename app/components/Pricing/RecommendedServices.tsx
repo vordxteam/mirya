@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import GradientButton from "@/app/ui/GradientButton";
-
+import Link from "next/link";
 export default function Recommended() {
   const reasons = [
     {
@@ -10,7 +9,7 @@ export default function Recommended() {
       discription:
         "We analyze your business processes, map automation opportunities, and create a clear ROI-driven automation roadmap for your organization.",
       link: "#",
-      btnLabel : "Book Session"
+      btnLabel: "Book Session",
     },
     {
       id: 2,
@@ -18,15 +17,14 @@ export default function Recommended() {
       discription:
         "We help companies establish their own automation team: processes, roles, governance, training, scaling roadmap",
       link: "#",
-            btnLabel : "Get Expert Help"
-
+      btnLabel: "Get Expert Help",
     },
     {
       id: 3,
       title: "Process Recording & Blueprinting",
       discription:
         "We observe and document real user workflows and convert them into automation ready blueprints. A perfect service for companies without in house documentation.",
-        btnLabel : "Book Session"
+      btnLabel: "Book Session",
     },
     {
       id: 4,
@@ -34,7 +32,7 @@ export default function Recommended() {
       discription:
         "Fastest response times, guaranteed SLAs, and a dedicated success manager who proactively ensures your automations run smoothly and continuously improve. ",
       link: "#",
-      btnLabel : "Get Expert Help"
+      btnLabel: "Get Expert Help",
     },
     {
       id: 5,
@@ -42,7 +40,7 @@ export default function Recommended() {
       discription:
         "We build a real working automation for your company within 4 weeks. The goal: tangible, measurable results before long-term commitment",
       link: "",
-      btnLabel : "Book Session"
+      btnLabel: "Book Session",
     },
   ];
   return (
@@ -59,12 +57,7 @@ export default function Recommended() {
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-[20px] text-center">
             Add on Services
           </h1>
-          <Image
-            src="/images/label.svg"
-            width={78}
-            height={16}
-            alt="line"
-          />
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="heading-1 font-medium w-full text-center max-w-[750px]">
           Additional Recommended Services
@@ -81,12 +74,16 @@ export default function Recommended() {
             }}
             className="p-px"
           >
-            <div className="p-6 space-y-3 bg-[#0a1560]  h-full overflow-hidden relative rounded-xl">
-              <div className="absolute top-6 left-30 -z-10 pointer-events-none">
+            {/* <div className="p-6 space-y-3 bg-[#0a1560]  h-full overflow-hidden relative rounded-xl"> */}
+            <div className="p-6 space-y-3 bg-[#0a1560] h-full overflow-hidden relative rounded-xl z-10">
+
+              {/* <div className="absolute top-6 left-30 -z-10 pointer-events-none"> */}
+              <div className="absolute top-6 left-30 pointer-events-none z-0">
+
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
 
-              <div className="absolute top-0 right-0">
+<div className="absolute top-0 right-0 pointer-events-none z-0">
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
 
@@ -98,13 +95,22 @@ export default function Recommended() {
                   {item.discription}
                 </p>
               </div>
-              <div className="pt-8 max-w-full w-[169px] inline-flex">
-                <GradientButton
-                  bgColor="#00031C"
-                  textColor="#FFFFFF"
-                  label={item.btnLabel}
-                  href={(item.link as string) || ""}
-                />
+             
+              <div className="pt-8 max-w-full w-[179px] inline-flex">
+                <div
+                  className="rounded-full p-[1.5px]"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+                  }}
+                >
+                  <Link
+                    href={(item.link as string) || "/contact"}
+                    className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
+                  >
+                    {item.btnLabel}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

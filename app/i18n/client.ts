@@ -14,11 +14,14 @@ import trTranslation from './locales/tr/translation.json';
 import enAbout from '@/app/(pages)/about/translations/en.json';
 import deAbout from '@/app/(pages)/about/translations/de.json';
 import trAbout from '@/app/(pages)/about/translations/tr.json';
-
+// Layout translation files
+import enLayout from '@/app/Layout/translation/en.json';
+import deLayout from '@/app/Layout/translation/de.json';
+import trLayout from '@/app/Layout/translation/tr.json';
 const resources = {
-  en: { translation: enTranslation, about: enAbout },
-  de: { translation: deTranslation, about: deAbout },
-  tr: { translation: trTranslation, about: trAbout },
+  en: { translation: enTranslation, about: enAbout, layout: enLayout },
+  de: { translation: deTranslation, about: deAbout, layout: deLayout },
+  tr: { translation: trTranslation, about: trAbout, layout: trLayout },
 };
 
 // Initialize i18next only once
@@ -44,7 +47,7 @@ if (!i18next.isInitialized) {
       react: {
         useSuspense: false,
       },
-      ns: ['translation', 'about'],
+      ns: ['translation', 'about' ,'layout'],
       defaultNS: 'translation',
     });
 }

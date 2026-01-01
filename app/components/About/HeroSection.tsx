@@ -105,7 +105,7 @@
 //            style={{
 //               border: "1px solid transparent",
 //               backgroundImage: `
-//       linear-gradient(#00031C, #00031C), 
+//       linear-gradient(#00031C, #00031C),
 //       linear-gradient(to right, #38385D, #22223C, #686DDD, #22223C, #38385D)
 //     `,
 //               backgroundOrigin: "border-box",
@@ -207,7 +207,7 @@ const HeroSection = () => {
     const spans = words.map((word, i) => {
       const span = document.createElement("span");
       span.textContent = word + (i < words.length - 1 ? " " : "");
-      span.style.color = "#FFFFFF"; 
+      span.style.color = "#FFFFFF";
       element.appendChild(span);
       return span;
     });
@@ -215,16 +215,16 @@ const HeroSection = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: element,
-        start: "top 80%", 
-        end: "bottom 40%", 
+        start: "top 80%",
+        end: "bottom 40%",
         scrub: 1.5,
       },
     });
 
     tl.to(spans, {
       color: "#73799B",
-      stagger: 0.1,      
-      ease: "none",      
+      stagger: 0.1,
+      ease: "none",
     });
 
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
@@ -237,13 +237,17 @@ const HeroSection = () => {
 
   const pointerVariants: Variants = {
     hidden: { opacity: 0, x: 100, y: 100 },
-    visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8, delay: 0.5, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { duration: 0.8, delay: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
     <div>
       <div className="flex flex-col items-center justify-center pb-[75px] pt-0 sm:pt-10 px-2 md:px-10 bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain relative">
-        
         <div className="absolute top-0 -z-10 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]" />
         </div>
@@ -257,9 +261,7 @@ const HeroSection = () => {
         </div>
 
         {/* Main Title */}
-        <h1
-          className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] w-full text-center pb-3 sm:pb-6"
-        >
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] w-full text-center pb-3 sm:pb-6">
           {t("hero.title")}
         </h1>
 
@@ -301,7 +303,14 @@ const HeroSection = () => {
                   fill="url(#paint0_linear_475_3213)"
                 />
                 <defs>
-                  <linearGradient id="paint0_linear_475_3213" x1="7.05714" y1="1.59944" x2="7.02054" y2="12.8527" gradientUnits="userSpaceOnUse">
+                  <linearGradient
+                    id="paint0_linear_475_3213"
+                    x1="7.05714"
+                    y1="1.59944"
+                    x2="7.02054"
+                    y2="12.8527"
+                    gradientUnits="userSpaceOnUse"
+                  >
                     <stop offset="0.0029" stop-color="#463BBF" />
                     <stop offset="0.681" stop-color="#9C96E3" />
                     <stop offset="1" stop-color="#463BBF" />
@@ -330,7 +339,12 @@ const HeroSection = () => {
             animate="visible"
             className="bottom-0 left-[50%] -translate-x-1/2 absolute"
           >
-            <Image src="/images/gradient-pointer.png" alt="gradient pointer" width={40} height={42} />
+            <Image
+              src="/images/gradient-pointer.png"
+              alt="gradient pointer"
+              width={40}
+              height={42}
+            />
           </motion.div>
         </div>
       </div>

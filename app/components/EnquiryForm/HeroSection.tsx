@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GradientButton from "@/app/ui/GradientButton";
-// import Cards from "./Cards";
 
 const HeroSection = () => {
   const paragraphRef = useRef<HTMLDivElement>(null);
@@ -76,35 +75,49 @@ const HeroSection = () => {
       },
     },
   };
+
   return (
-    <div className="">
-<div className="flex z-100 bg-[#00031c] flex-col items-center justify-center sm:pb-[75px] pt-[151px] px-2 md:px-10 bg-[url('/images/form-bg.png')] bg-lightgray bg-[length:100%_132.927%] bg-[position:0px_-216px] bg-no-repeat relative before:absolute before:inset-0 before:bg-black/40 before:-z-10">
-        <div className="absolute top-0">
-          <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
-        </div>
+    /* Added 'isolate' to ensure z-index stacking stays within this section */
+    <div className="flex flex-col items-center justify-center pb-[75px] pt-0 sm:pt-24 px-2 md:px-10 bg-[url('/images/enquery-bg.png')] bg-no-repeat bg-bottom bg-cover relative isolate">
+      {/* Light Effect: Positioned relative to parent, z-0 sits above background image */}
+      <div className="absolute top-16 left-1/2 -translate-x-1/2 z-0 pointer-events-none">
+        <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]" />
+      </div>
+
+      {/* Content wrapper with z-10 to stay above the blue glow */}
+      <div className="relative z-10 flex flex-col items-center">
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
             Enquiry Form
           </h1>
-                   <Image src="/images/label.svg" width={78} height={16} alt="line" />
-         
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[708px] w-full text-center pb-3 sm:pb-6">
+
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[708px] w-full text-center pb-3 sm:pb-6 text-white">
           Enterprise Enquiry Form{" "}
         </h1>
+
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
-          This form is for organizations interested in MIRYA’s Enterprise automation solutions and tailored support packages. If you’re looking to explore MIRYA’s standard plans, you can visit our Pricing or Documentation pages.
+          This form is for organizations interested in MIRYA’s Enterprise
+          automation solutions and tailored support packages. If you’re looking
+          to explore MIRYA’s standard plans, you can visit our Pricing or
+          Documentation pages.
         </p>
 
-        <GradientButton label="Enter To Start" href="sales-form" bgColor="#0274FE" textColor="#FFFFFF"  />
+        <GradientButton
+          label="Enter To Start"
+          href="sales-form"
+          bgColor="#0274FE"
+          textColor="#FFFFFF"
+        />
 
-        <div className="relative">
+        <div className="relative mt-10">
           <motion.div
             variants={dashVariants}
             initial="hidden"
             animate="visible"
-            className=" bottom-0"
+            className="bottom-0"
           >
             <Image src="/images/dash.png" alt="dash" width={530} height={121} />
           </motion.div>

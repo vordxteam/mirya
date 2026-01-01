@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import GradientButton from "@/app/ui/GradientButton";
-
+import Link from "next/link";
 export default function Services() {
   const reasons = [
     {
@@ -41,7 +41,7 @@ export default function Services() {
   ];
   return (
     <div className=" px-3 sm:px-20 max-w-[1440px] mx-auto relative z-10 bg-[#00031C] overflow-hidden">
-      <div className="flex justify-center relative">
+      <div className="flex justify-center relative -z-10 pointer-events-none">
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </div>
       <div className="flex z-100 bg-[#00031C] flex-col items-center justify-center  pt-15 px-2 md:px-10  relative">
@@ -53,12 +53,7 @@ export default function Services() {
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-[20px] text-center">
             Services
           </h1>
-          <Image
-            src="/images/label.svg"
-            width={78}
-            height={16}
-            alt="line"
-          />
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="heading-1 font-medium w-full text-center pb-3 sm:pb-6 max-w-[750px]">
           Professional Services For High Impact Automation
@@ -80,12 +75,15 @@ export default function Services() {
             }}
             className="p-px"
           >
-            <div className="p-6 space-y-3 bg-[#0a1560]  h-full overflow-hidden relative rounded-xl">
-              <div className="absolute top-6 left-30 -z-10 pointer-events-none">
+            {/* <div className="p-6 space-y-3 bg-[#0a1560]  h-full overflow-hidden relative rounded-xl"> */}
+            <div className="p-6 space-y-3 bg-[#0a1560] h-full overflow-hidden relative rounded-xl z-10">
+              {/* <div className="absolute top-6 left-30 -z-10 pointer-events-none"> */}
+              <div className="absolute top-6 left-30 pointer-events-none z-0">
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
 
-              <div className="absolute top-0 right-0 ">
+              {/* <div className="absolute top-0 right-0  "> */}
+              <div className="absolute top-0 right-0 pointer-events-none z-0">
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
 
@@ -97,13 +95,26 @@ export default function Services() {
                   {item.discription}
                 </p>
               </div>
+
               <div className="pt-8 w-[147px]">
-                <GradientButton
-                  bgColor="#00031C"
-                  textColor="#FFFFFF"
-                  label="Book Session"
-                  href={(item.link as string) || ""}
-                />
+                <div
+                  className="rounded-full p-px w-full"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+                  }}
+                >
+                  <Link
+                    href={(item.link as string) || "/start-up"}
+                    className="font-normal py-3 px-6 rounded-full w-full flex items-center justify-center"
+                    style={{
+                      background: "#00031C",
+                      color: "white",
+                    }}
+                  >
+                    Learn More
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

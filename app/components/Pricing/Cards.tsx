@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import GradientButton from "@/app/ui/GradientButton";
+import GradientBlackButton from "@/app/ui/GradientBlackButton";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import GradientButton from "@/app/ui/GradientButton";
+import Link from "next/link";
 
 type Plan = {
   id: number;
@@ -230,13 +232,35 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
                 )}
               </div>
 
-              <div className="w-[135px] pt-10">
-                <GradientButton
-                  bgColor={item.btnColor}
-                  label={item.btnText}
-                  textColor="white"
-                  href="#"
-                />
+              <div className="pt-10">
+                {/* Third card → custom Contact Us link button */}
+                {item.id === 3 && item.btnText === "Contact Us" ? (
+                  <div
+                    className="inline-block rounded-full p-[1.5px]"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+                    }}
+                  >
+                    <Link
+                      href="/contact"
+                      className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
+                    >
+                      Contact Us
+                    </Link>
+                  </div>
+                ) : item.btnText === "Contact Us" ? (
+                  /* Other Contact Us cards */
+                  <GradientButton label={item.btnText} href="/contact" />
+                ) : (
+                  /* Get Started */
+                  <GradientBlackButton
+                    bgColor={item.btnColor}
+                    label={item.btnText}
+                    textColor="white"
+                    href="#"
+                  />
+                )}
               </div>
             </div>
           </motion.div>
