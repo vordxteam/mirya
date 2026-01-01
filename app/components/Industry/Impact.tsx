@@ -1,8 +1,10 @@
+"use client";
 import GradientBlackButton from "@/app/ui/GradientBlackButton";
 import Image from "next/image";
-import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Impact = () => {
+  const { t } = useTranslation("industries");
   return (
     <div className="max-w-[1440px] m-auto px-5 md:px-20 py-[60px]">
       <div className="flex flex-col md:flex-row gap-10 items-start md:items-center justify-between">
@@ -16,9 +18,9 @@ const Impact = () => {
                 alt="line"
               />
               <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-                Impact
+                {t("impact.badge")}{" "}
               </h1>
-               <Image
+              <Image
                 src="/images/label.svg"
                 width={78}
                 height={16}
@@ -26,17 +28,14 @@ const Impact = () => {
               />
             </div>
             <h1 className="text-[30px] sm:text-[40px] md:text-[48px] pb-3 sm:pb-6 font-medium leading-10 sm:leading-14 tracking-[-1.44px] max-w-[500px] w-full text-start">
-              Where MIRYA Creates Real Impact
+              {t("impact.title")}{" "}
             </h1>
             <p className="text-[#CAC9D1] pb-3 sm:pb-6 text-[14px] font-normal leading-5 text-start max-w-[510px]">
-              MIRYA brings intelligent, no-code automation to organizations that
-              want to eliminate manual work, accelerate operations, and scale
-              without increasing headcount. From data-heavy departments to
-              service-driven industries MIRYA works everywhere.
+              {t("impact.description")}
             </p>
             <div className="w-fit">
               <GradientBlackButton
-                label="Get A Demo"
+                label={t("impact.button")}
                 href="/user-testing"
                 bgColor="#00031C"
                 textColor="#fff"

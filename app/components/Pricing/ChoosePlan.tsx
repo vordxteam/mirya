@@ -1,8 +1,12 @@
+"use client"
 import GradientButton from "@/app/ui/GradientButton";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const ChoosePlan = () => {
+    const { t } = useTranslation("pricing");
+
   return (
     <div className="max-w-[1440px] m-auto px-2 md:px-20">
       {/* SECTION 1 */}
@@ -26,19 +30,18 @@ const ChoosePlan = () => {
           {/* Text Content - Added 'relative z-10' to stay ABOVE the lights */}
           <div className="relative z-10 space-y-3">
             <h1 className="text-[#F4F7FF] text-[24px] font-semibold leading-7">
-              Automation that scales with your workflow
+              {t("choosePlan.banner.title")}
             </h1>
             <p className="max-w-[709px] text-[#CAC9D1] text-[14px] font-normal leading-5">
-              Run smarter automation without per-step charges. Pay only for what
-              delivers real value, not for every tiny interaction inside your
-              workflow.
+                           {t("choosePlan.banner.description")}
+
             </p>
           </div>
 
           {/* Button - Added 'relative z-10' to stay ABOVE the lights */}
           <div className="relative z-10 w-fit flex items-end justify-end">
             <GradientButton
-              label="Discover How it Works"
+              label={t("choosePlan.banner.button")}
               href="#"
               bgColor="#0274FE"
               textColor="#fff"
@@ -51,28 +54,27 @@ const ChoosePlan = () => {
       <div className="mt-12 pb-[60px] overflow-hidden bg-[#00031c] relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <h1 className="text-[#F4F7FF] text-[40px] font-medium leading-12 max-w-[500px] w-full capitalize">
-            Need a plan that fits you better?
+            {t("choosePlan.cta.title")}
           </h1>
         </div>
         <div></div>
         <div>
           <div
-           style={{
-  background:
-    "linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)",
-  border: "1px solid #00031C",
-}}
-
+            style={{
+              background:
+                "linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)",
+              border: "1px solid #00031C",
+            }}
             className="rounded-xl p-px h-[235px] max-w-[493px] w-full"
           >
             <div className="px-8 py-6 bg-[#11238F] rounded-2xl flex flex-col justify-between h-full">
               <div>
                 <h1 className="text-[#F4F7FF] text-[28px] font-medium leading-8">
-                  Start-up Plan - 25% off
+                  {t("choosePlan.cta.startup.title")}
                 </h1>
                 <p className="text-[#CAC9D1] text-[14px] font-normal leading-5">
-                  Growing team under 20 employees? See if you qualify for our
-                  Start-up Plan and get 25% off the Pro Plan.
+                                   {t("choosePlan.cta.startup.description")}
+
                 </p>
               </div>
               <div
@@ -90,7 +92,7 @@ const ChoosePlan = () => {
                     color: "white",
                   }}
                 >
-                  Learn More
+                  {t("choosePlan.cta.startup.button")}
                 </Link>
               </div>
             </div>

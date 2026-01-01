@@ -4,8 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Cards from "./Cards";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation("pricing");
+
   const paragraphRef = useRef<HTMLDivElement>(null);
 
   const [activeTab, setActiveTab] = useState<"monthly" | "annual">("monthly");
@@ -86,21 +89,20 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />{" "}
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Subscription
+            {t("hero.badge")}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] w-full text-center pb-3 sm:pb-6">
-          Choose the Right Plan to Automate Smarter
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[1016px] w-full text-center pb-3 sm:pb-6">
+          {t("hero.title")}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
-          Every plan unlocks intelligent automation, seamless execution, and
-          actionable insights—so you can get more done with less effort.
+          {t("hero.description")}
         </p>
         <div className="flex justify-center ">
           {/* <div className="inline-flex bg-transparent custom-border max-w-[222px] py-2"> */}
-<div
-  className="
+          <div
+            className="
     inline-flex
     bg-transparent
     max-w-[300px]
@@ -112,8 +114,7 @@ const HeroSection = () => {
     border
     border-[#1E2252]
   "
->
-
+          >
             <motion.button
               onClick={() => setActiveTab("monthly")}
               className={`bg-[#00041e] rounded-full px-6 py-[6px] cursor-pointer ${
@@ -126,7 +127,7 @@ const HeroSection = () => {
               }}
               transition={{ duration: 0.3 }}
             >
-              Half Yearly
+              {t("hero.tabs.halfYearly")}
             </motion.button>
             <motion.button
               onClick={() => setActiveTab("annual")}
@@ -140,7 +141,7 @@ const HeroSection = () => {
               }}
               transition={{ duration: 0.3 }}
             >
-              Annual
+              {t("hero.tabs.annual")}
             </motion.button>
           </div>
         </div>

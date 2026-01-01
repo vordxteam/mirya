@@ -565,7 +565,7 @@ const AcademyDetailPage = () => {
               <span className="text-white">{articleData.title}</span>
             </div>
 
-            <div className="pb-24">
+            <div className="pb-[66px]">
               <div className="mb-12">
                 <h1 className="text-[32px] sm:text-[48px] font-medium leading-tight mb-6">
                   {articleData.title}

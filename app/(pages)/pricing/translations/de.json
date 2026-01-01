@@ -1,0 +1,111 @@
+{
+  "hero": {
+    "badge": "Abonnement",
+    "title": "Wählen Sie den richtigen Plan für intelligentere Automatisierung",
+    "description": "Jeder Plan bietet intelligente Automatisierung, nahtlose Ausführung und umsetzbare Erkenntnisse – damit Sie mit weniger Aufwand mehr erreichen.",
+    "tabs": {
+      "halfYearly": "Halbjährlich",
+      "annual": "Jährlich"
+    }
+  },
+
+  "plans": {
+    "buttons": {
+      "getStarted": "Jetzt Loslegen",
+      "contactUs": "Kontaktieren Sie uns"
+    },
+    "monthly": [
+      {
+        "title": "Beliebtestes",
+        "description": "Ideal für Einzelpersonen oder kleine Teams, die ihre Automatisierung beginnen.",
+        "features": [
+          "Alle Funktionen",
+          "E-Mail- und Chat-Support",
+          "No-Code Designer",
+          "In der Cloud",
+          "24/7 Kundenservice"
+        ],
+        "price": "€23,94",
+        "period": "/ pro Halbjahr"
+      },
+      {
+        "title": "Enterprise",
+        "description": "Ideal für wachsende Unternehmen, die Geschwindigkeit, Leistung und Flexibilität verlangen.",
+        "features": [
+          "Alle Premium-Funktionen",
+          "Support 1 Std./Monat. E-Mail-Support/Telefon innerhalb 48 Std.",
+          "Lokal installiert (On-Premise)",
+          "Individuelles Onboarding",
+          "24/7 Kundenservice"
+        ],
+        "tagline": "Individuelle Preise für Ihre Skalierung"
+      },
+      {
+        "title": "White Label",
+        "description": "Für Partner, die unsere Technologie unter ihrer eigenen Marke anbieten möchten.",
+        "features": [
+          "Vollständige Anpassung von Markenname, Logo und Farben",
+          "Lebenslanger Support",
+          "Verkaufen Sie die Plattform als Ihr eigenes Produkt",
+          "Schnelle Bereitstellung mit minimalem Aufwand",
+          "Dediziertes Account-Management"
+        ],
+        "tagline": "Für das beste Angebot lassen Sie uns persönlich sprechen."
+      }
+    ],
+    "annual": [
+      {
+        "title": "Professionell",
+        "description": "Ideal für Einzelpersonen oder kleine Teams, die ihre Automatisierung beginnen.",
+        "features": [
+          "Alle Funktionen",
+          "E-Mail- und Chat-Support",
+          "No-Code Designer",
+          "In der Cloud",
+          "24/7 Kundenservice"
+        ],
+        "price": "€2,990",
+        "period": "/ pro Jahr"
+      },
+      {
+        "title": "Enterprise",
+        "description": "Ideal für wachsende Unternehmen, die Geschwindigkeit, Leistung und Flexibilität verlangen.",
+        "features": [
+          "Alle Premium-Funktionen",
+          "Support 1 Std./Monat. E-Mail-Support/Telefon innerhalb 48 Std.",
+          "Lokal installiert (On-Premise)",
+          "Individuelles Onboarding",
+          "24/7 Kundenservice"
+        ],
+        "tagline": "Individuelle Preise für Ihre Skalierung"
+      },
+      {
+        "title": "White Label",
+        "description": "Für Partner, die unsere Technologie unter ihrer eigenen Marke anbieten möchten.",
+        "features": [
+          "Vollständige Anpassung von Markenname, Logo und Farben",
+          "Lebenslanger Support",
+          "Verkaufen Sie die Plattform als Ihr eigenes Produkt",
+          "Schnelle Bereitstellung mit minimalem Aufwand",
+          "Dediziertes Account-Management"
+        ],
+        "tagline": "Für das beste Angebot lassen Sie uns persönlich sprechen."
+      }
+    ]
+  },
+  "choosePlan": {
+    "banner": {
+      "title": "Automatisierung, die mit Ihrem Workflow wächst",
+      "description": "Nutzen Sie intelligentere Automatisierung ohne Gebühren pro Schritt. Zahlen Sie nur für das, was echten Mehrwert bietet.",
+      "button": "Entdecken Sie, wie es funktioniert"
+    },
+    "cta": {
+      "title": "Benötigen Sie einen Plan, der besser zu Ihnen passt?",
+      "startup": {
+        "title": "Start-up-Plan - 25% Rabatt",
+        "description": "Wachsendes Team mit weniger als 20 Mitarbeitern? Prüfen Sie, ob Sie sich für unseren Start-up-Plan qualifizieren.",
+        "button": "Mehr erfahren"
+      }
+    }
+  }
+}

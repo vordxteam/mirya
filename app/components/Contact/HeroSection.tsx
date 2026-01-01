@@ -1,19 +1,18 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GradientButton from "@/app/ui/GradientButton";
-import Link from "next/link";
 // import Cards from "./Cards";
-
+import { useTranslation } from "react-i18next";
 const HeroSection = () => {
+  const { t } = useTranslation("contact"); // ✅ use "contact" namespace
+
   const paragraphRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const element = paragraphRef.current;
     if (!element) return;
-
     const text = element.textContent || "";
     const words = text.split(" ");
 
@@ -83,36 +82,19 @@ const HeroSection = () => {
         <div className="absolute top-0 -z-10 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
-        {/* Change <Link> to <div> to remove the pointer cursor */}
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Contact Us
+            {t("hero.badge")}{" "}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[708px] w-full text-center pb-3 sm:pb-6">
-          Get in Touch With the MIRYA Team
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[742px] w-full text-center pb-3 sm:pb-6">
+          {t("hero.title")}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
-          Tell us what you’re looking for, and we’ll point you in the right
-          direction. Fast, friendly, and tailored support always.
+          {t("hero.description")};
         </p>
-
-        {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <GradientButton
-            label="Get Started"
-            href="/user-testing"
-            bgColor="#0274FE"
-            textColor="#fff"
-          />
-          <GradientButton
-            label="Contact Us"
-            href="#"
-            bgColor="#00031C"
-            textColor="#fff"
-          />
-        </div> */}
 
         <div className="relative">
           <motion.div

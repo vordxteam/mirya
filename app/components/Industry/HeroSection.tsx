@@ -4,10 +4,11 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
   const paragraphRef = useRef<HTMLDivElement>(null);
-
+  const { t } = useTranslation('industries');
   useEffect(() => {
     const element = paragraphRef.current;
     if (!element) return;
@@ -84,8 +85,7 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Industries We Empower
-          </h1>
+ {t('hero.badge')}          </h1>
           <Image
             src="/images/label.svg"
             width={78}
@@ -94,12 +94,11 @@ const HeroSection = () => {
           />
         </div>
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[716px] w-full text-center sm:px-0 px-4 pb-3 sm:pb-6">
-          Where MIRYA Creates Real Impact
+          {t('hero.title')}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
-          MIRYA brings intelligent, no-code automation that adapts to these
-          realities, eliminating manual tasks and enabling teams to scale
-          efficiently.
+                   {t('hero.description')}
+
         </p>
         <div className="flex items-center justify-center gap-3">
           <div
@@ -153,7 +152,7 @@ const HeroSection = () => {
                     </linearGradient>
                   </defs>
                 </svg>
-                <span>Last updated on November 2025</span>
+                <span>{t('hero.lastUpdated')}</span>
               </div>
             </Link>
           </div>

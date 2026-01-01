@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "badge": "Güçlendirdiğimiz Sektörler",
+    "title": "MIRYA’nın Gerçek Etki Yarattığı Yer",
+    "description": "MIRYA, gerçek ihtiyaçlara uyum sağlayan akıllı no-code otomasyon sunar; manuel işleri ortadan kaldırır ve ekiplerin verimli şekilde ölçeklenmesini sağlar.",
+    "lastUpdated": "Kasım 2025 tarihinde güncellendi"
+  },
+
+  "aiPowered": {
+    "badge": "Yapay Zeka Destekli Kararlar",
+    "title": "MIRYA Neleri Otomatikleştirir",
+    "description": "MIRYA’nın otomasyon zekâsı mevcut araçlarınız ve sistemlerinizle uyumlu çalışarak uçtan uca süreçleri güçlendirir.",
+    "button": "MIRYA ile Otomatikleştir",
+
+    "features": [
+      {
+        "title": "Belgeleri okur ve anlar",
+        "description": "MIRYA; e-postalar, PDF’ler, formlar, tablolar ve yapılandırılmamış belgelerden otomatik olarak anlam çıkarır.",
+        "image": "/images/automate1.svg"
+      },
+      {
+        "title": "Sistemleri günceller ve doğrular",
+        "description": "ERP, CRM, İK yazılımları ve eski sistemler dahil tüm uygulamaların güncel ve senkron kalmasını sağlar.",
+        "image": "/images/automate2.svg"
+      },
+      {
+        "title": "Akıllı kararlar alır",
+        "description": "İş kurallarını değerlendirir, sayısal verileri analiz eder, mantıksal koşulları uygular ve karmaşık iş akışlarında desenler belirler.",
+        "image": "/images/automate3.svg"
+      },
+      {
+        "title": "Özel durumları otomatik yönetir",
+        "description": "Eksik veriler, format değişiklikleri veya beklenmeyen durumlarda MIRYA mantık ve geri dönüş yollarıyla süreci devam ettirir.",
+        "image": "/images/automation6.png"
+      },
+      {
+        "title": "Sonuçlardan öğrenir",
+        "description": "MIRYA sonuçları analiz eder, desenleri algılar ve kararları sürekli olarak iyileştirir.",
+        "image": "/images/automation7.png"
+      },
+      {
+        "title": "Yüksek ölçek için tasarlandı",
+        "description": "Görev açısından kritik otomasyonlar için hata yönetimi, kayıt ve kurtarma özellikleriyle sürekli çalışacak şekilde geliştirilmiştir.",
+        "image": "/images/automation8.png"
+      },
+      {
+        "title": "İş akışlarını koordine eder",
+        "description": "Çok aşamalı iş akışlarını basitleştirir; girdileri toplar, adımları yapılandırır ve sonuçları izler.",
+        "image": "/images/automate4.svg"
+      },
+      {
+        "title": "Yazılımları insan gibi kullanır",
+        "description": "MIRYA yazılımlarla tıpkı bir insan gibi etkileşime girer: tıklar, yazar, seçer ve gezinir.",
+        "image": "/images/automate5.svg"
+      }
+    ]
+  },
+
+  "impact": {
+    "badge": "Etki",
+    "title": "MIRYA’nın Gerçek Etki Yarattığı Yer",
+    "description": "MIRYA, manuel işleri azaltmak, operasyonları hızlandırmak ve ek personel olmadan ölçeklenmek isteyen kurumlara akıllı otomasyon sunar.",
+    "button": "Demo Al"
+  },
+
+  "industries": {
+    "badge": "Sektörler",
+    "title": "Güçlendirdiğimiz Sektörler",
+    "description": "Yüksek hacimli arka ofis işlemlerinden müşteri odaklı iş akışlarına kadar MIRYA her sektöre kolayca uyum sağlar.",
+
+    "list": [
+      {
+        "title": "Perakende & E-Ticaret",
+        "description": "Sipariş işlemlerini optimize edin, stokları gerçek zamanlı güncelleyin ve müşteri iletişimini otomatikleştirin."
+        , "image": "/images/industry1.svg"
+ 
+    },
+      {
+        "title": "Finans & Muhasebe",
+        "description": "Fatura işleme, mutabakat, kredi kontrolleri ve finansal raporlamayı otomatikleştirin."
+     
+        , "image": "/images/industry2.svg"
+},
+      {
+        "title": "Kamu Sektörü",
+        "description": "Vaka yönetimini hızlandırın, belge iş akışlarını otomatikleştirin ve vatandaş hizmetlerini iyileştirin."
+        , "image": "/images/industry3.svg"
+ 
+    },
+      {
+        "title": "Lojistik & Mobilite",
+        "description": "Rezervasyon e-postalarını işleyin, gönderi güncellemeleri sağlayın ve operasyonel süreçleri yönetin."
+        , "image": "/images/industry4.svg"
+
+    },
+      {
+        "title": "Müşteri Hizmetleri",
+        "description": "Talepleri sınıflandırın, yönlendirin ve manuel ön işlemleri ortadan kaldırın."
+     
+        , "image": "/images/industry5.svg"
+},
+      {
+        "title": "Sağlık",
+        "description": "Hasta kabulü, dokümantasyon, sigorta süreçleri ve klinik koordinasyonu otomatikleştirin."
+        , "image": "/images/industry6.svg"
+ 
+    }
+    ]
+  }
+}

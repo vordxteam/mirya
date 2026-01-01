@@ -1,0 +1,112 @@
+{
+  "hero": {
+    "badge": "Subscription",
+    "title": "Choose the Right Plan to Automate Smarter",
+    "description": "Every plan unlocks intelligent automation, seamless execution, and actionable insights—so you can get more done with less effort.",
+    "tabs": {
+      "halfYearly": "Half Yearly",
+      "annual": "Annual"
+    }
+  },
+
+  "plans": {
+    "buttons": {
+      "getStarted": "Get Started",
+      "contactUs": "Contact Us"
+    },
+    "monthly": [
+      {
+        "title": "Most popular",
+        "description": "Ideal for Individuals or small teams beginning their automation journey.",
+        "features": [
+          "All features",
+          "E-mail and chat support",
+          "No-code designer",
+          "On cloud",
+          "24/7 customer service"
+        ],
+        "price": "€23,94",
+        "period": "/per Half Yearly"
+      },
+      {
+        "title": "Enterprise",
+        "description": "Ideal for growing businesses that demand speed, power, and flexibility.",
+        "features": [
+          "All premium features",
+          "Support 1h/month. Email support 48hrs phone",
+          "On premise",
+          "Individual onboarding",
+          "24/7 customer service"
+        ],
+        "tagline": "Custom Pricing Designed For Your Scale"
+      },
+      {
+        "title": "White Label",
+        "description": "For partners who want to offer our technology under their own brand.",
+        "features": [
+          "Full customization brand name, logo and colors",
+          "Lifetime support",
+          "Sell the platform as your own product",
+          "Quick deployment with minimal setup start automating immediately",
+          "Dedicated account management"
+        ],
+        "tagline": "To give you the best deal, let's chat in person."
+      }
+    ],
+    "annual": [
+      {
+        "title": "Professional",
+        "description": "Ideal for Individuals or small teams beginning their automation journey.",
+        "features": [
+          "All features",
+          "E-mail and chat support",
+          "No-code designer",
+          "On cloud",
+          "24/7 customer service"
+        ],
+        "price": "€2,990",
+        "period": "/per year"
+      },
+      {
+        "title": "Enterprise",
+        "description": "Ideal for growing businesses that demand speed, power, and flexibility.",
+        "features": [
+          "All premium features",
+          "Support 1h/month. Email support 48hrs phone",
+          "On premise",
+          "Individual onboarding",
+          "24/7 customer service"
+        ],
+        "tagline": "Custom Pricing Designed For Your Scale"
+      },
+      {
+        "title": "White Label",
+        "description": "For partners who want to offer our technology under their own brand.",
+        "features": [
+          "Full customization brand name, logo and colors",
+          "Lifetime support",
+          "Sell the platform as your own product",
+          "Quick deployment with minimal setup",
+          "Dedicated account management"
+        ],
+        "tagline": "To give you the best deal, let's chat in person."
+      }
+    ]
+  },
+
+  "choosePlan": {
+    "banner": {
+      "title": "Automation that scales with your workflow",
+      "description": "Run smarter automation without per-step charges. Pay only for what delivers real value, not for every tiny interaction inside your workflow.",
+      "button": "Discover How it Works"
+    },
+    "cta": {
+      "title": "Need a plan that fits you better?",
+      "startup": {
+        "title": "Start-up Plan - 25% off",
+        "description": "Growing team under 20 employees? See if you qualify for our Start-up Plan and get 25% off the Pro Plan.",
+        "button": "Learn More"
+      }
+    }
+  }
+}

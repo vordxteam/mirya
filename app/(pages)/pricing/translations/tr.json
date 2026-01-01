@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Abonelik",
+    "title": "Daha Akıllı Otomatikleştirmek İçin Doğru Planı Seçin",
+    "description": "Her plan akıllı otomasyon, sorunsuz yürütme ve eyleme dönüştürülebilir içgörüler sunar; böylece daha az çabayla daha fazlasını yapabilirsiniz.",
+    "tabs": {
+      "halfYearly": "Altı Aylık",
+      "annual": "Yıllık"
+    }
+  },
+
+ 
+  "plans": {
+    "buttons": {
+      "getStarted": "Başlayın",
+      "contactUs": "Bizimle İletişime Geçin"
+    },
+    "monthly": [
+      {
+        "title": "En Popüler",
+        "description": "Otomasyon yolculuğuna yeni başlayan bireyler veya küçük ekipler için idealdir.",
+        "features": [
+          "Tüm özellikler",
+          "E-posta ve sohbet desteği",
+          "Kod gerektirmeyen tasarımcı",
+          "Bulut üzerinde",
+          "7/24 müşteri hizmetleri"
+        ],
+        "price": "€23,94",
+        "period": "/yarı yıllık"
+      },
+      {
+        "title": "Kurumsal",
+        "description": "Hız, güç ve esneklik gerektiren büyüyen işletmeler için idealdir.",
+        "features": [
+          "Tüm premium özellikler",
+          "Ayda 1 saat destek. E-posta desteği 48 saat, telefon",
+          "Yerinde kurulum",
+          "Bireysel onboarding",
+          "7/24 müşteri hizmetleri"
+        ],
+        "tagline": "Ölçeğinize Göre Özel Fiyatlandırma"
+      },
+      {
+        "title": "Beyaz Etiket",
+        "description": "Teknolojimizi kendi markaları altında sunmak isteyen iş ortakları için.",
+        "features": [
+          "Marka adı, logo ve renkler ile tam özelleştirme",
+          "Ömür boyu destek",
+          "Platformu kendi ürününüz olarak satın",
+          "Hızlı kurulum ile hemen otomasyona başlayın",
+          "Özel hesap yönetimi"
+        ],
+        "tagline": "En iyi teklifi sunabilmek için gelin birebir konuşalım."
+      }
+    ],
+    "annual": [
+      {
+        "title": "Profesyonel",
+        "description": "Otomasyon yolculuğuna yeni başlayan bireyler veya küçük ekipler için idealdir.",
+        "features": [
+          "Tüm özellikler",
+          "E-posta ve sohbet desteği",
+          "Kod gerektirmeyen tasarımcı",
+          "Bulut üzerinde",
+          "7/24 müşteri hizmetleri"
+        ],
+        "price": "€2,990",
+        "period": "/yıllık"
+      },
+      {
+        "title": "Kurumsal",
+        "description": "Hız, güç ve esneklik gerektiren büyüyen işletmeler için idealdir.",
+        "features": [
+          "Tüm premium özellikler",
+          "Ayda 1 saat destek. E-posta desteği 48 saat, telefon",
+          "Yerinde kurulum",
+          "Bireysel onboarding",
+          "7/24 müşteri hizmetleri"
+        ],
+        "tagline": "Ölçeğinize Göre Özel Fiyatlandırma"
+      },
+      {
+        "title": "Beyaz Etiket",
+        "description": "Teknolojimizi kendi markaları altında sunmak isteyen iş ortakları için.",
+        "features": [
+          "Marka adı, logo ve renkler ile tam özelleştirme",
+          "Ömür boyu destek",
+          "Platformu kendi ürününüz olarak satın",
+          "Minimum kurulumla hızlı dağıtım",
+          "Özel hesap yönetimi"
+        ],
+        "tagline": "En iyi teklifi sunabilmek için gelin birebir konuşalım."
+      }
+    ]
+  },
+
+
+  "choosePlan": {
+    "banner": {
+      "title": "İş akışınızla birlikte ölçeklenen otomasyon",
+      "description": "Adım başına ücret ödemeden daha akıllı otomasyon çalıştırın. Sadece gerçek değer sağlayan işlemler için ödeme yapın.",
+      "button": "Nasıl Çalıştığını Keşfedin"
+    },
+    "cta": {
+      "title": "Size daha uygun bir plana mı ihtiyacınız var?",
+      "startup": {
+        "title": "Start-up Planı - %25 indirim",
+        "description": "20 çalışanın altında büyüyen bir ekip misiniz? Start-up Planımıza uygun olup olmadığınızı görün.",
+        "button": "Daha Fazla Bilgi"
+      }
+    }
+  }
+}

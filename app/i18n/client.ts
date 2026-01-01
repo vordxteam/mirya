@@ -18,12 +18,46 @@ import trAbout from '@/app/(pages)/about/translations/tr.json';
 import enLayout from '@/app/Layout/translation/en.json';
 import deLayout from '@/app/Layout/translation/de.json';
 import trLayout from '@/app/Layout/translation/tr.json';
-const resources = {
-  en: { translation: enTranslation, about: enAbout, layout: enLayout },
-  de: { translation: deTranslation, about: deAbout, layout: deLayout },
-  tr: { translation: trTranslation, about: trAbout, layout: trLayout },
-};
 
+// Industries translations
+import enIndustries from '@/app/(pages)/industries/translations/en.json';
+import deIndustries from '@/app/(pages)/industries/translations/de.json';
+import trIndustries from '@/app/(pages)/industries/translations/tr.json';
+// --- ADD CONTACT IMPORTS HERE ---
+import enContact from '@/app/(pages)/contact/translations/en.json';
+import deContact from '@/app/(pages)/contact/translations/de.json';
+import trContact from '@/app/(pages)/contact/translations/tr.json';
+// --- ADD PRICING IMPORTS HERE ---
+import enPricing from '@/app/(pages)/pricing/translations/en.json';
+import dePricing from '@/app/(pages)/pricing/translations/de.json';
+import trPricing from '@/app/(pages)/pricing/translations/tr.json';
+
+const resources = {
+  en: {
+    translation: enTranslation,
+    about: enAbout,
+    layout: enLayout,
+    industries: enIndustries,
+    contact: enContact,
+    pricing: enPricing
+  },
+  de: {
+    translation: deTranslation,
+    about: deAbout,
+    layout: deLayout,
+    industries: deIndustries,
+    contact: deContact,
+    pricing: dePricing
+  },
+  tr: {
+    translation: trTranslation,
+    about: trAbout,
+    layout: trLayout,
+    industries: trIndustries,
+    contact: trContact,
+    pricing: trPricing
+  },
+};
 // Initialize i18next only once
 if (!i18next.isInitialized) {
   i18next
@@ -34,11 +68,10 @@ if (!i18next.isInitialized) {
       fallbackLng: 'en',
       supportedLngs: ['en', 'de', 'tr'],
 
-      // Critical: We ONLY use our own localStorage key
       detection: {
-        order: ['localStorage'],           // Never use browser language
+        order: ['localStorage'],
         caches: ['localStorage'],
-        lookupLocalStorage: 'language',     // Our custom key
+        lookupLocalStorage: 'language',
       },
 
       interpolation: {
@@ -47,21 +80,18 @@ if (!i18next.isInitialized) {
       react: {
         useSuspense: false,
       },
-      ns: ['translation', 'about' ,'layout'],
+      ns: ['translation', 'about', 'layout', 'industries', 'contact', 'pricing'],
       defaultNS: 'translation',
     });
 }
 
-// Force English on first visit + sync with i18next
 if (typeof window !== 'undefined') {
   const savedLang = localStorage.getItem('language');
 
-  // First time ever → set English
   if (!savedLang) {
     localStorage.setItem('language', 'en');
   }
 
-  // Make sure i18next is using the correct language (important after refresh)
   const langToUse = savedLang || 'en';
   if (i18next.language !== langToUse) {
     i18next.changeLanguage(langToUse);

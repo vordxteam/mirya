@@ -1,32 +1,17 @@
-import GradientButton from "@/app/ui/GradientButton";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import CustomCheckbox from "@/app/components/CustomCheckbox";
+import { useTranslation } from "react-i18next";
 export default function ContactPage() {
-  const data = [
-    {
-      id: 1,
-      img: "/images/location.png",
-      title: "Location",
-      value: "Los Angeles, CA",
-      link: "https://www.google.com/maps?q=Los+Angeles,+CA",
-    },
-    {
-      id: 2,
-      img: "/images/phone.png",
-      title: "Phone",
-      value: "+1 (208) 120-802",
-      link: "tel:+1208120802",
-    },
-    {
-      id: 3,
-      img: "/images/mail.png",
-      title: "Email Address",
-      value: "mirya@gmail.com",
-      link: "mailto:mirya@gmail.com",
-    },
-  ];
+  const { t } = useTranslation("contact");
+
+  const data = t("contactInfo.cards", { returnObjects: true }) as {
+    title: string;
+    value: string;
+    link: string;
+    img: string;
+  }[];
 
   return (
     <>
@@ -38,60 +23,35 @@ export default function ContactPage() {
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[90px] w-[181px] h-[94px]"></div>
         </div>
 
-        {/* Fixed Container */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full pb-15">
-          {data.map((item) => (
-            <a
-              key={item.id}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 min-w-0"
-            >
-              <div className="non-rounded1 p-1 rounded-lg cursor-pointer transition-all hover:scale-[1.02]">
-                <div className="bg-[#050A29] flex flex-col rounded-lg justify-center items-center gap-5 p-7 w-full h-full">
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    height={28}
-                    width={28}
-                  />
-                  <p className="heading-6 font-regular text-[#FFFFFF7A]">
-                    {item.title}
-                  </p>
-                  <p className="heading-5 font-medium text-[#FFFFFF]">
-                    {item.value}
-                  </p>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div> */}
-
         <div className="w-full flex flex-col md:flex-row justify-between gap-8 md:gap-12">
           {/* Left Section - Improved spacing */}
           <div className="flex flex-col justify-between space-y-8 md:space-y-12">
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-[40px] leading-11 font-medium">
-                  Get In Touch
+                  {t("contactInfo.title")}
                 </h1>
                 <p className="text-FFFFFF99 font-regular heading-4 font-regular max-w-[490px] text-[#FFFFFF99]">
-                  "Have questions or need help with your order? We're here to
-                  assist you every step of the way."
+                  {t("contactInfo.description")}
                 </p>
               </div>
             </div>
 
             <div>
               <div className="space-y-3">
-                <p className="heading-4 font-medium text-white">Availability</p>
+                <p className="heading-4 font-medium text-white">
+                  {" "}
+                  {t("contactInfo.availability.label")}
+                </p>
                 <p className="heading-5 font-medium text-white">
-                  Sunday – Thursday, 9 AM to 6 PM
+                  {t("contactInfo.availability.time")}
                 </p>
               </div>
               <hr className="text-[#FFFFFF1F] my-6 max-w-[591px] w-full" />
-              <p className="heading-4 font-medium text-white ">Follow us</p>
+              <p className="heading-4 font-medium text-white ">
+                {" "}
+                {t("contactInfo.followUs")}
+              </p>
 
               <div className="flex gap-3 pt-5">
                 <Link href="https://www.facebook.com/" target="_blank">
@@ -139,28 +99,26 @@ export default function ContactPage() {
           >
             <div className="bg-[#080E34] rounded-lg p-3 sm:p-7">
               <h3 className="heading-3 font-regular text-white">
-                Send Message
+                {t("form.sendMessage")}
               </h3>
 
               <div className="pt-6 flex flex-col gap-4">
                 <input
                   type="text"
-                  placeholder="Full name"
+                  placeholder={t("form.placeholders.name")}
                   className="outline outline-[#FFFFFF33] p-4 rounded-lg xl:w-lg"
                 />
 
                 <div className="flex gap-3">
                   <input
-                    type="text"
-                    placeholder="Email Address"
+                    type="email"
+                    placeholder={t("form.placeholders.email")}
                     className="outline outline-[#FFFFFF33] p-4 rounded-lg w-full"
                   />
                   <input
                     type="number"
-                    placeholder="Phone Number"
-                    className="outline outline-[#FFFFFF33] p-4 rounded-lg w-full
-          [&::-webkit-outer-spin-button]:appearance-none
-          [&::-webkit-inner-spin-button]:appearance-none"
+                    placeholder={t("form.placeholders.phone")}
+                    className="outline outline-[#FFFFFF33] p-4 rounded-lg w-full"
                   />
                 </div>
 
@@ -179,28 +137,28 @@ export default function ContactPage() {
                     selected
                     className="bg-[#080E34] text-gray-400"
                   >
-                    Subject
+                    {t("form.placeholders.subject")}
                   </option>
                   <option value="general" className="bg-[#080E34]">
-                    General Inquiry
+                    {t("form.subjects.general")}
                   </option>
                   <option value="support" className="bg-[#080E34]">
-                    Technical Support
+                    {t("form.subjects.support")}
                   </option>
                   <option value="billing" className="bg-[#080E34]">
-                    Billing Issue
+                    {t("form.subjects.billing")}
                   </option>
                   <option value="feedback" className="bg-[#080E34]">
-                    Feedback
+                    {t("form.subjects.feedback")}
                   </option>
                   <option value="other" className="bg-[#080E34]">
-                    Other
+                    {t("form.subjects.other")}
                   </option>
                 </select>
 
                 <textarea
                   rows={8}
-                  placeholder="Message..."
+                  placeholder={t("form.placeholders.message")}
                   className="outline resize-none outline-[#FFFFFF33] p-4 rounded-lg w-full"
                 />
               </div>
@@ -209,9 +167,9 @@ export default function ContactPage() {
                 <CustomCheckbox
                   label={
                     <span className="flex flex-wrap gap-1">
-                      <span>I agree to the</span>
+                      <span>{t("form.privacy")}</span>
                       <Link href="#" className="text-[#0274FE] underline">
-                        Privacy Policy
+                        {t("form.privacyLink")}
                       </Link>
                       <span>.</span>
                     </span>
@@ -231,7 +189,7 @@ export default function ContactPage() {
                   className="font-normal w-full flex items-center justify-center py-2 px-5 rounded-full"
                   style={{ background: "#0274FE", color: "white" }}
                 >
-                  Submit
+                  {t("form.submit")}
                 </Link>
               </div>
             </div>
