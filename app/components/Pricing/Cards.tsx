@@ -166,7 +166,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
             >
               {activePlanId === item.id && (
                 <div className="absolute top-16 left-16">
-                  <div className="bg-[#4F60FA] opacity-60 blur-[50px] w-[181px] h-[94px] rounded-full"></div>
+                  <div className="bg-[#5935E9] opacity-60 blur-[50px] w-[181px] h-[94px] rounded-full"></div>
                 </div>
               )}
 
