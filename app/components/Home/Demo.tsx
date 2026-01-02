@@ -323,13 +323,11 @@
 // }
 
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GradientButton from "@/app/ui/GradientButton";
-
+import { useTranslation } from "react-i18next";
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -340,67 +338,56 @@ interface Benefit {
   title: string;
   img: string;
 }
-
 export default function Demo(): React.ReactElement {
+  const { t } = useTranslation("home");
+
   const benefits: Benefit[] = [
     {
       id: 1,
-      title: "No programming skills required",
+      title: t("demo.benefits.noProgramming"),
       img: "/images/star-red.png",
     },
     {
       id: 2,
-      title: "Interface-independent — no API needed",
+      title: t("demo.benefits.interfaceIndependent"),
       img: "/images/star-green.png",
     },
     {
       id: 3,
-      title: "On-Premise or Cloud",
+      title: t("demo.benefits.onPremise"),
       img: "/images/star-yellow.png",
     },
     {
       id: 4,
-      title: "Record & Automate",
+      title: t("demo.benefits.recordAutomate"),
       img: "/images/star-purple.png",
     },
-    {
-      id: 5,
-      title: "Ready in 24 hours",
-      img: "/images/star-blue.png",
-    },
+    { id: 5, title: t("demo.benefits.ready24h"), img: "/images/star-blue.png" },
     {
       id: 7,
-      title: "White Label ready",
+      title: t("demo.benefits.whiteLabel"),
       img: "/images/star-yellow.png",
     },
-    {
-      id: 8,
-      title: "Drag & Drop Visual Interface",
-      img: "/images/star-red.png",
-    },
-    {
-      id: 9,
-      title: "ROI in just 4–6 weeks",
-      img: "/images/star-green.png",
-    },
+    { id: 8, title: t("demo.benefits.dragDrop"), img: "/images/star-red.png" },
+    { id: 9, title: t("demo.benefits.roi"), img: "/images/star-green.png" },
     {
       id: 10,
-      title: "Analytics Dashboard",
+      title: t("demo.benefits.analytics"),
       img: "/images/star-yellow.png",
     },
     {
       id: 11,
-      title: "Virtual AI Assistant",
+      title: t("demo.benefits.aiAssistant"),
       img: "/images/star-purple.png",
     },
     {
       id: 12,
-      title: "Autonomous Bots",
+      title: t("demo.benefits.autonomous"),
       img: "/images/star-blue.png",
     },
     {
       id: 13,
-      title: "Smart PDF Reports",
+      title: t("demo.benefits.smartPdf"),
       img: "/images/star-yellow.png",
     },
   ];
@@ -449,48 +436,47 @@ export default function Demo(): React.ReactElement {
   //   };
   // }, []);
 
-const paragraphRef = useRef<HTMLDivElement>(null);
+  const paragraphRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const element = paragraphRef.current;
+    if (!element) return;
 
-useEffect(() => {
-  const element = paragraphRef.current;
-  if (!element) return;
+    const text = element.textContent || "";
+    const words = text.split(" ");
 
-  const text = element.textContent || "";
-  const words = text.split(" ");
+    // 1. Prepare the spans
+    element.innerHTML = "";
+    const spans = words.map((word, i) => {
+      const span = document.createElement("span");
+      span.textContent = word + (i < words.length - 1 ? " " : "");
+      span.style.color = "#FFFFFF"; // Initial color
+      element.appendChild(span);
+      return span;
+    });
 
-  // 1. Prepare the spans
-  element.innerHTML = "";
-  const spans = words.map((word, i) => {
-    const span = document.createElement("span");
-    span.textContent = word + (i < words.length - 1 ? " " : "");
-    span.style.color = "#FFFFFF"; // Initial color
-    element.appendChild(span);
-    return span;
-  });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
 
- const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: element,
-      start: "top 80%", 
-      
-      end: "bottom 40%", 
-      
-      scrub: 1.5,
-    },
-  });
+        end: "bottom 40%",
 
-  // 3. Animate each span color
-  tl.to(spans, {
-    color: "#73799B",
-    stagger: 0.1,      
-    ease: "none",      
-  });
+        scrub: 1.5,
+      },
+    });
 
-  return () => {
-    tl.kill();
-    ScrollTrigger.getAll().forEach((t) => t.kill());
-  };
-}, []);
+    // 3. Animate each span color
+    tl.to(spans, {
+      color: "#73799B",
+      stagger: 0.1,
+      ease: "none",
+    });
+
+    return () => {
+      tl.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -626,7 +612,7 @@ useEffect(() => {
               width={78}
             />
             <h5 className="heading-5 font-regular text-[#959EFE] text-center">
-              Simple. Intelligent. Autonomous
+              {t("demo.badge")}{" "}
             </h5>
             <Image
               src="/images/label.svg"
@@ -641,12 +627,7 @@ useEffect(() => {
             className="pt-3 text-[20px] md:text-[36px] sm:leading-[48px] leading-8 font-medium text-white max-w-[1108px] text-center  relative z-10"
             variants={itemVariants}
           >
-            MIRYA is your all-in-one automation platform that connects and
-            controls any system, any app, any process with zero code. MIRYA
-            doesn&apos;t just follow instructions — it understands data,
-            identifies patterns, and makes smart decisions in real time. It
-            performs every task just like a human - only faster, more precise
-            and completely reliable.
+            {t("demo.description")}
           </motion.div>
           <motion.div className="relative z-10" variants={containerVariants}>
             <div className="benefits-grid">

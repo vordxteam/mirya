@@ -1,93 +1,18 @@
+"use client"
+
 import Image from "next/image";
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 export default function Comparison() {
+  const { t } = useTranslation("pricing");
   const columns = [
-    { key: "mirya", label: "Mirya" },
-    { key: "n8n", label: "n8n" },
-    { key: "powerAutomate", label: "Power Automate" },
-    { key: "aiAgent", label: "Agentic Kit" },
-  ];
-  type ComparisonRow = {
-  name: string;
-  mirya?: FeatureValue;
-  n8n?: FeatureValue;
-  powerAutomate?: FeatureValue;
-  aiAgent?: FeatureValue;
-};
-
-
-const comparisonData: ComparisonRow[] = [
+    { key: "mirya", label: t("comparison.columnHeaders.mirya") },
+    { key: "n8n", label: t("comparison.columnHeaders.n8n") },
     {
-      name: "True No-Code (usually without IT skills",
-      mirya: { type: "icon", icon: "check" },
-      n8n: "Low Code",
-      powerAutomate: "Low Code",
-      aiAgent: { type: "icon", icon: "cross" },
+      key: "powerAutomate",
+      label: t("comparison.columnHeaders.powerAutomate"),
     },
-    {
-      name: "On Premise Execution on any Workstation",
-      mirya: { type: "icon", icon: "check" },
-      n8n: "Self Host",
-      powerAutomate: "Mostly Cloud",
-      aiAgent: { type: "icon", icon: "cross" },
-    },
-    {
-      name: "Human Like Desktop + Web Automation (No API Needed)",
-      mirya: { type: "icon", icon: "check" },
-      n8n: "No",
-      powerAutomate: "Limited UI",
-      aiAgent: { type: "icon", icon: "cross" },
-    },
-    {
-      name: "Fully Automation Process Recording (Desktop + Web)",
-      mirya: { type: "icon", icon: "check" },
-      n8n: "No",
-      powerAutomate: "No",
-      aiAgent: { type: "icon", icon: "cross" },
-    },
-    {
-      name: "API Dependent",
-      n8n: "Yes-Works Fully without API",
-      powerAutomate: "No-API/Webhook Dependent",
-      aiAgent: "No-API Connector Required",
-      mirya: "No-LLM &API Based",
-    },
-    {
-      name: "API Support",
-      mirya: { type: "icon", icon: "check" },
-      n8n: "Yes",
-      powerAutomate: "Yes",
-      aiAgent: { type: "icon", icon: "check" },
-    },
-    {
-      name: "Autonomous Bots (Schedule + independent)",
-      mirya: { type: "icon", icon: "check" },
-      n8n: "No",
-      powerAutomate: "Partial",
-      aiAgent: { type: "icon", icon: "cross" },
-    },
-    {
-      name: "Integrated AI Decision Engine",
-      mirya: { type: "icon", icon: "check" },
-      n8n: "Plugin-based",
-      powerAutomate: "Add-ons",
-      aiAgent: { type: "icon", icon: "check" },
-    },
-    {
-      name: "Local Encryption of Credentials, Files & Variables",
-      mirya: { type: "icon", icon: "check" },
-      n8n: "Depends on Hosting",
-      powerAutomate: "Depends on Tenent",
-      aiAgent: { type: "icon", icon: "cross" },
-    },
-    {
-      name: "Learnable in 2 Days without any Technical Background",
-      mirya: { type: "icon", icon: "check" },
-      n8n: "No",
-      powerAutomate: "No",
-      aiAgent: { type: "icon", icon: "cross" },
-    },
+    { key: "aiAgent", label: t("comparison.columnHeaders.aiAgent") },
   ];
   type FeatureValue =
     | string
@@ -95,13 +20,95 @@ const comparisonData: ComparisonRow[] = [
         type: "icon";
         icon: "check" | "cross";
       };
+
+  type ComparisonRow = {
+    name: string;
+    mirya?: FeatureValue;
+    n8n?: FeatureValue;
+    powerAutomate?: FeatureValue;
+    aiAgent?: FeatureValue;
+  };
+
+  const comparisonData: ComparisonRow[] = [
+    {
+      name: t("comparison.rows.noCode"),
+      mirya: { type: "icon", icon: "check" },
+      n8n: t("comparison.rows.values.lowCode"),
+      powerAutomate: t("comparison.rows.values.lowCode"),
+      aiAgent: { type: "icon", icon: "cross" },
+    },
+    {
+      name: t("comparison.rows.onPremise"),
+      mirya: { type: "icon", icon: "check" },
+      n8n: t("comparison.rows.values.selfHost"),
+      powerAutomate: t("comparison.rows.values.mostlyCloud"),
+      aiAgent: { type: "icon", icon: "cross" },
+    },
+    {
+      name: t("comparison.rows.humanLike"),
+      mirya: { type: "icon", icon: "check" },
+      n8n: t("comparison.rows.values.no"),
+      powerAutomate: t("comparison.rows.values.limitedUi"),
+      aiAgent: { type: "icon", icon: "cross" },
+    },
+    {
+      name: t("comparison.rows.recording"),
+      mirya: { type: "icon", icon: "check" },
+      n8n: t("comparison.rows.values.no"),
+      powerAutomate: t("comparison.rows.values.no"),
+      aiAgent: { type: "icon", icon: "cross" },
+    },
+    {
+      name: t("comparison.rows.apiDependent"),
+      n8n: t("comparison.rows.values.fullyWithoutApi"),
+      powerAutomate: t("comparison.rows.values.apiWebhookDependent"),
+      aiAgent: t("comparison.rows.values.apiConnectorRequired"),
+      mirya: t("comparison.rows.values.llmApiBased"),
+    },
+    {
+      name: t("comparison.rows.apiSupport"),
+      mirya: { type: "icon", icon: "check" },
+      n8n: t("comparison.rows.values.yes"),
+      powerAutomate: t("comparison.rows.values.yes"),
+      aiAgent: { type: "icon", icon: "check" },
+    },
+    {
+      name: t("comparison.rows.autonomous"),
+      mirya: { type: "icon", icon: "check" },
+      n8n: t("comparison.rows.values.no"),
+      powerAutomate: t("comparison.rows.values.partial"),
+      aiAgent: { type: "icon", icon: "cross" },
+    },
+    {
+      name: t("comparison.rows.aiDecision"),
+      mirya: { type: "icon", icon: "check" },
+      n8n: t("comparison.rows.values.pluginBased"),
+      powerAutomate: t("comparison.rows.values.addOns"),
+      aiAgent: { type: "icon", icon: "check" },
+    },
+    {
+      name: t("comparison.rows.encryption"),
+      mirya: { type: "icon", icon: "check" },
+      n8n: t("comparison.rows.values.dependsOnHosting"),
+      powerAutomate: t("comparison.rows.values.dependsOnTenant"),
+      aiAgent: { type: "icon", icon: "cross" },
+    },
+    {
+      name: t("comparison.rows.learnable"),
+      mirya: { type: "icon", icon: "check" },
+      n8n: t("comparison.rows.values.no"),
+      powerAutomate: t("comparison.rows.values.no"),
+      aiAgent: { type: "icon", icon: "cross" },
+    },
+  ];
   const renderFeatureValue = (value: FeatureValue) => {
-    // 👉 Explicit icon from JSON
     if (typeof value === "object" && value.type === "icon") {
       return (
         <Image
           src={
-            value.icon === "check" ? "/images/green-tick.svg" : "/images/cross-icon.svg"
+            value.icon === "check"
+              ? "/images/green-tick.svg"
+              : "/images/cross-icon.svg"
           }
           alt={value.icon}
           width={28}
@@ -110,21 +117,26 @@ const comparisonData: ComparisonRow[] = [
       );
     }
 
-    // 👉 Auto Yes / No handling
-    if (value === "Yes") {
-      return <Image src="/images/green-tick.svg" alt="Yes" width={28} height={28} />;
+    const yesText = t("comparison.rows.values.yes");
+    const noText = t("comparison.rows.values.no");
+
+    if (value === yesText) {
+      return (
+        <Image src="/images/green-tick.svg" alt="Yes" width={28} height={28} />
+      );
     }
 
-    if (value === "No") {
-      return <Image src="/images/cross-icon.svg" alt="No" width={28} height={28} />;
+    if (value === noText) {
+      return (
+        <Image src="/images/cross-icon.svg" alt="No" width={28} height={28} />
+      );
     }
 
-   return (
-  <span className="text-[14px] md:text-[18px] font-normal leading-[22px] text-center text-[#F4F7FF]">
-    {String(value)}
-  </span>
-);
-
+    return (
+      <span className="text-[14px] md:text-[18px] font-normal leading-[22px] text-center text-[#F4F7FF]">
+        {String(value)}
+      </span>
+    );
   };
 
   return (
@@ -138,20 +150,19 @@ const comparisonData: ComparisonRow[] = [
       <div className="pb-3 flex items-center gap-5">
         <Image src="/images/label2.svg" width={78} height={16} alt="line" />
         <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-          Feature Comparison
+          {t("comparison.badge")}{" "}
         </h1>
         <Image src="/images/label.svg" width={78} height={16} alt="line" />
       </div>
 
       {/* Main Heading */}
       <h1 className="heading-1 font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[686px] w-full text-center pb-3 sm:pb-6">
-        Why Teams Choose Mirya Over Other Platforms
+        {t("comparison.mainTitle")}{" "}
       </h1>
 
       {/* Subheading */}
       <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[606px]">
-        Mirya delivers AI-powered research, automation, and decision-making
-        features you won't find in traditional workflow tools.
+        {t("comparison.mainDescription")}
       </p>
 
       {/* Comparison Table */}
@@ -166,7 +177,7 @@ const comparisonData: ComparisonRow[] = [
         >
           {/* Feature Title — 4 Columns */}
           <div className="text-[#F4F7FF] text-[20px] font-medium leading-5 col-span-4">
-            Features
+            {t("comparison.columnHeaders.features")}{" "}
           </div>
 
           {/* Columns — 8 Columns */}
@@ -190,7 +201,7 @@ const comparisonData: ComparisonRow[] = [
           >
             {/* Feature Name → 4 columns */}
             <p className="text-[#F4F7FF] text-[20px] font-medium col-span-12 md:col-span-4 w-full max-w-[365px]">
-              {feature.name}
+              {feature.name}{" "}
             </p>
 
             {/* Values for each platform → 8 columns */}

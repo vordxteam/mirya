@@ -1,8 +1,222 @@
+// import GradientButton from "@/app/ui/GradientButton";
+// import Image from "next/image";
+// import React from "react";
+
+// const Benefits = () => {
+//   return (
+//     <>
+//       <div className="flex justify-center">
+//         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.5px]"></div>
+//       </div>
+//       <div className="bg-[#00031C] overflow-hidden">
+//         <div className="max-w-[1440px] m-auto px-5 sm:px-10 md:px-20 py-[60px]">
+//           {/* Top Section */}
+//           <div className="relative flex flex-col items-center text-center">
+//             {/* Glow */}
+//             <div className="absolute -top-16">
+//               <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+//             </div>
+
+//             {/* Title */}
+//             <div className="pb-3 flex items-center justify-center gap-5">
+//               <Image
+//                 src="/images/label2.svg"
+//                 width={78}
+//                 height={16}
+//                 alt="line"
+//               />
+//               <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal">
+//                 Benefits
+//               </h1>
+//               <Image
+//                 src="/images/label.svg"
+//                 width={78}
+//                 height={16}
+//                 alt="line"
+//               />
+//             </div>
+
+//             {/* Main Heading */}
+//             <h1 className="text-[26px] sm:text-[40px] md:text-[48px] font-medium leading-tight tracking-[-1.44px] max-w-[668px] pb-3 sm:pb-6">
+//               See The Difference Intelligent Automation Makes
+//             </h1>
+
+//             {/* Subtitle */}
+//             <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] leading-6 max-w-[700px] pb-8 sm:pb-12">
+//               From time savings to error-free execution, MIRYA delivers
+//               measurable improvements across every part of your
+//               workflow—instantly and without complexity.
+//             </p>
+//           </div>
+
+//           {/* Benefits Grid */}
+//           <div className="grid grid-cols-12 gap-6">
+//             {/* Card 1 */}
+//             <BenefitCard
+//               title="Automate Everything Without Changing Anything"
+//               description="No need to redesign workflows or rebuild systems. MIRYA works with what you already have."
+//               image="/images/benefit-1.svg"
+//               imageWidth={488}
+//               imageHeight={352}
+//               glowPosition="left"
+//               className="col-span-12 md:col-span-6 xl:col-span-4 "
+//               imageTranslate="w-[100%] translate-x-10 -translate-y-6"
+//               imagePaddingBottom="pb-0"
+//             />
+
+//             {/* Card 2 */}
+//             <BenefitCard
+//               title="Save Hundreds of Hours"
+//               description="Free your team from repetitive work and let MIRYA handle all operational tasks instantly."
+//               image="/images/benefit-2.svg"
+//               imageWidth={351}
+//               imageHeight={470}
+//               glowPosition="center"
+//               className="col-span-12 md:col-span-6 xl:col-span-4 "
+//               imageTranslate=" translate-x-5 translate-y-0"
+//               imagePaddingBottom="pb-0 "
+//             />
+
+//             {/* Card 3 */}
+//             <BenefitCard
+//               title="Zero-Error Execution"
+//               description="Remove human errors and inconsistencies. Your processes run the same reliable way — every time."
+//               image="/images/benefit-3.svg"
+//               imageWidth={351}
+//               imageHeight={299}
+//               glowPosition="right"
+//               className="col-span-12 md:col-span-6 xl:col-span-4"
+//               imageTranslate=" translate-x-5 -translate-y-2 "
+//               imagePaddingBottom="pb-0"
+//             />
+
+//             {/* Card 4 (full width on desktop) */}
+//             <BenefitCard
+//               title=""
+//               description="MIRYA automates repetitive tasks instantly, allowing your team to focus on high-value work. Processes run faster, smoother, and with consistent accuracy."
+//               image="/images/benefit4.svg"
+//               imageWidth={460}
+//               imageHeight={219}
+//               glowPosition="left"
+//               className="col-span-12 md:col-span-6 xl:col-span-6"
+//             />
+
+//             {/* Card 5 (full width on desktop) */}
+//             <BenefitCard
+//               title="Actionable Insights"
+//               description="By understanding your workflows and data patterns, MIRYA highlights opportunities for improvement and provides clear insights that help you optimize performance."
+//               image="/images/benefit5.svg"
+//               imageWidth={623}
+//               imageHeight={219}
+//               glowPosition="left"
+//               className="col-span-12 md:col-span-6 xl:col-span-6"
+//               imageTranslate=" translate-x-11 -translate-y-3 "
+//             />
+//           </div>
+
+//           <div className="flex items-center justify-center w-full mt-8">
+//             <GradientButton
+//               label="Get Started"
+//               href="/contact"
+//               bgColor="#0274FE"
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Benefits;
+
+// /* -------------------- Reusable Card Component --------------------- */
+
+// interface CardProps {
+//   title: string;
+//   description: string;
+//   image: string;
+//   imageWidth: number;
+//   imageHeight: number;
+//   glowPosition?: "left" | "center" | "right";
+//   className?: string;
+//   imageTranslate?: string;
+//   imagePaddingBottom?: string;
+// }
+
+// const BenefitCard: React.FC<CardProps> = ({
+//   title,
+//   description,
+//   image,
+//   imageWidth,
+//   imageHeight,
+//   glowPosition = "center",
+//   className = "",
+//   imageTranslate,
+//   imagePaddingBottom,
+// }) => {
+//   return (
+//     <>
+//       <div
+//         className={`p-px rounded-xl ${className}`}
+//         style={{
+//           background:
+//             "linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)",
+//         }}
+//       >
+//         <div className="bg-[#050925] rounded-xl flex flex-col justify-between h-[418px] overflow-hidden">
+//           <div className="relative p-4 sm:p-8 0 space-y-4">
+//             {/* Glow */}
+//             <div
+//               className={`absolute top-10 ${
+//                 glowPosition === "left"
+//                   ? "-left-24"
+//                   : glowPosition === "right"
+//                   ? "-right-24"
+//                   : "left-1/2 -translate-x-1/2"
+//               }`}
+//             >
+//               <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+//             </div>
+
+//             <h1 className="text-[#F4F7FF] text-[18px] sm:text-[20px] font-semibold leading-6 relative ">
+//               {title}
+//             </h1>
+//             <p className="text-[#CAC9D1] text-[14px] leading-5 relative ">
+//               {description}
+//             </p>
+//           </div>
+
+//           <div
+//             className={`flex items-center justify-center ${
+//               imagePaddingBottom || "pb-[37px]"
+//             }`}
+//           >
+//             <Image
+//               src={image}
+//               width={imageWidth}
+//               height={imageHeight}
+//               alt={title}
+//               className={`max-w-full h-auto ${imageTranslate || ""}`}
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+"use client";
 import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import React from "react";
+import { useAbout } from "@/app/hooks/useAboutTranslation";
 
 const Benefits = () => {
+  const { t } = useAbout();
+
+  const cards = t("benefits.cards", {
+    returnObjects: true,
+  }) as { title: string; desc: string }[];
+
   return (
     <>
       <div className="flex justify-center">
@@ -13,7 +227,7 @@ const Benefits = () => {
           {/* Top Section */}
           <div className="relative flex flex-col items-center text-center">
             {/* Glow */}
-            <div className="absolute -top-16">
+            <div className="absolute -top-16 ">
               <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
             </div>
 
@@ -26,7 +240,7 @@ const Benefits = () => {
                 alt="line"
               />
               <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal">
-                Benefits
+                {t("benefits.Benefits")}
               </h1>
               <Image
                 src="/images/label.svg"
@@ -37,24 +251,21 @@ const Benefits = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-[26px] sm:text-[40px] md:text-[48px] font-medium leading-tight tracking-[-1.44px] max-w-[668px] pb-3 sm:pb-6">
-              See The Difference Intelligent Automation Makes
+            <h1 className="text-[26px] sm:text-[40px] md:text-[48px] font-medium leading-tight tracking-[-1.44px] max-w-[814px] pb-3 sm:pb-6">
+              {t("benefits.title")}
             </h1>
 
             {/* Subtitle */}
             <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] leading-6 max-w-[700px] pb-8 sm:pb-12">
-              From time savings to error-free execution, MIRYA delivers
-              measurable improvements across every part of your
-              workflow—instantly and without complexity.
+              {t("benefits.subtitle")}
             </p>
           </div>
 
-          {/* Benefits Grid */}
           <div className="grid grid-cols-12 gap-6">
             {/* Card 1 */}
             <BenefitCard
-              title="Automate Everything Without Changing Anything"
-              description="No need to redesign workflows or rebuild systems. MIRYA works with what you already have."
+              title={cards[0]?.title}
+              description={cards[0]?.desc}
               image="/images/benefit-1.svg"
               imageWidth={488}
               imageHeight={352}
@@ -66,36 +277,36 @@ const Benefits = () => {
 
             {/* Card 2 */}
             <BenefitCard
-              title="Save Hundreds of Hours"
-              description="Free your team from repetitive work and let MIRYA handle all operational tasks instantly."
+              title={cards[1]?.title}
+              description={cards[1]?.desc}
               image="/images/benefit-2.svg"
-              imageWidth={351}
+              imageWidth={301}
               imageHeight={470}
               glowPosition="center"
-              className="col-span-12 md:col-span-6 xl:col-span-4 "
+              className="col-span-12 md:col-span-6 xl:col-span-4"
               imageTranslate=" translate-x-5 translate-y-0"
-              imagePaddingBottom="pb-0 "
+              imagePaddingBottom="pb-0"
             />
 
             {/* Card 3 */}
             <BenefitCard
-              title="Zero-Error Execution"
-              description="Remove human errors and inconsistencies. Your processes run the same reliable way — every time."
+              title={cards[2]?.title}
+              description={cards[2]?.desc}
               image="/images/benefit-3.svg"
-              imageWidth={351}
+              imageWidth={301}
               imageHeight={299}
               glowPosition="right"
               className="col-span-12 md:col-span-6 xl:col-span-4"
-              imageTranslate=" translate-x-5 -translate-y-2 "
+              imageTranslate=" translate-x-5 -translate-y-2"
               imagePaddingBottom="pb-0"
             />
 
             {/* Card 4 (full width on desktop) */}
             <BenefitCard
-              title=""
-              description="MIRYA automates repetitive tasks instantly, allowing your team to focus on high-value work. Processes run faster, smoother, and with consistent accuracy."
+              title={cards[3]?.title}
+              description={cards[3]?.desc}
               image="/images/benefit4.svg"
-              imageWidth={460}
+              imageWidth={500}
               imageHeight={219}
               glowPosition="left"
               className="col-span-12 md:col-span-6 xl:col-span-6"
@@ -103,8 +314,8 @@ const Benefits = () => {
 
             {/* Card 5 (full width on desktop) */}
             <BenefitCard
-              title="Actionable Insights"
-              description="By understanding your workflows and data patterns, MIRYA highlights opportunities for improvement and provides clear insights that help you optimize performance."
+              title={cards[4]?.title}
+              description={cards[4]?.desc}
               image="/images/benefit5.svg"
               imageWidth={623}
               imageHeight={219}
@@ -116,7 +327,7 @@ const Benefits = () => {
 
           <div className="flex items-center justify-center w-full mt-8">
             <GradientButton
-              label="Get Started"
+              label={t("button")}
               href="/contact"
               bgColor="#0274FE"
             />

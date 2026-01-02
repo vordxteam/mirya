@@ -1,46 +1,46 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+
 export default function Recommended() {
+  const { t } = useTranslation("pricing");
+
   const reasons = [
     {
       id: 1,
-      title: "Automation Discovery Workshop",
-      discription:
-        "We analyze your business processes, map automation opportunities, and create a clear ROI-driven automation roadmap for your organization.",
+      title: t("recommended.items.automationWorkshop.title"),
+      description: t("recommended.items.automationWorkshop.description"),
       link: "#",
-      btnLabel: "Book Session",
+      btnLabel: t("recommended.items.automationWorkshop.btnLabel"),
     },
     {
       id: 2,
-      title: "Automation Center of Excellence (CoE) Setup",
-      discription:
-        "We help companies establish their own automation team: processes, roles, governance, training, scaling roadmap",
+      title: t("recommended.items.coeSetup.title"),
+      description: t("recommended.items.coeSetup.description"),
       link: "#",
-      btnLabel: "Get Expert Help",
+      btnLabel: t("recommended.items.coeSetup.btnLabel"),
     },
     {
       id: 3,
-      title: "Process Recording & Blueprinting",
-      discription:
-        "We observe and document real user workflows and convert them into automation ready blueprints. A perfect service for companies without in house documentation.",
-      btnLabel: "Book Session",
+      title: t("recommended.items.processRecording.title"),
+      description: t("recommended.items.processRecording.description"),
+      link: "#",
+      btnLabel: t("recommended.items.processRecording.btnLabel"),
     },
     {
       id: 4,
-      title: "Priority Support & Dedicated Success Manager",
-      discription:
-        "Fastest response times, guaranteed SLAs, and a dedicated success manager who proactively ensures your automations run smoothly and continuously improve. ",
+      title: t("recommended.items.prioritySupport.title"),
+      description: t("recommended.items.prioritySupport.description"),
       link: "#",
-      btnLabel: "Get Expert Help",
+      btnLabel: t("recommended.items.prioritySupport.btnLabel"),
     },
     {
       id: 5,
-      title: "MIRYA Proof of Value (4 weeks) ",
-      discription:
-        "We build a real working automation for your company within 4 weeks. The goal: tangible, measurable results before long-term commitment",
+      title: t("recommended.items.proofOfValue.title"),
+      description: t("recommended.items.proofOfValue.description"),
       link: "",
-      btnLabel: "Book Session",
+      btnLabel: t("recommended.items.proofOfValue.btnLabel"),
     },
   ];
   return (
@@ -55,12 +55,12 @@ export default function Recommended() {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-[20px] text-center">
-            Add on Services
+            {t("recommended.badge")}{" "}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="heading-1 font-medium w-full text-center max-w-[750px]">
-          Additional Recommended Services
+          {t("recommended.mainTitle")}{" "}
         </h1>
       </div>
 
@@ -72,31 +72,33 @@ export default function Recommended() {
               background:
                 "linear-gradient(280deg, #00031C 16.47%, #686DDD 48.87%, #00031C 78.17%)",
             }}
-            className="p-px"
+            className="p-px rounded-xl"
           >
-            {/* <div className="p-6 space-y-3 bg-[#0a1560]  h-full overflow-hidden relative rounded-xl"> */}
-            <div className="p-6 space-y-3 bg-[#0a1560] h-full overflow-hidden relative rounded-xl z-10">
-
-              {/* <div className="absolute top-6 left-30 -z-10 pointer-events-none"> */}
+            <div
+              className="p-6 space-y-3 h-full overflow-hidden relative rounded-xl z-10"
+              style={{
+                background:
+                  "linear-gradient(52deg, rgba(17, 35, 143, 0.60) 58.88%, rgba(89, 53, 233, 0.60) 96.79%), #00031C",
+              }}
+            >
               <div className="absolute top-6 left-30 pointer-events-none z-0">
-
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
 
-<div className="absolute top-0 right-0 pointer-events-none z-0">
+              <div className="absolute top-0 right-0 pointer-events-none z-0">
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
 
               <div className="space-y-2">
                 <h3 className="heading-3 font-semibold  text-[#F4F7FF]">
-                  {item.title}
+                  {item.title}{" "}
                 </h3>
                 <p className="heading-6 font-normal text-[#F4F7FF99]">
-                  {item.discription}
+                  {item.description}{" "}
                 </p>
               </div>
-             
-              <div className="pt-8 max-w-full w-[179px] inline-flex">
+
+              <div className="pt-8 max-w-full w-fit min-[179px]: inline-flex">
                 <div
                   className="rounded-full p-[1.5px]"
                   style={{
@@ -108,7 +110,7 @@ export default function Recommended() {
                     href={(item.link as string) || "/contact"}
                     className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
                   >
-                    {item.btnLabel}
+                    {item.btnLabel}{" "}
                   </Link>
                 </div>
               </div>

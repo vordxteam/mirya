@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import svgPaths from "./svg-h9k2nqacar";
 import Image from "next/image";
-
+import { useTranslation } from "react-i18next"; // Added import
 interface NodeProps {
   id: number;
   title: string;
@@ -233,7 +233,7 @@ function AnimatedArrow({
 export default function WorkFlowAnimation() {
   const [animationStep, setAnimationStep] = useState(0);
   const [animationKey, setAnimationKey] = useState(0);
-
+const { t } = useTranslation("home");
   const TOTAL_STEPS = 7;
   const STEP_DURATION = 800; // Duration between steps in ms
   const PAUSE_DURATION = 2000; // Pause at the end before restarting
@@ -288,7 +288,7 @@ export default function WorkFlowAnimation() {
   const nodes = [
     {
       id: 0,
-      title: "Start",
+      title:t("animationNodes.start"),
       icon: (
         <div className="overflow-clip relative shrink-0 size-[16px]">
           <div className="absolute inset-[9.37%]">
@@ -312,7 +312,7 @@ export default function WorkFlowAnimation() {
     },
     {
       id: 1,
-      title: "Find",
+       title: t("animationNodes.find"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -338,7 +338,7 @@ export default function WorkFlowAnimation() {
     },
     {
       id: 2,
-      title: "Find",
+      title: t("animationNodes.find"), 
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -364,7 +364,7 @@ export default function WorkFlowAnimation() {
     },
     {
       id: 3,
-      title: "Browse",
+     title: t("animationNodes.browse"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -390,7 +390,7 @@ export default function WorkFlowAnimation() {
     },
     {
       id: 4,
-      title: "Type",
+    title: t("animationNodes.type"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -421,7 +421,7 @@ export default function WorkFlowAnimation() {
     },
     {
       id: 5,
-      title: "Speak",
+     title: t("animationNodes.speak"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -442,7 +442,7 @@ export default function WorkFlowAnimation() {
     },
     {
       id: 6,
-      title: "Automate",
+     title: t("animationNodes.automate"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg

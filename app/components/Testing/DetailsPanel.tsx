@@ -324,9 +324,9 @@ const DetailsPanel = () => {
               <div
                 className="rounded-full p-px w-full"
                 style={{
-                  background:
-                    "linear-gradient(0deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
-                }}
+              background:
+                "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+            }}
               >
                 <Link
                   href="#"

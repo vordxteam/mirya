@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState, useCallback, useRef, useEffect } from "react";
-
+import { useTranslation } from "react-i18next";
 interface Testimonial {
   id: number;
   text: string;
@@ -9,45 +9,46 @@ interface Testimonial {
   avatar: string;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-    author: "David Anderson",
-    role: "Director",
-    avatar: "/api/placeholder/40/40",
-  },
-  {
-    id: 2,
-    text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-    author: "David Anderson",
-    role: "Director",
-    avatar: "/api/placeholder/40/40",
-  },
-  {
-    id: 3,
-    text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-    author: "David Anderson",
-    role: "Director",
-    avatar: "/api/placeholder/40/40",
-  },
-  {
-    id: 4,
-    text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-    author: "David Anderson",
-    role: "Director",
-    avatar: "/api/placeholder/40/40",
-  },
-  {
-    id: 5,
-    text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-    author: "David Anderson",
-    role: "Director",
-    avatar: "/api/placeholder/40/40",
-  },
-];
+// const testimonials: Testimonial[] = [
+//   {
+//     id: 1,
+//     text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+//     author: "David Anderson",
+//     role: "Director",
+//     avatar: "/api/placeholder/40/40",
+//   },
+//   {
+//     id: 2,
+//     text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+//     author: "David Anderson",
+//     role: "Director",
+//     avatar: "/api/placeholder/40/40",
+//   },
+//   {
+//     id: 3,
+//     text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+//     author: "David Anderson",
+//     role: "Director",
+//     avatar: "/api/placeholder/40/40",
+//   },
+//   {
+//     id: 4,
+//     text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+//     author: "David Anderson",
+//     role: "Director",
+//     avatar: "/api/placeholder/40/40",
+//   },
+//   {
+//     id: 5,
+//     text: "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+//     author: "David Anderson",
+//     role: "Director",
+//     avatar: "/api/placeholder/40/40",
+//   },
+// ];
 
 export default function TestimonialSlider() {
+  const { t } = useTranslation("home");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -56,7 +57,9 @@ export default function TestimonialSlider() {
     "desktop"
   );
   const containerRef = useRef<HTMLDivElement>(null);
-
+  const testimonials = t("testimonialsSection.items", {
+    returnObjects: true,
+  }) as any[];
   // Check screen size for responsive behavior
   useEffect(() => {
     const checkScreenSize = () => {
@@ -267,7 +270,7 @@ export default function TestimonialSlider() {
   const containerHeight = getContainerHeight();
 
   return (
-    <div className="w-full pt-6 sm:pt-10 px-4 sm:px-6">
+    <div className="w-full pt-6 sm:pt-15 px-4 sm:px-6">
       <div className="max-w-[637px] mx-auto">
         {/* Slider Container */}
         <div

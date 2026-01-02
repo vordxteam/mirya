@@ -110,5 +110,117 @@
         "button": "Daha Fazla Bilgi"
       }
     }
+  },
+"services": {
+    "badge": "Hizmetler",
+    "mainTitle": "Yüksek Etkili Otomasyon İçin Profesyonel Hizmetler",
+    "mainDescription": "İster ilk iş akışınızı başlatıyor olun, ister otomasyonu tüm organizasyonunuza yayıyor olun, MIRYA uzmanları yolun her adımında size rehberlik edecek uzmanlığı ve desteği sağlar.",
+        "buttonLabel": "Oturumu Rezerve Et",
+    "items": {
+      "guardian": {
+        "title": "Process Guardian",
+        "description": "Process Guardian, MIRYA uzmanlarının operasyonlarınıza özel otomasyon iş akışlarını tasarlama, oluşturma ve optimize etme süreçlerinde size rehberlik ettiği uygulamalı bir destek hizmetidir."
+      },
+      "starter": {
+        "title": "2 Günlük MIRYA Başlangıç Eğitimi",
+        "description": "Ekibinizin MIRYA'da sadece iki gün içinde uzmanlaşmasına yardımcı olmak için tasarlanmış, eğitmen eşliğinde odaklanmış bir eğitim deneyimi. Yeni kullanıcılar, teknik ekipler ve departmanlar arası otomasyonu ölçeklendirmek isteyen işletmeler için idealdir."
+      },
+      "compliance": {
+        "title": "Uyumluluk ve Yönetişim Kurulumu",
+        "description": "Müşterinin otomasyonu güvenli bir şekilde çalıştırması için gereken her şeyi yapılandırıyoruz: kullanıcı rolleri, yönetişim modeli, güvenlik ve şifreleme kuralları, denetim günlükleri, versiyonlama, yedekleme ve yük devretme tasarımı. Kamu kurumları için mükemmeldir."
+      },
+      "expert": {
+        "title": "2 Günlük MIRYA Uzmanlık Eğitimi",
+        "description": "Güçlü kullanıcılar için derinlemesine eğitim: karmaşık süreç oluşturma, çok adımlı iş akışları, karar mantığı ve entegrasyonlar. Tamamen kendi kendine yetmeyi hedefleyen ekipler için mükemmeldir."
+      },
+      "ai": {
+        "title": "Yapay Zeka Danışmanlığı",
+        "description": "Özel Yapay Zeka uzmanlarımız, MIRYA ve diğer YZ çözümlerinin işinizi nasıl dönüştürebileceği konusunda kişisel ve bireyselleştirilmiş danışmanlık sağlar. Otomasyon potansiyelini belirlemenize ve YZ destekli iş akışları tasarlamanıza yardımcı oluyoruz."
+      }
+    }
   }
+  ,
+  
+  "recommended": {
+    "badge": "Ek Hizmetler",
+    "mainTitle": "Ekstra Önerilen Hizmetler",
+    "items": {
+      "automationWorkshop": {
+        "title": "Otomasyon Keşif Atölyesi",
+        "description": "İş süreçlerinizi analiz ediyor, otomasyon fırsatlarını haritalıyor ve kuruluşunuz için net bir ROI odaklı otomasyon yol haritası oluşturuyoruz.",
+        "link": "#",
+        "btnLabel": "Oturumu Rezerve Et"
+      },
+      "coeSetup": {
+        "title": "Otomasyon Mükemmeliyet Merkezi (CoE) Kurulumu",
+        "description": "Şirketlerin kendi otomasyon ekiplerini kurmalarına yardımcı oluyoruz: süreçler, roller, yönetim, eğitim, ölçekleme yol haritası",
+        "link": "#",
+        "btnLabel": "Uzman Yardımı Al"
+      },
+      "processRecording": {
+        "title": "Süreç Kaydı ve Blueprint Oluşturma",
+        "description": "Gerçek kullanıcı iş akışlarını gözlemliyor ve belgeleri otomasyona hazır blueprint'lere dönüştürüyoruz. İç dokümantasyonu olmayan şirketler için mükemmel bir hizmet.",
+        "link": "#",
+        "btnLabel": "Oturumu Rezerve Et"
+      },
+      "prioritySupport": {
+        "title": "Öncelikli Destek & Atanmış Başarı Yöneticisi",
+        "description": "En hızlı yanıt süreleri, garantili SLA'lar ve otomasyonlarınızın sorunsuz çalışmasını ve sürekli iyileştirilmesini proaktif olarak sağlayan atanmış bir başarı yöneticisi.",
+        "link": "#",
+        "btnLabel": "Uzman Yardımı Al"
+      },
+      "proofOfValue": {
+        "title": "MIRYA Değer Kanıtı (4 hafta)",
+        "description": "Şirketiniz için 4 hafta içinde gerçek bir çalışan otomasyon oluşturuyoruz. Amaç: uzun vadeli taahhütten önce somut, ölçülebilir sonuçlar elde etmek",
+        "link": "#",
+        "btnLabel": "Oturumu Rezerve Et"
+      }
+    }
+  }
+,
+
+  "comparison": {
+    "badge": "Özellik Karşılaştırması",
+    "mainTitle": "Takımlar Neden Mirya’yı Diğer Platformlardan Tercih Ediyor",
+    "mainDescription": "Mirya, geleneksel iş akışı araçlarında bulamayacağınız AI destekli araştırma, otomasyon ve karar alma özellikleri sunar.",
+    "columnHeaders": {
+      "features": "Özellikler",
+      "mirya": "Mirya",
+      "n8n": "n8n",
+      "powerAutomate": "Power Automate",
+      "aiAgent": "Agentic Kit"
+    },
+    "rows": {
+      "noCode": "Gerçek No-Code (genellikle IT becerisi gerektirmez)",
+      "onPremise": "Her İş İstasyonunda Yerinde Çalıştırma",
+      "humanLike": "İnsan Benzeri Masaüstü + Web Otomasyonu (API Gerekmez)",
+      "recording": "Tam Otomatik Süreç Kaydı (Masaüstü + Web)",
+      "apiDependent": "API’ye Bağımlı",
+      "apiSupport": "API Desteği",
+      "autonomous": "Otonom Botlar (Planlı + bağımsız)",
+      "aiDecision": "Entegre AI Karar Motoru",
+      "encryption": "Yerel Kimlik Bilgileri, Dosyalar ve Değişkenlerin Şifrelenmesi",
+      "learnable": "Teknik geçmiş olmadan 2 günde öğrenilebilir",
+      "values": {
+        "lowCode": "Düşük Kod",
+        "selfHost": "Kendi Sunucusu",
+        "mostlyCloud": "Çoğunlukla Bulut",
+        "no": "Hayır",
+        "yes": "Evet",
+        "limitedUi": "Sınırlı UI",
+        "fullyWithoutApi": "Evet-Tamamen API olmadan çalışır",
+        "apiWebhookDependent": "Hayır-API/Webhook Bağımlı",
+        "apiConnectorRequired": "API Bağlayıcı Gerekli",
+        "llmApiBased": "Hayır-LLM & API Tabanlı",
+        "partial": "Kısmi",
+        "pluginBased": "Eklenti tabanlı",
+        "addOns": "Eklentiler",
+        "dependsOnHosting": "Hosting'e bağlı",
+        "dependsOnTenant": "Tenant'a bağlı"
+      }
+    }
+  }
+
+
+
 }

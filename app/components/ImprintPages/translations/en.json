@@ -1,0 +1,38 @@
+{
+  "imprint": {
+    "hero": {
+      "badge": "Imprint",
+      "title": "MIRYA Imprint",
+      "description": "This page provides the legally required company information, contact details, and responsible parties for MIRYA GmbH in accordance with German Telemedia regulations."
+    },
+    "content": {
+      "infoNotice": "Information provided in accordance with Section 5 TMG",
+      "productOf": "is a product of",
+      "company": "MIRYA GmbH",
+      "addressLine1": "[Street Name & Number]",
+      "addressLine2": "[Postal Code, City], Germany",
+      "register": "Commercial Register: District Court [City] (Amtsgericht [City])",
+      "registrationNumber": "Company Registration Number (Handelsregisternummer): [HRB Number]",
+      "vat": "VAT Identification Number in accordance with Section 27a German VAT Act: [VAT Number]",
+      "contact": "Contact",
+      "responsibleTitle": "Responsible for content in accordance with § 55 Abs. 2 RStV:",
+      "responsiblePerson": "[Name of responsible person, typically the managing director], address above"
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "contentTitle": "Liability for Content",
+      "contentText1": "As a service provider, MIRYA GmbH is responsible for its own content on these pages in accordance with § 7 Abs. 1 TMG.",
+      "contentText2": "If we become aware of any legal violations, such content will be removed immediately.",
+      "linksTitle": "Liability for Links",
+      "linksText1": "Our website contains links to external third-party websites over whose content we have no control.",
+      "linksText2": "If we become aware of legal violations, such links will be removed immediately."
+    },
+    "copyright": {
+      "title": "Copyright Notice",
+      "text1": "All content and materials created and published by MIRYA GmbH on this website are protected under German copyright law.",
+      "text2": "Downloads and copies of this website are permitted for private, non-commercial use only.",
+      "text3": "Content originating from third parties is marked accordingly.",
+      "text4": "If you notice any copyright infringement, please inform us so that we can remove such content immediately."
+    }
+  }
+}

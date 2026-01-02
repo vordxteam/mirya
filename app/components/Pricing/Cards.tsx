@@ -272,7 +272,8 @@
 //     </div>
 //   );
 // }
-"use client"
+
+"use client";
 import React, { useState } from "react";
 import GradientBlackButton from "@/app/ui/GradientBlackButton";
 import { motion } from "framer-motion";
@@ -298,7 +299,7 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
   const { t } = useTranslation("pricing");
   const [activePlanId, setActivePlanId] = useState<number | null>(null);
 
-  // We keep the logic and layout exactly the same, 
+  // We keep the logic and layout exactly the same,
   // just replacing strings with t() keys from your JSON.
   const planData: Record<"monthly" | "annual", Plan[]> = {
     monthly: [
@@ -306,7 +307,9 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
         id: 1,
         title: t("plans.monthly.0.title"),
         description: t("plans.monthly.0.description"),
-        features: t("plans.monthly.0.features", { returnObjects: true }) as string[],
+        features: t("plans.monthly.0.features", {
+          returnObjects: true,
+        }) as string[],
         price: t("plans.monthly.0.price"),
         period: t("plans.monthly.0.period"),
         btnColor: "#00031C",
@@ -317,7 +320,9 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
         id: 2,
         title: t("plans.monthly.1.title"),
         description: t("plans.monthly.1.description"),
-        features: t("plans.monthly.1.features", { returnObjects: true }) as string[],
+        features: t("plans.monthly.1.features", {
+          returnObjects: true,
+        }) as string[],
         btnColor: "#0274FE",
         btnText: t("plans.buttons.contactUs"),
         tagline: t("plans.monthly.1.tagline"),
@@ -327,7 +332,9 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
         id: 3,
         title: t("plans.monthly.2.title"),
         description: t("plans.monthly.2.description"),
-        features: t("plans.monthly.2.features", { returnObjects: true }) as string[],
+        features: t("plans.monthly.2.features", {
+          returnObjects: true,
+        }) as string[],
         btnColor: "#00031C",
         btnText: t("plans.buttons.contactUs"),
         tagline: t("plans.monthly.2.tagline"),
@@ -339,7 +346,9 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
         id: 1,
         title: t("plans.annual.0.title"),
         description: t("plans.annual.0.description"),
-        features: t("plans.annual.0.features", { returnObjects: true }) as string[],
+        features: t("plans.annual.0.features", {
+          returnObjects: true,
+        }) as string[],
         price: t("plans.annual.0.price"),
         period: t("plans.annual.0.period"),
         btnColor: "#00031C",
@@ -350,7 +359,9 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
         id: 2,
         title: t("plans.annual.1.title"),
         description: t("plans.annual.1.description"),
-        features: t("plans.annual.1.features", { returnObjects: true }) as string[],
+        features: t("plans.annual.1.features", {
+          returnObjects: true,
+        }) as string[],
         btnColor: "#0274FE",
         btnText: t("plans.buttons.contactUs"),
         tagline: t("plans.annual.1.tagline"),
@@ -360,7 +371,9 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
         id: 3,
         title: t("plans.annual.2.title"),
         description: t("plans.annual.2.description"),
-        features: t("plans.annual.2.features", { returnObjects: true }) as string[],
+        features: t("plans.annual.2.features", {
+          returnObjects: true,
+        }) as string[],
         btnColor: "#00031C",
         btnText: t("plans.buttons.contactUs"),
         tagline: t("plans.annual.2.tagline"),
@@ -489,12 +502,20 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
                 ) : item.btnText === t("plans.buttons.contactUs") ? (
                   <GradientButton label={item.btnText} href="/contact" />
                 ) : (
-                  <GradientBlackButton
-                    bgColor={item.btnColor}
-                    label={item.btnText}
-                    textColor="white"
-                    href="#"
-                  />
+                  <div
+                    className="inline-block rounded-full p-[1.5px]"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+                    }}
+                  >
+                    <Link
+                      href="#"
+                      className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
+                    >
+                      {item.btnText}
+                    </Link>
+                  </div>
                 )}
               </div>
             </div>

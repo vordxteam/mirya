@@ -261,7 +261,7 @@ const HeroSection = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] w-full text-center pb-3 sm:pb-6">
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[1176px] w-full text-center pb-3 sm:pb-6">
           {t("hero.title")}
         </h1>
 

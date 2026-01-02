@@ -76,26 +76,32 @@ const Decisions = () => {
           <div className="absolute top-0">
             <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
           </div>
-          <div className="flex flex-wrap justify-center gap-6 max-w-[1280px]">
-            {cards.map((item) => (
-            <div
-  key={item.id}
-  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-lg p-px bg-[linear-gradient(180deg,#3F49D8_14.82%,#22223C_49.99%,#22223C_84.47%)]"
->
-  <div className="bg-[#050A29] z-10 relative rounded-lg p-4 flex gap-5 items-center h-full">
-    <Image
-      src="/images/tick-bg.png"
-      alt="Tick"
-      height={56}
-      width={56}
-    />
-    <div className="space-y-1 flex flex-col h-full justify-center">
-      <p className="heading-5 font-medium text-[#FFFFFF]">{item.title}</p>
-      <p className="heading-7 font-light text-[#FFFFFFCC]">{item.disc}</p>
-    </div>
-  </div>
-</div>
-
+         <div className="flex flex-wrap justify-center gap-6 max-w-[1280px]">
+  {cards.map((item) => (
+    <div
+      key={item.id}
+      className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-lg p-px"
+      style={{
+        background: "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
+      }}
+    >
+                <div className="bg-[#050A29] z-10 relative rounded-lg p-4 flex gap-5 items-center h-full">
+                  <Image
+                    src="/images/tick-bg.png"
+                    alt="Tick"
+                    height={56}
+                    width={56}
+                  />
+                  <div className="space-y-1 flex flex-col h-full justify-center">
+                    <p className="heading-5 font-medium text-[#FFFFFF]">
+                      {item.title}
+                    </p>
+                    <p className="heading-7 font-light text-[#FFFFFFCC]">
+                      {item.disc}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

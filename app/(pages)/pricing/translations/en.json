@@ -108,5 +108,115 @@
         "button": "Learn More"
       }
     }
+  },
+
+  "services": {
+    "badge": "Services",
+    "mainTitle": "Professional Services For High Impact Automation",
+    "mainDescription": "Whether you're launching your first workflow or scaling automation across your organization, MIRYA’s specialists provide the expertise and support to guide you every step of the way.",
+    "buttonLabel": "Book Session",
+    "items": {
+      "guardian": {
+        "title": "Process Guardian",
+        "description": "Process guardian is a hands-on support service where MIRYA experts guide you through designing, building, and optimizing automation workflows tailored to your operations."
+      },
+      "starter": {
+        "title": "2-Day MIRYA Starter Training",
+        "description": "A focused, instructor-led training experience designed to help your team master MIRYA in just two days. Ideal for new users, technical teams, and businesses committed to scaling automation across departments."
+      },
+      "compliance": {
+        "title": "Compliance & Governance Setup",
+        "description": "We configure everything the customer needs to run automation safely: user roles, governance model, security & encryption rules, audit logs, versioning, backup & failover design, perfect for public institutions."
+      },
+      "expert": {
+        "title": "2-Day MIRYA Expert Training",
+        "description": "Deep-dive training for power users complex process building, multi-step workflows, decision logic & integrations, scaling automation across departments. Perfect for teams aiming to become fully self-sufficient."
+      },
+      "ai": {
+        "title": "AI Consulting",
+        "description": "Your dedicated AI experts provide personal, individualized consulting on how MIRYA and other AI solutions can transform your business. We help you identify automation potential, design AI-driven workflows."
+      }
+    }
   }
+  ,
+  
+  "recommended": {
+    "badge": "Add on Services",
+    "mainTitle": "Additional Recommended Services",
+    "items": {
+      "automationWorkshop": {
+        "title": "Automation Discovery Workshop",
+        "description": "We analyze your business processes, map automation opportunities, and create a clear ROI-driven automation roadmap for your organization.",
+        "link": "#",
+        "btnLabel": "Book Session"
+      },
+      "coeSetup": {
+        "title": "Automation Center of Excellence (CoE) Setup",
+        "description": "We help companies establish their own automation team: processes, roles, governance, training, scaling roadmap",
+        "link": "#",
+        "btnLabel": "Get Expert Help"
+      },
+      "processRecording": {
+        "title": "Process Recording & Blueprinting",
+        "description": "We observe and document real user workflows and convert them into automation ready blueprints. A perfect service for companies without in house documentation.",
+        "link": "#",
+        "btnLabel": "Book Session"
+      },
+      "prioritySupport": {
+        "title": "Priority Support & Dedicated Success Manager",
+        "description": "Fastest response times, guaranteed SLAs, and a dedicated success manager who proactively ensures your automations run smoothly and continuously improve.",
+        "link": "#",
+        "btnLabel": "Get Expert Help"
+      },
+      "proofOfValue": {
+        "title": "MIRYA Proof of Value (4 weeks)",
+        "description": "We build a real working automation for your company within 4 weeks. The goal: tangible, measurable results before long-term commitment",
+        "link": "#",
+        "btnLabel": "Book Session"
+      }
+    }
+  }
+,
+"comparison": {
+  "badge": "Feature Comparison",
+  "mainTitle": "Why Teams Choose Mirya Over Other Platforms",
+  "mainDescription": "Mirya delivers AI-powered research, automation, and decision-making features you won't find in traditional workflow tools.",
+  "columnHeaders": {
+    "features": "Features",
+    "mirya": "Mirya",
+    "n8n": "n8n",
+    "powerAutomate": "Power Automate",
+    "aiAgent": "Agentic Kit"
+  },
+  "rows": {
+    "noCode": "True No-Code (usually without IT skills)",
+    "onPremise": "On Premise Execution on any Workstation",
+    "humanLike": "Human Like Desktop + Web Automation (No API Needed)",
+    "recording": "Fully Automation Process Recording (Desktop + Web)",
+    "apiDependent": "API Dependent",
+    "apiSupport": "API Support",
+    "autonomous": "Autonomous Bots (Schedule + independent)",
+    "aiDecision": "Integrated AI Decision Engine",
+    "encryption": "Local Encryption of Credentials, Files & Variables",
+    "learnable": "Learnable in 2 Days without any Technical Background",
+    "values": {
+      "lowCode": "Low Code",
+      "selfHost": "Self Host",
+      "mostlyCloud": "Mostly Cloud",
+      "no": "No",
+      "yes": "Yes",
+      "limitedUi": "Limited UI",
+      "fullyWithoutApi": "Yes-Works Fully without API",
+      "apiWebhookDependent": "No-API/Webhook Dependent",
+      "apiConnectorRequired": "No-API Connector Required",
+      "llmApiBased": "No-LLM & API Based",
+      "partial": "Partial",
+      "pluginBased": "Plugin-based",
+      "addOns": "Add-ons",
+      "dependsOnHosting": "Depends on Hosting",
+      "dependsOnTenant": "Depends on Tenant"
+    }
+  }
+}
+
 }

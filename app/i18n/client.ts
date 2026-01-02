@@ -31,6 +31,14 @@ import trContact from '@/app/(pages)/contact/translations/tr.json';
 import enPricing from '@/app/(pages)/pricing/translations/en.json';
 import dePricing from '@/app/(pages)/pricing/translations/de.json';
 import trPricing from '@/app/(pages)/pricing/translations/tr.json';
+// Home translations
+import enHome from '@/app/(pages)/home/translations/en.json';
+import deHome from '@/app/(pages)/home/translations/de.json';
+import trHome from '@/app/(pages)/home/translations/tr.json';
+
+import enImprint from '@/app/components/ImprintPages/translations/en.json';
+import deImprint from '@/app/components/ImprintPages/translations/de.json';
+import trImprint from '@/app/components/ImprintPages/translations/tr.json';
 
 const resources = {
   en: {
@@ -39,7 +47,11 @@ const resources = {
     layout: enLayout,
     industries: enIndustries,
     contact: enContact,
-    pricing: enPricing
+    pricing: enPricing,
+    home: enHome
+    ,
+    ImprintPages: enImprint
+
   },
   de: {
     translation: deTranslation,
@@ -47,7 +59,10 @@ const resources = {
     layout: deLayout,
     industries: deIndustries,
     contact: deContact,
-    pricing: dePricing
+    pricing: dePricing,
+    home: deHome,
+    ImprintPages: deImprint
+
   },
   tr: {
     translation: trTranslation,
@@ -55,7 +70,10 @@ const resources = {
     layout: trLayout,
     industries: trIndustries,
     contact: trContact,
-    pricing: trPricing
+    pricing: trPricing,
+    home: trHome,
+    ImprintPages: trImprint
+
   },
 };
 // Initialize i18next only once
@@ -80,7 +98,7 @@ if (!i18next.isInitialized) {
       react: {
         useSuspense: false,
       },
-      ns: ['translation', 'about', 'layout', 'industries', 'contact', 'pricing'],
+      ns: ['translation', 'about', 'layout', 'industries', 'contact', 'pricing', 'home', 'ImprintPages'],
       defaultNS: 'translation',
     });
 }

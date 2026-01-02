@@ -1,41 +1,40 @@
 "use client";
+import { link } from "fs";
 import Image from "next/image";
-import GradientButton from "@/app/ui/GradientButton";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+
 export default function Services() {
+  const { t } = useTranslation("pricing");
   const reasons = [
     {
       id: 1,
-      title: "Process Guardian",
-      discription:
-        "Process guardian is a hands-on support service where MIRYA experts guide you through designing, building, and optimizing automation workflows tailored to your operations.",
+      title: t("services.items.guardian.title"),
+      description: t("services.items.guardian.description"),
       link: "#",
     },
     {
       id: 2,
-      title: "2-Day MIRYA Starter Training",
-      discription:
-        "A focused, instructor-led training experience designed to help your team master MIRYA in just two days. Ideal for new users, technical teams, and businesses committed to scaling automation across departments.",
-      link: "",
+      title: t("services.items.starter.title"),
+      description: t("services.items.starter.description"),
+      link: "#",
     },
     {
       id: 3,
-      title: "Compliance & Governance Setup",
-      discription:
-        "We configure everything the customer needs to run automation safely: user roles, governance model, security & encryption rules, audit logs, versioning, backup & failover design, perfect for public institutions.",
+      title: t("services.items.compliance.title"),
+      description: t("services.items.compliance.description"),
+      link: "#",
     },
     {
       id: 4,
-      title: "2-Day MIRYA Expert Training",
-      discription:
-        "Deep-dive training for power users complex process building, multi-step workflows, decision logic & integrations, scaling automation across departments.Perfect for teams aiming to become fully self-sufficient.",
+      title: t("services.items.expert.title"),
+      description: t("services.items.expert.description"),
       link: "#",
     },
     {
       id: 5,
-      title: "AI Consulting",
-      discription:
-        "Your dedicated AI experts provide personal, individualized consulting on how MIRYA and other AI solutions can transform your business. We help you identify automation potential, design AI-driven workflows.",
+      title: t("services.items.ai.title"),
+      description: t("services.items.ai.description"),
       link: "",
     },
   ];
@@ -51,52 +50,52 @@ export default function Services() {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-[20px] text-center">
-            Services
+            {t("services.badge")}{" "}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
-        <h1 className="heading-1 font-medium w-full text-center pb-3 sm:pb-6 max-w-[750px]">
-          Professional Services For High Impact Automation
+        <h1 className="heading-1 font-medium w-full text-center pb-3 sm:pb-6 max-w-[777px]">
+          {t("services.mainTitle")}{" "}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 text-center max-w-[676px]">
-          Whether you're launching your first workflow or scaling automation
-          across your organization, MIRYA’s specialists provide the expertise
-          and support to guide you every step of the way.{" "}
+          {t("services.mainDescription")}{" "}
         </p>
       </div>
 
       <div className=" pt-5 sm:pt-16 pb-10 sm:pb-16 grid sm:grid-cols-2 md:grid-cols-2 gap-6 services-grid">
         {reasons.map((item) => (
-          <div
-            key={item.id}
-            style={{
-              background:
-                "linear-gradient(280deg, #00031C 16.47%, #686DDD 48.87%, #00031C 78.17%)",
-            }}
-            className="p-px"
-          >
-            {/* <div className="p-6 space-y-3 bg-[#0a1560]  h-full overflow-hidden relative rounded-xl"> */}
-            <div className="p-6 space-y-3 bg-[#0a1560] h-full overflow-hidden relative rounded-xl z-10">
-              {/* <div className="absolute top-6 left-30 -z-10 pointer-events-none"> */}
+         <div
+  key={item.id}
+  style={{
+    background:
+      "linear-gradient(280deg, #00031C 16.47%, #686DDD 48.87%, #00031C 78.17%)",
+  }}
+  className="p-px rounded-xl" 
+>
+  <div
+    className="p-6 space-y-3 h-full overflow-hidden relative rounded-xl z-10"
+    style={{
+      background:
+        "linear-gradient(52deg, rgba(17, 35, 143, 0.60) 58.88%, rgba(89, 53, 233, 0.60) 96.79%), #00031C",
+    }}
+  >
+              {" "}
               <div className="absolute top-6 left-30 pointer-events-none z-0">
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
-
               {/* <div className="absolute top-0 right-0  "> */}
               <div className="absolute top-0 right-0 pointer-events-none z-0">
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
               </div>
-
               <div className="space-y-2">
                 <h3 className="heading-3 font-semibold  text-[#F4F7FF]">
-                  {item.title}
+                  {item.title}{" "}
                 </h3>
                 <p className="heading-6 font-normal text-[#F4F7FF99]">
-                  {item.discription}
+                  {item.description}{" "}
                 </p>
               </div>
-
-              <div className="pt-8 w-[147px]">
+              <div className="pt-8 w-fit min[147px]">
                 <div
                   className="rounded-full p-px w-full"
                   style={{
@@ -112,7 +111,7 @@ export default function Services() {
                       color: "white",
                     }}
                   >
-                    Learn More
+                    {t("services.buttonLabel")}{" "}
                   </Link>
                 </div>
               </div>

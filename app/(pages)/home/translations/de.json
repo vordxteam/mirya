@@ -1,0 +1,217 @@
+{
+  "hero": {
+    "badge": "Hergestellt in Deutschland",
+    "mainTitle": "Automatisierung, die denkt, lernt und wie ein Mensch arbeitet",
+    "description": "Verwandeln Sie komplexe Arbeitsabläufe in einfache, intelligente Automatisierungen — in Stunden, nicht Wochen.",
+    "buttons": {
+      "getStarted": "Loslegen",
+      "contactUs": "Kontaktieren Sie uns"
+    }
+  },
+
+  "demo": {
+    "badge": "Einfach. Intelligent. Autonom",
+    "description": "MIRYA ist Ihre All-in-One-Automatisierungsplattform, die jedes System, jede Anwendung und jeden Prozess ohne Code verbindet und steuert. MIRYA folgt nicht nur Anweisungen – es versteht Daten, erkennt Muster und trifft intelligente Entscheidungen in Echtzeit. Es führt jede Aufgabe wie ein Mensch aus – nur schneller, präziser und absolut zuverlässig.",
+    "benefits": {
+      "noProgramming": "Keine Programmierkenntnisse erforderlich",
+      "interfaceIndependent": "Schnittstellenunabhängig — keine API erforderlich",
+      "onPremise": "On-Premise oder Cloud",
+      "recordAutomate": "Aufzeichnen & Automatisieren",
+      "ready24h": "In 24 Stunden einsatzbereit",
+      "whiteLabel": "White-Label-fähig",
+      "dragDrop": "Drag-&-Drop-Visual-Interface",
+      "roi": "ROI in nur 4–6 Wochen",
+      "analytics": "Analyse-Dashboard",
+      "aiAssistant": "Virtueller KI-Assistent",
+      "autonomous": "Autonome Bots",
+      "smartPdf": "Intelligente PDF-Berichte"
+    }
+  },
+
+  "howToUse": {
+    "badge": "So funktioniert es",
+    "mainTitle": "So funktioniert MIRYA",
+    "description": "Mühelose Automatisierung beginnt mit MIRYA — kein Coding, keine Konfiguration, keine Wartezeit. Ziehen Sie Ihre Ideen einfach per Drag & Drop, zeichnen Sie Ihren Workflow auf oder sprechen Sie Ihre Befehle, während Ihr digitaler Teamkollege lernt und handelt.",
+    "getStarted": "Jetzt starten",
+    "slides": [
+      {
+        "id": 1,
+        "title": "Workflow aufzeichnen",
+        "description": "Führen Sie Ihre Aufgabe genauso aus wie sonst auch, und MIRYA beobachtet, wie Sie arbeiten — Klicks, Tasteneingaben, Entscheidungen und alles dazwischen."
+      },
+      {
+        "id": 2,
+        "title": "Versteht die Logik",
+        "description": "MIRYA erkennt kritische Entscheidungsmuster, versteht die einzelnen Schritte und erstellt automatisch einen intelligenten Logikablauf im Hintergrund."
+      },
+      {
+        "id": 3,
+        "title": "Automatisch ausführen",
+        "description": "Nun übernimmt MIRYA die Aufgabe für Sie — über jedes System, jede Anwendung, jeden Browser oder jede Umgebung hinweg, mit der gleichen Intelligenz und Anpassungsfähigkeit wie ein Mensch."
+      },
+      {
+        "id": 4,
+        "title": "Verbessern & Skalieren",
+        "description": "Passen Sie Ihre Automatisierungen an, wiederholen oder erweitern Sie sie auf ganze Teams oder Abteilungen. Kein Code. Keine Komplexität. Maximale Wirkung."
+      }
+    ]
+  },
+  "animations": {
+    "how2": {
+      "properties": "Eigenschaften",
+      "branching": "Verzweigung",
+      "file": "Datei",
+      "fileFormatLabel": "Dateiformat",
+      "fileFormatType": "Excel (.xlsx)",
+      "sourceFolderLabel": "Quellordner",
+      "sourceFolderType": "[ORDNER] Downloads",
+      "record": "Aufnehmen"
+    }
+  },
+
+  "workflow": {
+    "badge": "MIRYA Workflow",
+    "title": "Workflows visuell erstellen. Keine Lernkurve. Keine Komplexität",
+    "description": "Ziehen, ablegen und verbinden Sie Schritte wie Nachrichten, Bedingungen, Aktionen und Prüfungen — unterstützt von einem KI-Assistenten, der Ihnen hilft, schneller zu erstellen.",
+    "buttonLabel": "Jetzt starten"
+  },
+  "animationNodes": {
+    "start": "Start",
+    "find": "Finden",
+    "browse": "Durchsuchen",
+    "type": "Eingeben",
+    "speak": "Sprechen",
+    "automate": "Automatisieren"
+  },
+  "sectionBadge": "Funktionen",
+  "mainHeading": "Leistungsstarke Funktionen für mühelose Automatisierung",
+  "subHeading": "Entdecken Sie, wie MIRYA denkt, lernt und wie ein Mensch arbeitet — ganz ohne Code, Komplexität oder Integrationen.",
+  "cards": [
+    {
+      "id": "secure",
+      "title": "Sicher, Skalierbar & Vollständig in Ihrer Hand",
+      "description": "Betreiben Sie MIRYA vollständig On-Premise für maximale Datensicherheit und Kontrolle. Skalieren Sie Automatisierungen teamübergreifend und passen Sie die gesamte Plattform mit Ihrem eigenen Branding an — ohne versteckte Kosten oder Einschränkungen.",
+      "icon": "/images/card-img1.png",
+      "mainImg": "/images/card.png",
+      "layout": "horizontal"
+    },
+    {
+      "id": "universal",
+      "title": "Universelle Kompatibilität",
+      "description": "MIRYA arbeitet auf jeder Anwendung oder jedem System genau wie ein Mensch — klickt, tippt und navigiert visuell. Keine APIs, keine Schnittstellen, keine Tool-Wechsel. Ihre bestehende Software bleibt unverändert; MIRYA automatisiert alles.",
+      "icon": "/images/card3.png",
+      "mainImg": "/images/card2.png",
+      "layout": "horizontal"
+    },
+    {
+      "id": "intelligence",
+      "title": "Menschliche Intelligenz & Zero-Code-Lernen",
+      "description": "MIRYA lernt Aufgaben, indem es Ihnen einfach bei der Arbeit zusieht. Es versteht Bildschirme, interpretiert Daten und erstellt intelligente Automatisierungen — ohne eine einzige Zeile Code. Einmal aufnehmen, den Rest erledigt MIRYA mit menschlicher Präzision.",
+      "icon": "/images/card4.png",
+      "mainImg": "/images/main-img.png",
+      "layout": "vertical"
+    }
+  ],
+  "footer": {
+    "text1": "Einfach. Intelligent. Autonom.",
+    "text2": "MIRYA verbindet und steuert jedes System, jede App und jeden Prozess — ganz ohne Code. Entwickelt für Business-Anwender. Angetrieben von kognitiver KI.",
+    "ctaLabel": "Demo anfordern"
+  },
+
+  "buildForYou": {
+    "badge": "Für Sie entwickelt",
+    "mainTitle": "Was wir für Sie entwickelt haben",
+    "description": "Nutzung der Kraft künstlicher Intelligenz, um Branchen zu revolutionieren und menschliche Erfahrungen zu verbessern.",
+    "buttonLabel": "Jetzt kontaktieren",
+    "slides": [
+      {
+        "id": 1,
+        "title": "Planungsfunktionen",
+        "description": "Erstellen Sie strukturierte Pläne, unterteilen Sie Aufgaben in Meilensteine und visualisieren Sie Zeitpläne mit automatisierten Vorschlägen durch intelligente Workflow-Analyse."
+      },
+      {
+        "id": 2,
+        "title": "Echtzeit-Datenverfolgung",
+        "description": "Überwachen Sie den Fortschritt live, erkennen Sie Engpässe sofort und synchronisieren Sie Daten teamübergreifend mit sekundengenauen Updates für präzise Entscheidungen."
+      },
+      {
+        "id": 3,
+        "title": "Automatisierungs-Einblicke gewinnen",
+        "description": "Identifizieren Sie wiederkehrende Aufgaben, optimieren Sie die Teameffizienz und erhalten Sie KI-gestützte Empfehlungen zur mühelosen Automatisierung von Workflows."
+      }
+    ]
+  },
+  "aiAssistantSection": {
+    "badge": "KI-Assistenz",
+    "mainTitle": "Lernen Sie Ihren intelligenten virtuellen Assistenten kennen",
+    "description": "MIRYA verfügt über einen integrierten konversationellen KI-Assistenten, der Ihre Workflows versteht, den Kontext interpretiert und Aktionen wie ein hochqualifizierter Automatisierungsexperte ausführt – sofort, präzise und freihändig.",
+    "buttonLabel": "Kontaktieren Sie uns jetzt",
+    "features": [
+      {
+        "title": "Workflows sofort erstellen & bearbeiten",
+        "description": "Fragen Sie einfach, und MIRYA erstellt oder aktualisiert Workflows im Handumdrehen – ohne Klicks, ohne Konfigurationsbildschirme."
+      },
+      {
+        "title": "Knotenparameter anpassen",
+        "description": "Passen Sie jeden Schritt mit einem einfachen Befehl an. Der Assistent aktualisiert die Logik oder Trigger sofort."
+      },
+      {
+        "title": "Ausführungen steuern",
+        "description": "Starten, stoppen, pausieren oder setzen Sie jeden Prozess mit einem einzigen Befehl fort – alles in Echtzeit."
+      },
+      {
+        "title": "Kontextbezogenes Verständnis",
+        "description": "Erhalten Sie Antworten wie „Läuft Prozess X?“ oder „Ist Schritt Y fertig?“ mit vollem Systembewusstsein."
+      },
+      {
+        "title": "Autonome Navigation",
+        "description": "Der Assistent wechselt automatisch zwischen Fenstern oder Prozessen, um Aufgaben zu erledigen."
+      },
+      {
+        "title": "Integrierte Datei-Intelligenz",
+        "description": "Suchen Sie in Dateien und erhalten Sie direkte Zusammenfassungen – sofort und in natürlicher Sprache."
+      }
+    ]
+  }
+  ,
+  
+  "testimonialsSection": {
+    "badge": "Kundenstimmen",
+    "mainTitle": "Bewertungen von Kunden, die MIRYA nutzen",
+    "description": "Wir nutzen die Kraft der künstlichen Intelligenz, um Branchen zu revolutionieren und menschliche Erfahrungen zu verbessern.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Das einfachste Automatisierungstool, das wir je genutzt haben. Unser Team hat es an einem Tag gelernt. Ein Tool, das genau mit unseren bestehenden Systemen arbeitet – ganz ohne Integrationen. Wir haben MIRYA als White-Label eingesetzt und liefern nun Automatisierung unter unserer eigenen Marke. Ein echter Gamechanger.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      },
+      {
+        "id": 2,
+        "text": "Das einfachste Automatisierungstool, das wir je genutzt haben. Unser Team hat es an einem Tag gelernt. Ein Tool, das genau mit unseren bestehenden Systemen arbeitet – ganz ohne Integrationen. Wir haben MIRYA als White-Label eingesetzt und liefern nun Automatisierung unter unserer eigenen Marke. Ein echter Gamechanger.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      },
+      {
+        "id": 3,
+        "text": "Das einfachste Automatisierungstool, das wir je genutzt haben. Unser Team hat es an einem Tag gelernt. Ein Tool, das genau mit unseren bestehenden Systemen arbeitet – ganz ohne Integrationen. Wir haben MIRYA als White-Label eingesetzt und liefern nun Automatisierung unter unserer eigenen Marke. Ein echter Gamechanger.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      },
+      {
+        "id": 4,
+        "text": "Das einfachste Automatisierungstool, das wir je genutzt haben. Unser Team hat es an einem Tag gelernt. Ein Tool, das genau mit unseren bestehenden Systemen arbeitet – ganz ohne Integrationen. Wir haben MIRYA als White-Label eingesetzt und liefern nun Automatisierung unter unserer eigenen Marke. Ein echter Gamechanger.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      },
+      {
+        "id": 5,
+        "text": "Das einfachste Automatisierungstool, das wir je genutzt haben. Unser Team hat es an einem Tag gelernt. Ein Tool, das genau mit unseren bestehenden Systemen arbeitet – ganz ohne Integrationen. Wir haben MIRYA als White-Label eingesetzt und liefern nun Automatisierung unter unserer eigenen Marke. Ein echter Gamechanger.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      }
+    ]
+  }
+
+
+}

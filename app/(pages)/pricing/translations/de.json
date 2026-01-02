@@ -107,5 +107,116 @@
         "button": "Mehr erfahren"
       }
     }
+  },
+  "services": {
+    "badge": "Dienstleistungen",
+    "mainTitle": "Professionelle Services für hochwirksame Automatisierung",
+    "mainDescription": "Egal, ob Sie Ihren ersten Workflow starten oder die Automatisierung in Ihrem gesamten Unternehmen skalieren möchten – die Spezialisten von MIRYA bieten das Fachwissen und die Unterstützung, um Sie bei jedem Schritt zu begleiten.",
+        "buttonLabel": "Sitzung buchen",
+    "items": {
+      "guardian": {
+        "title": "Process Guardian",
+        "description": "Process Guardian ist ein praxisnaher Support-Service, bei dem MIRYA-Experten Sie bei der Konzeption, dem Aufbau und der Optimierung von Automatisierungs-Workflows begleiten, die genau auf Ihre Abläufe zugeschnitten sind."
+      },
+      "starter": {
+        "title": "2-tägiges MIRYA Starter-Training",
+        "description": "Ein fokussiertes, von Trainern geleitetes Erlebnis, das Ihrem Team hilft, MIRYA in nur zwei Tagen zu meistern. Ideal für neue Benutzer, technische Teams und Unternehmen, die Automatisierung abteilungsübergreifend skalieren wollen."
+      },
+      "compliance": {
+        "title": "Compliance & Governance Setup",
+        "description": "Wir konfigurieren alles, was der Kunde für einen sicheren Betrieb der Automatisierung benötigt: Benutzerrollen, Governance-Modell, Sicherheits- und Verschlüsselungsregeln, Audit-Logs, Versionierung sowie Backup- & Failover-Design. Perfekt für öffentliche Institutionen."
+      },
+      "expert": {
+        "title": "2-tägiges MIRYA Experten-Training",
+        "description": "Deep-Dive-Training für Power-User: Erstellung komplexer Prozesse, mehrstufige Workflows, Entscheidungslogik & Integrationen. Perfekt für Teams, die vollständig autark werden möchten."
+      },
+      "ai": {
+        "title": "KI-Beratung",
+        "description": "Ihre engagierten KI-Experten bieten persönliche, individuelle Beratung dazu, wie MIRYA und andere KI-Lösungen Ihr Unternehmen transformieren können. Wir helfen Ihnen, Automatisierungspotenziale zu identifizieren und KI-gesteuerte Workflows zu entwerfen."
+      }
+    }
+  },
+  
+  "recommended": {
+    "badge": "Zusatzdienste",
+    "mainTitle": "Zusätzlich empfohlene Dienstleistungen",
+    "items": {
+      "automationWorkshop": {
+        "title": "Automatisierungs-Discovery-Workshop",
+        "description": "Wir analysieren Ihre Geschäftsprozesse, identifizieren Automatisierungsmöglichkeiten und erstellen eine klare ROI-getriebene Automatisierungs-Roadmap für Ihr Unternehmen.",
+        "link": "#",
+        "btnLabel": "Sitzung buchen"
+      },
+      "coeSetup": {
+        "title": "Einrichtung des Centers of Excellence (CoE) für Automatisierung",
+        "description": "Wir helfen Unternehmen, ihr eigenes Automatisierungsteam aufzubauen: Prozesse, Rollen, Governance, Schulungen, Skalierungs-Roadmap",
+        "link": "#",
+        "btnLabel": "Expertenhilfe erhalten"
+      },
+      "processRecording": {
+        "title": "Prozessaufzeichnung & Blueprinting",
+        "description": "Wir beobachten und dokumentieren reale Benutzer-Workflows und wandeln sie in automationsbereite Blueprints um. Ein perfekter Service für Unternehmen ohne interne Dokumentation.",
+        "link": "#",
+        "btnLabel": "Sitzung buchen"
+      },
+      "prioritySupport": {
+        "title": "Prioritätssupport & Dedizierter Success Manager",
+        "description": "Schnellste Reaktionszeiten, garantierte SLAs und ein dedizierter Success Manager, der proaktiv sicherstellt, dass Ihre Automatisierungen reibungslos laufen und kontinuierlich verbessert werden.",
+        "link": "#",
+        "btnLabel": "Expertenhilfe erhalten"
+      },
+      "proofOfValue": {
+        "title": "MIRYA Proof of Value (4 Wochen)",
+        "description": "Wir erstellen eine echte funktionierende Automatisierung für Ihr Unternehmen innerhalb von 4 Wochen. Ziel: greifbare, messbare Ergebnisse vor einer langfristigen Verpflichtung",
+        "link": "#",
+        "btnLabel": "Sitzung buchen"
+      }
+    }
   }
+,
+
+  "comparison": {
+    "badge": "Funktionsvergleich",
+    "mainTitle": "Warum Teams Mirya anderen Plattformen vorziehen",
+    "mainDescription": "Mirya bietet KI-gestützte Recherche-, Automatisierungs- und Entscheidungsfunktionen, die Sie in herkömmlichen Workflow-Tools nicht finden.",
+    "columnHeaders": {
+      "features": "Funktionen",
+      "mirya": "Mirya",
+      "n8n": "n8n",
+      "powerAutomate": "Power Automate",
+      "aiAgent": "Agentic Kit"
+    },
+    "rows": {
+      "noCode": "Echtes No-Code (meist ohne IT-Kenntnisse)",
+      "onPremise": "Lokale Ausführung auf jedem Arbeitsplatz",
+      "humanLike": "Menschliche Desktop- + Web-Automatisierung (Keine API erforderlich)",
+      "recording": "Vollständig automatisiertes Prozess-Recording (Desktop + Web)",
+      "apiDependent": "API-Abhängig",
+      "apiSupport": "API-Unterstützung",
+      "autonomous": "Autonome Bots (geplant + unabhängig)",
+      "aiDecision": "Integrierte KI-Entscheidungs-Engine",
+      "encryption": "Lokale Verschlüsselung von Zugangsdaten, Dateien & Variablen",
+      "learnable": "In 2 Tagen ohne technische Vorkenntnisse erlernbar",
+      "values": {
+        "lowCode": "Low Code",
+        "selfHost": "Selbst gehostet",
+        "mostlyCloud": "Meist Cloud",
+        "no": "Nein",
+        "yes": "Ja",
+        "limitedUi": "Eingeschränkte UI",
+        "fullyWithoutApi": "Ja - funktioniert vollständig ohne API",
+        "apiWebhookDependent": "Nein - API/Webhook abhängig",
+        "apiConnectorRequired": "API-Connector erforderlich",
+        "llmApiBased": "Nein - LLM & API basiert",
+        "partial": "Teilweise",
+        "pluginBased": "Plugin-basiert",
+        "addOns": "Add-ons",
+        "dependsOnHosting": "Abhängig vom Hosting",
+        "dependsOnTenant": "Abhängig vom Tenant"
+      }
+    }
+  }
+
+
+
 }

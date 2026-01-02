@@ -1,0 +1,38 @@
+{
+  "imprint": {
+    "hero": {
+      "badge": "Impressum",
+      "title": "MIRYA Impressum",
+      "description": "Diese Seite enthält die gesetzlich vorgeschriebenen Unternehmensinformationen, Kontaktdaten und verantwortlichen Stellen der MIRYA GmbH gemäß den deutschen Telemedienvorschriften."
+    },
+    "content": {
+      "infoNotice": "Angaben gemäß § 5 TMG",
+      "productOf": "ist ein Produkt von",
+      "company": "MIRYA GmbH",
+      "addressLine1": "[Straße und Hausnummer]",
+      "addressLine2": "[PLZ, Stadt], Deutschland",
+      "register": "Handelsregister: Amtsgericht [Stadt]",
+      "registrationNumber": "Handelsregisternummer: [HRB Nummer]",
+      "vat": "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [USt-ID]",
+      "contact": "Kontakt",
+      "responsibleTitle": "Verantwortlich für den Inhalt gemäß § 55 Abs. 2 RStV:",
+      "responsiblePerson": "[Name der verantwortlichen Person, i. d. R. Geschäftsführer], Anschrift wie oben"
+    },
+    "disclaimer": {
+      "title": "Haftungsausschluss",
+      "contentTitle": "Haftung für Inhalte",
+      "contentText1": "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten verantwortlich.",
+      "contentText2": "Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.",
+      "linksTitle": "Haftung für Links",
+      "linksText1": "Unser Angebot enthält Links zu externen Websites Dritter.",
+      "linksText2": "Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
+    },
+    "copyright": {
+      "title": "Urheberrecht",
+      "text1": "Die durch die MIRYA GmbH erstellten Inhalte unterliegen dem deutschen Urheberrecht.",
+      "text2": "Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.",
+      "text3": "Inhalte Dritter werden als solche gekennzeichnet.",
+      "text4": "Bei Bekanntwerden von Urheberrechtsverletzungen werden wir diese Inhalte umgehend entfernen."
+    }
+  }
+}

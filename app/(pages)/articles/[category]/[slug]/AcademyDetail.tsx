@@ -449,7 +449,7 @@ const AcademyDetailPage = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px] leading-6 gap-4 lg:gap-8 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px]  gap-4 lg:gap-8 h-full">
           {/* 1. LEFT SIDEBAR - Show on mobile when toggled */}
           <div
             className={`${
@@ -494,9 +494,9 @@ const AcademyDetailPage = () => {
                       <div key={item.id}>
                         <button
                           onClick={() => toggleExpand(item.id)}
-                          className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-normal transition-all mb-4 cursor-pointer ${
+                          className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-light transition-all mb-4 cursor-pointer ${
                             isParentActive
-                              ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
+                              ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white font-normal "
                               : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
                           }`}
                         >
@@ -528,7 +528,7 @@ const AcademyDetailPage = () => {
                                   handleSectionClick(subItem.id, subItem.slug);
                                   setShowMobileSidebar(false); // Close sidebar on mobile after selection
                                 }}
-                                className={`w-full text-left px-3 ml-2 max-w-[230px] py-2 font-light rounded-lg text-[14px] transition-all cursor-pointer ${
+                                className={`w-full text-left px-3 ml-2 max-w-[230px] py-2 leading-5 font-light rounded-lg text-[14px] transition-all cursor-pointer ${
                                   activeSection === subItem.id
                                     ? "text-[#116AF8] bg-[#116af81f] font-normal"
                                     : "text-[#FFFFFFE0] hover:text-[#116AF8]"

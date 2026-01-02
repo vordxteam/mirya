@@ -2,8 +2,9 @@ import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const HeroSection = () => {
+  const { t } = useTranslation("home");
   return (
     <div>
       <div className="relative z-10 flex flex-col items-center justify-center pt-0 sm:pt-10 px-5 md:px-10 bg-[url('/images/herobg.png')] bg-no-repeat bg-bottom bg-contain">
@@ -29,7 +30,7 @@ const HeroSection = () => {
             />
 
             <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-              Made in Germany
+              {t("hero.badge")}{" "}
             </h1>
           </div>
 
@@ -41,16 +42,15 @@ const HeroSection = () => {
             priority={true}
           />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[972px] w-full text-center pb-3 sm:pb-6">
-          Automation That Thinks, Learns & Works Like a Human
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[1004px] w-full text-center pb-3 sm:pb-6">
+          {t("hero.mainTitle")}{" "}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center">
-          Turn complex workflows into simple, intelligent automations — in
-          hours, not weeks.
+          {t("hero.description")}
         </p>
         <div className="flex items-center justify-center gap-3">
           <GradientButton
-            label="Get Started"
+            label={t("hero.buttons.getStarted")}
             href="/contact"
             bgColor="#0274FE"
             textColor="#fff"
@@ -66,33 +66,31 @@ const HeroSection = () => {
               href="/contact"
               className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
             >
-              Contact Us
+              {t("hero.buttons.contactUs")}{" "}
             </Link>
           </div>
         </div>
-      <div
-  className="p-px rounded-3xl mt-2.5 shadow-[0_0_20px_0_rgba(2,116,254,0.32)]"
-  style={{
-    background:
-      "linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)",
-  }}
->
-  {/* Inner container (transparent) */}
-  <div className="relative rounded-3xl overflow-hidden flex items-center justify-center">
-    {/* Glow effect at top center */}
-   
+        <div
+          className="p-px rounded-3xl mt-2.5 shadow-[0_0_20px_0_rgba(2,116,254,0.32)]"
+          style={{
+            background:
+              "linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)",
+          }}
+        >
+          {/* Inner container (transparent) */}
+          <div className="relative rounded-3xl overflow-hidden flex items-center justify-center">
+            {/* Glow effect at top center */}
 
-    {/* Image */}
-    <Image
-      src="/images/mirya2.png"
-      width={1200}
-      height={833}
-      alt="MIRYA"
-      className="max-w-full h-auto rounded-3xl"
-    />
-  </div>
-</div>
-
+            {/* Image */}
+            <Image
+              src="/images/mirya2.png"
+              width={1200}
+              height={833}
+              alt="MIRYA"
+              className="max-w-full h-auto rounded-3xl"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
