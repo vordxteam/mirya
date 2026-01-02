@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Contact Us",
+    "title": "Get in Touch With the MIRYA Team",
+    "description": "Tell us what you’re looking for, and we’ll point you in the right direction. Fast, friendly, and tailored support always."
+  },
+  "contactInfo": {
+    "title": "Get In Touch",
+    "description": "Have questions or need help with your order? We're here to assist you every step of the way.",
+    "availability": {
+      "label": "Availability",
+      "time": "Sunday – Thursday, 9 AM to 6 PM"
+    },
+    "followUs": "Follow us",
+    "cards": [
+      {
+        "title": "Location",
+        "value": "Los Angeles, CA"
+      },
+      {
+        "title": "Phone",
+        "value": "+1 (208) 120-802"
+      },
+      {
+        "title": "Email Address",
+        "value": "mirya@gmail.com"
+      }
+    ]
+  },
+  "form": {
+    "sendMessage": "Send Message",
+    "placeholders": {
+      "name": "Full name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message..."
+    },
+    "subjects": {
+      "general": "General Inquiry",
+      "support": "Technical Support",
+      "billing": "Billing Issue",
+      "feedback": "Feedback",
+      "other": "Other"
+    },
+    "privacy": "I agree to the",
+    "privacyLink": "Privacy Policy",
+    "submit": "Submit"
+  },
+  "cardsSection": {
+    "community": {
+      "title": "Community",
+      "description": "Are you interested in one of our paid offerings? If yes, then reach out to our sales team for further queries and suggestions.",
+      "button": "Contact Sales"
+    },
+    "anythingElse": {
+      "title": "Anything Else",
+      "description": "For any other queries and questions you can write us an email anywhere and from anywhere. Our support team will reach out to you quickly.",
+      "button": "Write to Us"
+    }
+  }
+}

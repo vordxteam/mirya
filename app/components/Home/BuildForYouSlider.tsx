@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState, useCallback, useRef, useEffect } from "react";
-
+import { useTranslation } from "react-i18next";
 interface Slide {
   id: number;
   title: string;
@@ -33,6 +33,7 @@ const slides: Slide[] = [
 ];
 
 export default function BuildForYouSlider() {
+  const { t } = useTranslation("home");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -167,10 +168,10 @@ export default function BuildForYouSlider() {
                 </div>
                 <div className="space-y-3 pb-8 relative z-30">
                   <h3 className="heading-2 font-regular text-[#F4F7FF]">
-                    {slide.title}
+                    {t(`buildForYou.slides.${index}.title`)}{" "}
                   </h3>
                   <p className="heading-6 font-regular max-w-[400px] text-[#CAC9D1]">
-                    {slide.description}
+                    {t(`buildForYou.slides.${index}.description`)}{" "}
                   </p>
                 </div>
                 <Image

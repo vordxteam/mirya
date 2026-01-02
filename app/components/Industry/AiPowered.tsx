@@ -1,8 +1,18 @@
-import GradientButton from "@/app/ui/GradientButton";
+"use client";
+
 import Image from "next/image";
-import React from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+
 const AiPowered = () => {
+  const { t } = useTranslation("industries"); // Use the industries namespace
+
+  const features = t("aiPowered.features", { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+    image: string;
+  }>;
+
   return (
     <div className="bg-[#00031C] overflow-hidden">
       <div className="px-2 md:px-20 pb-[60px] pt-0 sm:pt-[60px] space-y-16 max-w-[1440px] m-auto relative">
@@ -16,16 +26,15 @@ const AiPowered = () => {
             <Image src="/images/label2.svg" width={78} height={16} alt="line" />
 
             <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-              AI-Powered Decisions
+              {t("aiPowered.badge")}
             </h1>
             <Image src="/images/label.svg" width={78} height={16} alt="line" />
           </div>
           <h1 className="text-[30px] sm:text-[40px] md:text-[48px] font-medium leading-10 sm:leading-14 tracking-[-1.44px] max-w-[716px] w-full text-center">
-            What MIRYA Automate
+            {t("aiPowered.title")}
           </h1>
           <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 text-center max-w-[400px]">
-            MIRYA's automation intelligence works across your existing tools and
-            systems, powering end-to-end flows.
+            {t("aiPowered.description")}
           </p>
 
           {/* Button wrapper with higher z-index and pointer-events-auto */}
@@ -47,12 +56,12 @@ const AiPowered = () => {
                 href="/#"
                 className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
               >
-                Automate With MIRYA{" "}
+                {t("aiPowered.button")}
               </Link>
             </div>
           </div>
         </div>
-
+        {/* 
         <div className="flex flex-wrap items-center justify-center max-w-7xl gap-6 w-full relative z-10">
           <div
             className="rounded-lg p-px w-full md:w-fit"
@@ -269,6 +278,42 @@ const AiPowered = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AiPowered; */}
+
+        <div className="flex flex-wrap items-center justify-center max-w-7xl gap-6 w-full relative z-10">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="rounded-lg p-px w-full md:w-fit"
+              style={{
+                background:
+                  "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
+              }}
+            >
+              <div className="rounded-lg p-4 bg-[#050A29] flex items-center gap-5">
+              <Image
+  src={feature.image} // This uses the path defined in your JSON
+  width={56}
+  height={56}
+  alt={feature.title}
+/>
+                <div className="space-y-1">
+                  <h1 className="text-[16px] font-medium leading-5 tracking-[-0.2px]">
+                    {feature.title}
+                  </h1>
+                  <p className="text-[#FFFFFFCC] body-5 tracking-[-0.2px] max-w-[271px]">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "badge": "Branchen, die wir stärken",
+    "title": "Wo MIRYA echten Mehrwert schafft",
+    "description": "MIRYA bietet intelligente No-Code-Automatisierung, die sich an reale Anforderungen anpasst, manuelle Aufgaben eliminiert und Teams dabei unterstützt, effizient zu skalieren.",
+    "lastUpdated": "Zuletzt aktualisiert im November 2025"
+  },
+
+  "aiPowered": {
+    "badge": "KI-gestützte Entscheidungen",
+    "title": "Was MIRYA automatisiert",
+    "description": "Die Automatisierungsintelligenz von MIRYA arbeitet nahtlos mit Ihren bestehenden Tools und Systemen zusammen und ermöglicht durchgängige End-to-End-Prozesse.",
+    "button": "Mit MIRYA automatisieren",
+
+    "features": [
+      {
+        "title": "Dokumente lesen & verstehen",
+        "description": "MIRYA liest, interpretiert und extrahiert automatisch Informationen aus E-Mails, PDFs, Formularen, Tabellen und unstrukturierten Dokumenten.",
+        "image": "/images/automate1.svg"
+      },
+      {
+        "title": "Systeme aktualisieren & validieren",
+        "description": "Von ERP- und CRM-Systemen bis hin zu HR-Software und Legacy-Systemen stellt MIRYA sicher, dass alle Anwendungen synchron und aktuell bleiben.",
+        "image": "/images/automate2.svg"
+      },
+      {
+        "title": "Intelligente Entscheidungen treffen",
+        "description": "MIRYA bewertet Geschäftsregeln, analysiert numerische Daten, wendet logische Bedingungen an, versteht natürliche Sprache und erkennt Muster in komplexen Workflows.",
+        "image": "/images/automate3.svg"
+      },
+      {
+        "title": "Edge Cases automatisch handhaben",
+        "description": "Bei fehlenden Daten, geänderten Formaten oder unerwartetem Systemverhalten passt sich MIRYA mithilfe von Logik, Wiederholungen und Fallbacks an.",
+        "image": "/images/automation6.png"
+      },
+      {
+        "title": "Aus Ergebnissen lernen",
+        "description": "MIRYA analysiert Resultate, erkennt Muster und optimiert Entscheidungen – für intelligentere, präzisere und effizientere Abläufe.",
+        "image": "/images/automation7.png"
+      },
+      {
+        "title": "Zuverlässig bei hoher Skalierung",
+        "description": "Entwickelt für geschäftskritische Automatisierungen mit integrierter Wiederherstellung, Protokollierung und Fehlerbehandlung – selbst bei hoher Last.",
+        "image": "/images/automation8.png"
+      },
+      {
+        "title": "Workflows koordinieren",
+        "description": "Mehrstufige Workflows werden vereinfacht: MIRYA erfasst Eingaben, konfiguriert Schritte, automatisiert Ausführungen und überwacht Ergebnisse kontinuierlich.",
+        "image": "/images/automate4.svg"
+      },
+      {
+        "title": "Software wie ein Mensch bedienen",
+        "description": "MIRYA interagiert mit Anwendungen wie ein Mensch – klicken, tippen, auswählen, navigieren und Daten verarbeiten.",
+        "image": "/images/automate5.svg"
+      }
+    ]
+  },
+
+  "impact": {
+    "badge": "Wirkung",
+    "title": "Wo MIRYA echten Mehrwert schafft",
+    "description": "MIRYA unterstützt Organisationen mit intelligenter No-Code-Automatisierung dabei, manuelle Arbeit zu eliminieren, Prozesse zu beschleunigen und ohne zusätzliches Personal zu skalieren.",
+    "button": "Demo anfordern"
+  },
+
+  "industries": {
+    "badge": "Branchen",
+    "title": "Branchen, die wir stärken",
+    "description": "Von hochvolumigen Backoffice-Prozessen bis hin zu kundenorientierten Workflows passt sich MIRYA jeder Branche mühelos an.",
+
+    "list": [
+      {
+        "title": "Einzelhandel & E-Commerce",
+        "description": "Optimieren Sie die Auftragsabwicklung, aktualisieren Sie Lagerbestände in Echtzeit und automatisieren Sie die Kundenkommunikation."
+    
+        , "image": "/images/industry1.svg"
+},
+      {
+        "title": "Finanzen & Buchhaltung",
+        "description": "Automatisieren Sie Rechnungsverarbeitung, Abstimmungen, Bonitätsprüfungen und Finanzberichte mit hoher Präzision."
+        , "image": "/images/industry2.svg"
+ 
+    },
+      {
+        "title": "Öffentlicher Sektor",
+        "description": "Beschleunigen Sie Fallbearbeitung, automatisieren Sie Dokumentenprozesse und verbessern Sie Bürgerdienste bei voller Compliance."
+        , "image": "/images/industry3.svg"
+
+    },
+      {
+        "title": "Logistik & Mobilität",
+        "description": "Verarbeiten Sie Buchungsanfragen, versenden Sie Statusupdates und optimieren Sie operative Abläufe."
+        , "image": "/images/industry4.svg"
+
+    },
+      {
+        "title": "Kundenservice",
+        "description": "Klassifizieren und routen Sie Anfragen, erstellen Sie Antwortentwürfe und reduzieren Sie manuelle Vorarbeit."
+        , "image": "/images/industry5.svg"
+
+    },
+      {
+        "title": "Gesundheitswesen",
+        "description": "Automatisieren Sie Patientenaufnahme, Dokumentation, Versicherungsprozesse und klinische Koordination."
+    ,     "image": "/images/industry6.svg"
+  
+    }
+    ]
+  }
+}

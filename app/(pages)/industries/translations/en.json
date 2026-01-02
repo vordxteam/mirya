@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "badge": "Industries We Empower",
+    "title": "Where MIRYA Creates Real Impact",
+    "description": "MIRYA brings intelligent, no-code automation that adapts to these realities, eliminating manual tasks and enabling teams to scale efficiently.",
+    "lastUpdated": "Last updated on November 2025"
+  },
+
+  "aiPowered": {
+    "badge": "AI-Powered Decisions",
+    "title": "What MIRYA Automate",
+    "description": "MIRYA's automation intelligence works across your existing tools and systems, powering end-to-end flows.",
+    "button": "Automate With MIRYA",
+
+  "features": [
+      {
+        "title": "Reads & understands documents",
+        "description": "MIRYA automatically reads, interprets, and extracts meaning from emails, PDFs, forms, spreadsheets, and even messy unstructured documents.",
+        "image": "/images/automate1.svg"
+      },
+      {
+        "title": "Updates & validates systems",
+        "description": "From ERP and CRM platforms to HR software and long-standing legacy systems, MIRYA ensures every application stays up-to-date and synchronized.",
+        "image": "/images/automate2.svg"
+      },
+      {
+        "title": "Makes intelligent decisions",
+        "description": "It evaluates business rules, interprets numerical data, applies logical conditions, understands natural language, and identifies patterns within complex workflows.",
+        "image": "/images/automate3.svg"
+      },
+      {
+        "title": "Handles Edge Cases Automatically",
+        "description": "When data is missing, formats change, or systems behave unexpectedly, MIRYA adapts using logic, retries, and fallback paths instead of failing silently.",
+        "image": "/images/automation6.png"
+      },
+      {
+        "title": "Learns From Outcomes",
+        "description": "MIRYA observes results, detects patterns, and refines decisions—helping workflows become smarter, more accurate, and more efficient with every run.",
+        "image": "/images/automation7.png"
+      },
+      {
+        "title": "Built for Reliability at Scale",
+        "description": "Designed to run mission-critical automations continuously with built-in recovery, logging, and error handling that keep processes stable—even under high volume and long runtimes.",
+        "image": "/images/automation8.png"
+      },
+      {
+        "title": "Coordinates workflows",
+        "description": "Multi stage workflows become simple when MIRYA takes over. It captures inputs, configures the required steps, automates execution, and continuously monitors results.",
+        "image": "/images/automate4.svg"
+      },
+      {
+        "title": "Operates software like a human",
+        "description": "MIRYA interacts with software applications just as a human would: clicking, typing, selecting, navigating, and processing data.",
+        "image": "/images/automate5.svg"
+      }
+    ]
+  },
+
+  "impact": {
+    "badge": "Impact",
+    "title": "Where MIRYA Creates Real Impact",
+    "description": "MIRYA brings intelligent, no-code automation to organizations that want to eliminate manual work, accelerate operations, and scale without increasing headcount. From data-heavy departments to service-driven industries MIRYA works everywhere.",
+    "button": "Get A Demo"
+  },
+
+  "industries": {
+    "badge": "Industries",
+    "title": "Industries We Empower",
+    "description": "From high-volume back office operations to customer facing workflows MIRYA adapts to every environment and every industry with ease.",
+
+    "list": [
+      {
+        "title": "Retail & E-Commerce",
+        "description": "Optimize order processing, update stock in real time, simplify returns, and automate customer communication to keep every channel aligned."
+  ,  "image": "/images/industry1.svg" 
+    },
+      {
+        "title": "Finance & Accounting",
+        "description": "Automate invoice handling, perform reconciliations, run credit checks, and generate financial reports with consistent rule-based precision."
+   , "image": "/images/industry2.svg" 
+    },
+      {
+        "title": "Public Sector",
+        "description": "Accelerate case management, automate document workflows, and streamline citizen services with complete compliance."
+   , "image": "/images/industry3.svg"
+    },
+      {
+        "title": "Logistics & Mobility",
+        "description": "Process booking emails, issue shipment updates, and manage operational workflows to increase speed and reduce coordination effort."
+   , "image": "/images/industry4.svg" 
+    },
+      {
+        "title": "Customer Service",
+        "description": "Classify and route inquiries, pre-draft responses, and eliminate manual triage — enabling agents to focus on high-value interactions."
+   , "image": "/images/industry5.svg" 
+    },
+      {
+        "title": "Healthcare",
+        "description": "MIRYA empowers healthcare departments by automating patient intake, documentation, insurance workflows, and clinical coordination."
+    , "image": "/images/industry6.svg"
+    }
+    ]
+  }
+}

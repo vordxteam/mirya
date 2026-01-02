@@ -1,0 +1,38 @@
+{
+  "imprint": {
+    "hero": {
+      "badge": "Künye",
+      "title": "MIRYA Künye",
+      "description": "Bu sayfa, Alman Telemedya düzenlemelerine uygun olarak MIRYA GmbH için yasal olarak gerekli şirket bilgilerini, iletişim detaylarını ve sorumlu kişileri içerir."
+    },
+    "content": {
+      "infoNotice": "§ 5 TMG uyarınca sağlanan bilgiler",
+      "productOf": "bir ürünüdür",
+      "company": "MIRYA GmbH",
+      "addressLine1": "[Cadde Adı ve Numara]",
+      "addressLine2": "[Posta Kodu, Şehir], Almanya",
+      "register": "Ticaret Sicili: Bölge Mahkemesi [Şehir] (Amtsgericht [Şehir])",
+      "registrationNumber": "Ticaret Sicil Numarası (Handelsregisternummer): [HRB Numarası]",
+      "vat": "§ 27a Alman KDV Kanunu uyarınca KDV Kimlik Numarası: [KDV Numarası]",
+      "contact": "İletişim",
+      "responsibleTitle": "§ 55 Abs. 2 RStV uyarınca içerikten sorumlu:",
+      "responsiblePerson": "[Sorumlu Kişinin Adı, genellikle genel müdür], yukarıdaki adres"
+    },
+    "disclaimer": {
+      "title": "Sorumluluk Reddi",
+      "contentTitle": "İçerik Sorumluluğu",
+      "contentText1": "Hizmet sağlayıcı olarak MIRYA GmbH, § 7 Abs. 1 TMG uyarınca bu sayfalardaki kendi içeriğinden sorumludur.",
+      "contentText2": "Herhangi bir hukuki ihlal tespit edilirse, ilgili içerik derhal kaldırılacaktır.",
+      "linksTitle": "Bağlantılar İçin Sorumluluk",
+      "linksText1": "Web sitemiz üçüncü taraf web sitelerine bağlantılar içermektedir.",
+      "linksText2": "Hukuki ihlaller tespit edilirse, bağlantılar derhal kaldırılacaktır."
+    },
+    "copyright": {
+      "title": "Telif Hakkı Bildirimi",
+      "text1": "Bu web sitesinde MIRYA GmbH tarafından oluşturulan tüm içerikler Alman telif hakkı yasası kapsamında korunmaktadır.",
+      "text2": "İndirmeler ve kopyalar yalnızca özel, ticari olmayan kullanım için izinlidir.",
+      "text3": "Üçüncü taraflara ait içerikler uygun şekilde işaretlenmiştir.",
+      "text4": "Herhangi bir telif hakkı ihlali fark ederseniz, lütfen bizi bilgilendirin."
+    }
+  }
+}

@@ -6,39 +6,45 @@ import How2Card from "./HowtouseAnimations/How2Card";
 import How3Card from "./HowtouseAnimations/How3Card";
 import How4Card from "./HowtouseAnimations/How4Card";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 const HowToUse = () => {
+  const { t } = useTranslation("home");
   const [activeSlide, setActiveSlide] = useState(0);
   const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const slidesRef = useRef<HTMLDivElement | null>(null);
 
-  const slides = [
-    {
-      id: 1,
-      title: "Record Your Workflow",
-      description:
-        "Complete your task just as you normally would, and MIRYA watches how you work clicks, keystrokes, decisions, and all.",
-    },
-    {
-      id: 2,
-      title: "Understands the Logic",
-      description:
-        "MIRYA observes the critical decision patterns, understands the steps it sees, and automatically builds a smart logic flow under the hood.",
-    },
-    {
-      id: 3,
-      title: "Run it Automatically",
-      description:
-        "Now MIRYA performs the task for you across any system, app, browser, or environment with the same intelligence and adaptability as a human.",
-    },
-    {
-      id: 4,
-      title: "Improve & Scale",
-      description:
-        "Customize, repeat, or expand your automation across entire teams or departments. Zero code. Zero complexity. Maximum impact.",
-    },
-  ];
-
+  // const slides = [
+  //   {
+  //     id: 1,
+  //     title: "Record Your Workflow",
+  //     description:
+  //       "Complete your task just as you normally would, and MIRYA watches how you work clicks, keystrokes, decisions, and all.",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Understands the Logic",
+  //     description:
+  //       "MIRYA observes the critical decision patterns, understands the steps it sees, and automatically builds a smart logic flow under the hood.",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Run it Automatically",
+  //     description:
+  //       "Now MIRYA performs the task for you across any system, app, browser, or environment with the same intelligence and adaptability as a human.",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Improve & Scale",
+  //     description:
+  //       "Customize, repeat, or expand your automation across entire teams or departments. Zero code. Zero complexity. Maximum impact.",
+  //   },
+  // ];
+  const slides = t("howToUse.slides", { returnObjects: true }) as Array<{
+    id: number;
+    title: string;
+    description: string;
+  }>;
   const slideComponents = [
     <How2Card />,
     <How1Card />,
@@ -91,23 +97,20 @@ const HowToUse = () => {
         <div className="pb-3 flex items-center justify-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px]">
-            How to Use
+            {t("howToUse.badge")}{" "}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
 
         {/* Main Heading */}
         <h1 className="text-[30px] sm:text-[48px] font-medium text-center pb-3 sm:pb-6">
-          How MIRYA Works
+          {t("howToUse.mainTitle")}{" "}
         </h1>
 
         <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] text-center max-w-[721px] pb-8">
-          Effortless automation starts with MIRYA — no coding, no configuration,
-          no waiting. Just drag & drop your ideas, record your workflow, or
-          speak your commands as your digital teammate learns and acts.
+          {t("howToUse.description")}
         </p>
 
-       
         <div
           className="rounded-full p-[1.5px]"
           style={{
@@ -119,7 +122,7 @@ const HowToUse = () => {
             href="/contact"
             className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
           >
-            Get Started Now{" "}
+            {t("howToUse.getStarted")}{" "}
           </Link>
         </div>
         {/* Slider */}
@@ -143,7 +146,6 @@ const HowToUse = () => {
                       activeSlide === index ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    {/* FORCE REMOUNT TO RESTART ANIMATION */}
                     <div key={activeSlide}>{slideComponents[index]}</div>
                   </div>
                 ))}
@@ -152,17 +154,13 @@ const HowToUse = () => {
           </div>
         </div>
 
-        {/* Progress + Content */}
         <div className="mt-4 sm:mt-8 w-full">
           <div className="flex items-center w-full relative">
             {slides.map((slide, index) => (
               <div key={index} className="flex-1 relative">
                 <button
                   onClick={() => handleSlideClick(index)}
-                  className="relative w-full h-0.5 bg-[#45557C] hover:bg-[#5565AC] rounded-full
-             cursor-pointer
-             after:absolute after:inset-0 after:h-[250px] after:w-full after:top-1/2 after:-translate-y-1/2
-             after:cursor-pointer after:bg-transparent"
+                  className="relative w-full h-0.5 bg-[#45557C] hover:bg-[#5565AC] rounded-full cursor-pointer after:absolute after:inset-0 after:h-[250px] after:w-full after:top-1/2 after:-translate-y-1/2 after:cursor-pointer after:bg-transparent"
                 >
                   <div
                     className={`h-full transition-all ${
@@ -171,7 +169,6 @@ const HowToUse = () => {
                   />
                 </button>
 
-                {/* Desktop Content */}
                 <div
                   className={`absolute top-12 left-0 right-0 hidden md:block transition-all ${
                     activeSlide === index
@@ -193,18 +190,20 @@ const HowToUse = () => {
             ))}
           </div>
 
-          {/* Mobile Content */}
-          <div className="flex flex-col md:hidden items-center mt-6">
-            <span className="text-[#4F60FA] text-sm">
-              /{slides[activeSlide].id}
-            </span>
-            <h3 className="text-white text-xl font-medium mt-2">
-              {slides[activeSlide].title}
-            </h3>
-            <p className="text-[#CAC9D1] text-[14px] text-center mt-1">
-              {slides[activeSlide].description}
-            </p>
-          </div>
+          {/* Mobile Content with safety check */}
+          {slides[activeSlide] && (
+            <div className="flex flex-col md:hidden items-center mt-6">
+              <span className="text-[#4F60FA] text-sm">
+                /{slides[activeSlide].id}
+              </span>
+              <h3 className="text-white text-xl font-medium mt-2">
+                {slides[activeSlide].title}
+              </h3>
+              <p className="text-[#CAC9D1] text-[14px] text-center mt-1">
+                {slides[activeSlide].description}
+              </p>
+            </div>
+          )}
         </div>
 
         <div className="hidden sm:block h-[200px]"></div>

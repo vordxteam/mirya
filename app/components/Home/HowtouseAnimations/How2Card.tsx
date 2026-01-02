@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next"; // 1. Import hook
 // SVG paths (keeping your existing paths)
 const svgPaths = {
   p27554d00: "M8.5 8L14.5 14L8.5 20",
@@ -69,6 +69,7 @@ function BgMg() {
 }
 
 function Left() {
+  const { t } = useTranslation("home");
   return (
     <div className="absolute left-1/2 -translate-x-1/2 top-8 sm:top-12 w-[90%] sm:w-[85%] max-w-[544px]">
       <div className="bg-[#050a25] rounded-[12px] border border-[#463bbf]">
@@ -78,12 +79,12 @@ function Left() {
             <div className="flex gap-[8px] p-[6px]">
               <div className="flex-1 bg-gradient-to-b from-[#00082f] to-[#0274fe] rounded-[8px] px-3 py-2">
                 <p className="font-light text-[10px] sm:text-[12px] text-white text-center">
-                  Properties
+                  {t("animations.how2.properties")}{" "}
                 </p>
               </div>
               <div className="flex-1 rounded-[8px] px-3 py-2">
                 <p className="font-light text-[10px] sm:text-[12px] text-white/80 text-center">
-                  Branching
+                  {t("animations.how2.branching")}{" "}
                 </p>
               </div>
             </div>
@@ -91,7 +92,9 @@ function Left() {
 
           {/* File Section */}
           <div className="space-y-2 sm:space-y-3">
-            <p className="text-white text-sm sm:text-[16px]">File</p>
+            <p className="text-white text-sm sm:text-[16px]">
+              {t("animations.how2.file")}
+            </p>
 
             {/* File Format */}
             <motion.div
@@ -101,7 +104,7 @@ function Left() {
               className="space-y-2"
             >
               <p className="text-white text-[10px] sm:text-[12px]">
-                File Format
+                {t("animations.how2.fileFormatLabel")}{" "}
               </p>
               <motion.div
                 className="bg-[rgba(255,255,255,0.08)] rounded-[8px] border border-[rgba(255,255,255,0.12)] p-2"
@@ -129,7 +132,7 @@ function Left() {
               className="space-y-2"
             >
               <p className="text-white text-[10px] sm:text-[12px]">
-                Source Folder
+                {t("animations.how2.sourceFolderLabel")}{" "}
               </p>
               <motion.div
                 className="bg-[rgba(255,255,255,0.08)] rounded-[8px] border border-[rgba(255,255,255,0.12)] p-2"
@@ -145,7 +148,7 @@ function Left() {
               >
                 <p className="text-white/80 text-[10px] sm:text-[12px]">
                   <TypingText
-                    text="[FOLDER] Downloads"
+                    text={t("animations.how2.sourceFolderType")}
                     delay={2400}
                     speed={60}
                   />
@@ -190,7 +193,7 @@ function Left() {
               }}
             />
             <p className="text-white text-xs sm:text-[14px] text-center relative z-10">
-              Record
+              {t("animations.how2.record")}
             </p>
           </motion.div>
         </div>

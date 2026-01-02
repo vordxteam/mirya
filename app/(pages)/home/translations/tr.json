@@ -1,0 +1,230 @@
+{
+  "hero": {
+    "badge": "Almanya’da Üretildi",
+    "mainTitle": "Düşünen, Öğrenen ve İnsan Gibi Çalışan Otomasyon",
+    "description": "Karmaşık iş akışlarını basit, akıllı otomasyonlara dönüştürün — haftalar değil, saatler içinde.",
+    "buttons": {
+      "getStarted": "Başlayın",
+      "contactUs": "İletişime Geçin"
+    }
+  },
+  
+  "demo": {
+    "badge": "Basit. Akıllı. Otonom",
+    "description": "MIRYA, sıfır kod ile herhangi bir sistemi, uygulamayı ve süreci birbirine bağlayan ve yöneten hepsi bir arada otomasyon platformunuzdur. MIRYA sadece talimatları takip etmez — verileri anlar, kalıpları belirler ve gerçek zamanlı olarak akıllı kararlar alır. Her görevi bir insan gibi gerçekleştirir — sadece daha hızlı, daha hassas ve tamamen güvenilirdir.",
+    "benefits": {
+      "noProgramming": "Programlama bilgisi gerekmez",
+      "interfaceIndependent": "Arayüzden bağımsız — API gerekmez",
+      "onPremise": "On-Premise veya Bulut",
+      "recordAutomate": "Kaydet ve Otomatikleştir",
+      "ready24h": "24 saat içinde hazır",
+      "whiteLabel": "White Label uyumlu",
+      "dragDrop": "Sürükle & Bırak Görsel Arayüz",
+      "roi": "Sadece 4–6 haftada ROI",
+      "analytics": "Analitik Kontrol Paneli",
+      "aiAssistant": "Sanal Yapay Zeka Asistanı",
+      "autonomous": "Otonom Botlar",
+      "smartPdf": "Akıllı PDF Raporları"
+    }
+  }
+,
+
+  "howToUse": {
+    "badge": "Nasıl Kullanılır",
+    "mainTitle": "MIRYA Nasıl Çalışır",
+    "description": "Zahmetsiz otomasyon MIRYA ile başlar — kodlama yok, yapılandırma yok, bekleme yok. Fikirlerinizi sürükle & bırak ile ekleyin, iş akışınızı kaydedin veya komutlarınızı konuşun; dijital ekip arkadaşınız öğrenir ve harekete geçer.",
+    "getStarted": "Hemen Başlayın",
+    "slides": [
+      {
+        "id": 1,
+        "title": "İş Akışınızı Kaydedin",
+        "description": "Görevinizi her zamanki gibi tamamlayın ve MIRYA nasıl çalıştığınızı izlesin — tıklamalar, tuş vuruşları, kararlar ve her şey."
+      },
+      {
+        "id": 2,
+        "title": "Mantığı Anlar",
+        "description": "MIRYA kritik karar kalıplarını gözlemler, gördüğü adımları anlar ve arka planda otomatik olarak akıllı bir mantık akışı oluşturur."
+      },
+      {
+        "id": 3,
+        "title": "Otomatik Olarak Çalıştırın",
+        "description": "Artık MIRYA, herhangi bir sistem, uygulama, tarayıcı veya ortamda görevi sizin yerinize — bir insan gibi aynı zekâ ve uyarlanabilirlikle — gerçekleştirir."
+      },
+      {
+        "id": 4,
+        "title": "Geliştir ve Ölçekle",
+        "description": "Otomasyonlarınızı özelleştirin, tekrarlayın veya tüm ekipler ve departmanlar genelinde genişletin. Sıfır kod. Sıfır karmaşıklık. Maksimum etki."
+      }
+    ]
+  }
+,
+  "animations": {
+    "how2": {
+      "properties": "Özellikler",
+      "branching": "Dallanma",
+      "file": "Dosya",
+      "fileFormatLabel": "Dosya Formatı",
+      "fileFormatType": "Excel (.xlsx)",
+      "sourceFolderLabel": "Kaynak Klasör",
+      "sourceFolderType": "[KLASÖR] İndirilenler",
+      "record": "Kaydet"
+    }
+  }
+
+,
+
+  "workflow": {
+    "badge": "MIRYA İş Akışı",
+    "title": "Akışları görsel olarak oluşturun. Öğrenme eğrisi yok. Karmaşıklık yok",
+    "description": "Mesajlar, koşullar, eylemler ve kontroller gibi adımları sürükleyip bırakın ve bağlayın — tümü, daha hızlı oluşturmanıza yardımcı olan bir yapay zeka asistanı tarafından desteklenir.",
+    "buttonLabel": "Başlayın"
+  },
+ "animationNodes": {
+    "start": "Başlat",
+    "find": "Bul",
+    "browse": "Göz At",
+    "type": "Yaz",
+    "speak": "Konuş",
+    "automate": "Otomatikleştir"
+  },
+
+  "sectionBadge": "Özellikler",
+  "mainHeading": "Otomasyonu Zahmetsiz Hale Getiren Güçlü Özellikler",
+  "subHeading": "MIRYA’nın kod, karmaşıklık veya entegrasyon olmadan nasıl düşündüğünü, öğrendiğini ve bir insan gibi çalıştığını keşfedin.",
+  "cards": [
+    {
+      "id": "secure",
+      "title": "Güvenli, Ölçeklenebilir ve Tamamen Size Ait",
+      "description": "Tam veri gizliliği ve kontrol için MIRYA’yı tamamen şirket içi (on-premise) çalıştırın. Otomasyonu ekipler arasında ölçeklendirin ve tüm platformu kendi markanızla özelleştirin — gizli maliyetler veya sınırlamalar olmadan.",
+      "icon": "/images/card-img1.png",
+      "mainImg": "/images/card.png",
+      "layout": "horizontal"
+    },
+    {
+      "id": "universal",
+      "title": "Evrensel Uyumluluk",
+      "description": "MIRYA, bir insan gibi tıklayarak, yazarak ve görsel olarak gezerek herhangi bir uygulama veya sistem üzerinde çalışır. API yok, arayüz yok, araç değişimi yok. Mevcut yazılımlarınız aynı kalır; MIRYA her şeyi otomatikleştirir.",
+      "icon": "/images/card3.png",
+      "mainImg": "/images/card2.png",
+      "layout": "horizontal"
+    },
+    {
+      "id": "intelligence",
+      "title": "İnsan Seviyesinde Zeka ve Sıfır Kod Öğrenme",
+      "description": "MIRYA, sizi çalışırken izleyerek görevleri öğrenir. Ekranları anlar, verileri yorumlar ve tek bir satır kod yazmadan akıllı otomasyonlar oluşturur. Bir kez kaydedin, gerisini MIRYA insan benzeri hassasiyetle halletsin.",
+      "icon": "/images/card4.png",
+      "mainImg": "/images/main-img.png",
+      "layout": "vertical"
+    }
+  ],
+  "footer": {
+    "text1": "Basit. Akıllı. Otonom.",
+    "text2": "MIRYA, herhangi bir sistemi, uygulamayı ve süreci — sıfır kod ile — bağlar ve kontrol eder. İş kullanıcıları için tasarlandı. Bilişsel Yapay Zeka ile güçlendirilmiştir.",
+    "ctaLabel": "Demo Al"
+  }
+  ,
+  
+  "buildForYou": {
+    "badge": "Sizin için geliştirildi",
+    "mainTitle": "Sizin İçin Neler Geliştirdik",
+    "description": "Yapay zekânın gücünü kullanarak sektörleri dönüştürüyor ve insan deneyimlerini geliştiriyoruz.",
+    "buttonLabel": "Şimdi İletişime Geçin",
+    "slides": [
+      {
+        "id": 1,
+        "title": "Planlama Özellikleri",
+        "description": "Yapılandırılmış planlar oluşturun, görevleri kilometre taşlarına bölün ve akıllı iş akışı analiziyle desteklenen otomatik önerilerle zaman çizelgelerini görselleştirin."
+      },
+      {
+        "id": 2,
+        "title": "Gerçek Zamanlı Veri Takibi",
+        "description": "Canlı ilerlemeyi izleyin, darboğazları anında tespit edin ve ekipler arasında saniyelik güncellemelerle verileri senkronize ederek doğru kararlar alın."
+      },
+      {
+        "id": 3,
+        "title": "Otomasyon İçgörüleri Kazanın",
+        "description": "Tekrarlayan görevleri belirleyin, ekip verimliliğini optimize edin ve iş akışlarını zahmetsizce otomatikleştirmek için yapay zekâ destekli öneriler alın."
+      }
+    ]
+  }
+  ,
+   
+  "aiAssistantSection": {
+    "badge": "Yapay Zeka Asistanı",
+    "mainTitle": "Akıllı Sanal Asistanınızla Tanışın",
+    "description": "MIRYA, iş akışlarınızı anlayan, bağlamı yorumlayan ve tıpkı son derece yetenekli bir otomasyon uzmanı gibi eylemleri anında, doğru ve eller serbest bir şekilde gerçekleştiren yerleşik bir konuşmalı yapay zeka asistanıyla birlikte gelir.",
+    "buttonLabel": "Hemen Bize Ulaşın",
+    "features": [
+      {
+        "title": "İş Akışlarını Anında Oluşturun ve Düzenleyin",
+        "description": "Siz isteyin, MIRYA iş akışlarını anında oluştursun veya güncellesin — tıklama yok, yapılandırma ekranı yok."
+      },
+      {
+        "title": "Düğüm Parametrelerini Değiştirin",
+        "description": "Herhangi bir adımı basit bir komutla ayarlayın. Asistan mantığı veya tetikleyicileri anında günceller."
+      },
+      {
+        "title": "Yürütmeleri Kontrol Edin",
+        "description": "Herhangi bir işlemi tek bir komutla başlatın, durdurun, duraklatın veya devam ettirin — her şey gerçek zamanlı."
+      },
+      {
+        "title": "Bağlam Duyarlı Anlama",
+        "description": "Tam sistem farkındalığıyla “X süreci çalışıyor mu?” veya “Y adımı bitti mi?” gibi sorulara cevap alın."
+      },
+      {
+        "title": "Otonom Navigasyon",
+        "description": "Asistan, görevleri tamamlamak için pencereler veya süreçler arasında otomatik olarak geçiş yapar."
+      },
+      {
+        "title": "Yerleşik Dosya Zekası",
+        "description": "Dosyaların içinde arama yapın ve doğrudan özetler alın — anında ve doğal dilde."
+      }
+    ]
+  }
+  ,
+  
+  "testimonialsSection": {
+    "badge": "Referanslar",
+    "mainTitle": "MIRYA Kullanan Müşterilerden Yorumlar",
+    "description": "Yapay zekânın gücünü kullanarak sektörleri dönüştürüyor ve insan deneyimlerini geliştiriyoruz.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle birebir çalışıyor, hiçbir entegrasyona gerek yok. MIRYA’yı beyaz etiketledik ve artık otomasyonu kendi markamız altında müşterilerimize sunuyoruz. Gerçekten oyunun kurallarını değiştirdi.",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 2,
+        "text": "Kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle birebir çalışıyor, hiçbir entegrasyona gerek yok. MIRYA’yı beyaz etiketledik ve artık otomasyonu kendi markamız altında müşterilerimize sunuyoruz. Gerçekten oyunun kurallarını değiştirdi.",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 3,
+        "text": "Kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle birebir çalışıyor, hiçbir entegrasyona gerek yok. MIRYA’yı beyaz etiketledik ve artık otomasyonu kendi markamız altında müşterilerimize sunuyoruz. Gerçekten oyunun kurallarını değiştirdi.",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 4,
+        "text": "Kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle birebir çalışıyor, hiçbir entegrasyona gerek yok. MIRYA’yı beyaz etiketledik ve artık otomasyonu kendi markamız altında müşterilerimize sunuyoruz. Gerçekten oyunun kurallarını değiştirdi.",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 5,
+        "text": "Kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle birebir çalışıyor, hiçbir entegrasyona gerek yok. MIRYA’yı beyaz etiketledik ve artık otomasyonu kendi markamız altında müşterilerimize sunuyoruz. Gerçekten oyunun kurallarını değiştirdi.",
+        "author": "David Anderson",
+        "role": "Direktör"
+      }
+    ]
+  }
+
+}
+
+
+
+
+
+

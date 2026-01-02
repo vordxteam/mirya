@@ -377,6 +377,7 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import GradientButton from "@/app/ui/GradientButton";
+import { useTranslation } from "react-i18next";
 
 // Animation variants
 const containerVariants: Variants = {
@@ -423,6 +424,8 @@ const fadeInVariants: Variants = {
 };
 
 export default function Features() {
+  const { t } = useTranslation("home");
+
   return (
     <>
       <motion.div
@@ -473,11 +476,13 @@ export default function Features() {
           <Image
             src="/images/label2.svg"
             alt="gradient1"
-           height={16}
+            height={16}
             width={78}
             priority={true}
           />
-          <h5 className="heading-5 font-regular text-[#959EFE]">Features</h5>
+          <h5 className="heading-5 font-regular text-[#959EFE]">
+            {t("sectionBadge")}
+          </h5>
           <Image
             src="/images/label.svg"
             alt="gradient1"
@@ -496,16 +501,15 @@ export default function Features() {
         >
           <motion.h1
             variants={itemVariants}
-            className="heading-1 font-medium text-[#FFFFFF] max-w-[700px] text-center"
+            className="heading-1 font-medium text-[#FFFFFF] max-w-[736px] text-center"
           >
-            Powerful Features That Make Automation Effortless
+            {t("mainHeading")}{" "}
           </motion.h1>
           <motion.h6
             variants={itemVariants}
             className="text-[14px] font-regular text-[#CAC9D1] max-w-[568px] text-center"
           >
-            Discover how MIRYA thinks, learns, and executes like a human —
-            without code, complexity, or integrations.
+            {t("subHeading")}
           </motion.h6>
         </motion.div>
 
@@ -547,13 +551,10 @@ export default function Features() {
                 </div>
                 <div className="space-y-2 pb-7">
                   <h3 className="heading-3 font-medium text-[#F4F7FF]">
-                    Secure, Scalable & Fully Yours
+                    {t("cards.1.title")}{" "}
                   </h3>
                   <p className="heading-6 font-regular max-w-[414px] text-[#CAC9D1]">
-                    Run MIRYA completely on-premise for total data privacy and
-                    control. Scale automation across teams, and customise the
-                    entire platform with your own branding—without hidden costs
-                    or limitations.
+                    {t("cards.1.description")}
                   </p>
                 </div>
               </div>
@@ -603,13 +604,10 @@ export default function Features() {
                 </div>
                 <div className="space-y-2 pb-7">
                   <h3 className="heading-3 font-medium text-[#F4F7FF]">
-                    Universal Compatibility
+                    {t("cards.1.title")}{" "}
                   </h3>
                   <p className="heading-6 font-regular max-w-[414px] text-[#CAC9D1]">
-                    MIRYA works on top of any app or system exactly like a
-                    human—clicking, typing, and navigating visually. No APIs, no
-                    interfaces, no tool changes. Your existing software stays
-                    the same; MIRYA automates everything.
+                    {t("cards.1.description")}
                   </p>
                 </div>
               </div>
@@ -660,13 +658,10 @@ export default function Features() {
                 />
               </div>
               <h3 className="heading-3 font-medium text-center sm:text-start text-[#F4F7FF] mt-4">
-                Human-Level Intelligence & Zero-Code Learning
+                {t("cards.2.title")}
               </h3>
               <p className="heading-6 pt-2 font-regular text-[#CAC9D1] max-w-[742px] text-center">
-                MIRYA learns tasks by simply watching you work. It understands
-                screens, interprets data, and builds smart automations without
-                writing a single line of code. Just record once, and MIRYA
-                handles the rest with human-like precision.
+                {t("cards.2.description")}
               </p>
             </div>
 
@@ -730,12 +725,8 @@ export default function Features() {
             </div>
 
             <div className="heading-5 font-regular text-[#F4F7FF] relative z-10 max-w-[653px] text-left">
-              <p>Simple. Intelligent. Autonomous.</p>
-              <p>
-                MIRYA connects and controls any system, any app, any process —
-                with zero code.. Built for business users. Powered by Cognitive
-                AI.
-              </p>
+              <p>{t("footer.text1")} </p>
+              <p>{t("footer.text2")}</p>
             </div>
 
             <div
@@ -743,7 +734,7 @@ export default function Features() {
               style={{ pointerEvents: "auto" }}
             >
               <GradientButton
-                label="Get A Demo"
+                label={t("footer.ctaLabel")}
                 href="/user-testing"
                 bgColor="#0274FE"
                 textColor="#fff"

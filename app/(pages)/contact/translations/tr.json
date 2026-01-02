@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Bize Ulaşın",
+    "title": "MIRYA Ekibiyle İletişime Geçin",
+    "description": "Ne aradığınızı bize bildirin, sizi doğru yöne yönlendirelim. Her zaman hızlı, güler yüzlü ve size özel destek."
+  },
+  "contactInfo": {
+    "title": "İletişime Geçin",
+    "description": "Sorularınız mı var veya siparişinizle ilgili yardıma mı ihtiyacınız var? Yolun her adımında size yardımcı olmak için buradayız.",
+    "availability": {
+      "label": "Çalışma Saatleri",
+      "time": "Pazar – Perşembe, 09:00 - 18:00"
+    },
+    "followUs": "Bizi takip edin",
+    "cards": [
+      {
+        "title": "Konum",
+        "value": "Los Angeles, CA"
+      },
+      {
+        "title": "Telefon",
+        "value": "+1 (208) 120-802"
+      },
+      {
+        "title": "E-posta Adresi",
+        "value": "mirya@gmail.com"
+      }
+    ]
+  },
+  "form": {
+    "sendMessage": "Mesaj Gönder",
+    "placeholders": {
+      "name": "Ad Soyad",
+      "email": "E-posta Adresi",
+      "phone": "Telefon Numarası",
+      "subject": "Konu",
+      "message": "Mesajınız..."
+    },
+    "subjects": {
+      "general": "Genel Bilgi",
+      "support": "Teknik Destek",
+      "billing": "Faturalandırma Sorunu",
+      "feedback": "Geri Bildirim",
+      "other": "Diğer"
+    },
+    "privacy": "Okudum ve onaylıyorum:",
+    "privacyLink": "Gizlilik Politikası",
+    "submit": "Gönder"
+  },
+  "cardsSection": {
+    "community": {
+      "title": "Topluluk",
+      "description": "Ücretli tekliflerimizden biriyle ilgileniyor musunuz? Cevabınız evet ise, daha fazla soru ve öneri için satış ekibimize ulaşın.",
+      "button": "Satışla İletişime Geçin"
+    },
+    "anythingElse": {
+      "title": "Başka Bir Şey",
+      "description": "Diğer tüm soru ve görüşleriniz için bize her yerden e-posta yazabilirsiniz. Destek ekibimiz size en kısa sürede ulaşacaktır.",
+      "button": "Bize Yazın"
+    }
+  }
+}

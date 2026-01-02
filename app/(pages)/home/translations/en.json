@@ -1,0 +1,214 @@
+{
+  "hero": {
+    "badge": "Made in Germany",
+    "mainTitle": "Automation That Thinks, Learns & Works Like a Human",
+    "description": "Turn complex workflows into simple, intelligent automations — in hours, not weeks.",
+    "buttons": {
+      "getStarted": "Get Started",
+      "contactUs": "Contact Us"
+    }
+  },
+
+  "demo": {
+    "badge": "Simple. Intelligent. Autonomous",
+    "description": "MIRYA is your all-in-one automation platform that connects and controls any system, any app, any process with zero code. MIRYA doesn't just follow instructions — it understands data, identifies patterns, and makes smart decisions in real time. It performs every task just like a human - only faster, more precise and completely reliable.",
+    "benefits": {
+      "noProgramming": "No programming skills required",
+      "interfaceIndependent": "Interface-independent — no API needed",
+      "onPremise": "On-Premise or Cloud",
+      "recordAutomate": "Record & Automate",
+      "ready24h": "Ready in 24 hours",
+      "whiteLabel": "White Label ready",
+      "dragDrop": "Drag & Drop Visual Interface",
+      "roi": "ROI in just 4–6 weeks",
+      "analytics": "Analytics Dashboard",
+      "aiAssistant": "Virtual AI Assistant",
+      "autonomous": "Autonomous Bots",
+      "smartPdf": "Smart PDF Reports"
+    }
+  },
+
+  "howToUse": {
+    "badge": "How to Use",
+    "mainTitle": "How MIRYA Works",
+    "description": "Effortless automation starts with MIRYA — no coding, no configuration, no waiting. Just drag & drop your ideas, record your workflow, or speak your commands as your digital teammate learns and acts.",
+    "getStarted": "Get Started Now",
+    "slides": [
+      {
+        "id": 1,
+        "title": "Record Your Workflow",
+        "description": "Complete your task just as you normally would, and MIRYA watches how you work clicks, keystrokes, decisions, and all."
+      },
+      {
+        "id": 2,
+        "title": "Understands the Logic",
+        "description": "MIRYA observes the critical decision patterns, understands the steps it sees, and automatically builds a smart logic flow under the hood."
+      },
+      {
+        "id": 3,
+        "title": "Run it Automatically",
+        "description": "Now MIRYA performs the task for you across any system, app, browser, or environment with the same intelligence and adaptability as a human."
+      },
+      {
+        "id": 4,
+        "title": "Improve & Scale",
+        "description": "Customize, repeat, or expand your automation across entire teams or departments. Zero code. Zero complexity. Maximum impact."
+      }
+    ]
+  },
+
+  "animations": {
+    "how2": {
+      "properties": "Properties",
+      "branching": "Branching",
+      "file": "File",
+      "fileFormatLabel": "File Format",
+      "fileFormatType": "Excel (.xlsx)",
+      "sourceFolderLabel": "Source Folder",
+      "sourceFolderType": "[FOLDER] Downloads",
+      "record": "Record"
+    }
+  },
+
+  "workflow": {
+    "badge": "MIRYA Workflow",
+    "mainTitle": "Build flows visually. No learning curve. No complexity",
+    "description": "Drag, drop, and connect steps like messages, conditions, actions, and checks — all powered by an AI assistant that helps you build faster.",
+    "buttonLabel": "Get Started"
+  },
+
+  "animationNodes": {
+    "start": "Start",
+    "find": "Find",
+    "browse": "Browse",
+    "type": "Type",
+    "speak": "Speak",
+    "automate": "Automate"
+  },
+  "sectionBadge": "Features",
+  "mainHeading": "Powerful Features That Make Automation Effortless",
+  "subHeading": "Discover how MIRYA thinks, learns, and executes like a human — without code, complexity, or integrations.",
+  "cards": [
+    {
+      "id": "secure",
+      "title": "Secure, Scalable & Fully Yours",
+      "description": "Run MIRYA completely on-premise for total data privacy and control. Scale automation across teams, and customise the entire platform with your own branding—without hidden costs or limitations.",
+      "icon": "/images/card-img1.png",
+      "mainImg": "/images/card.png",
+      "layout": "horizontal"
+    },
+    {
+      "id": "universal",
+      "title": "Universal Compatibility",
+      "description": "MIRYA works on top of any app or system exactly like a human—clicking, typing, and navigating visually. No APIs, no interfaces, no tool changes. Your existing software stays the same; MIRYA automates everything.",
+      "icon": "/images/card3.png",
+      "mainImg": "/images/card2.png",
+      "layout": "horizontal"
+    },
+    {
+      "id": "intelligence",
+      "title": "Human-Level Intelligence & Zero-Code Learning",
+      "description": "MIRYA learns tasks by simply watching you work. It understands screens, interprets data, and builds smart automations without writing a single line of code. Just record once, and MIRYA handles the rest with human-like precision.",
+      "icon": "/images/card4.png",
+      "mainImg": "/images/main-img.png",
+      "layout": "vertical"
+    }
+  ],
+  "footer": {
+    "text1": "Simple. Intelligent. Autonomous.",
+    "text2": "MIRYA connects and controls any system, any app, any process — with zero code. Built for business users. Powered by Cognitive AI.",
+    "ctaLabel": "Get A Demo"
+  },
+  "buildForYou": {
+    "badge": "Build for you",
+    "mainTitle": "What We Have Built For You",
+    "description": "Harnessing the power of artificial intelligence to revolutionise industries and enhance human experiences.",
+    "buttonLabel": "Contact Us Now",
+    "slides": [
+      {
+        "id": 1,
+        "title": "Planning Feature",
+        "description": "Create structured plans, break tasks into milestones, and visualize timelines with automated suggestions powered by intelligent workflow analysis."
+      },
+      {
+        "id": 2,
+        "title": "Real Time Data Tracking",
+        "description": "Monitor live progress, detect bottlenecks instantly, and sync data across teams with second-by-second updates for accurate decision making."
+      },
+      {
+        "id": 3,
+        "title": "Gain Automation Insights",
+        "description": "Identify repetitive tasks, optimize team efficiency, and receive AI-driven recommendations to automate workflows effortlessly."
+      }
+    ]
+  },
+  "aiAssistantSection": {
+    "badge": "AI Assistance",
+    "mainTitle": "Meet Your Intelligent Virtual Assistant",
+    "description": "MIRYA comes with a built-in conversational AI assistant that understands your workflows, interprets context, and performs actions just like a highly skilled automation expert — instantly, accurately, and hands-free.",
+    "buttonLabel": "Contact Us Now",
+    "features": [
+      {
+        "title": "Create & Edit Workflows Instantly",
+        "description": "Ask, and MIRYA builds or updates workflows on the fly — no clicks, no configuration screens."
+      },
+      {
+        "title": "Modify Node Parameters",
+        "description": "Adjust any step with a simple command. The assistant updates logic or triggers instantly."
+      },
+      {
+        "title": "Control Executions",
+        "description": "Start, stop, pause, or resume any process with a single command — all in real time."
+      },
+      {
+        "title": "Context Aware Understanding",
+        "description": "Get answers like “Is process X running?” or “Did step Y finish?” with full system awareness."
+      },
+      {
+        "title": "Autonomous Navigation",
+        "description": "The assistant switches between windows or processes automatically to complete tasks."
+      },
+      {
+        "title": "Built-In File Intelligence",
+        "description": "Search inside files and get direct summaries — instantly and in natural language."
+      }
+    ]
+  },
+  "testimonialsSection": {
+  "badge": "Testimonials",
+  "mainTitle": "Reviews From Customers Who Use MIRYA",
+  "description": "Harnessing the power of artificial intelligence to revolutionize industries and enhance human experiences.",
+  "items": [
+    {
+      "id": 1,
+      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+      "author": "David Anderson",
+      "role": "Director"
+    },
+    {
+      "id": 2,
+      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+      "author": "David Anderson",
+      "role": "Director"
+    },
+    {
+      "id": 3,
+      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+      "author": "David Anderson",
+      "role": "Director"
+    },
+    {
+      "id": 4,
+      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+      "author": "David Anderson",
+      "role": "Director"
+    },
+    {
+      "id": 5,
+      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+      "author": "David Anderson",
+      "role": "Director"
+    }
+  ]
+}
+}
