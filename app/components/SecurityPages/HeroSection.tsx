@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation("security");
+
   const paragraphRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -84,21 +87,20 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Security
+            {t("hero.badge")}
           </h1>
-                   <Image src="/images/label.svg" width={78} height={16} alt="line" />
-         
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-2xl w-full text-center pb-3 sm:pb-6">
-          MIRYA Security Policy
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[808px] w-full text-center pb-3 sm:pb-6">
+          {t("hero.title")}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[739px]">
-          Your data security is our highest priority. This page outlines the safeguards, systems, and practices MIRYA uses to protect your information at every stage of the automation lifecycle.
+          {t("hero.description")}
         </p>
         <div className="flex items-center justify-center gap-3">
           <div
             className="rounded-full p-[0.8]"
-           style={{
+            style={{
               border: "1px solid transparent",
               backgroundImage: `
       linear-gradient(#00031C, #00031C), 
@@ -138,7 +140,7 @@ const HeroSection = () => {
                   </linearGradient>
                 </defs>
               </svg>
-              <span>Last Updated July 12, 2025</span>
+              <span>{t("hero.buttonText")}</span>
             </Link>
           </div>
         </div>

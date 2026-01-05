@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "User Testing",
+    "title": "Become MIRYA Research Participant",
+    "description": "We are looking for participants to help us shape the future of MIRYA. If you are interested in taking part in research activities fill your details out below. By submitting this form, you agree to our privacy policy."
+  },
+  "rewards": {
+    "title": "Your Rewards for Joining MIRYA User Testing",
+    "description": "You’ll receive free access to MIRYA, early access to new features, and exclusive discounts on paid plans after completing your user test."
+  },
+  "form": {
+    "title": "Fill out the details below.",
+    "placeholders": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "phone": "Phone number",
+      "email": "Business email",
+      "company": "Company name",
+      "website": "Company website",
+      "occupation": "Occupation",
+      "jobTitle": "Job/Title",
+      "location": "Location",
+      "address": "Address",
+      "challenges": "Type anything here..."
+    },
+    "questions": {
+      "employees": "How many number of employees do you have?",
+      "tools": "Which tools, software, or systems your team uses?",
+      "processes": "What type of processes do you want to automate?",
+      "automationTools": "Do you currently use any automation or RPA tools?",
+      "deploymentType": "Which deployment type do you prefer?",
+      "itResources": "Does your organization have IT resources?",
+      "plans": "Which MIRYA plans are you using?",
+      "outcome": "What is the main outcome you want to achieve with MIRYA?",
+      "miryaFamiliar": "How familiar you are with MIRYA?",
+      "aiFamiliar": "How familiar are you with artificial intelligence?",
+      "automationTiming": "How soon do you plan to implement automation?",
+      "referral": "How did you hear about MIRYA?",
+      "challenges": "Tell us more about your current challenges or expectations."
+    },
+    "checkboxOptions": {
+      "employees": ["1-10", "11-50", "51-200", "200-500", "Above 500"],
+      "tools": ["ERP", "CRM", "Internal platforms", "Legacy systems", "Others"],
+      "processes": ["Document processing", "Email handling", "ERP tasks", "Finance workflows", "Others"],
+      "automationTools": ["Yes", "Sometimes", "No", "Never used any"],
+      "deploymentType": ["On premise", "Cloud", "Hybrid", "Finance workflows", "Others"],
+      "itResources": ["Yes, full in house team", "Partial support", "No internal IT"],
+      "plans": ["Not using any", "Professional", "Enterprise", "White labelling", "Start-up plan"],
+      "outcome": ["Efficiency", "Cost reduction", "Accuracy", "Speed"],
+      "miryaFamiliar": ["I am a regular user", "I have used it occasionally", "I have never used it"],
+      "aiFamiliar": ["Actively working with AI", "Have basic understanding", "Not interested in AI"],
+      "automationTiming": ["Immediately", "Within 3 months", "Within 6 months", "Exploring options"],
+      "referral": ["Referral", "Social media", "Search", "Other"]
+    },
+    "privacy": "I agree to the",
+    "privacyLink": "Privacy Policy",
+    "buttons": {
+      "cancel": "Cancel",
+      "submit": "Submit"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "back": "Back to Pricing",
+    "title": "Start-Up Plan",
+    "description": "Fast-track your business with automated workflows that eliminate repetitive manual steps. Streamline processes, boost productivity, and unlock efficiency across departments. Grow sustainably without adding extra headcount or stretching your team."
+  },
+  "card": {
+    "title": "Start-Up Plan",
+    "description": "Built for early-stage teams that want to automate smarter, and scale faster.",
+    "price": "€ 399,",
+    "period": "25% discount",
+    "buttonText": "Get Started",
+    "messageTitle": "All the essentials to automate",
+    "messageDescription": "The Startup Plan includes everything you need to eliminate manual work, unlock productivity, and automate your first end-to-end processes with MIRYA.",
+    "image": "/images/plan1.png"
+  },
+  "decisions": {
+    "label": "AI-Powered Decisions",
+    "title": "What is included",
+    "description": "MIRYA's automation intelligence works across your existing tools and systems, powering end-to-end flows.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Visual Workflow Builder",
+        "description": "Design automations with an intuitive drag-and-drop interface—no coding needed."
+      },
+      {
+        "id": 2,
+        "title": "Multi-Platform Automation",
+        "description": "Automate desktop, web, and cloud apps seamlessly in one unified tool."
+      },
+      {
+        "id": 3,
+        "title": "Smart Recording",
+        "description": "Create workflows automatically by simply recording your actions."
+      },
+      {
+        "id": 4,
+        "title": "Autonomous Bots",
+        "description": "Schedule and run bots independently to keep your processes moving 24/7."
+      },
+      {
+        "id": 5,
+        "title": "Built-In AI Assistance",
+        "description": "Let Mirya analyze data, read documents, detect patterns, and make decisions."
+      },
+      {
+        "id": 6,
+        "title": "Secure Local Execution",
+        "description": "Your data stays protected with local encryption and on-device processing."
+      },
+      {
+        "id": 7,
+        "title": "Sub-Processes & Dynamic Variables",
+        "description": "Build flexible, modular workflows that adapt to changing process data."
+      },
+      {
+        "id": 8,
+        "title": "Analytics Dashboard",
+        "description": "Monitor performance and identify automation opportunities in real time."
+      }
+    ]
+  },
+  
+  "eligibility": {
+    "title": "Am I Eligible?",
+    "subtitle": "Your startup must meet the following criteria:",
+    "criteria": [
+      "Fewer than 20 employees",
+      "Less than €5M in total funding",
+      "You can use the startup discounted plan for one year, or longer if you still meet the requirements."
+    ]
+  },
+  "cta": {
+    "title": "Accelerate Your Operations Today",
+    "description": "Automate your first workflow and experience how quickly your team can eliminate manual work and operate smarter.",
+    "button": "Start Now"
+  }
+  ,
+  "enquiry": {
+    "badge": "Enquiry Form",
+    "title": "Enterprise Enquiry Form",
+    "description": "This form is for organizations interested in MIRYA’s Enterprise automation solutions and tailored support packages. If you’re looking to explore MIRYA’s standard plans, you can visit our Pricing or Documentation pages.",
+    "button": "Enter To Start"
+  }
+
+}

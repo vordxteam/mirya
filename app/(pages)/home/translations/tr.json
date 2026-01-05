@@ -219,8 +219,29 @@
         "role": "Direktör"
       }
     ]
-  }
-
+  },
+  "chatbot": {
+  "title": "Sohbet Botu",
+  "inputPlaceholder": "Aklınızda ne var?",
+  "loadingPlaceholder": "Lütfen bekleyin...",
+  "sendButtonAlt": "Gönder",
+  "closeButtonAlt": "Kapat",
+  "errorMessage": "Üzgünüz, bağlantı başarısız oldu. Lütfen internetinizi kontrol edin."
+}
+,
+"cookies": {
+  "title": "Çerez Ayarları",
+  "description": "İçeriği ve reklamları kişiselleştirmek ve trafiğimizi analiz etmek için çerezleri kullanıyoruz. Ayrıca sitemizi kullanımınızla ilgili bilgileri, sağladığınız diğer bilgilerle birleştirebilecek reklam ve analiz ortaklarımızla paylaşıyoruz.",
+  "strictlyNecessary": "Kesinlikle gerekli",
+  "targetingOnly": "Yalnızca hedefleme",
+  "performanceOnly": "Yalnızca performans",
+  "acceptAll": "Hepsini Kabul Et",
+  "manageCookies": "Çerezleri Yönet",
+  "rejectAll": "Hepsini Reddet"
+},
+"chatbot-home": {
+  "chatWithUs": "Bizimle Sohbet Edin"
+}
 }
 
 

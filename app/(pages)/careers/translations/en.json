@@ -1,0 +1,108 @@
+{
+  "hero": {
+    "badge": "Careers At MIRYA",
+    "title": "Join Us to Build Intelligent Automation",
+    "description": "At MIRYA, we’re creating automation that works the way people think — intuitive, fast, and human-centered. If you want to solve meaningful problems and shape a new era of work, we’d love to have you on our team.",
+    "cta": "Join Our Team"
+  },
+  "whyMirya": {
+    "badge": "Why MIRYA",
+    "title": "Why People Choose MIRYA",
+    "description": "MIRYA is where innovators, builders, and problem-solvers come together to create automation that transforms how organizations work every day.",
+    "cta": "Join MIRYA",
+    "reasons": [
+      {
+        "id": "01",
+        "title": "Work With Impact",
+        "description": "Every workflow you design, every automation you build, and every idea you contribute helps organizations remove manual work and operate smarter."
+      },
+      {
+        "id": "02",
+        "title": "Culture Built on Ownership",
+        "description": "We believe the best ideas come from people who are trusted. At MIRYA, you’ll have autonomy, flexibility, and the freedom to take projects from concept to reality."
+      },
+      {
+        "id": "03",
+        "title": "Innovation",
+        "description": "We don’t follow trends, we create them. You’ll work with cutting-edge AI, automation intelligence, and modern engineering patterns."
+      }
+    ]
+  },
+  "jobs": {
+    "badge": "Jobs",
+    "title": "Job Openings At MIRYA",
+    "description": "Discover opportunities across engineering, marketing, and operations as we build the future of intelligent automation.",
+    "cta": "Learn More",
+    "categories": ["All", "Engineering", "Marketing", "Operations"],
+    "list": [
+      {
+        "id": 1,
+        "title": "Senior Software Engineer",
+        "description": "Full-Time • Remote / On-Site (Berlin, Lisbon, Lahore, Italy, Spain, UK, Los Angeles)",
+        "link": "/jobs/engineering",
+        "category": "Engineering"
+      },
+      {
+        "id": 2,
+        "title": "Automation Specialist",
+        "description": "Full-Time • Remote / On-Site (Berlin, Lisbon, Lahore, Italy, Spain, UK, Los Angeles)",
+        "link": "/jobs/engineering",
+        "category": "Engineering"
+      },
+      {
+        "id": 3,
+        "title": "Customer Success Manager",
+        "description": "Full-Time • Remote / On-Site (Berlin, Lisbon, Lahore, Italy, Spain, UK, Los Angeles)",
+        "link": "/jobs/engineering",
+        "category": "Operations"
+      },
+      {
+        "id": 4,
+        "title": "Technical Support Engineer",
+        "description": "Full-Time • Remote / On-Site (Berlin, Lisbon, Lahore, Italy, Spain, UK, Los Angeles)",
+        "link": "/jobs/engineering",
+        "category": "Operations"
+      },
+      {
+        "id": 5,
+        "title": "Backend Engineer",
+        "description": "Full-Time • Remote / On-Site (Berlin, Lisbon, Lahore, Italy, Spain, UK, Los Angeles)",
+        "link": "/jobs/engineering",
+        "category": "Engineering"
+      },
+      {
+        "id": 6,
+        "title": "Content Strategist",
+        "description": "Full-Time • Remote / On-Site (Berlin, Lisbon, Lahore, Italy, Spain, UK, Los Angeles)",
+        "link": "/jobs/engineering",
+        "category": "Marketing"
+      }
+    ]
+  },
+
+  "feedback": {
+    "badge": "Team Feedback",
+    "title": "What Our Team Says",
+    "description": "Take a deeper look at what our teams say about MIRYA.",
+    "slides": [
+      {
+        "image": "/images/attachment1.png",
+        "quote": "“At MIRYA, our purpose is simple — remove the world’s digital busywork so people can focus on creativity, strategy, and what truly matters. Every workflow we build brings us closer to a future where automation isn’t a luxury, but a natural part of how organizations operate.”",
+        "name": "Dr. Orhan Tanriverdi",
+        "title": "DCEO | Founder"
+      },
+      {
+        "image": "/images/attachment2.png",
+        "quote": "“At MIRYA, our purpose is simple — remove the world’s digital busywork so people can focus on creativity, strategy, and what truly matters. Every workflow we build brings us closer to a future where automation isn’t a luxury, but a natural part of how organizations operate.”",
+        "name": "Dr. Mathias Fromberger",
+        "title": "Member of the Advisory Board | Legal"
+      }
+    ]
+  },
+  "lifeAtMirya": {
+  "badge": "Life at MIRYA",
+  "title": "The Culture That Drives MIRYA",
+  "description": "At MIRYA, we believe work should feel meaningful, energizing, and creatively fulfilling."
+}
+
+}

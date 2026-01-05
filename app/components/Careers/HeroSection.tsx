@@ -5,9 +5,13 @@ import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GradientButton from "@/app/ui/GradientButton";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+
 // import Cards from "./Cards";
 
 const HeroSection = () => {
+      const { t } = useTranslation("careers");
+
   const paragraphRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -86,18 +90,17 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Careers At MIRYA
+            {t("hero.badge")}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[824px] w-full text-center pb-3 sm:pb-6">
-          Join Us to Build Intelligent Automation
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[907px] w-full text-center pb-3 sm:pb-6">
+          {t("hero.title")}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[824px]">
-          At MIRYA, we’re creating automation that works the way people think —
-          intuitive, fast, and human-centered. If you want to solve meaningful
-          problems and shape a new era of work, we’d love to have you on our
-          team.
+         
+                    {t("hero.description")}
+
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -116,7 +119,7 @@ const HeroSection = () => {
                 backgroundColor: "#0274FE",
               }}
             >
-              Join Our Team
+              {t("hero.cta")}
             </Link>
           </div>
         </div>

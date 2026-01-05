@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "back": "Fiyatlandırmaya Dön",
+    "title": "Start-Up Planı",
+    "description": "Tekrarlayan manuel adımları ortadan kaldıran otomatik iş akışlarıyla işletmenizi hızlandırın. Süreçleri basitleştirin, üretkenliği artırın ve departmanlar arası verimliliği serbest bırakın. Ek personel almadan veya ekibinizi yormadan sürdürülebilir şekilde büyüyün."
+  },
+  "card": {
+    "title": "Start-Up Planı",
+    "description": "Daha akıllıca otomatikleştirmek ve daha hızlı ölçeklenmek isteyen erken aşamadaki ekipler için tasarlandı.",
+    "price": "399 €",
+    "period": "%25 indirim",
+    "buttonText": "Hemen Başlayın",
+    "messageTitle": "Otomasyon için tüm temel öğeler",
+    "messageDescription": "Startup Planı, manuel işleri ortadan kaldırmak, üretkenliği artırmak ve MIRYA ile ilk uçtan uca süreçlerinizi otomatikleştirmek için ihtiyacınız olan her şeyi içerir.",
+    "image": "/images/plan1.png"
+  }
+  ,
+  
+  "decisions": {
+    "label": "Yapay Zeka Destekli Kararlar",
+    "title": "Neler Dahil",
+    "description": "MIRYA'nın otomasyon zekası, mevcut araçlarınız ve sistemleriniz genelinde çalışarak uçtan uca akışlara güç verir.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Görsel İş Akışı Oluşturucu",
+        "description": "Sezgisel sürükle-bırak arayüzüyle otomasyonlar tasarlayın; kodlama gerekmez."
+      },
+      {
+        "id": 2,
+        "title": "Çok Platformlu Otomasyon",
+        "description": "Masaüstü, web ve bulut uygulamalarını tek bir birleşik araçta sorunsuz bir şekilde otomatikleştirin."
+      },
+      {
+        "id": 3,
+        "title": "Akıllı Kayıt",
+        "description": "Sadece eylemlerinizi kaydederek otomatik olarak iş akışları oluşturun."
+      },
+      {
+        "id": 4,
+        "title": "Otonom Botlar",
+        "description": "Süreçlerinizin 7/24 devam etmesini sağlamak için botları bağımsız olarak planlayın ve çalıştırın."
+      },
+      {
+        "id": 5,
+        "title": "Yerleşik Yapay Zeka Yardımı",
+        "description": "Mirya'nın verileri analiz etmesine, belgeleri okumasına, kalıpları algılamasına ve kararlar vermesine izin verin."
+      },
+      {
+        "id": 6,
+        "title": "Güvenli Yerel Yürütme",
+        "description": "Verileriniz, yerel şifreleme ve cihaz üzerinde işleme ile koruma altında kalır."
+      },
+      {
+        "id": 7,
+        "title": "Alt Süreçler ve Dinamik Değişkenler",
+        "description": "Değişen süreç verilerine uyum sağlayan esnek, modüler iş akışları oluşturun."
+      },
+      {
+        "id": 8,
+        "title": "Analiz Paneli",
+        "description": "Performansı izleyin ve otomasyon fırsatlarını gerçek zamanlı olarak belirleyin."
+      }
+    ]
+  },
+  "eligibility": {
+    "title": "Uygun muyum?",
+    "subtitle": "Girişiminizin aşağıdaki kriterleri karşılaması gerekir:",
+    "criteria": [
+      "20'den az çalışan",
+      "Toplamda 5 milyon Euro'dan az yatırım",
+      "Girişimci indirimli planını bir yıl boyunca veya gereksinimleri karşılamaya devam ettiğiniz sürece daha uzun süre kullanabilirsiniz."
+    ]
+  },
+  "cta": {
+    "title": "Operasyonlarınızı Bugünden Hızlandırın",
+    "description": "İlk iş akışınızı otomatikleştirin ve ekibinizin manuel işleri ne kadar hızlı ortadan kaldırabileceğini ve daha akıllıca çalışabileceğini deneyimleyin.",
+    "button": "Şimdi Başla"
+  },
+  "enquiry": {
+    "badge": "Talep Formu",
+    "title": "Kurumsal Talep Formu",
+    "description": "Bu form, MIRYA'nın Kurumsal otomasyon çözümleri ve özel destek paketleriyle ilgilenen kuruluşlar içindir. MIRYA'nın standart planlarını incelemek isterseniz Fiyatlandırma veya Dokümantasyon sayfalarımızı ziyaret edebilirsiniz.",
+    "button": "Başlamak İçin Girin"
+  }
+
+}

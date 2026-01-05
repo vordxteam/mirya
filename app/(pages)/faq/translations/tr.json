@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "label": "Sıkça Sorulan Sorular",
+    "title": "Sıkça Sorulan Sorular İçin Rehberimiz",
+    "description": "Sorularınıza hızlı yanıtları aşağıda bulabilir veya daha fazla yardım için destek ekibimizle iletişime geçebilirsiniz!",
+    "lastUpdated": "Son güncelleme: Kasım 2025"
+  },
+
+  "sections": [
+    {
+      "category": "Genel Sorular",
+      "description": "MIRYA’nın amacı, kayıt süreci, Ücretsiz Deneme ve mevcut kaynaklar hakkında temel bilgileri kapsar.",
+      "questions": [
+        {
+          "question": "MIRYA nedir ve işletmeme nasıl yardımcı olabilir?",
+          "answer": "MIRYA, programlama bilgisi gerektirmeden süreç otomasyonları oluşturmanıza ve çalıştırmanıza olanak tanıyan no-code bir otomasyon platformudur."
+        },
+        {
+          "question": "MIRYA’yı kimler kullanabilir?",
+          "answer": "MIRYA, girişimlerden büyük ölçekli işletmelere kadar her büyüklükteki işletme için tasarlanmıştır."
+        },
+        {
+          "question": "İlk süreci bizim için kurabilir misiniz?",
+          "answer": "Evet! Ekibimiz ilk otomasyon sürecinizi kurmanıza yardımcı olabilir."
+        },
+        {
+          "question": "Başlamak ne kadar sürer?",
+          "answer": "MIRYA’yı kullanmaya dakikalar içinde başlayabilirsiniz."
+        }
+      ]
+    },
+
+    {
+      "category": "Özellikler ve Planlar",
+      "description": "Ücretsiz Deneme’deki özellikler, plan esnekliği ve diğer yazılımlarla uyumluluk hakkında bilgiler içerir.",
+      "questions": [
+        {
+          "question": "Abonelik sistemi nasıl çalışır?",
+          "answer": "İhtiyacınıza uygun planı seçebilir, dilediğiniz zaman yükseltebilir veya düşürebilirsiniz."
+        },
+        {
+          "question": "Planımı yükseltebilir veya düşürebilir miyim?",
+          "answer": "Evet, değişiklikler anında geçerli olur."
+        },
+        {
+          "question": "MIRYA diğer yazılımlarla uyumlu mu?",
+          "answer": "MIRYA, popüler iş uygulamalarının çoğuyla sorunsuz şekilde entegre olur."
+        },
+        {
+          "question": "White label seçeneği nedir ve kimler içindir?",
+          "answer": "White label, MIRYA’yı kendi markanızla yeniden markalamanıza olanak tanır."
+        }
+      ]
+    },
+
+    {
+      "category": "Güvenlik ve Koruma",
+      "description": "Kullanıcı güvenliğini sağlamak için veri şifreleme ve yedekleme uygulamalarını açıklar.",
+      "questions": [
+        {
+          "question": "MIRYA ile verilerim ne kadar güvende?",
+          "answer": "MIRYA, kurumsal düzeyde güvenlik ve şifreleme kullanır."
+        },
+        {
+          "question": "MIRYA bilgilerimi şifreliyor mu?",
+          "answer": "Evet, veriler hem aktarım sırasında hem de depolandığında şifrelenir."
+        },
+        {
+          "question": "Verilerimin yedeği alınıyor mu?",
+          "answer": "Otomatik günlük yedeklemeler yapılmaktadır."
+        },
+        {
+          "question": "MIRYA içinde verilerime kimler erişebilir?",
+          "answer": "Yalnızca rol bazlı yetkilere sahip yetkili kişiler erişebilir."
+        }
+      ]
+    },
+
+    {
+      "category": "Müşteri Desteği",
+      "description": "Kendi kendine yardım kaynakları ve iletişim yöntemleri dahil destek seçeneklerini açıklar.",
+      "questions": [
+        {
+          "question": "MIRYA hangi destek seçeneklerini sunuyor?",
+          "answer": "7/24 e-posta desteği, canlı sohbet ve yardım merkezi."
+        },
+        {
+          "question": "Ne kadar hızlı destek alabilirim?",
+          "answer": "Canlı sohbet üzerinden genellikle 10 dakikanın altında."
+        },
+        {
+          "question": "Özel bir destek ekibi var mı?",
+          "answer": "Evet, premium kullanıcılar öncelikli destek alır."
+        },
+        {
+          "question": "Onboarding veya eğitim sunuyor musunuz?",
+          "answer": "Evet, rehberli onboarding ve dokümantasyon mevcuttur."
+        }
+      ]
+    }
+  ]
+}

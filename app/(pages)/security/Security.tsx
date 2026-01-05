@@ -1,4 +1,5 @@
 
+"use client"
 import HeroSection from '@/app/components/SecurityPages/HeroSection'
 import SecurityData from '@/app/components/SecurityPages/SecurityData'
 import React from 'react'

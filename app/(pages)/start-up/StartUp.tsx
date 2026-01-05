@@ -1,3 +1,4 @@
+"use client"
 import AmIEligible from '@/app/components/StartUp/AmIEligible'
 import Decisions from '@/app/components/StartUp/Decisions'
 import HeroSection from '@/app/components/StartUp/HeroSection'

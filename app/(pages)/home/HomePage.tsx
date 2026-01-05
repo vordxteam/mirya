@@ -15,8 +15,9 @@ import Aiassistant from "@/app/components/Home/Aiassistant";
 import Image from "next/image";
 import Cookies from "./Cookies";
 import Chatbot from "./Chatbot";
-
+import { useTranslation } from "react-i18next"; 
 const HomePage = () => {
+  const { t } = useTranslation("home"); 
   const [cookiesOpen, setCookiesOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
 
@@ -140,7 +141,7 @@ const HomePage = () => {
             height={28}
             width={26}
           />
-          <p className="heading-5 font-normal text-[#FFFFFF]">Chat with Us</p>
+          <p className="heading-5 font-normal text-[#FFFFFF]">{t("chatbot-home.chatWithUs")}</p>
         </div>
       </div>
     )}

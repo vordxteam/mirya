@@ -1,0 +1,273 @@
+{
+  "hero": {
+    "badge": "Güvenlik",
+    "title": "MIRYA Güvenlik Politikası",
+    "description": "Veri güvenliğiniz en yüksek önceliğimizdir. Bu sayfa, MIRYA'nın otomasyon yaşam döngüsünün her aşamasında bilgilerinizi korumak için kullandığı güvenlik önlemlerini, sistemleri ve uygulamaları ana hatlarıyla açıklamaktadır.",
+    "lastUpdated": "Son Güncelleme 12 Temmuz 2025",
+    "buttonText": "Son Güncelleme 12 Temmuz 2025"
+  },
+  
+  "summary": {
+    "title": "Önemli Noktaların Özeti",
+    "intro": "Bu özet, Gizlilik Bildirimimizdeki önemli noktaları sağlar, ancak bu konuların herhangi biri hakkında daha fazla ayrıntı öğrenmek için",
+    "tocLinkText": "içindekiler tablosunu",
+    "introSuffix": "kullanarak aradığınız bölümü bulabilirsiniz.",
+    "paragraphs": [
+      "MIRYA, platformu çalıştırmak ve geliştirmek için yalnızca gerekli bilgileri toplar - hesap bilgileriniz, kullanım etkinliğiniz ve iş akışları aracılığıyla işlemek istediğiniz belgeler veya veriler gibi. Verileriniz size aittir: MIRYA bunları yalnızca otomasyonları çalıştırmak, performansı artırmak ve destek sağlamak için kullanır. Bilgilerinizi asla satmayız ve yalnızca güvenilir hizmet sağlayıcılarıyla veya entegre etmeyi seçtiğiniz uygulamalarla paylaşırız. Verilerinizi şifreleme, erişim kontrolleri ve güvenli altyapı kullanarak koruruz. Bilgilerinize erişim, düzeltme veya silme talebinde bulunabilirsiniz. MIRYA, deneyiminizi iyileştirmek için çerezleri kullanır ve hizmet 16 yaşın altındaki çocuklar için tasarlanmamıştır.",
+      "MIRYA'yı kullanarak, kurallarımıza uymayı, hesabınızı güvende tutmayı ve platformu sorumlu bir şekilde kullanmayı kabul etmiş olursunuz. Yüklediğiniz tüm verilerin, belgelerin ve iş akışlarının mülkiyetini elinizde tutarsınız ve MIRYA bunları yalnızca otomasyon işlevselliği sağlamak için işler. Yüksek güvenilirlik için çaba göstermemize rağmen, kesintisiz hizmet garanti edilmez ve özellikler zamanla değişebilir.",
+      "MIRYA'yı sorumlu bir şekilde kullanmak, yasadışı, zararlı veya kötüye kullanılan otomasyon davranışlarından kaçınmak anlamına gelir. Üçüncü taraf entegrasyonlarından kaynaklanan dolaylı kayıplardan, yanlış kullanımdan veya sorunlardan sorumlu değiliz. Abonelikler iptal edilmedikçe otomatik olarak yenilenir ve iadeler yasal gerekliliklerle sınırlıdır."
+    ]
+  },
+  
+  "toc": {
+    "title": "İçindekiler",
+    "items": [
+      { "id": "#data", "text": "Uyumluluk" },
+      { "id": "#data1", "text": "Müşteri Veri Koruma ve Şifreleme" },
+      { "id": "#data2", "text": "Bulut Barındırma ve Depolama" },
+      { "id": "#data3", "text": "Şifreleme" },
+      { "id": "#data4", "text": "Ağ Güvenliği" },
+      { "id": "#data5", "text": "Kurumsal Güvenlik" },
+      { "id": "#data6", "text": "Tehdit ve Güvenlik Açığı Yönetimi" },
+      { "id": "#data7", "text": "Yedekleme, Kurtarma ve İş Sürekliliği" }
+    ]
+  },
+  
+  "sections": {
+    "compliance": {
+      "title": "1. Uyumluluk",
+      "soc": {
+        "title": "SOC 2 ve SOC 3 Raporları",
+        "list": [
+          "SOC 2 raporları, kurumsal müşterilerimize GKR kapsamında mevcuttur.",
+          "SOC 3 özet raporları, genel inceleme için kamuya açık olabilir.",
+          "Bu raporlar, güvenlik programımızı, iç kontrollerimizi ve bağımsız denetçi değerlendirmelerimizi ana hatlarıyla açıklar."
+        ]
+      },
+      "gdpr": {
+        "title": "GDPR ve Veri Koruma",
+        "desc": "MIRYA, GDPR'ye (AB Genel Veri Koruma Yönetmeliği) uyar. Sağladıklarımız:",
+        "list": [
+          "Veri İşleme Sözleşmeleri (DPA'lar)",
+          "Açık saklama politikaları",
+          "Şeffaf alt işlemci listeleri",
+          "Veri taşınabilirliği ve silme hakları"
+        ]
+      }
+    },
+    
+    "dataProtection": {
+      "title": "2. Müşteri Veri Koruma ve Şifreleme",
+      "auth": {
+        "title": "Kullanıcı Hesapları, Kimlik Doğrulama ve Yetkilendirme",
+        "cloudTitle": "MIRYA Cloud",
+        "cloudList": [
+          "Şifreler depolamadan önce hashlenir ve tuzlanır.",
+          "Kimlik doğrulama kimlik bilgileri şifrelenmiş veritabanlarında saklanır.",
+          "ÇFA (Çok Faktörlü Kimlik Doğrulama) desteklenir.",
+          "Mümkün olan her yerde OAuth ve güvenli kimlik bilgisi depolama kullanılır."
+        ],
+        "selfHostedTitle": "MIRYA Self-Hosted",
+        "selfHostedList": [
+          "Şifre hashleme, MIRYA'nın önerdiği güvenlik yapılandırmasını takip eder.",
+          "Beklemede şifreleme, ağ şifrelemesi ve gizli yönetimi müşteri tarafından yapılandırılmalıdır.",
+          "Özel oturum zaman aşımları ve gelişmiş şifre politikaları desteklenir."
+        ]
+      },
+      "integrations": {
+        "title": "Üçüncü Taraf Hesaplar ve Entegrasyonlar",
+        "desc": "Otomasyon genellikle harici sistemlere (ERP, CRM, İK, e-posta vb.) bağlanmayı gerektirir.",
+        "list": [
+          "MIRYA, güvenli, kapsamlı erişim sağlamak için desteklendiği her yerde OAuth kullanır.",
+          "OAuth mevcut değilse, API anahtarları veya token'lar güvenli bir şekilde saklanır ve bekletme sırasında şifrelenir.",
+          "Kimlik bilgileri asla günlüklerde görünmez.",
+          "MIRYA, token'ları çalışma alanı bazında yürütme ortamı içinde izole eder.",
+          "MIRYA, müşteri tarafından açıkça etkinleştirilmedikçe kimlik bilgisi değerlerini günlüğe kaydetmez."
+        ]
+      }
+    },
+    
+    "cloudHosting": {
+      "title": "3. Bulut Barındırma ve Depolama",
+      "desc": "MIRYA Cloud, güçlü fiziksel ve ağ güvenliğine sahip Microsoft Azure veya eşdeğer kurumsal sınıf bulut sağlayıcılarını kullanır.",
+      "dataCenter": {
+        "title": "Veri Merkezi Güvenliği",
+        "list": [
+          "Sunucular özel, izole ağlarda çalışır.",
+          "Fiziksel erişim bulut sağlayıcısı tarafından kontrol edilir.",
+          "Tüm depolama birimleri varsayılan olarak şifrelenir (AES-256)."
+        ]
+      },
+      "infrastructure": {
+        "title": "Altyapı Erişim Kontrolleri",
+        "list": [
+          "MIRYA mühendislik erişimi için ÇFA zorunludur",
+          "İç hizmetlere doğrudan genel erişim yoktur",
+          "Hizmetler özel alt ağlar içinde güvenlik duvarı kurallarıyla çalışır"
+        ]
+      },
+      "database": {
+        "title": "Veritabanı ve Kimlik Bilgisi Depolama",
+        "list": [
+          "Tüm müşteri verileri, iş akışı verileri ve kimlik bilgileri bekletme sırasında şifrelenir.",
+          "Yedekler şifrelenir ve ayrı kullanılabilirlik bölgelerinde saklanır."
+        ]
+      }
+    },
+    
+    "encryption": {
+      "title": "4. Şifreleme",
+      "inTransit": {
+        "title": "Aktarım Sırasında",
+        "list": [
+          "Cihazınız, MIRYA'nın bulut hizmetleri ve genel API'ler arasında iletilen tüm veriler, endüstri standardı TLS/SSL kullanılarak şifrelenir."
+        ]
+      },
+      "atRest": {
+        "title": "Beklemede",
+        "list": [
+          "MIRYA, tüm müşteri verilerini, veritabanlarını, iş akışı girdilerini/çıktılarını ve kimlik bilgisi depolarını bekletme sırasında şifreler.",
+          "Tüm diskler ve yedekler için AES-256 şifrelemesi uygulanır.",
+          "Şifreleme anahtarları, uyumlu KMS sistemlerini kullanan bulut sağlayıcısı tarafından yönetilir."
+        ]
+      },
+      "selfHosted": {
+        "title": "Kendi Barındırılan Dağıtım",
+        "list": [
+          "Tüm trafik için TLS kurun",
+          "Depolama birimlerinin şifrelendiğinden emin olun",
+          "Şifreleme anahtarlarını güvende tutun",
+          "Barındırma sağlayıcısı aracılığıyla KMS ve güvenlik duvarı kurallarını yapılandırın"
+        ]
+      }
+    },
+    
+    "network": {
+      "title": "5. Ağ Güvenliği",
+      "desc": "MIRYA Cloud altyapısı, otomatik denetimler ve uyarı sistemleri kullanılarak sürekli izlenir.",
+      "controlsTitle": "Kontroller şunları içerir:",
+      "controls": [
+        "Web Uygulaması Güvenlik Duvarı (WAF)",
+        "Güvenlik duvarı kısıtlı portlar ve protokoller",
+        "Sızma Tespit Sistemleri (IDS)",
+        "Sürekli günlük izleme ve anomali uyarıları",
+        "Oran sınırlama ve istek filtreleme"
+      ]
+    },
+    
+    "audit": {
+      "title": "6. Denetim Günlüğü",
+      "desc": "MIRYA şunları günlüğe kaydeder:",
+      "list": [
+        "İş akışı yürütme olayları",
+        "Sistem etkinliği",
+        "Kimlik doğrulama girişimleri",
+        "Platform ve altyapı olayları"
+      ]
+    },
+    
+    "development": {
+      "title": "7. Güvenli Geliştirme Uygulamaları",
+      "codeManagement": {
+        "title": "Kod Yönetimi",
+        "list": [
+          "Kaynak kodu özel depolarında saklanır (Github veya benzeri)",
+          "Erişim en az ayrıcalık temelinde verilir",
+          "Geliştirici erişimi için ÇFA gereklidir"
+        ]
+      },
+      "codeReview": {
+        "title": "Kod İncelemeleri ve Testler",
+        "list": [
+          "Her kod değişikliği ikinci bir mühendis tarafından incelenir",
+          "Otomatik CI/CD işlem hatları",
+          "Statik Uygulama Güvenlik Testi (SAST)",
+          "Bağımlılık taraması ve güvenlik açığı testi"
+        ]
+      },
+      "environment": {
+        "title": "Ortam Ayrımı",
+        "list": [
+          "Geliştirme, hazırlama ve üretim ortamları izole edilmiştir",
+          "Yalnızca yetkili personel üretime dağıtabilir"
+        ]
+      }
+    },
+    
+    "corporate": {
+      "title": "8. Kurumsal Güvenlik",
+      "hiring": {
+        "title": "İşe Alım Uygulamaları",
+        "desc": "Tüm MIRYA ekip üyeleri şunları tamamlar:",
+        "list": [
+          "Yasal olarak izin verilen yerlerde arka plan kontrolleri",
+          "Güvenlik ve gizlilik oryantasyonu",
+          "Yıllık güvenlik eğitimi"
+        ]
+      },
+      "workstation": {
+        "title": "İş İstasyonu Güvenliği",
+        "desc": "Tüm çalışan cihazları katı politikaları takip eder:",
+        "list": [
+          "Tam disk şifrelemesi",
+          "Otomatik güncellemeler",
+          "Güçlü şifre yönetimi",
+          "Zorunlu ekran kilidi",
+          "Kötü amaçlı yazılım önleme araçları"
+        ]
+      }
+    },
+    
+    "threat": {
+      "title": "9. Tehdit ve Güvenlik Açığı Yönetimi",
+      "vulnerability": {
+        "title": "Güvenlik Açığı Taraması",
+        "desc": "Bulut altyapısı ve uygulama kodu üzerinde düzenli otomatik taramalar gerçekleştirilir."
+      },
+      "penetration": {
+        "title": "Sızma Testi",
+        "desc": "Bağımsız sızma testleri yıllık olarak veya büyük sürümlerden sonra yapılır."
+      },
+      "intrusion": {
+        "title": "Sızma Tespiti",
+        "desc": "MIRYA, sızma belirtilerini izler ve şüpheli etkinliklere anında yanıt verir."
+      },
+      "intelligence": {
+        "title": "Tehdit İstihbaratı",
+        "desc": "Yeni tehditler hakkında güncel kalmak için güvenilir istihbarat beslemeleri ve güvenlik araçları kullanırız."
+      }
+    },
+    
+    "backup": {
+      "title": "10. Yedekleme, Kurtarma ve İş Sürekliliği",
+      "dataBackups": {
+        "title": "Veri Yedekleri",
+        "list": [
+          "Müşteri verileri günlük olarak yedeklenir.",
+          "Yedekler ayrı kullanılabilirlik bölgelerinde saklanır",
+          "Üretim verileriyle aynı standartlar kullanılarak şifrelenir"
+        ]
+      },
+      "disaster": {
+        "title": "Olağanüstü Durum Kurtarma",
+        "desc": "MIRYA, şunları kapsayan ayrıntılı bir DR planı sürdürür:",
+        "list": [
+          "Kurtarma prosedürleri",
+          "Rol tanımları",
+          "İletişim yolları",
+          "Sistem geri yükleme işlemleri"
+        ]
+      },
+      "business": {
+        "title": "İş Sürekliliği",
+        "desc": "Düzenli testler, MIRYA'nın şunlardan hızlı bir şekilde kurtulabilmesini sağlar:",
+        "list": [
+          "Altyapı arızaları",
+          "Sağlayıcı kesintileri",
+          "Veri bozulması",
+          "Sistem düzeyindeki kesintiler"
+        ]
+      }
+    }
+  }
+}

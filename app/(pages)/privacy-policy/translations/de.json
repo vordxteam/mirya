@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "badge": "Datenschutzbestimmungen",
+    "title": "MIRYA Datenschutzbestimmungen",
+    "description": "Wir verpflichten uns, Ihre Daten zu schützen und transparent zu sein, wie Ihre Informationen gesammelt, verwendet und gesichert werden, während Sie MIRYA nutzen.",
+    "lastUpdated": "Zuletzt aktualisiert am 12. Juli 2025"
+  },
+  "summary": {
+    "title": "Zusammenfassung der wichtigsten Punkte",
+    "highlight": "Diese Zusammenfassung hebt die wichtigsten Punkte unserer Datenschutzerklärung hervor. Sie können weitere Details zu jedem Thema erkunden, indem Sie die",
+    "tableOfContentsLink": "Inhaltsangabe",
+    "highlightSuffix": "unten verwenden, um zu dem Abschnitt zu navigieren, den Sie suchen.",
+    "paragraphs": [
+      "MIRYA sammelt nur die Informationen, die zur Nutzung und Verbesserung der Plattform erforderlich sind – wie Ihre Kontodaten, Nutzungsaktivitäten und die Dokumente oder Daten, die Sie über Workflows verarbeiten. Ihre Daten bleiben Ihr Eigentum: MIRYA verwendet sie nur, um Automatisierungen auszuführen, die Leistung zu verbessern und Support bereitzustellen. Wir verkaufen Ihre Informationen niemals und teilen sie nur mit vertrauenswürdigen Dienstanbietern oder Apps, die Sie integrieren möchten. Wir schützen Ihre Daten durch Verschlüsselung, Zugriffskontrollen und sichere Infrastruktur. Sie können jederzeit Zugriff, Berichtigung oder Löschung Ihrer Informationen anfordern. MIRYA verwendet Cookies, um Ihre Erfahrung zu verbessern, und der Service ist nicht für Kinder unter 16 Jahren vorgesehen.",
+      "Durch die Nutzung von MIRYA stimmen Sie unseren Regeln zu, halten Ihr Konto sicher und verwenden die Plattform verantwortungsvoll. Sie behalten das Eigentum an allen Daten, Dokumenten und Workflows, die Sie hochladen, und MIRYA verarbeitet sie nur, um die Automatisierungsfunktionen bereitzustellen. Obwohl wir hohe Zuverlässigkeit anstreben, wird kontinuierlicher Service nicht garantiert und Funktionen können sich im Laufe der Zeit ändern.",
+      "MIRYA verantwortungsvoll zu verwenden bedeutet, illegale, schädliche oder missbräuchliche Automatisierungsaktionen zu vermeiden. Wir haften nicht für indirekte Verluste, Missbrauch oder Probleme, die sich aus Integrationen von Drittanbietern ergeben. Abonnements werden automatisch verlängert, sofern sie nicht gekündigt werden, und Rückerstattungen sind auf gesetzliche Anforderungen beschränkt."
+    ]
+  },
+  "toc": {
+    "title": "Inhaltsverzeichnis",
+    "items": [
+      { "text": "Wie wir Ihre Daten verwenden", "id": "#data" },
+      { "text": "Wie lange MIRYA Ihre Daten speichert", "id": "#data1" },
+      { "text": "Welche Rechte habe ich nach Datenschutzgesetzen?", "id": "#data2" },
+      { "text": "Fragen, Kommentare und weitere Details", "id": "#data3" }
+    ]
+  },
+  "sections": {
+    "usage": {
+      "title": "1. Wie wir Ihre Daten verwenden",
+      "sub1": {
+        "title": "1.1. Erstellen und Verwalten Ihres MIRYA-Kontos",
+        "desc": "Wir verwenden die von Ihnen bereitgestellten Informationen (wie Name, E-Mail, Passwort und Firmendaten), um:",
+        "list": ["Ihr Konto zu registrieren", "Ihre Anmeldung zu authentifizieren", "Ihr Arbeitsbereich zu verwalten", "Zugriff auf Funktionen basierend auf Ihrem Plan bereitzustellen"]
+      },
+      "sub2": {
+        "title": "1.2. Ausführen, Verarbeiten und Durchführen Ihrer Automatisierungen",
+        "desc": "Wenn Sie Dokumente hochladen oder Apps verbinden, verwendet MIRYA diese Daten, um:",
+        "list": ["E-Mail-Texte, PDFs, Formulare und andere Dateien zu lesen und zu verstehen", "Informationen zu extrahieren, zu klassifizieren oder umzustrukturieren", "Automatisierte Schritte basierend auf Ihren Workflow-Einstellungen auszulösen", "Die verarbeiteten Daten an Ihr ERP-, CRM-, HR- oder andere Systeme zu senden"]
+      },
+      "sub3": {
+        "title": "1.3. Genauigkeit, Intelligenz und Leistung verbessern",
+        "desc": "Wir verarbeiten Nutzungs- und Workflow-Daten (niemals auf eine Weise, die Ihre privaten Inhalte offenlegt), um:",
+        "list": ["Automatisierungslogik zu trainieren und zu optimieren", "Muster zu erkennen, die die Zuverlässigkeit verbessern", "Die Ausführungsgeschwindigkeit von Workflows zu optimieren", "Fehler zu reduzieren und die Stabilität zu verbessern"]
+      }
+    },
+    "retention": {
+      "title": "2. Wie lange MIRYA Ihre Daten speichert",
+      "desc": "MIRYA bewahrt Ihre Informationen nur so lange auf, wie sie tatsächlich benötigt werden – entweder um die von Ihnen genutzten Dienste zu betreiben, gesetzliche Verpflichtungen einzuhalten oder Probleme zu lösen. Wir folgen strengen Aufbewahrungsrichtlinien, um sicherzustellen, dass Ihre Daten nicht länger als nötig gespeichert werden.",
+      "sub1": {
+        "title": "1.1. Von Ihnen bereitgestellte Daten (Kontodaten, Profilinformationen, Arbeitsbereichsdaten)",
+        "desc": "Wir bewahren diese Informationen so lange auf, wie Ihr Konto aktiv ist. Wenn Sie Ihr Konto löschen, beginnen wir einen strukturierten Löschprozess, der Ihre persönlichen Informationen aus unseren aktiven Systemen entfernt."
+      },
+      "sub2": {
+        "title": "1.2. Workflow-Daten (Dokumente, E-Mails, Dateien, Eingaben, die Sie über MIRYA verarbeiten)",
+        "desc": "MIRYA speichert Workflow-Eingaben nur so lange, wie sie zur Ausführung Ihrer Automatisierungen erforderlich sind. Wir speichern Ihre Dokumente nicht dauerhaft, es sei denn, Sie laden sie ausdrücklich hoch oder speichern sie in MIRYA."
+      }
+    },
+    "rights": {
+      "title": "3. Welche Rechte habe ich nach Datenschutzgesetzen?",
+      "desc": "Sie haben verschiedene andere Rechte nach den geltenden Datenschutzgesetzen, einschließlich:",
+      "list": ["Zugriff auf Ihre personenbezogenen Daten (auch bekannt als 'Anfrage auf Auskunft')", "Unvollständige oder ungenaue Daten, die wir über Sie haben, korrigieren", "Löschen der personenbezogenen Daten, die wir über Sie haben, verlangen", "Einschränkung der Verarbeitung Ihrer personenbezogenen Daten verlangen", "Übertragung Ihrer personenbezogenen Daten an Dritte verlangen", "Widerspruch gegen die Verwendung Ihrer personenbezogenen Daten einlegen", "Ihre Zustimmung zur Verarbeitung Ihrer personenbezogenen Daten widerrufen"]
+    },
+    "contact": {
+      "title": "4. Fragen, Kommentare und weitere Details",
+      "sub1": {
+        "title": "Wir freuen uns auf Ihr Feedback und Ihre Vorschläge",
+        "desc": "Bei MIRYA verpflichten wir uns, diese Datenschutzerklärung klar, transparent und leicht verständlich zu halten. Wenn Sie Ideen haben, wie wir die Formulierung verbessern, fehlende Perspektiven hinzufügen oder die Klarheit erhöhen können, hören wir gerne von Ihnen.",
+        "email": "Sie können Ihr Feedback direkt an uns senden: ",
+                        "box": "📩 privacy@mirya.ai"
+
+      },
+      "sub2": {
+        "title": "Erfahren Sie mehr über MIRYAs Datenschutzpraktiken",
+        "desc": "Für weitere Details zu MIRYAs Ansatz in Bezug auf Datenschutz, Sicherheit, Compliance und Datenverarbeitung — einschließlich GDPR, Datenverarbeitungsvereinbarungen, Unterauftragsverarbeiter, Workflow-Datenverarbeitung und Unterschiede zwischen Cloud- und Self-Hosted-Umgebungen — lesen Sie bitte unsere Hauptseite für Datenschutz- und Sicherheitsdokumentation."
+      }
+    }
+  }
+}

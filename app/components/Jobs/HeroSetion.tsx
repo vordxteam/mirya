@@ -5,8 +5,11 @@ import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 // import Cards from "./Cards";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation("job");
+
   return (
     <div className="space-y-12 px-3 sm:px-20 max-w-[1440px] mx-auto">
       <div className="flex z-100 bg-[#00031c] flex-col items-center justify-center sm:pb-[48px] pt-10 px-2 md:px-10 relative">
@@ -23,17 +26,16 @@ const HeroSection = () => {
               width={24}
             />
             <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-              Go Back
+              {t("goBack")}{" "}
             </h1>
           </Link>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="heading-1 font-medium  w-full text-center pb-3 sm:pb-6">
-          Senior Software Engineer-Full Time
+          {t("jobTitle")}{" "}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
-          Join MIRYA as a Senior Software Engineer and help build a scalable,
-          intelligent automation platform.
+          {t("jobDescription")}
         </p>
       </div>
       <div
@@ -47,7 +49,7 @@ const HeroSection = () => {
           <div className="lg:space-y-12 w-full">
             <div>
               <p className="heading-3 font-medium text-[#F4F7FF]">
-                Employment Details
+                {t("employmentDetails")}{" "}
               </p>
             </div>
             <div className="flex justify-center">
@@ -55,24 +57,24 @@ const HeroSection = () => {
                 {/* Location */}
                 <div className="space-y-3 pl-3 xl:pl-[97px] min-w-[100px]">
                   <p className="heading-3 font-normal text-[#FFFFFF99]">
-                    Location:
+                    {t("locationLabel")}{" "}
                   </p>
                   <p className="heading-3 font-normal text-[#FFFFFF]">
-                    On-site
+                    {t("locationValue")}{" "}
                   </p>
                 </div>
 
                 {/* Divider */}
-                
+
                 <div className="h-[76px] w-px bg-linear-to-b hidden lg:block from-[#463BBF] via-[#9C96E3] to-[#463BBF] pointer-events-none z-0 "></div>
 
                 {/* Job Type */}
                 <div className="space-y-3 px-3 min-w-[100px]">
                   <p className="heading-3 font-normal text-[#FFFFFF99]">
-                    Job Type
+                    {t("jobTypeLabel")}{" "}
                   </p>
                   <p className="heading-3 font-normal text-[#FFFFFF]">
-                    Full-Time
+                    {t("jobTypeValue")}{" "}
                   </p>
                 </div>
 
@@ -82,10 +84,10 @@ const HeroSection = () => {
                 {/* Department */}
                 <div className="space-y-3 px-3 min-w-[100px]">
                   <p className="heading-3 font-normal text-[#FFFFFF99]">
-                    Department
+                    {t("departmentLabel")}{" "}
                   </p>
                   <p className="heading-3 font-normal text-[#FFFFFF]">
-                    Engineering
+                    {t("departmentValue")}{" "}
                   </p>
                 </div>
 
@@ -95,9 +97,11 @@ const HeroSection = () => {
                 {/* Deadline */}
                 <div className="space-y-3 px-3 min-w-[100px]">
                   <p className="heading-3 font-normal text-[#FFFFFF99]">
-                    Application Deadline
+                    {t("deadlineLabel")}{" "}
                   </p>
-                  <p className="heading-3 font-normal text-[#FFFFFF]">N/A</p>
+                  <p className="heading-3 font-normal text-[#FFFFFF]">
+                    {t("deadlineValue")}
+                  </p>
                 </div>
               </div>
             </div>
