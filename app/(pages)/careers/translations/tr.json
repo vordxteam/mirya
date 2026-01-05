@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "badge": "MIRYA'da Kariyer",
+    "title": "Akıllı Otomasyon Oluşturmak İçin Bize Katılın",
+    "description": "MIRYA'da, insanların düşündüğü şekilde çalışan — sezgisel, hızlı ve insan odaklı otomasyonlar yaratıyoruz. Anlamlı problemleri çözmek ve işin yeni bir çağını şekillendirmek istiyorsanız, ekibimize katılmanızdan mutluluk duyarız.",
+    "cta": "Ekibimize Katılın"
+  },
+  "whyMirya": {
+    "badge": "Neden MIRYA",
+    "title": "İnsanlar Neden MIRYA'yı Seçiyor",
+    "description": "MIRYA, yenilikçiler, inşaatçılar ve problem çözücüler bir araya gelerek organizasyonların günlük işlerini dönüştüren otomasyonlar yaratır.",
+    "cta": "MIRYA'ya Katılın",
+    "reasons": [
+      {
+        "id": "01",
+        "title": "Etkili Çalışın",
+        "description": "Tasarımını yaptığınız her iş akışı, oluşturduğunuz her otomasyon ve katkıda bulunduğunuz her fikir, organizasyonların manuel işleri kaldırmasına ve daha akıllıca çalışmasına yardımcı olur."
+      },
+      {
+        "id": "02",
+        "title": "Sahiplik Kültürü",
+        "description": "En iyi fikirlerin güvenilen kişilerden geldiğine inanıyoruz. MIRYA'da, özerklik, esneklik ve projeleri konseptten gerçeğe taşıma özgürlüğüne sahip olacaksınız."
+      },
+      {
+        "id": "03",
+        "title": "İnovasyon",
+        "description": "Biz trendleri takip etmeyiz, onları yaratırız. En son AI, otomasyon zekası ve modern mühendislik yöntemleri ile çalışacaksınız."
+      }
+    ]
+  },
+  
+  "jobs": {
+    "badge": "İşler",
+    "title": "MIRYA'da Açık Pozisyonlar",
+    "description": "Mühendislik, pazarlama ve operasyon alanlarında fırsatları keşfedin ve zeki otomasyonun geleceğini birlikte inşa edin.",
+    "cta": "Daha Fazla Bilgi",
+    "categories": ["Tümü", "Mühendislik", "Pazarlama", "Operasyonlar"],
+    "list": [
+      {
+        "id": 1,
+        "title": "Kıdemli Yazılım Mühendisi",
+        "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)",
+        "link": "#",
+        "category": "Mühendislik"
+      },
+      {
+        "id": 2,
+        "title": "Otomasyon Uzmanı",
+        "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)",
+        "link": "#",
+        "category": "Mühendislik"
+      },
+      {
+        "id": 3,
+        "title": "Müşteri Başarı Yöneticisi",
+        "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)",
+        "link": "#",
+        "category": "Operasyonlar"
+      },
+      {
+        "id": 4,
+        "title": "Teknik Destek Mühendisi",
+        "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)",
+        "link": "#",
+        "category": "Operasyonlar"
+      },
+      {
+        "id": 5,
+        "title": "Backend Mühendisi",
+        "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)",
+        "link": "#",
+        "category": "Mühendislik"
+      },
+      {
+        "id": 6,
+        "title": "İçerik Stratejisti",
+        "description": "",
+        "link": "#",
+        "category": "Pazarlama"
+      }
+    ]
+  }
+,
+
+  "feedback": {
+    "badge": "Takım Görüşleri",
+    "title": "Ekibimiz Ne Diyor",
+    "description": "Ekiplerimizin MIRYA hakkında söylediklerine daha yakından bakın.",
+    "slides": [
+      {
+        "image": "/images/attachment1.png",
+        "quote": "“MIRYA’da amacımız basit — insanların yaratıcılığa, stratejiye ve gerçekten önemli olan şeylere odaklanabilmesi için dijital yoğun işleri ortadan kaldırmak. Her oluşturduğumuz iş akışı, otomasyonun bir lüks değil, organizasyonların çalışma şeklinin doğal bir parçası olduğu bir geleceğe bizi yaklaştırıyor.”",
+        "name": "Dr. Orhan Tanriverdi",
+        "title": "DCEO | Kurucu"
+      },
+      {
+        "image": "/images/attachment2.png",
+        "quote": "“MIRYA’da amacımız basit — insanların yaratıcılığa, stratejiye ve gerçekten önemli olan şeylere odaklanabilmesi için dijital yoğun işleri ortadan kaldırmak. Her oluşturduğumuz iş akışı, otomasyonun bir lüks değil, organizasyonların çalışma şeklinin doğal bir parçası olduğu bir geleceğe bizi yaklaştırıyor.”",
+        "name": "Dr. Mathias Fromberger",
+        "title": "Danışma Kurulu Üyesi | Hukuk"
+      }
+    ]
+  },
+  "lifeAtMirya": {
+  "badge": "MIRYA’da Yaşam",
+  "title": "MIRYA’yı Yönlendiren Kültür",
+  "description": "MIRYA’da, işin anlamlı, enerji verici ve yaratıcı bir şekilde tatmin edici olması gerektiğine inanıyoruz."
+}
+}

@@ -1,97 +1,80 @@
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const SecurityData = () => {
+  const { t } = useTranslation("security");
+
   return (
     <div className="max-w-[1440px] m-auto">
       <div className="px-5 sm:px-20 pt-0 pb-[60px] sm:pt-[60px] space-y-16">
         <div className="space-y-6">
-          <h1 className="heading-1 font-medium">Summary of key Points</h1>
+          <h1 className="heading-1 font-medium">{t("summary.title")}</h1>
           <div>
             <div className="text-white font-semibold">
-              This summary provides key points from our Privacy Notice, but you
-              can find out more details about any of these topics by using our{" "}
+              {t("summary.intro")}{" "}
               <Link
                 href="https://app.termly.io/policy-viewer/policy.html?policyUUID=400411c8-b685-4686-9682-e779bbd1a879#toc"
                 className="underline"
               >
-                table of contents
+                {t("summary.tocLinkText")}
               </Link>{" "}
-              below to find the section you are looking for.
+              {t("summary.introSuffix")}
             </div>
             <br />
 
             <p className="text-[#F4F7FF]">
-              MIRYA collects only the information needed to operate and improve
-              the platform—such as your account details, usage activity, and the
-              documents or data you choose to process through workflows. Your
-              data stays yours: MIRYA uses it only to run automations, enhance
-              performance, and provide support. We never sell your information
-              and only share it with trusted service providers or apps you
-              choose to integrate with. We protect your data using encryption,
-              access controls, and secure infrastructure. You can request
-              access, correction, or deletion of your information at any time.
-              MIRYA uses cookies to improve your experience, and the service is
-              not intended for children under 16. <br />
+              {t("summary.paragraphs.0")} <br />
               <br />
-              By using MIRYA, you agree to follow our rules, keep your account
-              secure, and use the platform responsibly. You retain ownership of
-              all data, documents, and workflows you upload, and MIRYA processes
-              them only to deliver automation functionality. While we strive for
-              high reliability, continuous service is not guaranteed, and
-              features may change over time. <br />
+              {t("summary.paragraphs.1")} <br />
               <br />
-              Using MIRYA responsibly means avoiding illegal, harmful, or
-              abusive automation behaviors. We are not liable for indirect
-              losses, misuse, or issues arising from third-party integrations.
-              Subscriptions renew automatically unless canceled, and refunds are
-              limited to legal requirements.
+              {t("summary.paragraphs.2")}
             </p>
           </div>
         </div>
 
         <div className="space-y-6">
-          <h1 className="heading-1 font-medium">Table of Content</h1>
+          <h1 className="heading-1 font-medium">{t("toc.title")}</h1>
           <div>
             <ol className="space-y-1 list-decimal list-inside text-[#7BADFF]">
               <li>
                 <Link className="body-3 underline" href="#data">
-                  Compliance
+                  {t("toc.items.0.text")}
                 </Link>
               </li>
               <li>
                 <Link className="body-3 underline" href="#data1">
-                  Customer Data Protection & Encryption
+                  {t("toc.items.1.text")}
                 </Link>
               </li>
               <li>
                 <Link className="body-3 underline" href="#data2">
-                  Cloud Hosting & Storage
+                  {t("toc.items.2.text")}
                 </Link>
               </li>
               <li>
                 <Link className="body-3 underline" href="#data3">
-                  Secure Development Practices
+                  {t("toc.items.3.text")}
                 </Link>
               </li>
               <li>
                 <Link className="body-3 underline" href="#data4">
-                  Access Controls
+                  {t("toc.items.4.text")}
                 </Link>
               </li>
               <li>
                 <Link className="body-3 underline" href="#data5">
-                  Corporate Security
+                  {t("toc.items.5.text")}
                 </Link>
               </li>
               <li>
                 <Link className="body-3 underline" href="#data6">
-                  Threat & Vulnerability Management
+                  {t("toc.items.6.text")}
                 </Link>
               </li>
               <li>
                 <Link className="body-3 underline" href="#data7">
-                  Backup, Recovery & Business Continuity
+                  {t("toc.items.7.text")}
                 </Link>
               </li>
             </ol>
@@ -100,36 +83,27 @@ const SecurityData = () => {
 
         {/* Section 1: Compliance */}
         <div className="space-y-6 scroll-mt-[120px]" id="data">
-          <h1 className="heading-1 font-medium">1. Compliance</h1>
+          <h1 className="heading-1 font-medium">{t("sections.compliance.title")}</h1>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">SOC 2 & SOC 3 Reports</h2>
+            <h2 className="font-semibold heading-4">{t("sections.compliance.soc.title")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>
-                SOC 2 reports are available to enterprise customers under NDA.
-              </li>
-              <li>
-                SOC 3 summary reports may be available publicly for general
-                review.
-              </li>
-              <li>
-                These reports outline our security program, internal controls,
-                and independent auditor assessments.
-              </li>
+              <li>{t("sections.compliance.soc.list.0")}</li>
+              <li>{t("sections.compliance.soc.list.1")}</li>
+              <li>{t("sections.compliance.soc.list.2")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">GDPR & Data Protection</h2>
+            <h2 className="font-semibold heading-4">{t("sections.compliance.gdpr.title")}</h2>
             <p className="opacity-80 body-3">
-              MIRYA complies with the GDPR (EU General Data Protection
-              Regulation). We provide:
+              {t("sections.compliance.gdpr.desc")}
             </p>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Data Processing Agreements (DPAs)</li>
-              <li>Clear retention policies</li>
-              <li>Transparent sub-processor lists</li>
-              <li>Data portability & deletion rights</li>
+              <li>{t("sections.compliance.gdpr.list.0")}</li>
+              <li>{t("sections.compliance.gdpr.list.1")}</li>
+              <li>{t("sections.compliance.gdpr.list.2")}</li>
+              <li>{t("sections.compliance.gdpr.list.3")}</li>
             </ul>
           </div>
         </div>
@@ -137,258 +111,209 @@ const SecurityData = () => {
         {/* Section 2: Customer Data Protection & Encryption */}
         <div className="space-y-6 scroll-mt-[120px]" id="data1">
           <h1 className="heading-1 font-medium">
-            2. Customer Data Protection & Encryption
+            {t("sections.dataProtection.title")}
           </h1>
 
           <div className="space-y-5">
             <h2 className="font-semibold heading-4">
-              User Accounts, Authentication & Authorization
+              {t("sections.dataProtection.auth.title")}
             </h2>
-            <p className="body-1 font-semibold">MIRYA Cloud</p>
+            <p className="body-1 font-semibold">{t("sections.dataProtection.auth.cloudTitle")}</p>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Passwords are hashed and salted before storage.</li>
-              <li>
-                Authentication credentials are stored in encrypted databases.
-              </li>
-              <li>MFA (Multi-Factor Authentication) is supported.</li>
-              <li>
-                OAuth and secure credential storage is used wherever possible.
-              </li>
+              <li>{t("sections.dataProtection.auth.cloudList.0")}</li>
+              <li>{t("sections.dataProtection.auth.cloudList.1")}</li>
+              <li>{t("sections.dataProtection.auth.cloudList.2")}</li>
+              <li>{t("sections.dataProtection.auth.cloudList.3")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
-            <p className="body-1 font-semibold">MIRYA Self-Hosted</p>
+            <p className="body-1 font-semibold">{t("sections.dataProtection.auth.selfHostedTitle")}</p>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>
-                Password hashing follows MIRYA's recommended security
-                configuration.
-              </li>
-              <li>
-                Encryption at-rest, network encryption, and secret management
-                must be configured by the customer.
-              </li>
-              <li>
-                Custom session timeouts and advanced password policies are
-                supported.
-              </li>
+              <li>{t("sections.dataProtection.auth.selfHostedList.0")}</li>
+              <li>{t("sections.dataProtection.auth.selfHostedList.1")}</li>
+              <li>{t("sections.dataProtection.auth.selfHostedList.2")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
             <h2 className="font-semibold heading-4">
-              Third-Party Accounts & Integrations
+              {t("sections.dataProtection.integrations.title")}
             </h2>
             <p className="opacity-80 body-3">
-              Automation often requires connecting to external systems (ERP,
-              CRM, HR, email, etc.).
+              {t("sections.dataProtection.integrations.desc")}
             </p>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>
-                MIRYA uses OAuth whenever supported to provide secure, scoped
-                access.
-              </li>
-              <li>
-                If OAuth is unavailable, API keys or tokens are stored securely
-                and encrypted at rest.
-              </li>
-              <li>Credentials never appear in logs.</li>
-              <li>
-                MIRYA isolates tokens inside the execution environment on a
-                per-workspace basis.
-              </li>
-              <li>
-                MIRYA does not log credential values unless explicitly enabled
-                by the customer.
-              </li>
+              <li>{t("sections.dataProtection.integrations.list.0")}</li>
+              <li>{t("sections.dataProtection.integrations.list.1")}</li>
+              <li>{t("sections.dataProtection.integrations.list.2")}</li>
+              <li>{t("sections.dataProtection.integrations.list.3")}</li>
+              <li>{t("sections.dataProtection.integrations.list.4")}</li>
             </ul>
           </div>
         </div>
 
         {/* Section 3: Cloud Hosting & Storage */}
         <div className="space-y-6 scroll-mt-[120px]" id="data2">
-          <h1 className="heading-1 font-medium">3. Cloud Hosting & Storage</h1>
+          <h1 className="heading-1 font-medium">{t("sections.cloudHosting.title")}</h1>
           <p className="body-4">
-            MIRYA Cloud uses Microsoft Azure or equivalent enterprise-grade
-            cloud providers with strong physical and network security.
+            {t("sections.cloudHosting.desc")}
           </p>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Data Center Security</h2>
+            <h2 className="font-semibold heading-4">{t("sections.cloudHosting.dataCenter.title")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Servers run in private, isolated networks.</li>
-              <li>Physical access is controlled by the cloud provider.</li>
-              <li>All storage volumes are encrypted by default (AES-256).</li>
+              <li>{t("sections.cloudHosting.dataCenter.list.0")}</li>
+              <li>{t("sections.cloudHosting.dataCenter.list.1")}</li>
+              <li>{t("sections.cloudHosting.dataCenter.list.2")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
             <h2 className="font-semibold heading-4">
-              Infrastructure Access Controls
+              {t("sections.cloudHosting.infrastructure.title")}
             </h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>MFA enforced for MIRYA engineering access</li>
-              <li>No direct public access to internal services</li>
-              <li>Services run inside private sub-nets with firewall rules</li>
+              <li>{t("sections.cloudHosting.infrastructure.list.0")}</li>
+              <li>{t("sections.cloudHosting.infrastructure.list.1")}</li>
+              <li>{t("sections.cloudHosting.infrastructure.list.2")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
             <h2 className="font-semibold heading-4">
-              Database & Credential Storage
+              {t("sections.cloudHosting.database.title")}
             </h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>
-                All customer data, workflow data, and credentials are encrypted
-                at rest.
-              </li>
-              <li>
-                Backups are encrypted and stored in separate availability zones.
-              </li>
+              <li>{t("sections.cloudHosting.database.list.0")}</li>
+              <li>{t("sections.cloudHosting.database.list.1")}</li>
             </ul>
           </div>
         </div>
 
         {/* Section 4: Encryption */}
         <div className="space-y-6 scroll-mt-[120px]" id="data3">
-          <h1 className="heading-1 font-medium">4. Encryption</h1>
+          <h1 className="heading-1 font-medium">{t("sections.encryption.title")}</h1>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">In Transit</h2>
+            <h2 className="font-semibold heading-4">{t("sections.encryption.inTransit.title")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>
-                All data transmitted between your device, MIRYA's cloud
-                services, and public APIs is encrypted using industry-standard
-                TLS/SSL.
-              </li>
+              <li>{t("sections.encryption.inTransit.list.0")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">At Rest</h2>
+            <h2 className="font-semibold heading-4">{t("sections.encryption.atRest.title")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>
-                MIRYA encrypts all customer data, databases, workflow
-                inputs/outputs, and credential stores at rest.
-              </li>
-              <li>AES-256 encryption is applied to all disks and backups.</li>
-              <li>
-                Encryption keys are managed by the cloud provider using
-                compliant KMS systems.
-              </li>
+              <li>{t("sections.encryption.atRest.list.0")}</li>
+              <li>{t("sections.encryption.atRest.list.1")}</li>
+              <li>{t("sections.encryption.atRest.list.2")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Self-Hosted Deployment</h2>
+            <h2 className="font-semibold heading-4">{t("sections.encryption.selfHosted.title")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Set up TLS for all traffic</li>
-              <li>Ensure storage volumes are encrypted</li>
-              <li>Keep encryption keys secure</li>
-              <li>
-                Configure KMS and firewall rules via their hosting provider
-              </li>
+              <li>{t("sections.encryption.selfHosted.list.0")}</li>
+              <li>{t("sections.encryption.selfHosted.list.1")}</li>
+              <li>{t("sections.encryption.selfHosted.list.2")}</li>
+              <li>{t("sections.encryption.selfHosted.list.3")}</li>
             </ul>
           </div>
         </div>
 
         {/* Section 5: Network Security */}
         <div className="space-y-6 scroll-mt-[120px]" id="data4">
-          <h1 className="heading-1 font-medium">5. Network Security</h1>
+          <h1 className="heading-1 font-medium">{t("sections.network.title")}</h1>
           <p className="body-4">
-            MIRYA Cloud infrastructure is continuously monitored using automated
-            audits and alert systems.
+            {t("sections.network.desc")}
           </p>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Controls include:</h2>
+            <h2 className="font-semibold heading-4">{t("sections.network.controlsTitle")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Web Application Firewall (WAF)</li>
-              <li>Firewall-restricted ports and protocols</li>
-              <li>Intrusion Detection Systems (IDS)</li>
-              <li>Continuous log monitoring and anomaly alerts</li>
-              <li>Rate-limiting and request filtering</li>
+              <li>{t("sections.network.controls.0")}</li>
+              <li>{t("sections.network.controls.1")}</li>
+              <li>{t("sections.network.controls.2")}</li>
+              <li>{t("sections.network.controls.3")}</li>
+              <li>{t("sections.network.controls.4")}</li>
             </ul>
           </div>
         </div>
 
         {/* Section 6: Audit Logging */}
         <div className="space-y-6 scroll-mt-[120px]" id="data4">
-          <h1 className="heading-1 font-medium">6. Audit Logging</h1>
-          <p className="body-4">MIRYA logs:</p>
+          <h1 className="heading-1 font-medium">{t("sections.audit.title")}</h1>
+          <p className="body-4">{t("sections.audit.desc")}</p>
           <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-            <li>Workflow execution events</li>
-            <li>System activity</li>
-            <li>Authentication attempts</li>
-            <li>Platform and infrastructure events</li>
+            <li>{t("sections.audit.list.0")}</li>
+            <li>{t("sections.audit.list.1")}</li>
+            <li>{t("sections.audit.list.2")}</li>
+            <li>{t("sections.audit.list.3")}</li>
           </ul>
         </div>
 
         {/* Section 7: Secure Development Practices */}
         <div className="space-y-6 scroll-mt-[120px]" id="data4">
           <h1 className="heading-1 font-medium">
-            7. Secure Development Practices
+            {t("sections.development.title")}
           </h1>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Code Management</h2>
+            <h2 className="font-semibold heading-4">{t("sections.development.codeManagement.title")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>
-                Source code stored in private repositories (Github or similar)
-              </li>
-              <li>Access granted on a least-privilege basis</li>
-              <li>MFA required for developer access</li>
+              <li>{t("sections.development.codeManagement.list.0")}</li>
+              <li>{t("sections.development.codeManagement.list.1")}</li>
+              <li>{t("sections.development.codeManagement.list.2")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Code Reviews & Testing</h2>
+            <h2 className="font-semibold heading-4">{t("sections.development.codeReview.title")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Every code change is reviewed by a second engineer</li>
-              <li>Automated CI/CD pipelines</li>
-              <li>Static Application Security Testing (SAST)</li>
-              <li>Dependency scanning and vulnerability testing</li>
+              <li>{t("sections.development.codeReview.list.0")}</li>
+              <li>{t("sections.development.codeReview.list.1")}</li>
+              <li>{t("sections.development.codeReview.list.2")}</li>
+              <li>{t("sections.development.codeReview.list.3")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Environment Separation</h2>
+            <h2 className="font-semibold heading-4">{t("sections.development.environment.title")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>
-                Development, staging, and production environments are isolated
-              </li>
-              <li>Only authorized personnel can deploy to production</li>
+              <li>{t("sections.development.environment.list.0")}</li>
+              <li>{t("sections.development.environment.list.1")}</li>
             </ul>
           </div>
         </div>
 
         {/* Section 8: Corporate Security */}
         <div className="space-y-6 scroll-mt-[120px]" id="data5">
-          <h1 className="heading-1 font-medium">8. Corporate Security</h1>
+          <h1 className="heading-1 font-medium">{t("sections.corporate.title")}</h1>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Hiring Practices</h2>
+            <h2 className="font-semibold heading-4">{t("sections.corporate.hiring.title")}</h2>
             <p className="opacity-80 body-3">
-              All MIRYA team members complete:
+              {t("sections.corporate.hiring.desc")}
             </p>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Background checks where legally permitted</li>
-              <li>Security and privacy onboarding</li>
-              <li>Annual security training</li>
+              <li>{t("sections.corporate.hiring.list.0")}</li>
+              <li>{t("sections.corporate.hiring.list.1")}</li>
+              <li>{t("sections.corporate.hiring.list.2")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Workstation Security</h2>
+            <h2 className="font-semibold heading-4">{t("sections.corporate.workstation.title")}</h2>
             <p className="opacity-80 body-3">
-              All employee devices follow strict policies:
+              {t("sections.corporate.workstation.desc")}
             </p>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Full-disk encryption</li>
-              <li>Automatic updates</li>
-              <li>Strong password management</li>
-              <li>Enforced screen lock</li>
-              <li>Anti-malware tools</li>
+              <li>{t("sections.corporate.workstation.list.0")}</li>
+              <li>{t("sections.corporate.workstation.list.1")}</li>
+              <li>{t("sections.corporate.workstation.list.2")}</li>
+              <li>{t("sections.corporate.workstation.list.3")}</li>
+              <li>{t("sections.corporate.workstation.list.4")}</li>
             </ul>
           </div>
         </div>
@@ -396,38 +321,34 @@ const SecurityData = () => {
         {/* Section 9: Threat & Vulnerability Management */}
         <div className="space-y-6 scroll-mt-[120px]" id="data6">
           <h1 className="heading-1 font-medium">
-            9. Threat & Vulnerability Management
+            {t("sections.threat.title")}
           </h1>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Vulnerability Scanning</h2>
+            <h2 className="font-semibold heading-4">{t("sections.threat.vulnerability.title")}</h2>
             <p className="opacity-80 body-3">
-              Regular automated scans are performed on cloud infrastructure and
-              application code.
+              {t("sections.threat.vulnerability.desc")}
             </p>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Penetration Testing</h2>
+            <h2 className="font-semibold heading-4">{t("sections.threat.penetration.title")}</h2>
             <p className="opacity-80 body-3">
-              Independent penetration tests are conducted annually or after
-              major releases.
+              {t("sections.threat.penetration.desc")}
             </p>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Intrusion Detection</h2>
+            <h2 className="font-semibold heading-4">{t("sections.threat.intrusion.title")}</h2>
             <p className="opacity-80 body-3">
-              MIRYA monitors for signs of intrusions and responds immediately to
-              suspicious activity.
+              {t("sections.threat.intrusion.desc")}
             </p>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Threat Intelligence</h2>
+            <h2 className="font-semibold heading-4">{t("sections.threat.intelligence.title")}</h2>
             <p className="opacity-80 body-3">
-              We use trusted intelligence feeds and security tools to stay
-              updated on new threats.
+              {t("sections.threat.intelligence.desc")}
             </p>
           </div>
         </div>
@@ -435,79 +356,46 @@ const SecurityData = () => {
         {/* Section 10: Backup, Recovery & Business Continuity */}
         <div className="space-y-6 scroll-mt-[120px]" id="data7">
           <h1 className="heading-1 font-medium">
-            10. Backup, Recovery & Business Continuity
+            {t("sections.backup.title")}
           </h1>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Data Backups</h2>
+            <h2 className="font-semibold heading-4">{t("sections.backup.dataBackups.title")}</h2>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Customer data is backed up daily.</li>
-              <li>Backups stored in separate availability zones</li>
-              <li>Encrypted using the same standards as production data</li>
+              <li>{t("sections.backup.dataBackups.list.0")}</li>
+              <li>{t("sections.backup.dataBackups.list.1")}</li>
+              <li>{t("sections.backup.dataBackups.list.2")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Disaster Recovery</h2>
+            <h2 className="font-semibold heading-4">{t("sections.backup.disaster.title")}</h2>
             <p className="opacity-80 body-3">
-              MIRYA maintains a detailed DR plan covering:
+              {t("sections.backup.disaster.desc")}
             </p>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Recovery procedures</li>
-              <li>Role definitions</li>
-              <li>Communication paths</li>
-              <li>System restoration processes</li>
+              <li>{t("sections.backup.disaster.list.0")}</li>
+              <li>{t("sections.backup.disaster.list.1")}</li>
+              <li>{t("sections.backup.disaster.list.2")}</li>
+              <li>{t("sections.backup.disaster.list.3")}</li>
             </ul>
           </div>
 
           <div className="space-y-5">
-            <h2 className="font-semibold heading-4">Business Continuity</h2>
+            <h2 className="font-semibold heading-4">{t("sections.backup.business.title")}</h2>
             <p className="opacity-80 body-3">
-              Regular tests ensure MIRYA can recover quickly from:
+              {t("sections.backup.business.desc")}
             </p>
             <ul className="list-disc list-inside opacity-80 body-3 space-y-1">
-              <li>Infrastructure failures</li>
-              <li>Provider outages</li>
-              <li>Data corruption</li>
-              <li>System-level disruptions</li>
+              <li>{t("sections.backup.business.list.0")}</li>
+              <li>{t("sections.backup.business.list.1")}</li>
+              <li>{t("sections.backup.business.list.2")}</li>
+              <li>{t("sections.backup.business.list.3")}</li>
             </ul>
           </div>
         </div>
 
-        {/* Questions and Feedback Section */}
-        <div className="space-y-6">
-          <h1 className="heading-1 font-medium">
-            Questions, comments and more detail
-          </h1>
-          <div className="space-y-5">
-            <h2 className="font-semibold heading-4">
-              We welcome your feedback and suggestions
-            </h2>
-            <p className="opacity-80 body-3">
-              At MIRYA, we are committed to keeping this Security Notice clear,
-              transparent, and easy to understand. <br />
-              If you have ideas on how we can improve the wording, add missing
-              perspectives, or enhance clarity, we'd be happy to hear from you.
-            </p>
-            <p className="opacity-80 body-3">
-              You can share your feedback directly with us at: <br />
-              📩 security@mirya.ai
-            </p>
-          </div>
-
-          <div className="space-y-5">
-            <h2 className="font-semibold heading-4">
-              Learn more about MIRYA's security practices
-            </h2>
-            <p className="opacity-80 body-3">
-              For additional details on MIRYA's approach to privacy, security,
-              compliance, and data handling—including GDPR, data processing
-              agreements, sub-processors, workflow data processing, and the
-              distinction between cloud and self-hosted environments—please
-              refer to our main Security & Privacy documentation page.
-            </p>
-          </div>
-        </div>
+       
       </div>
     </div>
   );

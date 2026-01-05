@@ -4,8 +4,9 @@ import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GradientButton from "@/app/ui/GradientButton";
-
+import { useTranslation } from "react-i18next";
 const HeroSection = () => {
+  const { t } = useTranslation("startup");
   const paragraphRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -89,24 +90,21 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            Enquiry Form
+            {t("enquiry.badge")}{" "}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
 
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[708px] w-full text-center pb-3 sm:pb-6 text-white">
-          Enterprise Enquiry Form{" "}
+          {t("enquiry.title")}{" "}
         </h1>
 
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
-          This form is for organizations interested in MIRYA’s Enterprise
-          automation solutions and tailored support packages. If you’re looking
-          to explore MIRYA’s standard plans, you can visit our Pricing or
-          Documentation pages.
+          {t("enquiry.description")}
         </p>
 
         <GradientButton
-          label="Enter To Start"
+          label={t("enquiry.button")}
           href="sales-form"
           bgColor="#0274FE"
           textColor="#FFFFFF"

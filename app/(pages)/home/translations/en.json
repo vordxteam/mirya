@@ -210,5 +210,27 @@
       "role": "Director"
     }
   ]
+},
+"chatbot": {
+  "title": "Chatbot",
+  "inputPlaceholder": "What's on your mind?",
+  "loadingPlaceholder": "Please wait...",
+  "sendButtonAlt": "Send",
+  "closeButtonAlt": "Close",
+  "errorMessage": "Sorry, connection failed. Please check your internet."
+},
+"cookies": {
+  "title": "Cookie Settings",
+  "description": "We use cookies to personalise content, ads and to analyse our traffic. We also share information about your use of our site with our advertising and analytics partners who may combine it with other information that you've provided to them or that they've collected from your use of their services.",
+  "strictlyNecessary": "Strictly necessary",
+  "targetingOnly": "Targeting only",
+  "performanceOnly": "Performance only",
+  "acceptAll": "Accept All",
+  "manageCookies": "Manage Cookies",
+  "rejectAll": "Reject All"
+},
+"chatbot-home": {
+  "chatWithUs": "Chat with Us"
 }
 }
+

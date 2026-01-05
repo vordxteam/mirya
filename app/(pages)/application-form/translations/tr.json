@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "goBack": "Geri Dön",
+    "title": "MIRYA'ya Katılmak İçin Başvurun",
+    "description": "Deneyiminizi, becerilerinizi ve geçmişinizi paylaşın, böylece ekibimize nasıl uyum sağlayacağınızı anlayalım. Başvurunuzu göndermek için aşağıdaki formu doldurun."
+  },
+
+  "sections": {
+    "fillDetails": "Aşağıdaki ayrıntıları doldurun.",
+    "basicInfo": "Temel Bilgiler",
+    "experience": "Deneyim",
+    "resume": "Özgeçmiş",
+    "motivation": "Motivasyon"
+  },
+
+  "inputs": {
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "phone": "Telefon Numarası",
+    "email": "E-posta Adresi",
+    "linkedin": "LinkedIn Bağlantısı",
+    "github": "GitHub Bağlantısı",
+    "yearsExperience": "Deneyim Yılı",
+    "currentCompany": "Mevcut Şirket"
+  },
+
+  "resume": {
+    "upload": "Özgeçmiş Yükle",
+    "dragDrop": "veya sürükle ve bırak",
+    "uploaded": "Dosya başarıyla yüklendi"
+  },
+
+  "motivation": {
+    "q1": "MIRYA hakkında sizi ne ilgilendiriyor?",
+    "q2": "En gurur duyduğunuz bir projeyi veya başarıyı paylaşın",
+    "q3": "Bu pozisyon için beklediğiniz yıllık maaş nedir?",
+    "q4": "Otomasyon veya yapay zeka üzerinde çalışma deneyiminiz hakkında kısaca bilgi verin",
+    "placeholder": "Buraya bir şeyler yazın..."
+  },
+
+  "button": {
+    "submit": "Başvuruyu Gönder"
+  }
+}

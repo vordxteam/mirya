@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "label": "Häufig gestellte Fragen",
+    "title": "Unser Leitfaden zu häufig gestellten Fragen",
+    "description": "Finden Sie unten schnelle Antworten auf Ihre Fragen oder kontaktieren Sie unser Support-Team für weitere Hilfe!",
+    "lastUpdated": "Zuletzt aktualisiert im November 2025"
+  },
+
+  "sections": [
+    {
+      "category": "Allgemeine Fragen",
+      "description": "Behandelt die Grundlagen von MIRYA, den Zweck, den Registrierungsprozess, die kostenlose Testversion und verfügbare Ressourcen.",
+      "questions": [
+        {
+          "question": "Was ist MIRYA und wie kann es meinem Unternehmen helfen?",
+          "answer": "MIRYA ist eine No-Code-Automatisierungsplattform, mit der Sie Prozesse ohne Programmierkenntnisse erstellen und ausführen können."
+        },
+        {
+          "question": "Wer kann MIRYA nutzen?",
+          "answer": "MIRYA ist für Unternehmen jeder Größe geeignet – von Start-ups bis hin zu Großunternehmen."
+        },
+        {
+          "question": "Können Sie den ersten Prozess für uns einrichten?",
+          "answer": "Ja! Unser Team unterstützt Sie gerne bei der Einrichtung Ihres ersten Automatisierungsprozesses."
+        },
+        {
+          "question": "Wie lange dauert der Einstieg?",
+          "answer": "Sie können innerhalb weniger Minuten mit MIRYA starten."
+        }
+      ]
+    },
+
+    {
+      "category": "Funktionen und Pläne",
+      "description": "Enthält Informationen zu Funktionen der kostenlosen Testversion, Planflexibilität und Kompatibilität mit anderer Software.",
+      "questions": [
+        {
+          "question": "Wie funktioniert das Abonnement?",
+          "answer": "Wählen Sie den passenden Plan und wechseln Sie jederzeit zwischen den Optionen."
+        },
+        {
+          "question": "Kann ich meinen Plan upgraden oder downgraden?",
+          "answer": "Ja, Änderungen treten sofort in Kraft."
+        },
+        {
+          "question": "Ist MIRYA mit anderer Software kompatibel?",
+          "answer": "MIRYA lässt sich nahtlos in die meisten gängigen Business-Anwendungen integrieren."
+        },
+        {
+          "question": "Was ist die White-Label-Option und für wen ist sie gedacht?",
+          "answer": "Mit White Label können Sie MIRYA als Ihr eigenes Produkt vermarkten."
+        }
+      ]
+    },
+
+    {
+      "category": "Sicherheit und Schutz",
+      "description": "Beschreibt Sicherheitsmaßnahmen wie Datenverschlüsselung und Backup-Verfahren zum Schutz der Nutzer.",
+      "questions": [
+        {
+          "question": "Wie sicher sind meine Daten bei MIRYA?",
+          "answer": "MIRYA verwendet Sicherheitsstandards und Verschlüsselung auf Enterprise-Niveau."
+        },
+        {
+          "question": "Verschlüsselt MIRYA meine Daten?",
+          "answer": "Ja, Daten werden sowohl während der Übertragung als auch im Ruhezustand verschlüsselt."
+        },
+        {
+          "question": "Werden Backups meiner Daten erstellt?",
+          "answer": "Automatische tägliche Backups werden durchgeführt."
+        },
+        {
+          "question": "Wer kann innerhalb von MIRYA auf meine Daten zugreifen?",
+          "answer": "Nur autorisierte Personen mit rollenbasierter Berechtigung."
+        }
+      ]
+    },
+
+    {
+      "category": "Kundensupport",
+      "description": "Beschreibt Support-Optionen einschließlich Selbsthilfe-Ressourcen und Kontaktmöglichkeiten.",
+      "questions": [
+        {
+          "question": "Welche Support-Optionen bietet MIRYA?",
+          "answer": "24/7 E-Mail-Support, Live-Chat und ein Help Center."
+        },
+        {
+          "question": "Wie schnell erhalte ich Unterstützung?",
+          "answer": "In der Regel innerhalb von 10 Minuten über den Live-Chat."
+        },
+        {
+          "question": "Gibt es ein dediziertes Support-Team?",
+          "answer": "Ja, Premium-Nutzer erhalten priorisierten Support."
+        },
+        {
+          "question": "Bieten Sie Onboarding oder Schulungen an?",
+          "answer": "Ja, geführtes Onboarding und umfassende Dokumentation sind verfügbar."
+        }
+      ]
+    }
+  ]
+}

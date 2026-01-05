@@ -1,0 +1,273 @@
+{
+  "hero": {
+    "badge": "Sicherheit",
+    "title": "MIRYA Sicherheitsrichtlinie",
+    "description": "Ihre Datensicherheit hat für uns höchste Priorität. Diese Seite beschreibt die Schutzmaßnahmen, Systeme und Praktiken, die MIRYA verwendet, um Ihre Informationen in jeder Phase des Automatisierungslebenszyklus zu schützen.",
+    "lastUpdated": "Zuletzt aktualisiert am 12. Juli 2025",
+    "buttonText": "Zuletzt aktualisiert am 12. Juli 2025"
+  },
+  
+  "summary": {
+    "title": "Zusammenfassung der wichtigsten Punkte",
+    "intro": "Diese Zusammenfassung enthält die wichtigsten Punkte aus unserer Datenschutzerklärung, aber Sie können weitere Details zu jedem dieser Themen finden, indem Sie unser",
+    "tocLinkText": "Inhaltsverzeichnis",
+    "introSuffix": "verwenden, um den gesuchten Abschnitt zu finden.",
+    "paragraphs": [
+      "MIRYA sammelt nur die Informationen, die benötigt werden, um die Plattform zu betreiben und zu verbessern – wie Ihre Kontodetails, Nutzungsaktivitäten und die Dokumente oder Daten, die Sie über Workflows verarbeiten möchten. Ihre Daten bleiben Ihr Eigentum: MIRYA verwendet sie nur, um Automatisierungen auszuführen, die Leistung zu verbessern und Support bereitzustellen. Wir verkaufen Ihre Informationen nie und teilen sie nur mit vertrauenswürdigen Dienstleistern oder Apps, die Sie integrieren möchten. Wir schützen Ihre Daten durch Verschlüsselung, Zugriffskontrollen und sichere Infrastruktur. Sie können jederzeit Zugang, Berichtigung oder Löschung Ihrer Informationen beantragen. MIRYA verwendet Cookies, um Ihr Erlebnis zu verbessern, und der Dienst ist nicht für Kinder unter 16 Jahren gedacht.",
+      "Durch die Nutzung von MIRYA erklären Sie sich damit einverstanden, unseren Regeln zu folgen, Ihr Konto sicher zu halten und die Plattform verantwortungsvoll zu nutzen. Sie behalten das Eigentum an allen Daten, Dokumenten und Workflows, die Sie hochladen, und MIRYA verarbeitet sie nur, um Automatisierungsfunktionen bereitzustellen. Obwohl wir nach hoher Zuverlässigkeit streben, ist ein kontinuierlicher Service nicht garantiert und Funktionen können sich im Laufe der Zeit ändern.",
+      "Verantwortungsvolle Nutzung von MIRYA bedeutet, illegale, schädliche oder missbräuchliche Automatisierungsverhalten zu vermeiden. Wir haften nicht für indirekte Verluste, Missbrauch oder Probleme, die aus Drittanbieterintegrationen entstehen. Abonnements verlängern sich automatisch, sofern nicht gekündigt, und Rückerstattungen sind auf gesetzliche Anforderungen beschränkt."
+    ]
+  },
+  
+  "toc": {
+    "title": "Inhaltsverzeichnis",
+    "items": [
+      { "id": "#data", "text": "Compliance" },
+      { "id": "#data1", "text": "Kundendatenschutz & Verschlüsselung" },
+      { "id": "#data2", "text": "Cloud-Hosting & Speicherung" },
+      { "id": "#data3", "text": "Verschlüsselung" },
+      { "id": "#data4", "text": "Netzwerksicherheit" },
+      { "id": "#data5", "text": "Unternehmenssicherheit" },
+      { "id": "#data6", "text": "Bedrohungs- & Schwachstellenmanagement" },
+      { "id": "#data7", "text": "Backup, Wiederherstellung & Geschäftskontinuität" }
+    ]
+  },
+  
+  "sections": {
+    "compliance": {
+      "title": "1. Compliance",
+      "soc": {
+        "title": "SOC 2 & SOC 3 Berichte",
+        "list": [
+          "SOC 2-Berichte stehen Unternehmenskunden unter NDA zur Verfügung.",
+          "SOC 3-Zusammenfassungsberichte können öffentlich zur allgemeinen Einsicht verfügbar sein.",
+          "Diese Berichte beschreiben unser Sicherheitsprogramm, interne Kontrollen und unabhängige Prüfungsbewertungen."
+        ]
+      },
+      "gdpr": {
+        "title": "DSGVO & Datenschutz",
+        "desc": "MIRYA ist DSGVO-konform (EU-Datenschutzgrundverordnung). Wir bieten:",
+        "list": [
+          "Datenverarbeitungsvereinbarungen (DPAs)",
+          "Klare Aufbewahrungsrichtlinien",
+          "Transparente Subprozessor-Listen",
+          "Datenübertragbarkeit & Löschungsrechte"
+        ]
+      }
+    },
+    
+    "dataProtection": {
+      "title": "2. Kundendatenschutz & Verschlüsselung",
+      "auth": {
+        "title": "Benutzerkonten, Authentifizierung & Autorisierung",
+        "cloudTitle": "MIRYA Cloud",
+        "cloudList": [
+          "Passwörter werden vor der Speicherung gehasht und gesalzen.",
+          "Authentifizierungsdaten werden in verschlüsselten Datenbanken gespeichert.",
+          "MFA (Multi-Faktor-Authentifizierung) wird unterstützt.",
+          "OAuth und sichere Anmeldedatenspeicherung werden wo möglich verwendet."
+        ],
+        "selfHostedTitle": "MIRYA Self-Hosted",
+        "selfHostedList": [
+          "Passwort-Hashing folgt MIRYAs empfohlener Sicherheitskonfiguration.",
+          "Verschlüsselung im Ruhezustand, Netzwerkverschlüsselung und Geheimnisverwaltung müssen vom Kunden konfiguriert werden.",
+          "Benutzerdefinierte Session-Timeouts und erweiterte Passwortrichtlinien werden unterstützt."
+        ]
+      },
+      "integrations": {
+        "title": "Drittanbieterkonten & Integrationen",
+        "desc": "Automatisierung erfordert oft die Verbindung mit externen Systemen (ERP, CRM, HR, E-Mail usw.).",
+        "list": [
+          "MIRYA verwendet OAuth, wo unterstützt, um sicheren, eingeschränkten Zugang zu bieten.",
+          "Wenn OAuth nicht verfügbar ist, werden API-Schlüssel oder Tokens sicher gespeichert und im Ruhezustand verschlüsselt.",
+          "Anmeldedaten erscheinen niemals in Protokollen.",
+          "MIRYA isoliert Tokens innerhalb der Ausführungsumgebung auf Workspace-Basis.",
+          "MIRYA protokolliert keine Anmeldedatenwerte, es sei denn, sie werden explizit vom Kunden aktiviert."
+        ]
+      }
+    },
+    
+    "cloudHosting": {
+      "title": "3. Cloud-Hosting & Speicherung",
+      "desc": "MIRYA Cloud verwendet Microsoft Azure oder gleichwertige Enterprise-Cloud-Anbieter mit starker physischer und Netzwerksicherheit.",
+      "dataCenter": {
+        "title": "Rechenzentrumssicherheit",
+        "list": [
+          "Server laufen in privaten, isolierten Netzwerken.",
+          "Physischer Zugang wird vom Cloud-Anbieter kontrolliert.",
+          "Alle Speichervolumes sind standardmäßig verschlüsselt (AES-256)."
+        ]
+      },
+      "infrastructure": {
+        "title": "Infrastruktur-Zugangskontrollen",
+        "list": [
+          "MFA für MIRYA Engineering-Zugang erforderlich",
+          "Kein direkter öffentlicher Zugang zu internen Diensten",
+          "Dienste laufen in privaten Subnetzen mit Firewall-Regeln"
+        ]
+      },
+      "database": {
+        "title": "Datenbank & Anmeldedatenspeicherung",
+        "list": [
+          "Alle Kundendaten, Workflow-Daten und Anmeldedaten sind im Ruhezustand verschlüsselt.",
+          "Backups sind verschlüsselt und in separaten Verfügbarkeitszonen gespeichert."
+        ]
+      }
+    },
+    
+    "encryption": {
+      "title": "4. Verschlüsselung",
+      "inTransit": {
+        "title": "In Übertragung",
+        "list": [
+          "Alle Daten, die zwischen Ihrem Gerät, MIRYAs Cloud-Diensten und öffentlichen APIs übertragen werden, sind mit branchenüblichen TLS/SSL verschlüsselt."
+        ]
+      },
+      "atRest": {
+        "title": "Im Ruhezustand",
+        "list": [
+          "MIRYA verschlüsselt alle Kundendaten, Datenbanken, Workflow-Eingaben/Ausgaben und Anmeldedatenspeicher im Ruhezustand.",
+          "AES-256-Verschlüsselung wird auf alle Festplatten und Backups angewendet.",
+          "Verschlüsselungsschlüssel werden vom Cloud-Anbieter mit konformen KMS-Systemen verwaltet."
+        ]
+      },
+      "selfHosted": {
+        "title": "Self-Hosted-Bereitstellung",
+        "list": [
+          "TLS für gesamten Verkehr einrichten",
+          "Sicherstellen, dass Speichervolumes verschlüsselt sind",
+          "Verschlüsselungsschlüssel sicher aufbewahren",
+          "KMS und Firewall-Regeln über den Hosting-Provider konfigurieren"
+        ]
+      }
+    },
+    
+    "network": {
+      "title": "5. Netzwerksicherheit",
+      "desc": "Die MIRYA Cloud-Infrastruktur wird kontinuierlich mit automatisierten Audits und Alarm-Systemen überwacht.",
+      "controlsTitle": "Kontrollen umfassen:",
+      "controls": [
+        "Web Application Firewall (WAF)",
+        "Firewall-beschränkte Ports und Protokolle",
+        "Intrusion Detection Systems (IDS)",
+        "Kontinuierliche Protokollüberwachung und Anomalie-Alarme",
+        "Rate-Limiting und Request-Filterung"
+      ]
+    },
+    
+    "audit": {
+      "title": "6. Audit-Protokollierung",
+      "desc": "MIRYA protokolliert:",
+      "list": [
+        "Workflow-Ausführungsereignisse",
+        "Systemaktivität",
+        "Authentifizierungsversuche",
+        "Platform- und Infrastrukturereignisse"
+      ]
+    },
+    
+    "development": {
+      "title": "7. Sichere Entwicklungspraktiken",
+      "codeManagement": {
+        "title": "Code-Verwaltung",
+        "list": [
+          "Quellcode in privaten Repositories gespeichert (GitHub oder ähnlich)",
+          "Zugriff auf Basis des Mindestprivilegien-Prinzips gewährt",
+          "MFA für Entwicklerzugang erforderlich"
+        ]
+      },
+      "codeReview": {
+        "title": "Code-Reviews & Tests",
+        "list": [
+          "Jede Code-Änderung wird von einem zweiten Ingenieur geprüft",
+          "Automatisierte CI/CD-Pipelines",
+          "Statische Anwendungssicherheitstests (SAST)",
+          "Abhängigkeitsscanning und Schwachstellentests"
+        ]
+      },
+      "environment": {
+        "title": "Umgebungstrennung",
+        "list": [
+          "Entwicklungs-, Staging- und Produktionsumgebungen sind isoliert",
+          "Nur autorisiertes Personal kann in die Produktion deployen"
+        ]
+      }
+    },
+    
+    "corporate": {
+      "title": "8. Unternehmenssicherheit",
+      "hiring": {
+        "title": "Einstellungspraktiken",
+        "desc": "Alle MIRYA-Teammitglieder absolvieren:",
+        "list": [
+          "Hintergrundprüfungen, wo gesetzlich zulässig",
+          "Sicherheits- und Datenschutz-Onboarding",
+          "Jährliche Sicherheitsschulungen"
+        ]
+      },
+      "workstation": {
+        "title": "Arbeitsplatzsicherheit",
+        "desc": "Alle Mitarbeitergeräte folgen strengen Richtlinien:",
+        "list": [
+          "Festplattenverschlüsselung",
+          "Automatische Updates",
+          "Starke Passwortverwaltung",
+          "Erzwungener Bildschirmsperre",
+          "Anti-Malware-Tools"
+        ]
+      }
+    },
+    
+    "threat": {
+      "title": "9. Bedrohungs- & Schwachstellenmanagement",
+      "vulnerability": {
+        "title": "Schwachstellenscanning",
+        "desc": "Regelmäßige automatisierte Scans werden auf Cloud-Infrastruktur und Anwendungscode durchgeführt."
+      },
+      "penetration": {
+        "title": "Penetrationstests",
+        "desc": "Unabhängige Penetrationstests werden jährlich oder nach größeren Releases durchgeführt."
+      },
+      "intrusion": {
+        "title": "Intrusion Detection",
+        "desc": "MIRYA überwacht auf Eindringungsanzeichen und reagiert sofort auf verdächtige Aktivitäten."
+      },
+      "intelligence": {
+        "title": "Bedrohungsintelligenz",
+        "desc": "Wir verwenden vertrauenswürdige Intelligenz-Feeds und Sicherheitstools, um über neue Bedrohungen informiert zu bleiben."
+      }
+    },
+    
+    "backup": {
+      "title": "10. Backup, Wiederherstellung & Geschäftskontinuität",
+      "dataBackups": {
+        "title": "Daten-Backups",
+        "list": [
+          "Kundendaten werden täglich gesichert.",
+          "Backups in separaten Verfügbarkeitszonen gespeichert",
+          "Mit denselben Standards wie Produktionsdaten verschlüsselt"
+        ]
+      },
+      "disaster": {
+        "title": "Notfallwiederherstellung",
+        "desc": "MIRYA unterhält einen detaillierten DR-Plan, der abdeckt:",
+        "list": [
+          "Wiederherstellungsverfahren",
+          "Rollendefinitionen",
+          "Kommunikationswege",
+          "Systemwiederherstellungsprozesse"
+        ]
+      },
+      "business": {
+        "title": "Geschäftskontinuität",
+        "desc": "Regelmäßige Tests stellen sicher, dass MIRYA sich schnell erholen kann von:",
+        "list": [
+          "Infrastrukturausfällen",
+          "Provider-Ausfällen",
+          "Datenkorruption",
+          "Systemebenenstörungen"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "goBack": "Go Back",
+    "title": "Apply to Join MIRYA",
+    "description": "Share your experience, skills, and background so we can understand how you fit into our team. Fill out the form below to submit your application."
+  },
+
+  "sections": {
+    "fillDetails": "Fill out the details below.",
+    "basicInfo": "Basic Information",
+    "experience": "Experience",
+    "resume": "Resume",
+    "motivation": "Motivation"
+  },
+
+  "inputs": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone number",
+    "email": "Email address",
+    "linkedin": "LinkedIn Link",
+    "github": "GitHub Link",
+    "yearsExperience": "Years of Experience",
+    "currentCompany": "Current Company"
+  },
+
+  "resume": {
+    "upload": "Upload Resume",
+    "dragDrop": "or drag & drop here",
+    "uploaded": "File uploaded successfully"
+  },
+
+  "motivation": {
+    "q1": "What interests you about MIRYA?",
+    "q2": "Share a project or achievement you're most proud of",
+    "q3": "What is your expected yearly salary for the role?",
+    "q4": "Tell us briefly about any experience working on automation or AI",
+    "placeholder": "Type anything here..."
+  },
+
+  "button": {
+    "submit": "Submit Application"
+  }
+}

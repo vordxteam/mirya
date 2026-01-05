@@ -212,6 +212,27 @@
       }
     ]
   }
-
+,
+"chatbot": {
+  "title": "Chatbot",
+  "inputPlaceholder": "Was beschäftigt Sie?",
+  "loadingPlaceholder": "Bitte warten...",
+  "sendButtonAlt": "Senden",
+  "closeButtonAlt": "Schließen",
+  "errorMessage": "Entschuldigung, die Verbindung ist fehlgeschlagen. Bitte überprüfen Sie Ihr Internet."
+},
+"cookies": {
+  "title": "Cookie-Einstellungen",
+  "description": "Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren und unseren Datenverkehr zu analysieren. Wir geben auch Informationen über Ihre Nutzung unserer Website an unsere Partner für Werbung und Analysen weiter.",
+  "strictlyNecessary": "Unbedingt erforderlich",
+  "targetingOnly": "Nur Targeting",
+  "performanceOnly": "Nur Leistung",
+  "acceptAll": "Alle akzeptieren",
+  "manageCookies": "Cookies verwalten",
+  "rejectAll": "Alle ablehnen"
+},
+"chatbot-home": {
+  "chatWithUs": "Chatten Sie mit uns"
+}
 
 }

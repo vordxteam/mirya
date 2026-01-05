@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Kullanıcı Testi",
+    "title": "MIRYA Araştırma Katılımcısı Olun",
+    "description": "MIRYA'nın geleceğini şekillendirmemize yardımcı olacak katılımcılar arıyoruz. Araştırma faaliyetlerine katılmak isterseniz lütfen aşağıdaki bilgileri doldurun. Bu formu göndererek gizlilik politikamızı kabul etmiş olursunuz."
+  },
+  "rewards": {
+    "title": "MIRYA Kullanıcı Testine Katılım Ödülleriniz",
+    "description": "Kullanıcı testinizi tamamladıktan sonra MIRYA'ya ücretsiz erişim, yeni özelliklere erken erişim ve ücretli planlarda özel indirimler kazanacaksınız."
+  },
+  "form": {
+    "title": "Aşağıdaki bilgileri doldurun.",
+    "placeholders": {
+      "firstName": "Adınız",
+      "lastName": "Soyadınız",
+      "phone": "Telefon numarası",
+      "email": "İş e-postası",
+      "company": "Şirket adı",
+      "website": "Şirket web sitesi",
+      "occupation": "Meslek",
+      "jobTitle": "Unvan",
+      "location": "Konum",
+      "address": "Adres",
+      "challenges": "Buraya bir şeyler yazın..."
+    },
+    "questions": {
+      "employees": "Kaç çalışanınız var?",
+      "tools": "Ekibiniz hangi araçları, yazılımları veya sistemleri kullanıyor?",
+      "processes": "Ne tür süreçleri otomatikleştirmek istiyorsunuz?",
+      "automationTools": "Şu anda herhangi bir otomasyon veya RPA aracı kullanıyor musunuz?",
+      "deploymentType": "Hangi dağıtım türünü tercih edersiniz?",
+      "itResources": "Kuruluşunuzun BT kaynakları var mı?",
+      "plans": "Hangi MIRYA planlarını kullanıyorsunuz?",
+      "outcome": "MIRYA ile elde etmek istediğiniz ana sonuç nedir?",
+      "miryaFamiliar": "MIRYA'ya ne kadar aşinasınız?",
+      "aiFamiliar": "Yapay zekaya ne kadar aşinasınız?",
+      "automationTiming": "Otomasyonu ne kadar sürede uygulamayı planlıyorsunuz?",
+      "referral": "MIRYA'yı nereden duydunuz?",
+      "challenges": "Mevcut zorluklarınız veya beklentileriniz hakkında bize daha fazla bilgi verin."
+    },
+    "checkboxOptions": {
+      "employees": ["1-10", "11-50", "51-200", "200-500", "500 Üzeri"],
+      "tools": ["ERP", "CRM", "İç platformlar", "Eski sistemler", "Diğerleri"],
+      "processes": ["Belge işleme", "E-posta yönetimi", "ERP görevleri", "Finans iş akışları", "Diğerleri"],
+      "automationTools": ["Evet", "Bazen", "Hayır", "Hiç kullanmadım"],
+      "deploymentType": ["Yerinde (On-premise)", "Bulut (Cloud)", "Hibrit", "Finans iş akışları", "Diğerleri"],
+      "itResources": ["Evet, tam donanımlı iç ekip", "Kısmi destek", "Dahili BT yok"],
+      "plans": ["Hiçbirini kullanmıyorum", "Professional", "Enterprise", "White labelling", "Start-up planı"],
+      "outcome": ["Verimlilik", "Maliyet düşürme", "Doğruluk", "Hız"],
+      "miryaFamiliar": ["Düzenli kullanıcıyım", "Ara sıra kullandım", "Hiç kullanmadım"],
+      "aiFamiliar": ["Yapay zeka ile aktif çalışıyorum", "Temel düzeyde bilgim var", "Yapay zeka ile ilgilenmiyorum"],
+      "automationTiming": ["Hemen", "3 ay içinde", "6 ay içinde", "Seçenekleri inceliyorum"],
+      "referral": ["Tavsiye", "Sosyal medya", "Arama", "Diğer"]
+    },
+    "privacy": "Şunu kabul ediyorum:",
+    "privacyLink": "Gizlilik Politikası",
+    "buttons": {
+      "cancel": "İptal",
+      "submit": "Gönder"
+    }
+  }
+}

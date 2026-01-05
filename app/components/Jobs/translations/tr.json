@@ -1,0 +1,67 @@
+{
+  "goBack": "Geri Dön",
+  "jobTitle": "Kıdemli Yazılım Mühendisi - Tam Zamanlı",
+  "jobDescription": "MIRYA'ya Kıdemli Yazılım Mühendisi olarak katılın ve ölçeklenebilir, akıllı bir otomasyon platformu oluşturmaya yardımcı olun.",
+  "employmentDetails": "İstihdam Detayları",
+  "locationLabel": "Konum:",
+  "locationValue": "Ofiste",
+  "jobTypeLabel": "İş Türü",
+  "jobTypeValue": "Tam Zamanlı",
+  "departmentLabel": "Departman",
+  "departmentValue": "Mühendislik",
+  "deadlineLabel": "Başvuru Son Tarihi",
+  "deadlineValue": "Yok",
+  
+  "jobDetails": {
+    "title": "İş Tanımı",
+    "description": "MIRYA'da Kıdemli Yazılım Mühendisi olarak, otomasyon zekamızı güçlendiren temel sistemleri tasarlayacak, oluşturacak ve sürdüreceksiniz. Ürün, tasarım ve altyapı ekipleriyle yakın işbirliği içinde çalışarak, son kullanıcılar için stabil, ölçeklenebilir, güvenli ve sezgisel özellikler sunacaksınız.",
+    
+    "responsibilities": {
+      "title": "Ana Sorumluluklar",
+      "items": [
+        "Temel platform servislerini, modülleri ve backend sistemlerini mimarileyin ve geliştirin",
+        "Otomasyon mantığını, iş akışı yürütme motorlarını ve entegrasyonları uygulayın",
+        "Güvenli, yüksek performanslı API'ler ve veri yapıları oluşturun",
+        "Kod inceleyin, teknik rehberlik sağlayın ve genç geliştiricilere destek olun",
+        "Test, CI/CD, güvenlik ve dokümantasyon konularında en iyi uygulamaları sağlayın",
+        "Otomasyon, yapay zeka ve kurumsal operasyonlarla ilgili gelişen teknolojileri araştırın"
+      ]
+    },
+    
+    "requirements": {
+      "title": "Gereksinimler:",
+      "items": [
+        "4+ yıl profesyonel mühendislik deneyimi.",
+        "Modern backend dillerinde güçlü yeterlilik (Node.js, Python, Go veya benzeri).",
+        "Cloud-native ortamlarda deneyim (Azure, AWS veya GCP).",
+        "Mikroservisler, dağıtık sistemler ve API tasarımı anlayışı.",
+        "SQL veya NoSQL veritabanları ile çalışma deneyimi.",
+        "Temiz kod, test stratejileri ve mühendislik en iyi uygulamalarına bağlılık"
+      ]
+    },
+    
+    "button": "Bu işe başvurun"
+  }
+
+,
+
+  "label": "İşler",
+  "title": "MIRYA'da mevcut iş fırsatları",
+  "description": "Akıllı otomasyonun geleceğini inşa ederken, mühendislik, pazarlama ve operasyonlar arasında fırsatları keşfedin.",
+  "categories": {
+    "All": "Tümü",
+    "Engineering": "Mühendislik",
+    "Marketing": "Pazarlama",
+    "Operations": "Operasyonlar"
+  },
+  "learnMore": "Daha Fazla Bilgi",
+  "jobList": [
+    { "id": 1, "title": "Kıdemli Yazılım Mühendisi", "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)", "category": "Engineering" },
+    { "id": 2, "title": "Otomasyon Uzmanı", "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)", "category": "Engineering" },
+    { "id": 3, "title": "Müşteri Başarı Yöneticisi", "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)", "category": "Operations" },
+    { "id": 4, "title": "Teknik Destek Mühendisi", "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)", "category": "Operations" },
+    { "id": 5, "title": "Backend Mühendisi", "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)", "category": "Engineering" },
+    { "id": 6, "title": "İçerik Stratejisti", "description": "Tam Zamanlı • Uzaktan / Ofiste (Berlin, Lizbon, Lahor, İtalya, İspanya, İngiltere, Los Angeles)", "category": "Marketing" }
+  ]
+}
+

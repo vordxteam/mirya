@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Inter } from "next/font/google";
 import CustomCheckbox from "@/app/components/CustomCheckbox";
+import { useTranslation } from "react-i18next";
 const inter = Inter({
   variable: "--font-inter",
   weight: ["300", "400", "500", "600", "700"],
@@ -9,6 +10,7 @@ const inter = Inter({
 });
 
 export default function Cookies({ onClose }: { onClose: () => void }) {
+  const { t } = useTranslation("home");
   return (
     <div className={`${inter.className}`}>
       <div className="rounded-[20px] border border-transparent non-rounded2 p-[1px] max-w-[426px]">
@@ -16,7 +18,7 @@ export default function Cookies({ onClose }: { onClose: () => void }) {
           <div className="space-y-3">
             <div className="flex justify-between items-end">
               <h4 className="heading-4 font-light text-[#FFFFFF]">
-                Cookie Settings
+                {t("cookies.title")}{" "}
               </h4>
               <Image
                 onClick={onClose}
@@ -28,29 +30,24 @@ export default function Cookies({ onClose }: { onClose: () => void }) {
               />
             </div>
             <p className="heading-7 font-normal text-[#FFFFFF]">
-              We use cookies to personalise content, ads and to analyse our
-              traffic. We also share information about your use of our site with
-              our advertising and analytics partners who may combine it with
-              other information that you've provided to them or that they've
-              collected from your use of their services.
+              {t("cookies.description")}
             </p>
             <div className="w-full flex items-center justify-between">
               <div className="flex items-center leading-[14px]">
                 <CustomCheckbox
-                  label="Strictly necessary"
+                  label={t("cookies.strictlyNecessary")}
                   labelClassName="text-[6px] sm:text-[10px] font-light text-[#FFFFFFE5]"
                 />
               </div>
               <div className="flex  items-center leading-[14px]">
                 <CustomCheckbox
-                  label="Targeting only"
+                  label={t("cookies.targetingOnly")}
                   labelClassName="text-[6px] sm:text-[10px] font-light text-[#FFFFFFE5]"
                 />
               </div>
               <div className="flex  items-center leading-[14px]">
                 <CustomCheckbox
-                  label="                  Performance only
-"
+                  label={t("cookies.performanceOnly")}
                   labelClassName="text-[6px] sm:text-[10px] font-light text-[#FFFFFFE5]"
                 />
               </div>
@@ -65,7 +62,7 @@ export default function Cookies({ onClose }: { onClose: () => void }) {
                 onClick={onClose}
                 className="cursor-pointer heading-6 font-light text-[#FFFFFF] bg-linear-to-b from-[#00082F] to-[#0274FE] px-4 py-2 rounded-lg w-full text-center"
               >
-                Accept All
+                {t("cookies.acceptAll")}{" "}
               </button>
             </div>
 
@@ -75,17 +72,17 @@ export default function Cookies({ onClose }: { onClose: () => void }) {
                 onClick={onClose}
                 className="bg-[#FFFFFF14] heading-6 font-light text-[#FFFFFFCC] cursor-pointer border border-[#FFFFFF1F] rounded-lg py-2 px-4 w-full text-center"
               >
-                Manage Cookies
+                {t("cookies.manageCookies")}{" "}
               </button>
             </div>
 
             {/* Reject All - Bottom on sm, Right side (second) on lg */}
-            <div className="w-full sm:w-auto order-3 sm:order-2">
+            <div className="w-full sm:w-auto order-3 sm:order-2 ">
               <button
                 onClick={onClose}
                 className="bg-[#FFFFFF14] heading-6 font-light text-[#FFFFFFCC] cursor-pointer border border-[#FFFFFF1F] rounded-lg py-2 px-4 w-full text-center"
               >
-                Reject All
+                {t("cookies.rejectAll")}{" "}
               </button>
             </div>
           </div>
@@ -93,7 +90,7 @@ export default function Cookies({ onClose }: { onClose: () => void }) {
       </div>
 
       <style jsx>{`
-        .non-rounded2 {
+        .non-rounded2 { 
           background: linear-gradient(#4542e0, #4542e0) padding-box,
             linear-gradient(0deg, #00031c, #8ea0e0, #00031c) border-box;
         }

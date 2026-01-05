@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "label": "Frequently Asked Questions",
+    "title": "Our Guide To Your Frequently Asked Questions",
+    "description": "Find quick answers to your questions below, or reach out to our support team for more help!",
+    "lastUpdated": "Last updated on November 2025"
+  },
+
+  "sections": [
+    {
+      "category": "General Questions",
+      "description": "Covers the basics of MIRYA, its purpose, sign-up process Free Trial, and available resources.",
+      "questions": [
+        {
+          "question": "What is MIRYA and how can it help my business?",
+          "answer": "MIRYA is a no-code automation platform that allows you to record, build, and run process automations — without programming knowledge."
+        },
+        {
+          "question": "Who can use MIRYA?",
+          "answer": "MIRYA is designed for businesses of all sizes, from startups to enterprises."
+        },
+        {
+          "question": "Can you setup the first process for us?",
+          "answer": "Yes! Our team can help you set up your first automation process."
+        },
+        {
+          "question": "How long does it take to get started?",
+          "answer": "You can get started with MIRYA in minutes."
+        }
+      ]
+    },
+
+    {
+      "category": "Features and Plans",
+      "description": "Includes information on features in the Free Trial, plan flexibility, and compatibility with other software.",
+      "questions": [
+        {
+          "question": "How does the subscription work?",
+          "answer": "Choose the plan that fits your needs and upgrade or downgrade anytime."
+        },
+        {
+          "question": "Can I upgrade or downgrade my plan?",
+          "answer": "Yes, changes take effect immediately."
+        },
+        {
+          "question": "Is MIRYA compatible with other softwares?",
+          "answer": "MIRYA integrates seamlessly with most popular business applications."
+        },
+        {
+          "question": "What is the white label option and who is it for?",
+          "answer": "White label allows you to rebrand MIRYA as your own product."
+        }
+      ]
+    },
+
+    {
+      "category": "Security Protection",
+      "description": "Outlines security measures such as data encryption and backup practices to ensure user safety.",
+      "questions": [
+        {
+          "question": "How secure is my data with MIRYA?",
+          "answer": "MIRYA uses enterprise-grade security and encryption."
+        },
+        {
+          "question": "Does MIRYA encrypt my information?",
+          "answer": "Yes, data is encrypted both in transit and at rest."
+        },
+        {
+          "question": "Do you create backups of my data?",
+          "answer": "Automatic daily backups are maintained."
+        },
+        {
+          "question": "Who can access my data inside MIRYA?",
+          "answer": "Only authorized personnel with role-based permissions."
+        }
+      ]
+    },
+
+    {
+      "category": "Customer Support",
+      "description": "Details support options, including self-help resources and contact methods.",
+      "questions": [
+        {
+          "question": "What support options does MIRYA offer?",
+          "answer": "24/7 email support, live chat, and help center."
+        },
+        {
+          "question": "How quickly can I get help?",
+          "answer": "Typically under 10 minutes via live chat."
+        },
+        {
+          "question": "Is there a dedicated support team?",
+          "answer": "Yes, premium users receive priority support."
+        },
+        {
+          "question": "Do you offer onboarding or training?",
+          "answer": "Yes, guided onboarding and documentation are available."
+        }
+      ]
+    }
+  ]
+}

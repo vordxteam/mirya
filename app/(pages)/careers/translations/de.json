@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "badge": "Karriere bei MIRYA",
+    "title": "Werden Sie Teil beim Aufbau intelligenter Automatisierung",
+    "description": "Bei MIRYA entwickeln wir Automatisierungen, die so funktionieren, wie Menschen denken – intuitiv, schnell und menschenzentriert. Wenn Sie bedeutungsvolle Probleme lösen und eine neue Arbeitsära gestalten möchten, freuen wir uns, Sie in unserem Team zu haben.",
+    "cta": "Werden Sie Teil unseres Teams"
+  },
+  "whyMirya": {
+    "badge": "Warum MIRYA",
+    "title": "Warum Menschen MIRYA wählen",
+    "description": "MIRYA ist der Ort, an dem Innovatoren, Entwickler und Problemlöser zusammenkommen, um Automatisierungen zu schaffen, die die Arbeitsweise von Organisationen jeden Tag transformieren.",
+    "cta": "Treten Sie MIRYA bei",
+    "reasons": [
+      {
+        "id": "01",
+        "title": "Mit Wirkung arbeiten",
+        "description": "Jeder von Ihnen entworfene Workflow, jede von Ihnen erstellte Automatisierung und jede Idee, die Sie beitragen, hilft Organisationen, manuelle Arbeit zu reduzieren und effizienter zu arbeiten."
+      },
+      {
+        "id": "02",
+        "title": "Kultur der Eigenverantwortung",
+        "description": "Wir glauben, dass die besten Ideen von vertrauenswürdigen Menschen kommen. Bei MIRYA haben Sie Autonomie, Flexibilität und die Freiheit, Projekte vom Konzept bis zur Realität zu führen."
+      },
+      {
+        "id": "03",
+        "title": "Innovation",
+        "description": "Wir folgen keinen Trends, wir setzen sie. Sie werden mit modernster KI, Automatisierungsintelligenz und modernen Engineering-Methoden arbeiten."
+      }
+    ]
+  },
+  
+  "jobs": {
+    "badge": "Jobs",
+    "title": "Offene Stellen bei MIRYA",
+    "description": "Entdecken Sie Möglichkeiten in den Bereichen Engineering, Marketing und Operations, während wir die Zukunft der intelligenten Automatisierung gestalten.",
+    "cta": "Mehr Erfahren",
+    "categories": ["Alle", "Engineering", "Marketing", "Operations"],
+    "list": [
+      {
+        "id": 1,
+        "title": "Senior Software Engineer",
+        "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)",
+        "link": "#",
+        "category": "Engineering"
+      },
+      {
+        "id": 2,
+        "title": "Automation Specialist",
+        "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)",
+        "link": "#",
+        "category": "Engineering"
+      },
+      {
+        "id": 3,
+        "title": "Customer Success Manager",
+        "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)",
+        "link": "#",
+        "category": "Operations"
+      },
+      {
+        "id": 4,
+        "title": "Technical Support Engineer",
+        "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)",
+        "link": "#",
+        "category": "Operations"
+      },
+      {
+        "id": 5,
+        "title": "Backend Engineer",
+        "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)",
+        "link": "#",
+        "category": "Engineering"
+      },
+      {
+        "id": 6,
+        "title": "Content Strategist",
+        "description": "",
+        "link": "#",
+        "category": "Marketing"
+      }
+    ]
+  }
+
+,
+
+  "feedback": {
+    "badge": "Team Feedback",
+    "title": "Was Unser Team Sagt",
+    "description": "Werfen Sie einen genaueren Blick darauf, was unsere Teams über MIRYA sagen.",
+    "slides": [
+      {
+        "image": "/images/attachment1.png",
+        "quote": "„Bei MIRYA ist unser Ziel einfach — die digitale Routinearbeit der Welt zu entfernen, damit Menschen sich auf Kreativität, Strategie und das Wesentliche konzentrieren können. Jeder von uns entwickelte Workflow bringt uns einer Zukunft näher, in der Automatisierung kein Luxus, sondern ein natürlicher Bestandteil der Arbeitsweise von Organisationen ist.“",
+        "name": "Dr. Orhan Tanriverdi",
+        "title": "DCEO | Gründer"
+      },
+      {
+        "image": "/images/attachment2.png",
+        "quote": "„Bei MIRYA ist unser Ziel einfach — die digitale Routinearbeit der Welt zu entfernen, damit Menschen sich auf Kreativität, Strategie und das Wesentliche konzentrieren können. Jeder von uns entwickelte Workflow bringt uns einer Zukunft näher, in der Automatisierung kein Luxus, sondern ein natürlicher Bestandteil der Arbeitsweise von Organisationen ist.“",
+        "name": "Dr. Mathias Fromberger",
+        "title": "Mitglied des Beirats | Recht"
+      }
+    ]
+  },
+  "lifeAtMirya": {
+  "badge": "Leben bei MIRYA",
+  "title": "Die Kultur, die MIRYA antreibt",
+  "description": "Bei MIRYA glauben wir, dass Arbeit sinnvoll, motivierend und kreativ erfüllend sein sollte."
+}
+
+}
+
+

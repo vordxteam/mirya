@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "badge": "Privacy Policy",
+    "title": "MIRYA Privacy Policy",
+    "description": "We’re committed to protecting your data and being transparent about how your information is collected, used, and secured while using MIRYA.",
+    "lastUpdated": "Last Updated July 12, 2025"
+  },
+  "summary": {
+    "title": "Summary of key Points",
+    "highlight": "This summary highlights the key points from our Privacy Notice. You can explore more details on any topic by using our",
+    "tableOfContentsLink": "table of contents",
+    "highlightSuffix": "below to navigate to the section you're looking for.",
+    "paragraphs": [
+      "MIRYA collects only the information needed to operate and improve the platform—such as your account details, usage activity, and the documents or data you choose to process through workflows. Your data stays yours: MIRYA uses it only to run automations, enhance performance, and provide support. We never sell your information and only share it with trusted service providers or apps you choose to integrate with. We protect your data using encryption, access controls, and secure infrastructure. You can request access, correction, or deletion of your information at any time. MIRYA uses cookies to improve your experience, and the service is not intended for children under 16.",
+      "By using MIRYA, you agree to follow our rules, keep your account secure, and use the platform responsibly. You retain ownership of all data, documents, and workflows you upload, and MIRYA processes them only to deliver automation functionality. While we strive for high reliability, continuous service is not guaranteed, and features may change over time.",
+      "Using MIRYA responsibly means avoiding illegal, harmful, or abusive automation behaviors. We are not liable for indirect losses, misuse, or issues arising from third-party integrations. Subscriptions renew automatically unless canceled, and refunds are limited to legal requirements."
+    ]
+  },
+  "toc": {
+    "title": "Table of Content",
+    "items": [
+      { "text": "How we use your data?", "id": "#data" },
+      { "text": "How Long MIRYA Keeps Your Data?", "id": "#data1" },
+      { "text": "What are my rights under data protection laws?", "id": "#data2" },
+      { "text": "Questions, comments and more detail", "id": "#data3" }
+    ]
+  },
+  "sections": {
+    "usage": {
+      "title": "1. How we use your data?",
+      "sub1": {
+        "title": "1.1. Create and Manage Your MIRYA Account",
+        "desc": "We use the information you provide (like your name, email, password, and company details) to",
+        "list": ["Register your account", "Authenticate your login", "Manage your workspace", "Provide access to features based on your plan"]
+      },
+      "sub2": {
+        "title": "1.2. To Run, Process, and Execute Your Automations",
+        "desc": "When you upload documents or connect apps, MIRYA uses that data to:",
+        "list": ["Read and understand email text, PDFs, forms, and other files", "Extract, classify, or restructure information", "Trigger automated steps based on your workflow settings", "Send the processed data to your ERP, CRM, HR, or other systems"]
+      },
+      "sub3": {
+        "title": "1.3. Improve Accuracy, Intelligence, and Performance",
+        "desc": "We process usage patterns and workflow data (never in a way that reveals your private content) to:",
+        "list": ["Train and fine-tune automation logic", "Detect patterns that improve reliability", "Optimize workflow execution speed", "Reduce errors and improve stability"]
+      }
+    },
+    "retention": {
+      "title": "2. How Long MIRYA Keeps Your Data?",
+      "desc": "MIRYA retains your information only for as long as it is genuinely needed — either to operate the services you use, to comply with legal obligations, or to resolve issues. We follow strict retention practices to ensure your data is never stored longer than necessary.",
+      "sub1": {
+        "title": "1.1. Data You Provide (Account Details, Profile Info, Workspace Data)",
+        "desc": "We keep this information for as long as your account remains active. When you delete your account, we begin a structured deletion process that removes your personal information from our active systems"
+      },
+      "sub2": {
+        "title": "1.2. Workflow Data (Documents, Emails, Files, Inputs You Process Through MIRYA)",
+        "desc": "MIRYA stores workflow inputs only as long as required to execute your automations. We do not store your documents indefinitely unless you explicitly upload or save them in MIRYA."
+      }
+    },
+    "rights": {
+      "title": "3. What are my rights under data protection laws?",
+      "desc": "You have various other rights under applicable data protection laws, including the right to:",
+      "list": [
+        "access your personal data (also known as a “subject access request”)",
+        "correct incomplete or inaccurate data we hold about you",
+        "ask us to erase the personal data we hold about you",
+        "ask us to restrict our handling of your personal data",
+        "ask us to transfer your personal data to a third party",
+        "object to how we are using your personal data",
+        "withdraw your consent to us handling your personal data"
+      ]
+    },
+    "contact": {
+      "title": "4. Questions, comments and more detail",
+      "sub1": {
+        "title": "We welcome your feedback and suggestions",
+        "desc": "At MIRYA, we are committed to keeping this Privacy Notice clear, transparent, and easy to understand. If you have ideas on how we can improve the wording, add missing perspectives, or enhance clarity, we’d be happy to hear from you.",
+        "email": "You can share your feedback directly with us at: ",
+                "box": "📩 privacy@mirya.ai"
+
+      },
+      "sub2": {
+        "title": "Learn more about MIRYA’s data protection practices",
+        "desc": "For additional details on MIRYA’s approach to privacy, security, compliance, and data handling—including GDPR, data processing agreements, sub-processors, workflow data processing, and the distinction between cloud and self-hosted environments—please refer to our main Privacy & Security documentation page."
+      }
+    }
+  }
+}

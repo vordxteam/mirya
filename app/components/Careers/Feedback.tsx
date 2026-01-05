@@ -2,32 +2,25 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export default function Feedback() {
+        const { t } = useTranslation("careers");
+  
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const autoSlideRef = useRef<NodeJS.Timeout | null>(null);
+const slides = t("feedback.slides", { returnObjects: true }) as Array<{
+  image: string;
+  quote: string;
+  name: string;
+  title: string;
+}>;
 
-  const slides = [
-    {
-      image: "/images/attachment1.png",
-      quote:
-        "“At MIRYA, our purpose is simple — remove the world’s digital busywork so people can focus on creativity, strategy, and what truly matters. Every workflow we build brings us closer to a future where automation isn’t a luxury, but a natural part of how organizations operate.”",
-      name: "Dr. Orhan Tanriverdi",
-      title: "DCEO | Founder",
-    },
-    {
-      image: "/images/attachment2.png",
-      quote:
-        "“At MIRYA, our purpose is simple — remove the world’s digital busywork so people can focus on creativity, strategy, and what truly matters. Every workflow we build brings us closer to a future where automation isn’t a luxury, but a natural part of how organizations operate.”",
-      name: "Dr. Mathias Fromberger",
-      title: "Member of the Advisory Board | Legal",
-    },
-  ];
+  //  const slides = t("feedback.slides", { returnObjects: true });
 
-  // Auto slide functionality
   const startAutoSlide = useCallback(() => {
     if (autoSlideRef.current) clearInterval(autoSlideRef.current);
 
@@ -86,16 +79,16 @@ export default function Feedback() {
       <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
         <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-          Team Feedback
+          {t("feedback.badge")}
         </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
       </div>
       <div className="space-y-3 sm:space-y-6">
         <h1 className="heading-1 font-medium max-w-[824px] w-full text-center">
-          What Our Team Says
+          {t("feedback.title")}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[547px]">
-          Take a deeper look at what our teams say about MIRYA.
+          {t("feedback.description")}
         </p>
       </div>
 

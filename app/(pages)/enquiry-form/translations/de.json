@@ -1,0 +1,64 @@
+
+
+{
+  "hero": {
+    "badge": "Kontaktieren Sie uns",
+    "title": "Treten Sie mit dem MIRYA-Team in Kontakt",
+    "description": "Sagen Sie uns, wonach Sie suchen, und wir weisen Ihnen den richtigen Weg. Schneller, freundlicher und maßgeschneiderter Support, jederzeit."
+  },
+  "contactInfo": {
+    "title": "Kontakt aufnehmen",
+    "description": "Haben Sie Fragen oder benötigen Sie Hilfe bei Ihrer Bestellung? Wir sind bei jedem Schritt für Sie da.",
+    "availability": {
+      "label": "Erreichbarkeit",
+      "time": "Sonntag – Donnerstag, 9:00 bis 18:00 Uhr"
+    },
+    "followUs": "Folgen Sie uns",
+    "cards": [
+      {
+        "title": "Standort",
+        "value": "Los Angeles, CA"
+      },
+      {
+        "title": "Telefon",
+        "value": "+1 (208) 120-802"
+      },
+      {
+        "title": "E-Mail-Adresse",
+        "value": "mirya@gmail.com"
+      }
+    ]
+  },
+  "form": {
+    "sendMessage": "Nachricht senden",
+    "placeholders": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "subject": "Betreff",
+      "message": "Nachricht..."
+    },
+    "subjects": {
+      "general": "Allgemeine Anfrage",
+      "support": "Technischer Support",
+      "billing": "Rechnungsfragen",
+      "feedback": "Feedback",
+      "other": "Sonstiges"
+    },
+    "privacy": "Ich stimme der",
+    "privacyLink": "Datenschutzerklärung zu",
+    "submit": "Absenden"
+  },
+  "cardsSection": {
+    "community": {
+      "title": "Community",
+      "description": "Interessieren Sie sich für eines unserer kostenpflichtigen Angebote? Wenn ja, wenden Sie sich für weitere Fragen und Anregungen an unser Vertriebsteam.",
+      "button": "Vertrieb kontaktieren"
+    },
+    "anythingElse": {
+      "title": "Sonstiges",
+      "description": "Für alle anderen Anfragen und Fragen können Sie uns von überall aus eine E-Mail schreiben. Unser Support-Team wird sich schnellstmöglich bei Ihnen melden.",
+      "button": "Schreiben Sie uns"
+    }
+  }
+}

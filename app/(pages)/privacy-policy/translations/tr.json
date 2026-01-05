@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "badge": "Gizlilik Politikası",
+    "title": "MIRYA Gizlilik Politikası",
+    "description": "Verilerinizi korumaya ve bilgilerinizin nasıl toplandığı, kullanıldığı ve güvence altına alındığı konusunda şeffaf olmaya kararlıyız.",
+    "lastUpdated": "Son Güncelleme 12 Temmuz 2025"
+  },
+  "summary": {
+    "title": "Önemli Noktaların Özeti",
+    "highlight": "Bu özet, Gizlilik Bildirimimizdeki önemli noktaları vurgular. Daha fazla ayrıntıyı keşfetmek için",
+    "tableOfContentsLink": "içindekiler tablosunu",
+    "highlightSuffix": "aşağıdan kullanabilirsiniz.",
+    "paragraphs": [
+      "MIRYA, platformu çalıştırmak ve geliştirmek için yalnızca gerekli bilgileri toplar — örneğin hesap bilgileriniz, kullanım etkinlikleriniz ve iş akışları aracılığıyla işlemeyi seçtiğiniz belgeler veya veriler. Verileriniz size aittir: MIRYA bunları yalnızca otomasyonları çalıştırmak, performansı artırmak ve destek sağlamak için kullanır. Bilgilerinizi asla satmayız ve yalnızca entegre etmeyi seçtiğiniz güvenilir hizmet sağlayıcıları veya uygulamalarla paylaşırız. Verilerinizi şifreleme, erişim kontrolleri ve güvenli altyapı ile koruyoruz. Bilgilerinize erişim, düzeltme veya silme talep edebilirsiniz. MIRYA, deneyiminizi geliştirmek için çerezler kullanır ve hizmet 16 yaş altı çocuklar için tasarlanmamıştır.",
+      "MIRYA’yı kullanarak kurallarımıza uymayı, hesabınızı güvenli tutmayı ve platformu sorumlu bir şekilde kullanmayı kabul edersiniz. Yüklediğiniz tüm veri, belge ve iş akışlarının sahibi sizsiniz ve MIRYA bunları yalnızca otomasyon işlevselliğini sağlamak için işler. Yüksek güvenilirlik sağlamaya çalışsak da sürekli hizmet garanti edilmez ve özellikler zamanla değişebilir.",
+      "MIRYA’yı sorumlu bir şekilde kullanmak, yasa dışı, zararlı veya kötüye kullanım otomasyon davranışlarından kaçınmak anlamına gelir. Dolaylı zararlar, kötüye kullanımlar veya üçüncü taraf entegrasyonlarından kaynaklanan sorunlar için sorumlu değiliz. Abonelikler iptal edilmedikçe otomatik olarak yenilenir ve geri ödemeler yalnızca yasal gerekliliklerle sınırlıdır."
+    ]
+  },
+  "toc": {
+    "title": "İçindekiler",
+    "items": [
+      { "text": "Verilerinizi Nasıl Kullanıyoruz?", "id": "#data" },
+      { "text": "MIRYA Verilerinizi Ne Kadar Süre Saklar?", "id": "#data1" },
+      {
+        "text": "Veri koruma yasaları kapsamında haklarım nelerdir?",
+        "id": "#data2"
+      },
+      { "text": "Sorular, yorumlar ve daha fazla detay", "id": "#data3" }
+    ]
+  },
+  "sections": {
+    "usage": {
+      "title": "1. Verilerinizi Nasıl Kullanıyoruz?",
+      "sub1": {
+        "title": "1.1. MIRYA Hesabınızı Oluşturun ve Yönetin",
+        "desc": "Sağladığınız bilgileri (adınız, e-posta, şifre ve şirket bilgileri gibi) kullanıyoruz:",
+        "list": [
+          "Hesabınızı kaydedin",
+          "Girişinizi doğrulayın",
+          "Çalışma alanınızı yönetin",
+          "Planınıza göre özelliklere erişim sağlayın"
+        ]
+      },
+      "sub2": {
+        "title": "1.2. Otomasyonlarınızı Çalıştırmak, İşlemek ve Yürütmek",
+        "desc": "Belgeleri yüklediğinizde veya uygulamaları bağladığınızda, MIRYA bu verileri kullanır:",
+        "list": [
+          "E-posta metinlerini, PDF’leri, formları ve diğer dosyaları okumak ve anlamak",
+          "Bilgileri çıkarmak, sınıflandırmak veya yeniden yapılandırmak",
+          "İş akışı ayarlarınıza göre otomatik adımlar tetiklemek",
+          "İşlenen verileri ERP, CRM, İK veya diğer sistemlerinize göndermek"
+        ]
+      },
+      "sub3": {
+        "title": "1.3. Doğruluk, Zeka ve Performansı Geliştirmek",
+        "desc": "Kullanım desenlerini ve iş akışı verilerini (özel içeriğinizi açığa çıkarmadan) işleriz:",
+        "list": [
+          "Otomasyon mantığını eğitmek ve ince ayar yapmak",
+          "Güvenilirliği artıran desenleri tespit etmek",
+          "İş akışı yürütme hızını optimize etmek",
+          "Hataları azaltmak ve kararlılığı artırmak"
+        ]
+      }
+    },
+    "retention": {
+      "title": "2. MIRYA Verilerinizi Ne Kadar Süre Saklar?",
+      "desc": "MIRYA, bilgilerinizi yalnızca gerçekten gerekli olduğu sürece saklar — kullandığınız hizmetleri yürütmek, yasal yükümlülüklere uymak veya sorunları çözmek için. Gereksiz yere uzun süre saklanmamasını sağlamak için sıkı saklama politikaları uygularız.",
+      "sub1": {
+        "title": "1.1. Sağladığınız Veriler (Hesap Bilgileri, Profil Bilgileri, Çalışma Alanı Verileri)",
+        "desc": "Bu bilgileri hesabınız aktif olduğu sürece saklarız. Hesabınızı silerseniz, kişisel bilgilerinizi aktif sistemlerimizden kaldıran yapılandırılmış bir silme süreci başlatılır."
+      },
+      "sub2": {
+        "title": "1.2. İş Akışı Verileri (Belgeler, E-postalar, Dosyalar, MIRYA Üzerinden İşlediğiniz Girdiler)",
+        "desc": "MIRYA, iş akışı girdilerini yalnızca otomasyonlarınızı yürütmek için gerekli olduğu sürece saklar. Belgelerinizi açıkça yüklemediğiniz veya kaydetmediğiniz sürece kalıcı olarak saklamayız."
+      }
+    },
+    "rights": {
+      "title": "3. Veri koruma yasaları kapsamında haklarım nelerdir?",
+      "desc": "Geçerli veri koruma yasaları kapsamında çeşitli haklara sahipsiniz, bunlar şunları içerir:",
+      "list": [
+        "Kişisel verilerinize erişim (diğer adıyla “veri sahibi erişim talebi”)",
+        "Hakkınızda tuttuğumuz eksik veya yanlış verileri düzeltme",
+        "Hakkınızda tuttuğumuz kişisel verilerin silinmesini isteme",
+        "Kişisel verilerin işlenmesini sınırlamamızı isteme",
+        "Kişisel verilerinizi üçüncü bir tarafa aktarmamızı isteme",
+        "Kişisel verilerinizi nasıl kullandığımıza itiraz etme",
+        "Kişisel verilerinizi işleme izninizi geri çekme"
+      ]
+    },
+    "contact": {
+      "title": "4. Sorular, yorumlar ve daha fazla detay",
+      "sub1": {
+        "title": "Geri bildirimlerinizi ve önerilerinizi bekliyoruz",
+        "desc": "MIRYA olarak, bu Gizlilik Bildirimini açık, şeffaf ve anlaşılır tutmayı taahhüt ediyoruz. Sözcükleri iyileştirme, eksik bakış açıları ekleme veya netliği artırma konusunda fikirleriniz varsa, duymaktan mutluluk duyarız.",
+        "email": "Geri bildiriminizi doğrudan bize iletebilirsiniz: ",
+        "box": "📩 privacy@mirya.ai"
+      },
+      "sub2": {
+        "title": "MIRYA’nın veri koruma uygulamaları hakkında daha fazla bilgi edinin",
+        "desc": "MIRYA’nın gizlilik, güvenlik, uyumluluk ve veri işleme yaklaşımı hakkında ek ayrıntılar için — GDPR, veri işleme anlaşmaları, alt işlemciler, iş akışı veri işleme ve bulut ile kendi sunucunuzdaki ortamların farkları dahil — lütfen ana Gizlilik ve Güvenlik dokümantasyon sayfamıza bakın."
+      }
+    }
+  }
+}

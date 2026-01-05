@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "goBack": "Zurück",
+    "title": "Bewerben Sie sich bei MIRYA",
+    "description": "Teilen Sie Ihre Erfahrungen, Fähigkeiten und Ihren Hintergrund mit, damit wir verstehen können, wie Sie in unser Team passen. Füllen Sie das untenstehende Formular aus, um Ihre Bewerbung einzureichen."
+  },
+
+  "sections": {
+    "fillDetails": "Füllen Sie die untenstehenden Angaben aus.",
+    "basicInfo": "Grundlegende Informationen",
+    "experience": "Erfahrung",
+    "resume": "Lebenslauf",
+    "motivation": "Motivation"
+  },
+
+  "inputs": {
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "phone": "Telefonnummer",
+    "email": "E-Mail-Adresse",
+    "linkedin": "LinkedIn-Link",
+    "github": "GitHub-Link",
+    "yearsExperience": "Jahre Erfahrung",
+    "currentCompany": "Aktuelle Firma"
+  },
+
+  "resume": {
+    "upload": "Lebenslauf hochladen",
+    "dragDrop": "oder hierher ziehen und ablegen",
+    "uploaded": "Datei erfolgreich hochgeladen"
+  },
+
+  "motivation": {
+    "q1": "Was interessiert Sie an MIRYA?",
+    "q2": "Teilen Sie ein Projekt oder eine Leistung, auf die Sie besonders stolz sind",
+    "q3": "Was ist Ihr erwartetes Jahresgehalt für diese Position?",
+    "q4": "Erzählen Sie uns kurz von Erfahrungen mit Automatisierung oder KI",
+    "placeholder": "Geben Sie hier etwas ein..."
+  },
+
+  "button": {
+    "submit": "Bewerbung absenden"
+  }
+}

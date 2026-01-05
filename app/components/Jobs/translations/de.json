@@ -1,0 +1,67 @@
+{
+  "goBack": "Zurück",
+  "jobTitle": "Senior Software Engineer - Vollzeit",
+  "jobDescription": "Treten Sie MIRYA als Senior Software Engineer bei und helfen Sie beim Aufbau einer skalierbaren, intelligenten Automatisierungsplattform.",
+  "employmentDetails": "Beschäftigungsdetails",
+  "locationLabel": "Standort:",
+  "locationValue": "Vor Ort",
+  "jobTypeLabel": "Art der Stelle",
+  "jobTypeValue": "Vollzeit",
+  "departmentLabel": "Abteilung",
+  "departmentValue": "Engineering",
+  "deadlineLabel": "Bewerbungsschluss",
+  "deadlineValue": "Nicht verfügbar",
+
+  
+  "jobDetails": {
+    "title": "Stellenbeschreibung",
+    "description": "Als Senior Software Engineer bei MIRYA entwerfen, entwickeln und warten Sie Kernsysteme, die unsere Automatisierungsintelligenz antreiben. Sie arbeiten eng mit Produkt-, Design- und Infrastrukturteams zusammen, um Funktionen zu liefern, die stabil, skalierbar, sicher und intuitiv für Endbenutzer sind.",
+    
+    "responsibilities": {
+      "title": "Hauptverantwortlichkeiten",
+      "items": [
+        "Architektur und Entwicklung von Kernplattformdiensten, Modulen und Backend-Systemen",
+        "Implementierung von Automatisierungslogik, Workflow-Ausführungs-Engines und Integrationen",
+        "Erstellung sicherer, leistungsstarker APIs und Datenstrukturen",
+        "Code-Review, technische Anleitung und Unterstützung von Junior-Entwicklern",
+        "Sicherstellung bewährter Verfahren in Tests, CI/CD, Sicherheit und Dokumentation",
+        "Erforschung neuer Technologien im Bereich Automatisierung, KI und Unternehmensabläufe"
+      ]
+    },
+    
+    "requirements": {
+      "title": "Anforderungen:",
+      "items": [
+        "4+ Jahre professionelle Ingenieurerfahrung.",
+        "Starke Kompetenz in modernen Backend-Sprachen (Node.js, Python, Go oder ähnlich).",
+        "Erfahrung mit Cloud-native Umgebungen (Azure, AWS oder GCP).",
+        "Verständnis von Microservices, verteilten Systemen und API-Design.",
+        "Erfahrung mit SQL- oder NoSQL-Datenbanken.",
+        "Verpflichtung zu sauberem Code, Teststrategien und Ingenieur-Best Practices"
+      ]
+    },
+    
+    "button": "Für diese Stelle bewerben"
+  }
+,
+
+  "label": "Stellen",
+  "title": "Aktuelle Stellenangebote bei MIRYA",
+  "description": "Entdecken Sie Chancen in den Bereichen Engineering, Marketing und Operations, während wir die Zukunft der intelligenten Automatisierung aufbauen.",
+  "categories": {
+    "All": "Alle",
+    "Engineering": "Engineering",
+    "Marketing": "Marketing",
+    "Operations": "Operations"
+  },
+  "learnMore": "Mehr erfahren",
+  "jobList": [
+    { "id": 1, "title": "Senior Software Engineer", "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)", "category": "Engineering" },
+    { "id": 2, "title": "Automatisierungsspezialist", "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)", "category": "Engineering" },
+    { "id": 3, "title": "Customer Success Manager", "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)", "category": "Operations" },
+    { "id": 4, "title": "Technical Support Engineer", "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)", "category": "Operations" },
+    { "id": 5, "title": "Backend Engineer", "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)", "category": "Engineering" },
+    { "id": 6, "title": "Content-Strategist", "description": "Vollzeit • Remote / Vor Ort (Berlin, Lissabon, Lahore, Italien, Spanien, UK, Los Angeles)", "category": "Marketing" }
+  ]
+
+}

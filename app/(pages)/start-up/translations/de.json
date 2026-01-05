@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "back": "Zurück zur Preisübersicht",
+    "title": "Start-Up-Plan",
+    "description": "Beschleunigen Sie Ihr Unternehmen mit automatisierten Workflows, die sich wiederholende manuelle Schritte eliminieren. Rationalisieren Sie Prozesse, steigern Sie die Produktivität und setzen Sie Effizienz in allen Abteilungen frei. Wachsen Sie nachhaltig, ohne zusätzliches Personal einzustellen oder Ihr Team zu überlasten."
+  },
+  "card": {
+    "title": "Start-Up-Plan",
+    "description": "Entwickelt für Teams in der Frühphase, die intelligenter automatisieren und schneller skalieren möchten.",
+    "price": "€ 399,-",
+    "period": "25% Rabatt",
+    "buttonText": "Jetzt starten",
+    "messageTitle": "Alles Wesentliche für die Automatisierung",
+    "messageDescription": "Der Startup-Plan enthält alles, was Sie benötigen, um manuelle Arbeit zu eliminieren, Produktivität freizusetzen und Ihre ersten End-to-End-Prozesse mit MIRYA zu automatisieren.",
+    "image": "/images/plan1.png"
+  }
+  ,
+  
+  "decisions": {
+    "label": "KI-gestützte Entscheidungen",
+    "title": "Was enthalten ist",
+    "description": "Die Automatisierungsintelligenz von MIRYA arbeitet über Ihre bestehenden Tools und Systeme hinweg und ermöglicht End-to-End-Abläufe.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Visueller Workflow-Builder",
+        "description": "Entwerfen Sie Automatisierungen mit einer intuitiven Drag-and-Drop-Oberfläche – keine Programmierung erforderlich."
+      },
+      {
+        "id": 2,
+        "title": "Multi-Plattform-Automatisierung",
+        "description": "Automatisieren Sie Desktop-, Web- und Cloud-Apps nahtlos in einem einheitlichen Tool."
+      },
+      {
+        "id": 3,
+        "title": "Intelligente Aufzeichnung",
+        "description": "Erstellen Sie Workflows automatisch, indem Sie einfach Ihre Aktionen aufzeichnen."
+      },
+      {
+        "id": 4,
+        "title": "Autonome Bots",
+        "description": "Planen und betreiben Sie Bots unabhängig, um Ihre Prozesse rund um die Uhr am Laufen zu halten."
+      },
+      {
+        "id": 5,
+        "title": "Integrierte KI-Unterstützung",
+        "description": "Lassen Sie Mirya Daten analysieren, Dokumente lesen, Muster erkennen und Entscheidungen treffen."
+      },
+      {
+        "id": 6,
+        "title": "Sichere lokale Ausführung",
+        "description": "Ihre Daten bleiben durch lokale Verschlüsselung und Verarbeitung auf dem Gerät geschützt."
+      },
+      {
+        "id": 7,
+        "title": "Subprozesse & dynamische Variablen",
+        "description": "Erstellen Sie flexible, modulare Workflows, die sich an ändernde Prozessdaten anpassen."
+      },
+      {
+        "id": 8,
+        "title": "Analyse-Dashboard",
+        "description": "Überwachen Sie die Leistung und identifizieren Sie Automatisierungspotenziale in Echtzeit."
+      }
+    ]
+  },
+  "eligibility": {
+    "title": "Bin ich berechtigt?",
+    "subtitle": "Ihr Startup muss die folgenden Kriterien erfüllen:",
+    "criteria": [
+      "Weniger als 20 Mitarbeiter",
+      "Weniger als 5 Mio. € an Gesamtförderung",
+      "Sie können den vergünstigten Startup-Plan für ein Jahr nutzen, oder länger, sofern Sie die Anforderungen weiterhin erfüllen."
+    ]
+  },
+  "cta": {
+    "title": "Beschleunigen Sie Ihren Betrieb noch heute",
+    "description": "Automatisieren Sie Ihren ersten Workflow und erleben Sie, wie schnell Ihr Team manuelle Arbeit eliminieren und intelligenter agieren kann.",
+    "button": "Jetzt starten"
+  },
+  "enquiry": {
+    "badge": "Anfrageformular",
+    "title": "Anfrageformular für Unternehmen",
+    "description": "Dieses Formular richtet sich an Organisationen, die an den Enterprise-Automatisierungslösungen und maßgeschneiderten Support-Paketen von MIRYA interessiert sind. Wenn Sie die Standard-Pläne von MIRYA erkunden möchten, besuchen Sie bitte unsere Preis- oder Dokumentationsseiten.",
+    "button": "Zum Starten eintreten"
+  }
+
+}
