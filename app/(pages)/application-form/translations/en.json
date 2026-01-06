@@ -40,5 +40,11 @@
 
   "button": {
     "submit": "Submit Application"
+  },
+   "hero-section": {
+    "badge": "MIRYA Academy",
+    "title": "Explore Ideas, Trends and Deep Research",
+    "description": "Elevate your thinking with expert articles, AI-driven analysis, and the latest research tools wherever content creation meets innovation.",
+    "searchPlaceholder": "Search here.."
   }
 }

@@ -40,5 +40,11 @@
 
   "button": {
     "submit": "Başvuruyu Gönder"
+  },
+   "hero-section": {
+    "badge": "MIRYA Akademisi",
+    "title": "Fikirleri, Trendleri ve Derin Araştırmaları Keşfedin",
+    "description": "Uzman makaleler, yapay zekâ destekli analizler ve en son araştırma araçlarıyla düşüncenizi geliştirin.",
+    "searchPlaceholder": "Burada ara.."
   }
 }
