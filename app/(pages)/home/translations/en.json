@@ -231,6 +231,39 @@
 },
 "chatbot-home": {
   "chatWithUs": "Chat with Us"
-}
+},
+"animationCards": {
+    "refresh": "Refresh",
+    "pdfReport": "PDF Report",
+    "export": "Export",
+    "overview": "Overview",
+    "totalProcesses": "Total processes",
+    "automationWorkflows": "Automation Workflows",
+    "optimizeProcesses": "Optimize your automated processes",
+    "avgTime": "Avg. Time",
+    "avgExecutionTime": "Avg. Execution Time",
+    "avgBotRun": "Avg bot run",
+    "efficiency": "Efficiency",
+    "analyzedProcesses": "Analyzed Processes",
+    "passedFailed": "8 Passed, 2 Failed"
+  },
+ "animationNodes-one": {
+  "start": "Start",
+  "find": "Find",
+  "browse": "Browse",
+  "type": "Type",
+  "speak": "Speak",
+  "automate": "Automate"
+},
+"how3": {
+    "properties": "Properties",
+    "branching": "Branching",
+    "file": "File",
+    "fileFormat": "File Format",
+    "sourceFolder": "Source Folder",
+    "excel": "Excel (.xlsx)",
+    "downloads": "[FOLDER] Downloads",
+    "run": "Run"
+  }
 }
 

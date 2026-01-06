@@ -8,6 +8,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import svgPaths from "./svg-tjte9zcksy";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 // Counter animation hook
 function useCounter(target: number, duration = 2.5) {
@@ -38,6 +39,7 @@ function useCounter(target: number, duration = 2.5) {
 }
 
 function BgMg() {
+  
   return (
     <div
       className="absolute bottom-[-6px] h-[349px] left-1/2 translate-x-[-50%] w-[648px]"
@@ -57,6 +59,7 @@ function BgMg() {
 }
 
 function MousePointSvg() {
+  
   return (
     <div
       className="h-[42px] relative shrink-0 w-[40px]"
@@ -270,6 +273,7 @@ function Svg() {
 }
 
 function Cta() {
+  const { t } = useTranslation("home");
   return (
     <motion.div
       className="bg-[rgba(255,255,255,0.08)] relative rounded-[8px] shrink-0"
@@ -284,8 +288,7 @@ function Cta() {
     >
       <div className="box-border content-stretch flex gap-[10px] items-center justify-center overflow-clip p-[8px] relative rounded-[inherit]">
         <p className="font-['Inter:Light',sans-serif] font-light leading-[20px] not-italic relative shrink-0 text-[14px] text-nowrap text-white whitespace-pre">
-          Refresh
-        </p>
+{t("animationCards.refresh")}        </p>
       </div>
       <div
         aria-hidden="true"
@@ -296,6 +299,7 @@ function Cta() {
 }
 
 function Cta1() {
+  const { t } = useTranslation("home");
   return (
     <motion.div
       className="bg-[rgba(255,255,255,0.08)] relative rounded-[8px] shrink-0"
@@ -310,8 +314,7 @@ function Cta1() {
     >
       <div className="box-border content-stretch flex gap-[10px] items-center justify-center overflow-clip p-[8px] relative rounded-[inherit]">
         <p className="font-['Inter:Light',sans-serif] font-light leading-[20px] not-italic relative shrink-0 text-[14px] text-nowrap text-white whitespace-pre">
-          PDF Report
-        </p>
+{t("animationCards.pdfReport")}        </p>
       </div>
       <div
         aria-hidden="true"
@@ -322,6 +325,7 @@ function Cta1() {
 }
 
 function Cta2() {
+  const { t } = useTranslation("home");
   return (
     <motion.div
       className="bg-gradient-to-b box-border content-stretch flex from-[#00082f] from-[15.278%] gap-[10px] items-center justify-center overflow-clip p-[8px] relative rounded-[8px] shrink-0 to-[#0274fe] to-[156.94%]"
@@ -350,13 +354,14 @@ function Cta2() {
         className="absolute inset-0 rounded-[8px] pointer-events-none"
       />
       <p className="font-['Inter:Light',sans-serif] font-light leading-[20px] not-italic relative shrink-0 text-[14px] text-nowrap text-white whitespace-pre">
-        Export
-      </p>
+{t("animationCards.export")}      </p>
     </motion.div>
   );
 }
 
 function Content() {
+    const { t } = useTranslation("home");
+
   return (
     <div
       className="content-stretch flex gap-[4px] items-center justify-center relative shrink-0 w-full"
@@ -368,8 +373,7 @@ function Content() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Overview
-      </motion.p>
+{t("animationCards.overview")}      </motion.p>
       <Cta />
       <Cta1 />
       <Cta2 />
@@ -378,6 +382,8 @@ function Content() {
 }
 
 function Card() {
+    const { t } = useTranslation("home");
+
   // ref should match the element type (p tag → HTMLParagraphElement)
   const ref = useRef<HTMLParagraphElement | null>(null);
 
@@ -445,8 +451,7 @@ function Card() {
           </motion.p>
 
           <p className="font-['Inter:Light',sans-serif] font-light leading-[16px] text-[12px] text-white whitespace-pre">
-            Total processes
-          </p>
+{t("animationCards.totalProcesses")}          </p>
         </div>
       </div>
 
@@ -459,22 +464,22 @@ function Card() {
 }
 
 function Content1() {
+  const { t } = useTranslation("home");
   return (
     <div
       className="basis-0 content-stretch flex flex-col gap-[2px] grow items-start min-h-px min-w-px not-italic relative shrink-0"
       data-name="content"
     >
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] relative shrink-0 text-[14px] text-nowrap text-white whitespace-pre">
-        Automation Workflows
-      </p>
+{t("animationCards.automationWorkflows")}      </p>
       <p className="font-['Inter:Light',sans-serif] font-light leading-[16px] min-w-full relative shrink-0 text-[12px] text-[rgba(255,255,255,0.6)] w-[min-content]">
-        Optimize your automated processes
-      </p>
+{t("animationCards.optimizeProcesses")}      </p>
     </div>
   );
 }
 
 function ArrowLeft() {
+  const { t } = useTranslation("home");
   return (
     <motion.div
       className="[grid-area:1_/_1] ml-0 mt-0 relative size-[20px]"
@@ -610,6 +615,7 @@ function Content2() {
 }
 
 function Card1() {
+  const { t } = useTranslation("home");
   // ref should match the element type (p tag → HTMLParagraphElement)
   const ref = useRef<HTMLParagraphElement | null>(null);
 
@@ -675,8 +681,7 @@ function Card1() {
             {value}
           </motion.p>
           <p className="font-['Inter:Light',sans-serif] font-light leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">
-            Avg. Time
-          </p>
+{t("animationCards.avgTime")}          </p>
         </div>
       </div>
       <div
@@ -688,17 +693,16 @@ function Card1() {
 }
 
 function Content3() {
+  const { t } = useTranslation("home");
   return (
     <div
       className="basis-0 content-stretch flex flex-col gap-[2px] grow items-start min-h-px min-w-px not-italic relative shrink-0"
       data-name="content"
     >
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] relative shrink-0 text-[14px] text-nowrap text-white whitespace-pre">
-        Avg. Execution Time
-      </p>
+{t("animationCards.avgExecutionTime")}      </p>
       <p className="font-['Inter:Light',sans-serif] font-light leading-[16px] min-w-full relative shrink-0 text-[12px] text-[rgba(255,255,255,0.6)] w-[min-content]">
-        Avg bot run
-      </p>
+{t("animationCards.avgBotRun")}      </p>
     </div>
   );
 }
@@ -840,6 +844,7 @@ function Content4() {
 }
 
 function Card2() {
+  const { t } = useTranslation("home");
   // ref should match the element type (p tag → HTMLParagraphElement)
   const ref = useRef<HTMLParagraphElement | null>(null);
 
@@ -905,8 +910,7 @@ function Card2() {
             {value}%
           </motion.p>
           <p className="font-['Inter:Light',sans-serif] font-light leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">
-            Efficiency
-          </p>
+{t("animationCards.efficiency")}          </p>
         </div>
       </div>
       <div
@@ -918,16 +922,17 @@ function Card2() {
 }
 
 function Content5() {
+  const { t } = useTranslation("home");
   return (
     <div
       className="basis-0 content-stretch flex flex-col gap-[2px] grow items-start min-h-px min-w-px not-italic relative shrink-0"
       data-name="content"
     >
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] relative shrink-0 text-[14px] text-nowrap text-white whitespace-pre">
-        Analyzed Processes
+        {t("animationCards.analyzedProcesses")}
       </p>
       <p className="font-['Inter:Light',sans-serif] font-light leading-[16px] min-w-full relative shrink-0 text-[12px] text-[rgba(255,255,255,0.6)] w-[min-content]">
-        8 Passed, 2 Failed
+        {t("animationCards.passedFailed")}
       </p>
     </div>
   );

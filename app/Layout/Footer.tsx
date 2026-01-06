@@ -166,7 +166,7 @@ const Footer = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="flex items-center gap-2 cursor-pointer text-white text-[14px] leading-none font-normal"
             >
-              <span>Back to Top</span>
+              <span>{t("footer.backToTop")}</span>
               {/* SVG arrow unchanged */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"

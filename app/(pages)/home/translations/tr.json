@@ -241,7 +241,42 @@
 },
 "chatbot-home": {
   "chatWithUs": "Bizimle Sohbet Edin"
-}
+},
+"animationCards": {
+    "refresh": "Yenile",
+    "pdfReport": "PDF Raporu",
+    "export": "Dışa Aktar",
+    "overview": "Genel Bakış",
+    "totalProcesses": "Toplam süreçler",
+    "automationWorkflows": "Otomasyon İş Akışları",
+    "optimizeProcesses": "Otomatik süreçlerinizi optimize edin",
+    "avgTime": "Ort. Süre",
+    "avgExecutionTime": "Ortalama Çalışma Süresi",
+    "avgBotRun": "Ortalama bot çalışması",
+    "efficiency": "Verimlilik",
+    "analyzedProcesses": "Analiz Edilen Süreçler",
+    "passedFailed": "8 Başarılı, 2 Başarısız"
+  },
+  "animationNodes-one": {
+  "start": "Başlat",
+  "find": "Bul",
+  "browse": "Gözat",
+  "type": "Yaz",
+  "speak": "Konuş",
+  "automate": "Otomatize Et"
+},
+
+  "how3": {
+    "properties": "Özellikler",
+    "branching": "Dallanma",
+    "file": "Dosya",
+    "fileFormat": "Dosya Formatı",
+    "sourceFolder": "Kaynak Klasörü",
+    "excel": "Excel (.xlsx)",
+    "downloads": "[KLASÖR] İndirilenler",
+    "run": "Çalıştır"
+  }
+
 }
 
 

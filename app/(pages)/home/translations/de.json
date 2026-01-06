@@ -234,5 +234,40 @@
 "chatbot-home": {
   "chatWithUs": "Chatten Sie mit uns"
 }
+,
+"animationCards": {
+    "refresh": "Aktualisieren",
+    "pdfReport": "PDF-Bericht",
+    "export": "Exportieren",
+    "overview": "Übersicht",
+    "totalProcesses": "Prozesse insgesamt",
+    "automationWorkflows": "Automatisierungs-Workflows",
+    "optimizeProcesses": "Optimieren Sie Ihre Prozesse",
+    "avgTime": "Durchschn. Zeit",
+    "avgExecutionTime": "Durchschn. Ausführungszeit",
+    "avgBotRun": "Durchschn. Bot-Lauf",
+    "efficiency": "Effizienz",
+    "analyzedProcesses": "Analysierte Prozesse",
+    "passedFailed": "8 Bestanden, 2 Fehlgeschlagen"
+  },
+  "animationNodes-one": {
+  "start": "Start",
+  "find": "Finden",
+  "browse": "Durchsuchen",
+  "type": "Tippen",
+  "speak": "Sprechen",
+  "automate": "Automatisieren"
+},
+
+  "how3": {
+    "properties": "Eigenschaften",
+    "branching": "Verzweigung",
+    "file": "Datei",
+    "fileFormat": "Dateiformat",
+    "sourceFolder": "Quellordner",
+    "excel": "Excel (.xlsx)",
+    "downloads": "[ORDNER] Downloads",
+    "run": "Ausführen"
+  }
 
 }
