@@ -616,12 +616,11 @@
 //   );
 // }
 
-
 import svgPaths from "./svg-15mnczintc";
 import { motion } from "motion/react";
 import { TypingText } from "./TypingText";
 import Image from "next/image";
-
+import { useTranslation } from "react-i18next";
 function BgMg() {
   return (
     <>
@@ -676,6 +675,8 @@ function BgMg() {
 }
 
 function Cta() {
+  const { t } = useTranslation("home");
+
   return (
     <div
       className="basis-0 grow min-h-px min-w-px relative rounded-[8px] shrink-0"
@@ -684,7 +685,7 @@ function Cta() {
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex gap-[8px] items-center justify-center px-3 py-2 relative w-full">
           <p className="font-['Inter:Light',sans-serif] font-light leading-[16px] not-italic relative shrink-0 text-[10px] sm:text-[12px] text-nowrap text-white whitespace-pre">
-            Properties
+            {t("how3.properties")}
           </p>
         </div>
       </div>
@@ -693,6 +694,8 @@ function Cta() {
 }
 
 function Cta1() {
+  const { t } = useTranslation("home");
+
   return (
     <div
       className="basis-0 bg-gradient-to-b from-[#00082f] from-[15.278%] grow min-h-px min-w-px relative rounded-[8px] shrink-0 to-[#0274fe] to-[156.94%]"
@@ -701,7 +704,7 @@ function Cta1() {
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex gap-[8px] items-center justify-center px-3 py-2 relative w-full">
           <p className="font-['Inter:Light',sans-serif] font-light leading-[16px] not-italic relative shrink-0 text-[10px] sm:text-[12px] text-[rgba(255,255,255,0.8)] text-center text-nowrap whitespace-pre">
-            Branching
+            {t("how3.branching")}{" "}
           </p>
         </div>
       </div>
@@ -730,26 +733,29 @@ function Container() {
 }
 
 function Text() {
+  const { t } = useTranslation("home");
+
   return (
     <div
       className="content-stretch flex items-center justify-between relative shrink-0 w-full"
       data-name="text"
     >
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[14px] sm:text-[16px] text-nowrap text-white whitespace-pre">
-        File
+        {t("how3.file")}{" "}
       </p>
     </div>
   );
 }
 
 function Content() {
+  const { t } = useTranslation("home");
   return (
     <div
       className="content-stretch flex items-center justify-between relative shrink-0 w-full"
       data-name="content"
     >
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[16px] not-italic relative shrink-0 text-[10px] sm:text-[12px] text-[rgba(255,255,255,0.8)] text-center whitespace-pre">
-        <TypingText text="Excel (.xlsx)" delay={900} speed={60} />
+        <TypingText text={t("how3.excel")} delay={900} speed={60} />
       </p>
     </div>
   );
@@ -788,6 +794,8 @@ function SearchBar() {
 }
 
 function Element() {
+  const { t } = useTranslation("home");
+
   return (
     <motion.div
       className="content-stretch flex flex-col gap-2 items-start relative shrink-0 w-full"
@@ -797,7 +805,7 @@ function Element() {
       transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
     >
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[16px] not-italic relative shrink-0 text-[10px] sm:text-[12px] text-center text-nowrap text-white whitespace-pre">
-        File Format
+        {t("how3.fileFormat")}{" "}
       </p>
       <SearchBar />
     </motion.div>
@@ -805,13 +813,14 @@ function Element() {
 }
 
 function Content1() {
+  const { t } = useTranslation("home");
   return (
     <div
       className="content-stretch flex items-center justify-between relative shrink-0 w-full"
       data-name="content"
     >
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[16px] not-italic relative shrink-0 text-[10px] sm:text-[12px] text-[rgba(255,255,255,0.8)] text-center whitespace-pre">
-        <TypingText text="[FOLDER] Downloads" delay={2400} speed={60} />
+        <TypingText text={t("how3.downloads")} delay={2400} speed={60} />
       </p>
     </div>
   );
@@ -850,6 +859,8 @@ function SearchBar1() {
 }
 
 function Element1() {
+  const { t } = useTranslation("home");
+
   return (
     <motion.div
       className="content-stretch flex flex-col gap-2 items-start relative shrink-0 w-full"
@@ -859,7 +870,7 @@ function Element1() {
       transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
     >
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[16px] not-italic relative shrink-0 text-[10px] sm:text-[12px] text-center text-nowrap text-white whitespace-pre">
-        Source Folder
+        {t("how3.sourceFolder")}{" "}
       </p>
       <SearchBar1 />
     </motion.div>
@@ -880,6 +891,8 @@ function Containe() {
 }
 
 function Cta2() {
+  const { t } = useTranslation("home");
+
   return (
     <motion.div
       className="bg-gradient-to-b from-[#00082f] from-[15.278%] h-[36px] sm:h-[44px] relative rounded-[8px] shrink-0 to-[#0274fe] to-[156.94%] w-full overflow-hidden"
@@ -916,7 +929,7 @@ function Cta2() {
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full relative z-10">
         <div className="box-border content-stretch flex gap-[8px] h-full items-center justify-center p-3 relative w-full">
           <p className="font-['Inter:Light',sans-serif] font-light leading-[20px] not-italic relative shrink-0 text-xs sm:text-[14px] text-nowrap text-white whitespace-pre">
-            Run
+            {t("how3.run")}{" "}
           </p>
         </div>
       </div>

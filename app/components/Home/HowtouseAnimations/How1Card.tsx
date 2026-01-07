@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import svgPaths from "./svg-h9k2nqacar";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 interface NodeProps {
   id: number;
@@ -231,8 +232,9 @@ function AnimatedArrow({
     </AnimatePresence>
   );
 }
-
 export default function How1Card() {
+  const { t } = useTranslation("home");
+
   const [animationStep, setAnimationStep] = useState(0);
 
   useEffect(() => {
@@ -260,7 +262,7 @@ export default function How1Card() {
   const nodes = [
     {
       id: 0,
-      title: "Start",
+      title: t("animationNodes-one.start"),
       icon: (
         <div className="overflow-clip relative shrink-0 size-[16px]">
           <div className="absolute inset-[9.37%]">
@@ -284,7 +286,7 @@ export default function How1Card() {
     },
     {
       id: 1,
-      title: "Find",
+      title: t("animationNodes-one.find"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -310,7 +312,7 @@ export default function How1Card() {
     },
     {
       id: 2,
-      title: "Find",
+      title: t("animationNodes-one.find"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -336,7 +338,7 @@ export default function How1Card() {
     },
     {
       id: 3,
-      title: "Browse",
+      title: t("animationNodes-one.browse"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -362,7 +364,7 @@ export default function How1Card() {
     },
     {
       id: 4,
-      title: "Type",
+      title: t("animationNodes-one.type"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -393,7 +395,7 @@ export default function How1Card() {
     },
     {
       id: 5,
-      title: "Speak",
+      title: t("animationNodes-one.speak"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg
@@ -414,7 +416,7 @@ export default function How1Card() {
     },
     {
       id: 6,
-      title: "Automate",
+      title: t("animationNodes-one.automate"),
       icon: (
         <div className="relative shrink-0 size-[16px]">
           <svg

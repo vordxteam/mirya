@@ -40,5 +40,11 @@
 
   "button": {
     "submit": "Bewerbung absenden"
+  },
+    "hero-section": {
+    "badge": "MIRYA Akademie",
+    "title": "Ideen, Trends und tiefgehende Forschung entdecken",
+    "description": "Erweitern Sie Ihr Denken mit Expertenartikeln, KI-gestützter Analyse und den neuesten Forschungstools – dort, wo Inhalt auf Innovation trifft.",
+    "searchPlaceholder": "Hier suchen.."
   }
 }

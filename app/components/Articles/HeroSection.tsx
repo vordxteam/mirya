@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation("form");
+
   const paragraphRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -84,16 +87,15 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-            MIRYA Academy{" "}
+            {t("hero-section.badge")}{" "}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[824px] w-full text-center pb-3 sm:pb-6">
-          Explore Ideas, Trends and Deep Research
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[950px] w-full text-center pb-3 sm:pb-6">
+          {t("hero-section.title")}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
-          Elevate your thinking with expert articles, AI-driven analysis, and
-          the latest research tools wherever content creation meets innovation.
+          {t("hero-section.description")}
         </p>
         <div className="flex items-center justify-center gap-3">
           <div
@@ -109,27 +111,59 @@ const HeroSection = () => {
             }}
           >
             <div className="text-[12px] leading-4 flex items-center gap-2 font-normal text-white p-3 bg-[#00031C] rounded-full w-[264px]">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-  <path d="M14.0027 13.9998L11.1094 11.1064" stroke="url(#paint0_linear_2225_10624)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="url(#paint1_linear_2225_10624)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-  <defs>
-    <linearGradient id="paint0_linear_2225_10624" x1="12.57" y1="11.1015" x2="12.5599" y2="14.0048" gradientUnits="userSpaceOnUse">
-      <stop offset="0.0029" stop-color="#463BBF"/>
-      <stop offset="0.681" stop-color="#9C96E3"/>
-      <stop offset="1" stop-color="#463BBF"/>
-    </linearGradient>
-    <linearGradient id="paint1_linear_2225_10624" x1="7.38466" y1="1.98173" x2="7.34763" y2="12.6852" gradientUnits="userSpaceOnUse">
-      <stop offset="0.0029" stop-color="#463BBF"/>
-      <stop offset="0.681" stop-color="#9C96E3"/>
-      <stop offset="1" stop-color="#463BBF"/>
-    </linearGradient>
-  </defs>
-</svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M14.0027 13.9998L11.1094 11.1064"
+                  stroke="url(#paint0_linear_2225_10624)"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z"
+                  stroke="url(#paint1_linear_2225_10624)"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_2225_10624"
+                    x1="12.57"
+                    y1="11.1015"
+                    x2="12.5599"
+                    y2="14.0048"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0.0029" stop-color="#463BBF" />
+                    <stop offset="0.681" stop-color="#9C96E3" />
+                    <stop offset="1" stop-color="#463BBF" />
+                  </linearGradient>
+                  <linearGradient
+                    id="paint1_linear_2225_10624"
+                    x1="7.38466"
+                    y1="1.98173"
+                    x2="7.34763"
+                    y2="12.6852"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0.0029" stop-color="#463BBF" />
+                    <stop offset="0.681" stop-color="#9C96E3" />
+                    <stop offset="1" stop-color="#463BBF" />
+                  </linearGradient>
+                </defs>
+              </svg>
 
               <input
                 type="text"
                 className="border-0 outline-none text-[12px] font-normal leading-4 placeholder:text-white"
-                placeholder="Search here.."
+                placeholder={t("hero-section.searchPlaceholder")}
               />
             </div>
           </div>

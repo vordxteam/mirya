@@ -1,9 +1,13 @@
+
+
+
 "use client";
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { categoryApi } from "@/app/api/academy";
 import SkeletonDetail, { ContentSkeleton } from "./SkeletonDetail";
+import { useTranslation } from "react-i18next";
 import React, {
   useState,
   useEffect,
@@ -91,7 +95,15 @@ interface Page {
   updated_at: string;
 }
 
+// MOVED OUTSIDE THE COMPONENT
+const apiLangMap: Record<string, string> = {
+  en: "english",
+  tr: "turkish",
+  de: "german",
+};
+
 const AcademyDetailPage = () => {
+  const { i18n } = useTranslation();
   const params = useParams();
   const slug = params.slug as string;
 
@@ -101,9 +113,10 @@ const AcademyDetailPage = () => {
   const [activeSection, setActiveSection] = useState<string>("");
   const [showMobileSidebar, setShowMobileSidebar] = useState(false);
   const [showMobileRightSidebar, setShowMobileRightSidebar] = useState(false);
-  const hasFetched = useRef(false);
-  const centerContentRef = useRef<HTMLDivElement>(null); // Ref for scroll control
+  const centerContentRef = useRef<HTMLDivElement>(null);
   const [expandedItems, setExpandedItems] = useState<string | null>(null);
+  const [isI18nReady, setIsI18nReady] = useState(false);
+
   useEffect(() => {
     if (centerContentRef.current) {
       centerContentRef.current.scrollTo({ top: 0, behavior: "instant" });
@@ -112,37 +125,30 @@ const AcademyDetailPage = () => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [activeSection]);
 
-  const linkify = (text: string) => {
-    if (!text) return "";
+  // Wait for i18n to be ready
+  useEffect(() => {
+    if (i18n.isInitialized) {
+      setIsI18nReady(true);
+    } else {
+      const checkReady = setInterval(() => {
+        if (i18n.isInitialized) {
+          setIsI18nReady(true);
+          clearInterval(checkReady);
+        }
+      }, 50);
+      return () => clearInterval(checkReady);
+    }
+  }, [i18n]);
 
-    const urlRegex = /((https?:\/\/)|(www\.))[^\s/$.?#].[^\s]*/gi;
-
-    return text.replace(urlRegex, (url) => {
-      let href = url;
-      if (url.toLowerCase().startsWith("www.")) {
-        href = `https://${url}`;
-      }
-
-      return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#0F73FE] transition-colors">${url}</a>`;
-    });
-  };
-
-  const formatBoldText = (text: string) => {
-    if (!text) return "";
-
-    // First, convert links
-    let formatted = linkify(text);
-
-    // Then, convert bold markers (** or *)
-    formatted = formatted.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-    formatted = formatted.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
-
-    return formatted;
-  };
   const fetchPageDetail = useCallback(
     async (pageSlug: string, sectionId: string) => {
       try {
-        const response = await categoryApi.getDetailBySlug(pageSlug);
+        const currentLang = apiLangMap[i18n.language] || "english";
+        const response = await categoryApi.getDetailBySlug(
+          pageSlug,
+          currentLang
+        );
+
         if (!response?.data?.data) throw new Error("Invalid API response");
 
         const detailData = response.data.data as unknown as PageDetail;
@@ -183,19 +189,58 @@ const AcademyDetailPage = () => {
         console.error("Error fetching page detail:", err);
       }
     },
-    []
+    [i18n.language]
   );
 
+  const linkify = (text: string) => {
+    if (!text) return "";
+
+    const urlRegex = /((https?:\/\/)|(www\.))[^\s/$.?#].[^\s]*/gi;
+
+    return text.replace(urlRegex, (url) => {
+      let href = url;
+      if (url.toLowerCase().startsWith("www.")) {
+        href = `https://${url}`;
+      }
+
+      return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#0F73FE] transition-colors">${url}</a>`;
+    });
+  };
+
+  const formatBoldText = (text: string) => {
+    if (!text) return "";
+
+    let formatted = linkify(text);
+    formatted = formatted.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+    formatted = formatted.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
+
+    return formatted;
+  };
+
   useEffect(() => {
-    if (!slug || hasFetched.current) return;
-    hasFetched.current = true;
+    if (!slug || !isI18nReady) return;
+
     const fetchData = async () => {
       setLoading(true);
+      setError(null);
+
       try {
-        const response = await categoryApi.getById(Number(slug));
+        const currentLang =
+          apiLangMap[i18n.language.split("-")[0]] || "english";
+
+        const response = await categoryApi.getById(Number(slug), currentLang);
+
+        if (!response.data?.success) {
+          console.warn(`Failed to fetch data for language: ${currentLang}`);
+          setError("Failed to load data for the selected language");
+          setLoading(false);
+          return;
+        }
+
         const apiData: CategoryItem[] = Array.isArray(response.data?.data)
           ? response.data.data
           : [];
+
         const sidebarItems = apiData.map((item) => {
           const isSingle =
             item.pages.length === 1 &&
@@ -203,7 +248,6 @@ const AcademyDetailPage = () => {
               item.category.title.toLowerCase();
 
           return {
-            // Prefix category IDs with 'cat-'
             id: `cat-${item.category.id}`,
             title: item.category.title,
             slug: isSingle ? item.pages[0].slug : "",
@@ -211,7 +255,6 @@ const AcademyDetailPage = () => {
             subItems: isSingle
               ? undefined
               : item.pages.map((page) => ({
-                  // Prefix page IDs with 'page-'
                   id: `page-${page.id}`,
                   title: page.title,
                   slug: page.slug,
@@ -220,50 +263,54 @@ const AcademyDetailPage = () => {
         });
 
         const firstCategory = apiData[0];
-        setArticleData({
-          title: firstCategory.main_category.name,
-          category: firstCategory.category.title,
-          updated_at:
-            firstCategory.pages[0]?.updated_at || firstCategory.updated_at,
-          lastUpdated: "Recently",
-          sidebar: sidebarItems,
-          content: {},
-          rightCard: { title: "On this page", items: [] },
-        });
 
-        // ... inside fetchData ...
-        if (firstCategory.pages[0]) {
-          const firstPage = firstCategory.pages[0];
-          const firstSidebarItem = sidebarItems[0]; // The processed sidebar item
+        if (firstCategory) {
+          setArticleData({
+            title: firstCategory.main_category.name,
+            category: firstCategory.category.title,
+            updated_at:
+              firstCategory.pages[0]?.updated_at || firstCategory.updated_at,
+            lastUpdated: "Recently",
+            sidebar: sidebarItems,
+            content: {},
+            rightCard: { title: "On this page", items: [] },
+          });
 
-          const initialActiveId = firstSidebarItem.isSinglePage
-            ? firstSidebarItem.id
-            : `page-${firstPage.id}`;
+          if (firstCategory.pages[0]) {
+            const firstPage = firstCategory.pages[0];
+            const firstSidebarItem = sidebarItems[0];
 
-          setActiveSection(initialActiveId);
+            const initialActiveId = firstSidebarItem.isSinglePage
+              ? firstSidebarItem.id
+              : `page-${firstPage.id}`;
 
-          setExpandedItems(firstSidebarItem.id);
-          fetchPageDetail(firstPage.slug, initialActiveId);
+            setActiveSection(initialActiveId);
+            setExpandedItems(firstSidebarItem.id);
+
+            fetchPageDetail(firstPage.slug, initialActiveId);
+          }
         }
       } catch (err) {
+        console.error("Error fetching data:", err);
         setError("Failed to load data");
       } finally {
         setLoading(false);
       }
     };
+
     fetchData();
-  }, [slug, fetchPageDetail]);
+  }, [slug, fetchPageDetail, i18n.language, isI18nReady]);
 
   const toggleExpand = (itemId: string) => {
     setExpandedItems((prev) => (prev === itemId ? null : itemId));
   };
+
   const handleSectionClick = (sectionId: string, sectionSlug: string) => {
     setActiveSection(sectionId);
     if (!articleData?.content[sectionId]) {
       fetchPageDetail(sectionSlug, sectionId);
     }
   };
-
   const renderElement = (
     el: ApiElement,
     index: number,
@@ -384,9 +431,9 @@ const AcademyDetailPage = () => {
     );
   };
 
- if (loading) {
-  return <SkeletonDetail />;
-}
+  if (loading) {
+    return <SkeletonDetail />;
+  }
 
   if (error || !articleData) {
     return (
@@ -587,9 +634,9 @@ const AcademyDetailPage = () => {
                     renderContentBlock(block, idx)
                   )
                 ) : (
-                 <div className="py-10">
-      <ContentSkeleton />
-    </div>
+                  <div className="py-10">
+                    <ContentSkeleton />
+                  </div>
                 )}
               </div>
             </div>
