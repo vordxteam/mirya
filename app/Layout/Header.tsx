@@ -453,7 +453,6 @@ export default function Header() {
         </div>
 
         {/* Desktop Right Side */}
-        {/* Desktop Right Side */}
         <div className="hidden lg:flex items-center lg:justify-end gap-5">
           {isClient ? (
             <div className="relative text-white language-selector">

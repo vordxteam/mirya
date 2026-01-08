@@ -1,6 +1,3 @@
-
-
-
 "use client";
 
 import Link from "next/link";
@@ -210,13 +207,20 @@ const AcademyDetailPage = () => {
   const formatBoldText = (text: string) => {
     if (!text) return "";
 
-    let formatted = linkify(text);
+    // 1. CLEANING PHASE:
+    const cleaned = text
+      .replace(/<br\s*\/?>\s*[\r\n]+/gi, "\n")
+      .replace(/<br\s*\/?>/gi, "\n")
+      .replace(/\r/g, "")
+      .replace(/\n{2,}/g, "\n");
+
+    let formatted = linkify(cleaned);
+
     formatted = formatted.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
     formatted = formatted.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
 
     return formatted;
   };
-
   useEffect(() => {
     if (!slug || !isI18nReady) return;
 
@@ -327,7 +331,7 @@ const AcademyDetailPage = () => {
           <h1
             key={index}
             id={elementId}
-            className="text-[24px] leading-8 font-semibold mt-10 mb-4 scroll-mt-24"
+            className="text-[24px] leading-8 font-semibold mt-6 mb-4 scroll-mt-24"
           >
             {el.value}
           </h1>
@@ -422,10 +426,10 @@ const AcademyDetailPage = () => {
       }
     }
     return (
-      <div key={blockIndex} className="space-y-4 mb-8">
+      <div key={blockIndex} className="space-y-4 mb-6">
         {renderedElements}
         {blockIndex < (currentContent.content?.blocks?.length || 0) - 1 && (
-          <div className="my-8 border-t w-full max-w-[600px] border-[#FFFFFF1F]" />
+          <div className="my-6 border-t w-full max-w-[600px] border-[#FFFFFF1F]" />
         )}
       </div>
     );
@@ -496,7 +500,7 @@ const AcademyDetailPage = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px]  gap-4 lg:gap-8 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 text-[16px] h-full">
           {/* 1. LEFT SIDEBAR - Show on mobile when toggled */}
           <div
             className={`${
@@ -526,7 +530,7 @@ const AcademyDetailPage = () => {
                             setExpandedItems(null); // Close any open dropdowns when a single page is clicked
                             setShowMobileSidebar(false);
                           }}
-                          className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-light transition-all mb-4 cursor-pointer ${
+                          className={`w-full max-w-[275px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-light transition-all mb-4 cursor-pointer ${
                             activeSection === item.id
                               ? "bg-gradient-to-b from-[#00082F] to-[#116AF8] text-white font-normal"
                               : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#116AF8] text-white"
@@ -541,7 +545,7 @@ const AcademyDetailPage = () => {
                       <div key={item.id}>
                         <button
                           onClick={() => toggleExpand(item.id)}
-                          className={`w-full max-w-[245px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-light transition-all mb-4 cursor-pointer ${
+                          className={`w-full max-w-[275px] text-left px-2 py-3 rounded-lg text-[14px] leading-5 font-light transition-all mb-4 cursor-pointer ${
                             isParentActive
                               ? "bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white font-normal "
                               : "text-[#F4F7FF99] hover:bg-gradient-to-b from-[#00082F] to-[#0274FE] text-white"
@@ -575,7 +579,7 @@ const AcademyDetailPage = () => {
                                   handleSectionClick(subItem.id, subItem.slug);
                                   setShowMobileSidebar(false); // Close sidebar on mobile after selection
                                 }}
-                                className={`w-full text-left px-3 ml-2 max-w-[230px] py-2 leading-5 font-light rounded-lg text-[14px] transition-all cursor-pointer ${
+                                className={`w-full text-left px-3 ml-2 max-w-[260px] py-2 leading-5 font-light rounded-lg text-[14px] transition-all cursor-pointer ${
                                   activeSection === subItem.id
                                     ? "text-[#116AF8] bg-[#116af81f] font-normal"
                                     : "text-[#FFFFFFE0] hover:text-[#116AF8]"
