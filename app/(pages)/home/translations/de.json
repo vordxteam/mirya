@@ -71,7 +71,7 @@
 
   "workflow": {
     "badge": "MIRYA Workflow",
-    "title": "Workflows visuell erstellen. Keine Lernkurve. Keine Komplexität",
+    "mainTitle": "Workflows visuell erstellen. Keine Lernkurve. Keine Komplexität",
     "description": "Ziehen, ablegen und verbinden Sie Schritte wie Nachrichten, Bedingungen, Aktionen und Prüfungen — unterstützt von einem KI-Assistenten, der Ihnen hilft, schneller zu erstellen.",
     "buttonLabel": "Jetzt starten"
   },

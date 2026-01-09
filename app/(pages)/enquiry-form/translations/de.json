@@ -1,5 +1,3 @@
-
-
 {
   "hero": {
     "badge": "Kontaktieren Sie uns",
@@ -10,8 +8,9 @@
     "title": "Kontakt aufnehmen",
     "description": "Haben Sie Fragen oder benötigen Sie Hilfe bei Ihrer Bestellung? Wir sind bei jedem Schritt für Sie da.",
     "availability": {
-      "label": "Erreichbarkeit",
-      "time": "Sonntag – Donnerstag, 9:00 bis 18:00 Uhr"
+      "label": "Kontaktinformationen",
+      "mail": "info@mirya.ai",
+      "phone": "+49 (711) 12120-802"
     },
     "followUs": "Folgen Sie uns",
     "cards": [

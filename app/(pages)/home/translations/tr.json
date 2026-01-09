@@ -75,7 +75,7 @@
 
   "workflow": {
     "badge": "MIRYA İş Akışı",
-    "title": "Akışları görsel olarak oluşturun. Öğrenme eğrisi yok. Karmaşıklık yok",
+    "mainTitle": "Akışları görsel olarak oluşturun. Öğrenme eğrisi yok. Karmaşıklık yok",
     "description": "Mesajlar, koşullar, eylemler ve kontroller gibi adımları sürükleyip bırakın ve bağlayın — tümü, daha hızlı oluşturmanıza yardımcı olan bir yapay zeka asistanı tarafından desteklenir.",
     "buttonLabel": "Başlayın"
   },

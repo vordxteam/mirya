@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 export default function ContactPage() {
   const { t } = useTranslation("contact");
 
+  const phone = t("contactInfo.availability.phone"); 
+  const numericPhone = phone.replace(/[^\d+]/g, "");
   const data = t("contactInfo.cards", { returnObjects: true }) as {
     title: string;
     value: string;
@@ -37,58 +39,43 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div>
-              <div className="space-y-3">
-                <p className="heading-4 font-medium text-white">
-                  {" "}
-                  {t("contactInfo.availability.label")}
-                </p>
-                <p className="heading-5 font-medium text-white">
-                  {t("contactInfo.availability.time")}
-                </p>
-              </div>
-              <hr className="text-[#FFFFFF1F] my-6 max-w-[591px] w-full" />
-              <p className="heading-4 font-medium text-white ">
-                {" "}
-                {t("contactInfo.followUs")}
+            <div className="">
+              <p className="heading-4 font-medium text-white mb-3">
+                {t("contactInfo.availability.label")}
               </p>
 
-              <div className="flex gap-3 pt-5">
-                <Link href="https://www.facebook.com/" target="_blank">
-                  <Image
-                    src="/images/facebook.png"
-                    alt="facebook"
-                    height={52}
-                    width={52}
-                  />
-                </Link>
+              {/* Email */}
+              <p className="heading-5 font-normal text-white flex gap-2 items-center mb-2">
+                <Image
+                  src="/images/mail.svg"
+                  alt="email"
+                  height={20}
+                  width={20}
+                />
+                <a
+                  href={`mailto:${t("contactInfo.availability.mail")}`}
+                  className="underline-none "
+                >
+                  {t("contactInfo.availability.mail")}
+                </a>
+              </p>
 
-                <Link href="https://www.instagram.com/" target="_blank">
-                  <Image
-                    src="/images/instagram.png"
-                    alt="instagram"
-                    height={52}
-                    width={52}
-                  />
-                </Link>
-
-                <Link href="https://twitter.com/" target="_blank">
-                  <Image src="/images/X.png" alt="X" height={52} width={52} />
-                </Link>
-
-                <Link href="https://www.linkedin.com/" target="_blank">
-                  <Image
-                    src="/images/linkedin.png"
-                    alt="linkedin"
-                    height={52}
-                    width={52}
-                  />
-                </Link>
-              </div>
+              <p className="heading-5 font-normal text-white flex gap-2 items-center">
+                <Image
+                  src="/images/phone.svg"
+                  alt="phone"
+                  height={20}
+                  width={20}
+                />
+                <a
+                  href={`tel:${numericPhone}`}
+                  className=" underline-none cursor-pointer "
+                >
+                  {phone}
+                </a>
+              </p>
             </div>
           </div>
-
-          {/* Right Section - Contact Form */}
 
           <div
             className="rounded-lg p-px"

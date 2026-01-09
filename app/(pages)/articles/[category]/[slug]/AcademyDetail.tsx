@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { categoryApi } from "@/app/api/academy";
 import SkeletonDetail, { ContentSkeleton } from "./SkeletonDetail";
 import { useTranslation } from "react-i18next";
+
 import React, {
   useState,
   useEffect,
@@ -100,6 +101,8 @@ const apiLangMap: Record<string, string> = {
 };
 
 const AcademyDetailPage = () => {
+  const { t } = useTranslation("form");
+
   const { i18n } = useTranslation();
   const params = useParams();
   const slug = params.slug as string;
@@ -177,7 +180,10 @@ const AcademyDetailPage = () => {
                 title: detailData.title,
                 shortDescription: detailData.short_description,
                 content: { blocks: detailData.content, allHeadings },
-                rightCard: { title: "On this page", items: allHeadings },
+                rightCard: {
+                  title: t("hero-section.on-this-page"),
+                  items: allHeadings,
+                },
               },
             },
           };
@@ -221,18 +227,18 @@ const AcademyDetailPage = () => {
 
     return formatted;
   };
+
   useEffect(() => {
     if (!slug || !isI18nReady) return;
 
     const fetchData = async () => {
       setLoading(true);
-      setError(null);
-
       try {
         const currentLang =
           apiLangMap[i18n.language.split("-")[0]] || "english";
 
-        const response = await categoryApi.getById(Number(slug), currentLang);
+        // Pass 'slug' as a string, not a Number
+        const response = await categoryApi.getById(slug, currentLang);
 
         if (!response.data?.success) {
           console.warn(`Failed to fetch data for language: ${currentLang}`);
@@ -277,7 +283,7 @@ const AcademyDetailPage = () => {
             lastUpdated: "Recently",
             sidebar: sidebarItems,
             content: {},
-            rightCard: { title: "On this page", items: [] },
+            rightCard: { title: t("hero-section.on-this-page"), items: [] },
           });
 
           if (firstCategory.pages[0]) {
@@ -496,7 +502,7 @@ const AcademyDetailPage = () => {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-            On This Page
+            {t("hero-section.on-this-page")}{" "}
           </button>
         </div>
 
@@ -656,7 +662,8 @@ const AcademyDetailPage = () => {
               <div className="h-full overflow-y-auto custom-scrollbar pl-2 bg-[#00031C] lg:bg-transparent">
                 <div className="flex justify-between items-center mb-4 lg:hidden">
                   <h3 className="text-white text-[16px] font-medium leading-5">
-                    {currentContent.rightCard?.title || "On this Page"}
+                    {currentContent.rightCard?.title ||
+                      t("hero-section.on-this-page")}{" "}
                   </h3>
                   <button
                     onClick={() => setShowMobileRightSidebar(false)}
