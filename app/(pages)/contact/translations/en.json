@@ -8,8 +8,9 @@
     "title": "Get In Touch",
     "description": "Have questions or need help with your order? We're here to assist you every step of the way.",
     "availability": {
-      "label": "Availability",
-      "time": "Sunday – Thursday, 9 AM to 6 PM"
+      "label": "Contact Info",
+      "mail": "info@mirya.ai",
+      "phone": "+49 (711) 12120-802"
     },
     "followUs": "Follow us",
     "cards": [

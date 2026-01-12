@@ -87,9 +87,9 @@ const resources = {
     careers: enCareers,
     privacy: enPrivacy,
     security: enSecurity,
- startup: enStartup,
-   form: enForm,   
- job: enjob
+    startup: enStartup,
+    form: enForm,
+    job: enjob
   },
   de: {
     translation: deTranslation,
@@ -104,9 +104,9 @@ const resources = {
     userTesting: deUserTesting,
     careers: deCareers,
     privacy: dePrivacy,
-        security: deSecurity,
-  startup: deStartup, 
-   form: deForm, 
+    security: deSecurity,
+    startup: deStartup,
+    form: deForm,
     job: dejob
 
   },
@@ -124,9 +124,9 @@ const resources = {
     careers: trCareers,
     privacy: trPrivacy,
     security: trSecurity,
- startup: trStartup, 
-   form: trForm,   
- job: trjob
+    startup: trStartup,
+    form: trForm,
+    job: trjob
   },
 
 };

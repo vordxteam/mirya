@@ -198,7 +198,7 @@
       "encryption": "Lokale Verschlüsselung von Zugangsdaten, Dateien & Variablen",
       "learnable": "In 2 Tagen ohne technische Vorkenntnisse erlernbar",
       "values": {
-        "lowCode": "Low Code",
+        "lowCode": "Low-Code",
         "selfHost": "Selbst gehostet",
         "mostlyCloud": "Meist Cloud",
         "no": "Nein",

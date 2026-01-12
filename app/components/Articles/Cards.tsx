@@ -1,12 +1,10 @@
-
-
 // "use client";
 
 // import Image from "next/image";
 // import React, { useEffect, useState } from "react";
 // import { useRouter } from "next/navigation";
 // import { categoryApi } from "@/app/api/academy";
-// import { CardSkeleton } from "../../(pages)/articles/[category]/[slug]/SkeletonDetail"; 
+// import { CardSkeleton } from "../../(pages)/articles/[category]/[slug]/SkeletonDetail";
 // import { useTranslation } from "react-i18next";
 // type CardItem = {
 //   id: number;
@@ -60,7 +58,7 @@
 //  return (
 //   <div className="bg-[#00031C] relative z-10 min-h-[80vh]">
 //     <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 pb-[60px] sm:pt-[60px] pt-0 overflow-hidden relative">
-      
+
 //       {loading ? (
 //         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-[60px]">
 //           {Array.from({ length: 6 }).map((_, i) => (
@@ -126,7 +124,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { categoryApi } from "@/app/api/academy";
-import { CardSkeleton } from "../../(pages)/articles/[category]/[slug]/SkeletonDetail"; 
+import { CardSkeleton } from "../../(pages)/articles/[category]/[slug]/SkeletonDetail";
 import { useTranslation } from "react-i18next";
 
 type CardItem = {
@@ -144,7 +142,6 @@ const Cards = () => {
   const [cardsData, setCardsData] = useState<CardItem[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Map i18n codes to API language keys
   const apiLangMap: Record<string, string> = {
     en: "english",
     tr: "turkish",
@@ -152,13 +149,10 @@ const Cards = () => {
   };
 
   useEffect(() => {
-    // 1️⃣ Start loading
     setLoading(true);
 
-    // 2️⃣ Get current language for API
     const currentLang = apiLangMap[i18n.language] || "english";
 
-    // 3️⃣ Fetch cards data for the selected language
     categoryApi
       .getAll(currentLang)
       .then((res) => {
@@ -175,16 +169,15 @@ const Cards = () => {
       })
       .catch((err) => console.error("Failed to fetch:", err))
       .finally(() => setLoading(false));
-  }, [i18n.language]); // 🔑 Add i18n.language so effect runs on language change
+  }, [i18n.language]); 
 
   const handleLearnMore = (card: CardItem) => {
-    router.push(`/articles/${card.category}/${card.id}`);
+    router.push(`/articles/${card.category}/${card.slug}`);
   };
 
   return (
     <div className="bg-[#00031C] relative z-10 min-h-[80vh]">
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 pb-[60px] sm:pt-[60px] pt-0 overflow-hidden relative">
-        
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-[60px]">
             {Array.from({ length: 6 }).map((_, i) => (
@@ -211,7 +204,12 @@ const Cards = () => {
                       <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9C] blur-[50px] w-[181px] h-[94px]" />
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full space-y-6">
-                      <Image src={card.icon} width={56} height={56} alt={card.title} />
+                      <Image
+                        src={card.icon}
+                        width={56}
+                        height={56}
+                        alt={card.title}
+                      />
                       <div className="space-y-3">
                         <h1 className="text-[#F4F7FF] text-[20px] sm:text-[24px] font-medium leading-6 sm:leading-[30px]">
                           {card.title}
@@ -225,8 +223,19 @@ const Cards = () => {
                           Learn More
                         </span>
                         <div className="transition-transform group-hover:translate-x-1">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#0F73FE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M5 12H19M19 12L12 5M19 12L12 19"
+                              stroke="#0F73FE"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         </div>
                       </div>

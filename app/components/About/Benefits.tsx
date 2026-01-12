@@ -60,7 +60,7 @@ const Benefits = () => {
             <BenefitCard
               title={cards[0]?.title}
               description={cards[0]?.desc}
-              image="/images/benefit-1.svg"
+              image="/images/benefit1.png"
               imageWidth={488}
               imageHeight={352}
               glowPosition="left"
@@ -74,11 +74,11 @@ const Benefits = () => {
                title={cards[1]?.title}
               description={cards[1]?.desc}
               image="/images/benefit-2.svg"
-              imageWidth={301}
+              imageWidth={351}
               imageHeight={470}
               glowPosition="center"
               className="col-span-12 md:col-span-6 xl:col-span-4"
-              imageTranslate=" translate-x-5 translate-y-0"
+              imageTranslate=" translate-x-6 translate-y-0"
               imagePaddingBottom="pb-0"
             />
 
@@ -86,12 +86,12 @@ const Benefits = () => {
             <BenefitCard
                title={cards[2]?.title}
               description={cards[2]?.desc}
-              image="/images/benefit-3.svg"
-              imageWidth={301}
+              image="/images/benefit-3.png"
+              imageWidth={351}
               imageHeight={299}
               glowPosition="right"
               className="col-span-12 md:col-span-6 xl:col-span-4"
-              imageTranslate=" translate-x-5 -translate-y-2"
+              imageTranslate=" translate-x-6 -translate-y-2"
               imagePaddingBottom="pb-0"
             />
 

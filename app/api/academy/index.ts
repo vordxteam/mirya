@@ -18,17 +18,16 @@ const getApiLang = (): string => {
 
 export const categoryApi = {
   /**
-   * @param lang Optional override. If not provided, it reads automatically from Local Storage.
+   * @param lang 
    */
   getAll(lang: string = getApiLang()) {
     return apiClient.get<CategoryListResponse>(`/api/category/${lang}`);
   },
 
 
-  getById(id: number, lang: string = getApiLang()) {
-    return apiClient.get<PageResponse>(`/api/pages/${id}/${lang}`);
-  },
-
+getById(slug: string, lang: string = getApiLang()) {
+  return apiClient.get<PageResponse>(`/api/pages/${slug}/${lang}`);
+},
  
   getDetailBySlug(slug: string, lang: string = getApiLang()) {
     return apiClient.get<PageResponse>(`/api/pages/detail/${slug}/${lang}`);

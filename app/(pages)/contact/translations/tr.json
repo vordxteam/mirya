@@ -8,8 +8,10 @@
     "title": "İletişime Geçin",
     "description": "Sorularınız mı var veya siparişinizle ilgili yardıma mı ihtiyacınız var? Yolun her adımında size yardımcı olmak için buradayız.",
     "availability": {
-      "label": "Çalışma Saatleri",
-      "time": "Pazar – Perşembe, 09:00 - 18:00"
+      "label": "İletişim Bilgileri",
+      "mail": "info@mirya.ai",
+     "phone": "+49 (711) 12120-802"
+
     },
     "followUs": "Bizi takip edin",
     "cards": [
