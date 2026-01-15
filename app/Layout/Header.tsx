@@ -414,7 +414,7 @@ export default function Header() {
         backgroundColor: scrolled ? "rgba(0,0,0,0.35)" : "rgba(0,0,0,0)",
       }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="fixed z-50000 w-full top-0"
+      className="fixed w-full top-0"
     >
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between p-6 lg:py-[26px] xl:px-20">
         {/* Logo */}

@@ -22,7 +22,7 @@ const Benefits = () => {
           <div className="relative flex flex-col items-center text-center">
             {/* Glow */}
             <div className="absolute -top-16 ">
-              <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+              <div className="rounded-[68.75px] opacity-60 bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
             </div>
 
             {/* Title */}

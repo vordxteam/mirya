@@ -112,7 +112,7 @@ const HowToUse = () => {
         </p>
 
         <div
-          className="rounded-full p-[1.5px]"
+          className="rounded-full px-[1.5px] pt-[1.5px] pb-[1px]"
           style={{
             background:
               "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",

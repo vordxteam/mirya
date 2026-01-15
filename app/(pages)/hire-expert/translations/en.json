@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "badge": "Official Partner Program",
+    "title": "Hire Trusted MIRYA Experts to Build Smarter Automation",
+    "description": "Connect with MIRYA-certified professionals who design, implement, and scale intelligent workflows tailored to your business.",
+    "buttons":{
+       "getStarted": "Become an Expert",
+      "contactUs": "Hire MIRYA Expert"
+    }
+  },
+  "miryaExperts": {
+    "badge" : "MIRYA Experts",
+    "title" : "Meet MIRYA Experts",
+    "desc" : "Work with a curated group of MIRYA-certified experts who deliver reliable, real-world automation solutions.",
+    "btnText" : "Become an Expert",
+      "card1" : {
+        "title" : "Haider Solutions",
+        "disc" : "Haider Solutions is a specialized automation and digitalization partner focused on process consulting, workflow optimization, and intelligent automation implementation.",
+        "tags": ["Automation Strategy", "Workflow Design", "Integrations" , "Optimization"],
+        "badge": "Verified Partner"
+      },
+      "card2" : {
+        "title" : "avy.solutions",
+        "disc" : "avy.solutions is an international technology consultancy dedicated to intelligent process automation and digital transformation. Their team helps organizations automate repetitive tasks, streamline operations, and enhance efficiency.",
+         "tags": ["Automation Strategy", "Workflow Design", "Integrations" , "Optimization"],
+                 "badge": "Verified Partner"
+
+      }
+  }
+}

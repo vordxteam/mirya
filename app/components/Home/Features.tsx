@@ -551,10 +551,10 @@ export default function Features() {
                 </div>
                 <div className="space-y-2 pb-7">
                   <h3 className="heading-3 font-medium text-[#F4F7FF]">
-                    {t("cards.1.title")}{" "}
+                    {t("cards.0.title")}{" "}
                   </h3>
                   <p className="heading-6 font-regular max-w-[414px] text-[#CAC9D1]">
-                    {t("cards.1.description")}
+                    {t("cards.0.description")}
                   </p>
                 </div>
               </div>
@@ -706,22 +706,16 @@ export default function Features() {
               `,
               border: "1px solid transparent",
             }}
-            className="w-full py-11 container mx-auto px-3 sm:px-[84px] flex gap-3 sm:gap-0 flex-col md:flex-row items-center justify-between relative"
+            className="w-full py-11 container mx-auto px-3 sm:px-[84px] flex gap-3 sm:gap-0 flex-col md:flex-row overflow-hidden items-center justify-between relative"
           >
             <div className="absolute top-0 z-0">
               <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[94px] opacity-70"></div>
             </div>
 
             <div className="hidden sm:block absolute right-16 bottom-0">
-              <Image
-                src="/images/blur3.png"
-                alt="blur"
-                height={71}
-                width={181}
-                className="opacity-70"
-                priority={false}
-                loading="lazy"
-              />
+              <div className="absolute bottom-0 z-0 -right-4">
+              <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[94px] "></div>
+            </div>
             </div>
 
             <div className="heading-5 font-regular text-[#F4F7FF] relative z-10 max-w-[653px] text-left">

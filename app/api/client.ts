@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 export interface ApiResponse<T = any> {
   success?: boolean;
   message?: string;
-  status?: number;
+  status?: any;
   error?: any;
   meta?: any;
   data?: T;
@@ -114,7 +114,7 @@ export const apiClient = {
   patch<T>(
     endpoint: string,
     data?: unknown,
-    options: Omit<RequestOptions, "method"> = {}
+    options: Omit<RequestOptions, "method"> = {}  
   ): Promise<ApiResponse<T>> {
     return apiRequest<T>(endpoint, { ...options, method: "PATCH", body: data });
   },

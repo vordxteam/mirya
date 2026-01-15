@@ -17,7 +17,7 @@ const AiPowered = () => {
     <div className="bg-[#00031C] overflow-hidden">
       <div className="px-2 md:px-20 pb-[60px] pt-0 sm:pt-[60px] space-y-16 max-w-[1440px] m-auto relative">
         {/* Background blur with z-index and pointer-events-none */}
-        <div className="absolute top-[175px] left-[419px] z-0 pointer-events-none">
+        <div className="absolute top-[250px] left-[450px] z-0 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#5935E94D] blur-[50px] w-[458px] h-[318px]"></div>
         </div>
 

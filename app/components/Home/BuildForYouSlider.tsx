@@ -161,29 +161,36 @@ export default function BuildForYouSlider() {
               opacity: style.opacity,
             }}
           >
-            <div className="p-1 rounded-xl">
-              <div className="pt-7 px-7 bg-[#050925] overflow-hidden rounded-xl relative slide-shadow select-none cursor-grab active:cursor-grabbing">
-                <div className="absolute top-0  left-0">
-                  <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
-                </div>
-                <div className="space-y-3 pb-8 relative z-30">
-                  <h3 className="heading-2 font-regular text-[#F4F7FF]">
-                    {t(`buildForYou.slides.${index}.title`)}{" "}
-                  </h3>
-                  <p className="heading-6 font-regular max-w-[400px] text-[#CAC9D1]">
-                    {t(`buildForYou.slides.${index}.description`)}{" "}
-                  </p>
-                </div>
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  width={393}
-                  height={589}
-                  className="mt-[13px] pointer-events-none select-none"
-                  priority={isActive}
-                />
-              </div>
-            </div>
+           <div className="rounded-xl bg-[#050925]">
+  {/* Top border gradient - black at corners, white in center */}
+  <div className="h-[1px] mx-2 bg-gradient-to-r from-black via-[#7180b8] to-black" />
+  
+  <div className=" rounded-xl">
+    <div className="pt-8 px-7 bg-[#050925] overflow-hidden rounded-xl relative slide-shadow select-none cursor-grab active:cursor-grabbing">
+      <div className="absolute top-0 left-0">
+        <div className="rounded-[68.75px] opacity-60 bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+      </div>
+      <div className="space-y-3 pb-8 relative z-30">
+        <h3 className="heading-2 font-regular text-[#F4F7FF] text-center">
+          {t(`buildForYou.slides.${index}.title`)}{" "}
+        </h3>
+        <p className="heading-6 font-regular max-w-[400px] text-center text-[#CAC9D1]">
+          {t(`buildForYou.slides.${index}.description`)}{" "}
+        </p>
+      </div>
+      <Image
+        src={slide.image}
+        alt={slide.title}
+        width={393}
+        height={589}
+        className="mt-[13px] pointer-events-none select-none"
+        priority={isActive}
+      />
+    </div>
+  </div>
+    <div className="h-[1px] mx-2 bg-gradient-to-r from-black via-[#7180b8] to-black" />
+            
+</div>
           </div>
         );
       })}

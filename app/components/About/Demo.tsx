@@ -222,27 +222,30 @@ export default function Demo(): React.ReactElement {
         <div className=" bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
       </div>
       <div className="pt-[60px] py-100 px-5 sm:px-20 pb-5 sm:pb-[229px] flex flex-col items-center relative overflow-hidden bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
-        <div className="bg-[#00031C"></div>
+        <div className="bg-[#00031C]"></div>
         <motion.div
           initial="hidden"
           animate="visible"
           variants={backgroundVariants}
           transition={{ duration: 0.8 }}
         >
-          <Image
+          {/* <Image
             src="/images/gradient1.png"
             alt="gradient"
             width={181}
             height={94}
             className="absolute left-[45%] top-0 pointer-events-none"
-          />
-          <Image
+          /> */}
+           <div className="bg-[#4F60FA] h-[94px] w-[181px] rounded-[64px] opacity-60  blur-[90px] absolute left-[45%] bottom-[50vh] z-[-1]"></div>
+          {/* <Image
             src="/images/gradient2.png"
             alt="gradient"
             width={458}
             height={318}
             className="absolute left-[35%] bottom-[30%] pointer-events-none"
-          />
+          /> */}
+                     <div className="bg-[#4F60FA] h-[318px] w-[458px] rounded-[64px] opacity-20  blur-[90px] absolute left-[40%] top-[35%] z-[-1]"></div>
+
         </motion.div>
         <motion.div
           variants={dashVariants}

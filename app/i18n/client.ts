@@ -71,6 +71,11 @@ import trForm from '@/app/(pages)/application-form/translations/tr.json';
 import enjob from '@/app/components/Jobs/translations/en.json';
 import dejob from '@/app/components/Jobs/translations/de.json';
 import trjob from '@/app/components/Jobs/translations/tr.json';
+
+import enHire from '@/app/(pages)/hire-expert/translations/en.json'
+import deHire from '@/app/(pages)/hire-expert/translations/de.json'
+import trHire from '@/app/(pages)/hire-expert/translations/tr.json'
+
 const resources = {
   en: {
     translation: enTranslation,
@@ -89,7 +94,8 @@ const resources = {
     security: enSecurity,
     startup: enStartup,
     form: enForm,
-    job: enjob
+    job: enjob,
+    hire: enHire
   },
   de: {
     translation: deTranslation,
@@ -107,7 +113,8 @@ const resources = {
     security: deSecurity,
     startup: deStartup,
     form: deForm,
-    job: dejob
+    job: dejob,
+    hire : deHire
 
   },
   tr: {
@@ -126,7 +133,8 @@ const resources = {
     security: trSecurity,
     startup: trStartup,
     form: trForm,
-    job: trjob
+    job: trjob,
+    hire : trHire
   },
 
 };

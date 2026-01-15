@@ -1,0 +1,32 @@
+
+
+{
+  "hero": {
+    "badge": "Offizielles Partnerprogramm",
+    "title": "Engagieren Sie vertrauenswürdige MIRYA-Experten für intelligentere Automatisierung.",
+    "description": "Treten Sie mit MIRYA-zertifizierten Experten in Kontakt, die intelligente, auf Ihr Unternehmen zugeschnittene Arbeitsabläufe entwerfen, implementieren und skalieren.",
+    "buttons":{
+       "getStarted": "Werden Sie Experte",
+      "contactUs": "MIRYA-Expertin engagieren"
+    }
+  },
+ "miryaExperts": {
+  "badge": "MIRYA-Experte",
+  "title": "Werden Sie ein MIRYA-Experte",
+  "desc": "Treten Sie dem offiziellen MIRYA-Expertennetzwerk bei und bieten Sie vertrauenswürdige Automatisierungsdienste für Kunden weltweit an.",
+  "btnText": "MIRYA-Experte werden",
+  "card1": {
+    "title": "Wer sollte sich bewerben",
+    "disc": "Fachleute und Organisationen mit umfassender Erfahrung in der Automatisierung, darunter Berater, Agenturen, Systemintegratoren und Branchenspezialisten, die praxisnahe Automatisierungslösungen entwickeln."
+  },
+  "card2": {
+    "title": "Warum eine Partnerschaft mit MIRYA",
+    "disc": "Erhalten Sie die offizielle Anerkennung als MIRYA-Experte, Zugang zu qualifizierten Kunden, mehr Glaubwürdigkeit sowie Wachstum Ihrer Dienstleistungen durch Plattform-Unterstützung und Schulungen."
+  },
+  "card3": {
+    "title": "Erwartungen & Standards",
+    "disc": "Nachweis von Automatisierungskompetenz, Einhaltung der MIRYA-Lieferstandards, Wahrung professioneller Standards sowie Teilnahme an Onboarding- und Qualitätsprüfungen."
+  }
+}
+
+}

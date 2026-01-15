@@ -7,6 +7,8 @@ import Footer from "./Layout/Footer";
 import CTA from "./Layout/CTA";
 import CTAConditional from "./Layout/CTAExclusion";
 import I18nProvider from './components/I18nProvider'; // Make sure path is correct
+import FooterConditional from "./Layout/FooterExclusion";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -31,7 +33,33 @@ export default function RootLayout({
           <Header />
           <div className="pt-[124px]">{children}</div>
           <CTAConditional/>
-          <Footer />
+          <FooterConditional />
+           <Toaster
+            position="top-right"
+            reverseOrder={false}
+            toastOptions={{
+              duration: 4000,
+              style: {
+                background: "#FFFFFF",
+                color: "#000000",
+                border: "1px solid #1E293B",
+                zIndex: 9999990000,
+                position: "relative",
+              },
+              success: {
+                iconTheme: {
+                  primary: "#22C55E",
+                  secondary: "#FFFFFF",
+                },
+              },
+              error: {
+                iconTheme: {
+                  primary: "#EF4444",
+                  secondary: "#FFFFFF",
+                },
+              },
+            }}
+          />
         </I18nProvider> {/* UNCOMMENTED */}
       </body>
     </html>

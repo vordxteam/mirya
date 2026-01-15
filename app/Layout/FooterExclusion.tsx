@@ -1,17 +1,13 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import CTA from '../Layout/CTA';
+import Footer from './Footer';
 
-export default function CTAConditional() {
+export default function FooterConditional() {
   const pathname = usePathname();
   
   // Define paths where CTA should NOT be shown
   const ctaExclusion = [
-    '/privacy',
-    '/security',
-    '/sales-form',
-    '/jobs/engineering',
     '/onboarding',
   ];
 
@@ -25,5 +21,5 @@ export default function CTAConditional() {
     return null;
   }
 
-  return <CTA />;
+  return <Footer />;
 }

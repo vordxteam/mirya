@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "badge": "Resmi Ortak Programı",
+    "title": "Daha Akıllı Otomasyon Sistemleri Kurmak İçin Güvenilir MIRYA Uzmanlarını Kiralayın",
+    "description": "İşletmenize özel olarak tasarlanmış, uygulanmış ve ölçeklendirilmiş akıllı iş akışları geliştiren, MIRYA sertifikalı profesyonellerle bağlantı kurun.",
+    "buttons":{
+       "getStarted": "Uzman Olun",
+      "contactUs": "MIRYA Uzmanını Kiralayın"
+    }
+  },
+ "miryaExperts": {
+  "badge": "MIRYA Uzmanı",
+  "title": "MIRYA Uzmanı Olun",
+  "desc": "MIRYA’nın resmi uzman ağına katılın ve dünya genelindeki müşterilere güvenilir otomasyon hizmetleri sunun.",
+  "btnText": "MIRYA Uzmanı Ol",
+  "card1": {
+    "title": "Kimler Başvurmalı",
+    "disc": "Danışmanlar, ajanslar, sistem entegratörleri ve gerçek dünya otomasyon çözümleri geliştiren sektör uzmanları dahil olmak üzere güçlü otomasyon deneyimine sahip profesyoneller ve kuruluşlar."
+  },
+  "card2": {
+    "title": "Neden MIRYA ile Partner Olmalısınız",
+    "disc": "Resmi MIRYA uzmanı olarak tanınma, nitelikli müşterilere erişim, güvenilirlik kazanma ve platform desteği ile eğitimler sayesinde hizmetlerinizi büyütme fırsatı elde edin."
+  },
+  "card3": {
+    "title": "Beklentiler ve Standartlar",
+    "disc": "Otomasyon uzmanlığını kanıtlama, MIRYA teslimat yönergelerine uyma, profesyonel standartları sürdürme ve onboarding ile kalite değerlendirmelerine katılma."
+  }
+}
+}
