@@ -196,3 +196,9 @@ body {
 .no-scroll-anchor {
   overflow-anchor: none;
 }
+.clip-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  rotate: 180deg;
+  z-index: 0;
+  position: relative;
+}

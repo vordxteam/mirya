@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 export default function Services() {
@@ -99,16 +100,17 @@ export default function Services() {
           MIRYA experts help organizations turn ideas into production-ready automation. They combine platform expertise with real-world process knowledge to deliver workflows that are reliable, scalable, and intelligent.
         </p>
 
-        <div
+        <Link
+        href='all-experts'
           className="rounded-full p-[1.5px]"
           style={{
             background: "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
           }}
         >
-          <button className="inline-block text-sm sm:text-base bg-black font-normal text-white py-3 px-8 rounded-full hover:bg-gray-900 transition-colors">
+          <button className="inline-block text-sm sm:text-base bg-black font-normal text-white py-3 px-8 rounded-full  transition-colors cursor-pointer">
             Hire MIRYA Expert
           </button>
-        </div>
+        </Link>
 
         <div className="absolute -bottom-20 -z-10 pointer-events-none">
           <div className="rounded-full opacity-40 bg-[#5935E9] blur-[120px] w-[400px] h-[300px]"></div>

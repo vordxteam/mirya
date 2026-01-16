@@ -10,6 +10,7 @@ interface GradientButtonProps {
   bgColor?: string;
   textColor?: string;
   onClick?: () => void;
+  width?: string;
 }
 
 const GradientButton: React.FC<GradientButtonProps> = ({
@@ -17,11 +18,12 @@ const GradientButton: React.FC<GradientButtonProps> = ({
   href,
   bgColor = "#0274FE",
   textColor = "#FFFFFF",
-  onClick
+  onClick,
+  width
 }) => {
   return (
     <div
-      className="w-fit p-[1px]"
+      className={`${ width ? width : "w-fit" } p-[1px]`}
       style={{
         borderRadius: "40px",
         background:

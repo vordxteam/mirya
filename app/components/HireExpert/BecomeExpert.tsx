@@ -53,14 +53,14 @@ export default function BecomeExpert() {
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">
-          <Image src="/images/blur5.png" width={8} height={8} alt="line" />
+          <Image src="/images/blur5.png" width={16} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-[20px] text-center">
            MIRYA Expert
           </h1>
-          <Image src="/images/blur5.png" width={8} height={8} alt="line" />
+          <Image src="/images/blur5.png" width={16} height={8} alt="line" />
         </div>
         <h1 className="heading-1 font-medium w-full text-center pb-3 sm:pb-6 max-w-[777px]">
-          Become an MIRYA Expert
+          Become a MIRYA Expert
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 text-center max-w-[506px]">
           Join MIRYA’s official expert network and deliver trusted automation services to customers worldwide.
@@ -73,10 +73,10 @@ export default function BecomeExpert() {
             }}
           >
             <Link
-              href="/contact"
-              className="inline-block text-[16px] bg-black font-normal text-white py-3 px-6  rounded-full"
+              href="/onboarding"
+              className="inline-block text-[16px] bg-black font-normal text-white py-3 px-6  rounded-full z-10 relative"
             >
-              Become an MIRYA Expert
+              Become a MIRYA Expert
             </Link>
           </div>
            <div className="absolute -bottom-30 z-0 ">

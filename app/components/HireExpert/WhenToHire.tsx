@@ -64,7 +64,7 @@ export default function WhenToHire() {
             >
               <GradientButton
                 label="Hire an Expert"
-                href="/user-testing"
+                href="/all-experts"
                 bgColor="#0274FE"
                 textColor="#fff"
               />

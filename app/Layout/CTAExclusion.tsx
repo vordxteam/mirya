@@ -13,6 +13,7 @@ export default function CTAConditional() {
     '/sales-form',
     '/jobs/engineering',
     '/onboarding',
+    '/all-experts',
   ];
 
   // Check if current path is in exclusion list
