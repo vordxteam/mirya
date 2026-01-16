@@ -44,7 +44,7 @@ const defaultCompanyData = {
   about: [] as string[],
   resources: [] as Array<{ name: string; link: string }>,
   services: [] as string[],
-  projectBudget: [] as string[],
+  average_project_size: [] as string[],
   languages: [] as string[],
   reviews: [] as ReviewData[],
 };
@@ -64,6 +64,8 @@ const StarRating = ({ rating, interactive = false, onRate = null }: StarRatingPr
       onRate(index + 1);
     }
   };
+
+  
 
   return (
     <div className="flex items-center">
@@ -139,39 +141,80 @@ export default function Details() {
         
         if (response && (response.success || response.status)) {
           const expertData = response.data?.expert;
+
+        const apiReviews = expertData.expert_rating || [];
+const formattedReviews: ReviewData[] = apiReviews.map((review: any) => ({
+  id: review.id,
+  name: review.name || "Anonymous",
+  role: review.occupation || "User",
+  avatar: "/images/review.jpg",
+  rating: parseInt(review.rating) || 0,
+  date: new Date(review.created_at).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }),
+  comment: review.comment || "",
+}));
+
+// Set reviews
+setReviews(formattedReviews);
+
           
           if (expertData) {
             // Parse metadata from expert_records
-            const parseMetadata = (metadata: string): string => {
-              if (!metadata) return '';
-              try {
-                let parsed = metadata.trim();
-                // Remove outer quotes
-                if (parsed.startsWith('"') && parsed.endsWith('"')) {
-                  parsed = parsed.slice(1, -1);
-                }
-                // Handle escaped quotes - remove them
-                parsed = parsed.replace(/\\"/g, '').replace(/"/g, '');
-                // Handle escaped backslashes
-                parsed = parsed.replace(/\\\\/g, '');
-                
-                if ((parsed.startsWith('[') && parsed.endsWith(']')) || 
-                    (parsed.startsWith('{') && parsed.endsWith('}'))) {
-                  try {
-                    const jsonParsed = JSON.parse(parsed);
-                    if (Array.isArray(jsonParsed)) {
-                      return jsonParsed.join(', ');
-                    }
-                    return JSON.stringify(jsonParsed);
-                  } catch {
-                    return parsed;
-                  }
-                }
-                return parsed;
-              } catch {
-                return metadata || '';
-              }
-            };
+          const parseMetadata = (metadata: string): string => {
+  if (!metadata) return '';
+  try {
+    let parsed = metadata.trim();
+    
+    // Remove outer quotes only if the ENTIRE string is wrapped in quotes
+    if (
+      (parsed.startsWith('"') && parsed.endsWith('"')) ||
+      (parsed.startsWith("'") && parsed.endsWith("'"))
+    ) {
+      parsed = parsed.slice(1, -1);
+    }
+    
+    // Remove escaped quotes (like \")
+    parsed = parsed.replace(/\\"/g, '').replace(/\\'/g, '');
+    
+    // Handle JSON arrays
+    if (parsed.startsWith('[') && parsed.endsWith(']')) {
+      try {
+        const jsonParsed = JSON.parse(parsed);
+        if (Array.isArray(jsonParsed)) {
+          // Clean each item in the array
+          return jsonParsed.map(item => 
+            String(item).replace(/^["']+|["']+$/g, '')
+          ).join(', ');
+        }
+        return String(jsonParsed).replace(/^["']+|["']+$/g, '');
+      } catch {
+        // If JSON parsing fails, clean the brackets and quotes
+        parsed = parsed.replace(/^\[|\]$/g, '');
+        parsed = parsed.replace(/["']/g, '');
+      }
+    }
+    
+    // Handle escaped backslashes
+    parsed = parsed.replace(/\\\\/g, '');
+    
+    // Handle escaped unicode like \u003C
+    parsed = parsed.replace(/\\u([\dA-F]{4})/gi, (match, grp) => 
+      String.fromCharCode(parseInt(grp, 16))
+    );
+    
+    // Remove any remaining quotes that might be inside the string
+    parsed = parsed.replace(/"([^"]*)"/g, '$1'); // Remove "text" quotes
+    parsed = parsed.replace(/'([^']*)'/g, '$1'); // Remove 'text' quotes
+    
+    return parsed.trim();
+  } catch {
+    return metadata || '';
+  }
+};
+
 
             // Extract data from expert_records
             const records = expertData.expert_records || [];
@@ -181,6 +224,11 @@ export default function Details() {
                 recordMap[record.key] = parseMetadata(record.metadata);
               }
             });
+
+            const socialChannel = recordMap["social_channel_id"];
+const resources = socialChannel ? [
+  { name: "YouTube", link: socialChannel }
+] : [];
 
             // Build location from city and country
             const city = recordMap["city"] || "";
@@ -195,26 +243,33 @@ export default function Details() {
             const services = servicesStr ? servicesStr.split(", ") : [];
 
             // Update company data with extracted API data
-            setCompanyData((prev) => ({
-              ...prev,
-              name: recordMap["company_name"] || 
-                (expertData.first_name && expertData.last_name 
-                  ? `${expertData.first_name} ${expertData.last_name}`
-                  : prev.name),
-              location: location || prev.location,
-              website: recordMap["company_website"] || prev.website,
-              breadcrumb: [
-                "Hire a MIRYA Expert",
-                recordMap["company_name"] || 
-                (expertData.first_name && expertData.last_name 
-                  ? `${expertData.first_name} ${expertData.last_name}`
-                  : "Expert Details"),
-              ],
-              rating: expertData.expert_rating_avg_rating ? parseFloat(expertData.expert_rating_avg_rating) : prev.rating,
-              reviewCount: expertData.expert_rating_count ? parseInt(expertData.expert_rating_count) : prev.reviewCount,
-              about: about,
-              services: services,
-            }));
+          const projectSizeStr = recordMap["average_project_size"];
+const average_project_size = projectSizeStr ? [projectSizeStr] : [];
+
+// Then update setCompanyData to include average_project_size:
+setCompanyData((prev) => ({
+  ...prev,
+  name: recordMap["company_name"] || 
+    (expertData.first_name && expertData.last_name 
+      ? `${expertData.first_name} ${expertData.last_name}`
+      : prev.name),
+  location: location || prev.location,
+  website: recordMap["company_website"] || prev.website,
+  breadcrumb: [
+    "Hire a MIRYA Expert",
+    recordMap["company_name"] || 
+    (expertData.first_name && expertData.last_name 
+      ? `${expertData.first_name} ${expertData.last_name}`
+      : "Expert Details"),
+  ],
+  rating: expertData.expert_rating_avg_rating ? parseFloat(expertData.expert_rating_avg_rating) : prev.rating,
+  reviewCount: expertData.expert_rating_count ? parseInt(expertData.expert_rating_count) : prev.reviewCount,
+  about: about,
+  services: services,
+  average_project_size: average_project_size,
+  // ADD THIS LINE:
+  resources: resources,
+}));
           }
         }
       } catch (error) {
@@ -224,8 +279,12 @@ export default function Details() {
       }
     };
 
+    
+
     fetchExpertDetails();
   }, [id]);
+
+  
 
   const handleAddReview = async () => {
     // Validate form
@@ -312,7 +371,7 @@ export default function Details() {
   };
 
   return (
-    <div className="min-h-screen  text-white p-8">
+    <div className="text-white p-8">
       {/* Review Modal */}
       {showReviewModal && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
@@ -481,9 +540,13 @@ export default function Details() {
                   </span>
                 </div>
                 <Link
-                  href="/"
-                  className="text-[#0274FE] hover:underline mb-6 flex items-center heading-5 font-normal gap-2"
-                >
+  href={companyData.website?.includes('://') 
+    ? companyData.website 
+    : `https://${companyData.website}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-[#0274FE] hover:underline mb-6 flex items-center heading-5 font-normal gap-2"
+>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5" stroke="#0274FE" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -518,19 +581,23 @@ export default function Details() {
                     Resources
                   </h3>
                   <div className="space-y-1.5">
-                    {companyData.resources.map((resource, index) => (
-                      <Link
-                        key={index}
-                        href={resource.link}
-                        className="flex items-center heading-6 font-normal text-[#0274FE] gap-2"
-                      >
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5" stroke="#0274FE" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                        {resource.name}
-                      </Link>
-                    ))}
+                 {companyData.resources.map((resource, index) => (
+  <Link
+    key={index}
+    href={resource.link.includes('://') ? resource.link : `https://${resource.link}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    passHref
+    legacyBehavior
+  >
+    <a className="flex items-center heading-6 font-normal text-[#0274FE] gap-2">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5" stroke="#0274FE" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      {resource.name}
+    </a>
+  </Link>
+))}
                   </div>
                 </div>
               )}
@@ -555,13 +622,13 @@ export default function Details() {
               )}
 
               {/* Project Budget */}
-              {companyData.projectBudget.length > 0 && (
+              {companyData.average_project_size.length > 0 && (
                 <div>
                   <h3 className="heading-4  font-medium text-[#F4F7FF] mb-2">
                     Project Budget
                   </h3>
                   <ul className="space-y-1 text-sm text-[#FFFFFFCC]">
-                    {companyData.projectBudget.map((budget, index) => (
+                    {companyData.average_project_size.map((budget, index) => (
                       <li key={index} className="flex items-start gap-1">
                         <span className=""><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
   <path d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z" fill="white"/>
@@ -574,21 +641,6 @@ export default function Details() {
               )}
 
               {/* Language */}
-              <div>
-                <h3 className="heading-4  font-medium text-[#F4F7FF] mb-2">
-                  Language
-                </h3>
-                <ul className="space-y-1 text-sm text-[#FFFFFFCC]">
-                  {companyData.languages.map((language, index) => (
-                    <li key={index} className="flex items-start gap-1">
-                      <span className=""><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-  <path d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z" fill="white"/>
-</svg></span>
-                      <span>{language}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -629,7 +681,7 @@ export default function Details() {
           {/* Reviews Section */}
           <div>
             {/* Reviews Header with Add Button - Always Visible */}
-            <div className="flex items-center justify-between mb-6 mt-12">
+            <div className="flex flex-col sm:flex-row items-center justify-between mb-6 mt-12">
               <div className="flex items-center">
                 <h2 className="text-[32px] leading-10 font-medium mr-3">
                   Reviews
@@ -666,7 +718,7 @@ export default function Details() {
                 {reviews.map((review) => (
                   <div
                     key={review.id}
-                    className="rounded-xl  p-6 border border-[#FFFFFF3D] bg-[#14172e]"
+                    className="rounded-xl p-3 sm:p-6 border border-[#FFFFFF3D] bg-[#14172e]"
                   >
                     <div className=" rounded-xl">
                       <div className="flex items-start">
@@ -688,11 +740,11 @@ export default function Details() {
                           </div>
                         </div>
                         <div className="flex-1 space-y-4">
-                          <p className="heading-6 text-[#FFFFFF] font-normal">
-                            "{review.comment}"
+                          <p className="heading-6 text-[#FFFFFF] font-normal max-w-[110px] truncate">
+                            {review.comment}
                           </p>
                           <div className="flex items-center text-sm">
-                            <div className="flex items-center gap-3">
+                            <div className="flex flex-col sm:flex-row items-center gap-3">
                               <StarRating rating={review.rating} />
                               <div className="flex gap-4 items-center">
                                 <span className="heading-5 font-normal text-[#FFFFFF]">
@@ -705,6 +757,7 @@ export default function Details() {
                                 height="15"
                                 viewBox="0 0 15 15"
                                 fill="none"
+                                className="hidden sm:block"
                               >
                                 <path
                                   d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z"

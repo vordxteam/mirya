@@ -169,7 +169,7 @@ const Cards = () => {
       })
       .catch((err) => console.error("Failed to fetch:", err))
       .finally(() => setLoading(false));
-  }, [i18n.language]); 
+  }, [i18n.language]);
 
   const handleLearnMore = (card: CardItem) => {
     router.push(`/articles/${card.category}/${card.slug}`);

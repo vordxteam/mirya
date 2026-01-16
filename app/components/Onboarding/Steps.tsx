@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { expertsAPI } from "@/app/api/onboarding";
 
+
 // Import types
 import { OnboardingFormData, StepComponent } from "./types";
 
@@ -47,6 +48,8 @@ import {
   handleSecondApiErrors,
 } from "./utils/apiErrorHandler";
 import { validateStep } from "./utils/validationUtils";
+import { useRouter } from "next/navigation";
+
 
 // Main App Component
 export default function OnboardingSteps() {
@@ -87,6 +90,10 @@ export default function OnboardingSteps() {
 
   // Steps that should show skip button
   const STEPS_WITH_SKIP_BUTTON = [23, 24, 26];
+
+
+  const router = useRouter()
+
 
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [formData, setFormData] = useState<OnboardingFormData>({
@@ -145,97 +152,64 @@ export default function OnboardingSteps() {
   };
 
 const submitExpertCreation = async () => {
-  console.log('🚀🚀🚀 submitExpertCreation CALLED');
-  console.log('Form data:', formData);
-  
+ 
   try {
     const payload = {
       email: formData.email,
       first_name: formData.first_name,
       last_name: formData.last_name,
       phone_number: formData.phone_number || "",
+      
     };
 
-    console.log('📤 Payload prepared:', payload);
-    console.log('📤 About to call expertsAPi.postExperts');
-    console.log('📤 expertsAPi object:', expertsAPI);
-    console.log('📤 postExperts function:', expertsAPI.postExperts);
-    
+ 
     const res = await expertsAPI.postExperts(payload as any);
-    
-    console.log('📥📥📥 GOT RESPONSE FROM API');
-    console.log('📥 Full response object:', res);
-    console.log('📥 Response status:', res.status);
-    console.log('📥 Response data:', res.data);
-    
+  
     const data = res.data;
     
-    console.log('🔍 Analyzing response data...');
-    console.log('🔍 data.status:', data.status);
-    console.log('🔍 data.status type:', typeof data.status);
-    console.log('🔍 data.status === false:', data.status === false);
-    console.log('🔍 data.errors:', data.errors);
-    console.log('🔍 data.message:', data.message);
+
 
     // Check if the API returned an error status
     if (data.status === false) {
-      console.log('❌ Detected error status (false)');
-      console.log('❌ Calling handleFirstApiErrors with:', data);
+  
       handleFirstApiErrors(data);
-      console.log('❌ Returning false from submitExpertCreation');
       return false;
     }
 
     // Handle success
     if (data.status === "success" || data.message) {
-      console.log('✅ Detected success');
       localStorage.setItem("expert_email", data?.email || payload.email);
-      console.log('✅ Showing success toast');
       toast.success(data.message || "Account created successfully!");
-      console.log('✅ Returning true from submitExpertCreation');
       return true;
     }
 
     // If we get here, something unexpected happened
-    console.log('⚠️ Unexpected response format, showing error');
     toast.error("Unexpected response from server");
     return false;
 
   } catch (err: any) {
-    console.error("❌❌❌ CAUGHT EXCEPTION in submitExpertCreation");
-    console.error("Exception:", err);
-    console.error("Exception message:", err.message);
-    console.error("Exception response:", err.response);
-    
+   
     // Handle network errors or 500/404 responses
     const data = err?.response?.data;
     
     if (data) {
-      console.log('📥 Error response data exists:', data);
-      console.log('📥 data.status:', data.status);
-      console.log('📥 data.errors:', data.errors);
-      console.log('📥 data.message:', data.message);
+ 
       
       // Server responded with error
       if (data.status === false) {
-        console.log('❌ Status is false in error response');
         handleFirstApiErrors(data);
       } else if (data.message || data.errors) {
-        console.log('❌ Has message or errors in error response');
         handleFirstApiErrors(data);
       } else {
-        console.log('❌ Showing generic error');
         toast.error("An error occurred");
       }
     } else {
       // Network error
-      console.log('🌐 Network error - no response data');
       toast.error("Network error. Please check your connection.");
     }
     
     return false;
   } finally {
-    console.log('🏁 submitExpertCreation finished');
   }
 };
   const submitExpertDetails = async () => {
@@ -417,6 +391,9 @@ const submitExpertCreation = async () => {
       // For the last step, show completion message
       if (currentStepIndex === allSteps.length - 1) {
         toast.success("Onboarding completed successfully!");
+        router.push('all-experts')
+
+
         // Clear localStorage
         localStorage.removeItem("expert_email");
         // Clear all step data

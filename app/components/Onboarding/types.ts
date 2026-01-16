@@ -52,3 +52,9 @@ export interface OnboardingLayoutProps {
   showProgress?: boolean;
   showSkipButton?: boolean;
 }
+
+export interface StepProps {
+  formData: OnboardingFormData;
+  updateFormData: (field: string, value: any) => void;
+  errors?: Record<string, string>;
+}

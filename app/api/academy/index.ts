@@ -21,15 +21,15 @@ export const categoryApi = {
    * @param lang 
    */
   getAll(lang: string = getApiLang()) {
-    return apiClient.get<CategoryListResponse>(`/api/category/${lang}`);
+    return apiClient.get<CategoryListResponse>(`/category/${lang}`);
   },
 
 
 getById(slug: string, lang: string = getApiLang()) {
-  return apiClient.get<PageResponse>(`/api/pages/${slug}/${lang}`);
+  return apiClient.get<PageResponse>(`/pages/${slug}/${lang}`);
 },
  
   getDetailBySlug(slug: string, lang: string = getApiLang()) {
-    return apiClient.get<PageResponse>(`/api/pages/detail/${slug}/${lang}`);
+    return apiClient.get<PageResponse>(`/pages/detail/${slug}/${lang}`);
   },
 };

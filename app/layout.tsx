@@ -34,6 +34,7 @@ export default function RootLayout({
           <div className="pt-[124px]">{children}</div>
           <CTAConditional/>
           <FooterConditional />
+          
            <Toaster
             position="top-right"
             reverseOrder={false}

@@ -35,6 +35,15 @@ interface ExpertApiResponse {
   };
 }
 
+// Filter state interface
+interface FilterState {
+  country: string;
+  city: string;
+  service: string;
+  budget: string;
+  language: string;
+  companyType: string;
+}
 
 export default function Experts() {
   const [experts, setExperts] = useState<TransformedExpert[]>([]);
@@ -42,7 +51,19 @@ export default function Experts() {
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [searchQuery, setSearchQuery] = useState('');
+  
+  // Filter states
+  const [selectedFilters, setSelectedFilters] = useState<FilterState>({
+    country: '',
+    city: '',
+    service: '',
+    budget: '',
+    language: '',
+    companyType: ''
+  });
 
+  
   // Helper function to parse metadata from API
   const parseMetadata = (metadata: string): string => {
     if (!metadata) return '';
@@ -120,15 +141,31 @@ export default function Experts() {
       setLoading(true);
       setError(null);
       
-      console.log("Fetching experts from API...");
-      const response = await getExperts() as any;
+      // Prepare filters for API
+      const apiFilters: Record<string, string> = {};
+      
+      // Only add filters that have values
+      if (selectedFilters.country) apiFilters.country = selectedFilters.country;
+      if (selectedFilters.city) apiFilters.city = selectedFilters.city;
+      if (selectedFilters.service) apiFilters.service = selectedFilters.service;
+      if (selectedFilters.budget) apiFilters.budget = selectedFilters.budget;
+      if (selectedFilters.language) apiFilters.language = selectedFilters.language;
+      if (selectedFilters.companyType) apiFilters.companyType = selectedFilters.companyType;
+      
+      console.log("Fetching experts with filters:", apiFilters);
+      
+      const response = await getExperts({
+        filters: apiFilters,
+        page: currentPage,
+        perPage: 9
+      });
       
       console.log("Full API response:", response);
       
       // Check if response has the expected structure (API uses 'status' not 'success')
       if (response && (response.success || response.status)) {
         // Access the data based on your API structure
-        const expertData = response.data;
+        const expertData = response.data as any;
         console.log("Expert data from response:", expertData);
         
         // Check if expert data exists in the response
@@ -136,13 +173,10 @@ export default function Experts() {
           // Your API returns: response.data.expert.data
           const rawData = expertData.expert.data;
           console.log("Raw expert data:", rawData);
-          console.log("Raw data is array:", Array.isArray(rawData));
-          console.log("Raw data length:", rawData?.length);
           
           if (Array.isArray(rawData)) {
             const transformed = transformExpertData(rawData);
             console.log("Transformed experts:", transformed);
-            console.log("Transformed count:", transformed.length);
             
             setExperts(transformed);
             
@@ -161,11 +195,11 @@ export default function Experts() {
           setExperts(transformed);
         } else {
           console.warn("Unexpected API structure - expertData:", expertData);
-          console.warn("Full response:", response);
+          setError('Unexpected API response format');
           setExperts([]);
         }
       } else {
-        console.warn("API returned unsuccessful response - status/success missing:", response);
+        console.warn("API returned unsuccessful response:", response);
         setError(response?.message || 'Failed to load experts');
         setExperts([]);
       }
@@ -180,10 +214,26 @@ export default function Experts() {
     }
   };
 
-  // Fetch experts on component mount
+  // Fetch experts on component mount and when filters/page change
   useEffect(() => {
     fetchExperts();
-  }, []);
+  }, [currentPage, selectedFilters]);
+
+  // Clear all filters
+  const clearAllFilters = () => {
+    setSelectedFilters({
+      country: '',
+      city: '',
+      service: '',
+      budget: '',
+      language: '',
+      companyType: ''
+    });
+    setCurrentPage(1);
+  };
+
+  // Check if any filter is active
+  const hasActiveFilters = Object.values(selectedFilters).some(value => value !== '');
 
   const StarRating = ({ rating, count }: any) => (
     <div className="inline-flex items-center gap-2 bg-[#FFFFFF1F] px-2 py-1 rounded-full">
@@ -266,10 +316,17 @@ export default function Experts() {
             <div>
               <label className="heading-5 mb-3 font-normal block">Country/Territory</label>
               <div className='rounded-lg border border-[#FFFFFF33] rounded px-3 py-2 text-sm text-gray-400'>
-                <select className="w-full focus:outline-none cursor-pointer bg-[#00031c]">
-                  <option>Select country/territory</option>
+                <select 
+                  className="w-full focus:outline-none cursor-pointer bg-[#00031c]"
+                  value={selectedFilters.country}
+                  onChange={(e) => {
+                    setSelectedFilters(prev => ({ ...prev, country: e.target.value }));
+                    setCurrentPage(1); // Reset to page 1 when filter changes
+                  }}
+                >
+                  <option value="">Select country/territory</option>
                   {filters.countries.map((country) => (
-                    <option key={country}>{country}</option>
+                    <option key={country} value={country}>{country}</option>
                   ))}
                 </select>
               </div>
@@ -279,10 +336,17 @@ export default function Experts() {
             <div>
               <label className="heading-5 mb-3 font-normal block">City</label>
               <div className='rounded-lg border border-[#FFFFFF33] rounded px-3 py-2 text-sm text-gray-400'>
-                <select className="w-full focus:outline-none cursor-pointer bg-[#00031c]">
-                  <option>Select City</option>
+                <select 
+                  className="w-full focus:outline-none cursor-pointer bg-[#00031c]"
+                  value={selectedFilters.city}
+                  onChange={(e) => {
+                    setSelectedFilters(prev => ({ ...prev, city: e.target.value }));
+                    setCurrentPage(1);
+                  }}
+                >
+                  <option value="">Select City</option>
                   {filters.cities.map((city) => (
-                    <option key={city}>{city}</option>
+                    <option key={city} value={city}>{city}</option>
                   ))}
                 </select>
               </div>
@@ -292,10 +356,17 @@ export default function Experts() {
             <div>
               <label className="heading-5 mb-3 font-normal block">Services</label>
               <div className='rounded-lg border border-[#FFFFFF33] rounded px-3 py-2 text-sm text-gray-400'>
-                <select className="w-full focus:outline-none cursor-pointer bg-[#00031c]">
-                  <option>Select Services</option>
+                <select 
+                  className="w-full focus:outline-none cursor-pointer bg-[#00031c]"
+                  value={selectedFilters.service}
+                  onChange={(e) => {
+                    setSelectedFilters(prev => ({ ...prev, service: e.target.value }));
+                    setCurrentPage(1);
+                  }}
+                >
+                  <option value="">Select Services</option>
                   {filters.services.map((service) => (
-                    <option key={service}>{service}</option>
+                    <option key={service} value={service}>{service}</option>
                   ))}
                 </select>
               </div>
@@ -305,40 +376,36 @@ export default function Experts() {
             <div>
               <label className="heading-5 mb-3 font-normal block">Project Budget</label>
               <div className='rounded-lg border border-[#FFFFFF33] rounded px-3 py-2 text-sm text-gray-400'>
-                <select className="w-full focus:outline-none cursor-pointer bg-[#00031c]">
-                  <option>Select Budget</option>
+                <select 
+                  className="w-full focus:outline-none cursor-pointer bg-[#00031c]"
+                  value={selectedFilters.budget}
+                  onChange={(e) => {
+                    setSelectedFilters(prev => ({ ...prev, budget: e.target.value }));
+                    setCurrentPage(1);
+                  }}
+                >
+                  <option value="">Select Budget</option>
                   {filters.budgets.map((budget) => (
-                    <option key={budget}>{budget}</option>
+                    <option key={budget} value={budget}>{budget}</option>
                   ))}
                 </select>
               </div>
             </div>
 
-            {/* Language */}
-            <div>
-              <label className="heading-5 mb-3 font-normal block">Language</label>
-              <div className='rounded-lg border border-[#FFFFFF33] rounded px-3 py-2 text-sm text-gray-400'>
-                <select className="w-full focus:outline-none cursor-pointer bg-[#00031c]">
-                  <option>Select Language</option>
-                  {filters.languages.map((language) => (
-                    <option key={language}>{language}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
+            {/* Languages */}
+        
 
-            {/* Company Type Focus */}
-            <div>
-              <label className="heading-5 mb-3 font-normal block">Company Type Focus</label>
-              <div className='rounded-lg border border-[#FFFFFF33] rounded px-3 py-2 text-sm text-gray-400'>
-                <select className="w-full focus:outline-none cursor-pointer bg-[#00031c]">
-                  <option>Select an option</option>
-                  {filters.companyTypes.map((type) => (
-                    <option key={type}>{type}</option>
-                  ))}
-                </select>
+            {/* Clear Filters Button */}
+            {hasActiveFilters && (
+              <div className="pt-2">
+                <button
+                  onClick={clearAllFilters}
+                  className="w-full py-2 px-4 heading-6 font-normal bg-[#0274FE] hover:bg-[#0260d4] rounded-lg transition-colors"
+                >
+                  Clear All Filters
+                </button>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Experts Grid */}
@@ -366,12 +433,22 @@ export default function Experts() {
               <div className="text-center py-20">
                 <p className="text-gray-400 heading-4 mb-2">No experts found</p>
                 <p className="text-gray-500 heading-6">Try adjusting your filters</p>
+                {hasActiveFilters && (
+                  <button
+                    onClick={clearAllFilters}
+                    className="mt-4 py-2 px-6 heading-6 font-normal bg-[#0274FE] hover:bg-[#0260d4] rounded-lg transition-colors"
+                  >
+                    Clear All Filters
+                  </button>
+                )}
               </div>
             )}
 
             {/* Experts Grid - Only show when not loading and has data */}
             {!loading && experts.length > 0 && (
               <>
+              
+                
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 z-0">
                   {experts.map((expert) => (
                     <Link 
