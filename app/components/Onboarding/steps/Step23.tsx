@@ -1,6 +1,6 @@
 import { StepComponent } from "../types";
 
-export const Step23: StepComponent = ({ formData, updateFormData, errors }) => {
+export const Step23: StepComponent = ({ formData, updateFormData, errors , onEnter }) => {
   const options = [
     { id: "0", label: "Code Contribution" },
     { id: "1", label: "Participated in the community form" },
@@ -32,6 +32,7 @@ export const Step23: StepComponent = ({ formData, updateFormData, errors }) => {
             <div className="relative flex items-center justify-center w-5 h-5 mr-4">
               <input
                 type="checkbox"
+                onKeyDown={onEnter}
                 checked={(formData.mirya_contributions || []).includes(
                   option.id
                 )}

@@ -382,7 +382,7 @@ setCompanyData((prev) => ({
                 "linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)",
             }}
           >
-            <div className="bg-[#0A0B1E] rounded-2xl p-8 relative">
+            <div className="bg-[#0A0B1E] rounded-2xl p-8 max-h-[75vh] overflow-auto relative hide-scrollbar">
               <button
                 onClick={() => setShowReviewModal(false)}
                 className="absolute top-6 right-6 text-gray-400 hover:text-white cursor-pointer transition-colors"
@@ -477,7 +477,7 @@ setCompanyData((prev) => ({
                   )}
                 </div>
 
-                <div className="flex gap-4 pt-8">
+                <div className="flex flex-col sm:flex-row gap-4 pt-8">
                   <button
                     onClick={() => setShowReviewModal(false)}
                     className="flex-1 border border-[#FFFFFF33] text-white heading-6 font-medium py-3 rounded-lg hover:border-[#FFFFFF66] hover:bg-[#FFFFFF05] transition-all"
@@ -502,13 +502,13 @@ setCompanyData((prev) => ({
         <div className="lg:col-span-1 space-y-6">
           {/* First Box - Company Info */}
           <div
-            className="rounded-2xl p-px"
+            className="rounded-3xl p-px"
             style={{
               background:
                 "linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)",
             }}
           >
-            <div className="bg-[#0A0B1E] rounded-2xl p-6 space-y-6">
+            <div className="bg-[#060821] rounded-3xl p-6 space-y-6">
               {/* Logo and Company Name */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
@@ -567,13 +567,13 @@ setCompanyData((prev) => ({
 
           {/* Second Box - Resources, Services, Budget, Language */}
           <div
-            className="rounded-2xl p-px"
+            className="rounded-3xl p-px"
             style={{
               background:
                 "linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)",
             }}
           >
-            <div className="bg-[#0A0B1E] rounded-2xl p-6 space-y-6">
+            <div className="bg-[#060821] rounded-3xl p-6 space-y-6">
               {/* Resources */}
               {companyData.resources.length > 0 && (
                 <div>
@@ -605,19 +605,44 @@ setCompanyData((prev) => ({
               {/* Services */}
               {companyData.services.length > 0 && (
                 <div>
-                  <h3 className="heading-4  font-medium text-[#F4F7FF] mb-2">
+                  <h3 className="heading-4  font-medium text-[#F4F7FF]">
                     Services
                   </h3>
-                  <ul className="space-y-1 text-sm text-[#FFFFFFCC] ">
-                    {companyData.services.map((service, index) => (
-                      <li key={index} className="flex items-start gap-1">
-                        <span className=""><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-  <path d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z" fill="white"/>
-</svg></span>
-                        <span>{service}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <ul className="flex flex-wrap flex-col gap-3 text-sm text-[#FFFFFFCC]">
+  {companyData.services.map((serviceItem, index) => {
+    // Check if serviceItem contains commas
+    if (serviceItem.includes(',')) {
+      // Split by comma and create separate items for each
+      const services = serviceItem.split(',').map(s => s.trim()).filter(s => s);
+      
+      return services.map((service, serviceIndex) => (
+        <li 
+          key={`${index}-${serviceIndex}`} 
+          className="flex items-start gap-2 rounded-lg mt-2 min-w-0 w-full sm:w-auto sm:flex-1"
+        >
+          <span className="flex-shrink-0 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <path d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z" fill="white"/>
+            </svg>
+          </span>
+          <span className="break-words flex-1 overflow-hidden">{service}</span>
+        </li>
+      ));
+    } else {
+      // Single service (no commas)
+      return (
+        <li key={index} className="flex items-start gap-2 rounded-lg mt-2 min-w-0 w-full sm:w-auto sm:flex-1">
+          <span className="flex-shrink-0 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <path d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z" fill="white"/>
+            </svg>
+          </span>
+          <span className="break-words flex-1 overflow-hidden">{serviceItem}</span>
+        </li>
+      );
+    }
+  })}
+</ul>
                 </div>
               )}
 
@@ -705,7 +730,7 @@ setCompanyData((prev) => ({
               >
                 <button
                   onClick={() => setShowReviewModal(true)}
-                  className="inline-block text-[16px] bg-black font-normal text-white py-3 px-6  rounded-full z-10 relative cursor-pointer"
+                  className="inline-block text-[16px] bg-[#00031C] font-normal text-white py-3 px-6  rounded-full z-10 relative cursor-pointer"
                 >
                   Add a Review
                 </button>

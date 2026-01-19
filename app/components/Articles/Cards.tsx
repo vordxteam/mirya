@@ -172,7 +172,11 @@ const Cards = () => {
   }, [i18n.language]);
 
   const handleLearnMore = (card: CardItem) => {
-    router.push(`/articles/${card.category}/${card.slug}`);
+    if (card.title == 'Hire an Expert') {
+      router.push(`/all-experts`);
+    } else {
+      router.push(`/articles/${card.category}/${card.slug}`);
+    }
   };
 
   return (

@@ -1,13 +1,14 @@
 import { StepComponent } from "../types";
 
-export const Step2: StepComponent = ({ formData, updateFormData, errors }) => (
+export const Step2: StepComponent = ({ formData, updateFormData, errors , onEnter }) => (
   <div className="text-white">
     <h2 className="text-2xl heading-3 text-[#FFFFFF] font-normal mb-6">
       2. What's your last name?
     </h2>
     <input
       type="text"
-      placeholder="Last name"
+      placeholder="Last Name"
+      onKeyDown={onEnter}
       value={formData.last_name || ""}
       onChange={(e) => updateFormData("last_name", e.target.value)}
       className={`w-full px-4 py-3 bg-transparent border ${

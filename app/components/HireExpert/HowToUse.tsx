@@ -45,10 +45,8 @@ export default function HowToUse() {
   ];
   return (
     <div className=" px-3 sm:px-20  mx-auto relative z-10 bg-[#00031C] max-w-[1440px] overflow-hidden pb-15">
-      <div className="flex justify-center relative -z-10 pointer-events-none">
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
-      </div>
-      <div className="flex z-100 bg-[#00031C] flex-col items-center justify-center pt-15 px-2 md:px-10  relative">
+    
+      <div className="flex z-100 bg-[#00031C] flex-col items-center justify-center pt-15   relative">
         {/* <div className="absolute top-0 -z-10 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div> */}
@@ -67,7 +65,7 @@ export default function HowToUse() {
         </p>
         <div className="mt-15 flex flex-col md:flex-row justify-between items-center md:items-start relative w-full">
             <div className="hidden lg:block">
-                <Image src='/images/line1.png' alt="line1" width={157} height={22} className="absolute top-40 left-[26%]"/>
+                <Image src='/images/line1.png' alt="line1" width={157} height={22} className="absolute top-41 left-[28%]"/>
                 <Image src='/images/line2.png' alt="line1" width={157} height={22} className="absolute top-0 right-[26%]"/>
             </div>
         {WorkFlow.map((item) => (
@@ -83,11 +81,11 @@ export default function HowToUse() {
 </div>
 
 
-    <h3 className="text-white font-semibold mb-2 text-center">
+    <h3 className="text-[#FFFFFF] heading-3  font-bold mb-2 text-center">
       {item.title}
     </h3>
 
-    <p className="text-gray-400 text-sm text-center max-w-[372px]">
+    <p className="text-[#FFFFFFCC] heading-5 font-normal text-center max-w-[372px]">
       {item.description}
     </p>
   </div>

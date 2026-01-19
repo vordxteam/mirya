@@ -34,35 +34,31 @@ export interface GetExpertsParams {
 }
 
 export const getExperts = async (params?: GetExpertsParams): Promise<GetExpertsApiResponse> => {
-  const queryParams = new URLSearchParams();
-  
-  // Add filters
+  // Build params object to pass to axios (keeps URL clean)
+  const axiosParams: Record<string, any> = {};
+
+  // Add filters as filters[key]=value
   if (params?.filters) {
     Object.entries(params.filters).forEach(([key, value]) => {
       if (value) {
-        queryParams.append(`filters[${key}]`, value);
+        axiosParams[`filters[${key}]`] = value;
       }
     });
   }
 
-    if (params?.search && params.search.length >= 3) {
-    queryParams.append('search', params.search);
+  // Add search only when length >= 3
+  if (params?.search && params.search.length >= 3) {
+    axiosParams.search = params.search;
   }
-  
-  // Add pagination
-  if (params?.page) {
-    queryParams.append('page', params.page.toString());
-  }
-  
-  if (params?.perPage) {
-    queryParams.append('per_page', params.perPage.toString());
-  }
-  
-  const queryString = queryParams.toString();
-  const url = `${base_url}/expert${queryString ? `?${queryString}` : ''}`;
-  
-  console.log('Fetching experts from:', url);
-  const response = await axios.get(url);
+
+  // Pagination
+  if (params?.page) axiosParams.page = params.page;
+  if (params?.perPage) axiosParams.per_page = params.perPage;
+
+  const url = `${base_url}/expert`;
+  console.log('Fetching experts from:', url, 'params:', axiosParams);
+
+  const response = await axios.get(url, { params: axiosParams });
   return response.data;
 };
 

@@ -53,7 +53,7 @@ export default function MiryaExperts() {
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 text-center max-w-[506px]">
           {t("miryaExperts.desc")}{" "}
-        </p>16
+        </p>
           <div
             className="rounded-full  p-[1.5px] mt-6"
             style={{
@@ -63,12 +63,12 @@ export default function MiryaExperts() {
           >
             <Link
               href="/onboarding"
-              className="inline-block text-[16px] bg-black font-normal text-white py-3 px-6  rounded-full relative z-10"
+              className="inline-block text-[16px] bg-[#00031C] font-normal text-white py-3 px-6  rounded-full relative z-10"
             >
               {t("miryaExperts.btnText")}{" "}
             </Link>
           </div>
-           <div className="absolute -bottom-30 z-0 ">
+           <div className="absolute -bottom-70 z-0 ">
               <div className="rounded-[68.75px] opacity-60 bg-[#5935E94D] blur-[50px] w-[458px] h-[318px]"></div>
             </div>
       </div>
@@ -104,7 +104,7 @@ export default function MiryaExperts() {
                 </div>
               </div>
               <div className="space-y-4 mt-4">
-                <h3 className="heading-3 font-semibold  text-[#F4F7FF]">
+                <h3 className="heading-3 font-medium  text-[#F4F7FF]">
                   {item.title}{" "}
                 </h3>
                 <p className="heading-6 font-normal text-[#F4F7FF99]">

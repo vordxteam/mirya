@@ -2,6 +2,7 @@
 import GradientButton from "@/app/ui/GradientButton";
 import React from "react";
 import { OnboardingLayoutProps } from "./types";
+import Link from "next/link";
 
 export const OnboardingLayout = ({
   currentStep,
@@ -25,9 +26,9 @@ export const OnboardingLayout = ({
               <div className="relative w-full">
                 {/* Track with 4 segments */}
                 <div className="flex gap-2 items-center">
-                  {[...Array(4)].map((_, i) => {
-                    const segmentStart = (i * totalSteps) / 4;
-                    const segmentEnd = ((i + 1) * totalSteps) / 4;
+                  {[...Array(3)].map((_, i) => {
+                    const segmentStart = (i * totalSteps) / 3;
+                    const segmentEnd = ((i + 1) * totalSteps) / 3;
                     const segmentProgress = Math.max(
                       0,
                       Math.min(
@@ -104,7 +105,7 @@ export const OnboardingLayout = ({
               className="rounded-full p-[1.5px]"
               style={{
                 background:
-                  "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+                  "linear-gradient(90deg, #4D4D4D 0%, #aab1ec 49.5%, rgba(255, 255, 255, 0) 100%)",
               }}
             >
               <button
@@ -128,21 +129,21 @@ export const OnboardingLayout = ({
       </div>
 
       {/* Footer - now at bottom using flexbox */}
-      <div className="mt-auto max-w-[1440px] mx-auto w-full">
+      <div className="mt-auto max-w-[1440px] mx-auto w-full px-3 sm:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between">
           <div className="heading-6 font-normal text-[#FFFFFFCC] text-xs mb-2 sm:mb-0">
             © 2024 Copyright - MIRYA AI Tech GmbH
           </div>
           <div className="flex gap-3 text-[#FFFFFFCC] text-xs">
-            <a href="#" className="border-r pr-2 border-[#FFFFFF33]">
+            <Link href="#" className="border-r pr-2 border-[#FFFFFF33]">
               Privacy Policy
-            </a>
-            <a href="#" className="border-r pr-2 border-[#FFFFFF33]">
+            </Link>
+            <Link href="#" className="border-r pr-2 border-[#FFFFFF33]">
               Security
-            </a>
-            <a href="#" className="">
+            </Link>
+            <Link href="#" className="">
               Imprint
-            </a>
+            </Link>
           </div>
         </div>
       </div>

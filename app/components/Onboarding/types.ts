@@ -39,6 +39,7 @@ export type StepComponent = React.FC<{
   formData: OnboardingFormData;
   updateFormData: (field: string, value: any) => void;
   errors?: Record<string, string>;
+  onEnter?:any
 }>;
 
 // Onboarding layout interface

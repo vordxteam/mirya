@@ -1,6 +1,6 @@
 import { StepComponent } from "../types";
 
-export const Step25: StepComponent = ({ formData, updateFormData, errors }) => (
+export const Step25: StepComponent = ({ formData, updateFormData, errors , onEnter }) => (
   <div className="text-white">
     <h2 className="text-2xl heading-3 text-[#FFFFFF] font-normal mb-6">
       25. Anything else you would like to let us know?
@@ -8,6 +8,7 @@ export const Step25: StepComponent = ({ formData, updateFormData, errors }) => (
     <input
       type="text"
       placeholder="Type your Answer..."
+      onKeyDown={onEnter}
       value={formData.additional_info || ""}
       onChange={(e) => updateFormData("additional_info", e.target.value)}
       className={`w-full px-4 py-3 bg-transparent border ${

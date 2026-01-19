@@ -3,58 +3,58 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function Services() {
+export default function AddOnServices() {
   const services = [
     {
       id: 1,
       icon: (
-        <Image src="/images/ser1.svg" alt="service" width={40} height={40} />
+        <Image src="/images/ser11.svg" alt="service" width={40} height={40} />
       ),
-      title: "Process Guardian",
+      title: "Automation Discovery Workshop",
       description:
-        "Process guardian is a hands-on support service where MIRYA experts guide you through designing, building.",
+        "We analyze processes, identify automation opportunities, and build an ROI-driven automation roadmap.",
     },
     {
       id: 2,
       icon: (
-        <Image src="/images/ser2.svg" alt="service" width={40} height={40} />
+        <Image src="/images/ser12.svg" alt="service" width={40} height={40} />
       ),
-      title: "2-Day MIRYA Starter Training",
+      title: "Automation Center of Excellence (CoE) Setup",
       description:
-        "A focused, instructor-led training experience designed to help your team master MIRYA in just two days.",
+        "We help companies build internal automation teams with clear roles, governance, and scaling plans.",
     },
     {
       id: 3,
       icon: (
-        <Image src="/images/ser3.svg" alt="service" width={40} height={40} />
+        <Image src="/images/ser13.svg" alt="service" width={40} height={40} />
       ),
-      title: "Compliance & Governance Setup ",
+      title: "Process Recording & Blueprinting",
       description:
-        "We set up secure, governed automation with roles, audit logs, versioning, and failover.",
+        "We document real user workflows and turn them into automation-ready blueprints—ideal for teams without documentation.",
     },
     {
       id: 4,
       icon: (
-        <Image src="/images/ser9.svg" alt="service" width={40} height={40} />
+        <Image src="/images/ser14.svg" alt="service" width={40} height={40} />
       ),
-      title: "2-day MIRYA Expert Training",
+      title: "Priority Support & Dedicated Success Manager",
       description:
-        "Advanced training for building complex, scalable workflows with logic and integrations.",
+        "Guaranteed SLAs, fast response times, and a dedicated success manager ensuring smooth, continuously improving automation.",
     },
     {
       id: 5,
       icon: (
-        <Image src="/images/ser10.svg" alt="service" width={40} height={40} />
+        <Image src="/images/ser15.svg" alt="service" width={40} height={40} />
       ),
-      title: "AI Consulting",
+      title: "MIRYA Proof of Value (4 weeks) ",
       description:
-        "Our AI experts provide tailored consulting to identify automation potential and design AI-driven workflows.",
+        "We deliver a working automation in four weeks, proving measurable value before long-term commitment.",
     },
   ];
 
   return (
     <>
-    <div className="px-3 sm:px-6 lg:px-20 max-w-[1440px] mx-auto relative z-10 bg-[#00031C] overflow-hidden pb-15">
+    <div className="px-3 sm:px-6 lg:px-20 max-w-[1440px] mx-auto relative z-10 bg-[#00031C] overflow-hidden ">
           <div className="flex justify-center relative pointer-events-none">
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </div>
@@ -66,19 +66,13 @@ export default function Services() {
 
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/blur5.png" alt="Blur" height={16} width={16} />
-          <h2 className="text-[#959EFE] heading-5">Services</h2>
+          <h2 className="text-[#959EFE] heading-5">Add on Services</h2>
           <Image src="/images/blur5.png" alt="Blur" height={16} width={16} />
         </div>
 
         <h1 className="heading-1 font-medium text-white text-center pb-3 sm:pb-6 max-w-[777px]">
-          Professional services for high impact automation
+         Additional Recommended Services
         </h1>
-
-        <p className="text-[#CAC9D1] heading-6 font-normal  text-center max-w-[794px] mb-8">
-          Whether you're launching your first workflow or scaling automation
-          across your organization, MIRYA’s specialists provide the expertise
-          and support to guide you every step of the way.{" "}
-        </p>
       </div>
 
       {/* Services Grid */}

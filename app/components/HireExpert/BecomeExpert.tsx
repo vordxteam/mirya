@@ -32,9 +32,9 @@ export default function BecomeExpert() {
       ]
     },
     {
-      id: 4,
-      title: "Why Partner with MIRYA",
-      description:"Gain official MIRYA expert recognition, access qualified customers, build credibility, and grow your services with platform enablement and training.",
+      id: 3,
+      title: "Expectations & Standards",
+      description:"Demonstrate automation expertise, follow MIRYA delivery guidelines, maintain professional standards, and participate in onboarding and quality reviews.",
       link: "#",
       image : "/images/logo2.png",
       text: t("miryaExperts.card2.badge"),
@@ -49,8 +49,8 @@ export default function BecomeExpert() {
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </div>
       <div className="flex z-100 bg-[#00031C] flex-col items-center justify-center  pt-15 px-2 md:px-10  relative">
-        <div className="absolute top-0 -z-10 pointer-events-none">
-          <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+        <div className="absolute -top-10 -z-10 pointer-events-none">
+          <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[90px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/blur5.png" width={16} height={16} alt="line" />
@@ -74,12 +74,12 @@ export default function BecomeExpert() {
           >
             <Link
               href="/onboarding"
-              className="inline-block text-[16px] bg-black font-normal text-white py-3 px-6  rounded-full z-10 relative"
+              className="inline-block text-[16px] bg-[#00031C] font-normal text-white py-3 px-6  rounded-full z-10 relative"
             >
               Become a MIRYA Expert
             </Link>
           </div>
-           <div className="absolute -bottom-30 z-0 ">
+           <div className="absolute top-40 z-0 ">
               <div className="rounded-[68.75px] opacity-60 bg-[#5935E94D] blur-[50px] w-[458px] h-[318px]"></div>
             </div>
       </div>
@@ -90,7 +90,7 @@ export default function BecomeExpert() {
   key={item.id}
   style={{
     background:
-  "linear-gradient(280deg, transparent 45%, #656ad9 65%, transparent 75%)",
+  "linear-gradient(280deg, #1e1f39 45%, #656ad9 65%, #1e1f39 75%)",
   }}
   className="p-px rounded-xl z-100" 
 >
@@ -108,7 +108,7 @@ export default function BecomeExpert() {
             
                 <p className="heading-4 text-[#F4F7FF99]">{`0${item.id}`}</p>              
               <div className="space-y-2 mt-3">
-                <h3 className="heading-3 font-semibold  text-[#F4F7FF]">
+                <h3 className="heading-3 font-medium  text-[#F4F7FF]">
                   {item.title}{" "}
                 </h3>
                 <p className="heading-6 font-normal text-[#F4F7FF99]">

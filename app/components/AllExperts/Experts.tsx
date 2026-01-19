@@ -45,13 +45,13 @@ interface FilterState {
   companyType: string;
 }
 
-export default function Experts() {
+export default function Experts({ searchQuery: initialSearch }: { searchQuery?: string } = {}) {
   const [experts, setExperts] = useState<TransformedExpert[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(initialSearch || '');
   
   // Filter states
   const [selectedFilters, setSelectedFilters] = useState<FilterState>({
@@ -152,12 +152,13 @@ export default function Experts() {
       if (selectedFilters.language) apiFilters.language = selectedFilters.language;
       if (selectedFilters.companyType) apiFilters.companyType = selectedFilters.companyType;
       
-      console.log("Fetching experts with filters:", apiFilters);
-      
+      console.log("Fetching experts with filters:", apiFilters, 'search:', searchQuery);
+
       const response = await getExperts({
         filters: apiFilters,
         page: currentPage,
-        perPage: 9
+        perPage: 9,
+        search: searchQuery && searchQuery.length >= 3 ? searchQuery : undefined,
       });
       
       console.log("Full API response:", response);
@@ -214,10 +215,29 @@ export default function Experts() {
     }
   };
 
-  // Fetch experts on component mount and when filters/page change
+  // Listen for search events from HeroSection
+  useEffect(() => {
+    const handler = (e: any) => {
+      const q = e?.detail ?? '';
+      setSearchQuery(q || '');
+      setCurrentPage(1);
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('allExpertsSearch', handler as EventListener);
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('allExpertsSearch', handler as EventListener);
+      }
+    };
+  }, []);
+
+  // Fetch experts on component mount and when filters/page/search change
   useEffect(() => {
     fetchExperts();
-  }, [currentPage, selectedFilters]);
+  }, [currentPage, selectedFilters, searchQuery]);
 
   // Clear all filters
   const clearAllFilters = () => {
@@ -489,10 +509,10 @@ export default function Experts() {
                         )}
 
                         {/* Company Name */}
-                        <h3 className="heading-3 font-medium mb-4 text-[#F4F7FF]">{expert.name}</h3>
+                        <h3 className="heading-3 font-medium mb-4 text-[#F4F7FF] ">{expert.name}</h3>
 
                         {/* Description */}
-                        <p className="heading-6 font-normal text-[#FFFFFF99] max-w-[246px]">
+                        <p className="heading-6 font-normal text-[#FFFFFF99] max-w-[246px] pb-3 border-b border-[#232743]">
                           {expert.description}
                         </p>
 

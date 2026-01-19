@@ -1,6 +1,6 @@
 import { StepComponent } from "../types";
 
-export const Step16: StepComponent = ({ formData, updateFormData, errors }) => {
+export const Step16: StepComponent = ({ formData, updateFormData, errors , onEnter }) => {
   const options = [
     { id: "<1,000", label: "<1,000" },
     { id: "1,000 - 5,000 ", label: "1,000 - 5,000 " },
@@ -30,6 +30,7 @@ export const Step16: StepComponent = ({ formData, updateFormData, errors }) => {
                 type="checkbox"
                 checked={formData.average_project_size === option.id}
                 onChange={() => handleCheckboxChange(option.id)}
+                onKeyDown={onEnter}
                 className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
               />
               {formData.average_project_size === option.id && (

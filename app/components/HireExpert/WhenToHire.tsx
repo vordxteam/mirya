@@ -22,7 +22,7 @@ export default function WhenToHire() {
             </div>
             <div>
                 { hiringPoints.map((point, index) => (
-                    <div key={index} className="flex items-center gap-3 mb-3">
+                    <div key={index} className="flex items-center gap-3 mb-3 py-3">
                        <Image src="/images/check-circle.png" width={24  } height={24  } alt="check" />
                         <p className="heading-6 font-normal leading-5">{point}</p>
                     </div>
@@ -43,13 +43,13 @@ export default function WhenToHire() {
             }}
             className="w-full py-6 b container mx-auto px-3 sm:px-8 flex gap-3 sm:gap-0 flex-col lg:flex-row overflow-hidden items-center justify-between relative mt-6 "
           >
-            <div className="absolute top-0 left-50 z-0">
-              <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[94px] opacity-70"></div>
+            <div className="absolute top-6 left-45 z-0">
+              <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[71px]"></div>
             </div>
 
             <div className="hidden sm:block absolute right-16 bottom-0">
               <div className="absolute -bottom-5 z-0 -right-4">
-              <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[94px] "></div>
+              <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[71px] "></div>
             </div>
             </div>
 

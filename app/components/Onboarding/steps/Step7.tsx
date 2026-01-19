@@ -1,6 +1,6 @@
 import { StepComponent } from "../types";
 
-export const Step7: StepComponent = ({ formData, updateFormData, errors }) => (
+export const Step7: StepComponent = ({ formData, updateFormData, errors ,onEnter }) => (
   <div className="text-white">
     <h2 className="text-2xl heading-3 text-[#FFFFFF] font-normal mb-6">
       7. What is your role?
@@ -9,6 +9,7 @@ export const Step7: StepComponent = ({ formData, updateFormData, errors }) => (
       type="text"
       placeholder="Your Role"
       value={formData.role || ""}
+      onKeyDown={onEnter}
       onChange={(e) => updateFormData("role", e.target.value)}
       className={`w-full px-4 py-3 bg-transparent border ${
         errors?.role ? "border-red-500" : "border-gray-700"

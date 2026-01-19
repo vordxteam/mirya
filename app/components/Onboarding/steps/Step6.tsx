@@ -1,6 +1,6 @@
 import { StepComponent } from "../types";
 
-export const Step6: StepComponent = ({ formData, updateFormData, errors }) => (
+export const Step6: StepComponent = ({ formData, updateFormData, errors , onEnter }) => (
   <div className="text-white">
     <h2 className="text-2xl heading-3 text-[#FFFFFF] font-normal mb-6">
       6. What's the company website?
@@ -9,6 +9,7 @@ export const Step6: StepComponent = ({ formData, updateFormData, errors }) => (
       type="text"
       placeholder="Company Website"
       value={formData.company_website || ""}
+      onKeyDown={onEnter}
       onChange={(e) => updateFormData("company_website", e.target.value)}
       className={`w-full px-4 py-3 bg-transparent border ${
         errors?.company_website ? "border-red-500" : "border-gray-700"

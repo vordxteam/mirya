@@ -1,3 +1,4 @@
+import AddOnServices from "@/app/components/HireExpert/AddOnServices";
 import BecomeExpert from "@/app/components/HireExpert/BecomeExpert";
 import HeroSection from "@/app/components/HireExpert/HeroSection";
 import HowToUse from "@/app/components/HireExpert/HowToUse";
@@ -15,6 +16,7 @@ export default function HireExpertPage(){
             <WhenToHire/>
             <HowToUse/>
             <Services/>
+            <AddOnServices/>
         </div>
     )
 }

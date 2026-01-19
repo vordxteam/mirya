@@ -7,8 +7,32 @@ import Link from "next/link";
 // import Cards from "./Cards";
 import { useTranslation } from "react-i18next";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  initialSearch?: string;
+}
+
+const HeroSection = ({ initialSearch = '' }: HeroSectionProps) => {
   const { t } = useTranslation("job");
+  const [query, setQuery] = useState(initialSearch || '');
+
+  useEffect(() => {
+    setQuery(initialSearch || '');
+  }, [initialSearch]);
+
+  // Debounce and emit a custom event with the trimmed query.
+  // Event detail will be '' (when cleared) or the trimmed string when >= 3 chars.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const trimmed = (query || '').trim();
+      if (trimmed.length === 0 || trimmed.length >= 3) {
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new CustomEvent('allExpertsSearch', { detail: trimmed }));
+        }
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [query]);
 
   return (
     <div className="space-y-12 px-3 sm:px-20 max-w-[1440px] mx-auto">
@@ -40,11 +64,13 @@ const HeroSection = () => {
       <div className="mt-6 sm:w-[371px] rounded-full p-[1px] bg-gradient-to-r from-[#38385D] via-[#686DDD] to-[#38385D] relative">
   <input
     type="text"
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
     placeholder="Search by Name or Service"
     className="
       w-full
       rounded-full
-      bg-[#020817]
+      bg-[#00031C]
       py-3
       pr-3
       pl-12

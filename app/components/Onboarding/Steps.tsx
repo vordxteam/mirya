@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { expertsAPI } from "@/app/api/onboarding";
 
@@ -179,7 +179,7 @@ const submitExpertCreation = async () => {
     // Handle success
     if (data.status === "success" || data.message) {
       localStorage.setItem("expert_email", data?.email || payload.email);
-      toast.success(data.message || "Account created successfully!");
+      // toast.success(data.message || "Account created successfully!");
       return true;
     }
 
@@ -390,7 +390,7 @@ const submitExpertCreation = async () => {
 
       // For the last step, show completion message
       if (currentStepIndex === allSteps.length - 1) {
-        toast.success("Onboarding completed successfully!");
+        // toast.success("Onboarding completed successfully!");
         router.push('all-experts')
 
 
@@ -496,6 +496,12 @@ const submitExpertCreation = async () => {
     }
   };
 
+  const handleEnter = (e:React.KeyboardEvent)=>{
+      if (e.key === 'Enter') {
+        handleContinue()
+      }
+  }
+
   const handleSkip = () => {
     if (!isSubmitting && currentStepIndex < allSteps.length - 1) {
       setCurrentStepIndex((prev) => prev + 1);
@@ -522,6 +528,7 @@ const submitExpertCreation = async () => {
         showSkipButton={showSkipButton}
         formData={formData}
         updateFormData={updateFormData}
+        onEnter = {handleEnter}
         errors={errors}
       />
     </OnboardingLayout>
