@@ -41,7 +41,7 @@ const HeroSection = ({ initialSearch = '' }: HeroSectionProps) => {
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">
-          <Image src="/images/blur5.png" width={16} height={16} alt="line" />
+          <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <Link href="/hire-expert" className="flex gap-1 items-center z-10">
             <Image
               src="/images/left-blue.svg"
@@ -53,7 +53,7 @@ const HeroSection = ({ initialSearch = '' }: HeroSectionProps) => {
               Go Back
             </h1>
           </Link>
-          <Image src="/images/blur5.png" width={16} height={16} alt="line" />
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="heading-1 font-medium  w-full text-center pb-3 sm:pb-6">
         Hire an MIRYA Expert

@@ -98,7 +98,7 @@ const HeroSection = () => {
           {t("hero.description")};
         </p>
 
-        <div className="flex items-center justify-center gap-3 pb-[77px]">
+        {/* <div className="flex items-center justify-center gap-3 pb-[77px]">
           <GradientButton
             label={t("hero.buttons.getStarted")}
             href="/onboarding"
@@ -117,6 +117,33 @@ const HeroSection = () => {
               className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
             >
               {t("hero.buttons.contactUs")}{" "}
+            </Link>
+          </div>
+        </div> */}
+        {/* Added flex-wrap and changed gap for better mobile spacing */}
+        <div className="flex flex-wrap items-center justify-center gap-4 pb-[77px] px-4">
+          <div className="w-full sm:w-auto flex justify-center">
+            <GradientButton
+              label={t("hero.buttons.getStarted")}
+              href="/onboarding"
+              bgColor="#0274FE"
+              textColor="#fff"
+            />
+          </div>
+
+          <div
+            className="rounded-full p-[1.5px]"
+            style={{
+              background:
+                "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+            }}
+          >
+            <Link
+              href="/all-experts"
+              /* Added w-full and text-center for mobile */
+              className="block sm:inline-block text-center text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
+            >
+              {t("hero.buttons.contactUs")}
             </Link>
           </div>
         </div>
