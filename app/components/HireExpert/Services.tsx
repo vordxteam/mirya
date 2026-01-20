@@ -54,57 +54,57 @@ export default function Services() {
 
   return (
     <>
-    <div className="px-3 sm:px-6 lg:px-20 max-w-[1440px] mx-auto relative z-10 bg-[#00031C] overflow-hidden pb-15">
-          <div className="flex justify-center relative pointer-events-none">
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
+      <div className="px-3 sm:px-6 lg:px-20 max-w-[1440px] mx-auto relative z-10 bg-[#00031C] overflow-hidden pb-15">
+        <div className="flex justify-center relative pointer-events-none">
+          <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
+        </div>
+        {/* Header Section */}
+        <div className="flex flex-col items-center justify-center px-2 md:px-10 relative mb-12 mt-15">
+          <div className="absolute -top-10 -z-10 pointer-events-none">
+            <div className="rounded-full opacity-60 bg-[#4F60FA] blur-[90px] w-[181px] h-[94px]"></div>
+          </div>
+
+          <div className="pb-3 flex items-center gap-5">
+            <Image src="/images/label2.svg" width={78} height={16} alt="line" />
+            <h2 className="text-[#959EFE] heading-5">Services</h2>
+            <Image src="/images/label.svg" width={78} height={16} alt="line" />
+          </div>
+
+          <h1 className="heading-1 font-medium text-white text-center pb-3 sm:pb-6 max-w-[777px]">
+            Professional services for high impact automation
+          </h1>
+
+          <p className="text-[#CAC9D1] heading-6 font-normal  text-center max-w-[794px] mb-8">
+            Whether you're launching your first workflow or scaling automation
+            across your organization, MIRYA’s specialists provide the expertise
+            and support to guide you every step of the way.{" "}
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="space-y-6">
+          {/* First Row - 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.slice(0, 3).map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
+
+          {/* Second Row - 2 cards taking full width */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {services.slice(3, 5).map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
+
+          {/* Third Row - 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.slice(5, 8).map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
+        </div>
       </div>
-      {/* Header Section */}
-      <div className="flex flex-col items-center justify-center px-2 md:px-10 relative mb-12 mt-15">
-        <div className="absolute -top-10 -z-10 pointer-events-none">
-          <div className="rounded-full opacity-60 bg-[#4F60FA] blur-[90px] w-[181px] h-[94px]"></div>
-        </div>
-
-        <div className="pb-3 flex items-center gap-5">
-          <Image src="/images/label2.svg" width={78} height={16} alt="line" />
-          <h2 className="text-[#959EFE] heading-5">Services</h2>
-          <Image src="/images/label.svg" width={78} height={16} alt="line" />
-        </div>
-
-        <h1 className="heading-1 font-medium text-white text-center pb-3 sm:pb-6 max-w-[777px]">
-          Professional services for high impact automation
-        </h1>
-
-        <p className="text-[#CAC9D1] heading-6 font-normal  text-center max-w-[794px] mb-8">
-          Whether you're launching your first workflow or scaling automation
-          across your organization, MIRYA’s specialists provide the expertise
-          and support to guide you every step of the way.{" "}
-        </p>
-      </div>
-
-      {/* Services Grid */}
-      <div className="space-y-6">
-        {/* First Row - 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.slice(0, 3).map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
-        </div>
-
-        {/* Second Row - 2 cards taking full width */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {services.slice(3, 5).map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
-        </div>
-
-        {/* Third Row - 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.slice(5, 8).map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
-        </div>
-      </div>
-    </div>
     </>
   );
 }

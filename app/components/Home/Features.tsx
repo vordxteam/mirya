@@ -679,14 +679,38 @@ export default function Features() {
         </div>
       </motion.div>
 
+      <div className="flex items-center justify-center w-full mt-[64px]">
+        <GradientButton
+          label="Explore More Features"
+          href="/#"
+          bgColor="#0274FE"
+        />
+      </div>
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.1 }}
         variants={fadeInVariants}
-        className="flex justify-center items-center mt-[60px] mb-[40px]"
+        className="flex justify-center items-center mt-[60px] mb-[40px] px-4"
       >
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
+        <div
+          className="w-[50%] relative"
+          style={{
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent 0%, #8EA0E0 50%, transparent 100%)",
+            boxShadow: "0px 0px 4px 0px rgba(142, 160, 224, 0.4)",
+          }}
+        >
+          <div
+            className="absolute inset-0 opacity-50"
+            style={{
+              background:
+                "linear-gradient(90deg, #00031C 0%, #FFFFFF 50%, #00031C 100%)",
+              height: "1px",
+            }}
+          />
+        </div>
       </motion.div>
 
       <div className="max-w-[1440px] m-auto">
@@ -714,8 +738,8 @@ export default function Features() {
 
             <div className="hidden sm:block absolute right-16 bottom-0">
               <div className="absolute bottom-0 z-0 -right-4">
-              <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[94px] "></div>
-            </div>
+                <div className="rounded-[68.75px] bg-[#5935E999] blur-[50px] w-[181px] h-[94px] "></div>
+              </div>
             </div>
 
             <div className="heading-5 font-regular text-[#F4F7FF] relative z-10 max-w-[653px] text-left">

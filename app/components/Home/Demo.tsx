@@ -551,9 +551,16 @@ export default function Demo(): React.ReactElement {
 
   return (
     <>
-      <div className="flex justify-center">
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.5px]"></div>
-      </div>
+     <div className="flex justify-center">
+  <div 
+    className="w-[50%] opacity-80"
+    style={{
+      height: "1px",
+      background: "linear-gradient(90deg, rgba(0,3,28,0) 0%, #8EA0E0 50%, rgba(0,3,28,0) 100%)",
+      boxShadow: "0px 0px 3px 0px rgba(142, 160, 224, 0.3)",
+    }}
+  ></div>
+</div>
       <div className="py-15  flex flex-col items-center relative overflow-hidden">
         {/* Background gradient image */}
         <div

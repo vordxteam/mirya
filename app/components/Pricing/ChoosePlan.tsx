@@ -11,15 +11,21 @@ const ChoosePlan = () => {
     <div className="max-w-[1440px] m-auto px-2 md:px-20">
       {/* SECTION 1 */}
       <div
-        style={{
-          background:
-            "linear-gradient(180deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
-        }}
+       style={{
+    /* First background: Your solid inner card color (adjust #00031c if needed) */
+    /* Second background: Your specific border gradient */
+    backgroundImage: `
+      linear-gradient(#00031c, #00031c), 
+      linear-gradient(180deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)
+    `,
+    backgroundOrigin: "border-box",
+    backgroundClip: "padding-box, border-box",
+    /* 1.5px ensures the border stays visible on high-DPI XL screens */
+    border: "1.5px solid transparent", 
+  }}
         className="p-px rounded-2xl relative overflow-hidden"
       >
-        {/* Main Content Container - We put everything inside here so the bg-color doesn't hide the lights */}
         <div className="relative bg-[#00031C] px-8 py-6 flex flex-col lg:flex-row gap-5 lg:items-center justify-between rounded-2xl overflow-hidden">
-          {/* Background Lights - Moved INSIDE the dark blue div */}
           <div className="absolute top-7 left-40 pointer-events-none z-0">
             <div className="rounded-[68.75px] bg-[#5935E9] blur-[50px] w-[181px] h-[71px]"></div>
           </div>
@@ -89,10 +95,18 @@ const ChoosePlan = () => {
 
               <div
                 className="rounded-full p-px w-full"
-                style={{
-                  background:
-                    "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
-                }}
+               style={{
+    /* First gradient: The button's inner background color */
+    /* Second gradient: Your specific border gradient */
+    backgroundImage: `
+      linear-gradient(#00031C, #00031C), 
+      linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)
+    `,
+    backgroundOrigin: "border-box",
+    backgroundClip: "padding-box, border-box",
+    /* 1.5px is the secret for XL screens; it stays sharp but never disappears */
+    border: "1.5px solid transparent",
+  }}
               >
                 <Link
                   href="/start-up"

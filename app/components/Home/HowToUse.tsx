@@ -107,7 +107,7 @@ const HowToUse = () => {
           {t("howToUse.mainTitle")}{" "}
         </h1>
 
-        <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] text-center max-w-[721px] pb-8">
+        <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] text-center max-w-[811px] pb-8">
           {t("howToUse.description")}
         </p>
 

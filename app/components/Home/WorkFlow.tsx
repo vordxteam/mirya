@@ -41,8 +41,7 @@ const WorkFlow = () => {
 
           <div className="w-fit mx-auto lg:mx-0 relative z-20">
             <GradientBlackButton
-                            label={t("workflow.buttonLabel")}
-
+              label={t("workflow.buttonLabel")}
               href="/contact"
               bgColor="#00031C"
             />

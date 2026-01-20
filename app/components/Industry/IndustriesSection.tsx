@@ -85,13 +85,19 @@ const IndustriesSection = () => {
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {/* Map through the translated list */}
           {Array.isArray(industriesList) && industriesList.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                background: "linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)",
-              }}
-              className="rounded-3xl p-px relative overflow-hidden"
-            >
+           <div
+      key={index}
+      className="rounded-[24px] relative overflow-hidden h-full"
+      style={{
+        backgroundImage: `
+          linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%), 
+          linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)
+        `,
+        backgroundOrigin: "border-box",
+        backgroundClip: "padding-box, border-box",
+        border: "1.5px solid transparent", 
+      }}
+    >
               <div
                 className="p-6 rounded-3xl flex items-center justify-center text-center flex-col relative h-full"
                 style={{

@@ -1,12 +1,12 @@
-
-
 import GradientBlackButton from "@/app/ui/GradientBlackButton";
 import Image from "next/image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 const Aiassistant = () => {
   const { t } = useTranslation("home");
-  const features = t("aiAssistantSection.features", { returnObjects: true }) as Array<{
+  const features = t("aiAssistantSection.features", {
+    returnObjects: true,
+  }) as Array<{
     title: string;
     description: string;
   }>;
@@ -15,7 +15,7 @@ const Aiassistant = () => {
     <div className="bg-[#00031C] relative overflow-hidden isolate">
       <div
         className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-[84px]
-        items-start max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20
+        items-end max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20
         py-10 sm:py-[60px] relative z-20"
       >
         {/* LEFT TEXT CONTENT - Added relative z-20 to pull it above the box image */}
@@ -30,7 +30,8 @@ const Aiassistant = () => {
                 alt="line"
               />
               <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal">
-{t("aiAssistantSection.badge")}              </h1>
+                {t("aiAssistantSection.badge")}{" "}
+              </h1>
               <Image
                 src="/images/label.svg"
                 width={78}
@@ -41,17 +42,19 @@ const Aiassistant = () => {
 
             {/* Main Heading */}
             <h1 className="heading-1 font-medium tracking-[-1.44px] pb-3 sm:pb-6 leading-tight">
-{t("aiAssistantSection.mainTitle")}            </h1>
+              {t("aiAssistantSection.mainTitle")}{" "}
+            </h1>
 
             {/* Subheading */}
             <p className="text-[#CAC9D1] text-[14px] sm:text-[16px] font-normal leading-6 pb-4 sm:pb-6 mx-auto lg:mx-0">
-             {t("aiAssistantSection.description")}
+              {t("aiAssistantSection.description")}
             </p>
 
             {/* Button */}
             <div className="w-fit mx-auto lg:mx-0 ">
               <GradientBlackButton
-label={t("aiAssistantSection.buttonLabel")}                href="/contact"
+                label={t("aiAssistantSection.buttonLabel")}
+                href="/contact"
                 bgColor="#00031C"
               />
             </div>
@@ -78,7 +81,8 @@ label={t("aiAssistantSection.buttonLabel")}                href="/contact"
 
                   <div className="space-y-1">
                     <h1 className="text-[14px] sm:text-[16px] font-medium leading-5">
-{item.title}                    </h1>
+                      {item.title}{" "}
+                    </h1>
                     <p className="text-[#FFFFFFCC] text-[11px] sm:text-[12px] font-light leading-4">
                       {item.description}
                     </p>
@@ -88,9 +92,8 @@ label={t("aiAssistantSection.buttonLabel")}                href="/contact"
             ))}
           </div>
         </div>
-
         {/* RIGHT IMAGE */}
-        <div className="w-full lg:max-w-[464px] flex justify-center lg:justify-end relative z-20">
+        <div className="w-full lg:max-w-[464px] flex justify-center lg:justify-end relative z-20 pb-[120x] ">
           <Image
             src="/images/right-img.png"
             width={464}
@@ -101,7 +104,6 @@ label={t("aiAssistantSection.buttonLabel")}                href="/contact"
           />
         </div>
 
-        {/* BACKGROUND GLOW - Fixed with -z-10 and pointer-events-none */}
         <div className="absolute top-20 right-10 sm:right-20 -z-10 opacity-60 pointer-events-none">
           <div className="rounded-full bg-[#1D2759] blur-[80px] w-[380px] h-[450px] sm:max-w-[530px] sm:h-[653px]"></div>
         </div>

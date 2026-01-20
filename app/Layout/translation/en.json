@@ -18,7 +18,7 @@
     "privacy": "Privacy Policy",
     "security": "Security",
     "imprint": "Imprint",
-        "backToTop": "Back to Top",
+    "backToTop": "Back to Top",
 
     "sections": {
       "pages": {
@@ -43,11 +43,16 @@
       "contact": {
         "title": "CONTACT",
         "links": [
-          { "name": "info@mirya.ai", "href": "mailto:info@mirya.ai" },
-          { "name": "+49 (711) 12120-802", "href": "tel:+49 (711) 12120-802" },
+          {
+            "name": "info@mirya.ai",
+            "href": "mailto:info@mirya.ai",
+            "img": "/images/mail.svg"
+          },
+          { "name": "+49 (711) 12120-802", "href": "tel:+49 (711) 12120-802", "img": "/images/phone.svg" },
           {
             "name": "Berlin, Germany",
-            "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5"
+            "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5",
+             "img": "/images/location.svg"
           }
         ]
       }
