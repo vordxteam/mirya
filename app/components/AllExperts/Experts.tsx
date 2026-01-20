@@ -327,14 +327,14 @@ export default function Experts({ searchQuery: initialSearch }: { searchQuery?: 
   }, [loading]);
 
   return (
-    <div className=" text-white pb-4 md:px-20 relative z-0 pb-[56px]">
-      <div className="max-w-7xl mx-auto">
+    <div className=" text-white pb-4 md:px-20 px-3 relative z-0 pb-[56px]">
+      <div className="max-w-7xl mx-auto ">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-15">
           {/* Filters Sidebar */}
           <div className="w-full lg:w-64 flex-shrink-0 space-y-5">
             {/* Country/Territory */}
             <div>
-              <label className="heading-5 mb-3 font-normal block">Country/Territory</label>
+              <label className="heading-5 mb-3 font-normal block pt-8 sm:pt-0">Country/Territory</label>
               <div className='rounded-lg border border-[#FFFFFF33] rounded px-3 py-2 text-sm text-gray-400'>
                 <select 
                   className="w-full focus:outline-none cursor-pointer bg-[#00031c]"
@@ -509,7 +509,7 @@ export default function Experts({ searchQuery: initialSearch }: { searchQuery?: 
                         )}
 
                         {/* Company Name */}
-                        <h3 className="heading-3 font-medium mb-4 text-[#F4F7FF] ">{expert.name}</h3>
+                        <h3 className="text-[24px] leading-[30px] font-medium mb-4 text-[#F4F7FF] ">{expert.name}</h3>
 
                         {/* Description */}
                         <p className="heading-6 font-normal text-[#FFFFFF99] max-w-[246px] pb-3 border-b border-[#232743]">

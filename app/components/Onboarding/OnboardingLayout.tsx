@@ -15,10 +15,10 @@ export const OnboardingLayout = ({
   showSkipButton = false,
 }: OnboardingLayoutProps) => {
   return (
-    <div className="h-[86vh] bg-[#020817] flex flex-col bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
+    <div className="h-[122vh] bg-[#020817] flex flex-col bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
       {/* Main content area */}
       <div className="flex-1 flex items-center justify-center py-8">
-        <div className="relative z-10 w-full max-w-2xl px-6">
+        <div className="relative z-10 w-full max-w-[798px] px-6">
           <div className="flex gap-22"></div>
           {/* Progress bar */}
           {showProgress && (

@@ -65,9 +65,9 @@ export default function AddOnServices() {
         </div>
 
         <div className="pb-3 flex items-center gap-5">
-          <Image src="/images/blur5.png" alt="Blur" height={16} width={16} />
+          <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h2 className="text-[#959EFE] heading-5">Add on Services</h2>
-          <Image src="/images/blur5.png" alt="Blur" height={16} width={16} />
+          <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
 
         <h1 className="heading-1 font-medium text-white text-center pb-3 sm:pb-6 max-w-[777px]">

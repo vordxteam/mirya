@@ -23,7 +23,7 @@ export const Step11: React.FC<StepProps> = ({ formData, updateFormData, errors }
         {options.map((option) => (
           <label
             key={option.id}
-            className="flex items-center w-full px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
+            className="flex items-center max-w-[381px] w-full px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
           >
             <div className="relative flex items-center justify-center w-5 h-5 mr-4">
               <input
@@ -81,7 +81,7 @@ export const Step12: React.FC<StepProps> = ({ formData, updateFormData, errors }
         {options.map((option) => (
           <label
             key={option.id}
-            className="flex items-center w-full px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
+            className="flex items-center w-full max-w-[381px] px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
           >
             <div className="relative flex items-center justify-center w-5 h-5 mr-4">
               <input
@@ -144,7 +144,7 @@ export const Step13: React.FC<StepProps> = ({ formData, updateFormData, errors }
         {options.map((option) => (
           <label
             key={option.id}
-            className="flex items-center w-full px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
+            className="flex items-center w-full max-w-[381px] px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
           >
             <div className="relative flex items-center justify-center w-5 h-5 mr-4">
               <input
@@ -243,7 +243,7 @@ export const Step16: React.FC<StepProps> = ({ formData, updateFormData, errors }
         {options.map((option) => (
           <label
             key={option.id}
-            className="flex items-center w-full px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
+            className="flex items-center w-full max-w-[381px] px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
           >
             <div className="relative flex items-center justify-center w-5 h-5 mr-4">
               <input
@@ -300,7 +300,7 @@ export const Step17: React.FC<StepProps> = ({ formData, updateFormData, errors }
         {options.map((option) => (
           <label
             key={option.id}
-            className="flex items-center w-full px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
+            className="flex items-center w-full max-w-[381px] px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
           >
             <div className="relative flex items-center justify-center w-5 h-5 mr-4">
               <input

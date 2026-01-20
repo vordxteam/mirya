@@ -55,7 +55,11 @@ interface StarRatingProps {
   onRate?: ((rating: number) => void) | null;
 }
 
-const StarRating = ({ rating, interactive = false, onRate = null }: StarRatingProps) => {
+const StarRating = ({
+  rating,
+  interactive = false,
+  onRate = null,
+}: StarRatingProps) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
 
@@ -64,8 +68,6 @@ const StarRating = ({ rating, interactive = false, onRate = null }: StarRatingPr
       onRate(index + 1);
     }
   };
-
-  
 
   return (
     <div className="flex items-center">
@@ -118,7 +120,9 @@ export default function Details() {
   const id = params?.id as string;
 
   const [companyData, setCompanyData] = useState(defaultCompanyData);
-  const [reviews, setReviews] = useState<ReviewData[]>(defaultCompanyData.reviews);
+  const [reviews, setReviews] = useState<ReviewData[]>(
+    defaultCompanyData.reviews,
+  );
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [newReview, setNewReview] = useState<NewReviewState>({
     name: "",
@@ -133,88 +137,90 @@ export default function Details() {
   useEffect(() => {
     const fetchExpertDetails = async () => {
       if (!id) return;
-      
+
       try {
         setLoading(true);
         const response: any = await getExpertDetails(id);
         console.log("Expert details response:", response);
-        
+
         if (response && (response.success || response.status)) {
           const expertData = response.data?.expert;
 
-        const apiReviews = expertData.expert_rating || [];
-const formattedReviews: ReviewData[] = apiReviews.map((review: any) => ({
-  id: review.id,
-  name: review.name || "Anonymous",
-  role: review.occupation || "User",
-  avatar: "/images/review.jpg",
-  rating: parseInt(review.rating) || 0,
-  date: new Date(review.created_at).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  }),
-  comment: review.comment || "",
-}));
+          const apiReviews = expertData.expert_rating || [];
+          const formattedReviews: ReviewData[] = apiReviews.map(
+            (review: any) => ({
+              id: review.id,
+              name: review.name || "Anonymous",
+              role: review.occupation || "User",
+              avatar: "/images/review.jpg",
+              rating: parseInt(review.rating) || 0,
+              date: new Date(review.created_at).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              }),
+              comment: review.comment || "",
+            }),
+          );
 
-// Set reviews
-setReviews(formattedReviews);
+          // Set reviews
+          setReviews(formattedReviews);
 
-          
           if (expertData) {
             // Parse metadata from expert_records
-          const parseMetadata = (metadata: string): string => {
-  if (!metadata) return '';
-  try {
-    let parsed = metadata.trim();
-    
-    // Remove outer quotes only if the ENTIRE string is wrapped in quotes
-    if (
-      (parsed.startsWith('"') && parsed.endsWith('"')) ||
-      (parsed.startsWith("'") && parsed.endsWith("'"))
-    ) {
-      parsed = parsed.slice(1, -1);
-    }
-    
-    // Remove escaped quotes (like \")
-    parsed = parsed.replace(/\\"/g, '').replace(/\\'/g, '');
-    
-    // Handle JSON arrays
-    if (parsed.startsWith('[') && parsed.endsWith(']')) {
-      try {
-        const jsonParsed = JSON.parse(parsed);
-        if (Array.isArray(jsonParsed)) {
-          // Clean each item in the array
-          return jsonParsed.map(item => 
-            String(item).replace(/^["']+|["']+$/g, '')
-          ).join(', ');
-        }
-        return String(jsonParsed).replace(/^["']+|["']+$/g, '');
-      } catch {
-        // If JSON parsing fails, clean the brackets and quotes
-        parsed = parsed.replace(/^\[|\]$/g, '');
-        parsed = parsed.replace(/["']/g, '');
-      }
-    }
-    
-    // Handle escaped backslashes
-    parsed = parsed.replace(/\\\\/g, '');
-    
-    // Handle escaped unicode like \u003C
-    parsed = parsed.replace(/\\u([\dA-F]{4})/gi, (match, grp) => 
-      String.fromCharCode(parseInt(grp, 16))
-    );
-    
-    // Remove any remaining quotes that might be inside the string
-    parsed = parsed.replace(/"([^"]*)"/g, '$1'); // Remove "text" quotes
-    parsed = parsed.replace(/'([^']*)'/g, '$1'); // Remove 'text' quotes
-    
-    return parsed.trim();
-  } catch {
-    return metadata || '';
-  }
-};
+            const parseMetadata = (metadata: string): string => {
+              if (!metadata) return "";
+              try {
+                let parsed = metadata.trim();
 
+                // Remove outer quotes only if the ENTIRE string is wrapped in quotes
+                if (
+                  (parsed.startsWith('"') && parsed.endsWith('"')) ||
+                  (parsed.startsWith("'") && parsed.endsWith("'"))
+                ) {
+                  parsed = parsed.slice(1, -1);
+                }
+
+                // Remove escaped quotes (like \")
+                parsed = parsed.replace(/\\"/g, "").replace(/\\'/g, "");
+
+                // Handle JSON arrays
+                if (parsed.startsWith("[") && parsed.endsWith("]")) {
+                  try {
+                    const jsonParsed = JSON.parse(parsed);
+                    if (Array.isArray(jsonParsed)) {
+                      // Clean each item in the array
+                      return jsonParsed
+                        .map((item) =>
+                          String(item).replace(/^["']+|["']+$/g, ""),
+                        )
+                        .join(", ");
+                    }
+                    return String(jsonParsed).replace(/^["']+|["']+$/g, "");
+                  } catch {
+                    // If JSON parsing fails, clean the brackets and quotes
+                    parsed = parsed.replace(/^\[|\]$/g, "");
+                    parsed = parsed.replace(/["']/g, "");
+                  }
+                }
+
+                // Handle escaped backslashes
+                parsed = parsed.replace(/\\\\/g, "");
+
+                // Handle escaped unicode like \u003C
+                parsed = parsed.replace(/\\u([\dA-F]{4})/gi, (match, grp) =>
+                  String.fromCharCode(parseInt(grp, 16)),
+                );
+
+                // Remove any remaining quotes that might be inside the string
+                parsed = parsed.replace(/"([^"]*)"/g, "$1"); // Remove "text" quotes
+                parsed = parsed.replace(/'([^']*)'/g, "$1"); // Remove 'text' quotes
+
+                return parsed.trim();
+              } catch {
+                return metadata || "";
+              }
+            };
 
             // Extract data from expert_records
             const records = expertData.expert_records || [];
@@ -226,9 +232,9 @@ setReviews(formattedReviews);
             });
 
             const socialChannel = recordMap["social_channel_id"];
-const resources = socialChannel ? [
-  { name: "YouTube", link: socialChannel }
-] : [];
+            const resources = socialChannel
+              ? [{ name: "YouTube", link: socialChannel }]
+              : [];
 
             // Build location from city and country
             const city = recordMap["city"] || "";
@@ -236,40 +242,47 @@ const resources = socialChannel ? [
             const location = [city, country].filter(Boolean).join(", ");
 
             // Build about from company_description
-            const about = recordMap["company_description"] ? [recordMap["company_description"]] : [];
+            const about = recordMap["company_description"]
+              ? [recordMap["company_description"]]
+              : [];
 
             // Build services list
             const servicesStr = recordMap["services_provided"];
             const services = servicesStr ? servicesStr.split(", ") : [];
 
             // Update company data with extracted API data
-          const projectSizeStr = recordMap["average_project_size"];
-const average_project_size = projectSizeStr ? [projectSizeStr] : [];
+            const projectSizeStr = recordMap["average_project_size"];
+            const average_project_size = projectSizeStr ? [projectSizeStr] : [];
 
-// Then update setCompanyData to include average_project_size:
-setCompanyData((prev) => ({
-  ...prev,
-  name: recordMap["company_name"] || 
-    (expertData.first_name && expertData.last_name 
-      ? `${expertData.first_name} ${expertData.last_name}`
-      : prev.name),
-  location: location || prev.location,
-  website: recordMap["company_website"] || prev.website,
-  breadcrumb: [
-    "Hire a MIRYA Expert",
-    recordMap["company_name"] || 
-    (expertData.first_name && expertData.last_name 
-      ? `${expertData.first_name} ${expertData.last_name}`
-      : "Expert Details"),
-  ],
-  rating: expertData.expert_rating_avg_rating ? parseFloat(expertData.expert_rating_avg_rating) : prev.rating,
-  reviewCount: expertData.expert_rating_count ? parseInt(expertData.expert_rating_count) : prev.reviewCount,
-  about: about,
-  services: services,
-  average_project_size: average_project_size,
-  // ADD THIS LINE:
-  resources: resources,
-}));
+            // Then update setCompanyData to include average_project_size:
+            setCompanyData((prev) => ({
+              ...prev,
+              name:
+                recordMap["company_name"] ||
+                (expertData.first_name && expertData.last_name
+                  ? `${expertData.first_name} ${expertData.last_name}`
+                  : prev.name),
+              location: location || prev.location,
+              website: recordMap["company_website"] || prev.website,
+              breadcrumb: [
+                "Hire a MIRYA Expert",
+                recordMap["company_name"] ||
+                  (expertData.first_name && expertData.last_name
+                    ? `${expertData.first_name} ${expertData.last_name}`
+                    : "Expert Details"),
+              ],
+              rating: expertData.expert_rating_avg_rating
+                ? parseFloat(expertData.expert_rating_avg_rating)
+                : prev.rating,
+              reviewCount: expertData.expert_rating_count
+                ? parseInt(expertData.expert_rating_count)
+                : prev.reviewCount,
+              about: about,
+              services: services,
+              average_project_size: average_project_size,
+              // ADD THIS LINE:
+              resources: resources,
+            }));
           }
         }
       } catch (error) {
@@ -279,12 +292,8 @@ setCompanyData((prev) => ({
       }
     };
 
-    
-
     fetchExpertDetails();
   }, [id]);
-
-  
 
   const handleAddReview = async () => {
     // Validate form
@@ -332,8 +341,10 @@ setCompanyData((prev) => ({
         // Update company rating (average)
         const totalRating =
           reviews.reduce((sum, r) => sum + r.rating, 0) + newReview.rating;
-        const newRating = Number(((totalRating / (reviews.length + 1)).toFixed(1)));
-        
+        const newRating = Number(
+          (totalRating / (reviews.length + 1)).toFixed(1),
+        );
+
         setCompanyData((prev) => ({
           ...prev,
           rating: newRating,
@@ -360,7 +371,9 @@ setCompanyData((prev) => ({
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setNewReview({ ...newReview, [name]: value });
     if (errors[name as keyof ErrorState]) {
@@ -390,7 +403,9 @@ setCompanyData((prev) => ({
                 <X className="w-6 h-6" />
               </button>
 
-              <h3 className="heading-2 font-medium mb-8 text-[#F4F7FF]">Add a Review</h3>
+              <h3 className="heading-2 font-medium mb-8 text-[#F4F7FF]">
+                Add a Review
+              </h3>
 
               <div className="space-y-6">
                 <div>
@@ -409,7 +424,9 @@ setCompanyData((prev) => ({
                     placeholder="Enter your name"
                   />
                   {errors.name && (
-                    <p className="text-red-500 heading-7 font-normal mt-2">{errors.name}</p>
+                    <p className="text-red-500 heading-7 font-normal mt-2">
+                      {errors.name}
+                    </p>
                   )}
                 </div>
 
@@ -429,7 +446,9 @@ setCompanyData((prev) => ({
                     placeholder="e.g., Designer, Developer, Manager"
                   />
                   {errors.role && (
-                    <p className="text-red-500 heading-7 font-normal mt-2">{errors.role}</p>
+                    <p className="text-red-500 heading-7 font-normal mt-2">
+                      {errors.role}
+                    </p>
                   )}
                 </div>
 
@@ -451,7 +470,9 @@ setCompanyData((prev) => ({
                     )}
                   </div>
                   {errors.rating && (
-                    <p className="text-red-500 heading-7 font-normal mt-2">{errors.rating}</p>
+                    <p className="text-red-500 heading-7 font-normal mt-2">
+                      {errors.rating}
+                    </p>
                   )}
                 </div>
 
@@ -497,18 +518,24 @@ setCompanyData((prev) => ({
         </div>
       )}
 
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-14">
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-14">
         {/* Left Sidebar */}
         <div className="lg:col-span-1 space-y-6">
           {/* First Box - Company Info */}
           <div
-            className="rounded-3xl p-px"
+            className="rounded-3xl transition-all"
             style={{
-              background:
-                "linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)",
+              /* The first gradient is the Card BG, the second is the Border Gradient */
+              backgroundImage: `linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%), 
+                      linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)`,
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
+              border: "1px solid transparent",
             }}
           >
-            <div className="bg-[#060821] rounded-3xl p-6 space-y-6">
+            {/* We removed the p-px and the inner background color 
+      so the parent div handles the exact styling perfectly. */}
+            <div className="p-6 space-y-6">
               {/* Logo and Company Name */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
@@ -518,14 +545,25 @@ setCompanyData((prev) => ({
                     className="w-16 h-16 object-contain"
                   />
                 </div>
-                <h2 className="heading-3 font-medium mb-5 text-[#F4F7FF] ">
+                <h2 className="text-[24px] leading-[30px] font-medium mb-5 text-[#F4F7FF] ">
                   {companyData.name}
                 </h2>
                 <div className="flex items-center mb-3 gap-1">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M9.99742 1.66699C13.2191 1.66699 15.8308 4.27867 15.8308 7.50031C15.8308 8.56297 15.5474 9.55867 15.0502 10.4173C14.7187 10.9898 13.0344 13.9063 9.99742 19.167C6.96039 13.9063 5.27615 10.9898 4.94469 10.4173C4.44742 9.55867 4.16406 8.56297 4.16406 7.50031C4.16406 4.27867 6.77574 1.66699 9.99738 1.66699M9.99742 5.00031C8.61672 5.00031 7.49742 6.11961 7.49742 7.50031C7.49742 8.88102 8.61672 10.0003 9.99742 10.0003C11.3781 10.0003 12.4974 8.88105 12.4974 7.50031C12.4974 6.11961 11.3782 5.00031 9.99742 5.00031Z" fill="white" fill-opacity="0.8"/>
-</svg>
-
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M9.99742 1.66699C13.2191 1.66699 15.8308 4.27867 15.8308 7.50031C15.8308 8.56297 15.5474 9.55867 15.0502 10.4173C14.7187 10.9898 13.0344 13.9063 9.99742 19.167C6.96039 13.9063 5.27615 10.9898 4.94469 10.4173C4.44742 9.55867 4.16406 8.56297 4.16406 7.50031C4.16406 4.27867 6.77574 1.66699 9.99738 1.66699M9.99742 5.00031C8.61672 5.00031 7.49742 6.11961 7.49742 7.50031C7.49742 8.88102 8.61672 10.0003 9.99742 10.0003C11.3781 10.0003 12.4974 8.88105 12.4974 7.50031C12.4974 6.11961 11.3782 5.00031 9.99742 5.00031Z"
+                      fill="white"
+                      fillOpacity="0.8"
+                    />
+                  </svg>
                   <span className="text-[#FFFFFF99] heading-5 font-normal">
                     {companyData.location}
                   </span>
@@ -535,25 +573,36 @@ setCompanyData((prev) => ({
                   <span className="text-[#FFFFFF] heading-5 font-normal">
                     {companyData.rating}
                   </span>
-                  <span className="text-[#FFFFFF] heading-5 font-normal">
+                  <span className="text-[#FFFFFF] heading-5 font-normal ml-1">
                     ({companyData.reviewCount})
                   </span>
                 </div>
                 <Link
-  href={companyData.website?.includes('://') 
-    ? companyData.website 
-    : `https://${companyData.website}`}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-[#0274FE] hover:underline mb-6 flex items-center heading-5 font-normal gap-2"
->
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5" stroke="#0274FE" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
+                  href={
+                    companyData.website?.includes("://")
+                      ? companyData.website
+                      : `https://${companyData.website}`
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0274FE] hover:underline mb-6 flex items-center heading-5 font-normal gap-2"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5"
+                      stroke="#0274FE"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                   View Website
                 </Link>
-
                 <GradientButton
                   label="Contact"
                   bgColor="#0274FE"
@@ -567,37 +616,59 @@ setCompanyData((prev) => ({
 
           {/* Second Box - Resources, Services, Budget, Language */}
           <div
-            className="rounded-3xl p-px"
+            className="rounded-3xl transition-all"
             style={{
-              background:
-                "linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)",
+              /* First gradient: Card background color */
+              /* Second gradient: Your border color shades */
+              backgroundImage: `linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%), 
+                      linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)`,
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
+              border: "1px solid transparent",
             }}
           >
-            <div className="bg-[#060821] rounded-3xl p-6 space-y-6">
+            {/* Inner content: We removed the nested background and p-px to ensure 
+      the border is never hidden by overlapping layers */}
+            <div className="p-6 space-y-6">
               {/* Resources */}
               {companyData.resources.length > 0 && (
                 <div>
-                  <h3 className="heading-4  font-medium text-[#F4F7FF] mb-2 ">
+                  <h3 className="heading-4 font-medium text-[#F4F7FF] mb-2">
                     Resources
                   </h3>
                   <div className="space-y-1.5">
-                 {companyData.resources.map((resource, index) => (
-  <Link
-    key={index}
-    href={resource.link.includes('://') ? resource.link : `https://${resource.link}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    passHref
-    legacyBehavior
-  >
-    <a className="flex items-center heading-6 font-normal text-[#0274FE] gap-2">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5" stroke="#0274FE" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      {resource.name}
-    </a>
-  </Link>
-))}
+                    {companyData.resources.map((resource, index) => (
+                      <Link
+                        key={index}
+                        href={
+                          resource.link.includes("://")
+                            ? resource.link
+                            : `https://${resource.link}`
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        passHref
+                        legacyBehavior
+                      >
+                        <a className="flex items-center heading-6 font-normal text-[#0274FE] gap-2">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5"
+                              stroke="#0274FE"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          {resource.name}
+                        </a>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               )}
@@ -605,67 +676,76 @@ setCompanyData((prev) => ({
               {/* Services */}
               {companyData.services.length > 0 && (
                 <div>
-                  <h3 className="heading-4  font-medium text-[#F4F7FF]">
+                  <h3 className="heading-4 font-medium text-[#F4F7FF]">
                     Services
                   </h3>
-                <ul className="flex flex-wrap flex-col gap-3 text-sm text-[#FFFFFFCC]">
-  {companyData.services.map((serviceItem, index) => {
-    // Check if serviceItem contains commas
-    if (serviceItem.includes(',')) {
-      // Split by comma and create separate items for each
-      const services = serviceItem.split(',').map(s => s.trim()).filter(s => s);
-      
-      return services.map((service, serviceIndex) => (
-        <li 
-          key={`${index}-${serviceIndex}`} 
-          className="flex items-start gap-2 rounded-lg mt-2 min-w-0 w-full sm:w-auto sm:flex-1"
-        >
-          <span className="flex-shrink-0 mt-0.5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-              <path d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z" fill="white"/>
-            </svg>
-          </span>
-          <span className="break-words flex-1 overflow-hidden">{service}</span>
-        </li>
-      ));
-    } else {
-      // Single service (no commas)
-      return (
-        <li key={index} className="flex items-start gap-2 rounded-lg mt-2 min-w-0 w-full sm:w-auto sm:flex-1">
-          <span className="flex-shrink-0 mt-0.5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-              <path d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z" fill="white"/>
-            </svg>
-          </span>
-          <span className="break-words flex-1 overflow-hidden">{serviceItem}</span>
-        </li>
-      );
-    }
-  })}
-</ul>
+                  <ul className="flex flex-wrap flex-col gap-3 text-sm text-[#FFFFFFCC]">
+                    {companyData.services.map((serviceItem, index) => {
+                      const services = serviceItem.includes(",")
+                        ? serviceItem
+                            .split(",")
+                            .map((s) => s.trim())
+                            .filter((s) => s)
+                        : [serviceItem];
+
+                      return services.map((service, serviceIndex) => (
+                        <li
+                          key={`${index}-${serviceIndex}`}
+                          className="flex items-start gap-2 rounded-lg mt-2 min-w-0 w-full sm:w-auto sm:flex-1"
+                        >
+                          <span className="flex-shrink-0 mt-0.5">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                            >
+                              <path
+                                d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </span>
+                          <span className="break-words flex-1 overflow-hidden">
+                            {service}
+                          </span>
+                        </li>
+                      ));
+                    })}
+                  </ul>
                 </div>
               )}
 
               {/* Project Budget */}
               {companyData.average_project_size.length > 0 && (
                 <div>
-                  <h3 className="heading-4  font-medium text-[#F4F7FF] mb-2">
+                  <h3 className="heading-4 font-medium text-[#F4F7FF] mb-2">
                     Project Budget
                   </h3>
                   <ul className="space-y-1 text-sm text-[#FFFFFFCC]">
                     {companyData.average_project_size.map((budget, index) => (
                       <li key={index} className="flex items-start gap-1">
-                        <span className=""><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-  <path d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z" fill="white"/>
-</svg></span>
+                        <span className="mt-0.5">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="none"
+                          >
+                            <path
+                              d="M7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125Z"
+                              fill="white"
+                            />
+                          </svg>
+                        </span>
                         <span>{budget}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
-
-              {/* Language */}
             </div>
           </div>
         </div>
@@ -680,7 +760,12 @@ setCompanyData((prev) => ({
             >
               {companyData.breadcrumb[0]}
             </Link>
-            <Image src='/images/gap.svg' alt="gap" height={10} width={5}></Image>
+            <Image
+              src="/images/gap.svg"
+              alt="gap"
+              height={10}
+              width={5}
+            ></Image>
             <span className="heading-6 font-normal text-[#FFFFFF]">
               {companyData.breadcrumb[1]}
             </span>
@@ -722,11 +807,11 @@ setCompanyData((prev) => ({
                 </div>
               </div>
               <div
-                 className="rounded-full p-px"
-              style={{
-                background:
-                  "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
-              }}
+                className="rounded-full p-px"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
+                }}
               >
                 <button
                   onClick={() => setShowReviewModal(true)}
@@ -790,7 +875,9 @@ setCompanyData((prev) => ({
                                   fill-opacity="0.8"
                                 />
                               </svg>
-                              <span className="heading-5 font-normal text-[#FFFFFFCC]">{review.date}</span>
+                              <span className="heading-5 font-normal text-[#FFFFFFCC]">
+                                {review.date}
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -805,7 +892,9 @@ setCompanyData((prev) => ({
             {reviews.length === 0 && (
               <div className="text-center py-12">
                 <p className="text-gray-400 heading-5 mb-4">No reviews yet</p>
-                <p className="text-gray-500 heading-6">Be the first to share your experience</p>
+                <p className="text-gray-500 heading-6">
+                  Be the first to share your experience
+                </p>
               </div>
             )}
           </div>
