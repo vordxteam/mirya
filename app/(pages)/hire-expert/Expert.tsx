@@ -7,16 +7,16 @@ import Services from "@/app/components/HireExpert/Services";
 import WhenToHire from "@/app/components/HireExpert/WhenToHire";
 import React from "react";
 
-export default function HireExpertPage(){
-    return(
-        <div>
-            <HeroSection/>
-            <MiryaExperts/>
-            <BecomeExpert/>
-            <WhenToHire/>
-            <HowToUse/>
-            <Services/>
-            <AddOnServices/>
-        </div>
-    )
+export default function HireExpertPage() {
+  return (
+    <div>
+      <HeroSection />
+      <MiryaExperts />
+      <BecomeExpert />
+      <WhenToHire />
+      <HowToUse />
+      <Services />
+      <AddOnServices />
+    </div>
+  );
 }

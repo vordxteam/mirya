@@ -173,7 +173,7 @@ const Cards = () => {
 
   const handleLearnMore = (card: CardItem) => {
     if (card.title == 'Hire an Expert') {
-      router.push(`/all-experts`);
+      router.push(`/hire-expert`);
     } else {
       router.push(`/articles/${card.category}/${card.slug}`);
     }
