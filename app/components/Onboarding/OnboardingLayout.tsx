@@ -1,6 +1,5 @@
 "use client";
 import GradientButton from "@/app/ui/GradientButton";
-import React from "react";
 import { OnboardingLayoutProps } from "./types";
 import Link from "next/link";
 
@@ -15,7 +14,8 @@ export const OnboardingLayout = ({
   showSkipButton = false,
 }: OnboardingLayoutProps) => {
   return (
-    <div className="h-[122vh] bg-[#020817] flex flex-col bg-[url('/images/main-gradient.png')] bg-no-repeat bg-bottom bg-contain">
+    <div className="bg-[#020817] min-h-screen flex flex-col bg-[url('/images/main-gradient.png')] bg-no-repeat bg-center bg-cover ">
+
       {/* Main content area */}
       <div className="flex-1 flex items-center justify-center py-8">
         <div className="relative z-10 w-full max-w-[798px] px-6">

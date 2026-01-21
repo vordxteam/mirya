@@ -112,7 +112,7 @@ const Footer = () => {
                   <h3 className="text-[#FFFFFF80] heading-5 font-medium leading-5 mb-4">
                     {section.title}
                   </h3>
-                  <div className="flex flex-col gap-5">
+                  {/* <div className="flex flex-col gap-5">
                     {section.childs.map((link: any, idx: number) => (
                       <div key={idx} className="flex gap-2 items-center">
                         {link.img && (
@@ -132,7 +132,32 @@ const Footer = () => {
                         </Link>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
+                  <div className="flex flex-col gap-5">
+  {section.childs.map((link: any, idx: number) => (
+    /* Changed gap-2 to gap-[8px] (or gap-2) and ensured vertical alignment */
+    <div key={idx} className="flex gap-[8px] items-center">
+      {link.img && (
+        <Image
+          src={link.img}
+          width={20}
+          height={20}
+          alt={`${link.name} icon`}
+          /* flex-shrink-0 prevents the icon from distorting */
+          className="shrink-0 object-contain"
+        />
+      )}
+      <Link
+        href={link.href}
+        target={link.id === 14 ? "_blank" : ""}
+        /* Ensure line-height doesn't push the text away from the icon's center */
+        className="heading-5 font-normal text-[#FFFFFF] leading-none"
+      >
+        {link.name}
+      </Link>
+    </div>
+  ))}
+</div>
                 </div>
               ))}
             </div>

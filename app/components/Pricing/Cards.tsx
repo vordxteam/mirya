@@ -393,46 +393,53 @@ export default function Cards({ active }: { active: "monthly" | "annual" }) {
         transition={{ duration: 0.4 }}
         className="grid max-w-[1440px] mx-auto md:grid-cols-2 lg:grid-cols-3 gap-10 pt-17 sm:pt-[152px] px-2 md:px-[86px]"
       >
-        {currentPlans.map((item, index) => (
-          <motion.div
-            key={item.id}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            onClick={() => setActivePlanId(item.id)}
-            style={{
-              background:
-                "linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
-            }}
-            className={`rounded-3xl p-px ${
-              index === 1 ? "lg:-translate-y-[86px]" : ""
-            }`}
-          >
-            <div
-              className={`bg-[#090b26] px-8 pt-[72px] pb-11 rounded-3xl relative cursor-pointer transition-all ${
-                activePlanId === item.id
-                  ? "ring-2 ring-[#4F60FA] shadow-lg shadow-[#4F60FA]/30"
-                  : ""
-              }`}
-            >
-              {activePlanId === item.id && (
-                <div className="absolute top-16 left-16">
-                  <div className="bg-[#5935E9] opacity-60 blur-[50px] w-[181px] h-[94px] rounded-full"></div>
-                </div>
-              )}
+     {currentPlans.map((item, index) => (
+  <motion.div
+    key={item.id}
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4, delay: index * 0.1 }}
+    onClick={() => setActivePlanId(item.id)}
+    style={{
+      /* 1. Inner Card BG (same as your #090b26) */
+      /* 2. Border Gradient (your original gradient) */
+      backgroundImage: `
+        linear-gradient(#090b26, #090b26), 
+        linear-gradient(174deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)
+      `,
+      backgroundOrigin: "border-box",
+      backgroundClip: "padding-box, border-box",
+      /* 1.5px ensures it stays visible on 4K/XL monitors */
+      border: "1.5px solid transparent",
+    }}
+    className={`rounded-3xl relative cursor-pointer transition-all ${
+      index === 1 ? "lg:-translate-y-[86px]" : ""
+    } ${
+      activePlanId === item.id
+        ? "ring-2 ring-[#4F60FA] shadow-lg shadow-[#4F60FA]/30"
+        : ""
+    }`}
+  >
+    {/* Removed the p-px wrapper div and moved padding here */}
+    <div className="px-8 pt-[72px] pb-11 relative h-full">
+      
+      {activePlanId === item.id && (
+        <div className="absolute top-16 left-16">
+          <div className="bg-[#5935E9] opacity-60 blur-[50px] w-[181px] h-[94px] rounded-full"></div>
+        </div>
+      )}
 
-              <Image
-                src={item.img}
-                alt={item.title}
-                width={76}
-                height={76}
-                className="absolute h-auto -top-[5%] left-40"
-              />
+      <Image
+        src={item.img}
+        alt={item.title}
+        width={76}
+        height={76}
+        className="absolute h-auto -top-[40px] left-1/2 -translate-x-1/2"
+      />
 
-              <h3 className="heading-3 font-semibold text-[#F4F7FF]">
-                {item.title}
-              </h3>
-
+      <h3 className="heading-3 font-semibold text-[#F4F7FF]">
+        {item.title}
+      </h3>
               {index === 1 ? (
                 <>
                   <div className="mt-3 h-px bg-gradient-to-r from-[#9e9ebb] via-[#A68BEE] to-[#1A1A3B]" />

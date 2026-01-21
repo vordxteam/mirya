@@ -16,7 +16,8 @@ export default function WhyMirya() {
   const { t } = useTranslation("careers");
 
   // FIX: Cast the return value to the expected array type
-  const reasons = (t("whyMirya.reasons", { returnObjects: true }) || []) as Reason[];
+  const reasons = (t("whyMirya.reasons", { returnObjects: true }) ||
+    []) as Reason[];
 
   return (
     <div className=" px-3 sm:px-20 max-w-[1440px] mx-auto relative z-10 bg-[#00031C]">
@@ -53,31 +54,43 @@ export default function WhyMirya() {
 
       <div className="pt-5 sm:pt-16 pb-10 sm:pb-15 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* reasons is now guaranteed to be an array */}
-        {Array.isArray(reasons) && reasons.map((item) => (
-          <div
-            key={item.id}
-            style={{
-              background:
-                "linear-gradient(280deg, #00031C 16.47%, #686DDD 48.87%, #00031C 78.17%)",
-            }}
-            className="p-px"
-          >
-            <div className="p-6 space-y-3 bg-[#050A29] h-full relative rounded-xl">
-              <p className="heading-4 font-medium text-[#F4F7FF99]">{item.id}</p>
-              <div className="space-y-2">
-                <h3 className="heading-3 font-medium text-[#F4F7FF]">{item.title}</h3>
-                <p className="heading-6 font-normal text-[#F4F7FF99]">{item.description}</p>
+        {Array.isArray(reasons) &&
+          reasons.map((item) => (
+            <div
+              key={item.id}
+              style={{
+                backgroundImage: `
+      linear-gradient(#00031C, #00031C), 
+      linear-gradient(280deg, #00031C 16.47%, #686DDD 48.87%, #00031C 78.17%)
+    `,
+                backgroundOrigin: "border-box",
+                backgroundClip: "padding-box, border-box",
+                border: "1.5px solid transparent",
+              }}
+              className="p-px"
+            >
+              <div className="p-6 space-y-3 bg-[#050A29] h-full relative rounded-xl">
+                <p className="heading-4 font-medium text-[#F4F7FF99]">
+                  {item.id}
+                </p>
+                <div className="space-y-2">
+                  <h3 className="heading-3 font-medium text-[#F4F7FF]">
+                    {item.title}
+                  </h3>
+                  <p className="heading-6 font-normal text-[#F4F7FF99]">
+                    {item.description}
+                  </p>
+                </div>
+                <Image
+                  src="/images/card-gradient.png"
+                  alt="gradient"
+                  width={181}
+                  height={94}
+                  className="absolute right-0 bottom-0"
+                />
               </div>
-              <Image
-                src="/images/card-gradient.png"
-                alt="gradient"
-                width={181}
-                height={94}
-                className="absolute right-0 bottom-0"
-              />
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );

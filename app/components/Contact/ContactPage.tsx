@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 export default function ContactPage() {
   const { t } = useTranslation("contact");
 
-  const phone = t("contactInfo.availability.phone"); 
+  const phone = t("contactInfo.availability.phone");
   const numericPhone = phone.replace(/[^\d+]/g, "");
   const data = t("contactInfo.cards", { returnObjects: true }) as {
     title: string;
@@ -40,6 +40,7 @@ export default function ContactPage() {
             </div>
 
             <div className="">
+              {/* Availability Label */}
               <p className="heading-4 font-medium text-white mb-3">
                 {t("contactInfo.availability.label")}
               </p>
@@ -54,12 +55,13 @@ export default function ContactPage() {
                 />
                 <a
                   href={`mailto:${t("contactInfo.availability.mail")}`}
-                  className="underline-none "
+                  className="underline-none"
                 >
                   {t("contactInfo.availability.mail")}
                 </a>
               </p>
 
+              {/* Phone */}
               <p className="heading-5 font-normal text-white flex gap-2 items-center">
                 <Image
                   src="/images/phone.svg"
@@ -69,11 +71,54 @@ export default function ContactPage() {
                 />
                 <a
                   href={`tel:${numericPhone}`}
-                  className=" underline-none cursor-pointer "
+                  className="underline-none cursor-pointer"
                 >
                   {phone}
                 </a>
               </p>
+
+              <div
+                className="w-full mt-6 pt-6"
+                style={{
+                  borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+                }}
+              >
+                <p className="heading-4 font-medium text-white">{t("contactInfo.followUs")}</p>
+
+                <div className="flex gap-3 pt-5">
+                  <Link href="https://www.facebook.com/" target="_blank">
+                    <Image
+                      src="/images/facebook.png"
+                      alt="facebook"
+                      height={52}
+                      width={52}
+                    />
+                  </Link>
+
+                  <Link href="https://www.instagram.com/" target="_blank">
+                    <Image
+                      src="/images/instagram.png"
+                      alt="instagram"
+                      height={52}
+                      width={52}
+                    />
+                  </Link>
+
+                  <Link href="https://twitter.com/" target="_blank">
+                    <Image src="/images/X.png" alt="X" height={52} width={52} />
+                  </Link>
+
+                  <Link href="https://www.linkedin.com/" target="_blank">
+                    <Image
+                      src="/images/linkedin.png"
+                      alt="linkedin"
+                      height={52}
+                      width={52}
+                    />
+                  </Link>
+                </div>
+              </div>
+              {/* --- DIVIDER LINE & FOLLOW US END --- */}
             </div>
           </div>
 

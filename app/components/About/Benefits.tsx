@@ -13,9 +13,16 @@ const Benefits = () => {
 
   return (
     <>
-      <div className="flex justify-center">
-        <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.5px]"></div>
-      </div>
+     <div className="flex justify-center w-full">
+  <div 
+    className="w-[50%]"
+    style={{
+      height: "1px",
+      background: "linear-gradient(90deg, rgba(0, 3, 28, 0) 0%, #8EA0E0 50%, rgba(0, 3, 28, 0) 100%)",
+      boxShadow: "0px 0px 2px rgba(142, 160, 224, 0.4)"
+    }}
+  />
+</div>
       <div className="bg-[#00031C] overflow-hidden">
         <div className="max-w-[1440px] m-auto px-5 sm:px-10 md:px-20 py-[60px]">
           {/* Top Section */}
@@ -113,7 +120,7 @@ const Benefits = () => {
               image="/images/benefit5.svg"
               imageWidth={623}
               imageHeight={219}
-              glowPosition="left"
+              glowPosition="right"
               className="col-span-12 md:col-span-6 xl:col-span-6"
               imageTranslate=" translate-x-11 -translate-y-3 "
             />

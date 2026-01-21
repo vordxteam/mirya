@@ -42,9 +42,9 @@
       "contact": {
         "title": "KONTAKT",
         "links": [
-          { "name": "info@mirya.ai", "href": "mailto:info@mirya.ai" },
-          { "name": "+49 (711) 12120-802", "href": "tel:+49 (711) 12120-802" },
-          { "name": "Berlin, Deutschland", "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5" }
+          { "name": "info@mirya.ai", "href": "mailto:info@mirya.ai" ,"img": "/images/mail.svg" },
+          { "name": "+49 (711) 12120-802", "href": "tel:+49 (711) 12120-802" ,"img": "/images/phone.svg" },
+          { "name": "Berlin, Deutschland", "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5" ,   "img": "/images/location.svg"}
         ]
       }
     }

@@ -319,7 +319,7 @@ const Benefits = () => {
               image="/images/benefit5.svg"
               imageWidth={623}
               imageHeight={219}
-              glowPosition="left"
+              glowPosition="right"
               className="col-span-12 md:col-span-6 xl:col-span-6"
               imageTranslate=" translate-x-11 -translate-y-3 "
             />
@@ -370,8 +370,11 @@ const BenefitCard: React.FC<CardProps> = ({
       <div
         className={`p-px rounded-xl ${className}`}
         style={{
-          background:
-            "linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)",
+          backgroundImage: `linear-gradient(#050925, #050925), 
+                      linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)`,
+          backgroundOrigin: "border-box",
+          backgroundClip: "padding-box, border-box",
+          border: "1px solid transparent",
         }}
       >
         <div className="bg-[#050925] rounded-xl flex flex-col justify-between h-[418px] overflow-hidden">
@@ -382,8 +385,8 @@ const BenefitCard: React.FC<CardProps> = ({
                 glowPosition === "left"
                   ? "-left-24"
                   : glowPosition === "right"
-                  ? "-right-24"
-                  : "left-1/2 -translate-x-1/2"
+                    ? "-right-24"
+                    : "left-1/2 -translate-x-1/2"
               }`}
             >
               <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>

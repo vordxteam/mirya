@@ -9,7 +9,8 @@ export default function Jobs() {
   const { t } = useTranslation("careers");
 
   // 1. Explicitly cast to string[] and any[] to satisfy TypeScript
-  const categories = (t("jobs.categories", { returnObjects: true }) || []) as string[];
+  const categories = (t("jobs.categories", { returnObjects: true }) ||
+    []) as string[];
   const allJobs = (t("jobs.list", { returnObjects: true }) || []) as any[];
 
   // 2. Initialize with a logical fallback
@@ -113,9 +114,18 @@ export default function Jobs() {
                   key={item.id}
                   variants={itemVariants}
                   layout
-                  style={{
-                    background: "linear-gradient(0deg, #4D4D4D, #fff, #4D4D4D)",
-                  }}
+                 style={{
+    /* First Gradient: The solid inner background of your card */
+    /* Second Gradient: Your white/gray border gradient */
+    backgroundImage: `
+      linear-gradient(#00031C, #00031C), 
+      linear-gradient(0deg, #4D4D4D, #fff, #4D4D4D)
+    `,
+    backgroundOrigin: "border-box",
+    backgroundClip: "padding-box, border-box",
+    /* 1.5px is the "sweet spot" for XL screens; it looks like 1px but never hides */
+    border: "1.5px solid transparent",
+  }}
                   className="p-px rounded-xl"
                 >
                   <div className="p-[23px] space-y-3 bg-[#050A29] h-full relative rounded-xl">

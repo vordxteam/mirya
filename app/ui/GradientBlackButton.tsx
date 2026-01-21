@@ -18,15 +18,18 @@ const GradientButton: React.FC<GradientButtonProps> = ({
   textColor = "#FFFFFF",
 }) => {
   return (
-    <div
-      /* Added p-[1px] for even thickness, w-fit to prevent stretching, 
-         and flex to center the content perfectly */
-      className="rounded-full p-[1px] w-fit flex items-center justify-center" 
-      style={{
-        background:
-          "linear-gradient(0deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
-      }}
-    >
+   <div
+  className="rounded-[40px] w-fit transition-all"
+  style={{
+    /* First background: The solid card color */
+    /* Second background: The 3-shade border gradient */
+    backgroundImage: `linear-gradient(#00031C, #00031C), 
+                      linear-gradient(180deg, #4D4D4D 0%, #FFFFFF 50%, #4D4D4D 100%)`,
+    backgroundOrigin: "border-box",
+    backgroundClip: "padding-box, border-box",
+    border: "1px solid transparent",
+  }}
+>
       <Link
         href={href}
         /* Changed to block and removed extra spacing issues */

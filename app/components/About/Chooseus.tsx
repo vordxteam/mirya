@@ -66,8 +66,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                    <div className="absolute right-[-383.191px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -100,8 +100,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                    <div className="absolute right-[-383.191px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -134,8 +134,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                    <div className="absolute right-[-383.191px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -168,8 +168,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                  <div className="absolute right-[-163.025px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -202,8 +202,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                    <div className="absolute right-[-163.025px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -236,8 +236,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                    <div className="absolute right-[-383.191px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -270,8 +270,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                    <div className="absolute right-[-383.191px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -304,8 +304,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                    <div className="absolute right-[-383.191px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -337,8 +337,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                   <div className="absolute right-[-163.025px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
@@ -370,8 +370,8 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                    <div className="absolute right-[-13px] top-[-7px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+                   <div className="absolute right-[-163.025px] top-[-91.622px]">
+                      <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
                       <div>
