@@ -1,14 +1,14 @@
+'use client'
 import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 
 export default function WhenToHire() {
-  const hiringPoints = [
-    "You are starting automation and want a strong foundation.",
-    "Your workflows are complex, data-heavy, or business-critical.",
-    "You need custom automation beyond basic workflows.",
-    "You want to scale automation faster and avoid trial-and-error.",
-  ];
+    const { t } = useTranslation("hire");
+  
+  const hiringPoints =  t("whenHire.points", { returnObjects: true }) as string[]
 
   return (
     <div className="pt-15 px-3 sm:px-20 max-w-[1440px] mx-auto relative z-10 bg-[#00031C] overflow-hidden pb-15">
@@ -28,10 +28,10 @@ export default function WhenToHire() {
     <div className="space-y-16 gap-16 md:gap-0 justify-between">
       <div className="space-y-3">
         <h1 className="heading-1 text-[#FFFFFF] font-medium">
-          When to Hire an Expert
+          {t("whenHire.title")}
         </h1>
         <p className="heading-6 font-normal leading-5">
-          Hire an expert when:
+           {t("whenHire.disc")} : 
         </p>
       </div>
       <div>
@@ -80,11 +80,10 @@ export default function WhenToHire() {
 
         <div className="heading-5 font-regular text-[#F4F7FF] relative z-10 max-w-[653px] text-left space-y-3">
           <p className="heading-3 font-semibold text-[#F4F7FF]">
-            Looking to Hire an expert?{" "}
+             {t("miniCard.title")}
           </p>
           <p className="heading-6 font-normal text-[#CAC9D1]">
-            Get connected with MIRYA-certified experts who can design,
-            implement, and scale automation tailored to your needs.
+           {t("miniCard.disc")}
           </p>
         </div>
 
@@ -93,7 +92,7 @@ export default function WhenToHire() {
           style={{ pointerEvents: "auto" }}
         >
           <GradientButton
-            label="Hire an Expert"
+            label={t("miniCard.btnTxt")}
             href="/all-experts"
             bgColor="#0274FE"
             textColor="#fff"

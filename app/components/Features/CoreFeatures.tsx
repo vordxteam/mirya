@@ -50,7 +50,7 @@ const fadeInVariants: Variants = {
   },
 };
 
-export default function Features() {
+export default function CoreFeatures() {
   const { t } = useTranslation("home");
 
   return (
@@ -60,7 +60,7 @@ export default function Features() {
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.1 }}
         variants={fadeInVariants}
-        className="flex justify-center relative"
+        className="flex justify-center"
       >
         <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div>
       </motion.div>
@@ -70,80 +70,32 @@ export default function Features() {
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.1 }}
         variants={containerVariants}
-        className="pt-[60px] px-4 sm:px-[80px] flex flex-col items-center"
+        className="pt-[60px] px-4 sm:px-[80px] flex flex-col items-center relative overflow-hidden"
       >
         {/* Optimized background images */}
         <div className="hidden sm:block">
-          <Image
-            src="/images/gradient1.png"
-            alt="gradient"
-            width={181}
-            height={94}
-            className="absolute left-[45%] top-0"
-            priority={false}
-            loading="lazy"
-          />
+          
         </div>
         <div className="hidden sm:block">
-          <Image
-            src="/images/gradient2.png"
-            alt="gradient"
-            width={458}
-            height={318}
-            className="absolute left-[35%] bottom-0"
-            priority={false}
-            loading="lazy"
-          />
+         
         </div>
 
         <motion.div
           variants={itemVariants}
           className="flex relative gap-5 items-center"
         >
-          <Image
-            src="/images/label2.svg"
-            alt="gradient1"
-            height={16}
-            width={78}
-            priority={true}
-          />
-          <h5 className="heading-5 font-regular text-[#959EFE]">
-            {t("sectionBadge")}
-          </h5>
-          <Image
-            src="/images/label.svg"
-            alt="gradient1"
-            height={16}
-            width={78}
-            priority={true}
-          />
-          <div className="absolute -top-16 left-6 -z-10">
-            <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
+          
+          <div className="absolute -top-16 -left-16 -z-10">
+            <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[90px] w-[181px] h-[94px]"></div>
           </div>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          className="flex flex-col gap-6 items-center pt-3"
-        >
-          <motion.h1
-            variants={itemVariants}
-            className="heading-1 font-medium text-[#FFFFFF] max-w-[736px] text-center"
-          >
-            {t("mainHeading")}{" "}
-          </motion.h1>
-          <motion.h6
-            variants={itemVariants}
-            className="text-[14px] font-regular text-[#CAC9D1] max-w-[568px] text-center"
-          >
-            {t("subHeading")}
-          </motion.h6>
-        </motion.div>
+        
 
         <div className="">
           <motion.div
             variants={containerVariants}
-            className="pt-16 flex flex-col md:flex-row justify-between w-full gap-6 relative"
+            className=" flex flex-col md:flex-row justify-between w-full gap-6 relative"
           >
             <motion.div
               variants={itemVariants}
@@ -308,8 +260,8 @@ export default function Features() {
 
       <div className="flex items-center justify-center w-full mt-[64px]">
         <GradientButton
-          label="Explore More Features"
-          href="/#"
+          label="Explore More CoreFeatures"
+          href="/CoreFeatures"
           bgColor="#0274FE"
         />
       </div>

@@ -14,6 +14,7 @@ export default function CTAConditional() {
     '/jobs/engineering',
     '/onboarding',
     '/all-experts',
+    '/features',
   ];
 
   // Check if current path is in exclusion list

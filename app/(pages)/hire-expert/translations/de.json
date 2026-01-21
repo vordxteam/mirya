@@ -1,32 +1,149 @@
-
-
 {
   "hero": {
     "badge": "Offizielles Partnerprogramm",
     "title": "Engagieren Sie vertrauenswürdige MIRYA-Experten für intelligentere Automatisierung.",
     "description": "Treten Sie mit MIRYA-zertifizierten Experten in Kontakt, die intelligente, auf Ihr Unternehmen zugeschnittene Arbeitsabläufe entwerfen, implementieren und skalieren.",
-    "buttons":{
-       "getStarted": "Werden Sie Experte",
+    "buttons": {
+      "getStarted": "Werden Sie Experte",
       "contactUs": "MIRYA-Expertin engagieren"
     }
   },
- "miryaExperts": {
-  "badge": "MIRYA-Experte",
-  "title": "Werden Sie ein MIRYA-Experte",
-  "desc": "Treten Sie dem offiziellen MIRYA-Expertennetzwerk bei und bieten Sie vertrauenswürdige Automatisierungsdienste für Kunden weltweit an.",
-  "btnText": "MIRYA-Experte werden",
-  "card1": {
-    "title": "Wer sollte sich bewerben",
-    "disc": "Fachleute und Organisationen mit umfassender Erfahrung in der Automatisierung, darunter Berater, Agenturen, Systemintegratoren und Branchenspezialisten, die praxisnahe Automatisierungslösungen entwickeln."
+  "miryaExperts": {
+    "badge": "MIRYA-Experte",
+    "title": "Werden Sie ein MIRYA-Experte",
+    "desc": "Treten Sie dem offiziellen MIRYA-Expertennetzwerk bei und bieten Sie vertrauenswürdige Automatisierungsdienste für Kunden weltweit an.",
+    "btnText": "MIRYA-Experte werden",
+    "card1": {
+      "title": "Wer sollte sich bewerben",
+      "disc": "Fachleute und Organisationen mit umfassender Erfahrung in der Automatisierung, darunter Berater, Agenturen, Systemintegratoren und Branchenspezialisten, die praxisnahe Automatisierungslösungen entwickeln.",
+      "tags": [
+        "Automatisierungsstrategie",
+        "Workflow-Design",
+        "Integrationen",
+        "Optimierung"
+      ]
+    },
+    "card2": {
+      "title": "Warum eine Partnerschaft mit MIRYA",
+      "disc": "Erhalten Sie die offizielle Anerkennung als MIRYA-Experte, Zugang zu qualifizierten Kunden, mehr Glaubwürdigkeit sowie Wachstum Ihrer Dienstleistungen durch Plattform-Unterstützung und Schulungen.",
+      "tags": [
+        "Automatisierungsstrategie",
+        "Workflow-Design",
+        "Integrationen",
+        "Optimierung"
+      ]
+    },
+    "card3": {
+      "title": "Erwartungen & Standards",
+      "disc": "Nachweis von Automatisierungskompetenz, Einhaltung der MIRYA-Lieferstandards, Wahrung professioneller Standards sowie Teilnahme an Onboarding- und Qualitätsprüfungen.",
+      "tags": [
+        "Automatisierungsstrategie",
+        "Workflow-Design",
+        "Integrationen",
+        "Optimierung"
+      ]
+    }
   },
-  "card2": {
-    "title": "Warum eine Partnerschaft mit MIRYA",
-    "disc": "Erhalten Sie die offizielle Anerkennung als MIRYA-Experte, Zugang zu qualifizierten Kunden, mehr Glaubwürdigkeit sowie Wachstum Ihrer Dienstleistungen durch Plattform-Unterstützung und Schulungen."
-  },
-  "card3": {
-    "title": "Erwartungen & Standards",
-    "disc": "Nachweis von Automatisierungskompetenz, Einhaltung der MIRYA-Lieferstandards, Wahrung professioneller Standards sowie Teilnahme an Onboarding- und Qualitätsprüfungen."
-  }
-}
 
+  "becomeExpert": {
+    "badge": "MIRYA Experte",
+    "title": "Werden Sie MIRYA Experte",
+    "desc": "Treten Sie dem offiziellen MIRYA-Expertennetzwerk bei und bieten Sie weltweit vertrauenswürdige Automatisierungsservices für Kunden an.",
+    "btnTxt": "MIRYA Experte werden",
+    "card1": {
+      "title": "Wer sollte sich bewerben",
+      "disc": "Fachkräfte und Organisationen mit fundierter Erfahrung in der Automatisierung, darunter Berater, Agenturen, Systemintegratoren und Branchenspezialisten, die praxisnahe Automatisierungslösungen entwickeln."
+    },
+    "card2": {
+      "title": "Warum eine Partnerschaft mit MIRYA",
+      "disc": "Erhalten Sie offizielle Anerkennung als MIRYA-Experte, Zugang zu qualifizierten Kunden, stärken Sie Ihre Glaubwürdigkeit und bauen Sie Ihr Serviceangebot mit Plattform-Unterstützung und Schulungen aus."
+    },
+    "card3": {
+      "title": "Erwartungen & Standards",
+      "disc": "Nachweis fundierter Automatisierungskompetenz, Einhaltung der MIRYA-Richtlinien für die Umsetzung, Wahrung professioneller Standards sowie Teilnahme an Onboarding- und Qualitätsprüfungen."
+    }
+  },
+
+  "whenHire": {
+    "title": "Wann Sie einen Experten beauftragen sollten",
+    "disc": "Beauftragen Sie einen Experten, wenn",
+    "points": [
+      "Sie mit der Automatisierung beginnen und eine solide Grundlage schaffen möchten.",
+      "Ihre Workflows komplex, datenintensiv oder geschäftskritisch sind.",
+      "Sie individuelle Automatisierungen über einfache Workflows hinaus benötigen.",
+      "Sie die Automatisierung schneller skalieren und Versuch-und-Irrtum vermeiden möchten."
+    ]
+  },
+  "miniCard": {
+    "title": "Möchten Sie einen Experten beauftragen?",
+    "disc": "Vernetzen Sie sich mit MIRYA-zertifizierten Experten, die Automatisierungslösungen entwickeln, implementieren und skalieren – maßgeschneidert für Ihre Anforderungen.",
+    "btnTxt": "Experten beauftragen"
+  },
+  "work": {
+    "badge": "So funktioniert es",
+    "title": "So funktioniert es",
+    "disc": "Ein einfacher, geführter Prozess, der Sie mit dem richtigen MIRYA-Experten verbindet und Sie effizient von der Anforderung bis zur Umsetzung begleitet.",
+    "process1": {
+      "title": "Experten durchsuchen",
+      "disc": "Entdecken Sie MIRYA-zertifizierte Experten nach Fachgebiet, Branche und Region, um die beste Lösung für Ihre Automatisierungsanforderungen zu finden."
+    },
+    "process2": {
+      "title": "Einführung anfragen",
+      "disc": "Teilen Sie Ihre Anforderungen und Ziele mit uns, und wir verbinden Sie mit dem am besten geeigneten MIRYA-Experten."
+    },
+    "process3": {
+      "title": "Umsetzen & liefern",
+      "disc": "Arbeiten Sie direkt mit dem Experten zusammen, um zuverlässige, produktionsreife Automatisierungs-Workflows zu entwerfen, umzusetzen und bereitzustellen."
+    }
+  },
+  "services": {
+    "badge": "Services",
+    "title": "Professionelle Services für wirkungsvolle Automatisierung",
+    "disc": "Ganz gleich, ob Sie Ihren ersten Workflow starten oder die Automatisierung in Ihrem Unternehmen skalieren – die Spezialisten von MIRYA bieten das Know-how und die Unterstützung, um Sie in jeder Phase zu begleiten.",
+    "card1": {
+      "title": "Process Guardian",
+      "disc": "Process Guardian ist ein praxisnaher Support-Service, bei dem MIRYA-Experten Sie beim Entwerfen und Erstellen von Automatisierungen aktiv begleiten."
+    },
+    "card2": {
+      "title": "2-tägiges MIRYA Starter-Training",
+      "disc": "Ein fokussiertes, von Trainern geleitetes Schulungsprogramm, das Ihrem Team hilft, MIRYA in nur zwei Tagen sicher zu beherrschen."
+    },
+    "card3": {
+      "title": "Compliance- & Governance-Einrichtung",
+      "disc": "Wir richten sichere und kontrollierte Automatisierungen mit Rollen, Audit-Logs, Versionierung und Failover ein."
+    },
+    "card4": {
+      "title": "2-tägiges MIRYA Experten-Training",
+      "disc": "Fortgeschrittenes Training zum Aufbau komplexer, skalierbarer Workflows mit Logik und Integrationen."
+    },
+    "card5": {
+      "title": "KI-Beratung",
+      "disc": "Unsere KI-Experten bieten maßgeschneiderte Beratung, um Automatisierungspotenziale zu identifizieren und KI-gestützte Workflows zu entwerfen."
+    }
+  },
+
+  "additionalServices": {
+    "badge": "Zusatzleistungen",
+    "title": "Zusätzlich empfohlene Services",
+    "card1": {
+      "title": "Workshop zur Automatisierungsanalyse",
+      "disc": "Wir analysieren Prozesse, identifizieren Automatisierungspotenziale und erstellen eine ROI-orientierte Automatisierungs-Roadmap."
+    },
+    "card2": {
+      "title": "Einrichtung eines Automation Center of Excellence (CoE)",
+      "disc": "Wir unterstützen Unternehmen beim Aufbau interner Automatisierungsteams mit klaren Rollen, Governance-Strukturen und Skalierungsplänen."
+    },
+    "card3": {
+      "title": "Prozessaufzeichnung & Blueprint-Erstellung",
+      "disc": "Wir dokumentieren reale Nutzer-Workflows und verwandeln sie in automatisierungsfähige Blueprints – ideal für Teams ohne bestehende Dokumentation."
+    },
+    "card4": {
+      "title": "Prioritäts-Support & Dedizierter Success Manager",
+      "disc": "Garantierte SLAs, schnelle Reaktionszeiten und ein dedizierter Success Manager sorgen für reibungslose und kontinuierlich optimierte Automatisierung."
+    },
+    "card5": {
+      "title": "MIRYA Proof of Value (4 Wochen)",
+      "disc": "Wir liefern innerhalb von vier Wochen eine funktionsfähige Automatisierung und belegen messbaren Mehrwert vor einer langfristigen Verpflichtung."
+    }
+  }
 }

@@ -2,53 +2,56 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Services() {
+    const { t } = useTranslation("hire");
+  
   const services = [
     {
       id: 1,
       icon: (
         <Image src="/images/ser1.svg" alt="service" width={40} height={40} />
       ),
-      title: "Process Guardian",
+      title: t("services.card1.title"),
       description:
-        "Process guardian is a hands-on support service where MIRYA experts guide you through designing, building.",
+        t("services.card1.disc"),
     },
     {
       id: 2,
       icon: (
         <Image src="/images/ser2.svg" alt="service" width={40} height={40} />
       ),
-      title: "2-Day MIRYA Starter Training",
+      title: t("services.card2.title"),
       description:
-        "A focused, instructor-led training experience designed to help your team master MIRYA in just two days.",
+        t("services.card2.disc"),
     },
     {
       id: 3,
       icon: (
         <Image src="/images/ser3.svg" alt="service" width={40} height={40} />
       ),
-      title: "Compliance & Governance Setup ",
+      title: t("services.card3.title"),
       description:
-        "We set up secure, governed automation with roles, audit logs, versioning, and failover.",
+        t("services.card3.disc"),
     },
     {
       id: 4,
       icon: (
         <Image src="/images/ser9.svg" alt="service" width={40} height={40} />
       ),
-      title: "2-day MIRYA Expert Training",
+      title: t("services.card4.title"),
       description:
-        "Advanced training for building complex, scalable workflows with logic and integrations.",
+        t("services.card4.disc"),
     },
     {
       id: 5,
       icon: (
         <Image src="/images/ser10.svg" alt="service" width={40} height={40} />
       ),
-      title: "AI Consulting",
+      title: t("services.card5.title"),
       description:
-        "Our AI experts provide tailored consulting to identify automation potential and design AI-driven workflows.",
+        t("services.card5.disc"),
     },
   ];
 
@@ -66,18 +69,16 @@ export default function Services() {
 
           <div className="pb-3 flex items-center gap-5">
             <Image src="/images/label2.svg" width={78} height={16} alt="line" />
-            <h2 className="text-[#959EFE] heading-5">Services</h2>
+            <h2 className="text-[#959EFE] heading-5">{ t("services.badge")}</h2>
             <Image src="/images/label.svg" width={78} height={16} alt="line" />
           </div>
 
           <h1 className="heading-1 font-medium text-white text-center pb-3 sm:pb-6 max-w-[777px]">
-            Professional services for high impact automation
+            { t("services.title")}
           </h1>
 
           <p className="text-[#CAC9D1] heading-6 font-normal  text-center max-w-[794px] mb-8">
-            Whether you're launching your first workflow or scaling automation
-            across your organization, MIRYA’s specialists provide the expertise
-            and support to guide you every step of the way.{" "}
+           { t("services.disc")}
           </p>
         </div>
 

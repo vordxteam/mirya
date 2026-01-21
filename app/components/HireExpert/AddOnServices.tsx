@@ -2,53 +2,56 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function AddOnServices() {
+      const { t } = useTranslation("hire");
+  
   const services = [
     {
       id: 1,
       icon: (
         <Image src="/images/ser11.svg" alt="service" width={40} height={40} />
       ),
-      title: "Automation Discovery Workshop",
+      title: t("additionalServices.card1.title"),
       description:
-        "We analyze processes, identify automation opportunities, and build an ROI-driven automation roadmap.",
+        t("additionalServices.card1.disc"),
     },
     {
       id: 2,
       icon: (
         <Image src="/images/ser12.svg" alt="service" width={40} height={40} />
       ),
-      title: "Automation Center of Excellence (CoE) Setup",
+      title: t("additionalServices.card2.title"),
       description:
-        "We help companies build internal automation teams with clear roles, governance, and scaling plans.",
+        t("additionalServices.card2.disc"),
     },
     {
       id: 3,
       icon: (
         <Image src="/images/ser13.svg" alt="service" width={40} height={40} />
       ),
-      title: "Process Recording & Blueprinting",
+      title: t("additionalServices.card3.title"),
       description:
-        "We document real user workflows and turn them into automation-ready blueprints—ideal for teams without documentation.",
+        t("additionalServices.card3.disc"),
     },
     {
       id: 4,
       icon: (
         <Image src="/images/ser14.svg" alt="service" width={40} height={40} />
       ),
-      title: "Priority Support & Dedicated Success Manager",
+     title: t("additionalServices.card4.title"),
       description:
-        "Guaranteed SLAs, fast response times, and a dedicated success manager ensuring smooth, continuously improving automation.",
+        t("additionalServices.card4.disc"),
     },
     {
       id: 5,
       icon: (
         <Image src="/images/ser15.svg" alt="service" width={40} height={40} />
       ),
-      title: "MIRYA Proof of Value (4 weeks) ",
+     title: t("additionalServices.card5.title"),
       description:
-        "We deliver a working automation in four weeks, proving measurable value before long-term commitment.",
+        t("additionalServices.card5.disc"),
     },
   ];
 
@@ -66,12 +69,12 @@ export default function AddOnServices() {
 
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
-          <h2 className="text-[#959EFE] heading-5">Add on Services</h2>
+          <h2 className="text-[#959EFE] heading-5">{t("additionalServices.badge")}</h2>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
 
         <h1 className="heading-1 font-medium text-white text-center pb-3 sm:pb-6 max-w-[777px]">
-         Additional Recommended Services
+         {t("additionalServices.title")}
         </h1>
       </div>
 
