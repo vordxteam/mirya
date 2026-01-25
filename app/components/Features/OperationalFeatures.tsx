@@ -61,16 +61,14 @@ export default function CoreFeatures() {
         viewport={{ once: true, amount: 0.1 }}
         variants={fadeInVariants}
         className="flex justify-center"
-      >
-        {/* <div className="bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-[0.8px]"></div> */}
-      </motion.div>
+      ></motion.div>
 
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.1 }}
         variants={containerVariants}
-        className="pt-[60px] px-4 sm:px-[80px] flex flex-col items-center relative overflow-hidden"
+        className="pt-6 pb-[60px] px-4 sm:px-[80px] flex flex-col items-center relative overflow-hidden"
       >
         {/* Optimized background images */}
         <div className="hidden sm:block"></div>
@@ -109,10 +107,14 @@ export default function CoreFeatures() {
                 />
               </div>
               <h3 className="heading-3 font-medium text-center sm:text-start text-[#F4F7FF] mt-4">
-                {t("cards.2.title")}
+                Extended Scheduling and Operational Control{" "}
               </h3>
               <p className="heading-6 pt-2 font-regular text-[#CAC9D1] max-w-[742px] text-center">
-                {t("cards.2.description")}
+                MIRYA’s enhanced scheduling feature applies to all automations,
+                including workflows powered by Intelligent Document Processing
+                and Reinforcement Learning. The advanced scheduling calendar
+                allows teams to plan, edit, and monitor processes centrally with
+                day, week, month, and year views.
               </p>
             </div>
 
@@ -142,11 +144,27 @@ export default function CoreFeatures() {
                   "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
                 border: "1px solid transparent",
               }}
-              className="p-8 flex-1"
+              className="p-8 flex-1 overflow-hidden relative"
             >
-              <div className="absolute top-24 left-22 pointer-events-none z-0">
-                <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[90px] w-[303px] h-[208px]"></div>
+              <div className="hidden sm:block">
+                <Image
+                  src="/images/bg-blur.png"
+                  alt="gradient"
+                  width={303}
+                  height={108}
+                  className="absolute right-0 top-0 rounded-[12px]"
+                />
               </div>
+
+              {/* <div className="hidden sm:block">
+                <Image
+                  src="/images/blur4.png"
+                  alt="gradient"
+                  width={458}
+                  height={318}
+                  className="absolute left-[10%] top-[35%] -z-10"
+                />
+              </div> */}
               <div className="flex relative flex-col sm:flex-row items-center sm:items-start gap-6">
                 <div className="w-[124px] h-[124px] flex-shrink-0">
                   <Image
@@ -159,24 +177,23 @@ export default function CoreFeatures() {
                 </div>
                 <div className="space-y-2 pb-7">
                   <h3 className="heading-3 font-medium text-[#F4F7FF]">
-                    Intelligent Document Processing
+                    Secure, Scalable & Fully Yours{" "}
                   </h3>
                   <p className="heading-6 font-regular max-w-[414px] text-[#CAC9D1]">
-                    Understand, classify, aIntelligent Document Processing turns
-                    invoices, forms, and records into structured data using
-                    built-in AI skills—no model training required.nd extract
-                    data from documents with ready-to-use AI skills—no model
-                    training required.
+                    Run MIRYA completely on-premise for total data privacy and
+                    control. Scale automation across teams, and customise the
+                    entire platform with your own branding—without hidden costs
+                    or limitations.
                   </p>
                 </div>
               </div>
-              <div className="">
+              <div className="mt-6">
                 <Image
-                  src="/images/feature2.png"
+                  src="/images/card.png"
                   alt="Graph image"
-                  height={259}
+                  height={353}
                   width={600}
-                  className="rounded-[12px] transform translate-y-8"
+                  className="rounded-[12px]"
                 />
               </div>
             </motion.div>
@@ -190,10 +207,20 @@ export default function CoreFeatures() {
                   "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
                 border: "1px solid transparent",
               }}
+              /* 1. Added overflow-hidden to clip the image */
               className="relative px-3 sm:px-0 pt-8 flex-1 overflow-hidden"
             >
-              {/* TOP SECTION: Reinforcement Learning */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mr-3">
+              <div className="hidden sm:block">
+                <Image
+                  src="/images/bg-blur.png"
+                  alt="gradient"
+                  width={303}
+                  height={108}
+                  className="absolute right-0 top-0 rounded-[12px]"
+                />
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                 <div className="w-[124px] h-[124px] flex-shrink-0 ml-0 sm:ml-8">
                   <Image
                     src="/images/card3.png"
@@ -205,38 +232,31 @@ export default function CoreFeatures() {
                 </div>
                 <div className="space-y-2 pb-7">
                   <h3 className="heading-3 font-medium text-[#F4F7FF]">
-                    Reinforcement Learning
+                    Universal Compatibility
                   </h3>
                   <p className="heading-6 font-regular max-w-[414px] text-[#CAC9D1]">
-                    The Reinforcement Learning feature allows MIRYA to
-                    autonomously optimize process performance over time by
-                    learning from real outcomes and historical data.
+                    MIRYA works on top of any app or system exactly like a
+                    human—clicking, typing, and navigating visually. No APIs, no
+                    interfaces, no tool changes. Your existing software stays
+                    the same; MIRYA automates everything.{" "}
                   </p>
                 </div>
               </div>
 
-              {/* BOTTOM SECTION: Feature Image with Glow Background */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-end pl-[17px] pr-[18px]">
-                {/* Relative container to anchor the glow behind the image */}
-                <div className="order-1 sm:order-2 relative w-full flex justify-center sm:justify-end">
-                  {/* THE GLOW LIGHT: Centered behind feature1.png */}
-                  <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
-                    <div className="rounded-full opacity-[0.4] bg-[#4F60FA] blur-[80px] w-[400px] h-[250px]"></div>
-                  </div>
-
+              <div className="flex flex-col sm:flex-row items-center sm:items-end px-8">
+                <div className="order-1 sm:order-2">
                   <Image
-                    src="/images/feature1.png"
+                    src="/images/feature3.png"
                     alt="Card interface"
-                    height={259}
-                    width={566}
-                    className="rounded-[12px] relative z-10" // z-10 ensures image stays on top
+                    height={486}
+                    width={480}
+                    className="rounded-[12px] transform translate-y-12  -translate-x-2"
                   />
                 </div>
               </div>
             </motion.div>
           </motion.div>
         </div>
-         
       </motion.div>
     </>
   );
