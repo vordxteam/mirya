@@ -1,0 +1,58 @@
+{
+  "label": "Core Features",
+  "title": "One Platform for Intelligent Automation",
+  "description": "From document understanding to self-learning workflows and calendar-based orchestration—MIRYA automates real business processes across systems with zero code.",
+
+  "cards": {
+    "card1": {
+      "title": "Human-Level Intelligence & Zero-Code Learning",
+      "description": "MIRYA learns tasks by simply watching you work. It understands screens, interprets data, and builds smart automations without writing a single line of code. Just record once, and MIRYA handles the rest with human-like precision."
+    },
+    "card2": {
+      "title": "Intelligent Document Processing",
+      "description": "Turn invoices, forms, and records into structured data using built-in AI skills—no model training required."
+    },
+    "card3": {
+      "title": "Reinforcement Learning",
+      "description": "MIRYA autonomously improves process performance over time by learning from real outcomes and historical data."
+    },
+    "card4": {
+      "title": "Extended Scheduling and Operational Control",
+      "description": "MIRYA’s enhanced scheduling applies to all automations. Plan, edit, and monitor workflows centrally with day, week, month, and year views."
+    },
+    "card5": {
+      "title": "Secure, Scalable & Fully Yours",
+      "description": "Run MIRYA fully on-premise for complete data privacy. Scale across teams and customise the platform with your own branding—no hidden costs."
+    },
+    "card6": {
+      "title": "Universal Compatibility",
+      "description": "MIRYA works on top of any app like a human—clicking, typing, and navigating visually. No APIs, no integrations, no system changes."
+    }
+  },
+  
+  
+  "features": {
+    "label": "Features",
+    "title": "Automation built to be powerful, secure, and reliable at every scale.",
+    "description": "Designed to connect systems, protect data, and govern automation with enterprise-grade reliability—without adding technical complexity.",
+    "cards": [
+      {
+        "title": "Security & Compliance",
+        "description": "Built for regulated environments, MIRYA runs on Microsoft Azure and follows EU AI Act and GDPR principles by design. Role-based access, audit logs, and encryption ensure secure automation.",
+        "icon": "/images/f1.svg"
+      },
+      {
+        "title": "Governance & Control",
+        "description": "Enterprise operations are supported through structured roles, permissions, versioning, backup, and monitoring dashboards with full traceability.",
+        "icon": "/images/f2.svg"
+      },
+      {
+        "title": "Citizen Developer Enablement",
+        "description": "MIRYA empowers business users to automate their own processes without coding using reusable templates and best-practice training.",
+        "icon": "/images/f3.svg"
+      }
+    ]
+  }
+}
+
+

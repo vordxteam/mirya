@@ -51,7 +51,7 @@ const fadeInVariants: Variants = {
 };
 
 export default function CoreFeatures() {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("feature");
 
   return (
     <>
@@ -61,8 +61,7 @@ export default function CoreFeatures() {
         viewport={{ once: true, amount: 0.1 }}
         variants={fadeInVariants}
         className="flex justify-center"
-      >
-      </motion.div>
+      ></motion.div>
 
       <motion.div
         initial="offscreen"
@@ -108,10 +107,10 @@ export default function CoreFeatures() {
                 />
               </div>
               <h3 className="heading-3 font-medium text-center sm:text-start text-[#F4F7FF] mt-4">
-                {t("cards.2.title")}
+                {t("cards.card1.title")}
               </h3>
               <p className="heading-6 pt-2 font-regular text-[#CAC9D1] max-w-[742px] text-center">
-                {t("cards.2.description")}
+                {t("cards.card1.description")}{" "}
               </p>
             </div>
 
@@ -158,14 +157,10 @@ export default function CoreFeatures() {
                 </div>
                 <div className="space-y-2 pb-7">
                   <h3 className="heading-3 font-medium text-[#F4F7FF]">
-                    Intelligent Document Processing
+                    {t("cards.card2.title")}
                   </h3>
                   <p className="heading-6 font-regular max-w-[414px] text-[#CAC9D1]">
-                    Understand, classify, aIntelligent Document Processing turns
-                    invoices, forms, and records into structured data using
-                    built-in AI skills—no model training required.nd extract
-                    data from documents with ready-to-use AI skills—no model
-                    training required.
+                    {t("cards.card2.description")}
                   </p>
                 </div>
               </div>
@@ -204,12 +199,10 @@ export default function CoreFeatures() {
                 </div>
                 <div className="space-y-2 pb-7">
                   <h3 className="heading-3 font-medium text-[#F4F7FF]">
-                    Reinforcement Learning
+                    {t("cards.card3.title")}
                   </h3>
                   <p className="heading-6 font-regular max-w-[414px] text-[#CAC9D1]">
-                    The Reinforcement Learning feature allows MIRYA to
-                    autonomously optimize process performance over time by
-                    learning from real outcomes and historical data.
+                    {t("cards.card3.description")}
                   </p>
                 </div>
               </div>
@@ -245,7 +238,6 @@ export default function CoreFeatures() {
           </div>
         </motion.div>
         <div className="flex flex-col gap-6 w-full mt-6 max-w-[1440px] m-auto">
-          {/* ROW 1: FULL WIDTH (COL-12) - Moved to top */}
           <motion.div
             variants={itemVariants}
             style={{
@@ -268,14 +260,10 @@ export default function CoreFeatures() {
                 />
               </div>
               <h3 className="heading-3 font-medium text-center sm:text-start text-[#F4F7FF] mt-4">
-                Extended Scheduling and Operational Control{" "}
+                {t("cards.card4.title")}{" "}
               </h3>
               <p className="heading-6 pt-2 font-regular text-[#CAC9D1] max-w-[742px] text-center">
-                MIRYA’s enhanced scheduling feature applies to all automations,
-                including workflows powered by Intelligent Document Processing
-                and Reinforcement Learning. The advanced scheduling calendar
-                allows teams to plan, edit, and monitor processes centrally with
-                day, week, month, and year views.
+                {t("cards.card4.description")}
               </p>
             </div>
 
@@ -291,12 +279,10 @@ export default function CoreFeatures() {
             </div>
           </motion.div>
 
-          {/* ROW 2: SIDE-BY-SIDE (COL-6) */}
           <motion.div
             variants={containerVariants}
             className="flex flex-col md:flex-row justify-between w-full gap-6 relative "
           >
-            {/* LEFT CARD */}
             <motion.div
               variants={itemVariants}
               style={{
@@ -328,13 +314,10 @@ export default function CoreFeatures() {
                 </div>
                 <div className="space-y-2 pb-7">
                   <h3 className="heading-3 font-medium text-[#F4F7FF]">
-                    Secure, Scalable & Fully Yours{" "}
+                    {t("cards.card5.title")}{" "}
                   </h3>
                   <p className="heading-6 font-regular max-w-[414px] text-[#CAC9D1]">
-                    Run MIRYA completely on-premise for total data privacy and
-                    control. Scale automation across teams, and customise the
-                    entire platform with your own branding—without hidden costs
-                    or limitations.
+                    {t("cards.card5.description")}
                   </p>
                 </div>
               </div>
@@ -349,7 +332,6 @@ export default function CoreFeatures() {
               </div>
             </motion.div>
 
-            {/* RIGHT CARD */}
             <motion.div
               variants={itemVariants}
               style={{
@@ -358,21 +340,13 @@ export default function CoreFeatures() {
                   "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
                 border: "1px solid transparent",
               }}
-              /* 1. Added overflow-hidden to clip the image */
               className="relative px-3 sm:px-0 pt-8 flex-1 overflow-hidden"
             >
-              <div className="hidden sm:block">
-                <Image
-                  src="/images/bg-blur.png"
-                  alt="gradient"
-                  width={303}
-                  height={108}
-                  className="absolute right-0 top-0 rounded-[12px]"
-                />
-              </div>
-
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                 <div className="w-[124px] h-[124px] flex-shrink-0 ml-0 sm:ml-8">
+                   <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-0 pointer-events-none z-0">
+                    <div className="rounded-full opacity-[0.4] bg-[#4F60FA] blur-[80px] w-[400px] h-[250px]"></div>
+                  </div>
                   <Image
                     src="/images/card3.png"
                     alt="Card image"
@@ -383,13 +357,10 @@ export default function CoreFeatures() {
                 </div>
                 <div className="space-y-2 pb-7">
                   <h3 className="heading-3 font-medium text-[#F4F7FF]">
-                    Universal Compatibility
+                    {t("cards.card6.title")}
                   </h3>
                   <p className="heading-6 font-regular max-w-[414px] text-[#CAC9D1]">
-                    MIRYA works on top of any app or system exactly like a
-                    human—clicking, typing, and navigating visually. No APIs, no
-                    interfaces, no tool changes. Your existing software stays
-                    the same; MIRYA automates everything.{" "}
+                    {t("cards.card6.description")}{" "}
                   </p>
                 </div>
               </div>

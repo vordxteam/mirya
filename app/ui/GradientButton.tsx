@@ -19,11 +19,11 @@ const GradientButton: React.FC<GradientButtonProps> = ({
   bgColor = "#0274FE",
   textColor = "#FFFFFF",
   onClick,
-  width
+  width,
 }) => {
   return (
     <div
-      className={`${ width ? width : "w-fit" } p-[1px]`}
+      className={`${width ? width : "w-fit"} p-[1px]`}
       style={{
         borderRadius: "40px",
         background:

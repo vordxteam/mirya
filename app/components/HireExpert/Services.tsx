@@ -5,8 +5,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Services() {
-    const { t } = useTranslation("hire");
-  
+  const { t } = useTranslation("hire");
+
   const services = [
     {
       id: 1,
@@ -14,8 +14,7 @@ export default function Services() {
         <Image src="/images/ser1.svg" alt="service" width={40} height={40} />
       ),
       title: t("services.card1.title"),
-      description:
-        t("services.card1.disc"),
+      description: t("services.card1.disc"),
     },
     {
       id: 2,
@@ -23,8 +22,7 @@ export default function Services() {
         <Image src="/images/ser2.svg" alt="service" width={40} height={40} />
       ),
       title: t("services.card2.title"),
-      description:
-        t("services.card2.disc"),
+      description: t("services.card2.disc"),
     },
     {
       id: 3,
@@ -32,8 +30,7 @@ export default function Services() {
         <Image src="/images/ser3.svg" alt="service" width={40} height={40} />
       ),
       title: t("services.card3.title"),
-      description:
-        t("services.card3.disc"),
+      description: t("services.card3.disc"),
     },
     {
       id: 4,
@@ -41,8 +38,7 @@ export default function Services() {
         <Image src="/images/ser9.svg" alt="service" width={40} height={40} />
       ),
       title: t("services.card4.title"),
-      description:
-        t("services.card4.disc"),
+      description: t("services.card4.disc"),
     },
     {
       id: 5,
@@ -50,8 +46,7 @@ export default function Services() {
         <Image src="/images/ser10.svg" alt="service" width={40} height={40} />
       ),
       title: t("services.card5.title"),
-      description:
-        t("services.card5.disc"),
+      description: t("services.card5.disc"),
     },
   ];
 
@@ -69,16 +64,16 @@ export default function Services() {
 
           <div className="pb-3 flex items-center gap-5">
             <Image src="/images/label2.svg" width={78} height={16} alt="line" />
-            <h2 className="text-[#959EFE] heading-5">{ t("services.badge")}</h2>
+            <h2 className="text-[#959EFE] heading-5">{t("services.badge")}</h2>
             <Image src="/images/label.svg" width={78} height={16} alt="line" />
           </div>
 
           <h1 className="heading-1 font-medium text-white text-center pb-3 sm:pb-6 max-w-[777px]">
-            { t("services.title")}
+            {t("services.title")}
           </h1>
 
           <p className="text-[#CAC9D1] heading-6 font-normal  text-center max-w-[794px] mb-8">
-           { t("services.disc")}
+            {t("services.disc")}
           </p>
         </div>
 
@@ -87,21 +82,21 @@ export default function Services() {
           {/* First Row - 3 cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.slice(0, 3).map((service) => (
-              <ServiceCard key={service.id} service={service} />
+              <ServiceCard key={service.id} service={service} row="row1" />
             ))}
           </div>
 
           {/* Second Row - 2 cards taking full width */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {services.slice(3, 5).map((service) => (
-              <ServiceCard key={service.id} service={service} />
+              <ServiceCard key={service.id} service={service} row="row2" />
             ))}
           </div>
 
           {/* Third Row - 3 cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.slice(5, 8).map((service) => (
-              <ServiceCard key={service.id} service={service} />
+              <ServiceCard key={service.id} service={service} row="row1" />
             ))}
           </div>
         </div>
@@ -109,9 +104,9 @@ export default function Services() {
     </>
   );
 }
-
 function ServiceCard({
   service,
+  row,
 }: {
   service: {
     id: number;
@@ -119,6 +114,7 @@ function ServiceCard({
     title: string;
     description: string;
   };
+  row: "row1" | "row2";
 }) {
   return (
     <div
@@ -136,8 +132,14 @@ function ServiceCard({
         }}
       >
         {/* Blur background effect */}
-        <div className="absolute top-2 -right-2 ">
-          <div className="rounded-[68.75px]  bg-[#211F9CCC] blur-[50px] w-[181px] h-[94px]"></div>
+        <div
+          className="absolute"
+          style={{
+            top: "-41.621px",
+            right: row === "row1" ? "-388.858px" : "-171.525px",
+          }}
+        >
+          <div className="rounded-[68.75px] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
         </div>
 
         {/* Icon container */}

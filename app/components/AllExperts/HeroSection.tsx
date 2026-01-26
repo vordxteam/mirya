@@ -12,7 +12,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ initialSearch = '' }: HeroSectionProps) => {
-  const { t } = useTranslation("job");
+  const { t } = useTranslation("expert");
   const [query, setQuery] = useState(initialSearch || '');
 
   useEffect(() => {
@@ -50,23 +50,24 @@ const HeroSection = ({ initialSearch = '' }: HeroSectionProps) => {
               width={24}
             />
             <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-              Go Back
+                            {t("hero.goBack")}
+
             </h1>
           </Link>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="heading-1 font-medium  w-full text-center pb-3 sm:pb-6">
-        Hire an MIRYA Expert
+                 {t("hero.title")}
+
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[515px]">
-          Connect with MIRYA-certified experts who design, implement, and scale intelligent automation tailored to your workflows.
-        </p>
+ {t("hero.description")}        </p>
       <div className="mt-6 sm:w-[371px] rounded-full p-[1px] bg-gradient-to-r from-[#38385D] via-[#686DDD] to-[#38385D] relative">
   <input
     type="text"
     value={query}
     onChange={(e) => setQuery(e.target.value)}
-    placeholder="Search by Name or Service"
+            placeholder={t("hero.searchPlaceholder")}
     className="
       w-full
       rounded-full

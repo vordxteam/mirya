@@ -4,12 +4,17 @@
       "h1": "Are you ready to automate <br /> with MIRYA?",
       "p": "Let’s build your first automated workflow and unlock results within days. Book your free consultation today."
     },
+    "features": {
+      "h1": "Are you ready to automate with MIRYA?",
+      "p": "Let’s build your first automated workflow and unlock results within days. Book your free consultation today."
+    },
     "default": {
       "h1": "Make Your Productivity <br /> More Efficient. From This Time.",
       "p": "Harnessing the power of artificial intelligence to revolutionize industries and enhance human experiences."
     },
     "button": "Get Started"
   },
+
   "footer": {
     "newsletter": "Join our newsletter to keep up to date with us!",
     "inputPlaceholder": "Enter your email",
@@ -48,11 +53,15 @@
             "href": "mailto:info@mirya.ai",
             "img": "/images/mail.svg"
           },
-          { "name": "+49 (711) 12120-802", "href": "tel:+49 (711) 12120-802", "img": "/images/phone.svg" },
+          {
+            "name": "+49 (711) 12120-802",
+            "href": "tel:+49 (711) 12120-802",
+            "img": "/images/phone.svg"
+          },
           {
             "name": "Berlin, Germany",
             "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5",
-             "img": "/images/location.svg"
+            "img": "/images/location.svg"
           }
         ]
       }

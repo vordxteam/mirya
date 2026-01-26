@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "goBack": "Geri Dön",
+    "title": "Bir MIRYA Uzmanı ile Çalışın",
+    "description": "İş akışlarınıza özel akıllı otomasyon çözümleri tasarlayan, uygulayan ve ölçeklendiren MIRYA sertifikalı uzmanlarla bağlantı kurun.",
+    "searchPlaceholder": "İsim veya Hizmete Göre Ara"
+  },
+  
+  "filters": {
+    "country_label": "Ülke/Bölge",
+    "country_placeholder": "Ülke/bölge seçin",
+    "city_label": "Şehir",
+    "city_placeholder": "Şehir Seçin",
+    "service_label": "Hizmetler",
+    "service_placeholder": "Hizmet Seçin",
+    "budget_label": "Proje Bütçesi",
+    "budget_placeholder": "Bütçe Seçin",
+    "clear_btn": "Tüm Filtreleri Temizle"
+  },
+  "states": {
+    "loading": "Uzmanlar yükleniyor...",
+    "timeout_msg": "Bu işlem çok uzun sürerse API bağlantınızı kontrol edin",
+    "no_match_title": "Kriterlerinize uygun uzman bulunamadı",
+    "no_match_subtitle": "Lütfen farklı bir arama sorgusu ile tekrar deneyin",
+    "reset_btn": "Filtreleri Sıfırla",
+    "accepting_clients": "Yeni Müşteri Kabul Ediyor",
+    "view_profile": "Profili Görüntüle"
+  },
+  
+  "filters_data": {
+    "countries": { "United States": "Amerika Birleşik Devletleri", "United Kingdom": "Birleşik Krallık", "Canada": "Kanada", "Germany": "Almanya", "France": "Fransa" },
+    "cities": { "New York": "New York", "London": "Londra", "Toronto": "Toronto", "Berlin": "Berlin", "Paris": "Paris" },
+    "services": { "Process Automation": "Süreç Otomasyonu", "Digital Transformation": "Dijital Dönüşüm", "AI Consulting": "Yapay Zeka Danışmanlığı", "Cloud Services": "Bulut Hizmetleri" },
+    "budgets": { "< $10K": "< 10 bin $", "$10K - $50K": "10 bin $ - 50 bin $", "$50K - $100K": "50 bin $ - 100 bin $", "> $100K": "> 100 bin $" },
+    "languages": { "English": "İngilizce", "German": "Almanca", "French": "Fransızca", "Spanish": "İspanyolca", "Chinese": "Çince" },
+    "companyTypes": { "Startup": "Girişim", "Enterprise": "Kurumsal", "SMB": "KOBİ", "Agency": "Ajans" }
+  },
+  
+  "details": {
+    "view_website": "Web Sitesini Görüntüle",
+    "contact": "İletişime Geç",
+    "resources": "Kaynaklar",
+    "services": "Hizmetler",
+    "project_budget": "Proje Bütçesi",
+    "about_company": "Şirket Hakkında",
+    "reviews": "Değerlendirmeler",
+    "add_review": "Yorum Ekle",
+    "breadcrumb_home": "Bir MIRYA Uzmanı Tut",
+    "modal": {
+      "title": "Yorum Ekle",
+      "name_label": "Adınız",
+      "role_label": "Göreviniz",
+      "rating_label": "Puan",
+      "review_label": "Yorumunuz",
+      "placeholder_name": "Adınızı giriniz",
+      "placeholder_role": "Örn: Tasarımcı, Geliştirici",
+      "placeholder_comment": "Deneyiminizi paylaşın...",
+      "cancel": "İptal",
+      "submit": "Yorumu Gönder",
+      "required": "zorunludur",
+      "rating_required": "Lütfen bir puan seçin"
+    }
+  }
+
+}
+
+
