@@ -1,20 +1,25 @@
 {
   "cta": {
     "industries": {
+      "h1": "Sind Sie bereit, <br /> mit MIRYA zu automatisieren?",
+      "p": "Lassen Sie uns Ihren ersten automatisierten Workflow erstellen und innerhalb weniger Tage Ergebnisse erzielen. Buchen Sie noch heute Ihre kostenlose Beratung."
+    },
+    "features": {
       "h1": "Sind Sie bereit, mit MIRYA zu automatisieren?",
       "p": "Lassen Sie uns Ihren ersten automatisierten Workflow erstellen und innerhalb weniger Tage Ergebnisse erzielen. Buchen Sie noch heute Ihre kostenlose Beratung."
     },
     "default": {
-      "h1": "Machen Sie Ihre Produktivität <br /> effizienter. Ab sofort.",
-      "p": "Nutzen Sie die Kraft der künstlichen Intelligenz, um Branchen zu revolutionieren und menschliche Erfahrungen zu verbessern."
+      "h1": "Machen Sie Ihre Produktivität <br /> effizienter. Ab jetzt.",
+      "p": "Wir nutzen die Kraft der künstlichen Intelligenz, um Branchen zu transformieren und menschliche Erfahrungen zu verbessern."
     },
-    "button": "Loslegen"
+    "button": "Jetzt starten"
   },
+
   "footer": {
     "newsletter": "Abonnieren Sie unseren Newsletter, um auf dem Laufenden zu bleiben!",
     "inputPlaceholder": "Geben Sie Ihre E-Mail ein",
     "subscribe": "Abonnieren",
-"copyright": "© 2024 Alle Rechte vorbehalten - MIRYA AI Tech GmbH",
+    "copyright": "© 2024 Alle Rechte vorbehalten - MIRYA AI Tech GmbH",
     "privacy": "Datenschutz",
     "security": "Sicherheit",
     "imprint": "Impressum",
@@ -42,9 +47,21 @@
       "contact": {
         "title": "KONTAKT",
         "links": [
-          { "name": "info@mirya.ai", "href": "mailto:info@mirya.ai" ,"img": "/images/mail.svg" },
-          { "name": "+49 (711) 12120-802", "href": "tel:+49 (711) 12120-802" ,"img": "/images/phone.svg" },
-          { "name": "Berlin, Deutschland", "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5" ,   "img": "/images/location.svg"}
+          {
+            "name": "info@mirya.ai",
+            "href": "mailto:info@mirya.ai",
+            "img": "/images/mail.svg"
+          },
+          {
+            "name": "+49 (711) 12120-802",
+            "href": "tel:+49 (711) 12120-802",
+            "img": "/images/phone.svg"
+          },
+          {
+            "name": "Berlin, Deutschland",
+            "href": "https://maps.app.goo.gl/q62kGgSaWnV3uyhs5",
+            "img": "/images/location.svg"
+          }
         ]
       }
     }

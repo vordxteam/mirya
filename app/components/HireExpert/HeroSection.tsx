@@ -125,7 +125,7 @@ const HeroSection = () => {
           <div className="w-full sm:w-auto flex justify-center">
             <GradientButton
               label={t("hero.buttons.getStarted")}
-              href="/onboarding"
+              href="/become-expert"
               bgColor="#0274FE"
               textColor="#fff"
             />

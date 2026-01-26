@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { getExpertDetails, createRating } from "@/app/api/experts";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 interface ErrorState {
   name?: string;
@@ -68,6 +69,7 @@ const StarRating = ({
       onRate(index + 1);
     }
   };
+  const { t } = useTranslation("expert");
 
   return (
     <div className="flex items-center">
@@ -382,6 +384,7 @@ export default function Details() {
       setErrors(updatedErrors);
     }
   };
+  const { t } = useTranslation("expert");
 
   return (
     <div className="text-white p-8">
@@ -604,7 +607,7 @@ export default function Details() {
                   View Website
                 </Link>
                 <GradientButton
-                  label="Contact"
+                  label={t("details.contact")}
                   bgColor="#0274FE"
                   textColor="#FFFFFF"
                   href="/contact"
@@ -634,8 +637,7 @@ export default function Details() {
               {companyData.resources.length > 0 && (
                 <div>
                   <h3 className="heading-4 font-medium text-[#F4F7FF] mb-2">
-                    Resources
-                  </h3>
+{t("details.resources")}                  </h3>
                   <div className="space-y-1.5">
                     {companyData.resources.map((resource, index) => (
                       <Link
@@ -758,7 +760,7 @@ export default function Details() {
               href="/all-experts"
               className="heading-6 font-normal text-[#FFFFFF99] hover:text-[#0274FE]"
             >
-              {companyData.breadcrumb[0]}
+              {t("details.breadcrumb_home")}{" "}
             </Link>
             <Image
               src="/images/gap.svg"

@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "goBack": "Zurück",
+    "title": "Einen MIRYA-Experten beauftragen",
+    "description": "Vernetzen Sie sich mit MIRYA-zertifizierten Experten, die intelligente Automatisierung für Ihre Workflows entwerfen, implementieren und skalieren.",
+    "searchPlaceholder": "Nach Name oder Service suchen"
+  },
+  
+  "filters": {
+    "country_label": "Land/Territorium",
+    "country_placeholder": "Land/Territorium auswählen",
+    "city_label": "Stadt",
+    "city_placeholder": "Stadt auswählen",
+    "service_label": "Dienstleistungen",
+    "service_placeholder": "Dienstleistungen auswählen",
+    "budget_label": "Projektbudget",
+    "budget_placeholder": "Budget auswählen",
+    "clear_btn": "Alle Filter löschen"
+  },
+  "states": {
+    "loading": "Experten werden geladen...",
+    "timeout_msg": "Wenn dies zu lange dauert, prüfen Sie Ihre Verbindung",
+    "no_match_title": "Kein Experte entspricht Ihren Kriterien",
+    "no_match_subtitle": "Bitte versuchen Sie es mit einer anderen Suchanfrage",
+    "reset_btn": "Filter zurücksetzen",
+    "accepting_clients": "Nimmt neue Kunden an",
+    "view_profile": "Profil anzeigen"
+  },
+  
+  "filters_data": {
+    "countries": { "United States": "Vereinigte Staaten", "United Kingdom": "Vereinigtes Königreich", "Canada": "Kanada", "Germany": "Deutschland", "France": "Frankreich" },
+    "cities": { "New York": "New York", "London": "London", "Toronto": "Toronto", "Berlin": "Berlin", "Paris": "Paris" },
+    "services": { "Process Automation": "Prozessautomatisierung", "Digital Transformation": "Digitale Transformation", "AI Consulting": "KI-Beratung", "Cloud Services": "Cloud-Dienste" },
+    "budgets": { "< $10K": "< 10.000 $", "$10K - $50K": "10.000 $ - 50.000 $", "$50K - $100K": "50.000 $ - 100.000 $", "> $100K": "> 100.000 $" },
+    "languages": { "English": "Englisch", "German": "Deutsch", "French": "Französisch", "Spanish": "Spanisch", "Chinese": "Chinesisch" },
+    "companyTypes": { "Startup": "Startup", "Enterprise": "Unternehmen", "SMB": "KMU", "Agency": "Agentur" }
+  }
+,
+
+  "details": {
+    "view_website": "Website anzeigen",
+    "contact": "Kontakt",
+    "resources": "Ressourcen",
+    "services": "Dienstleistungen",
+    "project_budget": "Projektbudget",
+    "about_company": "Über das Unternehmen",
+    "reviews": "Bewertungen",
+    "add_review": "Bewertung abgeben",
+    "breadcrumb_home": "Einen MIRYA-Experten einstellen",
+    "modal": {
+      "title": "Bewertung hinzufügen",
+      "name_label": "Ihr Name",
+      "role_label": "Ihre Rolle",
+      "rating_label": "Bewertung",
+      "review_label": "Ihre Bewertung",
+      "placeholder_name": "Geben Sie Ihren Namen ein",
+      "placeholder_role": "z.B. Designer, Entwickler",
+      "placeholder_comment": "Teilen Sie Ihre Erfahrung...",
+      "cancel": "Abbrechen",
+      "submit": "Bewertung abschicken",
+      "required": "ist erforderlich",
+      "rating_required": "Bitte wählen Sie eine Bewertung"
+    }
+  }
+
+}
+

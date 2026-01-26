@@ -1,15 +1,21 @@
 {
+ 
   "cta": {
     "industries": {
+      "h1": "MIRYA ile <br /> otomasyona hazır mısınız?",
+      "p": "İlk otomatik iş akışınızı birlikte oluşturalım ve sadece birkaç gün içinde sonuçları görün. Ücretsiz danışmanlığınızı bugün ayırtın."
+    },
+    "features": {
       "h1": "MIRYA ile otomasyona hazır mısınız?",
-      "p": "İlk otomatik iş akışınızı oluşturalım ve birkaç gün içinde sonuçlar elde edin. Ücretsiz danışmanlığınızı bugün ayırtın."
+      "p": "İlk otomatik iş akışınızı birlikte oluşturalım ve sadece birkaç gün içinde sonuçları görün. Ücretsiz danışmanlığınızı bugün ayırtın."
     },
     "default": {
-      "h1": "Verimliliğinizi <br /> Daha Etkili Hale Getirin. Şimdi Başlayın.",
-      "p": "Endüstrileri dönüştürmek ve insan deneyimlerini geliştirmek için yapay zekanın gücünden yararlanın."
+      "h1": "Verimliliğinizi <br /> Daha Etkili Hale Getirin.",
+      "p": "Yapay zekânın gücünü kullanarak sektörleri dönüştürüyor ve insan deneyimlerini geliştiriyoruz."
     },
     "button": "Başlayın"
   },
+
   "footer": {
     "newsletter": "Güncel kalmak için bültenimize katılın!",
     "inputPlaceholder": "E-posta adresinizi girin",

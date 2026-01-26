@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "goBack": "Go Back",
+    "title": "Hire an MIRYA Expert",
+    "description": "Connect with MIRYA-certified experts who design, implement, and scale intelligent automation tailored to your workflows.",
+    "searchPlaceholder": "Search by Name or Service"
+  }
+  ,
+  
+  "filters": {
+    "country_label": "Country/Territory",
+    "country_placeholder": "Select country/territory",
+    "city_label": "City",
+    "city_placeholder": "Select City",
+    "service_label": "Services",
+    "service_placeholder": "Select Services",
+    "budget_label": "Project Budget",
+    "budget_placeholder": "Select Budget",
+    "clear_btn": "Clear All Filters"
+  },
+  "states": {
+    "loading": "Loading experts...",
+    "timeout_msg": "If this takes too long, check your API connection",
+    "no_match_title": "No expert match your criteria",
+    "no_match_subtitle": "Please try again with different search query",
+    "reset_btn": "Reset Filters",
+    "accepting_clients": "Accepting New Clients",
+    "view_profile": "View Profile"
+  },
+  
+  "filters_data": {
+    "countries": { "United States": "United States", "United Kingdom": "United Kingdom", "Canada": "Canada", "Germany": "Germany", "France": "France" },
+    "cities": { "New York": "New York", "London": "London", "Toronto": "Toronto", "Berlin": "Berlin", "Paris": "Paris" },
+    "services": { "Process Automation": "Process Automation", "Digital Transformation": "Digital Transformation", "AI Consulting": "AI Consulting", "Cloud Services": "Cloud Services" },
+    "budgets": { "< $10K": "< $10K", "$10K - $50K": "$10K - $50K", "$50K - $100K": "$50K - $100K", "> $100K": "> $100K" },
+    "languages": { "English": "English", "German": "German", "French": "French", "Spanish": "Spanish", "Chinese": "Chinese" },
+    "companyTypes": { "Startup": "Startup", "Enterprise": "Enterprise", "SMB": "SMB", "Agency": "Agency" }
+  }
+  ,
+  
+  "details": {
+    "view_website": "View Website",
+    "contact": "Contact",
+    "resources": "Resources",
+    "services": "Services",
+    "project_budget": "Project Budget",
+    "about_company": "About Company",
+    "reviews": "Reviews",
+    "add_review": "Add a Review",
+    "breadcrumb_home": "Hire a MIRYA Expert",
+    "modal": {
+      "title": "Add a Review",
+      "name_label": "Your Name",
+      "role_label": "Your Role",
+      "rating_label": "Rating",
+      "review_label": "Your Review",
+      "placeholder_name": "Enter your name",
+      "placeholder_role": "e.g., Designer, Developer",
+      "placeholder_comment": "Share your experience...",
+      "cancel": "Cancel",
+      "submit": "Submit Review",
+      "required": "is required",
+      "rating_required": "Please select a rating"
+    }
+  }
+
+}
+
+
