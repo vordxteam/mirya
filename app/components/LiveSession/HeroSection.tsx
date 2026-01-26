@@ -5,6 +5,8 @@ import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
+import GradientButton from "@/app/ui/GradientButton";
+
 
 const HeroSection = () => {
   const paragraphRef = useRef<HTMLDivElement>(null);
@@ -89,27 +91,20 @@ const HeroSection = () => {
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
-        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[716px] w-full text-center sm:px-0 px-4 pb-3 sm:pb-6">
+        <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[824px] w-full text-center sm:px-0 px-4 pb-3 sm:pb-6">
          Discover MIRYA Through Live Sessions
         </h1>
-        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[580px]">
+        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[708px]">
         Explore how MIRYA automates real business processes, accelerates digital transformation, and powers AI-driven document and workflow automation — live and interactive.
         </p>
         <div className="flex items-center justify-center gap-3">
-          <div
-          className="rounded-full  p-[1.5px] mt-6"
-          style={{
-            background:
-              "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",
-          }}
-        >
-          <Link
-            href="/onboarding"
-            className="inline-block text-[16px] bg-[#00031C] font-normal text-white py-3 px-6  rounded-full z-10 relative"
-          >
-           Register for a Session
-          </Link>
-        </div>
+          
+
+          <GradientButton
+              label=" Register for a Session"
+              href="/contact"
+              bgColor="#0274FE"
+            />
         </div>
 
         <div className="relative">

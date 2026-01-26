@@ -66,7 +66,7 @@ export default function Experts({
     if (!text) return "";
     return text.replace(/^"|"$/g, "");
   };
-  const { t } = useTranslation("expert");
+  const { t } = useTranslation("experts");
 
   // Filter states
   const [selectedFilters, setSelectedFilters] = useState<FilterState>({

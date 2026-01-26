@@ -12,7 +12,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ initialSearch = '' }: HeroSectionProps) => {
-  const { t } = useTranslation("expert");
+  const { t } = useTranslation("experts");
   const [query, setQuery] = useState(initialSearch || '');
 
   useEffect(() => {
