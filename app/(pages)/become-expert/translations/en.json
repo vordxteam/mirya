@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "badge": "Become a Partner",
+    "title": "Grow Your Business with MIRYA",
+    "description": "Join MIRYA’s certified expert network and turn your automation expertise into trusted, scalable client solutions.",
+    "btnText": "Apply Now"
+  },
+  "levels": {
+    "badge": "MIRYA Expert Levels",
+    "title": "Grow Your Expertise with MIRYA",
+    "desc": "Progress through clearly defined expert levels to gain visibility, credibility, and access to new business opportunities.",
+    "btnText": "Apply Now",
+    "card1": {
+      "level": "Level 1",
+      "title": "Registered Expert",
+      "description": "A low-friction entry point into the MIRYA ecosystem for professionals' collaboration.",
+      "requirements": [
+        "Create an expert profile",
+        "Define service areas",
+        "No MIRYA certification required"
+      ],
+      "benefits": [
+        "Presence in the MIRYA community",
+        "Early access to ecosystem updates",
+        "Visibility as a community member"
+      ]
+    },
+    "card2": {
+      "level": "Level 2",
+      "title": "MIRYA Certified Expert",
+      "description": "The core certification level for experts delivering services through MIRYA.",
+      "requirements": [
+        "Completion of official MIRYA Expert Training",
+        "Certification based on real use cases",
+        "Agreement to MIRYA Quality & Delivery Standards."
+      ],
+      "benefits": [
+        "Bookable via Hire an Expert",
+        "Categorized by service and industry",
+        "Priority visibility in expert search"
+      ]
+    },
+    "card3": {
+      "level": "Level 3",
+      "title": "MIRYA Solution Partner",
+      "description": "Enable partners to scale revenue and act as official MIRYA solution providers.",
+      "requirements": [
+        "MIRYA Certified Expert status",
+        "Proven customer implementations",
+        "Optional multi-person certification within partner team."
+      ],
+      "benefits": [
+        "Right to sell MIRYA licenses",
+        "Optional white-label offering",
+        "Priority and exclusive leads"
+      ]
+    }
+  },
+  "partner": {
+    "badge": "Why Partner",
+    "title": "Why Partner With MIRYA",
+    "description": "Partnering with MIRYA gives you visibility, qualified demand, and a scalable way to grow your automation business within a trusted ecosystem.",
+    "card1": {
+      "title": "Visibility",
+      "description": "Stand out as a verified MIRYA partner with prominent placement across the Hire an Expert directory, partner pages, and co-marketing initiatives."
+    },
+    "card2": {
+      "title": "Qualified Leads",
+      "description": "Gain access to organization already exploring MIRYA and seeking expert help. Leads are curated, relevant, and aligned with your services—reducing sales friction and accelerating engagement."
+    },
+    "card3": {
+      "title": "Training & Certification Revenue",
+      "description": "Turn your expertise into a revenue stream through paid training, certifications, and enablement services. As partners advance, they unlock additional monetization opportunities tied to education and implementation."
+    },
+    "card4": {
+      "title": "Ecosystem Growth",
+      "description": "Grow alongside MIRYA as the platform expands. Partners benefit from increased product adoption, joint go-to-market activities, and long-term collaboration within a rapidly scaling automation ecosystem."
+    }
+  }
+}
