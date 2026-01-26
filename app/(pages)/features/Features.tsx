@@ -1,5 +1,4 @@
 import CoreFeatures from '@/app/components/Features/CoreFeatures'
-import OperationalFeatures from '@/app/components/Features/OperationalFeatures'
 import FeaturesSection from '@/app/components/Features/FeaturesSection'
 
 
@@ -12,7 +11,6 @@ export default function Features() {
     <div>
       <HeroSection/>
       <CoreFeatures/> 
-      <OperationalFeatures />
       <FeaturesSection />
       <div className='pt-[72px]'>
       <CTA />
