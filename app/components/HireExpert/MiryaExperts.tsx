@@ -15,12 +15,7 @@ export default function MiryaExperts() {
       link: "#",
       image: "/images/logo1.png",
       text: t("miryaExperts.card1.badge"),
-      badges: [
-        "Automation Strategy",
-        "Workflow Design",
-        "Integration",
-        "Optimization",
-      ],
+      badges: t("miryaExperts.card1.tags", { returnObjects: true }) as string[],
     },
     {
       id: 2,
@@ -29,12 +24,7 @@ export default function MiryaExperts() {
       link: "#",
       image: "/images/logo2.png",
       text: t("miryaExperts.card2.badge"),
-      badges: [
-        "Automation Strategy",
-        "Workflow Design",
-        "Integration",
-        "Optimization",
-      ],
+      badges: t("miryaExperts.card2.tags", { returnObjects: true }) as string[]
     },
   ];
   return (

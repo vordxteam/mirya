@@ -61,7 +61,6 @@
 // };
 
 // export default CTA;
-
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
@@ -72,28 +71,42 @@ const CTA = () => {
   const pathname = usePathname();
   const { t } = useLayoutTranslation();
 
-  const isArticleDetailPage =
-    pathname.startsWith("/articles/") && pathname !== "/articles";
-
+  // 1. Existing Logic: Hide on Article Detail Pages
+  const isArticleDetailPage = pathname.startsWith("/articles/") && pathname !== "/articles";
   if (isArticleDetailPage) return null;
 
+  // 2. Identify the current route
   const isIndustriesPage = pathname.startsWith("/industries");
+  const isFeaturesPage = pathname.startsWith("/features");
 
-  // Determine the translation prefix based on the page
-  const prefix = isIndustriesPage ? "cta.industries" : "cta.default";
+  // 3. Determine the translation prefix or hardcoded content
+  let prefix = "cta.default";
+  
+  if (isIndustriesPage) {
+    prefix = "cta.industries";
+  } else if (isFeaturesPage) {
+    prefix = "cta.features";
+  }
+
+  // Define content for Features specifically (as a fallback or override)
+  const featuresContent = {
+    h1: "Are you ready to automate with MIRYA?",
+    p: "Let’s build your first automated workflow and unlock results within days. Book your free consultation today."
+  };
 
   return (
     <div className="bg-[url('/images/ctabg.png')] bg-cover bg-center bg-no-repeat">
       <div className="flex flex-col items-center justify-between gap-3 sm:gap-6 text-center px-3 sm:px-20 pt-[134px] pb-[152px]">
         <h1
           className="text-[28px] md:text-[48px] font-medium leading-9 w-full max-w-[694px] sm:leading-14 tracking-[-1.44px]"
-          // Explicitly call the specific key for H1
-          dangerouslySetInnerHTML={{ __html: t(`${prefix}.h1` as any) }}
+          // If it's features page, use hardcoded text; otherwise, use translation
+          dangerouslySetInnerHTML={{ 
+            __html: isFeaturesPage ? featuresContent.h1 : t(`${prefix}.h1` as any) 
+          }}
         />
 
         <p className="max-w-[510px] text-[14px] font-normal leading-5 text-[#CAC9D1]">
-          {/* Explicitly call the specific key for P */}
-          {t(`${prefix}.p` as any)}
+          {isFeaturesPage ? featuresContent.p : t(`${prefix}.p` as any)}
         </p>
 
         <GradientButton

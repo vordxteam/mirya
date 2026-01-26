@@ -3,28 +3,140 @@
     "badge": "Official Partner Program",
     "title": "Hire Trusted MIRYA Experts to Build Smarter Automation",
     "description": "Connect with MIRYA-certified professionals who design, implement, and scale intelligent workflows tailored to your business.",
-    "buttons":{
-       "getStarted": "Become an Expert",
+    "buttons": {
+      "getStarted": "Become an Expert",
       "contactUs": "Hire MIRYA Expert"
     }
   },
   "miryaExperts": {
-    "badge" : "MIRYA Experts",
-    "title" : "Meet MIRYA Experts",
-    "desc" : "Work with a curated group of MIRYA-certified experts who deliver reliable, real-world automation solutions.",
-    "btnText" : "Become an Expert",
-      "card1" : {
-        "title" : "Haider Solutions",
-        "disc" : "Haider Solutions is a specialized automation and digitalization partner focused on process consulting, workflow optimization, and intelligent automation implementation.",
-        "tags": ["Automation Strategy", "Workflow Design", "Integrations" , "Optimization"],
-        "badge": "Verified Partner"
-      },
-      "card2" : {
-        "title" : "avy.solutions",
-        "disc" : "avy.solutions is an international technology consultancy dedicated to intelligent process automation and digital transformation. Their team helps organizations automate repetitive tasks, streamline operations, and enhance efficiency.",
-         "tags": ["Automation Strategy", "Workflow Design", "Integrations" , "Optimization"],
-                 "badge": "Verified Partner"
+    "badge": "MIRYA Experts",
+    "title": "Meet MIRYA Experts",
+    "desc": "Work with a curated group of MIRYA-certified experts who deliver reliable, real-world automation solutions.",
+    "btnText": "Become an Expert",
+    "card1": {
+      "title": "Haider Solutions",
+      "disc": "Haider Solutions is a specialized automation and digitalization partner focused on process consulting, workflow optimization, and intelligent automation implementation.",
+      "tags": [
+        "Automation Strategy",
+        "Workflow Design",
+        "Integrations",
+        "Optimization"
+      ],
+      "badge": "Verified Partner"
+    },
+    "card2": {
+      "title": "avy.solutions",
+      "disc": "avy.solutions is an international technology consultancy dedicated to intelligent process automation and digital transformation. Their team helps organizations automate repetitive tasks, streamline operations, and enhance efficiency.",
+      "tags": [
+        "Automation Strategy",
+        "Workflow Design",
+        "Integrations",
+        "Optimization"
+      ],
+      "badge": "Verified Partner"
+    }
+  },
+  "becomeExpert": {
+    "badge": "MIRYA Expert",
+    "title": "Become a MIRYA Expert",
+    "desc": "Join MIRYA’s official expert network and deliver trusted automation services to customers worldwide.",
+    "btnTxt": "Become a MIRYA Expert",
+    "card1": {
+      "title": "Who Should Apply",
+      "disc": "Professionals and organizations with strong automation experience, including consultants, agencies, system integrators, and industry specialists building real-world automation solutions."
+    },
+    "card2": {
+      "title": "Why Partner with MIRYA",
+      "disc": "Gain official MIRYA expert recognition, access qualified customers, build credibility, and grow your services with platform enablement and training."
+    },
+    "card3": {
+      "title": "Expectations & Standards",
+      "disc": "Demonstrate automation expertise, follow MIRYA delivery guidelines, maintain professional standards, and participate in onboarding and quality reviews."
+    }
+  },
 
-      }
+  "whenHire": {
+    "title": "When to Hire an Expert",
+    "disc": "Hire an expert when",
+    "points": [
+      "You are starting automation and want a strong foundation.",
+      "Your workflows are complex, data-heavy, or business-critical.",
+      "You need custom automation beyond basic workflows.",
+      "You want to scale automation faster and avoid trial-and-error."
+    ]
+  },
+  "miniCard": {
+    "title": "Looking to Hire an expert?",
+    "disc": "Get connected with MIRYA-certified experts who can design, implement, and scale automation tailored to your needs.",
+    "btnTxt": "Hire an Expert"
+  },
+
+  "work": {
+    "badge": "How to use",
+    "title": "How it Works",
+    "disc": "A simple, guided process that connects you with the right MIRYA expert and takes you from requirement to delivery efficiently.",
+    "process1": {
+      "title": "Browse Experts",
+      "disc": "Explore MIRYA-certified experts by expertise, industry, and region to find the best match for your automation needs."
+    },
+    "process2": {
+      "title": "Request an Introduction",
+      "disc": "Share your requirements and goals, and we’ll connect you with the most suitable MIRYA expert."
+    },
+    "process3": {
+      "title": "Build & Deliver",
+      "disc": "Collaborate directly with the expert to design, implement, and deploy reliable, production-ready automation workflows."
+    }
+  },
+
+  "services": {
+    "badge": "Services",
+    "title": "Professional services for high impact automation",
+    "disc": "Whether you're launching your first workflow or scaling automation across your organization, MIRYA’s specialists provide the expertise and support to guide you every step of the way.",
+    "card1": {
+      "title": "Process Guardian",
+      "disc": "Process guardian is a hands-on support service where MIRYA experts guide you through designing, building."
+    },
+    "card2": {
+      "title": "2-Day MIRYA Starter Training",
+      "disc": "A focused, instructor-led training experience designed to help your team master MIRYA in just two days."
+    },
+    "card3": {
+      "title": "Compliance & Governance Setup",
+      "disc": "We set up secure, governed automation with roles, audit logs, versioning, and failover."
+    },
+    "card4": {
+      "title": "2-day MIRYA Expert Training",
+      "disc": "Advanced training for building complex, scalable workflows with logic and integrations."
+    },
+    "card5": {
+      "title": "AI Consulting",
+      "disc": "Our AI experts provide tailored consulting to identify automation potential and design AI-driven workflows."
+    }
+  },
+
+  "additionalServices": {
+    "badge": "Add on Services",
+    "title": "Additional Recommended Services",
+    "card1": {
+      "title": "Automation Discovery Workshop",
+      "disc": "We analyze processes, identify automation opportunities, and build an ROI-driven automation roadmap."
+    },
+    "card2": {
+      "title": "Automation Center of Excellence (CoE) Setup",
+      "disc": "We help companies build internal automation teams with clear roles, governance, and scaling plans."
+    },
+    "card3": {
+      "title": "Process Recording & Blueprinting",
+      "disc": "We document real user workflows and turn them into automation-ready blueprints—ideal for teams without documentation."
+    },
+    "card4": {
+      "title": "Priority Support & Dedicated Success Manager",
+      "disc": "Guaranteed SLAs, fast response times, and a dedicated success manager ensuring smooth, continuously improving automation."
+    },
+    "card5": {
+      "title": "MIRYA Proof of Value (4 weeks)",
+      "disc": "We deliver a working automation in four weeks, proving measurable value before long-term commitment."
+    }
   }
 }

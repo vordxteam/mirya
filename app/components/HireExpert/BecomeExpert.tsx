@@ -10,8 +10,8 @@ export default function BecomeExpert() {
   const Clients = [
     {
       id: 1,
-      title:"Who Should Apply",
-      description: "Professionals and organizations with strong automation experience, including consultants, agencies, system integrators, and industry specialists building real-world automation solutions.",
+      title:t("becomeExpert.card1.title"),
+      description: t("becomeExpert.card1.disc"),
       link: "#",
       image: "/images/logo1.png",
       text: t("miryaExperts.card1.badge"),
@@ -22,8 +22,8 @@ export default function BecomeExpert() {
     },
     {
       id: 2,
-      title: "Why Partner with MIRYA",
-      description:"Gain official MIRYA expert recognition, access qualified customers, build credibility, and grow your services with platform enablement and training.",
+       title:t("becomeExpert.card2.title"),
+      description: t("becomeExpert.card2.disc"),
       link: "#",
       image : "/images/logo2.png",
       text: t("miryaExperts.card2.badge"),
@@ -33,8 +33,8 @@ export default function BecomeExpert() {
     },
     {
       id: 3,
-      title: "Expectations & Standards",
-      description:"Demonstrate automation expertise, follow MIRYA delivery guidelines, maintain professional standards, and participate in onboarding and quality reviews.",
+      title:t("becomeExpert.card3.title"),
+      description: t("becomeExpert.card3.disc"),
       link: "#",
       image : "/images/logo2.png",
       text: t("miryaExperts.card2.badge"),
@@ -55,15 +55,15 @@ export default function BecomeExpert() {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-[20px] text-center">
-           MIRYA Expert
+           {t("becomeExpert.badge")}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="heading-1 font-medium w-full text-center pb-3 sm:pb-6 max-w-[777px]">
-          Become a MIRYA Expert
+          {t("becomeExpert.title")}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 text-center max-w-[506px]">
-          Join MIRYA’s official expert network and deliver trusted automation services to customers worldwide.
+         {t("becomeExpert.desc")}
         </p>
           <div
             className="rounded-full  p-[1.5px] mt-6"
@@ -76,7 +76,7 @@ export default function BecomeExpert() {
               href="/onboarding"
               className="inline-block text-[16px] bg-[#00031C] font-normal text-white py-3 px-6  rounded-full z-10 relative"
             >
-              Become a MIRYA Expert
+             {t("becomeExpert.btnTxt")}
             </Link>
           </div>
            <div className="absolute top-40 z-0 ">

@@ -3,27 +3,148 @@
     "badge": "Resmi Ortak Programı",
     "title": "Daha Akıllı Otomasyon Sistemleri Kurmak İçin Güvenilir MIRYA Uzmanlarını Kiralayın",
     "description": "İşletmenize özel olarak tasarlanmış, uygulanmış ve ölçeklendirilmiş akıllı iş akışları geliştiren, MIRYA sertifikalı profesyonellerle bağlantı kurun.",
-    "buttons":{
-       "getStarted": "Uzman Olun",
+    "buttons": {
+      "getStarted": "Uzman Olun",
       "contactUs": "MIRYA Uzmanını Kiralayın"
     }
   },
- "miryaExperts": {
-  "badge": "MIRYA Uzmanı",
-  "title": "MIRYA Uzmanı Olun",
-  "desc": "MIRYA’nın resmi uzman ağına katılın ve dünya genelindeki müşterilere güvenilir otomasyon hizmetleri sunun.",
-  "btnText": "MIRYA Uzmanı Ol",
-  "card1": {
-    "title": "Kimler Başvurmalı",
-    "disc": "Danışmanlar, ajanslar, sistem entegratörleri ve gerçek dünya otomasyon çözümleri geliştiren sektör uzmanları dahil olmak üzere güçlü otomasyon deneyimine sahip profesyoneller ve kuruluşlar."
+  "miryaExperts": {
+    "badge": "MIRYA Uzmanı",
+    "title": "MIRYA Uzmanı Olun",
+    "desc": "MIRYA’nın resmi uzman ağına katılın ve dünya genelindeki müşterilere güvenilir otomasyon hizmetleri sunun.",
+    "btnText": "MIRYA Uzmanı Ol",
+    "card1": {
+      "title": "Kimler Başvurmalı",
+      "disc": "Danışmanlar, ajanslar, sistem entegratörleri ve gerçek dünya otomasyon çözümleri geliştiren sektör uzmanları dahil olmak üzere güçlü otomasyon deneyimine sahip profesyoneller ve kuruluşlar.",
+      "tags": [
+        "Otomasyon Stratejisi",
+        "İş Akışı Tasarımı",
+        "Entegrasyonlar",
+        "Optimizasyon"
+      ]
+    },
+    "card2": {
+      "title": "Neden MIRYA ile Partner Olmalısınız",
+      "disc": "Resmi MIRYA uzmanı olarak tanınma, nitelikli müşterilere erişim, güvenilirlik kazanma ve platform desteği ile eğitimler sayesinde hizmetlerinizi büyütme fırsatı elde edin.",
+      "tags": [
+        "Otomasyon Stratejisi",
+        "İş Akışı Tasarımı",
+        "Entegrasyonlar",
+        "Optimizasyon"
+      ]
+    },
+    "card3": {
+      "title": "Beklentiler ve Standartlar",
+      "disc": "Otomasyon uzmanlığını kanıtlama, MIRYA teslimat yönergelerine uyma, profesyonel standartları sürdürme ve onboarding ile kalite değerlendirmelerine katılma.",
+      "tags": [
+        "Otomasyon Stratejisi",
+        "İş Akışı Tasarımı",
+        "Entegrasyonlar",
+        "Optimizasyon"
+      ]
+    }
   },
-  "card2": {
-    "title": "Neden MIRYA ile Partner Olmalısınız",
-    "disc": "Resmi MIRYA uzmanı olarak tanınma, nitelikli müşterilere erişim, güvenilirlik kazanma ve platform desteği ile eğitimler sayesinde hizmetlerinizi büyütme fırsatı elde edin."
+  "becomeExpert": {
+    "badge": "MIRYA Uzmanı",
+    "title": "MIRYA Uzmanı Olun",
+    "desc": "MIRYA’nın resmi uzman ağına katılın ve dünya çapındaki müşterilere güvenilir otomasyon hizmetleri sunun.",
+    "btnTxt": "MIRYA Uzmanı Ol",
+    "card1": {
+      "title": "Kimler Başvurmalı",
+      "disc": "Danışmanlar, ajanslar, sistem entegratörleri ve gerçek dünya otomasyon çözümleri geliştiren sektör uzmanları dahil olmak üzere güçlü otomasyon deneyimine sahip profesyoneller ve kuruluşlar."
+    },
+    "card2": {
+      "title": "Neden MIRYA ile İş Ortağı Olmalısınız",
+      "disc": "Resmi MIRYA uzmanı olarak tanınma, nitelikli müşterilere erişim, güvenilirliğinizi artırma ve platform desteği ile eğitimler sayesinde hizmetlerinizi büyütme imkanı elde edin."
+    },
+    "card3": {
+      "title": "Beklentiler ve Standartlar",
+      "disc": "Otomasyon uzmanlığını kanıtlama, MIRYA teslimat yönergelerine uyma, profesyonel standartları sürdürme ve onboarding ile kalite değerlendirme süreçlerine katılım."
+    }
   },
-  "card3": {
-    "title": "Beklentiler ve Standartlar",
-    "disc": "Otomasyon uzmanlığını kanıtlama, MIRYA teslimat yönergelerine uyma, profesyonel standartları sürdürme ve onboarding ile kalite değerlendirmelerine katılma."
+
+  "whenHire": {
+    "title": "Ne Zaman Bir Uzmanla Çalışmalısınız",
+    "disc": "Bir uzmanla çalışmanız gereken durumlar",
+    "points": [
+      "Otomasyona yeni başlıyorsanız ve güçlü bir temel oluşturmak istiyorsanız.",
+      "İş akışlarınız karmaşık, veri yoğun veya iş açısından kritikse.",
+      "Temel iş akışlarının ötesinde özel otomasyonlara ihtiyaç duyuyorsanız.",
+      "Otomasyonu daha hızlı ölçeklendirmek ve deneme-yanılma sürecinden kaçınmak istiyorsanız."
+    ]
+  },
+  "miniCard": {
+    "title": "Bir Uzmanla Çalışmak mı İstiyorsunuz?",
+    "disc": "İhtiyaçlarınıza özel otomasyon çözümleri tasarlayan, uygulayan ve ölçeklendiren MIRYA sertifikalı uzmanlarla bağlantı kurun.",
+    "btnTxt": "Uzmanla Çalış"
+  },
+
+  "work": {
+    "badge": "Nasıl Çalışır",
+    "title": "Nasıl Çalışır",
+    "disc": "Sizi doğru MIRYA uzmanı ile buluşturan ve ihtiyaçtan teslimata kadar süreci verimli şekilde yöneten basit ve rehberli bir süreç.",
+    "process1": {
+      "title": "Uzmanları İnceleyin",
+      "disc": "Otomasyon ihtiyaçlarınıza en uygun eşleşmeyi bulmak için MIRYA sertifikalı uzmanları uzmanlık alanı, sektör ve bölgeye göre keşfedin."
+    },
+    "process2": {
+      "title": "Tanışma Talep Edin",
+      "disc": "Gereksinimlerinizi ve hedeflerinizi paylaşın; sizi en uygun MIRYA uzmanı ile buluşturalım."
+    },
+    "process3": {
+      "title": "Oluşturun ve Teslim Edin",
+      "disc": "Güvenilir, üretime hazır otomasyon iş akışlarını tasarlamak, uygulamak ve devreye almak için uzmanla doğrudan iş birliği yapın."
+    }
+  },
+
+  "services": {
+    "badge": "Hizmetler",
+    "title": "Yüksek etki yaratan otomasyon için profesyonel hizmetler",
+    "disc": "İlk iş akışınızı başlatıyor ya da organizasyon genelinde otomasyonu ölçeklendiriyor olun, MIRYA uzmanları her adımda size rehberlik edecek bilgi birikimi ve desteği sunar.",
+    "card1": {
+      "title": "Process Guardian",
+      "disc": "Process Guardian, MIRYA uzmanlarının otomasyonları tasarlama ve oluşturma sürecinde size birebir rehberlik ettiği uygulamalı bir destek hizmetidir."
+    },
+    "card2": {
+      "title": "2 Günlük MIRYA Başlangıç Eğitimi",
+      "disc": "Ekibinizin MIRYA’yı yalnızca iki gün içinde etkin şekilde kullanmasını sağlamak için tasarlanmış, eğitmen liderliğinde yoğun bir eğitim deneyimi."
+    },
+    "card3": {
+      "title": "Uyumluluk ve Yönetişim Kurulumu",
+      "disc": "Roller, denetim kayıtları, sürümleme ve yedekleme mekanizmalarıyla güvenli ve kontrollü otomasyonlar kuruyoruz."
+    },
+    "card4": {
+      "title": "2 Günlük MIRYA Uzman Eğitimi",
+      "disc": "Mantık ve entegrasyonlar kullanarak karmaşık ve ölçeklenebilir iş akışları oluşturmak için ileri seviye eğitim."
+    },
+    "card5": {
+      "title": "Yapay Zekâ Danışmanlığı",
+      "disc": "Yapay zekâ uzmanlarımız, otomasyon potansiyelini belirlemek ve YZ destekli iş akışları tasarlamak için size özel danışmanlık sunar."
+    }
+  },
+
+  "additionalServices": {
+    "badge": "Ek Hizmetler",
+    "title": "Önerilen Ek Hizmetler",
+    "card1": {
+      "title": "Otomasyon Keşif Atölyesi",
+      "disc": "Süreçleri analiz eder, otomasyon fırsatlarını belirler ve yatırım getirisi (ROI) odaklı bir otomasyon yol haritası oluştururuz."
+    },
+    "card2": {
+      "title": "Otomasyon Mükemmeliyet Merkezi (CoE) Kurulumu",
+      "disc": "Şirketlerin net roller, yönetişim yapıları ve ölçekleme planlarıyla dahili otomasyon ekipleri kurmasına yardımcı oluruz."
+    },
+    "card3": {
+      "title": "Süreç Kaydı ve Blueprint Oluşturma",
+      "disc": "Gerçek kullanıcı iş akışlarını dokümante eder ve bunları otomasyona hazır blueprint’lere dönüştürürüz — dokümantasyonu olmayan ekipler için idealdir."
+    },
+    "card4": {
+      "title": "Öncelikli Destek ve Özel Success Manager",
+      "disc": "Garantili SLA’lar, hızlı yanıt süreleri ve otomasyonun sorunsuz ve sürekli gelişmesini sağlayan özel bir başarı yöneticisi."
+    },
+    "card5": {
+      "title": "MIRYA Değer Kanıtı (4 Hafta)",
+      "disc": "Uzun vadeli bir taahhütte bulunmadan önce, dört hafta içinde çalışan bir otomasyon sunarak ölçülebilir değer kanıtlarız."
+    }
   }
-}
 }

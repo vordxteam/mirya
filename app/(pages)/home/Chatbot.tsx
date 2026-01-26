@@ -58,7 +58,7 @@ export default function Chatbot({ onClose }: { onClose: () => void }) {
       // 2. Fetch from Pollinations AI (Free, No Key, Frontend-Ready)
       // This sends a prompt to their public model (often GPT-4o-mini or Llama)
       const response = await fetch(
-        `https://text.pollinations.ai/${encodeURIComponent(userText)}`
+        `https://gen.pollinations.ai/text/${encodeURIComponent(userText)}?key=sk_7aRw8DW0PVEFtKmpWdspwIBHCoxRZzLX`
       );
 
       if (!response.ok) {

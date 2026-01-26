@@ -10,8 +10,8 @@ export default function HowToUse() {
   const WorkFlow = [
     {
       id: 1,
-      title:"Browse Experts",
-      description:"Explore MIRYA-certified experts by expertise, industry, and region to find the best match for your automation needs.",
+      title:t("work.process1.title"),
+      description:t("work.process1.disc"),
       link: "#",
       image: "/images/logo1.png",
       text: t("miryaExperts.card1.badge"),
@@ -22,8 +22,8 @@ export default function HowToUse() {
     },
     {
       id: 2,
-      title: "Request an Introduction",
-      description: "Share your requirements and goals, and we’ll connect you with the most suitable MIRYA expert.",
+      title:t("work.process2.title"),
+      description:t("work.process2.disc"),
       link: "#",
       image : "/images/logo2.png",
       text: t("miryaExperts.card2.badge"),
@@ -33,8 +33,8 @@ export default function HowToUse() {
     },
     {
       id: 3,
-      title: "Build & Deliver",
-      description: "Collaborate directly with the expert to design, implement, and deploy reliable, production-ready automation workflows.",
+      title:t("work.process3.title"),
+      description:t("work.process3.disc"),
       link: "#",
       image : "/images/logo2.png",
       text: t("miryaExperts.card2.badge"),
@@ -53,15 +53,15 @@ export default function HowToUse() {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-[20px] text-center">
-           How to use
+          {t("work.badge")}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="heading-1 font-medium w-full text-center pb-3 sm:pb-6 max-w-[777px]">
-          How it Works
+          {t("work.title")}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 text-center max-w-[506px]">
-         A simple, guided process that connects you with the right MIRYA expert and takes you from requirement to delivery efficiently.
+          {t("work.disc")}
         </p>
         <div className="mt-15 flex flex-col md:flex-row justify-between items-center md:items-start relative w-full">
             <div className="hidden lg:block">
