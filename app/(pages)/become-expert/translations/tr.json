@@ -1,0 +1,80 @@
+{
+"hero": {
+  "badge": "Ortak Ol",
+  "title": "İşinizi MIRYA ile Büyütün",
+  "description": "MIRYA'nın sertifikalı uzman ağına katılın ve otomasyon uzmanlığınızı güvenilir, ölçeklenebilir müşteri çözümlerine dönüştürün.",
+  "btnText": "Başvuru Yap"
+},
+"levels": {
+  "badge": "MIRYA Uzman Seviyeleri",
+  "title": "MIRYA ile Uzmanlığınızı Geliştirin",
+  "desc": "Açıkça tanımlanmış uzman seviyeleri aracılığıyla ilerleyin, görünürlük, itibar ve yeni iş fırsatlarına erişim kazanın.",
+  "btnText": "Başvuru Yap",
+  "card1": {
+    "level": "Seviye 1",
+    "title": "Kayıtlı Uzman",
+    "description": "MIRYA ekosistemi içinde profesyoneller için düşük maliyetli bir giriş noktası.",
+    "requirements": [
+      "Uzman profili oluşturma",
+      "Hizmet alanlarını tanımlama",
+      "MIRYA sertifikası gerekli değildir"
+    ],
+    "benefits": [
+      "MIRYA topluluğunda varlık",
+      "Ekosistem güncellemelerine erken erişim",
+      "Topluluk üyesi olarak görünürlük"
+    ]
+  },
+  "card2": {
+    "level": "Seviye 2",
+    "title": "MIRYA Sertifikalı Uzman",
+    "description": "MIRYA aracılığıyla hizmet sunan uzmanlar için temel sertifikasyon seviyesi.",
+    "requirements": [
+      "Resmi MIRYA Uzman Eğitiminin Tamamlanması",
+      "Gerçek kullanım örneklerine dayalı sertifikasyon",
+      "MIRYA Kalite ve Teslimat Standartlarına Uyum"
+    ],
+    "benefits": [
+      "Uzman Kirala aracılığıyla rezerve edilebilirlik",
+      "Hizmet ve endüstriye göre kategorize edilme",
+      "Uzman aramasında öncelikli görünürlük"
+    ]
+  },
+  "card3": {
+    "level": "Seviye 3",
+    "title": "MIRYA Çözüm Ortağı",
+    "description": "Ortakların gelirleri ölçeklemelerine ve resmi MIRYA çözüm sağlayıcıları olarak hareket etmelerine olanak tanır.",
+    "requirements": [
+      "MIRYA Sertifikalı Uzman statüsü",
+      "Kanıtlanmış müşteri uygulamaları",
+      "Partner ekibi içinde isteğe bağlı çok kişilik sertifikasyon"
+    ],
+    "benefits": [
+      "MIRYA lisansları satma hakkı",
+      "İsteğe bağlı beyaz etiket sunumları",
+      "Öncelikli ve özel fırsatlar"
+    ]
+  }
+},
+  "partner": {
+    "badge": "Neden Ortak Olun",
+    "title": "MIRYA ile Neden Ortak Olmalısınız",
+    "description": "MIRYA ile ortaklık yapmak size görünürlük, nitelikli talep ve otomasyon işletmenizi güvenilir bir ekosistem içinde büyütmek için ölçeklenebilir bir yol sunar.",
+    "card1": {
+      "title": "Görünürlük",
+      "description": "Doğrulanmış bir MIRYA ortağı olarak öne çıkın ve Uzman Kirala dizini, ortak sayfaları ve ortak pazarlama girişimleri genelinde öne çıkan yerlere sahip olun."
+    },
+    "card2": {
+      "title": "Nitelikli Fırsatlar",
+      "description": "MIRYA'yı keşfeden ve uzman yardımı arayan kuruluşlara erişim sağlayın. Fırsatlar seçilmiş, ilgili ve hizmetlerinizle uyumludur—satış engelleri azaltır ve katılımı hızlandırır."
+    },
+    "card3": {
+      "title": "Eğitim & Sertifikasyon Geliri",
+      "description": "Uzmanlığınızı ücretli eğitim, sertifikasyon ve destek hizmetleri aracılığıyla bir gelir akışına dönüştürün. Ortaklar ilerledikçe eğitim ve uygulama ile ilişkili ek parasal kazanç fırsatlarının kilidini açarlar."
+    },
+    "card4": {
+      "title": "Ekosistem Büyümesi",
+      "description": "MIRYA'nın genişlemesi ile birlikte büyüyün. Ortaklar artan ürün benimsemesinden, ortak pazar girişi faaliyetlerinden ve hızla ölçeklenen bir otomasyon ekosistemi içinde uzun vadeli işbirliğinden fayda sağlarlar."
+    }
+  }
+}

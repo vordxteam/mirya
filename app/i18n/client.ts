@@ -75,14 +75,6 @@ import trjob from '@/app/components/Jobs/translations/tr.json';
 import enHire from '@/app/(pages)/hire-expert/translations/en.json'
 import deHire from '@/app/(pages)/hire-expert/translations/de.json'
 import trHire from '@/app/(pages)/hire-expert/translations/tr.json'
-// --- ADD FEATURE IMPORTS ---
-import enFeature from '@/app/(pages)/features/translations/en.json';
-import deFeature from '@/app/(pages)/features/translations/de.json';
-import trFeature from '@/app/(pages)/features/translations/tr.json';
-
-import enExpert from '@/app/(pages)/all-experts/translations/en.json';
-import deExpert from '@/app/(pages)/all-experts/translations/de.json';
-import trExpert from '@/app/(pages)/all-experts/translations/tr.json';
 
 const resources = {
   en: {
@@ -103,10 +95,7 @@ const resources = {
     startup: enStartup,
     form: enForm,
     job: enjob,
-    hire: enHire,
-    feature: enFeature ,
-    expert: enExpert
-
+    hire: enHire
   },
   de: {
     translation: deTranslation,
@@ -125,10 +114,7 @@ const resources = {
     startup: deStartup,
     form: deForm,
     job: dejob,
-    hire : deHire,
-        feature: deFeature ,
-         expert: deExpert
-
+    hire : deHire
 
   },
   tr: {
@@ -148,9 +134,7 @@ const resources = {
     startup: trStartup,
     form: trForm,
     job: trjob,
-    hire : trHire,
-        feature: trFeature ,
- expert: trExpert
+    hire : trHire
   },
 
 };
