@@ -1,43 +1,59 @@
 "use client";
-
+import Image from "next/image";
 import React from "react";
+import GradientButton from "@/app/ui/GradientButton";
 
 const AboutSession = () => {
   return (
     <section className="relative overflow-hidden bg-[#00031C]">
       {/* Background glow */}
-      <div className="absolute -left-40 top-20 h-[300px] w-[300px] rounded-full bg-[#5935E9]/30 blur-[120px]" />
-      <div className="absolute right-0 bottom-0 h-[260px] w-[260px] rounded-full bg-[#1C6BFF]/20 blur-[120px]" />
 
-      <div className="relative z-10 mx-auto max-w-[1440px] px-4 md:px-20 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+      <div className="relative z-10 mx-auto max-w-[1440px] px-5 md:px-20 py-15">
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-16 items-center">
           {/* LEFT CONTENT */}
-          <div className="space-y-6">
-            <p className="flex items-center gap-2 text-sm text-[#7EA1FF] tracking-wide">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#7EA1FF]" />
-              About Session
-            </p>
+          <div className="w-full">
+            <div className="pb-3 flex items-center justify-center lg:justify-start gap-3 sm:gap-5">
+              <Image
+                src="/images/label2.svg"
+                width={73}
+                height={16}
+                alt="line"
+                className="w-[50px] sm:w-[73px]"
+              />
+              <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal relative z-10 lg:whitespace-nowrap">
+                About Session
+              </h1>
+              <Image
+                src="/images/label.svg"
+                width={78}
+                height={16}
+                alt="line"
+                className="w-[50px] sm:w-[73px]"
+              />
+            </div>
 
-            <h1 className="text-[#F4F7FF] text-[36px] md:text-[44px] font-medium leading-tight max-w-[520px]">
+            <h1 className="text-[#F4F7FF] text-[36px] md:text-[48px] font-medium leading-14 pb-6 max-w-[722px] lg:whitespace-nowrap">
               What You Will Experience
             </h1>
 
-            <p className="text-[#CAC9D1] text-[15px] leading-6 max-w-[520px]">
+            <p className="text-[#CAC9D1] text-[16px] leading-5 font-normal max-w-[520px] pb-6">
               Join a live MIRYA online session to:
             </p>
 
-            <ul className="space-y-4 text-[#CAC9D1] text-[14px]">
+            <ul className="space-y-3 text-[#CAC9D1] text-[14px] leading-5 font-normal">
               {[
                 "Watch MIRYA automate real workflows live",
-                "See Intelligent Document Processing and Reinforcement Learning in action",
-                "Learn practical use cases from experts",
-                "Ask your questions and get immediate answers",
+                "See Intelligent Document Processing...",
+                "Learn practical use cases...",
+                "Ask your questions...",
               ].map((item, index) => (
-                <li key={index} className="flex gap-3">
-                  <span className="mt-1 h-4 w-4 flex items-center justify-center rounded-full border border-[#7EA1FF] text-[#7EA1FF] text-xs">
-                    ✓
-                  </span>
+                <li key={index} className="flex gap-3 lg:whitespace-nowrap">
+                  <Image
+                    src="/images/check-mark.svg"
+                    width={24}
+                    height={24}
+                    alt="check"
+                  />
                   {item}
                 </li>
               ))}
@@ -45,53 +61,59 @@ const AboutSession = () => {
           </div>
 
           {/* RIGHT CARD */}
-          <div
-            style={{
-              backgroundImage: `
-                linear-gradient(#00031C, #00031C),
-                linear-gradient(180deg, #343754 0%, #AAB1EC 50%, #343754 100%)
-              `,
-              backgroundOrigin: "border-box",
-              backgroundClip: "padding-box, border-box",
-              border: "1.5px solid transparent",
-            }}
-            className="rounded-2xl p-px max-w-[420px] w-full mx-auto"
-          >
-            <div className="relative rounded-2xl bg-[#00031C] p-8 h-full">
-              {/* subtle grid */}
-              <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px]" />
+          <div className="flex justify-center lg:justify-end w-full">
+            <div
+              style={{
+                marginRight: "0",
+                backgroundImage: `
+      linear-gradient(#00031C, #00031C),
+      linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)
+    `,
+                backgroundOrigin: "border-box",
+                backgroundClip: "padding-box, border-box",
+                border: "1.5px solid transparent",
+              }}
+              className="rounded-2xl p-px max-w-[437px] h-[342px] w-full mx-auto relative my-[80px]"
+            >
+              <div className="absolute -left-16 -top-20 h-[503px] w-[414px] rounded-[297.75px] bg-[#1D2759]/30 blur-[43px]" />
+              <div className="relative rounded-2xl p-8 h-full bg-[#050925] bg-[url('/images/session-bg.svg')] bg-cover bg-center bg-no-repeat">
+                <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px]" />
 
-              <div className="relative z-10 space-y-4">
-                <h3 className="text-[#F4F7FF] text-[22px] font-medium">
-                  MIRYA Live Online Session
-                </h3>
+                <div className="relative z-10 space-y-4">
+                  <h3 className="text-[#F4F7FF] text-[24px] font-semibold leading-7">
+                    MIRYA Live Online Session
+                  </h3>
 
-                <p className="text-[#CAC9D1] text-[14px] leading-6">
-                  See MIRYA in action with a guided live demonstration of
-                  no-code automation, Intelligent Document Processing, and
-                  self-optimizing workflows.
-                </p>
+                  <p className="text-[#CAC9D1] text-[14px] leading-5 font-normal">
+                    See MIRYA in action with a guided live demonstration of
+                    no-code automation, Intelligent Document Processing, and
+                    self-optimizing workflows.
+                  </p>
 
-                <div className="h-px bg-gradient-to-r from-transparent via-[#7EA1FF] to-transparent opacity-40" />
+                  <div
+                    className="opacity-40"
+                    style={{
+                      background:
+                        "linear-gradient(270deg, #1A1A3B 3.71%, #A68BEE 50.53%, #1A1A3B 99.96%)",
+                      width: "374px",
+                      height: "2px",
+                    }}
+                  />
 
-                <p className="text-[#CAC9D1] text-[14px]">
-                  Choose your preferred date and join us.
-                </p>
+                  <p className="text-white text-[14px] font-normal leading-5 max-w-[238px] w-full">
+                    Choose your preferred date and join us.
+                  </p>
 
-                <button
-                  className="
-                    mt-4 w-fit
-                    rounded-full bg-[#0274FE]
-                    px-6 py-3 text-sm font-medium text-white
-                    transition hover:bg-[#1C6BFF]
-                  "
-                >
-                  Register for a Session
-                </button>
+                  <GradientButton
+                    label="Register for a Session"
+                    bgColor="#0274FE"
+                    href="/register"
+                    textColor="#FFFFFF"
+                  />
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
