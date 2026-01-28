@@ -34,9 +34,7 @@ export default function Testimonials() {
             industries and enhance human experiences.
           </p>
 
-          {/* <div className='bg-[url("/images/globe.png")] bg-center bg-no-repeat bg-contain h-full w-full max-w-[637px] max-h-[619px]'> */}
             <TestimonialSlider />
-          {/* </div> */}
         </div>
       </div>
     </>

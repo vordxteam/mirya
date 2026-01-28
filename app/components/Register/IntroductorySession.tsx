@@ -40,7 +40,6 @@ const IntroductorySession = () => {
     role: "",
   });
 
-  // In IntroductorySession component, update the timeSlots array:
 
   const timeSlots: TimeSlot[] = [
     // AM slots (10 slots)
@@ -89,17 +88,7 @@ const IntroductorySession = () => {
     },
   ];
 
-  // // FIX: Ensure this function is correctly typed so it executes properly
-  // const handleDateClick = (arg: DateClickArg) => {
-  //   const today = new Date();
-  //   today.setHours(0, 0, 0, 0);
-
-  //   if (arg.date >= today) {
-  //     setSelectedDate(arg.date);
-  //     setSelectedTime(null);
-  //   }
-  // };
-
+ 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -196,30 +185,21 @@ const IntroductorySession = () => {
         </div>
 
         <div className="calendar-container  max-w-[714px]">
-          {/* <FullCalendar
-            plugins={[dayGridPlugin, interactionPlugin]}
-            initialView="dayGridMonth"
-            dateClick={handleDateClick}
-            selectable={true}
-            validRange={{ start: new Date() }}
-            headerToolbar={{ left: "prev", center: "title", right: "next" }}
-          /> */}
+        
           <FullCalendarComponent />
         </div>
         <div className="relative overflow-hidden">
-          {/* BLUR LIGHT – CENTERED BEHIND BOTH SECTIONS */}
           <div className="absolute inset-0 flex items-center justify-center top-39 pointer-events-none z-0">
             <div className="rounded-[493.75px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[443px] h-[200px] "></div>
           </div>
 
-          {/* CONTENT */}
           <div className="relative z-10">
             <TimeSlots
               slots={timeSlots}
               selectedTime={selectedTime}
               selectedPeriod={selectedPeriod}
               onPeriodChange={setSelectedPeriod}
-              onTimeSelect={(slot: TimeSlot) => setSelectedTime(slot.time)} // ✅ typed
+              onTimeSelect={(slot: TimeSlot) => setSelectedTime(slot.time)} 
             />
 
             <SpeakerGrid speakers={speakers} />

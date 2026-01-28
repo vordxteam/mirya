@@ -35,7 +35,6 @@ const FullCalendarComponent = () => {
             maxHeight: "none",
             backgroundColor: "transparent",
 
-            /* --- HEADER: Centered month, arrows at edges --- */
             "& .MuiPickersCalendarHeader-root": {
               color: "#FFFFFF",
               paddingBottom: "12px",
@@ -77,7 +76,6 @@ const FullCalendarComponent = () => {
               margin: "0 auto",
             },
 
-            /* --- ACTIVE PILL --- */
             "& .MuiPickersDay-root.Mui-selected": {
               backgroundColor: "#1E7BFF !important",
               color: "#FFFFFF",
@@ -86,7 +84,6 @@ const FullCalendarComponent = () => {
               borderRadius: "999px",
             },
 
-            /* WEEKDAY LABELS */
             "& .MuiDayCalendar-weekDayLabel": {
               color: "#FFFFFFCC",
               fontSize: "16px",

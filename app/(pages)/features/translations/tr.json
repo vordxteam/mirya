@@ -10,11 +10,11 @@
     },
     "card2": {
       "title": "Akıllı Doküman İşleme",
-      "description": "Faturalar, formlar ve kayıtlar, hazır AI yetenekleriyle yapılandırılmış verilere dönüştürülür."
+      "description": "Anlayın, sınıflandırın ve verileri çıkarın. Akıllı Doküman İşleme, faturalar, formlar ve kayıtları yerleşik yapay zeka becerileri kullanarak yapılandırılmış verilere dönüştürür—model eğitimi gerekmez."
     },
     "card3": {
       "title": "Pekiştirmeli Öğrenme",
-      "description": "MIRYA, gerçek sonuçlardan ve geçmiş verilerden öğrenerek süreçleri zamanla optimize eder."
+      "description": "Takviye Öğrenme özelliği, MIRYA'nın gerçek sonuçlar ve geçmiş verilerden öğrenerek süreç performansını zaman içinde otonom olarak optimize etmesini sağlar."
     },
     "card4": {
       "title": "Gelişmiş Zamanlama ve Operasyon Kontrolü",

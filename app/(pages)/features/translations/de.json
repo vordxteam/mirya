@@ -10,11 +10,11 @@
     },
     "card2": {
       "title": "Intelligente Dokumentenverarbeitung",
-      "description": "Rechnungen, Formulare und Dokumente werden mit integrierter KI in strukturierte Daten umgewandelt – ohne Modelltraining."
+      "description": "Verstehen, klassifizieren und Daten extrahieren. Intelligent Document Processing wandelt Rechnungen, Formulare und Aufzeichnungen mithilfe integrierter KI-Funktionen in strukturierte Daten um—kein Modelltraining erforderlich."
     },
     "card3": {
       "title": "Reinforcement Learning",
-      "description": "MIRYA optimiert Prozesse automatisch, indem es aus realen Ergebnissen und historischen Daten lernt."
+      "description": "Die Reinforcement-Learning-Funktion ermöglicht es MIRYA, die Prozessleistung im Laufe der Zeit autonom zu optimieren, indem sie aus realen Ergebnissen und historischen Daten lernt."
     },
     "card4": {
       "title": "Erweiterte Planung und Steuerung",

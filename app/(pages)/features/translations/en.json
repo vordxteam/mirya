@@ -10,11 +10,11 @@
     },
     "card2": {
       "title": "Intelligent Document Processing",
-      "description": "Turn invoices, forms, and records into structured data using built-in AI skills—no model training required."
+      "description": "Understand, classify, aIntelligent Document Processing turns invoices, forms, and records into structured data using built-in AI skills—no model training required.nd extract data from documents with ready-to-use AI skills—no model training required."
     },
     "card3": {
       "title": "Reinforcement Learning",
-      "description": "MIRYA autonomously improves process performance over time by learning from real outcomes and historical data."
+      "description": "The Reinforcement Learning feature allows MIRYA to autonomously optimize process performance over time by learning from real outcomes and historical data."
     },
     "card4": {
       "title": "Extended Scheduling and Operational Control",

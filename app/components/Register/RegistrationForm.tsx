@@ -13,14 +13,12 @@ export const RegistrationForm = ({
 
   return (
     <div className="sticky top-6">
-      {/* GRADIENT BORDER WRAPPER */}
       <div
         className="rounded-[12px] p-[1px] w-full"
         style={{
           background: customGradient,
         }}
       >
-        {/* INNER CONTENT CONTAINER - Background #050A29 */}
         <div 
           className="bg-[#050A29] rounded-[11px] p-6 space-y-6"
         >

@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useFeatureTranslation } from "@/app/hooks/useFeatureTranslation";
 
 const HeroSection = () => {
-const { t } = useFeatureTranslation();
+  const { t } = useFeatureTranslation();
 
   const paragraphRef = useRef<HTMLDivElement>(null);
 
@@ -88,19 +88,18 @@ const { t } = useFeatureTranslation();
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />{" "}
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-center">
-  {t("label")}
+            {t("label")}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="text-[30px] sm:text-[40px] md:text-[64px] font-medium leading-10 sm:leading-[50px] md:leading-[72px] tracking-[-1.44px] max-w-[1016px] w-full text-center pb-3 sm:pb-6">
-  {t("title")}
+          {t("title")}
         </h1>
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-10 text-center max-w-[632px]">
-  {t("description")}
+          {t("description")}
         </p>
         <div className="flex justify-center ">
           {/* <div className="inline-flex bg-transparent custom-border max-w-[222px] py-2"> */}
-          
         </div>
 
         <div className="relative">

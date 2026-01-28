@@ -118,6 +118,7 @@
 // };
 
 // export default Cards;
+
 "use client";
 
 import Image from "next/image";
@@ -172,13 +173,14 @@ const Cards = () => {
   }, [i18n.language]);
 
   const handleLearnMore = (card: CardItem) => {
-    if (card.title == 'Hire an Expert') {
+    if (card.title === "Hire an Expert") {
       router.push(`/hire-expert`);
+    } else if (card.title === "Live Session") {
+      router.push(`/live-session`);
     } else {
       router.push(`/articles/${card.category}/${card.slug}`);
     }
   };
-
   return (
     <div className="bg-[#00031C] relative z-10 min-h-[80vh]">
       <div className="max-w-[1440px] m-auto px-5 sm:px-10 lg:px-20 pb-[60px] sm:pt-[60px] pt-0 overflow-hidden relative">
