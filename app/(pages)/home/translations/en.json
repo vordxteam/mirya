@@ -117,7 +117,8 @@
   "footer": {
     "text1": "Simple. Intelligent. Autonomous.",
     "text2": "MIRYA connects and controls any system, any app, any process — with zero code. Built for business users. Powered by Cognitive AI.",
-    "ctaLabel": "Get A Demo"
+    "ctaLabel": "Get A Demo",
+    "featureLabel": "Explore More Features"
   },
   "buildForYou": {
     "badge": "Build for you",
@@ -175,64 +176,64 @@
     ]
   },
   "testimonialsSection": {
-  "badge": "Testimonials",
-  "mainTitle": "Reviews From Customers Who Use MIRYA",
-  "description": "Harnessing the power of artificial intelligence to revolutionize industries and enhance human experiences.",
-  "items": [
-    {
-      "id": 1,
-      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-      "author": "David Anderson",
-      "role": "Director"
-    },
-    {
-      "id": 2,
-      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-      "author": "David Anderson",
-      "role": "Director"
-    },
-    {
-      "id": 3,
-      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-      "author": "David Anderson",
-      "role": "Director"
-    },
-    {
-      "id": 4,
-      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-      "author": "David Anderson",
-      "role": "Director"
-    },
-    {
-      "id": 5,
-      "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
-      "author": "David Anderson",
-      "role": "Director"
-    }
-  ]
-},
-"chatbot": {
-  "title": "Chatbot",
-  "inputPlaceholder": "What's on your mind?",
-  "loadingPlaceholder": "Please wait...",
-  "sendButtonAlt": "Send",
-  "closeButtonAlt": "Close",
-  "errorMessage": "Sorry, connection failed. Please check your internet."
-},
-"cookies": {
-  "title": "Cookie Settings",
-  "description": "We use cookies to personalise content, ads and to analyse our traffic. We also share information about your use of our site with our advertising and analytics partners who may combine it with other information that you've provided to them or that they've collected from your use of their services.",
-  "strictlyNecessary": "Strictly necessary",
-  "targetingOnly": "Targeting only",
-  "performanceOnly": "Performance only",
-  "acceptAll": "Accept All",
-  "manageCookies": "Manage Cookies",
-  "rejectAll": "Reject All"
-},
-"chatbot-home": {
-  "chatWithUs": "Chat with Us"
-},
-"animationCards": {
+    "badge": "Testimonials",
+    "mainTitle": "Reviews From Customers Who Use MIRYA",
+    "description": "Harnessing the power of artificial intelligence to revolutionize industries and enhance human experiences.",
+    "items": [
+      {
+        "id": 1,
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+        "author": "David Anderson",
+        "role": "Director"
+      },
+      {
+        "id": 2,
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+        "author": "David Anderson",
+        "role": "Director"
+      },
+      {
+        "id": 3,
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+        "author": "David Anderson",
+        "role": "Director"
+      },
+      {
+        "id": 4,
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+        "author": "David Anderson",
+        "role": "Director"
+      },
+      {
+        "id": 5,
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+        "author": "David Anderson",
+        "role": "Director"
+      }
+    ]
+  },
+  "chatbot": {
+    "title": "Chatbot",
+    "inputPlaceholder": "What's on your mind?",
+    "loadingPlaceholder": "Please wait...",
+    "sendButtonAlt": "Send",
+    "closeButtonAlt": "Close",
+    "errorMessage": "Sorry, connection failed. Please check your internet."
+  },
+  "cookies": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to personalise content, ads and to analyse our traffic. We also share information about your use of our site with our advertising and analytics partners who may combine it with other information that you've provided to them or that they've collected from your use of their services.",
+    "strictlyNecessary": "Strictly necessary",
+    "targetingOnly": "Targeting only",
+    "performanceOnly": "Performance only",
+    "acceptAll": "Accept All",
+    "manageCookies": "Manage Cookies",
+    "rejectAll": "Reject All"
+  },
+  "chatbot-home": {
+    "chatWithUs": "Chat with Us"
+  },
+  "animationCards": {
     "refresh": "Refresh",
     "pdfReport": "PDF Report",
     "export": "Export",
@@ -247,15 +248,15 @@
     "analyzedProcesses": "Analyzed Processes",
     "passedFailed": "8 Passed, 2 Failed"
   },
- "animationNodes-one": {
-  "start": "Start",
-  "find": "Find",
-  "browse": "Browse",
-  "type": "Type",
-  "speak": "Speak",
-  "automate": "Automate"
-},
-"how3": {
+  "animationNodes-one": {
+    "start": "Start",
+    "find": "Find",
+    "browse": "Browse",
+    "type": "Type",
+    "speak": "Speak",
+    "automate": "Automate"
+  },
+  "how3": {
     "properties": "Properties",
     "branching": "Branching",
     "file": "File",
@@ -266,4 +267,3 @@
     "run": "Run"
   }
 }
-

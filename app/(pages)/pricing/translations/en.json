@@ -218,5 +218,46 @@
     }
   }
 }
+,
+
+  "trialPlan": {
+    "mainTitle": "Get 14 days Guided Trial Plan for better Automation",
+    "howItWorks": "How It Works",
+    "card": {
+      "title": "Guided Trial Plan",
+      "description": "A guided, time-limited evaluation of MirYA in real enterprise environments.",
+      "price": "99",
+      "priceUnit": "/One Time",
+      "cta": "Start Guided Trial",
+      "featuresTitle": "Features",
+      "limitsTitle": "Usage Limits"
+    },
+    "features": [
+      "Desktop & Browser Automation",
+      "Background App Automation",
+      "Visual Workflow",
+      "Sub-processes & Variables",
+      "API & System Integrations"
+    ],
+    "usageLimits": [
+      "Maximum 3 active workflows",
+      "Maximum 200 total runs",
+      "Output watermarked"
+    ],
+    "steps": [
+      {
+        "title": "Start a Structured Evaluation",
+        "description": "Get real, time-limited access to MirYA in a controlled, non-production environment."
+      },
+      {
+        "title": "Build & Run Real Automations",
+        "description": "Design and test real workflows using a Professional-grade license with defined limits."
+      },
+      {
+        "title": "Upgrade with Confidence",
+        "description": "Move seamlessly to Professional or Enterprise—your €99 trial fee is fully credited."
+      }
+    ]
+  }
 
 }

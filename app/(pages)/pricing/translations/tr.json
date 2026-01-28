@@ -220,6 +220,48 @@
       }
     }
   }
+,
+
+  "trialPlan": {
+    "mainTitle": "Daha İyi Otomasyon İçin 14 Günlük Rehberli Deneme Planı",
+    "howItWorks": "Nasıl Çalışır",
+    "card": {
+      "title": "Rehberli Deneme Planı",
+      "description": "MirYA’nın gerçek kurumsal ortamlarda, süre sınırlı ve rehberli bir değerlendirmesi.",
+      "price": "99",
+      "priceUnit": "/Tek Seferlik",
+      "cta": "Rehberli Denemeyi Başlat",
+      "featuresTitle": "Özellikler",
+      "limitsTitle": "Kullanım Limitleri"
+    },
+    "features": [
+      "Masaüstü ve Tarayıcı Otomasyonu",
+      "Arka Plan Uygulama Otomasyonu",
+      "Görsel İş Akışı",
+      "Alt Süreçler ve Değişkenler",
+      "API ve Sistem Entegrasyonları"
+    ],
+    "usageLimits": [
+      "En fazla 3 aktif iş akışı",
+      "Toplam en fazla 200 çalıştırma",
+      "Çıktılar filigranlıdır"
+    ],
+    "steps": [
+      {
+        "title": "Yapılandırılmış Bir Değerlendirme Başlatın",
+        "description": "Kontrollü ve üretim dışı bir ortamda MirYA’ya gerçek ve süre sınırlı erişim elde edin."
+      },
+      {
+        "title": "Gerçek Otomasyonlar Oluşturun ve Çalıştırın",
+        "description": "Belirlenmiş sınırlarla Profesyonel seviye bir lisans kullanarak gerçek iş akışları tasarlayın ve test edin."
+      },
+      {
+        "title": "Güvenle Yükseltin",
+        "description": "Profesyonel veya Kurumsal sürüme sorunsuz geçiş yapın — €99 deneme ücretiniz tamamen mahsup edilir."
+      }
+    ]
+  }
+
 
 
 

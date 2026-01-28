@@ -308,7 +308,9 @@ export default function Features() {
 
       <div className="flex items-center justify-center w-full mt-[64px]">
         <GradientButton
-          label="Explore More Features"
+          // label="Explore More Features"
+                          label={t("footer.featureLabel")}
+
           href="/features"
           bgColor="#0274FE"
         />

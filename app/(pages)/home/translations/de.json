@@ -115,7 +115,9 @@
   "footer": {
     "text1": "Einfach. Intelligent. Autonom.",
     "text2": "MIRYA verbindet und steuert jedes System, jede App und jeden Prozess — ganz ohne Code. Entwickelt für Business-Anwender. Angetrieben von kognitiver KI.",
-    "ctaLabel": "Demo anfordern"
+    "ctaLabel": "Demo anfordern",
+        "featureLabel":  "Weitere Funktionen entdecken"
+
   },
 
   "buildForYou": {
