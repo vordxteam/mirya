@@ -1,0 +1,58 @@
+{
+  "label": "Kernfunktionen",
+  "title": "Eine Plattform für intelligente Automatisierung",
+  "description": "Von Dokumentenverständnis über selbstlernende Workflows bis hin zur kalenderbasierten Orchestrierung – MIRYA automatisiert reale Geschäftsprozesse systemübergreifend und ohne Code.",
+
+  "cards": {
+    "card1": {
+      "title": "Menschliche Intelligenz & Zero-Code-Lernen",
+      "description": "MIRYA lernt Aufgaben, indem es Ihnen bei der Arbeit zusieht. Es versteht Bildschirme, interpretiert Daten und erstellt intelligente Automatisierungen – ganz ohne Code."
+    },
+    "card2": {
+      "title": "Intelligente Dokumentenverarbeitung",
+      "description": "Verstehen, klassifizieren und Daten extrahieren. Intelligent Document Processing wandelt Rechnungen, Formulare und Aufzeichnungen mithilfe integrierter KI-Funktionen in strukturierte Daten um—kein Modelltraining erforderlich."
+    },
+    "card3": {
+      "title": "Reinforcement Learning",
+      "description": "Die Reinforcement-Learning-Funktion ermöglicht es MIRYA, die Prozessleistung im Laufe der Zeit autonom zu optimieren, indem sie aus realen Ergebnissen und historischen Daten lernt."
+    },
+    "card4": {
+      "title": "Erweiterte Planung und Steuerung",
+      "description": "Zentrale Planung und Überwachung aller Automatisierungen mit Tages-, Wochen-, Monats- und Jahresansicht."
+    },
+    "card5": {
+      "title": "Sicher, Skalierbar & Komplett Anpassbar",
+      "description": "Betreiben Sie MIRYA vollständig On-Premise für maximale Datensicherheit und individuelle Anpassung."
+    },
+    "card6": {
+      "title": "Universelle Kompatibilität",
+      "description": "MIRYA arbeitet mit jeder Software wie ein Mensch – ohne APIs, ohne Integrationen, ohne Änderungen."
+    }
+  },
+
+  
+  "features": {
+    "label": "Kernfunktionen",
+    "title": "Eine Plattform für intelligente Automatisierung",
+    "description": "Von Dokumentenverständnis über selbstlernende Workflows bis hin zur kalenderbasierten Orchestrierung – MIRYA automatisiert reale Geschäftsprozesse systemübergreifend und ohne Code.",
+    "cards": [
+      {
+        "title": "Sicherheit & Compliance",
+        "description": "MIRYA ist für regulierte Umgebungen konzipiert, läuft auf Microsoft Azure und erfüllt EU KI-Verordnung sowie DSGVO. Rollenbasierter Zugriff, Audit-Logs und Verschlüsselung sorgen für Sicherheit.",
+        "icon": "/images/f1.svg"
+      },
+      {
+        "title": "Governance & Kontrolle",
+        "description": "Unternehmensprozesse werden durch strukturierte Rollen, Berechtigungen, Versionierung, Backups und Monitoring-Dashboards zuverlässig gesteuert.",
+        "icon": "/images/f2.svg"
+      },
+      {
+        "title": "Enablement für Citizen Developer",
+        "description": "MIRYA befähigt Fachanwender, ihre Prozesse ohne Programmierung zu automatisieren – mit wiederverwendbaren Vorlagen und Best-Practice-Trainings.",
+        "icon": "/images/f3.svg"
+      }
+    ]
+  }
+}
+
+

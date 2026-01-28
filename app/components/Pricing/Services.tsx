@@ -11,25 +11,25 @@ export default function Services() {
       id: 1,
       title: t("services.items.guardian.title"),
       description: t("services.items.guardian.description"),
-      link: "#",
+      link: "",
     },
     {
       id: 2,
       title: t("services.items.starter.title"),
       description: t("services.items.starter.description"),
-      link: "#",
+      link: "",
     },
     {
       id: 3,
       title: t("services.items.compliance.title"),
       description: t("services.items.compliance.description"),
-      link: "#",
+      link: "",
     },
     {
       id: 4,
       title: t("services.items.expert.title"),
       description: t("services.items.expert.description"),
-      link: "#",
+      link: "",
     },
     {
       id: 5,
@@ -64,21 +64,21 @@ export default function Services() {
 
       <div className=" pt-5 sm:pt-16 pb-10 sm:pb-16 grid sm:grid-cols-2 md:grid-cols-2 gap-6 services-grid">
         {reasons.map((item) => (
-         <div
-  key={item.id}
-  style={{
-    background:
-      "linear-gradient(280deg, #00031C 16.47%, #686DDD 48.87%, #00031C 78.17%)",
-  }}
-  className="p-px rounded-xl" 
->
-  <div
-    className="p-6 space-y-3 h-full overflow-hidden relative rounded-xl z-10"
-    style={{
-      background:
-        "linear-gradient(52deg, rgba(17, 35, 143, 0.60) 58.88%, rgba(89, 53, 233, 0.60) 96.79%), #00031C",
-    }}
-  >
+          <div
+            key={item.id}
+            style={{
+              background:
+                "linear-gradient(280deg, #00031C 16.47%, #686DDD 48.87%, #00031C 78.17%)",
+            }}
+            className="p-px rounded-xl"
+          >
+            <div
+              className="p-6 space-y-3 h-full overflow-hidden relative rounded-xl z-10"
+              style={{
+                background:
+                  "linear-gradient(52deg, rgba(17, 35, 143, 0.60) 58.88%, rgba(89, 53, 233, 0.60) 96.79%), #00031C",
+              }}
+            >
               {" "}
               <div className="absolute top-6 left-30 pointer-events-none z-0">
                 <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
@@ -104,7 +104,7 @@ export default function Services() {
                   }}
                 >
                   <Link
-                    href={(item.link as string) || "/start-up"}
+                    href={(item.link as string) || "/live-session"}
                     className="font-normal py-3 px-6 rounded-full w-full flex items-center justify-center"
                     style={{
                       background: "#00031C",

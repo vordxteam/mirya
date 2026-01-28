@@ -30,7 +30,7 @@ export const Step11: React.FC<StepProps> = ({ formData, updateFormData, errors }
                 type="checkbox"
                 checked={formData.client_count === option.id}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {formData.client_count === option.id && (
                 <svg
@@ -88,7 +88,7 @@ export const Step12: React.FC<StepProps> = ({ formData, updateFormData, errors }
                 type="checkbox"
                 checked={formData.typical_clients === option.id}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {formData.typical_clients === option.id && (
                 <svg
@@ -151,7 +151,7 @@ export const Step13: React.FC<StepProps> = ({ formData, updateFormData, errors }
                 type="checkbox"
                 checked={(formData.services_provided || []).includes(option.id)}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {(formData.services_provided || []).includes(option.id) && (
                 <svg
@@ -250,7 +250,7 @@ export const Step16: React.FC<StepProps> = ({ formData, updateFormData, errors }
                 type="checkbox"
                 checked={formData.average_project_size === option.id}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {formData.average_project_size === option.id && (
                 <svg
@@ -307,7 +307,7 @@ export const Step17: React.FC<StepProps> = ({ formData, updateFormData, errors }
                 type="checkbox"
                 checked={formData.other_partner_programs === option.id}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {formData.other_partner_programs === option.id && (
                 <svg

@@ -1,0 +1,20 @@
+{
+  "label": "MIRYA Akademi",
+  "title": "MIRYA'yı Canlı Oturumlarla Keşfedin",
+  "description": "MIRYA'nın gerçek iş süreçlerini nasıl otomatikleştirdiğini, dijital dönüşümü nasıl hızlandırdığını ve yapay zeka destekli belge ve iş akışı otomasyonuna nasıl güç verdiğini keşfedin — canlı ve etkileşimli.",
+  "button": "Bir Oturum İçin Kaydolun",
+  
+  "aboutLabel": "Oturum Hakkında",
+  "aboutTitle": "Neler Deneyimleyeceksiniz?",
+  "aboutLead": "Canlı bir MIRYA çevrimiçi oturumuna şunlar için katılın:",
+  "aboutFeatures": [
+    "MIRYA'nın gerçek iş akışlarını canlı otomatikleştirmesini izleyin",
+    "Akıllı Doküman İşleme'yi iş başında görün",
+    "İşletmeniz için pratik kullanım durumlarını öğrenin",
+    "Sorularınızı doğrudan uzmanlarımıza sorun"
+  ],
+  "cardTitle": "MIRYA Canlı Çevrimiçi Oturum",
+  "cardDescription": "Kodsuz otomasyon, Akıllı Doküman İşleme ve kendi kendini optimize eden iş akışlarının rehberli canlı gösterimi ile MIRYA'yı iş başında görün.",
+  "cardFooter": "Tercih ettiğiniz tarihi seçin ve bize katılın.",
+  "registerBtn": "Oturum İçin Kaydolun"
+}

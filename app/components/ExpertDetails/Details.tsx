@@ -35,7 +35,7 @@ interface ReviewData {
 
 const defaultCompanyData = {
   name: "",
-  logo: "/images/logo1.png",
+  logo: "/images/detail-logo.png",
   location: "",
   rating: 0,
   reviewCount: 0,
@@ -55,7 +55,6 @@ interface StarRatingProps {
   interactive?: boolean;
   onRate?: ((rating: number) => void) | null;
 }
-
 
 //   interactive = false,
 //   onRate = null,
@@ -131,17 +130,17 @@ const StarRating = ({
 
   // Custom SVG component for the unchecked/background star
   const UnfilledStar = ({ className = "" }: { className?: string }) => (
-    <svg 
-      width="14" 
-      height="14" 
-      viewBox="0 0 14 14" 
-      fill="none" 
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <path 
-        d="M4.76882 2.272C5.61349 0.757334 6.03549 0 6.66682 0C7.29816 0 7.72016 0.757334 8.56482 2.272L8.78349 2.664C9.02349 3.09467 9.14349 3.31 9.33016 3.452C9.51682 3.594 9.75016 3.64667 10.2168 3.752L10.6408 3.848C12.2808 4.21933 13.1002 4.40467 13.2955 5.032C13.4902 5.65867 12.9315 6.31267 11.8135 7.62L11.5242 7.958C11.2068 8.32934 11.0475 8.51534 10.9762 8.74467C10.9048 8.97467 10.9288 9.22267 10.9768 9.718L11.0208 10.1693C11.1895 11.914 11.2742 12.786 10.7635 13.1733C10.2528 13.5607 9.48482 13.2073 7.95016 12.5007L7.55216 12.318C7.11616 12.1167 6.89816 12.0167 6.66682 12.0167C6.43549 12.0167 6.21749 12.1167 5.78149 12.318L5.38416 12.5007C3.84882 13.2073 3.08082 13.5607 2.57082 13.174C2.05949 12.786 2.14416 11.914 2.31282 10.1693L2.35682 9.71867C2.40482 9.22267 2.42882 8.97467 2.35682 8.74534C2.28616 8.51534 2.12682 8.32934 1.80949 7.95867L1.52016 7.62C0.402157 6.31334 -0.15651 5.65934 0.0381567 5.032C0.232823 4.40467 1.05349 4.21867 2.69349 3.848L3.11749 3.752C3.58349 3.64667 3.81616 3.594 4.00349 3.452C4.19082 3.31 4.31016 3.09467 4.55016 2.664L4.76882 2.272Z" 
-        fill="#FFFFFF52" 
+      <path
+        d="M4.76882 2.272C5.61349 0.757334 6.03549 0 6.66682 0C7.29816 0 7.72016 0.757334 8.56482 2.272L8.78349 2.664C9.02349 3.09467 9.14349 3.31 9.33016 3.452C9.51682 3.594 9.75016 3.64667 10.2168 3.752L10.6408 3.848C12.2808 4.21933 13.1002 4.40467 13.2955 5.032C13.4902 5.65867 12.9315 6.31267 11.8135 7.62L11.5242 7.958C11.2068 8.32934 11.0475 8.51534 10.9762 8.74467C10.9048 8.97467 10.9288 9.22267 10.9768 9.718L11.0208 10.1693C11.1895 11.914 11.2742 12.786 10.7635 13.1733C10.2528 13.5607 9.48482 13.2073 7.95016 12.5007L7.55216 12.318C7.11616 12.1167 6.89816 12.0167 6.66682 12.0167C6.43549 12.0167 6.21749 12.1167 5.78149 12.318L5.38416 12.5007C3.84882 13.2073 3.08082 13.5607 2.57082 13.174C2.05949 12.786 2.14416 11.914 2.31282 10.1693L2.35682 9.71867C2.40482 9.22267 2.42882 8.97467 2.35682 8.74534C2.28616 8.51534 2.12682 8.32934 1.80949 7.95867L1.52016 7.62C0.402157 6.31334 -0.15651 5.65934 0.0381567 5.032C0.232823 4.40467 1.05349 4.21867 2.69349 3.848L3.11749 3.752C3.58349 3.64667 3.81616 3.594 4.00349 3.452C4.19082 3.31 4.31016 3.09467 4.55016 2.664L4.76882 2.272Z"
+        fill="#FFFFFF52"
       />
     </svg>
   );
@@ -155,7 +154,9 @@ const StarRating = ({
             <Star
               key={i}
               className={`w-4 h-4 fill-yellow-400 text-yellow-400 ${
-                interactive ? "cursor-pointer hover:scale-110 transition-transform" : ""
+                interactive
+                  ? "cursor-pointer hover:scale-110 transition-transform"
+                  : ""
               }`}
               onClick={() => handleClick(i)}
             />
@@ -163,8 +164,14 @@ const StarRating = ({
         } else if (i === fullStars && hasHalfStar) {
           // Half Star Logic
           return (
-            <div key={i} className="relative w-4 h-4" onClick={() => handleClick(i)}>
-              <UnfilledStar className={`w-4 h-4 absolute ${interactive ? "cursor-pointer" : ""}`} />
+            <div
+              key={i}
+              className="relative w-4 h-4"
+              onClick={() => handleClick(i)}
+            >
+              <UnfilledStar
+                className={`w-4 h-4 absolute ${interactive ? "cursor-pointer" : ""}`}
+              />
               <div className="overflow-hidden w-1/2 absolute">
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
               </div>
@@ -173,10 +180,14 @@ const StarRating = ({
         } else {
           // Unfilled Star (using your custom SVG and color)
           return (
-            <div 
-              key={i} 
+            <div
+              key={i}
               onClick={() => handleClick(i)}
-              className={interactive ? "cursor-pointer hover:scale-110 transition-transform" : ""}
+              className={
+                interactive
+                  ? "cursor-pointer hover:scale-110 transition-transform"
+                  : ""
+              }
             >
               <UnfilledStar className="w-4 h-4" />
             </div>
@@ -613,13 +624,36 @@ export default function Details() {
             <div className="p-6 space-y-6">
               {/* Logo and Company Name */}
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <img
                     src={companyData.logo}
                     alt={companyData.name}
                     className="w-16 h-16 object-contain"
                   />
                 </div>
+                  <div className="inline-flex items-center gap-2 bg-[#E1F9E11F] rounded-full p-2 mb-4 border border-[#E1F9E166]">
+                    <div className="w-4 h-4 bg-[#08CD05] rounded-full flex items-center justify-center">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="16" height="16" rx="8" fill="#08CD05" />
+                        <path
+                          d="M4.875 7.91432L6.63375 9.67307C6.69561 9.73576 6.76931 9.78553 6.85056 9.81951C6.93182 9.85348 7.01901 9.87098 7.10708 9.87098C7.19515 9.87098 7.28235 9.85348 7.3636 9.81951C7.44486 9.78553 7.51856 9.73576 7.58042 9.67307L11.125 6.12891"
+                          stroke="white"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span className="heading-7 font-normal text-[#E1F9E1]">
+                      MIRYA Certified Expert 
+                    </span>
+                  </div>
+
                 <h2 className="text-[24px] leading-[30px] font-medium mb-5 text-[#F4F7FF] ">
                   {companyData.name}
                 </h2>

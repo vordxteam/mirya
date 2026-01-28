@@ -37,7 +37,7 @@ export const Step23: StepComponent = ({ formData, updateFormData, errors , onEnt
                   option.id
                 )}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {(formData.mirya_contributions || []).includes(option.id) && (
                 <svg

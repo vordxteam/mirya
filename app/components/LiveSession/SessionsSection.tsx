@@ -3,10 +3,9 @@ import React from "react";
 import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import Link from "next/link";
 
 export default function SessionsSection() {
-  const { t } = useTranslation("expert");
+  const { t } = useTranslation("live-session");
 
   const SessionsSection = [
     {
@@ -91,74 +90,87 @@ export default function SessionsSection() {
             </p>
           </div>
 
-          {/* Cards Grid */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
+            <svg width="0" height="0" className="absolute">
+              <defs>
+                <clipPath
+                  id="responsiveCardPath"
+                  clipPathUnits="objectBoundingBox"
+                >
+                  <path d="M 0.48,0 L 0.95,0 C 0.98,0,1,0.015,1,0.035 L 1,0.96 C 1,0.98,0.98,1,0.95,1 L 0.05,1 C 0.02,1,0,0.98,0,0.96 L 0,0.18 C 0,0.14,0.03,0.12,0.08,0.12 L 0.34,0.12 C 0.37,0.12,0.4,0.1,0.4,0.07 L 0.4,0.06 C 0.4,0.03,0.43,0,0.48,0 Z" />
+                </clipPath>
+              </defs>
+            </svg>
+
             {SessionsSection.map((session) => (
-              <div key={session.id} className="relative max-h-[605px]">
-                {/* Level Badge - Positioned absolutely outside clipped area */}
-                <div className="absolute top-3 left-6 z-20">
-                  <div className="inline-block px-4 py-2 rounded-full ">
-                    <span className="text-[#FFFFFF] heading-3 font-medium ">
+              <div key={session.id} className="relative flex flex-col h-full">
+                {/* Level Badge */}
+                <div className="absolute top-3 -left-1 z-20">
+                  <div className="inline-block px-4 py-2">
+                    <span className="text-[#FFFFFF] heading-3 font-medium">
                       {session.session}
                     </span>
                   </div>
                 </div>
 
+                {/* Main Border Container */}
                 <div
-                  className="relative rounded-[24px] p-0.6 z-0 pb-1 h-full"
+                  className="relative p-[1.5px] flex-1 flex flex-col"
                   style={{
                     background:
                       "linear-gradient(200deg, #000000 0%, #686DDD 70%, #050A29 100%)",
-                    clipPath:
-                      'path("M 195.928 0 L 392 0 C 402.493 0 411 8.50659 411 19 L 411 526 C 411 536.493 402.493 545 392 545 L 19 545 C 8.50659 545 0 536.493 0 526 L 0 97 C 0 79.3269 14.3269 65 32 65 L 137.928 65 C 152.287 65 163.928 53.3594 163.928 39 L 163.928 32 C 163.928 14.3269 178.255 0 195.928 0 Z")',
+                    clipPath: "url(#responsiveCardPath)", // Uses the dynamic SVG defined above
                   }}
                 >
+                  {/* Inner Content Container */}
                   <div
-                    className="bg-[#050A29] rounded-[24px] pl-[18px] pr-[17.8px] pb-[41px] h-full pt-[103px] flex flex-col"
+                    className="bg-[#050A29] pl-[18px] pr-[17.8px] pb-[41px] pt-[103px] flex-1 flex flex-col"
                     style={{
-                      clipPath:
-                        'path("M 193.928 2 L 390 2 C 399.941 2 408 10.0589 408 20 L 408 524 C 408 533.941 399.941 542 390 542 L 20 542 C 10.0589 542 2 533.941 2 524 L 2 97 C 2 80.4315 15.4315 67 32 67 L 136.928 67 C 150.188 67 160.928 55.2594 160.928 40.5 L 160.928 33 C 160.928 16.4315 174.36 3 190.928 3 L 193.928 2 Z")',
+                      clipPath: "url(#responsiveCardPath)", // Matches the outer clip
                     }}
                   >
-                    {/* Title and Description */}
-                    <h3 className="heading-3 font-semibold text-[#F4F7FF] mb-3">
-                      {session.title}
-                    </h3>
-                    <p className="text-[#CAC9D1] font-normal  heading-6 mb-3">
-                      {session.description}
-                    </p>
+                    <div className="flex-1 flex flex-col">
+                      <h3 className="heading-3 font-semibold text-[#F4F7FF] mb-3">
+                        {session.title}
+                      </h3>
+                      <p className="text-[#CAC9D1] font-normal heading-6 mb-3">
+                        {session.description}
+                      </p>
 
-                    <div className="h-[1px] w-full bg-gradient-to-r from-[#1A1A3B] via-[#A68BEE] to-[#1A1A3B] "></div>
+                      <div className="h-[1px] w-full bg-gradient-to-r from-[#1A1A3B] via-[#A68BEE] to-[#1A1A3B] mb-8"></div>
 
-                    {/* Requirements Section */}
-                    <div className="mb-8 mt-8 flex-1">
-                      <div className="flex items-center gap-2 mb-4">
-                        <h4 className="font-normal text-[#FFFFFFB8] heading-6">
+                      {/* Highlights Section */}
+                      <div className="flex-1">
+                        <h4 className="font-normal text-[#FFFFFFB8] heading-6 mb-4">
                           Key Highlights:
                         </h4>
+                        <ul className="list-disc list-inside space-y-3">
+                          {session.requirements.map((req, index) => (
+                            <li
+                              key={index}
+                              className="text-[#F4F7FFCC] heading-6 font-medium"
+                            >
+                              {req}
+                            </li>
+                          ))}
+                        </ul>
+                        {session.footerDescription && (
+                          <p className="mt-8 text-white heading-6 font-normal max-w-[238px]">
+                            {session.footerDescription}
+                          </p>
+                        )}
                       </div>
-                      <ul className="list-disc list-inside space-y-3">
-                        {session.requirements.map((req, index) => (
-                          <li
-                            key={index}
-                            className="text-[#F4F7FFCC] heading-6 font-medium"
-                          >
-                            {req}
-                          </li>
-                        ))}
-                      </ul>
-                      {session.footerDescription && (
-                        <p className="mt-8 text-white heading-6 font-normal max-w-[238px] w-full">
-                          {session.footerDescription}
-                        </p>
-                      )}
+
+                      {/* Button - Pushed to bottom by flex-1 */}
+                      <div className="mt-auto pt-6">
+                        <GradientButton
+                          label="Register Now"
+                          bgColor="#0274FE"
+                          href="/register"
+                          textColor="#FFFFFF"
+                        />
+                      </div>
                     </div>
-                    <GradientButton
-                      label="Register Now"
-                      bgColor="#0274FE"
-                      href="/register"
-                      textColor="#FFFFFF"
-                    />
                   </div>
                 </div>
               </div>

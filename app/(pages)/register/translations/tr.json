@@ -1,0 +1,57 @@
+{
+  "label": "Temel Özellikler",
+  "title": "Akıllı Otomasyon için Tek Platform",
+  "description": "Belge anlayışından kendi kendine öğrenen iş akışlarına ve takvim tabanlı orkestrasyona kadar — MIRYA, gerçek iş süreçlerini sıfır kod ile sistemler arasında otomatikleştirir.",
+
+  "cards": {
+    "card1": {
+      "title": "İnsan Seviyesinde Zeka ve Sıfır Kod Öğrenme",
+      "description": "MIRYA sizi izleyerek öğrenir. Ekranları anlar, verileri yorumlar ve tek satır kod yazmadan akıllı otomasyonlar oluşturur."
+    },
+    "card2": {
+      "title": "Akıllı Doküman İşleme",
+      "description": "Anlayın, sınıflandırın ve verileri çıkarın. Akıllı Doküman İşleme, faturalar, formlar ve kayıtları yerleşik yapay zeka becerileri kullanarak yapılandırılmış verilere dönüştürür—model eğitimi gerekmez."
+    },
+    "card3": {
+      "title": "Pekiştirmeli Öğrenme",
+      "description": "Takviye Öğrenme özelliği, MIRYA'nın gerçek sonuçlar ve geçmiş verilerden öğrenerek süreç performansını zaman içinde otonom olarak optimize etmesini sağlar."
+    },
+    "card4": {
+      "title": "Gelişmiş Zamanlama ve Operasyon Kontrolü",
+      "description": "Tüm otomasyonları gün, hafta, ay ve yıl görünümleriyle merkezi olarak planlayın ve yönetin."
+    },
+    "card5": {
+      "title": "Güvenli, Ölçeklenebilir ve Size Özel",
+      "description": "MIRYA’yı tamamen kendi ortamınızda çalıştırın. Tam gizlilik, tam kontrol, tam özelleştirme."
+    },
+    "card6": {
+      "title": "Evrensel Uyumluluk",
+      "description": "MIRYA, insan gibi tıklayarak ve yazarak tüm uygulamalarla çalışır. API yok, entegrasyon yok."
+    }
+  },
+  
+  "features": {
+    "label": "Özellikler",
+    "title": "Her ölçekte güçlü, güvenli ve güvenilir olacak şekilde tasarlanmış otomasyon.",
+    "description": "Sistemleri birbirine bağlamak, verileri korumak ve otomasyonu kurumsal düzeyde güvenilirlikle yönetmek için tasarlandı — teknik karmaşıklık eklemeden.",
+    "cards": [
+      {
+        "title": "Güvenlik ve Uyumluluk",
+        "description": "Düzenlemeye tabi ortamlar için geliştirilen MIRYA, Microsoft Azure üzerinde çalışır ve tasarım gereği AB Yapay Zekâ Yasası ile GDPR ilkelerine uygundur. Rol tabanlı erişim, denetim kayıtları ve şifreleme güvenli otomasyon sağlar.",
+        "icon": "/images/f1.svg"
+      },
+      {
+        "title": "Yönetişim ve Kontrol",
+        "description": "Kurumsal operasyonlar; yapılandırılmış roller, yetkilendirmeler, sürümleme, yedekleme ve tam izlenebilirlik sunan izleme panelleriyle desteklenir.",
+        "icon": "/images/f2.svg"
+      },
+      {
+        "title": "Citizen Developer Güçlendirme",
+        "description": "MIRYA, iş kullanıcılarının yeniden kullanılabilir şablonlar ve en iyi uygulama eğitimleriyle kod yazmadan kendi süreçlerini otomatikleştirmelerini sağlar.",
+        "icon": "/images/f3.svg"
+      }
+    ]
+  }
+}
+
+

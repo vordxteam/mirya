@@ -313,7 +313,7 @@ export default function Features() {
           bgColor="#0274FE"
         />
       </div>
-      <motion.div
+      {/* <motion.div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.1 }}
@@ -338,7 +338,41 @@ export default function Features() {
             }}
           />
         </div>
-      </motion.div>
+      </motion.div> */}
+
+      <motion.div
+  initial="offscreen"
+  whileInView="onscreen"
+  viewport={{ once: true, amount: 0.1 }}
+  variants={fadeInVariants}
+  className="flex justify-center items-center mt-[60px] mb-[40px] px-4"
+>
+  <div
+    className="
+      relative mx-auto
+      /* Responsive Widths */
+      w-[50%] 
+      md:w-[40%] 
+      xl:w-[50%] 
+      2xl:w-[31%]
+      
+      /* Responsive Heights */
+      h-[1px]
+      2xl:h-[2px]
+    "
+    style={{
+      background: "linear-gradient(90deg, transparent 0%, #8EA0E0 50%, transparent 100%)",
+         }}
+  >
+    {/* Inner White Glow Overlay */}
+    <div
+      className="absolute inset-0 opacity-40"
+      style={{
+        background: "linear-gradient(90deg, transparent 0%, #FFFFFF 50%, transparent 100%)",
+      }}
+    />
+  </div>
+</motion.div>
 
       <div className="max-w-[1440px] m-auto">
         <motion.div

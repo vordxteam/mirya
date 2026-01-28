@@ -42,7 +42,7 @@ export const Step13: StepComponent = ({ formData, updateFormData, errors , onEnt
                 checked={(formData.services_provided || []).includes(option.id)}
                 onChange={() => handleCheckboxChange(option.id)}
                 onKeyDown={onEnter}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {(formData.services_provided || []).includes(option.id) && (
                 <svg

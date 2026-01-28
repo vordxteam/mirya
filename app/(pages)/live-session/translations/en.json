@@ -1,0 +1,20 @@
+{
+  "label": "MIRYA Academy",
+  "title": "Discover MIRYA Through Live Sessions",
+  "description": "Explore how MIRYA automates real business processes, accelerates digital transformation, and powers AI-driven document and workflow automation — live and interactive.",
+  "button": "Register for a Session",
+  
+  "aboutLabel": "About Session",
+  "aboutTitle": "What You Will Experience",
+  "aboutLead": "Join a live MIRYA online session to:",
+  "aboutFeatures": [
+    "Watch MIRYA automate real workflows live",
+    "See Intelligent Document Processing in action",
+    "Learn practical use cases for your business",
+    "Ask your questions directly to our experts"
+  ],
+  "cardTitle": "MIRYA Live Online Session",
+  "cardDescription": "See MIRYA in action with a guided live demonstration of no-code automation, Intelligent Document Processing, and self-optimizing workflows.",
+  "cardFooter": "Choose your preferred date and join us.",
+  "registerBtn": "Register for a Session"
+}
