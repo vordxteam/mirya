@@ -1,3 +1,8 @@
+"use client";
+
+import React from "react";
+import { useTranslation } from "react-i18next";
+
 interface Speaker {
   id: string;
   name: string;
@@ -6,12 +11,16 @@ interface Speaker {
 }
 
 export const SpeakerGrid = ({ speakers }: { speakers: Speaker[] }) => {
+  const { t } = useTranslation("live-session");
+
   const borderGradient =
     "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)";
 
   return (
     <div className="space-y-4">
-      <h3 className="text-[24px] font-medium leading-[30px] text-white pt-6">Speakers</h3>
+      <h3 className="text-[24px] font-medium leading-[30px] text-white pt-6">
+        {t("speakers_title")}
+      </h3>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {speakers.map((speaker) => (
           <div

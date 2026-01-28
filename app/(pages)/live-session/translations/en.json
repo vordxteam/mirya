@@ -34,13 +34,14 @@
     "items": [
       {
         "id": 1,
-        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+                "text": "Seeing MIRYA live transformed the way we evaluate automation — the team answered our toughest questions.” — Head of Ops, Finance. The demo of document processing workflows solved a major bottleneck for us.",
+
         "author": "David Anderson",
         "role": "Director"
       },
       {
         "id": 2,
-        "text": "Seeing MIRYA live transformed the way we evaluate automation — the team answered our toughest questions.” — Head of Ops, Finance. The demo of document processing workflows solved a major bottleneck for us.",
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
         "author": "David Anderson",
         "role": "Director"
       },
@@ -94,35 +95,20 @@
     "noDescription": "No description available"
   },
   
-  "live-session": {
-    "pageTitle": "Live Introductory Session",
-    "aiAutomationTitle": "AI Automation in Action",
-    "aiAutomationDescription": "A live walkthrough showing how MIRYA automates processes, data and systems into intelligent automation.",
-    "dateInfo": "23 October, 2025",
-    "timeInfo": "12:30 PM - 2:30 PM",
-    "durationInfo": "2 Hour",
-    "selectDateTimeTitle": "Select Date & Time",
-    "registrationTitle": "Register For The Session",
-    "registrationDescription": "Please fill in the details to register.",
-    "registrationSuccess": "Registration successful!",
-    "registrationFailed": "Registration failed. Please try again.",
-    "form": {
-      "fullName": "Full Name",
-      "fullNamePlaceholder": "Enter your full name",
-      "email": "Email",
-      "emailPlaceholder": "Enter your email address",
-      "companyName": "Company Name",
-      "companyNamePlaceholder": "Enter your company name",
-      "role": "Role",
-      "rolePlaceholder": "Enter your role/position",
-      "submitButton": "Register For Session",
-      "submittingButton": "Submitting...",
-      "validation": {
-        "selectDate": "Please select a date and time",
-        "selectValidSession": "Please select a valid session"
-      }
-    }
-  }
-
+  "hero_title": "AI Automation in Action",
+  "hero_description": "A live walkthrough showing how MIRYA automates processes, data and systems into intelligent automation.",
+  "duration": "2 Hour",
+  "select_datetime": "Select Date & Time",
+  "validation_error": "Please select a date and time",
+  "session_error": "Please select a valid session",
+  "success_message": "Registration successful!",
+  "generic_error": "An error occurred. Please try again.",
+  
+  "available_slots": "Available Time Slots",
+  "no_slots": "No slots available.",
+  "speakers_title": "Speakers"
 }
+
+
+ 
 

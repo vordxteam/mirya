@@ -34,13 +34,15 @@
     "items": [
       {
         "id": 1,
-        "text": "Das einfachste Automatisierungstool, das wir je benutzt haben. Unser Team hat es an einem Tag gelernt. Ein Tool, das exakt mit unseren bestehenden Systemen funktioniert – keine Integrationen erforderlich. Wir nutzen MIRYA als White-Label-Lösung und bieten unseren Kunden nun Automatisierung unter unserer eigenen Marke an. Ein echter Game-Changer.",
+                "text": "MIRYA live zu sehen, hat unsere Bewertung von Automatisierung grundlegend verändert – das Team hat unsere schwierigsten Fragen beantwortet. – Head of Ops, Finanzen. Die Demo der Dokumentenverarbeitungs-Workflows hat einen großen Engpass für uns gelöst.",
+
         "author": "David Anderson",
         "role": "Direktor"
       },
       {
         "id": 2,
-        "text": "MIRYA live zu sehen, hat unsere Bewertung von Automatisierung grundlegend verändert – das Team hat unsere schwierigsten Fragen beantwortet. – Head of Ops, Finanzen. Die Demo der Dokumentenverarbeitungs-Workflows hat einen großen Engpass für uns gelöst.",
+                "text": "Das einfachste Automatisierungstool, das wir je benutzt haben. Unser Team hat es an einem Tag gelernt. Ein Tool, das exakt mit unseren bestehenden Systemen funktioniert – keine Integrationen erforderlich. Wir nutzen MIRYA als White-Label-Lösung und bieten unseren Kunden nun Automatisierung unter unserer eigenen Marke an. Ein echter Game-Changer.",
+
         "author": "David Anderson",
         "role": "Direktor"
       },
@@ -91,38 +93,23 @@
     "loading": "Sitzungsdetails werden geladen...",
     "noData": "Keine Sitzungsdaten gefunden.",
     "noDescription": "Keine Beschreibung verfügbar"
-  },
-  
-  "live-session": {
-    "pageTitle": "Live-Einführungssitzung",
-    "aiAutomationTitle": "KI-Automatisierung in Aktion",
-    "aiAutomationDescription": "Eine Live-Demonstration, die zeigt, wie MIRYA Prozesse, Daten und Systeme in intelligente Automatisierung umwandelt.",
-    "dateInfo": "23. Oktober 2025",
-    "timeInfo": "12:30 - 14:30 Uhr",
-    "durationInfo": "2 Stunden",
-    "selectDateTimeTitle": "Datum & Uhrzeit auswählen",
-    "registrationTitle": "Für die Sitzung registrieren",
-    "registrationDescription": "Bitte füllen Sie die Details zur Registrierung aus.",
-    "registrationSuccess": "Registrierung erfolgreich!",
-    "registrationFailed": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut.",
-    "form": {
-      "fullName": "Vollständiger Name",
-      "fullNamePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
-      "email": "E-Mail",
-      "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
-      "companyName": "Firmenname",
-      "companyNamePlaceholder": "Geben Sie Ihren Firmennamen ein",
-      "role": "Rolle",
-      "rolePlaceholder": "Geben Sie Ihre Rolle/Position ein",
-      "submitButton": "Für Sitzung registrieren",
-      "submittingButton": "Wird übermittelt...",
-      "validation": {
-        "selectDate": "Bitte wählen Sie ein Datum und eine Uhrzeit aus",
-        "selectValidSession": "Bitte wählen Sie eine gültige Sitzung aus"
-      }
-    }
   }
+  
+ 
 
+,
+
+  "hero_title": "KI-Automatisierung in Aktion",
+  "hero_description": "Ein Live-Durchgang, der zeigt, wie MIRYA Prozesse, Daten und Systeme in intelligente Automatisierung verwandelt.",
+  "duration": "2 Stunden",
+  "select_datetime": "Datum & Uhrzeit auswählen",
+  "validation_error": "Bitte wählen Sie ein Datum und eine Uhrzeit aus",
+  "session_error": "Bitte wählen Sie eine gültige Sitzung aus",
+  "success_message": "Registrierung erfolgreich!",
+  "generic_error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+  "available_slots": "Verfügbare Zeitfenster",
+  "no_slots": "Keine Zeitfenster verfügbar.",
+  "speakers_title": "Sprecher"
 }
 
 

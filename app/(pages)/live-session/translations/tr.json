@@ -3,7 +3,7 @@
   "title": "MIRYA'yı Canlı Oturumlarla Keşfedin",
   "description": "MIRYA'nın gerçek iş süreçlerini nasıl otomatikleştirdiğini, dijital dönüşümü nasıl hızlandırdığını ve yapay zeka destekli belge ve iş akışı otomasyonuna nasıl güç verdiğini keşfedin — canlı ve etkileşimli.",
   "button": "Bir Oturum İçin Kaydolun",
-  
+
   "aboutLabel": "Oturum Hakkında",
   "aboutTitle": "Neler Deneyimleyeceksiniz?",
   "aboutLead": "Canlı bir MIRYA çevrimiçi oturumuna şunlar için katılın:",
@@ -17,7 +17,7 @@
   "cardDescription": "Kodsuz otomasyon, Akıllı Doküman İşleme ve kendi kendini optimize eden iş akışlarının rehberli canlı gösterimi ile MIRYA'yı iş başında görün.",
   "cardFooter": "Tercih ettiğiniz tarihi seçin ve bize katılın.",
   "registerBtn": "Oturum İçin Kaydolun",
-  
+
   "sessions": {
     "label": "Oturumlar",
     "mainTitle": "Doğru MIRYA Oturumunu Seçin",
@@ -34,13 +34,15 @@
     "items": [
       {
         "id": 1,
-        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Entegrasyona gerek duymadan halihazırda sahip olduğumuz sistemlerle tam olarak çalışan bir araç. MIRYA'yı beyaz etiketle kullandık ve artık müşterilerimize kendi markamız altında otomasyon sunuyoruz. Oyunun kurallarını değiştiriyor.",
+        "text": "MIRYA'yı canlı görmek otomasyonu değerlendirme şeklimizi değiştirdi; ekip en zor sorularımızı yanıtladı. – Operasyon Başkanı, Finans. Belge işleme iş akışlarının demosu bizim için büyük bir darboğazı çözdü.",
+
         "author": "David Anderson",
         "role": "Direktör"
       },
       {
         "id": 2,
-        "text": "MIRYA'yı canlı görmek otomasyonu değerlendirme şeklimizi değiştirdi; ekip en zor sorularımızı yanıtladı. – Operasyon Başkanı, Finans. Belge işleme iş akışlarının demosu bizim için büyük bir darboğazı çözdü.",
+        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Entegrasyona gerek duymadan halihazırda sahip olduğumuz sistemlerle tam olarak çalışan bir araç. MIRYA'yı beyaz etiketle kullandık ve artık müşterilerimize kendi markamız altında otomasyon sunuyoruz. Oyunun kurallarını değiştiriyor.",
+
         "author": "David Anderson",
         "role": "Direktör"
       },
@@ -64,7 +66,7 @@
       }
     ]
   },
-  
+
   "registrationForm": {
     "title": "Aşağıdaki bilgileri doldurun.",
     "fields": {
@@ -84,7 +86,7 @@
       "selectTime": "Lütfen önce bir saat dilimi seçin"
     }
   },
-  
+
   "hero": {
     "goBack": "Geri Dön",
     "introTitle": "Tanıtım Oturumu",
@@ -92,38 +94,16 @@
     "noData": "Oturum verisi bulunamadı.",
     "noDescription": "Açıklama mevcut değil"
   },
-  
-  "live-session": {
-    "pageTitle": "Canlı Tanıtım Oturumu",
-    "aiAutomationTitle": "Eylemde Yapay Zeka Otomasyonu",
-    "aiAutomationDescription": "MIRYA'nın süreçleri, verileri ve sistemleri nasıl akıllı otomasyona dönüştürdüğünü gösteren canlı bir gösterim.",
-    "dateInfo": "23 Ekim 2025",
-    "timeInfo": "12:30 - 14:30",
-    "durationInfo": "2 Saat",
-    "selectDateTimeTitle": "Tarih ve Saat Seçin",
-    "registrationTitle": "Oturum için Kayıt Olun",
-    "registrationDescription": "Kayıt olmak için lütfen bilgileri doldurun.",
-    "registrationSuccess": "Kayıt başarılı!",
-    "registrationFailed": "Kayıt başarısız oldu. Lütfen tekrar deneyin.",
-    "form": {
-      "fullName": "Tam Ad",
-      "fullNamePlaceholder": "Tam adınızı girin",
-      "email": "E-posta",
-      "emailPlaceholder": "E-posta adresinizi girin",
-      "companyName": "Şirket Adı",
-      "companyNamePlaceholder": "Şirket adınızı girin",
-      "role": "Rol",
-      "rolePlaceholder": "Rolünüzü/pozisyonunuzu girin",
-      "submitButton": "Oturuma Kayıt Ol",
-      "submittingButton": "Gönderiliyor...",
-      "validation": {
-        "selectDate": "Lütfen bir tarih ve saat seçin",
-        "selectValidSession": "Lütfen geçerli bir oturum seçin"
-      }
-    }
-  }
 
+  "hero_title": "İş Başında Yapay Zeka Otomasyonu",
+  "hero_description": "MIRYA'nın süreçleri, verileri ve sistemleri nasıl akıllı otomasyona dönüştürdüğünü gösteren canlı bir anlatım.",
+  "duration": "2 Saat",
+  "select_datetime": "Tarih ve Saat Seçin",
+  "validation_error": "Lütfen bir tarih ve saat seçin",
+  "session_error": "Lütfen geçerli bir oturum seçin",
+  "success_message": "Kayıt başarılı!",
+  "generic_error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+  "available_slots": "Müsait Zaman Dilimleri",
+  "no_slots": "Müsait zaman dilimi bulunmamaktadır.",
+  "speakers_title": "Konuşmacılar"
 }
-
-
-
