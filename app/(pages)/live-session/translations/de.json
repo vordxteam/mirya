@@ -1,0 +1,20 @@
+{
+  "label": "MIRYA Akademie",
+  "title": "Entdecken Sie MIRYA in Live-Sessions",
+  "description": "Erfahren Sie live und interaktiv, wie MIRYA echte Geschäftsprozesse automatisiert, die digitale Transformation beschleunigt und KI-gestützte Dokumenten- und Workflow-Automatisierung ermöglicht.",
+  "button": "Für eine Sitzung anmelden",
+  
+  "aboutLabel": "Über die Sitzung",
+  "aboutTitle": "Was Sie erleben werden",
+  "aboutLead": "Nehmen Sie an einer live MIRYA Online-Sitzung teil, um:",
+  "aboutFeatures": [
+    "MIRYA bei der Live-Automatisierung echter Workflows zu beobachten",
+    "Intelligente Dokumentenverarbeitung in Aktion zu sehen",
+    "Praktische Anwendungsfälle für Ihr Unternehmen kennenzulernen",
+    "Ihre Fragen direkt an unsere Experten zu stellen"
+  ],
+  "cardTitle": "MIRYA Live-Online-Sitzung",
+  "cardDescription": "Erleben Sie MIRYA in Aktion mit einer geführten Live-Demonstration von No-Code-Automatisierung, intelligenter Dokumentenverarbeitung und selbstoptimierenden Workflows.",
+  "cardFooter": "Wählen Sie Ihren Wunschtermin und seien Sie dabei.",
+  "registerBtn": "Für eine Sitzung anmelden"
+}

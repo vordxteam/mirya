@@ -202,3 +202,48 @@ body {
   z-index: 0;
   position: relative;
 }
+
+/* Custom FullCalendar Styles */
+.css-1pv2de5-MuiDayCalendar-weekContainer {
+      margin: 19px 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    column-gap: 50px;
+   
+}
+.css-1rl1vrc-MuiDayCalendar-header {
+      gap: 59px!important;
+}
+
+.css-stjntw-MuiDateCalendar-root .MuiPickersDay-root {
+    color: #FFFFFF99 !important;;
+    font-size: 16px !important;;
+    border-radius: 999px !important;;
+    font-weight: 500 !important;;
+    line-height: 20px !important;;
+}
+/* .css-1pv2de5-MuiDayCalendar-weekContainer {
+    margin: 0px 0!important;
+} */
+.css-stjntw-MuiDateCalendar-root .MuiDayCalendar-weekDayLabel {
+ 
+    color: #FFFFFF99!important;
+    font-size: 16px!important;
+    font-weight: 500!important;
+    line-height: 20px!important;
+}
+.css-pfq5bj-MuiDateCalendar-root .MuiDayCalendar-weekDayLabel {
+    color: #FFFFFF99!important;
+    font-size: 16px!important;
+    font-weight: 500!important;
+    width: 49px!important;
+}
+.css-pfq5bj-MuiDateCalendar-root .MuiPickersArrowSwitcher-button {
+    color: #FFFFFF99;
+}

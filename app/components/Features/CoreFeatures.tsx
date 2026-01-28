@@ -55,6 +55,9 @@ export default function CoreFeatures() {
 
   return (
     <>
+      <div className="flex justify-center">
+        <div className=" bg-linear-to-r from-[#00031C] via-[#8EA0E0] to-[#00031C] w-[50%] flex text-center h-px"></div>
+      </div>
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -106,7 +109,7 @@ export default function CoreFeatures() {
                   priority={true}
                 />
               </div>
-              <h3 className="heading-3 font-medium text-center sm:text-start text-[#F4F7FF] mt-4">
+              <h3 className="heading-3 font-medium text-center sm:text-start text-[#F4F7FF] -mt-4">
                 {t("cards.card1.title")}
               </h3>
               <p className="heading-6 pt-2 font-regular text-[#CAC9D1] max-w-[742px] text-center">
@@ -164,7 +167,7 @@ export default function CoreFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="">
+              <div className="flex justify-center">
                 <Image
                   src="/images/feature2.png"
                   alt="Graph image"
@@ -210,7 +213,7 @@ export default function CoreFeatures() {
               {/* BOTTOM SECTION: Feature Image with Glow Background */}
               <div className="flex flex-col sm:flex-row items-center sm:items-end pl-[17px] pr-[18px]">
                 {/* Relative container to anchor the glow behind the image */}
-                <div className="order-1 sm:order-2 relative w-full flex justify-center sm:justify-end">
+                <div className="order-1 sm:order-2 relative w-full flex justify-center ">
                   {/* THE GLOW LIGHT: Centered behind feature1.png */}
                   <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
                     <div className="rounded-full opacity-[0.4] bg-[#4F60FA] blur-[80px] w-[400px] h-[250px]"></div>
@@ -269,7 +272,7 @@ export default function CoreFeatures() {
 
             <div className="mt-8 relative w-full h-[400px]">
               <Image
-                src="/images/main-img.png"
+                src="/images/features.png"
                 alt="Main image"
                 fill
                 className="rounded-lg"
@@ -344,7 +347,7 @@ export default function CoreFeatures() {
             >
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                 <div className="w-[124px] h-[124px] flex-shrink-0 ml-0 sm:ml-8">
-                   <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-0 pointer-events-none z-0">
+                  <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-0 pointer-events-none z-0">
                     <div className="rounded-full opacity-[0.4] bg-[#4F60FA] blur-[80px] w-[400px] h-[250px]"></div>
                   </div>
                   <Image

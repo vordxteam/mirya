@@ -15,7 +15,6 @@ export const OnboardingLayout = ({
 }: OnboardingLayoutProps) => {
   return (
     <div className="bg-[#020817] min-h-screen flex flex-col bg-[url('/images/main-gradient.png')] bg-no-repeat bg-center bg-cover ">
-
       {/* Main content area */}
       <div className="flex-1 flex items-center justify-center py-8">
         <div className="relative z-10 w-full max-w-[798px] px-6">
@@ -34,8 +33,8 @@ export const OnboardingLayout = ({
                       Math.min(
                         1,
                         (currentStep - segmentStart) /
-                          (segmentEnd - segmentStart)
-                      )
+                          (segmentEnd - segmentStart),
+                      ),
                     );
                     const isCompleted = currentStep > segmentEnd;
                     const isActive =
@@ -101,16 +100,17 @@ export const OnboardingLayout = ({
 
           {/* Navigation buttons */}
           <div className="flex justify-between items-center mt-10">
+            {/* Back Button - Only show if currentStep > 1 */}
             <div
-              className="rounded-full p-[1.5px]"
+              className={`inline-flex rounded-[40px] p-[1px] ${currentStep === 1 ? "invisible" : "visible"}`}
               style={{
                 background:
-                  "linear-gradient(90deg, #4D4D4D 0%, #aab1ec 49.5%, rgba(255, 255, 255, 0) 100%)",
+                  "linear-gradient(90deg, #343754 0%, #AAB1EC 50%, #343754 100%)",
               }}
             >
               <button
                 onClick={onBack}
-                className="inline-block cursor-pointer text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full hover:bg-[#0a0d2e] transition-colors"
+                className="flex items-center justify-center gap-2 w-[121px] px-6 py-3 rounded-[40px] bg-[#00031C] text-[16px] font-normal text-white hover:bg-[#0A0D2E] transition-colors"
               >
                 Back
               </button>
@@ -119,7 +119,7 @@ export const OnboardingLayout = ({
             <div className="flex items-center gap-4">
               <GradientButton
                 onClick={onContinue}
-                label="Continue"
+                label={currentStep === totalSteps ? "Submit" : "Continue"}
                 bgColor="#0274FE"
                 textColor="#FFFFFF"
               />
