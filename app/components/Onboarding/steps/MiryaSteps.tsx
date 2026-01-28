@@ -38,7 +38,7 @@ export const Step19: React.FC<StepProps> = ({ formData, updateFormData, errors }
                 type="checkbox"
                 checked={formData.mirya_implementation_status === option.id}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {formData.mirya_implementation_status === option.id && (
                 <svg
@@ -96,7 +96,7 @@ export const Step20: React.FC<StepProps> = ({ formData, updateFormData, errors }
                 type="checkbox"
                 checked={formData.mirya_clients_count === option.id}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {formData.mirya_clients_count === option.id && (
                 <svg
@@ -192,7 +192,7 @@ export const Step23: React.FC<StepProps> = ({ formData, updateFormData, errors }
                 type="checkbox"
                 checked={(formData.mirya_contributions || []).includes(option.id)}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {(formData.mirya_contributions || []).includes(option.id) && (
                 <svg

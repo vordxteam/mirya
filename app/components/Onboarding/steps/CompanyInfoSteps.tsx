@@ -88,7 +88,7 @@ export const Step8: React.FC<StepProps> = ({ formData, updateFormData, errors })
                 type="checkbox"
                 checked={formData.employee_count === option.id}
                 onChange={() => handleCheckboxChange(option.id)}
-                className="w-5 h-5 bg-transparent border-2 border-gray-600 rounded appearance-none checked:bg-white cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
               {formData.employee_count === option.id && (
                 <svg

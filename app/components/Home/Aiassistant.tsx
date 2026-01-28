@@ -93,7 +93,7 @@ const Aiassistant = () => {
           </div>
         </div>
         {/* RIGHT IMAGE */}
-        <div className="w-full lg:max-w-[464px] flex justify-center lg:justify-end relative z-20 pb-[120x] ">
+        <div className="w-full lg:max-w-[464px] flex justify-center lg:justify-end relative z-20 pb-[120px] ">
           <Image
             src="/images/right-img.png"
             width={464}

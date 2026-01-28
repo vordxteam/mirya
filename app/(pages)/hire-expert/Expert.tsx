@@ -1,5 +1,5 @@
 import AddOnServices from "@/app/components/HireExpert/AddOnServices";
-import BecomeExpert from "@/app/components/HireExpert/BecomeExpert";
+// import BecomeExpert from "@/app/components/HireExpert/BecomeExpert";
 import HeroSection from "@/app/components/HireExpert/HeroSection";
 import HowToUse from "@/app/components/HireExpert/HowToUse";
 import MiryaExperts from "@/app/components/HireExpert/MiryaExperts";
@@ -12,7 +12,7 @@ export default function HireExpertPage() {
     <div>
       <HeroSection />
       <MiryaExperts />
-      <BecomeExpert />
+      {/* <BecomeExpert /> */}
       <WhenToHire />
       <HowToUse />
       <Services />

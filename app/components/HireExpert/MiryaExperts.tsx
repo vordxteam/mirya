@@ -24,7 +24,7 @@ export default function MiryaExperts() {
       link: "#",
       image: "/images/logo2.png",
       text: t("miryaExperts.card2.badge"),
-      badges: t("miryaExperts.card2.tags", { returnObjects: true }) as string[]
+      badges: t("miryaExperts.card2.tags", { returnObjects: true }) as string[],
     },
   ];
   return (
@@ -63,76 +63,75 @@ export default function MiryaExperts() {
             {t("miryaExperts.btnText")}{" "}
           </Link>
         </div>
-        <div className="absolute -bottom-70 z-0 ">
+        <div className="absolute -bottom-70 z-0  pointer-events-none ">
           <div className="rounded-[68.75px] opacity-60 bg-[#5935E94D] blur-[50px] w-[458px] h-[318px]"></div>
         </div>
       </div>
-<div className="pt-5 sm:pt-16 pb-10 sm:pb-16 grid sm:grid-cols-2 md:grid-cols-2 gap-6 services-grid">
-  {Clients.map((item) => (
-    <div
-      key={item.id}
-      style={{
-        /* The first gradient is the card BG, the second is the border BG */
-        backgroundImage: `linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%), 
+      <div className="pt-5 sm:pt-15 pb-10 sm:pb-15 grid sm:grid-cols-2 md:grid-cols-2 gap-6 services-grid">
+        {Clients.map((item) => (
+          <div
+            key={item.id}
+            style={{
+              /* The first gradient is the card BG, the second is the border BG */
+              backgroundImage: `linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%), 
                           linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)`,
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        border: "1px solid transparent",
-      }}
-      className="rounded-3xl relative h-full transition-all"
-    >
-   
-      <div className="p-6 space-y-3 h-full overflow-hidden relative rounded-3xl z-10">
-        <Link href="all-experts" className="cursor-pointer">
-          {/* Inner Glow Effect */}
-          <div className="absolute top-10 left-50 pointer-events-none z-0">
-            <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9C] blur-[50px] w-[181px] h-[94px]"></div>
-          </div>
-          
-          <div className="flex justify-between items-center relative z-10">
-            <Image
-              src={item.image}
-              width={80}
-              height={80}
-              alt="Client Logo"
-            />
-            <div className="flex gap-1 p-3 border-[#CCE3FF52] border items-center rounded-full bg-[#CCE3FF1F] ">
-              <Image
-                src="/images/verify.png"
-                alt="Verified"
-                height={16}
-                width={16}
-              />
-              <p className="text-xs font-normal text-[#CCE3FF]">
-                {item.text}
-              </p>
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
+              border: "1px solid transparent",
+            }}
+            className="rounded-3xl relative h-full transition-all"
+          >
+            <div className="p-6 space-y-3 h-full overflow-hidden relative rounded-3xl z-10">
+              <Link href="all-experts" className="cursor-pointer">
+                {/* Inner Glow Effect */}
+                <div className="absolute top-10 left-50 pointer-events-none z-0">
+                  <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9C] blur-[50px] w-[181px] h-[94px]"></div>
+                </div>
+
+                <div className="flex justify-between items-center relative z-10 ">
+                  <Image
+                    src={item.image}
+                    width={80}
+                    height={80}
+                    alt="Client Logo"
+                  />
+                  <div className="flex gap-1 p-3 border-[#CCE3FF52] border items-center rounded-full bg-[#CCE3FF1F] ">
+                    <Image
+                      src="/images/verify.png"
+                      alt="Verified"
+                      height={16}
+                      width={16}
+                    />
+                    <p className="text-xs font-normal text-[#CCE3FF]">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-4 mt-4 relative z-10">
+                  <h3 className="heading-3 font-medium text-[#F4F7FF]">
+                    {item.title}
+                  </h3>
+                  <p className="heading-6 font-normal text-[#F4F7FF99]">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="flex gap-4 items-center flex-wrap mt-4 relative z-10">
+                  {item.badges.map((badge, index) => (
+                    <span
+                      key={index}
+                      className="text-xs font-normal text-[#CCE3FF] bg-[#116AF833] px-2 py-1.5 rounded-full"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              </Link>
             </div>
           </div>
-
-          <div className="space-y-4 mt-4 relative z-10">
-            <h3 className="heading-3 font-medium text-[#F4F7FF]">
-              {item.title}
-            </h3>
-            <p className="heading-6 font-normal text-[#F4F7FF99]">
-              {item.description}
-            </p>
-          </div>
-
-          <div className="flex gap-4 items-center flex-wrap mt-4 relative z-10">
-            {item.badges.map((badge, index) => (
-              <span
-                key={index}
-                className="text-xs font-normal text-[#CCE3FF] bg-[#116AF833] px-2 py-1.5 rounded-full"
-              >
-                {badge}
-              </span>
-            ))}
-          </div>
-        </Link>
+        ))}
       </div>
-    </div>
-  ))}
-</div>
     </div>
   );
 }

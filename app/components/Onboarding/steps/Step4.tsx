@@ -3,7 +3,7 @@ import { StepComponent } from "../types";
 export const Step4: StepComponent = ({ formData, updateFormData, errors , onEnter }) => (
   <div className="text-white">
     <h2 className="text-2xl heading-3 text-[#FFFFFF] font-normal mb-6">
-      4. What's your email address?
+      4. What’s your business email address?
     </h2>
     <input
       type="email"

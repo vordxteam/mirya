@@ -75,11 +75,20 @@ import trjob from '@/app/components/Jobs/translations/tr.json';
 import enHire from '@/app/(pages)/hire-expert/translations/en.json'
 import deHire from '@/app/(pages)/hire-expert/translations/de.json'
 import trHire from '@/app/(pages)/hire-expert/translations/tr.json'
+import enFeature from '@/app/(pages)/features/translations/en.json';
+import deFeature from '@/app/(pages)/features/translations/de.json';
+import trFeature from '@/app/(pages)/features/translations/tr.json';
 
-import enExpert from '@/app/(pages)/hire-expert/translations/en.json'
-import deExpert from '@/app/(pages)/hire-expert/translations/de.json'
-import trExpert from '@/app/(pages)/hire-expert/translations/tr.json'
+import enExperts from '@/app/(pages)/all-experts/translations/en.json';
+import deExperts from '@/app/(pages)/all-experts/translations/de.json';
+import trExperts from '@/app/(pages)/all-experts/translations/tr.json';
+import enExpert from '@/app/(pages)/become-expert/translations/en.json'
+import deExpert from '@/app/(pages)/become-expert/translations/de.json'
+import trExpert from '@/app/(pages)/become-expert/translations/tr.json'
 
+import enLiveSession from '@/app/(pages)/live-session/translations/en.json';
+import deLiveSession from '@/app/(pages)/live-session/translations/de.json';
+import trLiveSession from '@/app/(pages)/live-session/translations/tr.json';
 const resources = {
   en: {
     translation: enTranslation,
@@ -100,7 +109,10 @@ const resources = {
     form: enForm,
     job: enjob,
     hire: enHire,
-    expert: enExpert
+    feature: enFeature,
+    experts: enExperts,
+    expert: enExpert,
+    "live-session": enLiveSession
   },
   de: {
     translation: deTranslation,
@@ -119,8 +131,12 @@ const resources = {
     startup: deStartup,
     form: deForm,
     job: dejob,
-    hire : deHire,
-    expert: deExpert
+    hire: deHire,
+    feature: deFeature,
+    experts: deExperts,
+    expert: deExpert,
+    "live-session": deLiveSession
+
   },
   tr: {
     translation: trTranslation,
@@ -139,8 +155,12 @@ const resources = {
     startup: trStartup,
     form: trForm,
     job: trjob,
-    hire : trHire,
-    expert: trExpert
+    hire: trHire,
+    feature: trFeature,
+    experts: trExperts,
+    expert: trExpert,
+    "live-session": trLiveSession
+
   },
 
 };
@@ -166,7 +186,7 @@ if (!i18next.isInitialized) {
       react: {
         useSuspense: false,
       },
-      ns: ['translation', 'about', 'layout', 'industries', 'contact', 'pricing', 'home', 'ImprintPages', 'faq', 'userTesting', 'careers','privacy','security','startup','form' ,'job','feature','expert'],
+      ns: ['translation', 'about', 'layout', 'industries', 'contact', 'pricing', 'home', 'ImprintPages', 'faq', 'userTesting', 'careers', 'privacy', 'security', 'startup', 'form', 'job', 'feature', 'experts', 'expert', 'live-session'],
       defaultNS: 'translation',
     });
 }

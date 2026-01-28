@@ -35,7 +35,7 @@ interface ReviewData {
 
 const defaultCompanyData = {
   name: "",
-  logo: "/images/logo1.png",
+  logo: "/images/detail-logo.png",
   location: "",
   rating: 0,
   reviewCount: 0,
@@ -56,6 +56,64 @@ interface StarRatingProps {
   onRate?: ((rating: number) => void) | null;
 }
 
+//   interactive = false,
+//   onRate = null,
+// }: StarRatingProps) => {
+//   const fullStars = Math.floor(rating);
+//   const hasHalfStar = rating % 1 !== 0;
+
+//   const handleClick = (index: number) => {
+//     if (interactive && onRate) {
+//       onRate(index + 1);
+//     }
+//   };
+
+//   return (
+//     <div className="flex items-center">
+//       {[...Array(5)].map((_, i) => {
+//         if (i < fullStars) {
+//           return (
+//             <Star
+//               key={i}
+//               className={`w-4 h-4 fill-yellow-400 text-yellow-400 ${
+//                 interactive
+//                   ? "cursor-pointer hover:scale-110 transition-transform"
+//                   : ""
+//               }`}
+//               onClick={() => handleClick(i)}
+//             />
+//           );
+//         } else if (i === fullStars && hasHalfStar) {
+//           return (
+//             <div key={i} className="relative w-4 h-4">
+//               <Star
+//                 className={`w-4 h-4 text-yellow-400 absolute ${
+//                   interactive ? "cursor-pointer" : ""
+//                 }`}
+//               />
+//               <div className="overflow-hidden w-1/2 absolute">
+//                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+//               </div>
+//             </div>
+//           );
+//         } else {
+//           return (
+//             <Star
+//               key={i}
+//               className={`w-4 h-4 text-yellow-400 ${
+//                 interactive
+//                   ? "cursor-pointer hover:fill-yellow-200 hover:scale-110 transition-all"
+//                   : ""
+//               }`}
+//               onClick={() => handleClick(i)}
+//             />
+//           );
+//         }
+//       })}
+//     </div>
+//   );
+// };
+
 const StarRating = ({
   rating,
   interactive = false,
@@ -69,12 +127,29 @@ const StarRating = ({
       onRate(index + 1);
     }
   };
-  const { t } = useTranslation("expert");
+
+  // Custom SVG component for the unchecked/background star
+  const UnfilledStar = ({ className = "" }: { className?: string }) => (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M4.76882 2.272C5.61349 0.757334 6.03549 0 6.66682 0C7.29816 0 7.72016 0.757334 8.56482 2.272L8.78349 2.664C9.02349 3.09467 9.14349 3.31 9.33016 3.452C9.51682 3.594 9.75016 3.64667 10.2168 3.752L10.6408 3.848C12.2808 4.21933 13.1002 4.40467 13.2955 5.032C13.4902 5.65867 12.9315 6.31267 11.8135 7.62L11.5242 7.958C11.2068 8.32934 11.0475 8.51534 10.9762 8.74467C10.9048 8.97467 10.9288 9.22267 10.9768 9.718L11.0208 10.1693C11.1895 11.914 11.2742 12.786 10.7635 13.1733C10.2528 13.5607 9.48482 13.2073 7.95016 12.5007L7.55216 12.318C7.11616 12.1167 6.89816 12.0167 6.66682 12.0167C6.43549 12.0167 6.21749 12.1167 5.78149 12.318L5.38416 12.5007C3.84882 13.2073 3.08082 13.5607 2.57082 13.174C2.05949 12.786 2.14416 11.914 2.31282 10.1693L2.35682 9.71867C2.40482 9.22267 2.42882 8.97467 2.35682 8.74534C2.28616 8.51534 2.12682 8.32934 1.80949 7.95867L1.52016 7.62C0.402157 6.31334 -0.15651 5.65934 0.0381567 5.032C0.232823 4.40467 1.05349 4.21867 2.69349 3.848L3.11749 3.752C3.58349 3.64667 3.81616 3.594 4.00349 3.452C4.19082 3.31 4.31016 3.09467 4.55016 2.664L4.76882 2.272Z"
+        fill="#FFFFFF52"
+      />
+    </svg>
+  );
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center gap-1">
       {[...Array(5)].map((_, i) => {
         if (i < fullStars) {
+          // Full Yellow Star (using Lucide)
           return (
             <Star
               key={i}
@@ -87,12 +162,15 @@ const StarRating = ({
             />
           );
         } else if (i === fullStars && hasHalfStar) {
+          // Half Star Logic
           return (
-            <div key={i} className="relative w-4 h-4">
-              <Star
-                className={`w-4 h-4 text-yellow-400 absolute ${
-                  interactive ? "cursor-pointer" : ""
-                }`}
+            <div
+              key={i}
+              className="relative w-4 h-4"
+              onClick={() => handleClick(i)}
+            >
+              <UnfilledStar
+                className={`w-4 h-4 absolute ${interactive ? "cursor-pointer" : ""}`}
               />
               <div className="overflow-hidden w-1/2 absolute">
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -100,26 +178,29 @@ const StarRating = ({
             </div>
           );
         } else {
+          // Unfilled Star (using your custom SVG and color)
           return (
-            <Star
+            <div
               key={i}
-              className={`w-4 h-4 text-yellow-400 ${
-                interactive
-                  ? "cursor-pointer hover:fill-yellow-200 hover:scale-110 transition-all"
-                  : ""
-              }`}
               onClick={() => handleClick(i)}
-            />
+              className={
+                interactive
+                  ? "cursor-pointer hover:scale-110 transition-transform"
+                  : ""
+              }
+            >
+              <UnfilledStar className="w-4 h-4" />
+            </div>
           );
         }
       })}
     </div>
   );
 };
-
 export default function Details() {
   const params = useParams();
   const id = params?.id as string;
+  const { t } = useTranslation("experts");
 
   const [companyData, setCompanyData] = useState(defaultCompanyData);
   const [reviews, setReviews] = useState<ReviewData[]>(
@@ -267,7 +348,7 @@ export default function Details() {
               location: location || prev.location,
               website: recordMap["company_website"] || prev.website,
               breadcrumb: [
-                "Hire a MIRYA Expert",
+                t("details.breadcrumb_home"),
                 recordMap["company_name"] ||
                   (expertData.first_name && expertData.last_name
                     ? `${expertData.first_name} ${expertData.last_name}`
@@ -282,7 +363,6 @@ export default function Details() {
               about: about,
               services: services,
               average_project_size: average_project_size,
-              // ADD THIS LINE:
               resources: resources,
             }));
           }
@@ -295,15 +375,22 @@ export default function Details() {
     };
 
     fetchExpertDetails();
-  }, [id]);
+  }, [id, t]);
 
   const handleAddReview = async () => {
     // Validate form
     const newErrors: ErrorState = {};
-    if (!newReview.name.trim()) newErrors.name = "Name is required";
-    if (!newReview.role.trim()) newErrors.role = "Role is required";
-    if (!newReview.comment.trim()) newErrors.comment = "Comment is required";
-    if (newReview.rating === 0) newErrors.rating = "Please select a rating";
+    if (!newReview.name.trim())
+      newErrors.name =
+        t("details.modal.name_label") + " " + t("details.modal.required");
+    if (!newReview.role.trim())
+      newErrors.role =
+        t("details.modal.role_label") + " " + t("details.modal.required");
+    if (!newReview.comment.trim())
+      newErrors.comment =
+        t("details.modal.review_label") + " " + t("details.modal.required");
+    if (newReview.rating === 0)
+      newErrors.rating = t("details.modal.rating_required");
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -384,7 +471,6 @@ export default function Details() {
       setErrors(updatedErrors);
     }
   };
-  const { t } = useTranslation("expert");
 
   return (
     <div className="text-white p-8">
@@ -407,13 +493,13 @@ export default function Details() {
               </button>
 
               <h3 className="heading-2 font-medium mb-8 text-[#F4F7FF]">
-                Add a Review
+                {t("details.modal.title")}
               </h3>
 
               <div className="space-y-6">
                 <div>
                   <label className="block heading-6 font-medium mb-3 text-[#F4F7FF]">
-                    Your Name
+                    {t("details.modal.name_label")}
                     <span className="text-red-500 ml-1">*</span>
                   </label>
                   <input
@@ -424,7 +510,7 @@ export default function Details() {
                     className={`w-full bg-[#111827] border ${
                       errors.name ? "border-red-500" : "border-[#FFFFFF33]"
                     } rounded-lg px-4 py-3 heading-6 font-normal text-white placeholder-[#FFFFFF66] focus:outline-none focus:border-[#0274FE] transition-colors`}
-                    placeholder="Enter your name"
+                    placeholder={t("details.modal.placeholder_name")}
                   />
                   {errors.name && (
                     <p className="text-red-500 heading-7 font-normal mt-2">
@@ -435,7 +521,7 @@ export default function Details() {
 
                 <div>
                   <label className="block heading-6 font-medium mb-3 text-[#F4F7FF]">
-                    Your Role
+                    {t("details.modal.role_label")}
                     <span className="text-red-500 ml-1">*</span>
                   </label>
                   <input
@@ -446,7 +532,7 @@ export default function Details() {
                     className={`w-full bg-[#111827] border ${
                       errors.role ? "border-red-500" : "border-[#FFFFFF33]"
                     } rounded-lg px-4 py-3 heading-6 font-normal text-white placeholder-[#FFFFFF66] focus:outline-none focus:border-[#0274FE] transition-colors`}
-                    placeholder="e.g., Designer, Developer, Manager"
+                    placeholder={t("details.modal.placeholder_role")}
                   />
                   {errors.role && (
                     <p className="text-red-500 heading-7 font-normal mt-2">
@@ -457,7 +543,7 @@ export default function Details() {
 
                 <div>
                   <label className="block heading-6 font-medium mb-3 text-[#F4F7FF]">
-                    Rating
+                    {t("details.modal.rating_label")}
                     <span className="text-red-500 ml-1">*</span>
                   </label>
                   <div className="flex items-center gap-3">
@@ -481,7 +567,7 @@ export default function Details() {
 
                 <div>
                   <label className="block heading-6 font-medium mb-3 text-[#F4F7FF]">
-                    Your Review
+                    {t("details.modal.review_label")}
                     <span className="text-red-500 ml-1">*</span>
                   </label>
                   <textarea
@@ -492,7 +578,7 @@ export default function Details() {
                     className={`w-full bg-[#111827] border ${
                       errors.comment ? "border-red-500" : "border-[#FFFFFF33]"
                     } rounded-lg px-4 py-3 heading-6 font-normal text-white placeholder-[#FFFFFF66] focus:outline-none focus:border-[#0274FE] resize-none transition-colors`}
-                    placeholder="Share your experience with this company..."
+                    placeholder={t("details.modal.placeholder_comment")}
                   />
                   {errors.comment && (
                     <p className="text-red-500 heading-7 font-normal mt-2">
@@ -506,13 +592,13 @@ export default function Details() {
                     onClick={() => setShowReviewModal(false)}
                     className="flex-1 border border-[#FFFFFF33] text-white heading-6 font-medium py-3 rounded-lg hover:border-[#FFFFFF66] hover:bg-[#FFFFFF05] transition-all"
                   >
-                    Cancel
+                    {t("details.modal.cancel")}
                   </button>
                   <button
                     onClick={handleAddReview}
                     className="flex-1 bg-[#0274FE] text-white heading-6 font-medium py-3 rounded-lg hover:bg-[#0160CC] transition-all"
                   >
-                    Submit Review
+                    {t("details.modal.submit")}
                   </button>
                 </div>
               </div>
@@ -528,7 +614,6 @@ export default function Details() {
           <div
             className="rounded-3xl transition-all"
             style={{
-              /* The first gradient is the Card BG, the second is the Border Gradient */
               backgroundImage: `linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%), 
                       linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)`,
               backgroundOrigin: "border-box",
@@ -536,18 +621,39 @@ export default function Details() {
               border: "1px solid transparent",
             }}
           >
-            {/* We removed the p-px and the inner background color 
-      so the parent div handles the exact styling perfectly. */}
             <div className="p-6 space-y-6">
               {/* Logo and Company Name */}
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <img
                     src={companyData.logo}
                     alt={companyData.name}
                     className="w-16 h-16 object-contain"
                   />
                 </div>
+                  <div className="inline-flex items-center gap-2 bg-[#E1F9E11F] rounded-full p-2 mb-4 border border-[#E1F9E166]">
+                    <div className="w-4 h-4 bg-[#08CD05] rounded-full flex items-center justify-center">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="16" height="16" rx="8" fill="#08CD05" />
+                        <path
+                          d="M4.875 7.91432L6.63375 9.67307C6.69561 9.73576 6.76931 9.78553 6.85056 9.81951C6.93182 9.85348 7.01901 9.87098 7.10708 9.87098C7.19515 9.87098 7.28235 9.85348 7.3636 9.81951C7.44486 9.78553 7.51856 9.73576 7.58042 9.67307L11.125 6.12891"
+                          stroke="white"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span className="heading-7 font-normal text-[#E1F9E1]">
+                      MIRYA Certified Expert 
+                    </span>
+                  </div>
+
                 <h2 className="text-[24px] leading-[30px] font-medium mb-5 text-[#F4F7FF] ">
                   {companyData.name}
                 </h2>
@@ -604,7 +710,7 @@ export default function Details() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  View Website
+                  {t("details.view_website")}
                 </Link>
                 <GradientButton
                   label={t("details.contact")}
@@ -621,8 +727,6 @@ export default function Details() {
           <div
             className="rounded-3xl transition-all"
             style={{
-              /* First gradient: Card background color */
-              /* Second gradient: Your border color shades */
               backgroundImage: `linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%), 
                       linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)`,
               backgroundOrigin: "border-box",
@@ -630,14 +734,13 @@ export default function Details() {
               border: "1px solid transparent",
             }}
           >
-            {/* Inner content: We removed the nested background and p-px to ensure 
-      the border is never hidden by overlapping layers */}
             <div className="p-6 space-y-6">
               {/* Resources */}
               {companyData.resources.length > 0 && (
                 <div>
                   <h3 className="heading-4 font-medium text-[#F4F7FF] mb-2">
-{t("details.resources")}                  </h3>
+                    {t("details.resources")}
+                  </h3>
                   <div className="space-y-1.5">
                     {companyData.resources.map((resource, index) => (
                       <Link
@@ -679,7 +782,7 @@ export default function Details() {
               {companyData.services.length > 0 && (
                 <div>
                   <h3 className="heading-4 font-medium text-[#F4F7FF]">
-                    Services
+                    {t("details.services")}
                   </h3>
                   <ul className="flex flex-wrap flex-col gap-3 text-sm text-[#FFFFFFCC]">
                     {companyData.services.map((serviceItem, index) => {
@@ -723,7 +826,7 @@ export default function Details() {
               {companyData.average_project_size.length > 0 && (
                 <div>
                   <h3 className="heading-4 font-medium text-[#F4F7FF] mb-2">
-                    Project Budget
+                    {t("details.project_budget")}
                   </h3>
                   <ul className="space-y-1 text-sm text-[#FFFFFFCC]">
                     {companyData.average_project_size.map((budget, index) => (
@@ -760,7 +863,7 @@ export default function Details() {
               href="/all-experts"
               className="heading-6 font-normal text-[#FFFFFF99] hover:text-[#0274FE]"
             >
-              {t("details.breadcrumb_home")}{" "}
+              {t("details.breadcrumb_home")}
             </Link>
             <Image
               src="/images/gap.svg"
@@ -780,7 +883,7 @@ export default function Details() {
           {companyData.about.length > 0 && (
             <div>
               <h2 className="text-[32px] font-medium mb-4 mt-12 text-[#FFFFFF]">
-                About Company
+                {t("details.about_company")}
               </h2>
               <div className="space-y-8 text-[#FFFFFFCC] heading-5 pb-8 border-b border-[#FFFFFF3D]">
                 {companyData.about.map((paragraph, index) => (
@@ -796,7 +899,7 @@ export default function Details() {
             <div className="flex flex-col sm:flex-row items-center justify-between mb-6 mt-12">
               <div className="flex items-center">
                 <h2 className="text-[32px] leading-10 font-medium mr-3">
-                  Reviews
+                  {t("details.reviews")}
                 </h2>
                 <div className="flex items-center">
                   <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mr-1" />
@@ -819,7 +922,7 @@ export default function Details() {
                   onClick={() => setShowReviewModal(true)}
                   className="inline-block text-[16px] bg-[#00031C] font-normal text-white py-3 px-6  rounded-full z-10 relative cursor-pointer"
                 >
-                  Add a Review
+                  {t("details.add_review")}
                 </button>
               </div>
             </div>
