@@ -76,6 +76,10 @@ import enHire from '@/app/(pages)/hire-expert/translations/en.json'
 import deHire from '@/app/(pages)/hire-expert/translations/de.json'
 import trHire from '@/app/(pages)/hire-expert/translations/tr.json'
 
+import enExpert from '@/app/(pages)/hire-expert/translations/en.json'
+import deExpert from '@/app/(pages)/hire-expert/translations/de.json'
+import trExpert from '@/app/(pages)/hire-expert/translations/tr.json'
+
 const resources = {
   en: {
     translation: enTranslation,
@@ -95,7 +99,8 @@ const resources = {
     startup: enStartup,
     form: enForm,
     job: enjob,
-    hire: enHire
+    hire: enHire,
+    expert: enExpert
   },
   de: {
     translation: deTranslation,
@@ -114,8 +119,8 @@ const resources = {
     startup: deStartup,
     form: deForm,
     job: dejob,
-    hire : deHire
-
+    hire : deHire,
+    expert: deExpert
   },
   tr: {
     translation: trTranslation,
@@ -134,7 +139,8 @@ const resources = {
     startup: trStartup,
     form: trForm,
     job: trjob,
-    hire : trHire
+    hire : trHire,
+    expert: trExpert
   },
 
 };
