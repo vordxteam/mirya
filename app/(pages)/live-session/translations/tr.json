@@ -16,5 +16,114 @@
   "cardTitle": "MIRYA Canlı Çevrimiçi Oturum",
   "cardDescription": "Kodsuz otomasyon, Akıllı Doküman İşleme ve kendi kendini optimize eden iş akışlarının rehberli canlı gösterimi ile MIRYA'yı iş başında görün.",
   "cardFooter": "Tercih ettiğiniz tarihi seçin ve bize katılın.",
-  "registerBtn": "Oturum İçin Kaydolun"
+  "registerBtn": "Oturum İçin Kaydolun",
+  
+  "sessions": {
+    "label": "Oturumlar",
+    "mainTitle": "Doğru MIRYA Oturumunu Seçin",
+    "description": "Hızlı tanıtımdan ileri düzey otomasyona ve sektöre özel kullanım durumlarına kadar hedeflerinize uygun formatı seçin.",
+    "loading": "Oturumlar yükleniyor...",
+    "keyHighlights": "Önemli Noktalar:",
+    "registerNow": "Şimdi Kaydolun",
+    "defaultFooter": "Tercih ettiğiniz tarihi seçin ve bize katılın."
+  },
+  "testimonialsSection": {
+    "badge": "Referanslar",
+    "mainTitle": "MIRYA Kullanan Müşterilerimizden Yorumlar",
+    "description": "Yapay zekanın gücünden yararlanarak endüstrilerde devrim yaratıyor ve insan deneyimlerini geliştiriyoruz.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Entegrasyona gerek duymadan halihazırda sahip olduğumuz sistemlerle tam olarak çalışan bir araç. MIRYA'yı beyaz etiketle kullandık ve artık müşterilerimize kendi markamız altında otomasyon sunuyoruz. Oyunun kurallarını değiştiriyor.",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 2,
+        "text": "MIRYA'yı canlı görmek otomasyonu değerlendirme şeklimizi değiştirdi; ekip en zor sorularımızı yanıtladı. – Operasyon Başkanı, Finans. Belge işleme iş akışlarının demosu bizim için büyük bir darboğazı çözdü.",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 3,
+        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle kusursuz çalışıyor. Kendi markamızla hizmet vermeye başladık. Harika!",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 4,
+        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle kusursuz çalışıyor. Kendi markamızla hizmet vermeye başladık. Harika!",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 5,
+        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle kusursuz çalışıyor. Kendi markamızla hizmet vermeye başladık. Harika!",
+        "author": "David Anderson",
+        "role": "Direktör"
+      }
+    ]
+  },
+  
+  "registrationForm": {
+    "title": "Aşağıdaki bilgileri doldurun.",
+    "fields": {
+      "fullName": "Ad Soyad",
+      "email": "E-posta Adresi",
+      "companyName": "Şirket Adı",
+      "role": "Göreviniz"
+    },
+    "button": {
+      "processing": "İşleniyor...",
+      "submit": "Gönder"
+    },
+    "validation": {
+      "required": "Lütfen gerekli tüm alanları doldurun",
+      "selectBoth": "Lütfen önce bir tarih ve saat dilimi seçin",
+      "selectDate": "Lütfen önce bir tarih seçin",
+      "selectTime": "Lütfen önce bir saat dilimi seçin"
+    }
+  },
+  
+  "hero": {
+    "goBack": "Geri Dön",
+    "introTitle": "Tanıtım Oturumu",
+    "loading": "Oturum detayları yükleniyor...",
+    "noData": "Oturum verisi bulunamadı.",
+    "noDescription": "Açıklama mevcut değil"
+  },
+  
+  "live-session": {
+    "pageTitle": "Canlı Tanıtım Oturumu",
+    "aiAutomationTitle": "Eylemde Yapay Zeka Otomasyonu",
+    "aiAutomationDescription": "MIRYA'nın süreçleri, verileri ve sistemleri nasıl akıllı otomasyona dönüştürdüğünü gösteren canlı bir gösterim.",
+    "dateInfo": "23 Ekim 2025",
+    "timeInfo": "12:30 - 14:30",
+    "durationInfo": "2 Saat",
+    "selectDateTimeTitle": "Tarih ve Saat Seçin",
+    "registrationTitle": "Oturum için Kayıt Olun",
+    "registrationDescription": "Kayıt olmak için lütfen bilgileri doldurun.",
+    "registrationSuccess": "Kayıt başarılı!",
+    "registrationFailed": "Kayıt başarısız oldu. Lütfen tekrar deneyin.",
+    "form": {
+      "fullName": "Tam Ad",
+      "fullNamePlaceholder": "Tam adınızı girin",
+      "email": "E-posta",
+      "emailPlaceholder": "E-posta adresinizi girin",
+      "companyName": "Şirket Adı",
+      "companyNamePlaceholder": "Şirket adınızı girin",
+      "role": "Rol",
+      "rolePlaceholder": "Rolünüzü/pozisyonunuzu girin",
+      "submitButton": "Oturuma Kayıt Ol",
+      "submittingButton": "Gönderiliyor...",
+      "validation": {
+        "selectDate": "Lütfen bir tarih ve saat seçin",
+        "selectValidSession": "Lütfen geçerli bir oturum seçin"
+      }
+    }
+  }
+
 }
+
+
+

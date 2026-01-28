@@ -3,7 +3,7 @@
   "title": "Discover MIRYA Through Live Sessions",
   "description": "Explore how MIRYA automates real business processes, accelerates digital transformation, and powers AI-driven document and workflow automation — live and interactive.",
   "button": "Register for a Session",
-  
+
   "aboutLabel": "About Session",
   "aboutTitle": "What You Will Experience",
   "aboutLead": "Join a live MIRYA online session to:",
@@ -16,5 +16,113 @@
   "cardTitle": "MIRYA Live Online Session",
   "cardDescription": "See MIRYA in action with a guided live demonstration of no-code automation, Intelligent Document Processing, and self-optimizing workflows.",
   "cardFooter": "Choose your preferred date and join us.",
-  "registerBtn": "Register for a Session"
+  "registerBtn": "Register for a Session",
+
+  "sessions": {
+    "label": "Sessions",
+    "mainTitle": "Choose The Right MIRYA Session",
+    "description": "Select the format that matches your goals—from quick introduction to advanced automation and industry-focused use cases.",
+    "loading": "Loading sessions...",
+    "keyHighlights": "Key Highlights:",
+    "registerNow": "Register Now",
+    "defaultFooter": "Choose your preferred date and join us."
+  },
+  "testimonialsSection": {
+    "badge": "Testimonials",
+    "mainTitle": "What Attendees Say",
+    "description": "Harnessing the power of artificial intelligence to revolutionize industries and enhance human experiences.",
+    "items": [
+      {
+        "id": 1,
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+        "author": "David Anderson",
+        "role": "Director"
+      },
+      {
+        "id": 2,
+        "text": "Seeing MIRYA live transformed the way we evaluate automation — the team answered our toughest questions.” — Head of Ops, Finance. The demo of document processing workflows solved a major bottleneck for us.",
+        "author": "David Anderson",
+        "role": "Director"
+      },
+      {
+        "id": 3,
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+        "author": "David Anderson",
+        "role": "Director"
+      },
+      {
+        "id": 4,
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+        "author": "David Anderson",
+        "role": "Director"
+      },
+      {
+        "id": 5,
+        "text": "The easiest automation tool we’ve ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+        "author": "David Anderson",
+        "role": "Director"
+      }
+    ]
+  },
+  
+  "registrationForm": {
+    "title": "Fill out the details below.",
+    "fields": {
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "companyName": "Company Name",
+      "role": "Your Role"
+    },
+    "button": {
+      "processing": "Processing...",
+      "submit": "Submit"
+    },
+    "validation": {
+      "required": "Please fill in all required fields",
+      "selectBoth": "Please select a date and time slot first",
+      "selectDate": "Please select a date first",
+      "selectTime": "Please select a time slot first"
+    }
+  }
+,
+
+  "hero": {
+    "goBack": "Go Back",
+    "introTitle": "Introductory Session",
+    "loading": "Loading session details...",
+    "noData": "No session data found.",
+    "noDescription": "No description available"
+  },
+  
+  "live-session": {
+    "pageTitle": "Live Introductory Session",
+    "aiAutomationTitle": "AI Automation in Action",
+    "aiAutomationDescription": "A live walkthrough showing how MIRYA automates processes, data and systems into intelligent automation.",
+    "dateInfo": "23 October, 2025",
+    "timeInfo": "12:30 PM - 2:30 PM",
+    "durationInfo": "2 Hour",
+    "selectDateTimeTitle": "Select Date & Time",
+    "registrationTitle": "Register For The Session",
+    "registrationDescription": "Please fill in the details to register.",
+    "registrationSuccess": "Registration successful!",
+    "registrationFailed": "Registration failed. Please try again.",
+    "form": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email address",
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Enter your company name",
+      "role": "Role",
+      "rolePlaceholder": "Enter your role/position",
+      "submitButton": "Register For Session",
+      "submittingButton": "Submitting...",
+      "validation": {
+        "selectDate": "Please select a date and time",
+        "selectValidSession": "Please select a valid session"
+      }
+    }
+  }
+
 }
+

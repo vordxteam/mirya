@@ -11,7 +11,7 @@ export const SpeakerGrid = ({ speakers }: { speakers: Speaker[] }) => {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-xl font-semibold text-white pt-6">Speakers</h3>
+      <h3 className="text-[24px] font-medium leading-[30px] text-white pt-6">Speakers</h3>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {speakers.map((speaker) => (
           <div

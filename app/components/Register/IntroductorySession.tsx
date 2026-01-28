@@ -9,6 +9,7 @@ import { SpeakerGrid } from "./SpeakerGrid";
 import { RegistrationForm } from "./RegistrationForm";
 import FullCalendarComponent from "./FullCalendarComponent";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 interface TimeSlot {
   id: string;
@@ -49,13 +50,16 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [selectedPeriod, setSelectedPeriod] = useState<"am" | "pm">("pm");
-  const [selectedSessionId, setSelectedSessionId] = useState<string | null>(null);
+  const [selectedSessionId, setSelectedSessionId] = useState<string | null>(
+    null,
+  );
   const [isLoading, setIsLoading] = useState(false);
   const [registrationStatus, setRegistrationStatus] = useState<{
     success: boolean;
     message: string;
   } | null>(null);
-  
+  const { t } = useTranslation("live-session");
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -69,68 +73,46 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
   // Get webinar ID from the data
   const webinarId = data?.data?.id;
 
-  // Static time slots (fallback)
-  const timeSlots: TimeSlot[] = [
-    { id: "1", time: "9:00 AM - 10:00 AM", period: "am" },
-    { id: "2", time: "10:00 AM - 11:00 AM", period: "am" },
-    { id: "3", time: "11:00 AM - 12:00 PM", period: "am" },
-    { id: "4", time: "12:00 PM - 1:00 PM", period: "am" },
-    { id: "5", time: "1:00 PM - 2:00 PM", period: "am" },
-    { id: "6", time: "2:00 PM - 3:00 PM", period: "am" },
-    { id: "7", time: "3:00 PM - 4:00 PM", period: "am" },
-    { id: "8", time: "4:00 PM - 5:00 PM", period: "am" },
-    { id: "9", time: "5:00 PM - 6:00 PM", period: "am" },
-    { id: "10", time: "6:00 PM - 7:00 PM", period: "am" },
-
-    // PM slots (10 slots)
-    { id: "11", time: "12:30 PM - 1:30 PM", period: "pm" },
-    { id: "12", time: "1:30 PM - 2:30 PM", period: "pm" },
-    { id: "13", time: "2:30 PM - 3:30 PM", period: "pm" },
-    { id: "14", time: "3:30 PM - 4:30 PM", period: "pm" },
-    { id: "15", time: "4:30 PM - 5:30 PM", period: "pm" },
-    { id: "16", time: "5:30 PM - 6:30 PM", period: "pm" },
-    { id: "17", time: "6:30 PM - 7:30 PM", period: "pm" },
-    { id: "18", time: "7:30 PM - 8:30 PM", period: "pm" },
-    { id: "19", time: "8:30 PM - 9:30 PM", period: "pm" },
-    { id: "20", time: "9:30 PM - 10:30 PM", period: "pm" },
-  ];
-
   // Get speakers from API or use static data
   const apiSpeakers = data?.data?.speakers || [];
-  const speakers: Speaker[] = apiSpeakers.length > 0 
-    ? apiSpeakers.map((speaker: any, index: number) => ({
-        id: speaker.id?.toString() || (index + 1).toString(),
-        name: speaker.name || "Speaker Name",
-        role: speaker.role || "Role",
-        image: speaker.image || "/images/speaker-default.png",
-      }))
-    : [
-        {
-          id: "1",
-          name: "Sarah Chen",
-          role: "AI Solutions Architect",
-          image: "/images/speaker1.png",
-        },
-        {
-          id: "2",
-          name: "Marcus Rodriguez",
-          role: "Product Manager",
-          image: "/images/speaker2.png",
-        },
-        {
-          id: "3",
-          name: "Aisha Patel",
-          role: "Technical Lead",
-          image: "/images/speaker3.png",
-        },
-      ];
+  const speakers: Speaker[] =
+    apiSpeakers.length > 0
+      ? apiSpeakers.map((speaker: any, index: number) => ({
+          id: speaker.id?.toString() || (index + 1).toString(),
+          name: speaker.name || "Speaker Name",
+          role: speaker.role || "Role",
+          image: speaker.image || "/images/speaker-default.png",
+        }))
+      : [
+          {
+            id: "1",
+            name: "Sarah Chen",
+            role: "AI Solutions Architect",
+            image: "/images/speaker1.png",
+          },
+          {
+            id: "2",
+            name: "Marcus Rodriguez",
+            role: "Product Manager",
+            image: "/images/speaker2.png",
+          },
+          {
+            id: "3",
+            name: "Aisha Patel",
+            role: "Technical Lead",
+            image: "/images/speaker3.png",
+          },
+        ];
 
   // Set initial selected date when component mounts or data changes
   useEffect(() => {
     if (sessions.length > 0 && !selectedDate) {
       const firstSessionDate = dayjs(sessions[0].session_date);
       setSelectedDate(firstSessionDate);
-      console.log("Setting initial date to:", firstSessionDate.format('YYYY-MM-DD'));
+      console.log(
+        "Setting initial date to:",
+        firstSessionDate.format("YYYY-MM-DD"),
+      );
     }
   }, [sessions, selectedDate]);
 
@@ -138,11 +120,11 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
   useEffect(() => {
     if (selectedDate) {
       const sessionForDate = sessions.find((session: any) => {
-        const sessionDateStr = dayjs(session.session_date).format('YYYY-MM-DD');
-        const selectedDateStr = selectedDate.format('YYYY-MM-DD');
+        const sessionDateStr = dayjs(session.session_date).format("YYYY-MM-DD");
+        const selectedDateStr = selectedDate.format("YYYY-MM-DD");
         return sessionDateStr === selectedDateStr;
       });
-      
+
       if (sessionForDate) {
         setSelectedSessionId(sessionForDate.id.toString());
       } else {
@@ -154,8 +136,8 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
   // Get available slots for selected date
   const getAvailableSlotsForDate = (date: Dayjs | null) => {
     console.log("=== getAvailableSlotsForDate ===");
-    console.log("Date:", date?.format('YYYY-MM-DD'));
-    
+    console.log("Date:", date?.format("YYYY-MM-DD"));
+
     if (!date) {
       console.log("No date selected, returning empty");
       return [];
@@ -163,8 +145,8 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
 
     // Find session for the selected date
     const selectedSession = sessions.find((session: any) => {
-      const sessionDateStr = dayjs(session.session_date).format('YYYY-MM-DD');
-      const selectedDateStr = date.format('YYYY-MM-DD');
+      const sessionDateStr = dayjs(session.session_date).format("YYYY-MM-DD");
+      const selectedDateStr = date.format("YYYY-MM-DD");
       console.log(`Comparing: ${sessionDateStr} === ${selectedDateStr}`);
       return sessionDateStr === selectedDateStr;
     });
@@ -179,53 +161,58 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
     console.log("Session available_slots:", selectedSession.available_slots);
 
     // If session exists but no available_slots, return empty
-    if (!selectedSession.available_slots || selectedSession.available_slots.length === 0) {
+    if (
+      !selectedSession.available_slots ||
+      selectedSession.available_slots.length === 0
+    ) {
       console.log("Session exists but no available slots");
       return [];
     }
 
     // Convert API available_slots to TimeSlot format
-    const apiSlots = selectedSession.available_slots.map((slot: any, index: number) => {
-      console.log(`Processing API slot ${index}:`, slot);
-      
-      // Parse time - handle both "18:51" and "18:51:00" formats
-      const parseTime = (timeStr: string) => {
-        const cleanTime = timeStr.split(':').slice(0, 2).join(':'); // Take only hour and minute
-        const parts = cleanTime.split(':');
-        const hour = parseInt(parts[0]);
-        const minute = parts[1];
-        const period = hour < 12 ? "am" : "pm";
-        return { hour, minute, period };
-      };
+    const apiSlots = selectedSession.available_slots.map(
+      (slot: any, index: number) => {
+        console.log(`Processing API slot ${index}:`, slot);
 
-      const startTime = parseTime(slot.start_time);
-      const endTime = parseTime(slot.end_time);
-      
-      console.log("Start time parsed:", startTime);
-      console.log("End time parsed:", endTime);
+        // Parse time - handle both "18:51" and "18:51:00" formats
+        const parseTime = (timeStr: string) => {
+          const cleanTime = timeStr.split(":").slice(0, 2).join(":"); // Take only hour and minute
+          const parts = cleanTime.split(":");
+          const hour = parseInt(parts[0]);
+          const minute = parts[1];
+          const period = hour < 12 ? "am" : "pm";
+          return { hour, minute, period };
+        };
 
-      // Convert to 12-hour format
-      const convertTo12Hour = (hour: number, minute: string) => {
-        const period = hour >= 12 ? 'PM' : 'AM';
-        const hour12 = hour % 12 || 12; // Convert 0 to 12 for midnight
-        return `${hour12}:${minute} ${period}`;
-      };
+        const startTime = parseTime(slot.start_time);
+        const endTime = parseTime(slot.end_time);
 
-      const startTime12 = convertTo12Hour(startTime.hour, startTime.minute);
-      const endTime12 = convertTo12Hour(endTime.hour, endTime.minute);
-      
-      const formattedSlot = {
-        id: `api-${index}-${Date.now()}`,
-        time: `${startTime12} - ${endTime12}`,
-        period: startTime.period, // Use the period we calculated
-      };
-      
-      console.log("Formatted slot:", formattedSlot);
-      return formattedSlot;
-    });
+        console.log("Start time parsed:", startTime);
+        console.log("End time parsed:", endTime);
+
+        // Convert to 12-hour format
+        const convertTo12Hour = (hour: number, minute: string) => {
+          const period = hour >= 12 ? "PM" : "AM";
+          const hour12 = hour % 12 || 12; // Convert 0 to 12 for midnight
+          return `${hour12}:${minute} ${period}`;
+        };
+
+        const startTime12 = convertTo12Hour(startTime.hour, startTime.minute);
+        const endTime12 = convertTo12Hour(endTime.hour, endTime.minute);
+
+        const formattedSlot = {
+          id: `api-${index}-${Date.now()}`,
+          time: `${startTime12} - ${endTime12}`,
+          period: startTime.period, // Use the period we calculated
+        };
+
+        console.log("Formatted slot:", formattedSlot);
+        return formattedSlot;
+      },
+    );
 
     console.log("Final API slots:", apiSlots);
-    
+
     // If we got slots from API, return them
     if (apiSlots.length > 0) {
       console.log("Returning API slots:", apiSlots.length);
@@ -237,7 +224,7 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
   };
 
   const handleDateSelect = (date: Dayjs) => {
-    console.log("Date selected:", date.format('YYYY-MM-DD'));
+    console.log("Date selected:", date.format("YYYY-MM-DD"));
     setSelectedDate(date);
     setSelectedTime(null); // Reset time when date changes
   };
@@ -248,12 +235,12 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validation
     if (!selectedDate || !selectedTime) {
       setRegistrationStatus({
         success: false,
-        message: "Please select a date and time"
+        message: "Please select a date and time",
       });
       return;
     }
@@ -261,7 +248,7 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
     if (!selectedSessionId) {
       setRegistrationStatus({
         success: false,
-        message: "Please select a valid session"
+        message: "Please select a valid session",
       });
       return;
     }
@@ -274,7 +261,7 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
       email: formData.email,
       company_name: formData.companyName,
       role: formData.role,
-      select_time: selectedTime // This is the selected time slot
+      select_time: selectedTime, // This is the selected time slot
     };
 
     console.log("Submitting registration with payload:", payload);
@@ -285,11 +272,11 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
     try {
       // Call the API function
       const response = await bookSesssion(payload);
-      
+
       console.log("Registration response:", response);
-      
+
       if (response.success) {
-       toast.success("Registration successful!");
+        toast.success("Registration successful!");
         // Reset form after successful registration
         setFormData({
           fullName: "",
@@ -299,13 +286,17 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
         });
         setSelectedTime(null);
       } else {
-        toast.error(response.message || "Registration failed. Please try again.");
+        toast.error(
+          response.message || "Registration failed. Please try again.",
+        );
       }
     } catch (error: any) {
       console.error("Registration error:", error);
       setRegistrationStatus({
         success: false,
-        message: error.response?.data?.message || "An error occurred. Please try again."
+        message:
+          error.response?.data?.message ||
+          "An error occurred. Please try again.",
       });
     } finally {
       setIsLoading(false);
@@ -313,7 +304,7 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 overflow-hidden relative">
+    <div className="grid grid-cols-1 lg:grid-cols-3 overflow-hidden relative gap-[70px] max-w-[1440px] m-auto">
       <div className="lg:col-span-2 space-y-4 max-w-[715px]">
         <div className="">
           <h2 className="text-[18px] sm:text-[24px] pb-2 font-medium leading-8 text-white">
@@ -323,7 +314,7 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
             A live walkthrough showing how MIRYA automates processes, data and
             systems into intelligent automation.
           </p>
-          <div className="flex items-center gap-4 text-sm text-[#FFFFFFCC]">
+          <div className="flex items-center gap-4 leading-5 text-[14px] font-normal text-[#FFFFFFCC]">
             <span className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -392,10 +383,7 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
         </div>
 
         <div className="calendar-container max-w-[714px]">
-          <FullCalendarComponent 
-            data={data} 
-            onDateSelect={handleDateSelect}
-          />
+          <FullCalendarComponent data={data} onDateSelect={handleDateSelect} />
         </div>
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center top-39 pointer-events-none z-0">
@@ -408,7 +396,7 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
               selectedTime={selectedTime}
               selectedPeriod={selectedPeriod}
               onPeriodChange={setSelectedPeriod}
-              onTimeSelect={(slot: TimeSlot) => setSelectedTime(slot.time)} 
+              onTimeSelect={(slot: TimeSlot) => setSelectedTime(slot.time)}
             />
 
             <SpeakerGrid speakers={speakers} />
@@ -418,8 +406,7 @@ const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
 
       <div className="lg:col-span-1">
         {/* Show registration status message */}
-       
-        
+
         <RegistrationForm
           selectedDate={selectedDate}
           selectedTime={selectedTime}

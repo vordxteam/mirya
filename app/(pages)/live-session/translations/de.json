@@ -16,5 +16,114 @@
   "cardTitle": "MIRYA Live-Online-Sitzung",
   "cardDescription": "Erleben Sie MIRYA in Aktion mit einer geführten Live-Demonstration von No-Code-Automatisierung, intelligenter Dokumentenverarbeitung und selbstoptimierenden Workflows.",
   "cardFooter": "Wählen Sie Ihren Wunschtermin und seien Sie dabei.",
-  "registerBtn": "Für eine Sitzung anmelden"
+  "registerBtn": "Für eine Sitzung anmelden",
+  
+  "sessions": {
+    "label": "Sitzungen",
+    "mainTitle": "Wählen Sie die richtige MIRYA-Sitzung",
+    "description": "Wählen Sie das Format, das zu Ihren Zielen passt – von der kurzen Einführung bis hin zur fortgeschrittenen Automatisierung.",
+    "loading": "Sitzungen werden geladen...",
+    "keyHighlights": "Wichtigste Highlights:",
+    "registerNow": "Jetzt registrieren",
+    "defaultFooter": "Wählen Sie Ihren Wunschtermin und kommen Sie zu uns."
+  },
+  "testimonialsSection": {
+    "badge": "Kundenmeinungen",
+    "mainTitle": "Bewertungen von Kunden, die MIRYA nutzen",
+    "description": "Wir nutzen die Kraft der künstlichen Intelligenz, um Branchen zu revolutionieren und menschliche Erfahrungen zu verbessern.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Das einfachste Automatisierungstool, das wir je benutzt haben. Unser Team hat es an einem Tag gelernt. Ein Tool, das exakt mit unseren bestehenden Systemen funktioniert – keine Integrationen erforderlich. Wir nutzen MIRYA als White-Label-Lösung und bieten unseren Kunden nun Automatisierung unter unserer eigenen Marke an. Ein echter Game-Changer.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      },
+      {
+        "id": 2,
+        "text": "MIRYA live zu sehen, hat unsere Bewertung von Automatisierung grundlegend verändert – das Team hat unsere schwierigsten Fragen beantwortet. – Head of Ops, Finanzen. Die Demo der Dokumentenverarbeitungs-Workflows hat einen großen Engpass für uns gelöst.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      },
+      {
+        "id": 3,
+        "text": "Das einfachste Automatisierungstool, das wir je benutzt haben. Unser Team hat es an einem Tag gelernt. Es funktioniert ohne zusätzliche Integrationen perfekt mit unseren Systemen. Absolut empfehlenswert.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      },
+      {
+        "id": 4,
+        "text": "Das einfachste Automatisierungstool, das wir je benutzt haben. Unser Team hat es an einem Tag gelernt. Es funktioniert ohne zusätzliche Integrationen perfekt mit unseren Systemen. Absolut empfehlenswert.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      },
+      {
+        "id": 5,
+        "text": "Das einfachste Automatisierungstool, das wir je benutzt haben. Unser Team hat es an einem Tag gelernt. Es funktioniert ohne zusätzliche Integrationen perfekt mit unseren Systemen. Absolut empfehlenswert.",
+        "author": "David Anderson",
+        "role": "Direktor"
+      }
+    ]
+  },
+  
+  "registrationForm": {
+    "title": "Geben Sie unten Ihre Details ein.",
+    "fields": {
+      "fullName": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "companyName": "Firmenname",
+      "role": "Ihre Rolle"
+    },
+    "button": {
+      "processing": "Wird verarbeitet...",
+      "submit": "Absenden"
+    },
+    "validation": {
+      "required": "Bitte füllen Sie alle erforderlichen Felder aus",
+      "selectBoth": "Bitte wählen Sie zuerst ein Datum und ein Zeitfenster aus",
+      "selectDate": "Bitte wählen Sie zuerst ein Datum aus",
+      "selectTime": "Bitte wählen Sie zuerst ein Zeitfenster aus"
+    }
+  },
+  
+  "hero": {
+    "goBack": "Zurück",
+    "introTitle": "Einführungssitzung",
+    "loading": "Sitzungsdetails werden geladen...",
+    "noData": "Keine Sitzungsdaten gefunden.",
+    "noDescription": "Keine Beschreibung verfügbar"
+  },
+  
+  "live-session": {
+    "pageTitle": "Live-Einführungssitzung",
+    "aiAutomationTitle": "KI-Automatisierung in Aktion",
+    "aiAutomationDescription": "Eine Live-Demonstration, die zeigt, wie MIRYA Prozesse, Daten und Systeme in intelligente Automatisierung umwandelt.",
+    "dateInfo": "23. Oktober 2025",
+    "timeInfo": "12:30 - 14:30 Uhr",
+    "durationInfo": "2 Stunden",
+    "selectDateTimeTitle": "Datum & Uhrzeit auswählen",
+    "registrationTitle": "Für die Sitzung registrieren",
+    "registrationDescription": "Bitte füllen Sie die Details zur Registrierung aus.",
+    "registrationSuccess": "Registrierung erfolgreich!",
+    "registrationFailed": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "form": {
+      "fullName": "Vollständiger Name",
+      "fullNamePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
+      "email": "E-Mail",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+      "companyName": "Firmenname",
+      "companyNamePlaceholder": "Geben Sie Ihren Firmennamen ein",
+      "role": "Rolle",
+      "rolePlaceholder": "Geben Sie Ihre Rolle/Position ein",
+      "submitButton": "Für Sitzung registrieren",
+      "submittingButton": "Wird übermittelt...",
+      "validation": {
+        "selectDate": "Bitte wählen Sie ein Datum und eine Uhrzeit aus",
+        "selectValidSession": "Bitte wählen Sie eine gültige Sitzung aus"
+      }
+    }
+  }
+
 }
+
+
+

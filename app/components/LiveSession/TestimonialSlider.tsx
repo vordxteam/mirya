@@ -48,7 +48,7 @@ interface Testimonial {
 // ];
 
 export default function TestimonialSlider() {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("live-session");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
