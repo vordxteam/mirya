@@ -99,7 +99,7 @@ const IntroductorySession = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3  overflow-hidden relative">
+    <div className="grid grid-cols-1 lg:grid-cols-3  overflow-hidden relative gap-3">
       <div className="lg:col-span-2 space-y-4 max-w-[715px]">
         <div className="">
           <h2 className="text-[18px] sm:text-[24px] pb-2 font-medium leading-8 text-white">

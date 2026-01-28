@@ -13,7 +13,6 @@ export default function Features() {
       <SessionsSection />
       <Testimonials />
       <div className="pt-[72px]">
-        <CTA />
       </div>
     </div>
   );

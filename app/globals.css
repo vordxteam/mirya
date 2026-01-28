@@ -247,3 +247,6 @@ body {
 .css-pfq5bj-MuiDateCalendar-root .MuiPickersArrowSwitcher-button {
     color: #FFFFFF99;
 }
+.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root.Mui-disabled:not(.Mui-selected) {
+    color: #FFFFFF99!important;
+}

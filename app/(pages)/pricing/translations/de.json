@@ -217,6 +217,47 @@
     }
   }
 
+,
+
+  "trialPlan": {
+    "mainTitle": "Erhalten Sie einen 14-tägigen begleiteten Testplan für bessere Automatisierung",
+    "howItWorks": "So funktioniert es",
+    "card": {
+      "title": "Begleiteter Testplan",
+      "description": "Eine begleitete, zeitlich begrenzte Evaluierung von MirYA in realen Unternehmensumgebungen.",
+      "price": "99",
+      "priceUnit": "/Einmalig",
+      "cta": "Begleiteten Test starten",
+      "featuresTitle": "Funktionen",
+      "limitsTitle": "Nutzungslimits"
+    },
+    "features": [
+      "Desktop- und Browser-Automatisierung",
+      "Hintergrund-App-Automatisierung",
+      "Visueller Workflow",
+      "Unterprozesse und Variablen",
+      "API- und Systemintegrationen"
+    ],
+    "usageLimits": [
+      "Maximal 3 aktive Workflows",
+      "Maximal 200 Gesamtausführungen",
+      "Ausgaben mit Wasserzeichen versehen"
+    ],
+    "steps": [
+      {
+        "title": "Eine strukturierte Evaluierung starten",
+        "description": "Erhalten Sie zeitlich begrenzten, realen Zugriff auf MirYA in einer kontrollierten, nicht-produktiven Umgebung."
+      },
+      {
+        "title": "Echte Automatisierungen erstellen und ausführen",
+        "description": "Entwerfen und testen Sie reale Workflows mit einer professionellen Lizenz und festgelegten Grenzen."
+      },
+      {
+        "title": "Mit Vertrauen upgraden",
+        "description": "Wechseln Sie nahtlos zu Professional oder Enterprise – Ihre €99 Testgebühr wird vollständig angerechnet."
+      }
+    ]
+  }
 
 
 }
