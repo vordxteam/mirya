@@ -62,10 +62,11 @@ export default function Experts({
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [searchQuery, setSearchQuery] = useState(initialSearch || "");
-  const removeQuotes = (text) => {
-    if (!text) return "";
-    return text.replace(/^"|"$/g, "");
-  };
+const removeQuotes = (text?: string | null): string => {
+  if (!text) return "";
+  return text.replace(/^"|"$/g, "");
+};
+
   const { t } = useTranslation("experts");
 
   // Filter states
@@ -117,47 +118,48 @@ export default function Experts({
     }
   };
 
-  // Transform API data to match component structure
-  const transformExpertData = (data: any[]): TransformedExpert[] => {
-    if (!Array.isArray(data)) {
-      console.warn("transformExpertData: data is not an array", data);
-      return [];
-    }
+ const transformExpertData = (data: any[]): TransformedExpert[] => {
+  if (!Array.isArray(data)) {
+    console.warn("transformExpertData: data is not an array", data);
+    return [];
+  }
 
-    return data.map((item) => {
-      const records = item.expert_records || [];
+  return data.map((item: any): TransformedExpert => {
+    const records: any[] = item.expert_records ?? [];
 
-      // Create a map of records for easy access
-      const recordMap: Record<string, string> = {};
-      records.forEach((record: any) => {
-        if (record.key && record.metadata) {
-          recordMap[record.key] = parseMetadata(record.metadata);
-        }
-      });
-
-      // Get company name from records, fallback to first_name + last_name
-      const companyName =
-        recordMap["company_name"] ||
-        `${item.first_name || ""} ${item.last_name || ""}`.trim() ||
-        "Unknown";
-      const description =
-        recordMap["company_description"] || "No description available.";
-
-      return {
-        id: item.id || 0,
-        name: companyName,
-        logo: "/images/logo1.png",
-        description:
-          description.length > 100
-            ? description.substring(0, 100) + "..."
-            : description,
-        rating: item.expert_rating_avg_rating || 4.2,
-        reviewCount: item.expert_rating_count || 0,
-        acceptingClients:
-          item.status === "active" || item.status === "pending" || true,
-      };
+    const recordMap: Record<string, string> = {};
+    records.forEach((record: any) => {
+      if (record?.key && record?.metadata) {
+        recordMap[record.key] = parseMetadata(record.metadata);
+      }
     });
-  };
+
+    const companyName =
+      recordMap["company_name"] ||
+      `${item.first_name || ""} ${item.last_name || ""}`.trim() ||
+      "Unknown";
+
+    const description =
+      recordMap["company_description"] || "No description available.";
+
+    return {
+      id: item.id ?? 0,
+      name: companyName,
+      logo: "/images/logo1.png",
+      description:
+        description.length > 100
+          ? description.substring(0, 100) + "..."
+          : description,
+      rating: item.expert_rating_avg_rating ?? 4.2,
+      reviewCount: item.expert_rating_count ?? 0,
+      acceptingClients:
+        item.status === "active" || item.status === "pending",
+
+      text: description,
+    };
+  });
+};
+
 
   // Fetch experts from API
   const fetchExperts = async () => {

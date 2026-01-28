@@ -80,7 +80,7 @@ const HeroSection = () => {
   return (
     <div className=" px-3 sm:px-20">
       <div className="flex flex-col items-start justify-center pt-8  relative">
-        <div className="absolute top-0 pointer-events-none z-0">
+        <div className="absolute top-15 pointer-events-none z-0">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="pb-3 flex items-center gap-5">
@@ -101,7 +101,7 @@ const HeroSection = () => {
         <h1 className="heading-1 font-medium tracking-[-1.44px] max-w-[972px] w-full text-left pb-3 sm:pb-6">
           Introductory Session
         </h1>
-        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-8 text-left max-w-[580px]">
+        <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 pb-5 sm:pb-[72px] text-left max-w-[580px]">
           Discover how MIRYA automates processes without code through live
           demonstrations and expert guidance.
         </p>

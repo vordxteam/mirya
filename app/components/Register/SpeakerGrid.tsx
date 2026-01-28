@@ -11,8 +11,8 @@ export const SpeakerGrid = ({ speakers }: { speakers: Speaker[] }) => {
     "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)";
 
   return (
-    <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-white">Speakers</h3>
+    <div className="space-y-4">
+      <h3 className="text-xl font-semibold text-white pt-6">Speakers</h3>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {speakers.map((speaker) => (
           /* OUTER DIV: Creates the 1px Gradient Border */
@@ -25,7 +25,7 @@ export const SpeakerGrid = ({ speakers }: { speakers: Speaker[] }) => {
             }}
           >
             <div
-              className="flex flex-col items-center text-center space-y-3 h-full"
+              className="flex flex-col items-center text-center space-y-6 h-full"
               style={{
                 background: "#050A29",
                 borderRadius: "11px", // Slightly less than outer to fit perfectly
@@ -36,14 +36,18 @@ export const SpeakerGrid = ({ speakers }: { speakers: Speaker[] }) => {
                 <img
                   src={speaker.image}
                   alt={speaker.name}
+                  height={100}
+                  width={100}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h4 className="text-white font-medium text-sm">
+                <h4 className="text-white font-medium text-[16px] leading-5">
                   {speaker.name}
                 </h4>
-                <p className="text-[#73799B] text-xs mt-1">{speaker.role}</p>
+                <p className="text-[#FFFFFF99] font-normal leading-5 text-[14px] mt-1">
+                  {speaker.role}
+                </p>
               </div>
             </div>
           </div>

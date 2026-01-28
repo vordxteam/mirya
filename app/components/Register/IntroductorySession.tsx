@@ -1,13 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-// import FullCalendar from "@fullcalendar/react";
-// import dayGridPlugin from "@fullcalendar/daygrid";
-// import interactionPlugin from "@fullcalendar/interaction";
-// import type { DateClickArg } from "@fullcalendar/interaction";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+
 import dayjs, { Dayjs } from "dayjs";
 
 import { TimeSlots } from "./TimeSlots";
@@ -19,6 +13,13 @@ interface TimeSlot {
   id: string;
   time: string;
   period: "am" | "pm";
+}
+interface TimeSlotsProps {
+  slots: TimeSlot[];
+  selectedTime: string | null;
+  selectedPeriod: "am" | "pm";
+  onPeriodChange: (period: "am" | "pm") => void;
+  onTimeSelect: (slot: TimeSlot) => void; // ✅ explicitly typed
 }
 
 interface Speaker {
@@ -88,16 +89,16 @@ const IntroductorySession = () => {
     },
   ];
 
-  // FIX: Ensure this function is correctly typed so it executes properly
-  const handleDateClick = (arg: DateClickArg) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+  // // FIX: Ensure this function is correctly typed so it executes properly
+  // const handleDateClick = (arg: DateClickArg) => {
+  //   const today = new Date();
+  //   today.setHours(0, 0, 0, 0);
 
-    if (arg.date >= today) {
-      setSelectedDate(arg.date);
-      setSelectedTime(null);
-    }
-  };
+  //   if (arg.date >= today) {
+  //     setSelectedDate(arg.date);
+  //     setSelectedTime(null);
+  //   }
+  // };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -109,19 +110,19 @@ const IntroductorySession = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3  pb-20 overflow-hidden relative">
-      <div className="lg:col-span-2 space-y-12 max-w-[650px]">
-        <div className="space-y-4">
-          <h2 className="text-3xl lg:text-4xl font-semibold text-white">
+    <div className="grid grid-cols-1 lg:grid-cols-3  overflow-hidden relative">
+      <div className="lg:col-span-2 space-y-4 max-w-[715px]">
+        <div className="">
+          <h2 className="text-[18px] sm:text-[24px] pb-2 font-medium leading-8 text-white">
             {" "}
             AI Automation in Action{" "}
           </h2>{" "}
-          <p className="text-[#CAC9D1] text-base leading-relaxed">
+          <p className="text-[#FFFFFFCC] text-[12px] leading-4 font-normal pb-4">
             {" "}
             A live walkthrough showing how MIRYA automates processes, data and
             systems into intelligent automation.{" "}
           </p>{" "}
-          <div className="flex items-center gap-3 text-sm text-[#FFFFFFCC]">
+          <div className="flex items-center gap-4 text-sm text-[#FFFFFFCC]">
             {" "}
             <span className="flex items-center gap-2">
               {" "}
@@ -142,7 +143,6 @@ const IntroductorySession = () => {
               </svg>{" "}
               23 October, 2025{" "}
             </span>{" "}
-            <span>•</span>{" "}
             <span className="flex items-center gap-2">
               {" "}
               <svg
@@ -169,7 +169,6 @@ const IntroductorySession = () => {
               </svg>{" "}
               12:30 PM - 2:30 PM{" "}
             </span>{" "}
-            <span>•</span>{" "}
             <span className="flex items-center gap-2">
               {" "}
               <svg
@@ -190,6 +189,10 @@ const IntroductorySession = () => {
               2 Hour{" "}
             </span>{" "}
           </div>{" "}
+          <h2 className="text-[18px] sm:text-[24px] pt-6 font-medium leading-8 text-white">
+            {" "}
+            Select Date & Time
+          </h2>{" "}
         </div>
 
         <div className="calendar-container  max-w-[714px]">
@@ -201,18 +204,27 @@ const IntroductorySession = () => {
             validRange={{ start: new Date() }}
             headerToolbar={{ left: "prev", center: "title", right: "next" }}
           /> */}
-        <FullCalendarComponent />
+          <FullCalendarComponent />
         </div>
+        <div className="relative overflow-hidden">
+          {/* BLUR LIGHT – CENTERED BEHIND BOTH SECTIONS */}
+          <div className="absolute inset-0 flex items-center justify-center top-39 pointer-events-none z-0">
+            <div className="rounded-[493.75px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[443px] h-[200px] "></div>
+          </div>
 
-        <TimeSlots
-          slots={timeSlots}
-          selectedTime={selectedTime}
-          selectedPeriod={selectedPeriod}
-          onPeriodChange={setSelectedPeriod}
-          onTimeSelect={(slot) => setSelectedTime(slot.time)}
-        />
+          {/* CONTENT */}
+          <div className="relative z-10">
+            <TimeSlots
+              slots={timeSlots}
+              selectedTime={selectedTime}
+              selectedPeriod={selectedPeriod}
+              onPeriodChange={setSelectedPeriod}
+              onTimeSelect={(slot: TimeSlot) => setSelectedTime(slot.time)} // ✅ typed
+            />
 
-        <SpeakerGrid speakers={speakers} />
+            <SpeakerGrid speakers={speakers} />
+          </div>
+        </div>
       </div>
 
       <div className="lg:col-span-1">
