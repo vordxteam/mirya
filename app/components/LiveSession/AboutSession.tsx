@@ -15,7 +15,6 @@ const AboutSession = () => {
     <section className="relative overflow-hidden bg-[#00031C]">
       <div className="relative z-10 mx-auto max-w-[1440px] px-5 md:px-20 py-15">
         <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-16 items-center">
-          
           {/* LEFT CONTENT */}
           <div className="w-full">
             <div className="pb-3 flex items-center justify-center lg:justify-start gap-3 sm:gap-5">
@@ -47,18 +46,19 @@ const AboutSession = () => {
             </p>
 
             <ul className="space-y-4 text-[#CAC9D1] text-[14px] leading-5 font-normal">
-              {Array.isArray(features) && features.map((item, index) => (
-                <li key={index} className="flex gap-3 items-start">
-                  <Image
-                    src="/images/check-mark.svg"
-                    width={24}
-                    height={24}
-                    alt="check"
-                    className="shrink-0"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
+              {Array.isArray(features) &&
+                features.map((item, index) => (
+                  <li key={index} className="flex gap-3 items-start">
+                    <Image
+                      src="/images/check-mark.svg"
+                      width={24}
+                      height={24}
+                      alt="check"
+                      className="shrink-0"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
             </ul>
           </div>
 
@@ -78,7 +78,7 @@ const AboutSession = () => {
             >
               {/* Glow Effect */}
               <div className="absolute -left-16 -top-20 h-[503px] w-[414px] rounded-[297.75px] bg-[#1D2759]/30 blur-[43px] pointer-events-none" />
-              
+
               <div className="relative rounded-2xl p-8 h-full bg-[#050925] bg-[url('/images/session-bg.svg')] bg-cover bg-center bg-no-repeat overflow-hidden">
                 {/* Grid Overlay */}
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -95,7 +95,8 @@ const AboutSession = () => {
                   <div
                     className="opacity-40 w-full max-w-[374px] h-[2px]"
                     style={{
-                      background: "linear-gradient(270deg, #1A1A3B 3.71%, #A68BEE 50.53%, #1A1A3B 99.96%)",
+                      background:
+                        "linear-gradient(270deg, #1A1A3B 3.71%, #A68BEE 50.53%, #1A1A3B 99.96%)",
                     }}
                   />
 
@@ -107,7 +108,7 @@ const AboutSession = () => {
                     <GradientButton
                       label={t("registerBtn")}
                       bgColor="#0274FE"
-                      href="/register"
+                      href="#sessions"
                       textColor="#FFFFFF"
                     />
                   </div>
@@ -115,7 +116,6 @@ const AboutSession = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

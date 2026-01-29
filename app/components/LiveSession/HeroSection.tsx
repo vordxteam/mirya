@@ -98,7 +98,7 @@ const HeroSection = () => {
         <div className="flex items-center justify-center gap-3">
           <GradientButton
             label={t("button")}
-            href="/register"
+            href="#sessions"
             bgColor="#0274FE"
           />
         </div>

@@ -129,7 +129,7 @@ const FullCalendarComponent = ({ data, onDateSelect }: any) => {
               color: "#FFFFFFCC",
               fontSize: "16px",
               fontWeight: 600,
-              width: "50px",
+              width: "90px",
             },
 
             "& .MuiPickersDay-today": {
@@ -152,6 +152,7 @@ const FullCalendarComponent = ({ data, onDateSelect }: any) => {
               borderRadius: "50%",
               backgroundColor: "#1E7BFF",
             },
+            
           }}
          slotProps={{
   day: (ownerState) => {
