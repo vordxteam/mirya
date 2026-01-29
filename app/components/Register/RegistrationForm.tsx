@@ -1,9 +1,9 @@
-// components/Session/RegistrationForm.tsx
 "use client";
 
 import React, { useState } from "react";
 import GradientButton from "@/app/ui/GradientButton";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 export const RegistrationForm = ({
   selectedDate,
@@ -12,33 +12,31 @@ export const RegistrationForm = ({
   onChange,
   onSubmit,
 }: any) => {
-  // Your specific gradient border
-  const customGradient = "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)";
+  const { t } = useTranslation("live-session");
 
-  // Add local loading state
+  const customGradient = "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)";
   const [isLoading, setIsLoading] = useState(false);
 
-  // Handle form submission
+  const fields = [
+    { name: "fullName", label: t("registrationForm.fields.fullName") },
+    { name: "email", label: t("registrationForm.fields.email") },
+    { name: "companyName", label: t("registrationForm.fields.companyName") },
+    { name: "role", label: t("registrationForm.fields.role") },
+  ];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Basic validation
-    if (!selectedDate || !selectedTime) {
-      return;
-    }
+    if (!selectedDate || !selectedTime) return;
 
     if (!formData.fullName || !formData.email) {
-      toast.error("Please fill in all required fields");
+      toast.error(t("registrationForm.validation.required"));
       return;
     }
 
     setIsLoading(true);
-    
     try {
-      // Call the parent's onSubmit handler
-      if (onSubmit) {
-        await onSubmit(e);
-      }
+      if (onSubmit) await onSubmit(e);
     } catch (error) {
       console.error("Form submission error:", error);
     } finally {
@@ -47,40 +45,35 @@ export const RegistrationForm = ({
   };
 
   return (
-    <div className="sticky top-6">
+    <div className="sticky top-6 max-w-[402px] w-full text-white">
       <div
-        className="rounded-[12px] p-[1px] w-full"
-        style={{
-          background: customGradient,
-        }}
+        className="rounded-xl p-[1px] w-full"
+        style={{ background: customGradient }}
       >
-        <div 
-          className="bg-[#050A29] rounded-[11px] p-6 space-y-6"
-        >
-          <h3 className="text-[25px] font-medium leading-[36px] text-white">
-            Fill out the details below.
+        <div className="bg-[#050A29] rounded-[11px] p-6 space-y-5">
+          <h3 className="text-[24px] font-medium leading-[30px] text-white pb-3">
+            {t("registrationForm.title")}
           </h3>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            {["fullName", "email", "companyName", "role"].map((field) => (
-              <div key={field} className="space-y-2">
-                <label className="block text-[14px] font-normal text-[#FFFFFFE0] capitalize">
-                  {field.replace(/([A-Z])/g, " $1")}
+            {fields.map((field) => (
+              <div key={field.name} className="space-y-3">
+                <label className="block text-[16px] font-normal leading-5">
+                  {field.label}
                 </label>
                 <input
-                  type={field === "email" ? "email" : "text"}
-                  name={field}
-                  placeholder={field.replace(/([A-Z])/g, " $1")}
-                  value={formData[field]}
+                  type={field.name === "email" ? "email" : "text"}
+                  name={field.name}
+                  placeholder={field.label}
+                  value={formData[field.name] || ""}
                   onChange={onChange}
                   className="w-full bg-transparent border border-[#FFFFFF33] rounded-lg px-4 py-3 text-white placeholder:text-[#FFFFFFE0] outline-none focus:border-[#0274FE] transition-all"
-                  required={field === "fullName" || field === "email"}
+                  required={field.name === "fullName" || field.name === "email"}
                   disabled={isLoading}
                 />
               </div>
             ))}
 
-            {/* BUTTON SECTION */}
             <div className="pt-4">
               <div className="w-full">
                 <button
@@ -89,24 +82,22 @@ export const RegistrationForm = ({
                   className="w-full"
                 >
                   <GradientButton
-                    label={isLoading ? "Processing..." : "Submit Registration"}
+                    label={isLoading ? t("registrationForm.button.processing") : t("registrationForm.button.submit")}
                     href="#" 
                     bgColor="#0274FE"
                     onClick={handleSubmit as any}
                     width="100%"
-                    
                   />
                 </button>
               </div>
               
-              {/* Show warning if date/time not selected */}
               {(!selectedDate || !selectedTime) && (
                 <p className="mt-3 text-sm text-[#FF6B6B] text-center">
                   {!selectedDate && !selectedTime 
-                    ? 'Please select a date and time slot first' 
+                    ? t("registrationForm.validation.selectBoth")
                     : !selectedDate 
-                      ? 'Please select a date first' 
-                      : 'Please select a time slot first'}
+                      ? t("registrationForm.validation.selectDate") 
+                      : t("registrationForm.validation.selectTime")}
                 </p>
               )}
             </div>

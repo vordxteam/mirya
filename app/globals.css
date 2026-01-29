@@ -247,6 +247,19 @@ body {
 .css-pfq5bj-MuiDateCalendar-root .MuiPickersArrowSwitcher-button {
     color: #FFFFFF99;
 }
-.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root.Mui-disabled:not(.Mui-selected) {
+
+.backdrop-blur.css-6amvtf-MuiButtonBase-root-MuiPickersDay-root.Mui-disabled:not(.Mui-selected) {
     color: #FFFFFF99!important;
+}
+.css-6amvtf-MuiButtonBase-root-MuiPickersDay-root.Mui-disabled:not(.Mui-selected) {
+ color: #FFFFFF99!important;}
+ .backdrop-blur .MuiDayCalendar-weekDayLabel {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 600;
+  width: 90px !important;
+}
+
+  .css-sv8t35.Mui-disabled:not(.Mui-selected) {
+    color: rgba(255, 255, 255, 0.8)!important;
 }

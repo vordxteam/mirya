@@ -3,7 +3,7 @@
   "title": "MIRYA'yı Canlı Oturumlarla Keşfedin",
   "description": "MIRYA'nın gerçek iş süreçlerini nasıl otomatikleştirdiğini, dijital dönüşümü nasıl hızlandırdığını ve yapay zeka destekli belge ve iş akışı otomasyonuna nasıl güç verdiğini keşfedin — canlı ve etkileşimli.",
   "button": "Bir Oturum İçin Kaydolun",
-  
+
   "aboutLabel": "Oturum Hakkında",
   "aboutTitle": "Neler Deneyimleyeceksiniz?",
   "aboutLead": "Canlı bir MIRYA çevrimiçi oturumuna şunlar için katılın:",
@@ -16,5 +16,94 @@
   "cardTitle": "MIRYA Canlı Çevrimiçi Oturum",
   "cardDescription": "Kodsuz otomasyon, Akıllı Doküman İşleme ve kendi kendini optimize eden iş akışlarının rehberli canlı gösterimi ile MIRYA'yı iş başında görün.",
   "cardFooter": "Tercih ettiğiniz tarihi seçin ve bize katılın.",
-  "registerBtn": "Oturum İçin Kaydolun"
+  "registerBtn": "Oturum İçin Kaydolun",
+
+  "sessions": {
+    "label": "Oturumlar",
+    "mainTitle": "Doğru MIRYA Oturumunu Seçin",
+    "description": "Hızlı tanıtımdan ileri düzey otomasyona ve sektöre özel kullanım durumlarına kadar hedeflerinize uygun formatı seçin.",
+    "loading": "Oturumlar yükleniyor...",
+    "keyHighlights": "Önemli Noktalar:",
+    "registerNow": "Şimdi Kaydolun",
+    "defaultFooter": "Tercih ettiğiniz tarihi seçin ve bize katılın."
+  },
+  "testimonialsSection": {
+    "badge": "Referanslar",
+    "mainTitle": "MIRYA Kullanan Müşterilerimizden Yorumlar",
+    "description": "Yapay zekanın gücünden yararlanarak endüstrilerde devrim yaratıyor ve insan deneyimlerini geliştiriyoruz.",
+    "items": [
+      {
+        "id": 1,
+        "text": "MIRYA'yı canlı görmek otomasyonu değerlendirme şeklimizi değiştirdi; ekip en zor sorularımızı yanıtladı. – Operasyon Başkanı, Finans. Belge işleme iş akışlarının demosu bizim için büyük bir darboğazı çözdü.",
+
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 2,
+        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Entegrasyona gerek duymadan halihazırda sahip olduğumuz sistemlerle tam olarak çalışan bir araç. MIRYA'yı beyaz etiketle kullandık ve artık müşterilerimize kendi markamız altında otomasyon sunuyoruz. Oyunun kurallarını değiştiriyor.",
+
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 3,
+        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle kusursuz çalışıyor. Kendi markamızla hizmet vermeye başladık. Harika!",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 4,
+        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle kusursuz çalışıyor. Kendi markamızla hizmet vermeye başladık. Harika!",
+        "author": "David Anderson",
+        "role": "Direktör"
+      },
+      {
+        "id": 5,
+        "text": "Şimdiye kadar kullandığımız en kolay otomasyon aracı. Ekibimiz bir günde öğrendi. Mevcut sistemlerimizle kusursuz çalışıyor. Kendi markamızla hizmet vermeye başladık. Harika!",
+        "author": "David Anderson",
+        "role": "Direktör"
+      }
+    ]
+  },
+
+  "registrationForm": {
+    "title": "Aşağıdaki bilgileri doldurun.",
+    "fields": {
+      "fullName": "Ad Soyad",
+      "email": "E-posta Adresi",
+      "companyName": "Şirket Adı",
+      "role": "Göreviniz"
+    },
+    "button": {
+      "processing": "İşleniyor...",
+      "submit": "Gönder"
+    },
+    "validation": {
+      "required": "Lütfen gerekli tüm alanları doldurun",
+      "selectBoth": "Lütfen önce bir tarih ve saat dilimi seçin",
+      "selectDate": "Lütfen önce bir tarih seçin",
+      "selectTime": "Lütfen önce bir saat dilimi seçin"
+    }
+  },
+
+  "hero": {
+    "goBack": "Geri Dön",
+    "introTitle": "Tanıtım Oturumu",
+    "loading": "Oturum detayları yükleniyor...",
+    "noData": "Oturum verisi bulunamadı.",
+    "noDescription": "Açıklama mevcut değil"
+  },
+
+  "hero_title": "İş Başında Yapay Zeka Otomasyonu",
+  "hero_description": "MIRYA'nın süreçleri, verileri ve sistemleri nasıl akıllı otomasyona dönüştürdüğünü gösteren canlı bir anlatım.",
+  "duration": "2 Saat",
+  "select_datetime": "Tarih ve Saat Seçin",
+  "validation_error": "Lütfen bir tarih ve saat seçin",
+  "session_error": "Lütfen geçerli bir oturum seçin",
+  "success_message": "Kayıt başarılı!",
+  "generic_error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+  "available_slots": "Müsait Zaman Dilimleri",
+  "no_slots": "Müsait zaman dilimi bulunmamaktadır.",
+  "speakers_title": "Konuşmacılar"
 }

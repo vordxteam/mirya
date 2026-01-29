@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import HeroSection from "@/app/components/LiveSession/HeroSection";
 import React from "react";
 import CTA from "@/app/Layout/CTA";
@@ -9,11 +9,13 @@ export default function Features() {
   return (
     <div>
       <HeroSection />
+      
       <AboutSession />
-      <SessionsSection />
+      <div id="sessions">
+        <SessionsSection />
+      </div>{" "}
       <Testimonials />
-      <div className="pt-[72px]">
-      </div>
+      <div className="pt-[72px]"></div>
     </div>
   );
 }

@@ -59,6 +59,8 @@ const FullCalendarComponent = ({ data, onDateSelect }: any) => {
           onChange={handleDateChange}
           disablePast
           showDaysOutsideCurrentMonth
+            views={["day"]}   // ✅ disables month/year switch
+
           sx={{
             width: "100%",
             maxHeight: "none",
@@ -75,6 +77,15 @@ const FullCalendarComponent = ({ data, onDateSelect }: any) => {
               paddingLeft: "0px",
               paddingRight: "0px",
             },
+               "& .MuiPickersCalendarHeader-switchViewIcon": {
+      display: "none",
+    },
+
+    "& .MuiPickersCalendarHeader-label": {
+      pointerEvents: "none", // prevents click switching
+      cursor: "default",
+    },
+
             "& .MuiPickersCalendarHeader-labelContainer": {
               position: "absolute",
               left: "50%",
@@ -118,7 +129,7 @@ const FullCalendarComponent = ({ data, onDateSelect }: any) => {
               color: "#FFFFFFCC",
               fontSize: "16px",
               fontWeight: 600,
-              width: "50px",
+              width: "90px",
             },
 
             "& .MuiPickersDay-today": {
@@ -141,6 +152,7 @@ const FullCalendarComponent = ({ data, onDateSelect }: any) => {
               borderRadius: "50%",
               backgroundColor: "#1E7BFF",
             },
+            
           }}
          slotProps={{
   day: (ownerState) => {
