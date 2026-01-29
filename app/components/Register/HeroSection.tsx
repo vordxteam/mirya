@@ -287,7 +287,9 @@ const HeroSection = () => {
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
         <h1 className="heading-1 font-medium tracking-[-1.44px] max-w-[972px] w-full text-left pb-3 sm:pb-6 text-white">
-          {t("hero.introTitle")}
+          {/* {t("hero.introTitle")} */}
+                    {data?.data?.title || t("hero.introTitle")}
+
         </h1>
         <p className="text-[#CAC9D1] text-[16px] font-normal leading-5 pb-5 sm:pb-[72px] text-left max-w-[580px]">
           {data?.data?.description || t("hero.noDescription")}

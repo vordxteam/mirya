@@ -89,6 +89,11 @@ import trExpert from '@/app/(pages)/become-expert/translations/tr.json'
 import enLiveSession from '@/app/(pages)/live-session/translations/en.json';
 import deLiveSession from '@/app/(pages)/live-session/translations/de.json';
 import trLiveSession from '@/app/(pages)/live-session/translations/tr.json';
+import enOnboarding from '@/app/(pages)/onboarding/translations/en.json';
+import deOnboarding from '@/app/(pages)/onboarding/translations/de.json';
+import trOnboarding from '@/app/(pages)/onboarding/translations/tr.json';
+
+
 const resources = {
   en: {
     translation: enTranslation,
@@ -112,7 +117,9 @@ const resources = {
     feature: enFeature,
     experts: enExperts,
     expert: enExpert,
-    "live-session": enLiveSession
+    "live-session": enLiveSession,
+      onboarding: enOnboarding
+
   },
   de: {
     translation: deTranslation,
@@ -135,7 +142,9 @@ const resources = {
     feature: deFeature,
     experts: deExperts,
     expert: deExpert,
-    "live-session": deLiveSession
+    "live-session": deLiveSession,
+      onboarding: deOnboarding
+
 
   },
   tr: {
@@ -159,7 +168,9 @@ const resources = {
     feature: trFeature,
     experts: trExperts,
     expert: trExpert,
-    "live-session": trLiveSession
+    "live-session": trLiveSession,
+      onboarding: trOnboarding
+
 
   },
 
@@ -186,7 +197,7 @@ if (!i18next.isInitialized) {
       react: {
         useSuspense: false,
       },
-      ns: ['translation', 'about', 'layout', 'industries', 'contact', 'pricing', 'home', 'ImprintPages', 'faq', 'userTesting', 'careers', 'privacy', 'security', 'startup', 'form', 'job', 'feature', 'experts', 'expert', 'live-session'],
+      ns: ['translation', 'about', 'layout', 'industries', 'contact', 'pricing', 'home', 'ImprintPages', 'faq', 'userTesting', 'careers', 'privacy', 'security', 'startup', 'form', 'job', 'feature', 'experts', 'expert', 'live-session' ,  'onboarding'],
       defaultNS: 'translation',
     });
 }

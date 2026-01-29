@@ -3,12 +3,12 @@ import axios from 'axios';
 const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const getSession = async (): Promise<any> => {
-  const response = await axios.get(`${base_url}/session`);
+  const response = await axios.get(`${base_url}/session/${lang}`);
   return response.data;
 };
 
-export const getSessionDetail = async (id: string): Promise<any> => {
-  const response = await axios.get(`${base_url}/session/${id}`);
+export const getSessionDetail = async (slug: string): Promise<any> => {
+  const response = await axios.get(`${base_url}/session/${slug}/${lang}`);
   return response.data;
 };
 

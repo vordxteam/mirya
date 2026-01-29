@@ -263,3 +263,12 @@ body {
   .css-sv8t35.Mui-disabled:not(.Mui-selected) {
     color: rgba(255, 255, 255, 0.8)!important;
 }
+.css-16mq8tb-MuiDateCalendar-root .MuiPickersArrowSwitcher-button {
+color: #FFFFFF99 !important;
+
+}
+.css-1ckov0h-MuiSvgIcon-root {
+  
+    fill: currentColor!important;
+    font-size: inherit;
+}

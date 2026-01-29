@@ -68,10 +68,10 @@
   },
 
   "registrationForm": {
-    "title": "Aşağıdaki bilgileri doldurun.",
+    "title": "Oturum için Kayıt Ol",
     "fields": {
       "fullName": "Ad Soyad",
-      "email": "E-posta Adresi",
+      "email": "E-posta",
       "companyName": "Şirket Adı",
       "role": "Göreviniz"
     },
@@ -105,5 +105,7 @@
   "generic_error": "Bir hata oluştu. Lütfen tekrar deneyin.",
   "available_slots": "Müsait Zaman Dilimleri",
   "no_slots": "Müsait zaman dilimi bulunmamaktadır.",
-  "speakers_title": "Konuşmacılar"
+  "speakers_title": "Konuşmacılar",
+    "empty_state": "Konuşmacı bulunamadı"
+
 }

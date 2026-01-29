@@ -1,0 +1,214 @@
+{
+  "start": {
+    "intro": "Sizin ve şirketiniz hakkında birkaç soru var."
+  },
+  "step1": {
+    "title": "1. Adınız nedir?",
+    "placeholder": "Ad",
+    "errors": {
+      "required": "Ad alanı zorunludur"
+    }
+  },
+   "step2": {
+    "title": "2. Soyadınız nedir?",
+    "placeholder": "Soyadı",
+    "error_required": "Soyadı zorunludur"
+  },
+   "step3": {
+    "title": "3. Telefon numaranız nedir?",
+    "placeholder": "Telefon Numarası"
+  },
+   "step4": {
+    "title": "4. İş e-posta adresiniz nedir?",
+    "placeholder": "E-posta"
+  },
+  
+  "step5": {
+    "title": "5. Şirketinizin adı nedir?",
+    "placeholder": "Şirket Adı"
+  },
+  "step6": {
+    "title": "6. Şirket web siteniz nedir?",
+    "placeholder": "Şirket Web Sitesi"
+  },
+   "step7": {
+    "title": "7. Rolünüz nedir?",
+    "placeholder": "Rolünüz"
+  },
+  "step8": {
+    "title": "8. Şirketinizde kaç çalışan var?",
+    "options": {
+      "justMe": "Sadece Ben",
+      "sixToTen": "6 - 10",
+      "fiftyToHundred": "50 - 100",
+      "twoHundredToFiveHundred": "200 - 500",
+      "plusThousand": "+ 1000"
+    }
+  },
+  "step9": {
+    "title": "9. Şu anda hangi ülkede bulunuyorsunuz?",
+    "placeholder": "Ülke Adı"
+  },
+  "step10": {
+    "title": "10. Hangi şehirde bulunuyorsunuz?",
+    "placeholder": "Şehir Adı"
+  },
+  "step11": {
+    "title": "11. Şu anda kaç müşteriyle çalışıyorsunuz?",
+    "options": {
+      "justMe": "Sadece Ben",
+      "sixToTen": "6 - 10",
+      "fiftyToHundred": "50 - 100",
+      "twoHundredToFiveHundred": "200 - 500",
+      "plusThousand": "+ 1000"
+    }
+  },
+  "step12": {
+    "title": "12. Tipik müşterileriniz kimlerdir?",
+    "options": {
+      "startups": "Startuplar (20’den az çalışan)",
+      "small": "Küçük İşletmeler (20 - 100 çalışan)",
+      "mid": "Orta Ölçekli İşletmeler (100 - 500 çalışan)",
+      "enterprise": "Kurumsal (+ 500 çalışan)",
+      "other": "Diğer"
+    }
+  },
+  "step13": {
+    "title": "13. Şirketiniz ne tür hizmetler sunuyor?",
+    "options": {
+      "eCommerce": "Süreç Koruyucu (Process Guardian)",
+      "noCode": "Uyumluluk ve Yönetişim Kurulumu",
+      "workFlowDesign": "Yapay Zeka Danışmanlığı",
+      "automation": "Otomasyon Mükemmeliyet Merkezi Kurulumu",
+      "workFlowBuilding": "Öncelikli Destek ve Başarı Yöneticisi",
+      "training": "2 Günlük MIRYA Başlangıç Eğitimi",
+      "integrations": "Özel Düğümler ve Entegrasyon",
+      "workshop": "Otomasyon Keşif Atölyesi",
+      "blueprinting": "Süreç Kaydı ve Taslak Oluşturma (Blueprinting)",
+      "proofValue": "MIRYA Değer Kanıtı (4 hafta)"
+    },
+    "errors": {
+      "services_provided": "Lütfen en az bir hizmet seçin"
+    }
+  },
+  "startService": {
+    "text": "Bilgilerinizi paylaştığınız için teşekkürler! Sırada, hizmetleriniz ve desteklediğiniz müşterilerle ilgili birkaç soru soracağız."
+  },
+  "step14": {
+    "title": "14. Şirket Tanımı",
+    "placeholder": "Şirketinizin hizmetlerini, misyonunu ve uzmanlığını kısaca açıklayın...",
+    "errors": {
+      "company_description": "Lütfen şirket tanımınızı girin"
+    }
+  },
+  "step15": {
+    "title": "15. Hangi belirli sektöre odaklanıyorsunuz?",
+    "placeholder": "Cevabınızı yazın...",
+    "errors": {
+      "industry_focus": "Lütfen sektör odak noktanızı belirtin"
+    }
+  },
+   "step16": {
+    "title": "16. Ortalama proje büyüklüğü nedir (EUR)?",
+    "options": {
+      "<1,000": "<1.000",
+      "1,000 - 5,000": "1.000 - 5.000",
+      "5,001 - 10,000": "5.001 - 10.000",
+      "10,001 - 80,000": "10.001 - 80.000",
+      "80,001 - 100,000": "80.001 - 100.000",
+      ">100,000": ">100.000"
+    },
+    "errors": {
+      "average_project_size": "Lütfen ortalama proje büyüklüğünü seçin"
+    }
+  },
+  "step17": {
+    "title": "17. Başka bir partner programının üyesi misiniz?",
+    "options": {
+      "Yes": "Evet",
+      "No": "Hayır"
+    },
+    "errors": {
+      "other_partner_programs": "Lütfen bir seçenek seçin"
+    }
+  },
+   "step18": {
+    "title": "18. Bunları burada listelemeye itirazınız var mı?",
+    "placeholder": "Cevabınızı yazın...",
+    "errors": {
+      "partner_program_list": "Lütfen bir liste sağlayın"
+    }
+  },
+  "step19": {
+    "title": "19. MIRYA'yı müşteriniz için uygulamaya hazır mısınız?",
+    "options": {
+      "Yes": "Evet, müşterimle MIRYA'yı kullanmaya hazırım",
+      "Planning": "En kısa sürede başlamak için plan yapıyorum",
+      "No": "Henüz değil, sadece inceliyorum",
+      "Other": "Diğer"
+    },
+    "errors": {
+      "mirya_implementation_status": "Lütfen bir seçenek seçin"
+    }},
+     "step20": {
+    "title": "20. Şu anda kaç müşteri MIRYA'yı kullanıyor?",
+    "options": {
+      "<5": "5'ten az",
+      "5-10": "5 ile 10 arasında",
+      ">10": "10'dan fazla"
+    },
+    "errors": {
+      "mirya_clients_count": "Lütfen bir seçenek seçin"
+    }
+  },
+  "step21": {
+    "title": "21. Lütfen bir referans müşteri paylaşın:",
+    "placeholder": "Cevabınızı yazın..."
+  },
+  "step22": {
+    "title": "22. MIRYA hakkında konuştuğunuz bir YouTube veya LinkedIn kanalınız varsa, lütfen kanal kimliğinizi (ID) paylaşın.",
+    "placeholder": "Yanıtınızı yazın..."
+  },
+  "step23": {
+    "title": "23. MIRYA'ya hangi yollarla katkıda bulundunuz?",
+    "options": {
+      "codeContribution": "Kod Katkısı",
+      "communityForum": "Topluluk forumuna katılım",
+      "communityNodes": "Topluluk Düğümleri (Nodes) oluşturma",
+      "documentation": "Dokümantasyon yazımı veya güncellenmesi",
+      "ambassador": "Elçi (Ambassador) Programı",
+      "other": "Diğer"
+    },
+    "errors": {
+      "mirya_contributions": "Lütfen en az bir katkı yöntemi seçin"
+    }
+  },
+  "step24": {
+    "title": "24. Katkılarınızla ilgili ilgili dokümantasyonu paylaşabilir misiniz?",
+    "placeholder": "Yanıtınızı yazın..."
+  },
+  "step25": {
+    "title": "25. Bize bildirmek istediğiniz başka bir şey var mı?",
+    "placeholder": "Yanıtınızı yazın...",
+    "errors": {
+      "additional_info": "Bu alan zorunludur"
+    }
+  },
+  "lastPart": {
+    "text": "Harika gidiyorsunuz. Bu son bölümde, MIRYA konusundaki uzmanlığınız hakkında daha fazla bilgi edinmek istiyoruz."
+  },
+  "onboarding": {
+    "buttons": {
+      "back": "Geri",
+      "continue": "Devam Et",
+      "submit": "Gönder",
+      "skip": "Atla"
+    },
+    "footer": {
+      "copyright": "© 2024 Telif Hakkı - MIRYA AI Tech GmbH",
+      "privacy": "Gizlilik Politikası",
+      "security": "Güvenlik",
+      "imprint": "Künye"
+    }
+  }
+}

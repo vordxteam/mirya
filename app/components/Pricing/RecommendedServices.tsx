@@ -11,35 +11,35 @@ export default function Recommended() {
       id: 1,
       title: t("recommended.items.automationWorkshop.title"),
       description: t("recommended.items.automationWorkshop.description"),
-      link: "#",
+      link: "/live-session",
       btnLabel: t("recommended.items.automationWorkshop.btnLabel"),
     },
     {
       id: 2,
       title: t("recommended.items.coeSetup.title"),
       description: t("recommended.items.coeSetup.description"),
-      link: "#",
+      link: "/hire-expert",
       btnLabel: t("recommended.items.coeSetup.btnLabel"),
     },
     {
       id: 3,
       title: t("recommended.items.processRecording.title"),
       description: t("recommended.items.processRecording.description"),
-      link: "#",
+      link: "/live-session",
       btnLabel: t("recommended.items.processRecording.btnLabel"),
     },
     {
       id: 4,
       title: t("recommended.items.prioritySupport.title"),
       description: t("recommended.items.prioritySupport.description"),
-      link: "#",
+      link: "/live-session",
       btnLabel: t("recommended.items.prioritySupport.btnLabel"),
     },
     {
       id: 5,
       title: t("recommended.items.proofOfValue.title"),
       description: t("recommended.items.proofOfValue.description"),
-      link: "",
+      link: "/live-session",
       btnLabel: t("recommended.items.proofOfValue.btnLabel"),
     },
   ];
@@ -107,7 +107,7 @@ export default function Recommended() {
                   }}
                 >
                   <Link
-                    href={(item.link as string) || "/contact"}
+                    href={(item.link as string) || "/live-session"}
                     className="inline-block text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
                   >
                     {item.btnLabel}{" "}

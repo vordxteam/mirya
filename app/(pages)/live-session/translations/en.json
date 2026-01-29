@@ -66,13 +66,19 @@
     ]
   },
   
-  "registrationForm": {
-    "title": "Fill out the details below.",
+"registrationForm": {
+    "title": "Register for Session",
     "fields": {
       "fullName": "Full Name",
-      "email": "Email Address",
+      "email": "Email",
       "companyName": "Company Name",
       "role": "Your Role"
+    },
+    "placeholders": {
+      "fullName": "Enter Full Name",
+      "email": "Enter Email",
+      "companyName": "Enter Company Name",
+      "role": "Enter Your Role"
     },
     "button": {
       "processing": "Processing...",
@@ -106,7 +112,9 @@
   
   "available_slots": "Available Time Slots",
   "no_slots": "No slots available.",
-  "speakers_title": "Speakers"
+  "speakers_title": "Speakers",
+     "empty_state":   "No speakers found"
+
 }
 
 

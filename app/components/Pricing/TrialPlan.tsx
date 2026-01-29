@@ -40,9 +40,9 @@ export default function TrialPlan() {
   ];
 
   return (
-    <section className="pb-15 px-5 sm:px-20">
+    <section className="pb-15 px-5 sm:px-20 max-w-[1400px]  mx-auto">
       <div
-        className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-[42px] items-start px-10 py-15"
+        className="  grid lg:grid-cols-2 gap-[42px] items-start px-5 sm:px-10 py-7 sm:py-15"
         style={{
           borderRadius: "32px",
           border: "1px solid #00031C",
@@ -50,7 +50,6 @@ export default function TrialPlan() {
             "linear-gradient(249deg, #0C1239 59.81%, rgba(89, 53, 233, 0.60) 141.59%)",
         }}
       >
-        {/* LEFT CONTENT */}
         <div className="space-y-10">
           <h1 className="text-white text-[30px] sm:text-[40px] font-medium leading-12 stretch">
             {t("trialPlan.mainTitle")}
@@ -108,7 +107,7 @@ export default function TrialPlan() {
                   "linear-gradient(52deg, rgba(17, 35, 143, 0.60) 58.88%, rgba(89, 53, 233, 0.60) 96.79%), #00031C",
               }}
             >
-              <div className="flex-1 flex flex-col justify-between pr-0 md:pr-6">
+              <div className="flex-1 flex flex-col justify-between pr-0 md:pr-2">
                 <div>
                   <div className="flex items-start justify-between">
                     <h3 className="text-[#F4F7FF] leading-7 text-[24px] font-semibold">
@@ -144,7 +143,7 @@ export default function TrialPlan() {
                   </div>
 
                   <div
-                    className="w-full transition-all"
+                    className="w-full transition-all" 
                     style={{
                       borderRadius: "40px",
                       backgroundImage: `linear-gradient(#00031C, #00031C), 
@@ -153,11 +152,12 @@ export default function TrialPlan() {
                       backgroundClip: "padding-box, border-box",
                       border: "1.5px solid transparent",
                       display: "inline-block",
+                      width: "fit-content",
                     }}
                   >
                     <Link
                       href="/live-session"
-                      className="block w-full text-center py-4 text-white font-medium bg-[#0274FE] rounded-[40px] w-fit"
+                      className="block w-full text-center py-3 px-6  text-white font-medium bg-[#0274FE] rounded-[40px] w-fit"
                     >
                       {t("trialPlan.card.cta")}
                     </Link>

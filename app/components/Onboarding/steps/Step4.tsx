@@ -1,22 +1,36 @@
 import { StepComponent } from "../types";
+import { useTranslation } from "react-i18next";
 
-export const Step4: StepComponent = ({ formData, updateFormData, errors , onEnter }) => (
-  <div className="text-white">
-    <h2 className="text-2xl heading-3 text-[#FFFFFF] font-normal mb-6">
-      4. What’s your business email address?
-    </h2>
-    <input
-      type="email"
-      placeholder="Email"
-      value={formData.email || ""}
-      onKeyDown={onEnter}
-      onChange={(e) => updateFormData("email", e.target.value)}
-      className={`w-full px-4 py-3 bg-transparent border ${
-        errors?.email ? "border-red-500" : "border-gray-700"
-      } rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-blue-500`}
-    />
-    {errors?.email && (
-      <p className="text-red-500 text-sm mt-2">{errors.email}</p>
-    )}
-  </div>
-);
+export const Step4: StepComponent = ({
+  formData,
+  updateFormData,
+  errors,
+  onEnter
+}) => {
+  const { t } = useTranslation("onboarding");
+
+  return (
+    <div className="text-white">
+      <h2 className="text-2xl heading-3 text-[#FFFFFF] font-normal mb-6">
+        {t("step4.title")}
+      </h2>
+
+      <input
+        type="email"
+        placeholder={t("step4.placeholder")}
+        value={formData.email || ""}
+        onKeyDown={onEnter}
+        onChange={(e) => updateFormData("email", e.target.value)}
+        className={`w-full px-4 py-3 bg-transparent border ${
+          errors?.email ? "border-red-500" : "border-gray-700"
+        } rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-blue-500`}
+      />
+
+      {errors?.email && (
+        <p className="text-red-500 text-sm mt-2">
+          {errors.email}
+        </p>
+      )}
+    </div>
+  );
+};
