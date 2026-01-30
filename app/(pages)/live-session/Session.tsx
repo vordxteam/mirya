@@ -13,7 +13,7 @@ export default function Features() {
       <AboutSession />
       <div id="sessions">
         <SessionsSection />
-      </div>{" "}
+      </div>
       <Testimonials />
       <div className="pt-[72px]"></div>
     </div>

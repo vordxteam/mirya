@@ -7,6 +7,7 @@ export interface TimeSlot {
   id: string;
   time: string;
   period: "am" | "pm";
+  availableCount: number; // Added this to interface
 }
 
 export interface TimeSlotsProps {
@@ -20,13 +21,12 @@ export interface TimeSlotsProps {
 export const TimeSlots: React.FC<TimeSlotsProps> = ({
   slots,
   selectedTime,
-  selectedPeriod,
-  onPeriodChange,
   onTimeSelect,
 }) => {
   const { t } = useTranslation("live-session");
   
-  const filteredSlots = slots.filter((slot) => slot.period === selectedPeriod);
+  // REMOVED: const filteredSlots = slots.filter(...) 
+  // We use "slots" directly now to show everything at once.
 
   const defaultGradientBorder =
     "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)";
@@ -39,16 +39,17 @@ export const TimeSlots: React.FC<TimeSlotsProps> = ({
         </h4>
       </div>
 
-      {/* Slots Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4">
-        {filteredSlots.length > 0 ? (
-          filteredSlots.map((slot: TimeSlot) => {
+        {slots && slots.length > 0 ? (
+          slots.map((slot: any) => {
             const isSelected = selectedTime === slot.time;
+            const isFull = slot.availableCount <= 0;
 
             return (
               <button
                 key={slot.id}
                 type="button"
+                disabled={isFull}
                 onClick={() => onTimeSelect(slot)}
                 style={{
                   background: isSelected ? "#4F60FA1A" : "#050A29",
@@ -58,10 +59,11 @@ export const TimeSlots: React.FC<TimeSlotsProps> = ({
                   backgroundOrigin: "border-box",
                   backgroundClip: "padding-box, border-box",
                   border: "1px solid transparent",
+                  opacity: isFull ? 0.5 : 1,
                 }}
-                className={`relative overflow-hidden px-[18px] py-3 rounded-[12px] text-sm font-medium transition-all cursor-pointer ${
-                  isSelected ? "border-[#4F60FA] text-white" : "text-[#CAC9D1]"
-                }`}
+                className={`relative overflow-hidden px-[18px] py-3 rounded-[12px] text-sm font-medium transition-all ${
+                  isFull ? "cursor-not-allowed" : "cursor-pointer"
+                } ${isSelected ? "border-[#4F60FA] text-white" : "text-[#CAC9D1]"}`}
               >
                 <div className="relative z-10 flex items-center justify-center gap-3">
                   <svg
@@ -76,10 +78,9 @@ export const TimeSlots: React.FC<TimeSlotsProps> = ({
                       fill="currentColor" 
                     />
                   </svg>
-
                   <span className="text-[14px] leading-5 font-normal">{slot.time}</span>
                 </div>
-
+                {/* Visual Glow Effect */}
                 {!isSelected && (
                   <div
                     style={{
@@ -101,7 +102,9 @@ export const TimeSlots: React.FC<TimeSlotsProps> = ({
             );
           })
         ) : (
-          <p className="text-[#73799B] text-sm italic">{t("no_slots")}</p>
+          <p className="text-[#73799B] text-sm italic col-span-2">
+            {t("no_slots")}
+          </p>
         )}
       </div>
     </div>

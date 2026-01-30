@@ -10,10 +10,14 @@
     "title": "Grow Your Expertise with MIRYA",
     "desc": "Progress through clearly defined expert levels to gain visibility, credibility, and access to new business opportunities.",
     "btnText": "Apply Now",
+    "requirements-title": "Requirements", 
+    "benefit-title": "Benefits",
     "card1": {
       "level": "Level 1",
       "title": "Registered Expert",
       "description": "A low-friction entry point into the MIRYA ecosystem for professionals' collaboration.",
+    
+
       "requirements": [
         "Create an expert profile",
         "Define service areas",

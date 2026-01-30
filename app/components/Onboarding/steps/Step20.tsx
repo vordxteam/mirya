@@ -1,11 +1,71 @@
-import { StepComponent } from "../types";
+// import { StepComponent } from "../types";
 
-export const Step20: StepComponent = ({ formData, updateFormData, errors , onEnter }) => {
-  const options = [
-    { id: "<5", label: "Less than 5" },
-    { id: "5-10", label: "Between 5 and 10" },
-    { id: ">10", label: "More than 10" },
-  ];
+// export const Step20: StepComponent = ({ formData, updateFormData, errors , onEnter }) => {
+//   const options = [
+//     { id: "<5", label: "Less than 5" },
+//     { id: "5-10", label: "Between 5 and 10" },
+//     { id: ">10", label: "More than 10" },
+//   ];
+
+//   const handleCheckboxChange = (optionId: string) => {
+//     updateFormData("mirya_clients_count", optionId);
+//   };
+
+//   return (
+//     <div className="text-white">
+//       <h2 className="text-2xl font-normal mb-6">
+//         20. How many client are currently using MIRYA?
+//       </h2>
+//       <div className="space-y-3">
+//         {options.map((option) => (
+//           <label
+//             key={option.id}
+//             className="flex items-center max-w-[381px] w-full px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
+//           >
+//             <div className="relative flex items-center justify-center w-5 h-5 mr-4">
+//               <input
+//                 type="checkbox"
+//                 checked={formData.mirya_clients_count === option.id}
+//                 onChange={() => handleCheckboxChange(option.id)}
+//                 onKeyDown={onEnter}
+//                 className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
+//               />
+//               {formData.mirya_clients_count === option.id && (
+//                 <svg
+//                   className="absolute w-3 h-3 text-black pointer-events-none"
+//                   fill="none"
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                   strokeWidth="2"
+//                   viewBox="0 0 24 24"
+//                   stroke="currentColor"
+//                 >
+//                   <path d="M5 13l4 4L19 7"></path>
+//                 </svg>
+//               )}
+//             </div>
+//             <span className="heading-6 text-[#FFFFFFB2] font-normal text-base">
+//               {option.label}
+//             </span>
+//           </label>
+//         ))}
+//       </div>
+//       {errors?.mirya_clients_count && (
+//         <p className="text-red-500 text-sm mt-2">
+//           {errors.mirya_clients_count}
+//         </p>
+//       )}
+//     </div>
+//   );
+// };
+
+import { StepComponent } from "../types";
+import { useTranslation } from "react-i18next";
+
+export const Step20: StepComponent = ({ formData, updateFormData, errors, onEnter }) => {
+  const { t } = useTranslation("onboarding");
+
+  const options = ["<5", "5-10", ">10"];
 
   const handleCheckboxChange = (optionId: string) => {
     updateFormData("mirya_clients_count", optionId);
@@ -14,23 +74,23 @@ export const Step20: StepComponent = ({ formData, updateFormData, errors , onEnt
   return (
     <div className="text-white">
       <h2 className="text-2xl font-normal mb-6">
-        20. How many client are currently using MIRYA?
+        {t("step20.title")}
       </h2>
       <div className="space-y-3">
         {options.map((option) => (
           <label
-            key={option.id}
+            key={option}
             className="flex items-center max-w-[381px] w-full px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors"
           >
             <div className="relative flex items-center justify-center w-5 h-5 mr-4">
               <input
                 type="checkbox"
-                checked={formData.mirya_clients_count === option.id}
-                onChange={() => handleCheckboxChange(option.id)}
+                checked={formData.mirya_clients_count === option}
+                onChange={() => handleCheckboxChange(option)}
                 onKeyDown={onEnter}
                 className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
               />
-              {formData.mirya_clients_count === option.id && (
+              {formData.mirya_clients_count === option && (
                 <svg
                   className="absolute w-3 h-3 text-black pointer-events-none"
                   fill="none"
@@ -45,14 +105,14 @@ export const Step20: StepComponent = ({ formData, updateFormData, errors , onEnt
               )}
             </div>
             <span className="heading-6 text-[#FFFFFFB2] font-normal text-base">
-              {option.label}
+              {t(`step20.options.${option}`)}
             </span>
           </label>
         ))}
       </div>
       {errors?.mirya_clients_count && (
         <p className="text-red-500 text-sm mt-2">
-          {errors.mirya_clients_count}
+          {t("step20.errors.mirya_clients_count")}
         </p>
       )}
     </div>

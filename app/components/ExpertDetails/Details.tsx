@@ -473,7 +473,7 @@ export default function Details() {
   };
 
   return (
-    <div className="text-white p-8">
+    <div className="text-white pb-[129px] sm:px-20 px-5">
       {/* Review Modal */}
       {showReviewModal && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
@@ -609,7 +609,7 @@ export default function Details() {
 
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-14">
         {/* Left Sidebar */}
-        <div className="lg:col-span-1 space-y-6">
+        <div className="lg:col-span-1 space-y-6 sm:max-w-[318px] max-w-[350px]">
           {/* First Box - Company Info */}
           <div
             className="rounded-3xl transition-all"

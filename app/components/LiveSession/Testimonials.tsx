@@ -3,7 +3,7 @@ import React from "react";
 import TestimonialSlider from "./TestimonialSlider";
 import { useTranslation } from "react-i18next";
 export default function Testimonials() {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("live-session");
   return (
     <>
       <div className="flex justify-center z-100">

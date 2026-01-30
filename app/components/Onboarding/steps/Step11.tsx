@@ -1,12 +1,20 @@
 import { StepComponent } from "../types";
+import { useTranslation } from "react-i18next";
 
-export const Step11: StepComponent = ({ formData, updateFormData, errors , onEnter }) => {
+export const Step11: StepComponent = ({
+  formData,
+  updateFormData,
+  errors,
+  onEnter
+}) => {
+  const { t } = useTranslation("onboarding");
+
   const options = [
-    { id: "just-me", label: "Just Me" },
-    { id: "6-10", label: "6 - 10" },
-    { id: "50-100", label: "50 - 100" },
-    { id: "200-500", label: "200-500" },
-    { id: "plus-1000", label: "+ 1000" },
+    { id: "just-me", label: t("step11.options.justMe") },
+    { id: "6-10", label: t("step11.options.sixToTen") },
+    { id: "50-100", label: t("step11.options.fiftyToHundred") },
+    { id: "200-500", label: t("step11.options.twoHundredToFiveHundred") },
+    { id: "plus-1000", label: t("step11.options.plusThousand") },
   ];
 
   const handleCheckboxChange = (optionId: string) => {
@@ -16,8 +24,9 @@ export const Step11: StepComponent = ({ formData, updateFormData, errors , onEnt
   return (
     <div className="text-white">
       <h2 className="text-2xl font-normal mb-6">
-        11. How many clients do you currently work with?
+        {t("step11.title")}
       </h2>
+
       <div className="space-y-3">
         {options.map((option) => (
           <label
@@ -52,8 +61,11 @@ export const Step11: StepComponent = ({ formData, updateFormData, errors , onEnt
           </label>
         ))}
       </div>
+
       {errors?.client_count && (
-        <p className="text-red-500 text-sm mt-2">{errors.client_count}</p>
+        <p className="text-red-500 text-sm mt-2">
+          {errors.client_count}
+        </p>
       )}
     </div>
   );

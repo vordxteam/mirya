@@ -68,10 +68,10 @@
   },
   
   "registrationForm": {
-    "title": "Geben Sie unten Ihre Details ein.",
+    "title": "Für Sitzung registrieren",
     "fields": {
       "fullName": "Vollständiger Name",
-      "email": "E-Mail-Adresse",
+      "email": "E-Mail",
       "companyName": "Firmenname",
       "role": "Ihre Rolle"
     },
@@ -109,7 +109,9 @@
   "generic_error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
   "available_slots": "Verfügbare Zeitfenster",
   "no_slots": "Keine Zeitfenster verfügbar.",
-  "speakers_title": "Sprecher"
+  "speakers_title": "Sprecher",
+    "empty_state": "Keine Sprecher gefunden"
+
 }
 
 

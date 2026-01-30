@@ -193,7 +193,7 @@
 //                         <GradientButton
 //                           label="Register Now"
 //                           bgColor="#0274FE"
-//                           href={`/register?sessionId=${session.id}`}
+//                           href={`/registerSlug=${session.id}`}
 //                           textColor="#FFFFFF"
 //                           onClick={() => {
 //                             // You can use session.apiData here if needed
@@ -219,38 +219,45 @@ import GradientButton from "@/app/ui/GradientButton";
 import Image from "next/image";
 import { getSession } from "@/app/api/sessions";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/navigation";
 
 export default function SessionsSection() {
-  const { t } = useTranslation("live-session");
-  const [sessions, setSessions] = useState([]);
+  const { t, i18n } = useTranslation("live-session");
+  const router = useRouter(); // Add this
+  const [sessions, setSessions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchSessions = async () => {
+      const currentLang =
+        i18n.language || localStorage.getItem("language") || "en";
+
+      console.log("🌐 Triggering fetch for language:", currentLang);
+      setLoading(true);
+
       try {
         const response = await getSession();
 
-        if (response.success) {
+        if (response.success && response.data) {
           const transformedSessions = response.data.map(
-            (session: any, index: any) => {
-              return {
-                id: session.id,
-                session: session.name,
-                title: session.title || session.name,
-                description: session.short_intro || "",
-                requirements: session.key_points || [],
-                footerDescription:
-                  session.short_description || t("sessions.defaultFooter"),
-                featured: index === 1,
-                apiData: session,
-              };
-            },
+            (session: any, index: number) => ({
+              id: session.id,
+              session: session.name,
+              title: session.title || session.name,
+              description: session.short_intro || "",
+              requirements: session.key_points || [],
+              footerDescription:
+                session.short_description || t("sessions.defaultFooter"),
+              featured: index === 0,
+              slug: session.slug,
+              apiData: session,
+            }),
           );
 
           setSessions(transformedSessions);
         } else {
-          console.error("Failed to fetch sessions:", response);
+          console.error("Failed to fetch sessions or data is empty:", response);
+          setSessions([]); // Clear sessions if request fails
         }
       } catch (err) {
         console.error("Error fetching sessions:", err);
@@ -260,9 +267,8 @@ export default function SessionsSection() {
     };
 
     fetchSessions();
-  }, [t]); // Added t as dependency to refresh if language changes
-
-  const displaySessions: any = sessions;
+    // Use i18n.language as the primary trigger
+  }, [i18n.language, t]);
 
   if (loading) {
     return (
@@ -287,7 +293,6 @@ export default function SessionsSection() {
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
         </div>
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20">
-          {/* Header Section */}
           <div className="flex flex-col items-center justify-center mb-16">
             <div className="pb-3 flex items-center gap-5">
               <Image
@@ -326,72 +331,81 @@ export default function SessionsSection() {
               </defs>
             </svg>
 
-            {displaySessions.map((session: any) => (
-              <div key={session.id} className="relative flex flex-col h-full">
-                <div className="absolute top-3 -left-1 z-20">
-                  <div className="inline-block px-4 py-2 max-w-[170px] truncate">
-                    <span className="text-[#FFFFFF] heading-3 font-medium truncate">
-                      {session.session}
-                    </span>
+            {sessions.length > 0 ? (
+              sessions.map((session) => (
+                <div key={session.id} className="relative flex flex-col h-full">
+                  <div className="absolute top-3 -left-1 z-20">
+                    <div className="inline-block px-4 py-2 max-w-[170px] truncate">
+                      <span className="text-[#FFFFFF] heading-3 font-medium truncate">
+                        {session.session}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <div
-                  className="relative p-[1.5px] flex-1 flex flex-col"
-                  style={{
-                    background:
-                      "linear-gradient(200deg, #000000 0%, #686DDD 70%, #050A29 100%)",
-                    clipPath: "url(#responsiveCardPath)",
-                  }}
-                >
                   <div
-                    className="bg-[#050A29] pl-[18px] pr-[17.8px] pb-[41px] pt-[103px] flex-1 flex flex-col"
-                    style={{ clipPath: "url(#responsiveCardPath)" }}
+                    className="relative p-[1.5px] flex-1 flex flex-col"
+                    style={{
+                      background:
+                        "linear-gradient(200deg, #000000 0%, #686DDD 70%, #050A29 100%)",
+                      clipPath: "url(#responsiveCardPath)",
+                    }}
                   >
-                    <div className="flex-1 flex flex-col">
-                      <h3 className="heading-3 font-semibold text-[#F4F7FF] mb-3">
-                        {session.title}
-                      </h3>
-                      <p className="text-[#CAC9D1] font-normal heading-6 mb-3">
-                        {session.description}
-                      </p>
+                    <div
+                      className="bg-[#050A29] pl-[18px] pr-[17.8px] pb-[41px] pt-[103px] flex-1 flex flex-col"
+                      style={{ clipPath: "url(#responsiveCardPath)" }}
+                    >
+                      <div className="flex-1 flex flex-col">
+                        <h3 className="heading-3 font-semibold text-[#F4F7FF] mb-3">
+                          {session.title}
+                        </h3>
+                        <p className="text-[#CAC9D1] font-normal heading-6 mb-3">
+                          {session.description}
+                        </p>
 
-                      <div className="h-[1px] w-full bg-gradient-to-r from-[#1A1A3B] via-[#A68BEE] to-[#1A1A3B] mb-8"></div>
+                        <div className="h-[1px] w-full bg-gradient-to-r from-[#1A1A3B] via-[#A68BEE] to-[#1A1A3B] mb-8"></div>
 
-                      <div className="flex-1">
-                        <h4 className="font-normal text-[#FFFFFFB8] heading-6 mb-4">
-                          {t("sessions.keyHighlights")}
-                        </h4>
-                        <ul className="list-disc list-inside space-y-3">
-                          {session.requirements.map((req: any, index: any) => (
-                            <li
-                              key={index}
-                              className="text-[#F4F7FFCC] heading-6 font-medium"
-                            >
-                              {req}
-                            </li>
-                          ))}
-                        </ul>
-                        {session.footerDescription && (
-                          <p className="mt-8 text-white heading-6 font-normal max-w-[238px]">
-                            {session.footerDescription}
-                          </p>
-                        )}
-                      </div>
+                        <div className="flex-1">
+                          <h4 className="font-normal text-[#FFFFFFB8] heading-6 mb-4">
+                            {t("sessions.keyHighlights")}
+                          </h4>
+                          <ul className="list-disc list-inside space-y-3">
+                            {session.requirements.map(
+                              (req: string, index: number) => (
+                                <li
+                                  key={index}
+                                  className="text-[#F4F7FFCC] heading-6 font-medium"
+                                >
+                                  {req}
+                                </li>
+                              ),
+                            )}
+                          </ul>
+                          {session.footerDescription && (
+                            <p className="mt-8 text-white heading-6 font-normal max-w-[238px]">
+                              {session.footerDescription}
+                            </p>
+                          )}
+                        </div>
 
-                      <div className="mt-auto pt-6">
-                        <GradientButton
-                          label={t("sessions.registerNow")}
-                          bgColor="#0274FE"
-                          href={`/register?sessionId=${session.id}`}
-                          textColor="#FFFFFF"
-                        />
+                        <div className="mt-auto pt-6">
+                          <GradientButton
+                            label={t("sessions.registerNow")}
+                            bgColor="#0274FE"
+                            // Remove href and add onClick handler
+                            href={`/register?sessionSlug=${session.slug}`}
+                            textColor="#FFFFFF"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+              ))
+            ) : (
+              <div className="col-span-3 text-center text-white heading-6 py-10">
+                {t("sessions.noSessionsFound") || "No sessions found"}
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>

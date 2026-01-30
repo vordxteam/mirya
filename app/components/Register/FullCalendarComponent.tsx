@@ -103,7 +103,7 @@ const FullCalendarComponent = ({ data, onDateSelect }: any) => {
             },
 
             "& .MuiDayCalendar-weekContainer": {
-              margin: "4px 0",
+              margin: "0px 0",
               justifyContent: "space-between",
               alignItems: "center",
             },

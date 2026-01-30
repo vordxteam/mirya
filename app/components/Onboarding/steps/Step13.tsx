@@ -1,19 +1,97 @@
+// import { StepComponent } from "../types";
+// import { useTranslation } from "react-i18next";
+
+// export const Step13: StepComponent = ({ formData, updateFormData, errors , onEnter }) => {
+//   const options = [
+//     { id: "eCommerce", label: "Process Guardian" },
+//     { id: "noCode", label: "Compliance & Governance Setup" },
+//     { id: "workFlowDesign", label: "AI Consulting" },
+//     { id: "automation", label: "Automation Center of Excellence Setup" },
+//     { id: "workFlowBuilding", label: "Priority Support &  Success Manager" },
+
+//     { id: "training", label: "2-Day MIRYA Starter Training" },
+//     { id: "integrations", label: "Custom Nodes and Integration" },
+//     { id: "workshop", label: "Automation Discovery Workshop" },
+//     { id: "blueprinting", label: "Process Recording & Blueprinting" },
+//     { id: "proofValue", label: "MIRYA Proof of Value (4 weeks)" },
+//   ];
+//   const { t } = useTranslation("onboarding");
+
+//   const handleCheckboxChange = (optionId: string) => {
+//     const currentServices = formData.services_provided || [];
+//     const newServices = currentServices.includes(optionId)
+//       ? currentServices.filter((id) => id !== optionId)
+//       : [...currentServices, optionId];
+//     updateFormData("services_provided", newServices);
+//   };
+
+//  return (
+//     <div className="text-white">
+//       <h2 className="text-2xl font-normal mb-6">
+// {t("step13.title")}
+//       </h2>
+      
+//       {/* Updated Container: Grid with 2 columns on medium screens and up */}
+//       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//         {options.map((option) => (
+//           <label
+//             key={option.id}
+//             className="flex items-center w-full max-w-[381px] px-5 py-4 bg-[#1a1d2e] border border-[#2d3348] rounded-lg cursor-pointer hover:border-[#3d4358] transition-colors h-full"
+//           >
+//             <div className="relative flex items-center justify-center w-5 h-5 mr-4 flex-shrink-0">
+//               <input
+//                 type="checkbox"
+//                 checked={(formData.services_provided || []).includes(option.id)}
+//                 onChange={() => handleCheckboxChange(option.id)}
+//                 onKeyDown={onEnter}
+//                 className="w-5 h-5 bg-transparent border-2 border-[#FFFFFFB2] rounded appearance-none checked:bg-white cursor-pointer"
+//               />
+//               {(formData.services_provided || []).includes(option.id) && (
+//                 <svg
+//                   className="absolute w-3 h-3 text-black pointer-events-none"
+//                   fill="none"
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                   strokeWidth="2"
+//                   viewBox="0 0 24 24"
+//                   stroke="currentColor"
+//                 >
+//                   <path d="M5 13l4 4L19 7"></path>
+//                 </svg>
+//               )}
+//             </div>
+//             <span className="heading-6 text-[#FFFFFFB2] font-normal text-base whitespace-nowrap">
+//               {option.label}
+//             </span>
+//           </label>
+//         ))}
+//       </div>
+
+//       {errors?.services_provided && (
+//         <p className="text-red-500 text-sm mt-2">{errors.services_provided}</p>
+//       )}
+//     </div>
+//   );
+// };
+
 import { StepComponent } from "../types";
+import { useTranslation } from "react-i18next";
 
-export const Step13: StepComponent = ({ formData, updateFormData, errors , onEnter }) => {
+export const Step13: StepComponent = ({ formData, updateFormData, errors, onEnter }) => {
   const options = [
-    { id: "eCommerce", label: "Process Guardian" },
-    { id: "noCode", label: "Compliance & Governance Setup" },
-    { id: "workFlowDesign", label: "AI Consulting" },
-    { id: "automation", label: "Automation Center of Excellence Setup" },
-    { id: "workFlowBuilding", label: "Priority Support &  Success Manager" },
-
-    { id: "training", label: "2-Day MIRYA Starter Training" },
-    { id: "integrations", label: "Custom Nodes and Integration" },
-    { id: "workshop", label: "Automation Discovery Workshop" },
-    { id: "blueprinting", label: "Process Recording & Blueprinting" },
-    { id: "proofValue", label: "MIRYA Proof of Value (4 weeks)" },
+    { id: "eCommerce" },
+    { id: "noCode" },
+    { id: "workFlowDesign" },
+    { id: "automation" },
+    { id: "workFlowBuilding" },
+    { id: "training" },
+    { id: "integrations" },
+    { id: "workshop" },
+    { id: "blueprinting" },
+    { id: "proofValue" },
   ];
+
+  const { t } = useTranslation("onboarding");
 
   const handleCheckboxChange = (optionId: string) => {
     const currentServices = formData.services_provided || [];
@@ -23,13 +101,12 @@ export const Step13: StepComponent = ({ formData, updateFormData, errors , onEnt
     updateFormData("services_provided", newServices);
   };
 
- return (
+  return (
     <div className="text-white">
       <h2 className="text-2xl font-normal mb-6">
-        13. What kind of services does your company provide?
+        {t("step13.title")}
       </h2>
-      
-      {/* Updated Container: Grid with 2 columns on medium screens and up */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {options.map((option) => (
           <label
@@ -59,14 +136,16 @@ export const Step13: StepComponent = ({ formData, updateFormData, errors , onEnt
               )}
             </div>
             <span className="heading-6 text-[#FFFFFFB2] font-normal text-base whitespace-nowrap">
-              {option.label}
+              {t(`step13.options.${option.id}`)}
             </span>
           </label>
         ))}
       </div>
 
       {errors?.services_provided && (
-        <p className="text-red-500 text-sm mt-2">{errors.services_provided}</p>
+        <p className="text-red-500 text-sm mt-2">
+          {t("step13.errors.services_provided")}
+        </p>
       )}
     </div>
   );

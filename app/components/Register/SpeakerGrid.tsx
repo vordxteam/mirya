@@ -21,45 +21,52 @@ export const SpeakerGrid = ({ speakers }: { speakers: Speaker[] }) => {
       <h3 className="text-[24px] font-medium leading-[30px] text-white pt-6">
         {t("speakers_title")}
       </h3>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-        {speakers.map((speaker) => (
-          <div
-            key={speaker.id}
-            style={{
-              background: borderGradient,
-              padding: "1px", 
-              borderRadius: "12px",
-            }}
-          >
+
+      {speakers.length > 0 ? (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          {speakers.map((speaker) => (
             <div
-              className="flex flex-col items-center text-center space-y-6 h-full"
+              key={speaker.id}
               style={{
-                background: "#050A29",
-                borderRadius: "11px", 
-                padding: "24px 20px", 
+                background: borderGradient,
+                padding: "1px",
+                borderRadius: "12px",
               }}
             >
-              <div className="w-20 h-20 rounded-full overflow-hidden">
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  height={100}
-                  width={100}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="text-white font-medium text-[16px] leading-5">
-                  {speaker.name}
-                </h4>
-                <p className="text-[#FFFFFF99] font-normal leading-5 text-[14px] mt-1">
-                  {speaker.role}
-                </p>
+              <div
+                className="flex flex-col items-center text-center space-y-6 h-full"
+                style={{
+                  background: "#050A29",
+                  borderRadius: "11px",
+                  padding: "24px 20px",
+                }}
+              >
+                <div className="w-20 h-20 rounded-full overflow-hidden">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    height={100}
+                    width={100}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium text-[16px] leading-5">
+                    {speaker.name}
+                  </h4>
+                  <p className="text-[#FFFFFF99] font-normal leading-5 text-[14px] mt-1">
+                    {speaker.role}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-[#FFFFFF99] text-center text-sm mt-4">
+          {t("empty_state") || "No speakers found"}
+        </p>
+      )}
     </div>
   );
 };

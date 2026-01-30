@@ -1,0 +1,215 @@
+{
+  "start": {
+    "intro": "Here are some questions about you and your company."
+  },
+  "step1": {
+    "title": "1. What's your first name?",
+    "placeholder": "First Name",
+    "errors": {
+      "required": "First name is required"
+    }
+  },
+   "step2": {
+    "title": "2. What's your last name?",
+    "placeholder": "Last Name",
+    "error_required": "Last name is required"
+  },
+   "step3": {
+    "title": "3. What's your phone number?",
+    "placeholder": "Phone Number"
+  },
+   "step4": {
+    "title": "4. What’s your business email address?",
+    "placeholder": "Email"
+  },
+   "step5": {
+    "title": "5. What is the name of your company?",
+    "placeholder": "Company Name"
+  },
+  "step6": {
+    "title": "6. What's the company website?",
+    "placeholder": "Company Website"
+  },
+    "step7": {
+    "title": "7. What is your role?",
+    "placeholder": "Your Role"
+  },
+  "step8": {
+    "title": "8. What is the number of employees at your company?",
+    "options": {
+      "justMe": "Just Me",
+      "sixToTen": "6 - 10",
+      "fiftyToHundred": "50 - 100",
+      "twoHundredToFiveHundred": "200 - 500",
+      "plusThousand": "+ 1000"
+    }
+  },
+   "step9": {
+    "title": "9. In which country are you currently located?",
+    "placeholder": "Country Name"
+  },
+  "step10": {
+    "title": "10. In which city are you based?",
+    "placeholder": "City Name"
+  },
+   "step11": {
+    "title": "11. How many clients do you currently work with?",
+    "options": {
+      "justMe": "Just Me",
+      "sixToTen": "6 - 10",
+      "fiftyToHundred": "50 - 100",
+      "twoHundredToFiveHundred": "200 - 500",
+      "plusThousand": "+ 1000"
+    }
+  },
+  "step12": {
+    "title": "12. Who are your typical clients?",
+    "options": {
+      "startups": "Startups (less than 20 employees)",
+      "small": "Small Businesses (20 - 100 employees)",
+      "mid": "Mid-sized businesses (100 - 500 employees)",
+      "enterprise": "Enterprise (+ 500 employees)",
+      "other": "Other"
+    }
+  },
+  "step13": {
+    "title": "13. What kind of services does your company provide?",
+    "options": {
+      "eCommerce": "Process Guardian",
+      "noCode": "Compliance & Governance Setup",
+      "workFlowDesign": "AI Consulting",
+      "automation": "Automation Center of Excellence Setup",
+      "workFlowBuilding": "Priority Support & Success Manager",
+      "training": "2-Day MIRYA Starter Training",
+      "integrations": "Custom Nodes and Integration",
+      "workshop": "Automation Discovery Workshop",
+      "blueprinting": "Process Recording & Blueprinting",
+      "proofValue": "MIRYA Proof of Value (4 weeks)"
+    },
+    "errors": {
+      "services_provided": "Please select at least one service"
+    }
+  },
+   "startService": {
+    "text": "Thanks for sharing your details! Next, we'll ask a few questions about your services and the customers you support."
+  },
+  "step14": {
+    "title": "14. Company Description",
+    "placeholder": "Briefly describe your company's services, mission, and expertise...",
+    "errors": {
+      "company_description": "Please provide your company description"
+    }
+  },
+  "step15": {
+    "title": "15. Any specific industry you focus on?",
+    "placeholder": "Type your Answer...",
+    "errors": {
+      "industry_focus": "Please specify your industry focus"
+    }
+  },
+    "step16": {
+    "title": "16. What is the average project size (in EUR)?",
+    "options": {
+      "<1,000": "<1,000",
+      "1,000 - 5,000": "1,000 - 5,000",
+      "5,001 - 10,000": "5,001 - 10,000",
+      "10,001 - 80,000": "10,001 - 80,000",
+      "80,001 - 100,000": "80,001 - 100,000",
+      ">100,000": ">100,000"
+    },
+    "errors": {
+      "average_project_size": "Please select the average project size"
+    }
+  },
+    "step17": {
+    "title": "17. Are you part of other partner program?",
+    "options": {
+      "Yes": "Yes",
+      "No": "No"
+    },
+    "errors": {
+      "other_partner_programs": "Please select an option"
+    }
+  },
+   "step18": {
+    "title": "18. Would you mind listing them here?",
+    "placeholder": "Type your Answer...",
+    "errors": {
+      "partner_program_list": "Please provide a list"
+    }
+  },
+  "step19": {
+    "title": "19. Are you ready implementing MIRYA for your client?",
+    "options": {
+      "Yes": "Yes, I'm ready using MIRYA with client",
+      "Planning": "I'm planning to start ASAP",
+      "No": "Not yet, I'm just exploring",
+      "Other": "Other"
+    },
+    "errors": {
+      "mirya_implementation_status": "Please select an option"
+    }
+  },
+    "step20": {
+    "title": "20. How many clients are currently using MIRYA?",
+    "options": {
+      "<5": "Less than 5",
+      "5-10": "Between 5 and 10",
+      ">10": "More than 10"
+    },
+    "errors": {
+      "mirya_clients_count": "Please select an option"
+    }
+  },
+  "step21": {
+    "title": "21. Please share a reference client:",
+    "placeholder": "Type your Answer..."
+  },
+  "step22": {
+  "title": "22. If you have a YouTube or LinkedIn channel where you talk about MIRYA, please share your channel ID.",
+  "placeholder": "Type your Answer..."
+},
+
+  "step23": {
+    "title": "23. In which ways have you contributed to MIRYA?",
+    "options": {
+      "codeContribution": "Code Contribution",
+      "communityForum": "Participated in the community forum",
+      "communityNodes": "Built Community Nodes",
+      "documentation": "Written or Updated Documentation",
+      "ambassador": "Ambassador Program",
+      "other": "Other"
+    },
+    "errors": {
+      "mirya_contributions": "Please select at least one way you have contributed"
+    }
+  },
+  "step24": {
+    "title": "24. Could you share relevant documentation about any of your contributions?",
+    "placeholder": "Type your Answer..."
+  },
+  "step25": {
+    "title": "25. Anything else you would like to let us know?",
+    "placeholder": "Type your Answer...",
+    "errors": {
+      "additional_info": "This field is required"
+    }
+  },
+  "lastPart": {
+    "text": "You are doing great. In this last part, we'd like to know more about your expertise with MIRYA."
+  },
+ "onboarding": {
+    "buttons": {
+      "back": "Back",
+      "continue": "Continue",
+      "submit": "Submit",
+      "skip": "Skip"
+    },
+    "footer": {
+      "copyright": "© 2024 Copyright - MIRYA AI Tech GmbH",
+      "privacy": "Privacy Policy",
+      "security": "Security",
+      "imprint": "Imprint"
+    }
+  }
+}
