@@ -585,7 +585,7 @@ const AcademyDetailPage = () => {
                                   handleSectionClick(subItem.id, subItem.slug);
                                   setShowMobileSidebar(false); // Close sidebar on mobile after selection
                                 }}
-                                className={`w-full text-left px-3 ml-2 max-w-[260px] py-2 leading-5 font-light rounded-lg text-[14px] transition-all cursor-pointer ${
+                                className={`w-full text-left px-3 ml-2 max-w-[242px] py-2 leading-5 font-light rounded-lg text-[14px] transition-all cursor-pointer ${
                                   activeSection === subItem.id
                                     ? "text-[#116AF8] bg-[#116af81f] font-normal"
                                     : "text-[#FFFFFFE0] hover:text-[#116AF8]"
@@ -609,7 +609,7 @@ const AcademyDetailPage = () => {
             ref={centerContentRef}
             className={`${
               showMobileSidebar || showMobileRightSidebar ? "hidden" : "block"
-            } lg:block lg:col-span-7 h-full overflow-y-auto overflow-x-hidden pt-4 custom-scrollbar`}
+            } lg:block lg:col-span-7 h-full overflow-y-auto overflow-x-hidden pt-4 custom-scrollbar px-4`}
           >
             <div className="flex items-center gap-3 text-[14px] font-normal leading-5 text-[#FFFFFF99] mb-12">
               <Link

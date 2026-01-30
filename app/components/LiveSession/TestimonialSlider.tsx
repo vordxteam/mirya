@@ -325,7 +325,7 @@ export default function TestimonialSlider() {
                       : {}
                   }
                 >
-                  <div className="relative bg-gradient-to-b from-[#1F1B48] select-none to-[#00041E] rounded-2xl p-4 sm:p-6 lg:p-[22px] shadow-2xl overflow-hidden h-full">
+<div className="relative bg-gradient-to-b from-[#1F1B48] select-none to-[#00041E] rounded-2xl p-4 sm:p-6 lg:p-[22px] shadow-2xl overflow-hidden h-[347px] sm:h-[400px] lg:h-[432px]">
                     {/* Wavy pattern overlay */}
                     {isActive && (
                       <div className="absolute z-0 -top-16 left-1/2 -translate-x-1/2">
@@ -348,9 +348,9 @@ export default function TestimonialSlider() {
 
                     {/* Content */}
                     <div className="relative z-10 h-full flex flex-col">
-                      <p className="text-[#F4F7FF] font-regular mb-4 sm:mb-6 lg:mb-[111px] text-sm sm:text-[18px] leading-6 grow">
-                        {testimonial.text}
-                      </p>
+                     <p className="text-[#F4F7FF] font-regular mb-4 sm:mb-6 text-sm sm:text-[18px] leading-6 overflow-y-auto">
+  {testimonial.text}
+</p>
 
                       {/* Author Info */}
                       <div className="flex items-center justify-between mt-auto">

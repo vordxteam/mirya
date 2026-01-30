@@ -272,3 +272,6 @@ color: #FFFFFF99 !important;
     fill: currentColor!important;
     font-size: inherit;
 }
+.css-1fx2l1t-MuiButtonBase-root-MuiPickersDay-root.Mui-disabled:not(.Mui-selected) {
+color: #FFFFFF99 !important;
+}
