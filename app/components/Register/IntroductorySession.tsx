@@ -425,7 +425,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import dayjs, { Dayjs } from "dayjs";
-import { bookSesssion } from "@/app/api/sessions";
+import { bookSession } from "@/app/api/sessions";
 
 import { TimeSlots } from "./TimeSlots";
 import { SpeakerGrid } from "./SpeakerGrid";
@@ -585,7 +585,7 @@ const contentElements = data?.data?.content?.[0]?.elements || [];
 
     setIsLoading(true);
     try {
-      const response = await bookSesssion(payload);
+      const response = await bookSession(payload);
       if (response.success) {
         toast.success(t("success_message"));
         setFormData({ fullName: "", email: "", companyName: "", role: "" });
