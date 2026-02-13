@@ -177,10 +177,9 @@ const Cards = () => {
       router.push(`/hire-expert`);
     } else if (card.title === "Live Session") {
       router.push(`/live-session`);
-    }  else if (card.title === "Become an Expert") {
+    } else if (card.title === "Become an Expert") {
       router.push(`/become-expert`);
-    }
-    else {
+    } else {
       router.push(`/articles/${card.category}/${card.slug}`);
     }
   };

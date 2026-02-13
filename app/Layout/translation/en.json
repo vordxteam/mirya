@@ -74,7 +74,14 @@
       { "name": "Product", "href": "/about" },
       { "name": "Industries", "href": "/industries" },
       { "name": "Pricing", "href": "/pricing" },
-      { "name": "Academy", "href": "/articles" },
+  {
+        "name": "Resources",
+        "href": "/resources"
+      },     
+       {
+        "name": "Partners",
+        "href": "/partners"
+      },
       { "name": "Contact", "href": "/contact" }
     ],
     "button": "Get Started",
