@@ -74,11 +74,11 @@
       { "name": "Branchen", "href": "/industries" },
       { "name": "Preisgestaltung", "href": "/pricing" },
  {
-        "name": "Resources",
+        "name": "Ressourcen",
         "href": "/resources"
       },     
        {
-        "name": "Partners",
+        "name": "Partner",
         "href": "/partners"
       },      { "name": "Kontakt", "href": "/contact" }
     ],

@@ -64,11 +64,11 @@
       { "name": "Endüstriler", "href": "/industries" },
       { "name": "Fiyatlandırma", "href": "/pricing" },
  {
-        "name": "Resources",
+        "name": "Kaynaklar",
         "href": "/resources"
       },     
        {
-        "name": "Partners",
+        "name": "Ortaklar",
         "href": "/partners"
       },      { "name": "İletişim", "href": "/contact" }
     ],
