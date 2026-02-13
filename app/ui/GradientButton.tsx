@@ -21,6 +21,27 @@ const GradientButton: React.FC<GradientButtonProps> = ({
   onClick,
   width,
 }) => {
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick();
+    }
+    
+    // Handle anchor scrolling
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const targetElement = document.getElementById(href.substring(1));
+      if (targetElement) {
+        targetElement.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
+
+  // Use regular anchor tag for hash links, Link for routes
+  const isAnchorLink = href && href.startsWith('#');
+
   return (
     <div
       className={`${width ? width : "w-fit"} p-[1px]`}
@@ -30,18 +51,33 @@ const GradientButton: React.FC<GradientButtonProps> = ({
           "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%)",
       }}
     >
-      <Link
-        href={href || ""}
-        onClick={onClick}
-        className="block font-normal py-3 px-6 text-center"
-        style={{
-          borderRadius: "40px",
-          background: bgColor,
-          color: textColor,
-        }}
-      >
-        {label}
-      </Link>
+      {isAnchorLink ? (
+        <a
+          href={href}
+          onClick={handleClick}
+          className="block font-normal py-3 px-6 text-center"
+          style={{
+            borderRadius: "40px",
+            background: bgColor,
+            color: textColor,
+          }}
+        >
+          {label}
+        </a>
+      ) : (
+        <Link
+          href={href || ""}
+          onClick={handleClick}
+          className="block font-normal py-3 px-6 text-center"
+          style={{
+            borderRadius: "40px",
+            background: bgColor,
+            color: textColor,
+          }}
+        >
+          {label}
+        </Link>
+      )}
     </div>
   );
 };

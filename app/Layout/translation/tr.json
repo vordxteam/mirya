@@ -63,8 +63,14 @@
       { "name": "Ürünler", "href": "/about" },
       { "name": "Endüstriler", "href": "/industries" },
       { "name": "Fiyatlandırma", "href": "/pricing" },
-      { "name": "Akademi", "href": "/articles" },
-      { "name": "İletişim", "href": "/contact" }
+ {
+        "name": "Kaynaklar",
+        "href": "/resources"
+      },     
+       {
+        "name": "Ortaklar",
+        "href": "/partners"
+      },      { "name": "İletişim", "href": "/contact" }
     ],
     "button": "Başlayın",
     "signin": "Giriş Yap",

@@ -43,66 +43,66 @@
 //     const text = element.textContent || "";
 //     const words = text.split(" ");
 
-  //   element.innerHTML = "";
-  //   const spans: HTMLSpanElement[] = words.map((word, i) => {
-  //     const span = document.createElement("span");
-  //     span.textContent = word + (i < words.length - 1 ? " " : "");
-  //     span.style.color = "#FFFFFF";
-  //     span.style.display = "inline";
-  //     element.appendChild(span);
-  //     return span;
-  //   });
+//   element.innerHTML = "";
+//   const spans: HTMLSpanElement[] = words.map((word, i) => {
+//     const span = document.createElement("span");
+//     span.textContent = word + (i < words.length - 1 ? " " : "");
+//     span.style.color = "#FFFFFF";
+//     span.style.display = "inline";
+//     element.appendChild(span);
+//     return span;
+//   });
 
-  //   ScrollTrigger.create({
-  //     trigger: element,
-  //     start: "top 10%",
-  //     end: "bottom 40%",
-  //     scrub: true,
-  //     onUpdate: (self) => {
-  //       const progress = self.progress;
-  //       const totalSpans = spans.length;
+//   ScrollTrigger.create({
+//     trigger: element,
+//     start: "top 10%",
+//     end: "bottom 40%",
+//     scrub: true,
+//     onUpdate: (self) => {
+//       const progress = self.progress;
+//       const totalSpans = spans.length;
 
-  //       spans.forEach((span, index) => {
-  //         const spanProgress = index / totalSpans;
-  //         if (progress >= spanProgress) {
-  //           span.style.color = "#73799B";
-  //         } else {
-  //           span.style.color = "#FFFFFF";
-  //         }
-  //       });
-  //     },
-  //   });
+//       spans.forEach((span, index) => {
+//         const spanProgress = index / totalSpans;
+//         if (progress >= spanProgress) {
+//           span.style.color = "#73799B";
+//         } else {
+//           span.style.color = "#FFFFFF";
+//         }
+//       });
+//     },
+//   });
 
-  //   return () => {
-  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  //   };
-  // }, [data]);
+//   return () => {
+//     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+//   };
+// }, [data]);
 
-  // const dashVariants: Variants = {
-  //   hidden: { opacity: 0, y: 50 },
-  //   visible: {
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: {
-  //       duration: 0.8,
-  //       delay: 0.3,
-  //     },
-  //   },
-  // };
+// const dashVariants: Variants = {
+//   hidden: { opacity: 0, y: 50 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.8,
+//       delay: 0.3,
+//     },
+//   },
+// };
 
-  // const pointerVariants: Variants = {
-  //   hidden: { opacity: 0, x: 100, y: 100 },
-  //   visible: {
-  //     opacity: 1,
-  //     x: 0,
-  //     y: 0,
-  //     transition: {
-  //       duration: 0.8,
-  //       delay: 0.5,
-  //       ease: "easeOut",
-  //     },
-  //   },
-  // };
+// const pointerVariants: Variants = {
+//   hidden: { opacity: 0, x: 100, y: 100 },
+//   visible: {
+//     opacity: 1,
+//     x: 0,
+//     y: 0,
+//     transition: {
+//       duration: 0.8,
+//       delay: 0.5,
+//       ease: "easeOut",
+//     },
+//   },
+// };
 
 //   // Show loading state
 //   if (loading) {
@@ -157,6 +157,8 @@
 // };
 
 // export default HeroSection;
+
+
 "use client";
 
 import Image from "next/image";
@@ -175,34 +177,33 @@ const HeroSection = () => {
   const [loading, setLoading] = useState(true);
 
   const searchParams = useSearchParams();
-  const { t } = useTranslation("live-session");
-
-  const slug = searchParams.get("slug");
+  const { t, i18n } = useTranslation("live-session"); 
+  const slug = searchParams.get("sessionSlug") || searchParams.get("slug");
   const sessionId = searchParams.get("sessionId");
 
-  // Fetch session details
   const fetchSessionDetail = async () => {
     try {
       setLoading(true);
+      console.log('🔍 HeroSection: Fetching session with params:', { slug, sessionId });
 
       let result: any = null;
 
-      // 1. If slug exists, fetch by slug
       if (slug) {
+        console.log('📡 Using slug:', slug);
         result = await getSessionDetail(slug);
-      } 
-      // 2. Else if sessionId exists, fetch all sessions, then find session by ID
+      }
       else if (sessionId) {
-        const sessionsList = await getSession(); // fetch all sessions
+        console.log('📡 Using sessionId:', sessionId);
+        const sessionsList = await getSession();
         const sessionData = sessionsList.data.find(
-          (item: any) => item.id.toString() === sessionId
+          (item: any) => item.id.toString() === sessionId,
         );
         if (sessionData) {
           result = await getSessionDetail(sessionData.slug);
         }
-      } 
-      // 3. Else, fallback: fetch first session from all sessions
+      }
       else {
+        console.log('📡 No specific session, fetching first available');
         const sessionsList = await getSession();
         if (sessionsList.data.length > 0) {
           const firstSession = sessionsList.data[0];
@@ -210,9 +211,10 @@ const HeroSection = () => {
         }
       }
 
+      console.log('✅ Session detail result:', result);
       setData(result);
     } catch (error) {
-      console.error("Error fetching session details:", error);
+      console.error("❌ Error fetching session details:", error);
     } finally {
       setLoading(false);
     }
@@ -220,9 +222,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     fetchSessionDetail();
-  }, [slug, sessionId]);
-
-  // Scroll-triggered text effect
+}, [slug, sessionId, i18n.language]); 
   useEffect(() => {
     const element = paragraphRef.current;
     if (!element || !data) return;
@@ -230,7 +230,7 @@ const HeroSection = () => {
     const text = element.textContent || "";
     const words = text.split(" ");
 
-      element.innerHTML = "";
+    element.innerHTML = "";
     const spans: HTMLSpanElement[] = words.map((word, i) => {
       const span = document.createElement("span");
       span.textContent = word + (i < words.length - 1 ? " " : "");
@@ -318,7 +318,12 @@ const HeroSection = () => {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <Link href="/live-session" className="flex gap-1 items-center z-10">
-            <Image src="/images/left-blue.svg" alt="Go back" height={24} width={24} />
+            <Image
+              src="/images/left-blue.svg"
+              alt="Go back"
+              height={24}
+              width={24}
+            />
             <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-5 text-left">
               {t("hero.goBack")}
             </h1>

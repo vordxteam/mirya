@@ -58,10 +58,14 @@ export const getSession = async (): Promise<any> => {
   const lang = getApiLang();
   console.log(' Fetching sessions for language:', lang);
   
-  const response = await apiClient.get(`/session/${lang}`);
-  console.log(' Sessions response:', response.data);
-  
-  return response.data;
+  try {
+    const response = await apiClient.get(`/session/${lang}`);
+    console.log(' Sessions response:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error(' Sessions API error:', error);
+    return { success: false, data: [] };
+  }
 };
 
 export const getSessionDetail = async (slug: string): Promise<any> => {
@@ -69,15 +73,22 @@ export const getSessionDetail = async (slug: string): Promise<any> => {
     return null;
   }
   
-  if (!slug || slug === "undefined") return null;
+  if (!slug || slug === "undefined") {
+    console.warn(' getSessionDetail: Invalid slug provided:', slug);
+    return null;
+  }
   
   const lang = getApiLang();
-  console.log('🔥 Fetching session detail:', slug, lang);
+  console.log(' Fetching session detail:', { slug, lang });
   
-  const response = await apiClient.get(`/session/${slug}/${lang}`);
-  console.log('✅ Session detail response:', response.data);
-  
-  return response.data;
+  try {
+    const response = await apiClient.get(`/session/${slug}/${lang}`);
+    console.log(' Session detail response:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error(' Session detail API error:', error);
+    throw error;
+  }
 };
 
 // Book session

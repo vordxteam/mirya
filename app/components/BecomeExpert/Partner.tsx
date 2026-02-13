@@ -11,7 +11,7 @@ export default function Partner() {
       id: 1,
       icon: (
         <Image
-          src="/images/Partner1.svg"
+          src="/images/partner1.svg"
           alt={t("partner.card1.title")}
           width={40}
           height={40}
@@ -25,7 +25,7 @@ export default function Partner() {
       id: 2,
       icon: (
         <Image
-          src="/images/Partner2.svg"
+          src="/images/partner2.svg"
           alt={t("partner.card2.title")}
           width={40}
           height={40}
@@ -39,7 +39,7 @@ export default function Partner() {
       id: 3,
       icon: (
         <Image
-          src="/images/Partner3.svg"
+          src="/images/partner3.svg"
           alt={t("partner.card3.title")}
           width={40}
           height={40}
@@ -53,7 +53,7 @@ export default function Partner() {
       id: 4,
       icon: (
         <Image
-          src="/images/Partner4.svg"
+          src="/images/partner4.svg"
           alt={t("partner.card4.title")}
           width={40}
           height={40}

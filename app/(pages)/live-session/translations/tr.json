@@ -24,6 +24,7 @@
     "description": "Hızlı tanıtımdan ileri düzey otomasyona ve sektöre özel kullanım durumlarına kadar hedeflerinize uygun formatı seçin.",
     "loading": "Oturumlar yükleniyor...",
     "keyHighlights": "Önemli Noktalar:",
+      "noSessionsFound": "Hiç oturum bulunamadı",
     "registerNow": "Şimdi Kaydolun",
     "defaultFooter": "Tercih ettiğiniz tarihi seçin ve bize katılın."
   },

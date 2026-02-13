@@ -24,8 +24,8 @@ export const TimeSlots: React.FC<TimeSlotsProps> = ({
   onTimeSelect,
 }) => {
   const { t } = useTranslation("live-session");
-  
-  // REMOVED: const filteredSlots = slots.filter(...) 
+
+  // REMOVED: const filteredSlots = slots.filter(...)
   // We use "slots" directly now to show everything at once.
 
   const defaultGradientBorder =
@@ -52,10 +52,9 @@ export const TimeSlots: React.FC<TimeSlotsProps> = ({
                 disabled={isFull}
                 onClick={() => onTimeSelect(slot)}
                 style={{
-                  background: isSelected ? "#4F60FA1A" : "#050A29",
-                  backgroundImage: isSelected
-                    ? "none"
-                    : `linear-gradient(#050A29, #050A29), ${defaultGradientBorder}`,
+                  // Updated: Background remains constant regardless of selection
+                  background: "#050A29",
+                  backgroundImage: `linear-gradient(#050A29, #050A29), ${defaultGradientBorder}`,
                   backgroundOrigin: "border-box",
                   backgroundClip: "padding-box, border-box",
                   border: "1px solid transparent",
@@ -63,7 +62,7 @@ export const TimeSlots: React.FC<TimeSlotsProps> = ({
                 }}
                 className={`relative overflow-hidden px-[18px] py-3 rounded-[12px] text-sm font-medium transition-all ${
                   isFull ? "cursor-not-allowed" : "cursor-pointer"
-                } ${isSelected ? "border-[#4F60FA] text-white" : "text-[#CAC9D1]"}`}
+                } ${isSelected ? "text-white" : "text-[#CAC9D1]"}`}
               >
                 <div className="relative z-10 flex items-center justify-center gap-3">
                   <svg
@@ -71,16 +70,26 @@ export const TimeSlots: React.FC<TimeSlotsProps> = ({
                     width="16"
                     height="16"
                     viewBox="0 0 20 20"
-                    fill="none"
                   >
+                    {/* Outer ring */}
                     <path
-                      d="M10 3.75C8.3424 3.75 6.75269 4.40848 5.58058 5.58058C4.40848 6.75269 3.75 8.3424 3.75 10C3.75 11.6576 4.40848 13.2473 5.58058 14.4194C6.75269 15.5915 8.3424 16.25 10 16.25C11.6576 16.25 13.2473 15.5915 14.4194 14.4194C15.5915 13.2473 16.25 11.6576 16.25 10C16.25 8.3424 15.5915 6.75269 14.4194 5.58058C13.2473 4.40848 11.6576 3.75 10 3.75ZM2.5 10C2.5 9.01509 2.69399 8.03982 3.0709 7.12987C3.44781 6.21993 4.00026 5.39314 4.6967 4.6967C5.39314 4.00026 6.21993 3.44781 7.12987 3.0709C8.03982 2.69399 9.01509 2.5 10 2.5C10.9849 2.5 11.9602 2.69399 12.8701 3.0709C13.7801 3.44781 14.6069 4.00026 15.3033 4.6967C15.9997 5.39314 16.5522 6.21993 16.9291 7.12987C17.306 8.03982 17.5 9.01509 17.5 10C17.5 11.9891 16.7098 13.8968 15.3033 15.3033C13.8968 16.7098 11.9891 17.5 10 17.5C8.01088 17.5 6.10322 16.7098 4.6967 15.3033C3.29018 13.8968 2.5 11.9891 2.5 10Z"
-                      fill="currentColor" 
+                      d="M10 3.75C6.548 3.75 3.75 6.548 3.75 10C3.75 13.452 6.548 16.25 10 16.25C13.452 16.25 16.25 13.452 16.25 10C16.25 6.548 13.452 3.75 10 3.75Z
+       M10 2.5C14.1421 2.5 17.5 5.85786 17.5 10C17.5 14.1421 14.1421 17.5 10 17.5
+       C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5Z"
+                      fill={isSelected ? "#0274FE" : "#CAC9D1"}
                     />
+
+                    {/* Inner fill – ONLY when selected */}
+                    {isSelected && (
+                      <circle cx="10" cy="10" r="4" fill="#0274FE" />
+                    )}
                   </svg>
-                  <span className="text-[14px] leading-5 font-normal">{slot.time}</span>
+
+                  <span className="text-[14px] leading-5 font-normal">
+                    {slot.time}
+                  </span>
                 </div>
-                {/* Visual Glow Effect */}
+
                 {!isSelected && (
                   <div
                     style={{
@@ -102,9 +111,9 @@ export const TimeSlots: React.FC<TimeSlotsProps> = ({
             );
           })
         ) : (
-          <p className="text-[#73799B] text-sm italic col-span-2">
-            {t("no_slots")}
-          </p>
+        <p className="col-span-2 text-[#73799B] text-[16px] text-center">
+  {t("no_slots")}
+</p>
         )}
       </div>
     </div>

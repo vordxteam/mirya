@@ -5,10 +5,8 @@ import GradientButton from "@/app/ui/GradientButton";
 import { useTranslation } from "react-i18next";
 
 const AboutSession = () => {
-  // Use the live-session namespace registered in your i18n.ts
   const { t } = useTranslation("live-session");
 
-  // Get the features array from JSON
   const features = t("aboutFeatures", { returnObjects: true }) as string[];
 
   return (

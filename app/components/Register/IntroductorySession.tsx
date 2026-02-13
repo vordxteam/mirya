@@ -384,10 +384,10 @@
 //         <div className="calendar-container max-w-[714px]">
 //           <FullCalendarComponent data={data} onDateSelect={handleDateSelect} />
 //         </div>
-//         <div className="relative overflow-hidden">
-//           <div className="absolute inset-0 flex items-center justify-center top-39 pointer-events-none z-0">
-//             <div className="rounded-[493.75px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[443px] h-[200px] "></div>
-//           </div>
+// <div className="relative overflow-hidden">
+//   <div className="absolute inset-0 flex items-center justify-center top-39 pointer-events-none z-0">
+//     <div className="rounded-[493.75px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[443px] h-[200px] "></div>
+//   </div>
 
 //           <div className="relative z-10">
 //             <TimeSlots
@@ -425,8 +425,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import dayjs, { Dayjs } from "dayjs";
-import { bookSession } from "@/app/api/sessions";
-
+import { bookSession, getSessionDetail } from "@/app/api/sessions";
 import { TimeSlots } from "./TimeSlots";
 import { SpeakerGrid } from "./SpeakerGrid";
 import { RegistrationForm } from "./RegistrationForm";
@@ -451,6 +450,7 @@ interface SessionData {
   id: string;
   name: string;
   title: string;
+  slug?: string; // Added slug to interface
   short_intro?: string;
   content?: Array<{
     elements: Array<{
@@ -476,38 +476,73 @@ interface SessionData {
   }>;
 }
 
-const IntroductorySession = ({ data }: { data: { data: SessionData } }) => {
-  const { t } = useTranslation("live-session");
-  
-const contentElements = data?.data?.content?.[0]?.elements || [];
-  
-  // These will be string or undefined
+const IntroductorySession = ({
+  data: initialData,
+}: {
+  data: { data: SessionData };
+}) => {
+  const { t, i18n } = useTranslation("live-session");
+
+  // 1. STATE MANAGEMENT FOR TRANSLATION
+  const [sessionData, setSessionData] = useState<SessionData>(initialData.data);
+  const [isDataLoading, setIsDataLoading] = useState(false);
+
+  useEffect(() => {
+    const refreshLanguageData = async () => {
+      const slug = sessionData?.slug || initialData?.data?.slug;
+      if (!slug) return;
+
+      setIsDataLoading(true);
+      try {
+        const response = await getSessionDetail(slug);
+        if (response && response.success) {
+          setSessionData(response.data);
+        }
+      } catch (error) {
+        console.error("Language sync error:", error);
+      } finally {
+        setIsDataLoading(false);
+      }
+    };
+
+    // Only refresh if language actually changed and we have a slug
+    if (sessionData?.slug || initialData?.data?.slug) {
+      refreshLanguageData();
+    }
+  }, [i18n.language, sessionData?.slug, initialData?.data?.slug]);
+
+  // 3. DERIVED DATA FROM STATE (NOT PROPS)
+  const contentElements = sessionData?.content?.[0]?.elements || [];
   const displayTitle = contentElements.find((el) => el.type === "h1")?.value;
-  const displayDescription = contentElements.find((el) => el.type === "description")?.value;
+  const displayDescription = contentElements.find(
+    (el) => el.type === "description",
+  )?.value;
+  const sessions = sessionData?.sessions || [];
+  const webinarId = sessionData?.id;
+
+  const speakers: Speaker[] = (sessionData?.speakers || []).map(
+    (speaker, index) => ({
+      id: speaker.id?.toString() || (index + 1).toString(),
+      name: speaker.name || "Speaker Name",
+      role: speaker.role || "Role",
+      image: speaker.image || "/images/speaker-default.png",
+    }),
+  );
 
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [selectedPeriod, setSelectedPeriod] = useState<"am" | "pm">("pm");
-  const [selectedSessionId, setSelectedSessionId] = useState<string | null>(null);
+  const [selectedSessionId, setSelectedSessionId] = useState<string | null>(
+    null,
+  );
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     companyName: "",
     role: "",
   });
-
-  const sessions = data?.data?.sessions || [];
-  const webinarId = data?.data?.id;
-
-  // 2. Speaker Logic: Removed static data completely
-  const speakers: Speaker[] = (data?.data?.speakers || []).map((speaker, index) => ({
-    id: speaker.id?.toString() || (index + 1).toString(),
-    name: speaker.name || "Speaker Name",
-    role: speaker.role || "Role",
-    image: speaker.image || "/images/speaker-default.png",
-  }));
 
   useEffect(() => {
     if (sessions.length > 0 && !selectedDate) {
@@ -524,14 +559,18 @@ const contentElements = data?.data?.content?.[0]?.elements || [];
         return sessionDateStr === selectedDateStr;
       });
 
-      setSelectedSessionId(sessionForDate ? sessionForDate.id.toString() : null);
+      setSelectedSessionId(
+        sessionForDate ? sessionForDate.id.toString() : null,
+      );
     }
   }, [selectedDate, sessions]);
 
   const getAvailableSlotsForDate = (date: Dayjs | null) => {
     if (!date) return [];
-    const selectedSession = sessions.find((session: any) => 
-      dayjs(session.session_date).format("YYYY-MM-DD") === date.format("YYYY-MM-DD")
+    const selectedSession = sessions.find(
+      (session: any) =>
+        dayjs(session.session_date).format("YYYY-MM-DD") ===
+        date.format("YYYY-MM-DD"),
     );
 
     if (!selectedSession?.available_slots) return [];
@@ -541,13 +580,18 @@ const contentElements = data?.data?.content?.[0]?.elements || [];
         const parts = timeStr.split(":");
         const hour = parseInt(parts[0]);
         const minute = parts[1];
-        return { hour, minute, period: hour < 12 ? ("am" as const) : ("pm" as const) };
+        return {
+          hour,
+          minute,
+          period: hour < 12 ? ("am" as const) : ("pm" as const),
+        };
       };
 
       const start = parseTime(slot.start_time);
       const end = parseTime(slot.end_time);
 
-      const to12h = (h: number, m: string) => `${h % 12 || 12}:${m} ${h >= 12 ? "PM" : "AM"}`;
+      const to12h = (h: number, m: string) =>
+        `${h % 12 || 12}:${m} ${h >= 12 ? "PM" : "AM"}`;
 
       return {
         id: `api-${index}`,
@@ -601,7 +645,9 @@ const contentElements = data?.data?.content?.[0]?.elements || [];
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 overflow-hidden relative gap-[70px] max-w-[1440px] m-auto">
+    <div
+      className={`grid grid-cols-1 lg:grid-cols-3 overflow-hidden relative gap-[70px] max-w-[1440px] m-auto transition-opacity duration-300 ${isDataLoading}`}
+    >
       <div className="lg:col-span-2 space-y-4 max-w-[715px]">
         <div>
           <h2 className="text-[18px] sm:text-[24px] pb-2 font-medium leading-8 text-white">
@@ -610,130 +656,54 @@ const contentElements = data?.data?.content?.[0]?.elements || [];
           <p className="text-[#FFFFFFCC] text-[12px] leading-4 font-normal pb-4">
             {displayDescription}
           </p>
-          
+
           <div className="flex items-center gap-4 leading-5 text-[14px] font-normal text-[#FFFFFFCC]">
-             <span className="flex items-center gap-2">
-
-              <svg
-
-                xmlns="http://www.w3.org/2000/svg"
-
-                width="16"
-
-                height="16"
-
-                viewBox="0 0 16 16"
-
-                fill="none"
-
-              >
-
+            <span className="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
-
                   d="M5.33333 1.33325V3.99992M10.6667 1.33325V3.99992M2 6.66658H14M5.33333 9.33325H5.34M8 9.33325H8.00667M10.6667 9.33325H10.6733M5.33333 11.9999H5.34M8 11.9999H8.00667M10.6667 11.9999H10.6733M3.33333 2.66659H12.6667C13.403 2.66659 14 3.26354 14 3.99992V13.3333C14 14.0696 13.403 14.6666 12.6667 14.6666H3.33333C2.59695 14.6666 2 14.0696 2 13.3333V3.99992C2 3.26354 2.59695 2.66659 3.33333 2.66659Z"
-
                   stroke="white"
-
                   strokeOpacity="0.8"
-
                   strokeLinecap="round"
-
                   strokeLinejoin="round"
-
                 />
-
               </svg>
-
-              23 October, 2025
-
+              {dayjs(sessions[0]?.session_date).format("DD MMMM, YYYY")}
             </span>
 
             <span className="flex items-center gap-2">
-
-              <svg
-
-                xmlns="http://www.w3.org/2000/svg"
-
-                width="16"
-
-                height="16"
-
-                viewBox="0 0 16 16"
-
-                fill="none"
-
-              >
-
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <g clipPath="url(#clip0_4241_35058)">
-
                   <path
-
                     d="M8.0026 3.99992V7.99992H11.0026M14.6693 7.99992C14.6693 11.6818 11.6845 14.6666 8.0026 14.6666C4.32071 14.6666 1.33594 11.6818 1.33594 7.99992C1.33594 4.31802 4.32071 1.33325 8.0026 1.33325C11.6845 1.33325 14.6693 4.31802 14.6693 7.99992Z"
-
                     stroke="white"
-
                     strokeOpacity="0.8"
-
                     strokeLinecap="round"
-
                     strokeLinejoin="round"
-
                   />
-
                 </g>
-
                 <defs>
-
                   <clipPath id="clip0_4241_35058">
-
                     <rect width="16" height="16" fill="white" />
-
                   </clipPath>
-
                 </defs>
-
               </svg>
-
-              12:30 PM - 2:30 PM
-
+              {getAvailableSlotsForDate(selectedDate)[0]?.time ||
+                "Select a date"}
             </span>
 
             <span className="flex items-center gap-2">
-
-              <svg
-
-                xmlns="http://www.w3.org/2000/svg"
-
-                width="16"
-
-                height="16"
-
-                viewBox="0 0 16 16"
-
-                fill="none"
-
-              >
-
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
-
                   d="M3.33594 14.6666H12.6693M3.33594 1.33325H12.6693M11.3359 14.6666V11.8853C11.3359 11.5317 11.1953 11.1926 10.9453 10.9426L8.0026 7.99992M8.0026 7.99992L5.05994 10.9426C4.80987 11.1926 4.66935 11.5317 4.66927 11.8853V14.6666M8.0026 7.99992L5.05994 5.05725C4.80987 4.80726 4.66935 4.46818 4.66927 4.11459V1.33325M8.0026 7.99992L10.9453 5.05725C11.1953 4.80726 11.3359 4.46818 11.3359 4.11459V1.33325"
-
                   stroke="white"
-
                   strokeOpacity="0.8"
-
                   strokeLinecap="round"
-
                   strokeLinejoin="round"
-
                 />
-
               </svg>
-
               {t("duration")}
-
             </span>
-            {/* ... other meta info ... */}
           </div>
           <h2 className="text-[18px] sm:text-[24px] pt-6 font-medium leading-8 text-white">
             {t("select_datetime")}
@@ -741,18 +711,25 @@ const contentElements = data?.data?.content?.[0]?.elements || [];
         </div>
 
         <div className="calendar-container max-w-[714px]">
-          <FullCalendarComponent data={data} onDateSelect={handleDateSelect} />
-        </div>
-
-        <div className="relative z-10">
-          <TimeSlots
-            slots={getAvailableSlotsForDate(selectedDate) as any}
-            selectedTime={selectedTime}
-            selectedPeriod={selectedPeriod}
-            onPeriodChange={setSelectedPeriod}
-            onTimeSelect={(slot: TimeSlot) => setSelectedTime(slot.time)}
+          <FullCalendarComponent
+            data={{ data: sessionData }}
+            onDateSelect={handleDateSelect}
           />
-          <SpeakerGrid speakers={speakers} />
+        </div>
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center top-39 pointer-events-none z-0">
+            <div className="rounded-[493.75px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[443px] h-[200px] "></div>
+          </div>
+          <div className="relative z-10">
+            <TimeSlots
+              slots={getAvailableSlotsForDate(selectedDate) as any}
+              selectedTime={selectedTime}
+              selectedPeriod={selectedPeriod}
+              onPeriodChange={setSelectedPeriod}
+              onTimeSelect={(slot: TimeSlot) => setSelectedTime(slot.time)}
+            />
+            <SpeakerGrid speakers={speakers} />
+          </div>
         </div>
       </div>
 

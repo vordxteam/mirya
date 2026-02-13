@@ -73,8 +73,14 @@
       { "name": "Produkt", "href": "/about" },
       { "name": "Branchen", "href": "/industries" },
       { "name": "Preisgestaltung", "href": "/pricing" },
-      { "name": "Akademie", "href": "/articles" },
-      { "name": "Kontakt", "href": "/contact" }
+ {
+        "name": "Ressourcen",
+        "href": "/resources"
+      },     
+       {
+        "name": "Partner",
+        "href": "/partners"
+      },      { "name": "Kontakt", "href": "/contact" }
     ],
     "button": "Loslegen",
     "signin": "Anmelden",

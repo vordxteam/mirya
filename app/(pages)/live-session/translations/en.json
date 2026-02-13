@@ -24,6 +24,7 @@
     "description": "Select the format that matches your goals—from quick introduction to advanced automation and industry-focused use cases.",
     "loading": "Loading sessions...",
     "keyHighlights": "Key Highlights:",
+    "noSessionsFound": "No sessions found",
     "registerNow": "Register Now",
     "defaultFooter": "Choose your preferred date and join us."
   },
