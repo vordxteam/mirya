@@ -144,9 +144,7 @@ export default function Header() {
     if (communityData) {
       router.push(communityData.href);
     } else {
-    
       router.push("/community");
-     
     }
 
     setResourcesOpen(false);
@@ -171,7 +169,8 @@ export default function Header() {
         resourcesOpen &&
         resourcesRef.current &&
         !resourcesRef.current.contains(target) &&
-        (!mobileResourcesRef.current || !mobileResourcesRef.current.contains(target))
+        (!mobileResourcesRef.current ||
+          !mobileResourcesRef.current.contains(target))
       ) {
         setResourcesOpen(false);
       }
@@ -187,7 +186,8 @@ export default function Header() {
         partnersOpen &&
         partnersRef.current &&
         !partnersRef.current.contains(target) &&
-        (!mobilePartnersRef.current || !mobilePartnersRef.current.contains(target))
+        (!mobilePartnersRef.current ||
+          !mobilePartnersRef.current.contains(target))
       ) {
         setPartnersOpen(false);
       }
@@ -265,7 +265,6 @@ export default function Header() {
         {/* Desktop Links */}
         <div className="hidden lg:flex lg:gap-x-5 items-center">
           {navLinks.map((link) => {
-            // Check if this is the "Academy" link (which becomes the Resources dropdown)
             const isResources =
               link.href === "/resources" || link.href === "/articles";
             link.name?.toLowerCase() === "academy" ||
@@ -273,30 +272,37 @@ export default function Header() {
               link.href === "/articles";
 
             if (isResources) {
+              const isResourcesActive =
+                pathname.startsWith("/resources") ||
+                pathname.startsWith("/articles") ||
+                pathname.startsWith("/academy") ||
+                pathname.startsWith("/community") ||
+                pathname.startsWith("/live-session");
+
               return (
                 <div key={link.href} ref={resourcesRef} className="relative">
                   {/* Resources trigger button */}
                   <button
                     onClick={() => setResourcesOpen((prev) => !prev)}
                     className={`
-                      relative text-[16px] transition-colors duration-300 flex items-center cursor-pointer gap-[6px]
+                      text-[16px] leading-5 transition-colors duration-300 flex items-center cursor-pointer gap-[6px]
                       ${
-                        resourcesOpen ||
-                        pathname.startsWith("/resources") ||
-                        pathname.startsWith("/articles") ||
-                        pathname.startsWith("/academy") ||
-                        pathname.startsWith("/community") ||
-                        pathname.startsWith("/live-sessions")
+                        resourcesOpen || isResourcesActive
                           ? "text-white font-medium"
                           : "text-[#73799B] font-normal"
                       }
                       hover:text-white
-                      after:absolute after:-bottom-1 after:left-0 after:h-0.5
-                      after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529]
-                      hover:after:w-full after:transition-all after:duration-300
                     `}
                   >
-                    {link.name}
+                    <span className={`
+                      relative
+                      after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:h-0.5
+                      after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529]
+                      hover:after:w-[80%] after:transition-all after:duration-300
+                      ${isResourcesActive ? "after:!w-[80%]" : ""}
+                    `}>
+                      {link.name}
+                    </span>
                     <motion.span
                       animate={{ rotate: resourcesOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
@@ -384,27 +390,34 @@ export default function Header() {
             // link.href === "/partners";
 
             if (isPartners) {
+              const isPartnersActive =
+                pathname.startsWith("/partners") ||
+                pathname.startsWith("/become-expert") ||
+                pathname.startsWith("/hire-expert");
+
               return (
                 <div key={link.href} ref={partnersRef} className="relative">
                   <button
                     onClick={() => setPartnersOpen((prev) => !prev)}
                     className={`
-                      relative text-[16px] transition-colors duration-300 flex cursor-pointer items-center gap-[6px]
+                      text-[16px] leading-5 transition-colors duration-300 flex cursor-pointer items-center gap-[6px]
                       ${
-                        partnersOpen ||
-                        pathname.startsWith("/partners") ||
-                        pathname.startsWith("/become-an-expert") ||
-                        pathname.startsWith("/hire-an-expert")
+                        partnersOpen || isPartnersActive
                           ? "text-white font-medium"
                           : "text-[#73799B] font-normal"
                       }
                       hover:text-white
-                      after:absolute after:-bottom-1 after:left-0 after:h-0.5
-                      after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529]
-                      hover:after:w-full after:transition-all after:duration-300
                     `}
                   >
-                    {link.name}
+                    <span className={`
+                      relative
+                      after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:h-0.5
+                      after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529]
+                      hover:after:w-[80%] after:transition-all after:duration-300
+                      ${isPartnersActive ? "after:!w-[80%]" : ""}
+                    `}>
+                      {link.name}
+                    </span>
                     <motion.span
                       animate={{ rotate: partnersOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
@@ -472,14 +485,14 @@ export default function Header() {
                   relative text-[16px] leading-5 transition-colors duration-300
                   ${
                     isActive
-                      ? "text-white font-normal"
+                      ? "text-white font-medium"
                       : "text-[#73799B] font-normal"
                   }
                   hover:text-white
-                  after:absolute after:-bottom-1 after:left-0 after:h-0.5
+                  after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:h-0.5
                   after:w-0 after:bg-linear-to-r after:from-[#000529] after:via-[#4A56FF] after:to-[#000529]
-                  hover:after:w-full after:transition-all after:duration-300
-                  ${isActive ? "after:w-full" : ""}
+                  hover:after:w-[80%] after:transition-all after:duration-300
+                  ${isActive ? "after:w-[80%]" : ""}
                 `}
               >
                 {link.name}
@@ -574,7 +587,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -586,7 +598,6 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Sidebar */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
@@ -653,10 +664,14 @@ export default function Header() {
 
                   if (isResources) {
                     return (
-                      <motion.div key={link.href} variants={linkItemVariants} ref={mobileResourcesRef}>
+                      <motion.div
+                        key={link.href}
+                        variants={linkItemVariants}
+                        ref={mobileResourcesRef}
+                      >
                         <button
                           onClick={() => setResourcesOpen((prev) => !prev)}
-                          className="flex items-center justify-between w-full text-[18px] font-normal py-2 text-[#73799B] hover:text-white"
+                          className="flex items-center justify-between w-full text-[18px] font-normal cursor-pointer py-2 text-[#73799B] hover:text-white"
                         >
                           {link.name}
                           <motion.span
@@ -694,7 +709,7 @@ export default function Header() {
                                       key={item.label}
                                       onClick={handleMobileCommunityClick}
                                       className={`
-                                        w-full text-left block px-5 py-3 text-[15px] font-normal text-white
+                                        w-full text-left block px-5 py-3 text-[15px] cursor-pointer font-normal text-white
                                         hover:text-white hover:bg-white/5 transition-colors duration-150
                                         ${!communityData ? "opacity-80" : ""}
                                         ${
@@ -740,11 +755,15 @@ export default function Header() {
 
                   if (isPartners) {
                     return (
-                      <motion.div key={link.href} variants={linkItemVariants} ref={mobilePartnersRef}>
+                      <motion.div
+                        key={link.href}
+                        variants={linkItemVariants}
+                        ref={mobilePartnersRef}
+                      >
                         {/* Mobile Partners accordion */}
                         <button
                           onClick={() => setPartnersOpen((prev) => !prev)}
-                          className="flex items-center justify-between w-full text-[18px] font-normal py-2 text-[#73799B] hover:text-white"
+                          className="flex items-center justify-between w-full text-[18px] font-normal py-2 cursor-pointer text-[#73799B] hover:text-white"
                         >
                           {link.name}
                           <motion.span
