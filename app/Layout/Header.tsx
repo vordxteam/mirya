@@ -18,22 +18,24 @@ const languages = [
   { code: "de", label: "German", flag: "/images/german.png" },
   { code: "tr", label: "Turkish", flag: "/images/turkish.png" },
 ] as const;
+
 type CommunityData = {
   label: string;
   slug: string;
   href: string;
 };
 
-const resourcesItems = [
-  { label: "Academy", href: "/articles" },
-  { label: "Community", href: "" },
-  { label: "Live Sessions", href: "/live-session" },
-];
+// These will now come from translation
+// const resourcesItems = [
+//   { label: "Academy", href: "/articles" },
+//   { label: "Community", href: "" },
+//   { label: "Live Sessions", href: "/live-session" },
+// ];
 
-const partnersItems = [
-  { label: "Become an Expert", href: "/become-expert" },
-  { label: "Hire an Expert", href: "/hire-expert" },
-];
+// const partnersItems = [
+//   { label: "Become an Expert", href: "/become-expert" },
+//   { label: "Hire an Expert", href: "/hire-expert" },
+// ];
 
 export default function Header() {
   const { t, i18n } = useLayoutTranslation();
@@ -46,6 +48,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const resourcesRef = useRef<HTMLDivElement>(null);
   const partnersRef = useRef<HTMLDivElement>(null);
+  const mobileResourcesRef = useRef<HTMLDivElement>(null);
+  const mobilePartnersRef = useRef<HTMLDivElement>(null);
 
   const [communityData, setCommunityData] = useState<CommunityData | null>(
     null,
@@ -56,6 +60,28 @@ export default function Header() {
     tr: "turkish",
     de: "german",
   };
+
+  // Get translated dropdown items
+  const resourcesItems = (t("header.resourcesDropdown", {
+    returnObjects: true,
+  }) as Array<{
+    label: string;
+    href: string;
+  }>) || [
+    { label: "Academy", href: "/articles" },
+    { label: "Community", href: "" },
+    { label: "Live Sessions", href: "/live-session" },
+  ];
+
+  const partnersItems = (t("header.partnersDropdown", {
+    returnObjects: true,
+  }) as Array<{
+    label: string;
+    href: string;
+  }>) || [
+    { label: "Become an Expert", href: "/become-expert" },
+    { label: "Hire an Expert", href: "/hire-expert" },
+  ];
 
   // Get current language object
   const currentLang =
@@ -92,6 +118,7 @@ export default function Header() {
           });
         } else {
           console.log("Community Hub not found in API response");
+          // Set a fallback or keep as null - we'll handle this in the UI
         }
       })
       .catch((err) => console.error("Failed to fetch community data:", err));
@@ -103,6 +130,25 @@ export default function Header() {
     if (communityData) {
       router.push(communityData.href);
     }
+    setResourcesOpen(false);
+    setMobileMenuOpen(false);
+  };
+
+  // Alternative method for mobile - navigate even without communityData
+  const handleMobileCommunityClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+  ) => {
+    e.preventDefault();
+
+    // If we have communityData, use it
+    if (communityData) {
+      router.push(communityData.href);
+    } else {
+    
+      router.push("/community");
+     
+    }
+
     setResourcesOpen(false);
     setMobileMenuOpen(false);
   };
@@ -120,10 +166,12 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
       if (
         resourcesOpen &&
         resourcesRef.current &&
-        !resourcesRef.current.contains(event.target as Node)
+        !resourcesRef.current.contains(target) &&
+        (!mobileResourcesRef.current || !mobileResourcesRef.current.contains(target))
       ) {
         setResourcesOpen(false);
       }
@@ -132,13 +180,14 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [resourcesOpen]);
 
-  // Close partners dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
       if (
         partnersOpen &&
         partnersRef.current &&
-        !partnersRef.current.contains(event.target as Node)
+        !partnersRef.current.contains(target) &&
+        (!mobilePartnersRef.current || !mobilePartnersRef.current.contains(target))
       ) {
         setPartnersOpen(false);
       }
@@ -218,8 +267,8 @@ export default function Header() {
           {navLinks.map((link) => {
             // Check if this is the "Academy" link (which becomes the Resources dropdown)
             const isResources =
-              link.name?.toLowerCase() === "resources" ||
-              link.name?.toLowerCase() === "academy" ||
+              link.href === "/resources" || link.href === "/articles";
+            link.name?.toLowerCase() === "academy" ||
               link.href === "/resources" ||
               link.href === "/articles";
 
@@ -230,7 +279,7 @@ export default function Header() {
                   <button
                     onClick={() => setResourcesOpen((prev) => !prev)}
                     className={`
-                      relative text-[16px] transition-colors duration-300 flex items-center gap-[6px]
+                      relative text-[16px] transition-colors duration-300 flex items-center cursor-pointer gap-[6px]
                       ${
                         resourcesOpen ||
                         pathname.startsWith("/resources") ||
@@ -247,7 +296,7 @@ export default function Header() {
                       hover:after:w-full after:transition-all after:duration-300
                     `}
                   >
-                    Resources
+                    {link.name}
                     <motion.span
                       animate={{ rotate: resourcesOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
@@ -276,14 +325,17 @@ export default function Header() {
                       >
                         {resourcesItems.map((item, idx) => {
                           // Special handling for Community item
-                          if (item.label === "Community") {
+                          if (
+                            item.label === "Community" ||
+                            item.label === t("header.community", "Community")
+                          ) {
                             return (
                               <button
                                 key={item.label}
                                 onClick={handleCommunityClick}
                                 disabled={!communityData}
                                 className={`
-                                  w-full text-left block px-4 py-[14px] text-[12px] font-medium leading-4 text-[#fff] transition-colors duration-150
+                                  w-full text-left block px-4 py-[14px] text-[12px] font-medium leading-4 text-[#fff] transition-colors cursor-pointer duration-150
                                   hover:text-white hover:bg-white/5
                                   ${!communityData ? "opacity-50 cursor-not-allowed" : ""}
                                   ${
@@ -328,18 +380,16 @@ export default function Header() {
             }
 
             // Check if this is the "Partners" nav link
-            const isPartners =
-              link.name?.toLowerCase() === "partners" ||
-              link.href === "/partners";
+            const isPartners = link.href === "/partners";
+            // link.href === "/partners";
 
             if (isPartners) {
               return (
                 <div key={link.href} ref={partnersRef} className="relative">
-                  {/* Partners trigger button */}
                   <button
                     onClick={() => setPartnersOpen((prev) => !prev)}
                     className={`
-                      relative text-[16px] transition-colors duration-300 flex items-center gap-[6px]
+                      relative text-[16px] transition-colors duration-300 flex cursor-pointer items-center gap-[6px]
                       ${
                         partnersOpen ||
                         pathname.startsWith("/partners") ||
@@ -354,7 +404,7 @@ export default function Header() {
                       hover:after:w-full after:transition-all after:duration-300
                     `}
                   >
-                    Partners
+                    {link.name}
                     <motion.span
                       animate={{ rotate: partnersOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
@@ -603,13 +653,12 @@ export default function Header() {
 
                   if (isResources) {
                     return (
-                      <motion.div key={link.href} variants={linkItemVariants}>
-                        {/* Mobile Resources accordion */}
+                      <motion.div key={link.href} variants={linkItemVariants} ref={mobileResourcesRef}>
                         <button
                           onClick={() => setResourcesOpen((prev) => !prev)}
                           className="flex items-center justify-between w-full text-[18px] font-normal py-2 text-[#73799B] hover:text-white"
                         >
-                          Resources
+                          {link.name}
                           <motion.span
                             animate={{ rotate: resourcesOpen ? 180 : 0 }}
                             transition={{ duration: 0.2 }}
@@ -624,27 +673,30 @@ export default function Header() {
                               animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.2 }}
-                              className="overflow-hidden ml-4 mt-1"
+                              className="overflow-hidden ml-4 mt-1 "
                               style={{
                                 borderRadius: "8px",
-                                border: "1px solid #343754",
+                                maxWidth: "176px",
                                 background:
-                                  "linear-gradient(258deg, #00031C 0%, #121A4E 135.06%)",
+                                  "linear-gradient(258deg, #00031C 0%, #121A4E 135.06%) padding-box, " +
+                                  "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%) border-box",
+                                border: "1px solid transparent",
                               }}
                             >
                               {resourcesItems.map((item, idx) => {
-                                if (item.label === "Community") {
+                                if (
+                                  item.label === "Community" ||
+                                  item.label ===
+                                    t("header.community", "Community")
+                                ) {
                                   return (
                                     <button
                                       key={item.label}
-                                      onClick={(e) => {
-                                        handleCommunityClick(e);
-                                      }}
-                                      disabled={!communityData}
+                                      onClick={handleMobileCommunityClick}
                                       className={`
-                                        w-full text-left block px-5 py-3 text-[15px] font-normal text-[#C0C4DB]
+                                        w-full text-left block px-5 py-3 text-[15px] font-normal text-white
                                         hover:text-white hover:bg-white/5 transition-colors duration-150
-                                        ${!communityData ? "opacity-50 cursor-not-allowed" : ""}
+                                        ${!communityData ? "opacity-80" : ""}
                                         ${
                                           idx !== resourcesItems.length - 1
                                             ? "border-b border-[#343754]"
@@ -657,7 +709,6 @@ export default function Header() {
                                   );
                                 }
 
-                                // Regular Link for other items
                                 return (
                                   <Link
                                     key={item.href}
@@ -667,8 +718,8 @@ export default function Header() {
                                       setMobileMenuOpen(false);
                                     }}
                                     className={`
-                                      block px-5 py-3 text-[15px] font-normal text-[#C0C4DB]
-                                      hover:text-white hover:bg-white/5 transition-colors duration-150
+                              block px-4 py-[14px] text-[12px] font-medium leading-4 text-[#fff] transition-colors duration-150
+                              hover:text-white hover:bg-white/5
                                       ${
                                         idx !== resourcesItems.length - 1
                                           ? "border-b border-[#343754]"
@@ -689,13 +740,13 @@ export default function Header() {
 
                   if (isPartners) {
                     return (
-                      <motion.div key={link.href} variants={linkItemVariants}>
+                      <motion.div key={link.href} variants={linkItemVariants} ref={mobilePartnersRef}>
                         {/* Mobile Partners accordion */}
                         <button
                           onClick={() => setPartnersOpen((prev) => !prev)}
                           className="flex items-center justify-between w-full text-[18px] font-normal py-2 text-[#73799B] hover:text-white"
                         >
-                          Partners
+                          {link.name}
                           <motion.span
                             animate={{ rotate: partnersOpen ? 180 : 0 }}
                             transition={{ duration: 0.2 }}
@@ -713,9 +764,11 @@ export default function Header() {
                               className="overflow-hidden ml-4 mt-1"
                               style={{
                                 borderRadius: "8px",
-                                border: "1px solid #343754",
+                                maxWidth: "178px",
                                 background:
-                                  "linear-gradient(258deg, #00031C 0%, #121A4E 135.06%)",
+                                  "linear-gradient(258deg, #00031C 0%, #121A4E 135.06%) padding-box, " +
+                                  "linear-gradient(270deg, #343754 0.33%, #AAB1EC 53.7%, #343754 100%) border-box",
+                                border: "1px solid transparent",
                               }}
                             >
                               {partnersItems.map((item, idx) => (
@@ -727,8 +780,8 @@ export default function Header() {
                                     setMobileMenuOpen(false);
                                   }}
                                   className={`
-                                    block px-5 py-3 text-[15px] font-normal text-[#C0C4DB]
-                                    hover:text-white hover:bg-white/5 transition-colors duration-150
+                              block px-4 py-[14px] text-[12px] font-medium leading-4 text-[#fff] transition-colors duration-150
+                              hover:text-white hover:bg-white/5
                                     ${
                                       idx !== partnersItems.length - 1
                                         ? "border-b border-[#343754]"

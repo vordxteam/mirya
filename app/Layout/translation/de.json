@@ -82,6 +82,16 @@
         "href": "/partners"
       },      { "name": "Kontakt", "href": "/contact" }
     ],
+    "resourcesDropdown": [
+      { "label": "Akademie", "href": "/articles" },
+      { "label": "Community", "href": "" },
+      { "label": "Live-Sitzungen", "href": "/live-session" }
+    ],
+    "partnersDropdown": [
+      { "label": "Experte werden", "href": "/become-expert" },
+      { "label": "Experte finden", "href": "/hire-expert" }
+    ],
+    "community": "Community",
     "button": "Loslegen",
     "signin": "Anmelden",
     "languageLabel": "Sprache"

@@ -72,6 +72,16 @@
         "href": "/partners"
       },      { "name": "İletişim", "href": "/contact" }
     ],
+    "resourcesDropdown": [
+      { "label": "Akademi", "href": "/articles" },
+      { "label": "Topluluk", "href": "" },
+      { "label": "Canlı Oturumlar", "href": "/live-session" }
+    ],
+    "partnersDropdown": [
+      { "label": "Uzman Ol", "href": "/become-expert" },
+      { "label": "Uzman Bul", "href": "/hire-expert" }
+    ],
+    "community": "Topluluk",
     "button": "Başlayın",
     "signin": "Giriş Yap",
     "languageLabel": "Dil"
