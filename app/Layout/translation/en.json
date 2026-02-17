@@ -74,16 +74,26 @@
       { "name": "Product", "href": "/about" },
       { "name": "Industries", "href": "/industries" },
       { "name": "Pricing", "href": "/pricing" },
-  {
+      {
         "name": "Resources",
         "href": "/resources"
-      },     
-       {
+      },
+      {
         "name": "Partners",
         "href": "/partners"
       },
       { "name": "Contact", "href": "/contact" }
     ],
+    "resourcesDropdown": [
+      { "label": "Academy", "href": "/articles" },
+      { "label": "Community", "href": "" },
+      { "label": "Live Sessions", "href": "/live-session" }
+    ],
+    "partnersDropdown": [
+      { "label": "Become an Expert", "href": "/become-expert" },
+      { "label": "Hire an Expert", "href": "/hire-expert" }
+    ],
+    "community": "Community",
     "button": "Get Started",
     "signin": "Signin",
     "languageLabel": "Language"

@@ -120,9 +120,8 @@
 // export default Cards;
 
 "use client";
-
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { categoryApi } from "@/app/api/academy";
 import { CardSkeleton } from "../../(pages)/articles/[category]/[slug]/SkeletonDetail";
@@ -173,13 +172,7 @@ const Cards = () => {
   }, [i18n.language]);
 
   const handleLearnMore = (card: CardItem) => {
-    if (card.title === "Hire an Expert") {
-      router.push(`/hire-expert`);
-    } else if (card.title === "Live Session") {
-      router.push(`/live-session`);
-    } else if (card.title === "Become an Expert") {
-      router.push(`/become-expert`);
-    } else {
+    {
       router.push(`/articles/${card.category}/${card.slug}`);
     }
   };
@@ -194,64 +187,66 @@ const Cards = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-[60px]">
-            {cardsData.map((card) => (
-              <div
-                key={card.id}
-                className="block h-full group cursor-pointer"
-                onClick={() => handleLearnMore(card)}
-              >
+            {cardsData
+.filter((card) => !card.slug.startsWith("community-hub"))
+              .map((card) => (
                 <div
-                  className="rounded-xl p-0.5 h-full transition-transform duration-300 hover:scale-[1.02]"
-                  style={{
-                    background:
-                      "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
-                  }}
+                  key={card.id}
+                  className="block h-full group cursor-pointer"
+                  onClick={() => handleLearnMore(card)}
                 >
-                  <div className="bg-[#050A29] overflow-hidden relative p-5 h-full rounded-xl">
-                    <div className="absolute right-[-70px] bottom-[21px]">
-                      <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9C] blur-[50px] w-[181px] h-[94px]" />
-                    </div>
-                    <div className="relative z-20 flex flex-col items-start justify-between h-full space-y-6">
-                      <Image
-                        src={card.icon}
-                        width={56}
-                        height={56}
-                        alt={card.title}
-                      />
-                      <div className="space-y-3">
-                        <h1 className="text-[#F4F7FF] text-[20px] sm:text-[24px] font-medium leading-6 sm:leading-[30px]">
-                          {card.title}
-                        </h1>
-                        <p className="text-[14px] font-normal leading-5 text-[#F4F7FF99]">
-                          {card.description}
-                        </p>
+                  <div
+                    className="rounded-xl p-0.5 h-full transition-transform duration-300 hover:scale-[1.02]"
+                    style={{
+                      background:
+                        "linear-gradient(97deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)",
+                    }}
+                  >
+                    <div className="bg-[#050A29] overflow-hidden relative p-5 h-full rounded-xl">
+                      <div className="absolute right-[-70px] bottom-[21px]">
+                        <div className="rounded-[68.75px] opacity-[0.6] bg-[#211F9C] blur-[50px] w-[181px] h-[94px]" />
                       </div>
-                      <div className="flex items-center justify-between w-full">
-                        <span className="text-[#0F73FE] text-[16px] font-normal leading-5 group-hover:underline">
-                          Learn More
-                        </span>
-                        <div className="transition-transform group-hover:translate-x-1">
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M5 12H19M19 12L12 5M19 12L12 19"
-                              stroke="#0F73FE"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
+                      <div className="relative z-20 flex flex-col items-start justify-between h-full space-y-6">
+                        <Image
+                          src={card.icon}
+                          width={56}
+                          height={56}
+                          alt={card.title}
+                        />
+                        <div className="space-y-3">
+                          <h1 className="text-[#F4F7FF] text-[20px] sm:text-[24px] font-medium leading-6 sm:leading-[30px]">
+                            {card.title}
+                          </h1>
+                          <p className="text-[14px] font-normal leading-5 text-[#F4F7FF99]">
+                            {card.description}
+                          </p>
+                        </div>
+                        <div className="flex items-center justify-between w-full">
+                          <span className="text-[#0F73FE] text-[16px] font-normal leading-5 group-hover:underline">
+                            Learn More
+                          </span>
+                          <div className="transition-transform group-hover:translate-x-1">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M5 12H19M19 12L12 5M19 12L12 19"
+                                stroke="#0F73FE"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         )}
       </div>
