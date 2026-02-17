@@ -150,8 +150,10 @@ const DetailsPanel = () => {
 
               <CustomCheckbox
                 className="col-span-2 sm:col-span-1"
+                  labelClassName="text-[16px] leading-5 font-medium text-white"
+
                 label={
-                  <span className="flex flex-wrap gap-1">
+                  <span className="flex flex-wrap gap-1 ">
                     <span>{t('form.privacy')}</span>
                     <Link href="#" className="text-[#0274FE] underline">
                       {t('form.privacyLink')}

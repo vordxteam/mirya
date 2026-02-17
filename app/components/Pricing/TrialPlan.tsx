@@ -93,7 +93,7 @@ export default function TrialPlan() {
           <div
             className="relative p-[1.5px] max-w-[850px] w-full"
             style={{
-              borderRadius: "36px",
+              borderRadius: "12px",
               background:
                 "linear-gradient(270deg, #00031C 16.47%, #8EA0E0 48.87%, #00031C 78.17%)",
             }}
@@ -101,7 +101,7 @@ export default function TrialPlan() {
             <div
               className="relative z-10 flex flex-col md:flex-row p-8 backdrop-blur-xl"
               style={{
-                borderRadius: "34px",
+                borderRadius: "12px",
                 border: "1px solid #00031C",
                 background:
                   "linear-gradient(52deg, rgba(17, 35, 143, 0.60) 58.88%, rgba(89, 53, 233, 0.60) 96.79%), #00031C",

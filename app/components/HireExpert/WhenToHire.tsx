@@ -49,7 +49,7 @@ export default function WhenToHire() {
       </div>
     </div>
     <Image
-      src="/images/hireExp.png"
+      src="/images/hireExp1.png"
       alt="When to hire?"
       height={300}
       width={300}

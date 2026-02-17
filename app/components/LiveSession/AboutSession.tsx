@@ -77,7 +77,7 @@ const AboutSession = () => {
               {/* Glow Effect */}
               <div className="absolute -left-16 -top-20 h-[503px] w-[414px] rounded-[297.75px] bg-[#1D2759]/30 blur-[43px] pointer-events-none" />
 
-              <div className="relative rounded-2xl p-8 h-full bg-[#050925] bg-[url('/images/session-bg.svg')] bg-cover bg-center bg-no-repeat overflow-hidden">
+              <div className="relative rounded-[12px] p-8 h-full bg-[#050925] bg-[url('/images/session-bg.svg')] bg-cover bg-center bg-no-repeat overflow-hidden">
                 {/* Grid Overlay */}
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px]" />
 

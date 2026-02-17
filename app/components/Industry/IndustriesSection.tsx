@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -48,12 +48,15 @@ import { useTranslation } from "react-i18next";
 //   },
 // ];
 
+
 const IndustriesSection = () => {
   // Use the 'industries' namespace
   const { t } = useTranslation("industries");
 
   // Get the list of industry cards as an array
-  const industriesList = t("industries.list", { returnObjects: true }) as Array<{
+  const industriesList = t("industries.list", {
+    returnObjects: true,
+  }) as Array<{
     title: string;
     description: string;
     image: string;
@@ -81,50 +84,55 @@ const IndustriesSection = () => {
           </p>
         </div>
 
-         {/* Cards */}
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {/* Map through the translated list */}
-          {Array.isArray(industriesList) && industriesList.map((item, index) => (
-           <div
-      key={index}
-      className="rounded-[24px] relative overflow-hidden h-full"
-      style={{
-        backgroundImage: `
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {Array.isArray(industriesList) &&
+            industriesList.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-[24px] relative overflow-hidden h-full"
+                style={{
+                  backgroundImage: `
           linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%), 
           linear-gradient(180deg, #463BBF 0.29%, #9C96E3 68.1%, #463BBF 100%)
         `,
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        border: "1.5px solid transparent", 
-      }}
-    >
-              <div
-                className="p-6 rounded-3xl flex items-center justify-center text-center flex-col relative h-full"
-                style={{
-                  background: "linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%)",
+                  backgroundOrigin: "border-box",
+                  backgroundClip: "padding-box, border-box",
+                  border: "1.5px solid transparent",
                 }}
               >
-                {/* Blur Glow */}
-                <div className="absolute bottom-[120px] right-[-113px]">
-                  <div className="rounded-[68.75px] bg-[#211F9C] blur-[100px] w-[181px] h-[94px]"></div>
-                </div>
+                <div
+                  className="p-6 rounded-3xl flex items-center justify-center text-center flex-col relative h-full"
+                  style={{
+                    background:
+                      "linear-gradient(176deg, #05061D 4.66%, #0B0D2B 77.35%, #0D0C2E 93.85%)",
+                  }}
+                >
+                  {/* Blur Glow */}
+                  <div className="absolute bottom-[120px] right-[-113px]">
+                    <div className="rounded-[68.75px] bg-[#211F9C] blur-[100px] w-[181px] h-[94px]"></div>
+                  </div>
 
-                {/* Icon - pulled directly from JSON */}
-                <Image
-                  src={item.image}
-                  width={222}
-                  height={200}
-                  alt={item.title}
-                />
+                  <Image
+                    src={item.image}
+                    width={222}
+                    height={200}
+                    alt={item.title}
+                    className="h-[200px]"
+                  />
 
-                {/* Text */}
-                <div className="space-y-3">
-                  <h1 className="text-[#F4F7FF] heading-3">{item.title}</h1>
-                  <p className="text-[#F4F7FF99] body-4">{item.description}</p>
+                  {/* Text */}
+                  <div className="space-y-3">
+                    <h1 className="text-[#F4F7FF] text-[24px] leading-[30px] font-medium">
+                      {item.title}
+                    </h1>
+                    <p className="text-[#F4F7FF99] body-4">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>

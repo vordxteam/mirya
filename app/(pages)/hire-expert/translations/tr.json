@@ -83,17 +83,18 @@
     "badge": "Nasıl Çalışır",
     "title": "Nasıl Çalışır",
     "disc": "Sizi doğru MIRYA uzmanı ile buluşturan ve ihtiyaçtan teslimata kadar süreci verimli şekilde yöneten basit ve rehberli bir süreç.",
+
     "process1": {
-      "title": "Uzmanları İnceleyin",
-      "disc": "Otomasyon ihtiyaçlarınıza en uygun eşleşmeyi bulmak için MIRYA sertifikalı uzmanları uzmanlık alanı, sektör ve bölgeye göre keşfedin."
+      "title": "İhtiyacınızı Tanımlayın",
+      "disc": "İş zorluklarınızı, hedeflerinizi ve otomasyon gereksinimlerinizi paylaşarak net beklentiler oluşturun."
     },
     "process2": {
-      "title": "Tanışma Talep Edin",
-      "disc": "Gereksinimlerinizi ve hedeflerinizi paylaşın; sizi en uygun MIRYA uzmanı ile buluşturalım."
+      "title": "Sertifikalı Bir Uzman Seçin ve Kapsamı Belirleyin",
+      "disc": "MIRYA sertifikalı bir uzman seçin ve birlikte kapsamı, zaman çizelgesini ve başarı kriterlerini tanımlayın."
     },
     "process3": {
-      "title": "Oluşturun ve Teslim Edin",
-      "disc": "Güvenilir, üretime hazır otomasyon iş akışlarını tasarlamak, uygulamak ve devreye almak için uzmanla doğrudan iş birliği yapın."
+      "title": "Projeye Başlayın",
+      "disc": "Güvenilir ve üretime hazır otomasyon iş akışlarını tasarlamak, uygulamak ve devreye almak için uzmanla doğrudan iş birliği yapın."
     }
   },
 

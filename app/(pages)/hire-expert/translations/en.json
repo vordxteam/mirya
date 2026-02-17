@@ -76,15 +76,15 @@
     "title": "How it Works",
     "disc": "A simple, guided process that connects you with the right MIRYA expert and takes you from requirement to delivery efficiently.",
     "process1": {
-      "title": "Browse Experts",
-      "disc": "Explore MIRYA-certified experts by expertise, industry, and region to find the best match for your automation needs."
+      "title": "Describe Your Need",
+      "disc": "Share your business challenge, goals, and automation requirements to set clear expectations."
     },
     "process2": {
-      "title": "Request an Introduction",
-      "disc": "Share your requirements and goals, and we’ll connect you with the most suitable MIRYA expert."
+      "title": "Choose a Certified Expert & Align Scope",
+      "disc": "Select a MIRYA-certified expert and jointly define scope, timeline, and success criteria."
     },
     "process3": {
-      "title": "Build & Deliver",
+      "title": "Start the Project",
       "disc": "Collaborate directly with the expert to design, implement, and deploy reliable, production-ready automation workflows."
     }
   },

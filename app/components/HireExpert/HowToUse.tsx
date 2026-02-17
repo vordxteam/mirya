@@ -65,7 +65,7 @@ export default function HowToUse() {
         </p>
         <div className="mt-15 flex flex-col md:flex-row justify-between items-center md:items-start relative w-full">
             <div className="hidden lg:block">
-                <Image src='/images/line1.png' alt="line1" width={157} height={22} className="absolute top-41 left-[28%]"/>
+                <Image src='/images/line1.png' alt="line1" width={157} height={22} className="absolute top-43 left-[28%]"/>
                 <Image src='/images/line2.png' alt="line1" width={157} height={22} className="absolute top-0 right-[26%]"/>
             </div>
         {WorkFlow.map((item) => (
@@ -81,11 +81,14 @@ export default function HowToUse() {
 </div>
 
 
-    <h3 className="text-[#FFFFFF] heading-3  font-bold mb-2 text-center">
+    <h3 className="text-[#FFFFFF] text-[24px] leading-8  font-medium mb-2 text-center max-w-[373px] w-full">
       {item.title}
     </h3>
 
-    <p className="text-[#FFFFFFCC] heading-5 font-normal text-center max-w-[372px]">
+    <p className="text-[#FFFFFFB2] text-[16px] leading-5 font-normal text-center max-w-[372px]" 
+style={{ fontFamily: "'Satoshi', sans-serif" }}
+
+    >
       {item.description}
     </p>
   </div>

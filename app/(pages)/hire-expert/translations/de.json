@@ -83,18 +83,19 @@
     "badge": "So funktioniert es",
     "title": "So funktioniert es",
     "disc": "Ein einfacher, geführter Prozess, der Sie mit dem richtigen MIRYA-Experten verbindet und Sie effizient von der Anforderung bis zur Umsetzung begleitet.",
-    "process1": {
-      "title": "Experten durchsuchen",
-      "disc": "Entdecken Sie MIRYA-zertifizierte Experten nach Fachgebiet, Branche und Region, um die beste Lösung für Ihre Automatisierungsanforderungen zu finden."
-    },
-    "process2": {
-      "title": "Einführung anfragen",
-      "disc": "Teilen Sie Ihre Anforderungen und Ziele mit uns, und wir verbinden Sie mit dem am besten geeigneten MIRYA-Experten."
-    },
-    "process3": {
-      "title": "Umsetzen & liefern",
-      "disc": "Arbeiten Sie direkt mit dem Experten zusammen, um zuverlässige, produktionsreife Automatisierungs-Workflows zu entwerfen, umzusetzen und bereitzustellen."
-    }
+  
+  "process1": {
+    "title": "Beschreiben Sie Ihren Bedarf",
+    "disc": "Teilen Sie Ihre geschäftliche Herausforderung, Ziele und Automatisierungsanforderungen mit, um klare Erwartungen festzulegen."
+  },
+  "process2": {
+    "title": "Zertifizierten Experten wählen und Umfang abstimmen",
+    "disc": "Wählen Sie einen MIRYA-zertifizierten Experten und definieren Sie gemeinsam Umfang, Zeitplan und Erfolgskriterien."
+  },
+  "process3": {
+    "title": "Projekt starten",
+    "disc": "Arbeiten Sie direkt mit dem Experten zusammen, um zuverlässige, produktionsreife Automatisierungs-Workflows zu entwerfen, umzusetzen und bereitzustellen."
+  }
   },
   "services": {
     "badge": "Services",
