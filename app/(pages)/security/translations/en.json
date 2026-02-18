@@ -30,7 +30,8 @@
       { "id": "#data4", "text": "Network Security" },
       { "id": "#data5", "text": "Corporate Security" },
       { "id": "#data6", "text": "Threat & Vulnerability Management" },
-      { "id": "#data7", "text": "Backup, Recovery & Business Continuity" }
+      { "id": "#data7", "text": "Backup, Recovery & Business Continuity" },
+      { "id": "#data8", "text": "Sub-Processors & Third-Party Services" }
     ]
   },
 
