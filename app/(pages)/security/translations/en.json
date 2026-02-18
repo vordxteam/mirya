@@ -6,7 +6,7 @@
     "lastUpdated": "Last Updated July 12, 2025",
     "buttonText": "Last Updated July 12, 2025"
   },
-  
+
   "summary": {
     "title": "Summary of key Points",
     "intro": "This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by using our",
@@ -15,10 +15,11 @@
     "paragraphs": [
       "MIRYA collects only the information needed to operate and improve the platform—such as your account details, usage activity, and the documents or data you choose to process through workflows. Your data stays yours: MIRYA uses it only to run automations, enhance performance, and provide support. We never sell your information and only share it with trusted service providers or apps you choose to integrate with. We protect your data using encryption, access controls, and secure infrastructure. You can request access, correction, or deletion of your information at any time. MIRYA uses cookies to improve your experience, and the service is not intended for children under 16.",
       "By using MIRYA, you agree to follow our rules, keep your account secure, and use the platform responsibly. You retain ownership of all data, documents, and workflows you upload, and MIRYA processes them only to deliver automation functionality. While we strive for high reliability, continuous service is not guaranteed, and features may change over time.",
-      "Using MIRYA responsibly means avoiding illegal, harmful, or abusive automation behaviors. We are not liable for indirect losses, misuse, or issues arising from third-party integrations. Subscriptions renew automatically unless canceled, and refunds are limited to legal requirements."
+      "Using MIRYA responsibly means avoiding illegal, harmful, or abusive automation behaviors. We are not liable for indirect losses, misuse, or issues arising from third-party integrations. Subscriptions renew automatically unless canceled, and refunds are limited to legal requirements.",
+      "Some automation features (e.g., OCR and document understanding) are powered by trusted sub-processors such as ABBYY, which process data strictly under MIRYA’s instructions and GDPR-compliant data processing agreements."
     ]
   },
-  
+
   "toc": {
     "title": "Table of Content",
     "items": [
@@ -32,7 +33,7 @@
       { "id": "#data7", "text": "Backup, Recovery & Business Continuity" }
     ]
   },
-  
+
   "sections": {
     "compliance": {
       "title": "1. Compliance",
@@ -55,7 +56,7 @@
         ]
       }
     },
-    
+
     "dataProtection": {
       "title": "2. Customer Data Protection & Encryption",
       "auth": {
@@ -75,7 +76,7 @@
         ]
       },
       "integrations": {
-        "title": "Third-Party Accounts & Integrations",
+        "title": "3. Third-Party Accounts & Integrations",
         "desc": "Automation often requires connecting to external systems (ERP, CRM, HR, email, etc.).",
         "list": [
           "MIRYA uses OAuth whenever supported to provide secure, scoped access.",
@@ -86,9 +87,9 @@
         ]
       }
     },
-    
+
     "cloudHosting": {
-      "title": "3. Cloud Hosting & Storage",
+      "title": "4. Cloud Hosting & Storage",
       "desc": "MIRYA Cloud uses Microsoft Azure or equivalent enterprise-grade cloud providers with strong physical and network security.",
       "dataCenter": {
         "title": "Data Center Security",
@@ -114,9 +115,9 @@
         ]
       }
     },
-    
+
     "encryption": {
-      "title": "4. Encryption",
+      "title": "5. Encryption",
       "inTransit": {
         "title": "In Transit",
         "list": [
@@ -141,9 +142,9 @@
         ]
       }
     },
-    
+
     "network": {
-      "title": "5. Network Security",
+      "title": "6. Network Security",
       "desc": "MIRYA Cloud infrastructure is continuously monitored using automated audits and alert systems.",
       "controlsTitle": "Controls include:",
       "controls": [
@@ -154,9 +155,9 @@
         "Rate-limiting and request filtering"
       ]
     },
-    
+
     "audit": {
-      "title": "6. Audit Logging",
+      "title": "7. Audit Logging",
       "desc": "MIRYA logs:",
       "list": [
         "Workflow execution events",
@@ -165,9 +166,9 @@
         "Platform and infrastructure events"
       ]
     },
-    
+
     "development": {
-      "title": "7. Secure Development Practices",
+      "title": "8. Secure Development Practices",
       "codeManagement": {
         "title": "Code Management",
         "list": [
@@ -193,9 +194,9 @@
         ]
       }
     },
-    
+
     "corporate": {
-      "title": "8. Corporate Security",
+      "title": "9. Corporate Security",
       "hiring": {
         "title": "Hiring Practices",
         "desc": "All MIRYA team members complete:",
@@ -217,9 +218,9 @@
         ]
       }
     },
-    
+
     "threat": {
-      "title": "9. Threat & Vulnerability Management",
+      "title": "10. Threat & Vulnerability Management",
       "vulnerability": {
         "title": "Vulnerability Scanning",
         "desc": "Regular automated scans are performed on cloud infrastructure and application code."
@@ -237,9 +238,9 @@
         "desc": "We use trusted intelligence feeds and security tools to stay updated on new threats."
       }
     },
-    
+
     "backup": {
-      "title": "10. Backup, Recovery & Business Continuity",
+      "title": "11. Backup, Recovery & Business Continuity",
       "dataBackups": {
         "title": "Data Backups",
         "list": [
@@ -268,7 +269,75 @@
           "System-level disruptions"
         ]
       }
+    },
+    "processors": {
+      "title": "12. Sub-Processors & Third-Party Services",
+      "des": "MIRYA may engage carefully selected third-party service providers (“sub-processors”) to deliver specific technical functionality required for certain automation features. These subprocessors operate strictly under MIRYA’s documented instructions and within the framework of applicable data protection laws, including Article 28 GDPR.",
+
+      "dataBackups": {
+        "title": "2.1. Use of Sub-Processors (ABBYY)",
+        "desc": "Include:",
+        "list": [
+          "Article 28 GDPR clarification",
+          "DPA in place",
+          "Instruction-based processing",
+          "Security measures",
+          "No training / no reuse"
+        ],
+        "descs": "This becomes your legal anchor section."
+      },
+      "disaster": {
+        "title": "2.2. Data Flow & Processing Scope (OCR / IDP)",
+        "list": [
+          "Documents or images may be securely transmitted to ABBYY for automated text recognition and structured data extraction.",
+          "Processing is limited to machine-based analysis required to convert unstructured content into structured automation-ready data.",
+          "MIRYA does not authorize ABBYY to permanently store raw documents unless technically required for transient processing.",
+          "Extracted results are returned to MIRYA and further processed exclusively within the customer-defined automation workflows.",
+          "ABBYY does not gain independent access to MIRYA customer environments, accounts, or metadata beyond what is technically necessary to perform the OCR function."
+        ]
+      },
+      "business": {
+        "title": "2.3. Data Location & International Transfers",
+        "desc": "Depending on the deployment model and configuration:",
+        "list": [
+          "MIRYA Cloud deployments may process data within EU-based or other contractually approved regions.",
+          "Where ABBYY services involve processing outside the EU/EEA, MIRYA ensures that appropriate safeguards are implemented in accordance with GDPR requirements, including Standard Contractual Clauses (SCCs) or equivalent legal mechanisms.",
+          "Self-hosted MIRYA deployments may allow customers to configure whether ABBYY cloud services are used or whether OCR processing is executed within customer-controlled environments."
+        ]
+      },
+      "customer": {
+        "title": "2.4. Customer Control & Configuration",
+        "desc": "MIRYA provides customers with full transparency and operational control over OCR/IDP functionality.",
+        "des": "Customers retain control over:",
+
+        "list": [
+          "Whether OCR/IDP features are enabled at all.",
+          "Which workflows or document types utilize ABBYY-based processing.",
+          "Retention periods for both processed documents and extracted data.",
+          "Global or per-workflow deactivation of OCR in regulated environments (e.g., public sector, finance, healthcare)."
+        ]
+      },
+      "confidentiality": {
+        "title": "2.5. Confidentiality & Data Usage Limitation",
+        "desc": "Customer data processed via ABBYY is:",
+        "list": [
+          "Used exclusively to perform the requested OCR/IDP function.",
+          "Not retained beyond the duration required for technical processing.",
+          "Not shared with additional third parties.",
+          "Not used for training machine learning models or improving ABBYY services outside the MIRYA context."
+        ]
+      },
+      "compliance": {
+        "title": "2.6. Compliance & Public Sector Readiness",
+        "desc": "MIRYA is designed to meet the expectations of regulated industries, including financial institutions, public authorities, and tax offices.",
+        "des": "To support procurement and compliance requirements, MIRYA provides:",
+        "list": [
+          "A formal Data Processing Agreement (DPA).",
+          "Transparent sub-processor documentation, including ABBYY where applicable.",
+          "Technical documentation describing data flows and processing boundaries.",
+          "Support for regulatory assessments such as Data Protection Impact Assessments (DPIA) and Technical & Organizational Measures (TOMs) reviews."
+        ]
+      }
     }
-  
   }
 }

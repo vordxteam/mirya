@@ -15,7 +15,8 @@
     "paragraphs": [
       "MIRYA, platformu çalıştırmak ve geliştirmek için yalnızca gerekli bilgileri toplar - hesap bilgileriniz, kullanım etkinliğiniz ve iş akışları aracılığıyla işlemek istediğiniz belgeler veya veriler gibi. Verileriniz size aittir: MIRYA bunları yalnızca otomasyonları çalıştırmak, performansı artırmak ve destek sağlamak için kullanır. Bilgilerinizi asla satmayız ve yalnızca güvenilir hizmet sağlayıcılarıyla veya entegre etmeyi seçtiğiniz uygulamalarla paylaşırız. Verilerinizi şifreleme, erişim kontrolleri ve güvenli altyapı kullanarak koruruz. Bilgilerinize erişim, düzeltme veya silme talebinde bulunabilirsiniz. MIRYA, deneyiminizi iyileştirmek için çerezleri kullanır ve hizmet 16 yaşın altındaki çocuklar için tasarlanmamıştır.",
       "MIRYA'yı kullanarak, kurallarımıza uymayı, hesabınızı güvende tutmayı ve platformu sorumlu bir şekilde kullanmayı kabul etmiş olursunuz. Yüklediğiniz tüm verilerin, belgelerin ve iş akışlarının mülkiyetini elinizde tutarsınız ve MIRYA bunları yalnızca otomasyon işlevselliği sağlamak için işler. Yüksek güvenilirlik için çaba göstermemize rağmen, kesintisiz hizmet garanti edilmez ve özellikler zamanla değişebilir.",
-      "MIRYA'yı sorumlu bir şekilde kullanmak, yasadışı, zararlı veya kötüye kullanılan otomasyon davranışlarından kaçınmak anlamına gelir. Üçüncü taraf entegrasyonlarından kaynaklanan dolaylı kayıplardan, yanlış kullanımdan veya sorunlardan sorumlu değiliz. Abonelikler iptal edilmedikçe otomatik olarak yenilenir ve iadeler yasal gerekliliklerle sınırlıdır."
+      "MIRYA'yı sorumlu bir şekilde kullanmak, yasadışı, zararlı veya kötüye kullanılan otomasyon davranışlarından kaçınmak anlamına gelir. Üçüncü taraf entegrasyonlarından kaynaklanan dolaylı kayıplardan, yanlış kullanımdan veya sorunlardan sorumlu değiliz. Abonelikler iptal edilmedikçe otomatik olarak yenilenir ve iadeler yasal gerekliliklerle sınırlıdır.",
+      "Bazı otomasyon özellikleri (ör. OCR ve belge anlama), ABBYY gibi güvenilir alt işlemciler tarafından desteklenmektedir. Bu alt işlemciler verileri yalnızca MIRYA’nın talimatları doğrultusunda ve GDPR uyumlu veri işleme anlaşmaları çerçevesinde işler."
     ]
   },
   
@@ -268,6 +269,82 @@
           "Sistem düzeyindeki kesintiler"
         ]
       }
+    },
+    
+  "processors": {
+    "title": "12. Alt İşleyiciler ve Üçüncü Taraf Hizmetleri",
+    "des": "MIRYA, belirli otomasyon özellikleri için gerekli teknik işlevleri sağlamak amacıyla dikkatle seçilmiş üçüncü taraf hizmet sağlayıcılarla (“alt işleyiciler”) çalışabilir. Bu alt işleyiciler, yalnızca MIRYA’nın belgelenmiş talimatları doğrultusunda ve GDPR Madde 28 dahil olmak üzere yürürlükteki veri koruma yasaları çerçevesinde faaliyet gösterir.",
+
+    "dataBackups": {
+      "title": "2.1. Alt İşleyicilerin Kullanımı (ABBYY)",
+      "desc": "Şunları içerir:",
+      "list": [
+        "GDPR Madde 28 açıklaması",
+        "Yürürlükte Veri İşleme Sözleşmesi (DPA)",
+        "Talimatlara dayalı işleme",
+        "Güvenlik önlemleri",
+        "Eğitim yok / yeniden kullanım yok"
+      ],
+      "descs": "Bu bölüm sizin yasal dayanak bölümünüzdür."
+    },
+
+    "disaster": {
+      "title": "2.2. Veri Akışı ve İşleme Kapsamı (OCR / IDP)",
+      "list": [
+        "Belgeler veya görseller, otomatik metin tanıma ve yapılandırılmış veri çıkarımı için güvenli şekilde ABBYY’ye iletilebilir.",
+        "İşleme, yapılandırılmamış içeriği otomasyona hazır yapılandırılmış veriye dönüştürmek için gerekli makine tabanlı analizle sınırlıdır.",
+        "MIRYA, teknik olarak geçici işleme gerekmedikçe ABBYY’nin ham belgeleri kalıcı olarak saklamasına izin vermez.",
+        "Çıkarılan sonuçlar MIRYA’ya geri iletilir ve yalnızca müşteri tanımlı otomasyon iş akışları içinde işlenir.",
+        "ABBYY, OCR işlevini yerine getirmek için teknik olarak gerekli olanlar dışında MIRYA müşteri ortamlarına, hesaplarına veya meta verilere bağımsız erişim elde etmez."
+      ]
+    },
+
+    "business": {
+      "title": "2.3. Veri Konumu ve Uluslararası Aktarımlar",
+      "desc": "Dağıtım modeline ve yapılandırmaya bağlı olarak:",
+      "list": [
+        "MIRYA Cloud dağıtımları, verileri AB merkezli veya sözleşmeyle onaylanmış diğer bölgelerde işleyebilir.",
+        "ABBYY hizmetleri AB/AEA dışında işleme içeriyorsa, MIRYA GDPR gerekliliklerine uygun olarak Standart Sözleşme Maddeleri (SCC) gibi gerekli güvencelerin uygulanmasını sağlar.",
+        "Self-hosted MIRYA dağıtımları, müşterilerin ABBYY bulut hizmetlerini kullanıp kullanmayacağını veya OCR işlemenin müşteri kontrolündeki ortamlarda yürütülmesini yapılandırmasına olanak tanır."
+      ]
+    },
+
+    "customer": {
+      "title": "2.4. Müşteri Kontrolü ve Yapılandırma",
+      "desc": "MIRYA, müşterilere OCR/IDP işlevleri üzerinde tam şeffaflık ve operasyonel kontrol sağlar.",
+      "des": "Müşteriler aşağıdakiler üzerinde kontrol sahibidir:",
+      "list": [
+        "OCR/IDP özelliklerinin etkin olup olmayacağı.",
+        "Hangi iş akışlarının veya belge türlerinin ABBYY tabanlı işlemeyi kullanacağı.",
+        "İşlenen belgeler ve çıkarılan veriler için saklama süreleri.",
+        "Düzenlemeye tabi ortamlarda (ör. kamu, finans, sağlık) OCR’nin global veya iş akışı bazında devre dışı bırakılması."
+      ]
+    },
+
+    "confidentiality": {
+      "title": "2.5. Gizlilik ve Veri Kullanım Sınırlaması",
+      "desc": "ABBYY aracılığıyla işlenen müşteri verileri:",
+      "list": [
+        "Yalnızca talep edilen OCR/IDP işlevini gerçekleştirmek için kullanılır.",
+        "Teknik işleme süresi dışında saklanmaz.",
+        "Ek üçüncü taraflarla paylaşılmaz.",
+        "MIRYA kapsamı dışında makine öğrenimi eğitimi veya hizmet geliştirme için kullanılmaz."
+      ]
+    },
+
+    "compliance": {
+      "title": "2.6. Uyumluluk ve Kamu Sektörü Hazırlığı",
+      "desc": "MIRYA, finans kurumları, kamu otoriteleri ve vergi daireleri dahil olmak üzere düzenlemeye tabi sektörlerin beklentilerini karşılayacak şekilde tasarlanmıştır.",
+      "des": "Satın alma ve uyumluluk gereksinimlerini desteklemek için MIRYA şunları sağlar:",
+      "list": [
+        "Resmi Veri İşleme Sözleşmesi (DPA).",
+        "ABBYY dahil olmak üzere şeffaf alt işleyici dokümantasyonu.",
+        "Veri akışlarını ve işleme sınırlarını açıklayan teknik dokümantasyon.",
+        "DPIA ve Teknik & Organizasyonel Önlemler (TOMs) değerlendirmeleri için destek."
+      ]
     }
   }
+}
+
+  
 }
