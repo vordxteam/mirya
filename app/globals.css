@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+}
 
 html {
   scroll-behavior: smooth;

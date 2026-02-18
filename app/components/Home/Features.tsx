@@ -153,15 +153,26 @@ export default function Features() {
                   "linear-gradient(#050925, #050925) padding-box, linear-gradient(90deg, #463BBF, #9C96E3, #463BBF) border-box",
                 border: "1px solid transparent",
               }}
-              className="p-8"
+              className="p-8 relative"
             >
+                <div className="hidden sm:block">
+                <Image
+                  src="/images/bg-blur.png"
+                  alt="gradient"
+                  width={303}
+                  height={108}
+                  className="absolute right-0 top-0 rounded-[12px]"
+                  priority={false}
+                  loading="lazy"
+                />
+              </div>
               <div className="hidden sm:block">
                 <Image
                   src="/images/blur4.png"
                   alt="gradient"
                   width={458}
                   height={318}
-                  className="absolute left-[30%] top-[65%] -z-10"
+                  className="absolute left-[46%] top-[65%] -z-10"
                   priority={false}
                   loading="lazy"
                 />
@@ -309,13 +320,14 @@ export default function Features() {
       <div className="flex items-center justify-center w-full mt-[64px]">
         <GradientButton
           // label="Explore More Features"
-                          label={t("footer.featureLabel")}
-
+          label={t("footer.featureLabel")}
           href="/features"
           bgColor="#0274FE"
         />
       </div>
-      {/* <motion.div
+   
+
+      <motion.div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.1 }}
@@ -323,34 +335,7 @@ export default function Features() {
         className="flex justify-center items-center mt-[60px] mb-[40px] px-4"
       >
         <div
-          className="w-[50%] relative"
-          style={{
-            height: "1px",
-            background:
-              "linear-gradient(90deg, transparent 0%, #8EA0E0 50%, transparent 100%)",
-            boxShadow: "0px 0px 4px 0px rgba(142, 160, 224, 0.4)",
-          }}
-        >
-          <div
-            className="absolute inset-0 opacity-50"
-            style={{
-              background:
-                "linear-gradient(90deg, #00031C 0%, #FFFFFF 50%, #00031C 100%)",
-              height: "1px",
-            }}
-          />
-        </div>
-      </motion.div> */}
-
-      <motion.div
-  initial="offscreen"
-  whileInView="onscreen"
-  viewport={{ once: true, amount: 0.1 }}
-  variants={fadeInVariants}
-  className="flex justify-center items-center mt-[60px] mb-[40px] px-4"
->
-  <div
-    className="
+          className="
       relative mx-auto
       /* Responsive Widths */
       w-[50%] 
@@ -362,19 +347,21 @@ export default function Features() {
       h-[1px]
       2xl:h-[2px]
     "
-    style={{
-      background: "linear-gradient(90deg, transparent 0%, #8EA0E0 50%, transparent 100%)",
-         }}
-  >
-    {/* Inner White Glow Overlay */}
-    <div
-      className="absolute inset-0 opacity-40"
-      style={{
-        background: "linear-gradient(90deg, transparent 0%, #FFFFFF 50%, transparent 100%)",
-      }}
-    />
-  </div>
-</motion.div>
+          style={{
+            background:
+              "linear-gradient(90deg, transparent 0%, #8EA0E0 50%, transparent 100%)",
+          }}
+        >
+          {/* Inner White Glow Overlay */}
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent 0%, #FFFFFF 50%, transparent 100%)",
+            }}
+          />
+        </div>
+      </motion.div>
 
       <div className="max-w-[1440px] m-auto">
         <motion.div

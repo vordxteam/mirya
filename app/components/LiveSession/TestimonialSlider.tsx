@@ -54,7 +54,7 @@ export default function TestimonialSlider() {
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);
   const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "desktop">(
-    "desktop"
+    "desktop",
   );
   const containerRef = useRef<HTMLDivElement>(null);
   const testimonials = t("testimonialsSection.items", {
@@ -87,7 +87,7 @@ export default function TestimonialSlider() {
 
   const prevSlide = useCallback(() => {
     setCurrentSlide(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
   }, []);
 
@@ -325,7 +325,15 @@ export default function TestimonialSlider() {
                       : {}
                   }
                 >
-<div className="relative bg-gradient-to-b from-[#1F1B48] select-none to-[#00041E] rounded-2xl p-4 sm:p-6 lg:p-[22px] shadow-2xl overflow-hidden h-[347px] sm:h-[400px] lg:h-[432px]">
+                  {/* <div className="relative bg-gradient-to-b from-[#1F1B48] select-none to-[#00041E] rounded-2xl p-4 sm:p-6 lg:p-[22px] shadow-2xl overflow-hidden h-[347px] sm:h-[400px] lg:h-[432px]"> */}
+                    <div
+                    className="relative select-none rounded-2xl p-4 sm:p-6 lg:p-[22px] shadow-2xl overflow-hidden h-[347px] sm:h-[400px] lg:h-[432px]"
+                    style={{
+                      background:
+                        "linear-gradient(174deg, #1F1B48 33.52%, #00041E 55.73%)",
+                      
+                    }}
+                  >
                     {/* Wavy pattern overlay */}
                     {isActive && (
                       <div className="absolute z-0 -top-16 left-1/2 -translate-x-1/2">
@@ -348,9 +356,9 @@ export default function TestimonialSlider() {
 
                     {/* Content */}
                     <div className="relative z-10 h-full flex flex-col">
-                     <p className="text-[#F4F7FF] font-regular mb-4 sm:mb-6 text-sm sm:text-[18px] leading-6 overflow-y-auto">
-  {testimonial.text}
-</p>
+                      <p className="text-[#F4F7FF] font-regular mb-4 sm:mb-6 text-sm sm:text-[18px] leading-6 ">
+                        {testimonial.text}
+                      </p>
 
                       {/* Author Info */}
                       <div className="flex items-center justify-between mt-auto">
@@ -393,8 +401,8 @@ export default function TestimonialSlider() {
                 screenSize === "mobile"
                   ? "w-2 h-2 sm:w-3 sm:h-3"
                   : index === currentSlide
-                  ? "w-80 sm:w-112 h-1"
-                  : "w-80 sm:w-112 h-1"
+                    ? "w-80 sm:w-112 h-1"
+                    : "w-80 sm:w-112 h-1"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
