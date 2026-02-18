@@ -94,7 +94,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.compliance.soc.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.compliance.soc.list.0")}</li>
               <li>{t("sections.compliance.soc.list.1")}</li>
               <li>{t("sections.compliance.soc.list.2")}</li>
@@ -108,7 +108,7 @@ const SecurityData = () => {
             <p className="text-[#FFFFFFCC] body-6">
               {t("sections.compliance.gdpr.desc")}
             </p>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.compliance.gdpr.list.0")}</li>
               <li>{t("sections.compliance.gdpr.list.1")}</li>
               <li>{t("sections.compliance.gdpr.list.2")}</li>
@@ -130,7 +130,7 @@ const SecurityData = () => {
             <p className="body-1 font-semibold">
               {t("sections.dataProtection.auth.cloudTitle")}
             </p>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.dataProtection.auth.cloudList.0")}</li>
               <li>{t("sections.dataProtection.auth.cloudList.1")}</li>
               <li>{t("sections.dataProtection.auth.cloudList.2")}</li>
@@ -142,7 +142,7 @@ const SecurityData = () => {
             <p className="body-1 font-semibold">
               {t("sections.dataProtection.auth.selfHostedTitle")}
             </p>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.dataProtection.auth.selfHostedList.0")}</li>
               <li>{t("sections.dataProtection.auth.selfHostedList.1")}</li>
               <li>{t("sections.dataProtection.auth.selfHostedList.2")}</li>
@@ -156,7 +156,7 @@ const SecurityData = () => {
             <p className="text-[#FFFFFFCC] body-6">
               {t("sections.dataProtection.integrations.desc")}
             </p>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.dataProtection.integrations.list.0")}</li>
               <li>{t("sections.dataProtection.integrations.list.1")}</li>
               <li>{t("sections.dataProtection.integrations.list.2")}</li>
@@ -177,7 +177,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.cloudHosting.dataCenter.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.cloudHosting.dataCenter.list.0")}</li>
               <li>{t("sections.cloudHosting.dataCenter.list.1")}</li>
               <li>{t("sections.cloudHosting.dataCenter.list.2")}</li>
@@ -188,7 +188,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.cloudHosting.infrastructure.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.cloudHosting.infrastructure.list.0")}</li>
               <li>{t("sections.cloudHosting.infrastructure.list.1")}</li>
               <li>{t("sections.cloudHosting.infrastructure.list.2")}</li>
@@ -199,7 +199,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.cloudHosting.database.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.cloudHosting.database.list.0")}</li>
               <li>{t("sections.cloudHosting.database.list.1")}</li>
             </ul>
@@ -216,7 +216,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.encryption.inTransit.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.encryption.inTransit.list.0")}</li>
             </ul>
           </div>
@@ -225,7 +225,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.encryption.atRest.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.encryption.atRest.list.0")}</li>
               <li>{t("sections.encryption.atRest.list.1")}</li>
               <li>{t("sections.encryption.atRest.list.2")}</li>
@@ -236,7 +236,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.encryption.selfHosted.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.encryption.selfHosted.list.0")}</li>
               <li>{t("sections.encryption.selfHosted.list.1")}</li>
               <li>{t("sections.encryption.selfHosted.list.2")}</li>
@@ -256,7 +256,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.network.controlsTitle")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.network.controls.0")}</li>
               <li>{t("sections.network.controls.1")}</li>
               <li>{t("sections.network.controls.2")}</li>
@@ -288,7 +288,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.development.codeManagement.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.development.codeManagement.list.0")}</li>
               <li>{t("sections.development.codeManagement.list.1")}</li>
               <li>{t("sections.development.codeManagement.list.2")}</li>
@@ -299,7 +299,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.development.codeReview.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.development.codeReview.list.0")}</li>
               <li>{t("sections.development.codeReview.list.1")}</li>
               <li>{t("sections.development.codeReview.list.2")}</li>
@@ -311,7 +311,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.development.environment.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.development.environment.list.0")}</li>
               <li>{t("sections.development.environment.list.1")}</li>
             </ul>
@@ -331,7 +331,7 @@ const SecurityData = () => {
             <p className="text-[#FFFFFFCC] body-6">
               {t("sections.corporate.hiring.desc")}
             </p>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.corporate.hiring.list.0")}</li>
               <li>{t("sections.corporate.hiring.list.1")}</li>
               <li>{t("sections.corporate.hiring.list.2")}</li>
@@ -345,7 +345,7 @@ const SecurityData = () => {
             <p className="text-[#FFFFFFCC] body-6">
               {t("sections.corporate.workstation.desc")}
             </p>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.corporate.workstation.list.0")}</li>
               <li>{t("sections.corporate.workstation.list.1")}</li>
               <li>{t("sections.corporate.workstation.list.2")}</li>
@@ -408,7 +408,7 @@ const SecurityData = () => {
             <h2 className="font-semibold heading-4">
               {t("sections.backup.dataBackups.title")}
             </h2>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.backup.dataBackups.list.0")}</li>
               <li>{t("sections.backup.dataBackups.list.1")}</li>
               <li>{t("sections.backup.dataBackups.list.2")}</li>
@@ -422,7 +422,7 @@ const SecurityData = () => {
             <p className="text-[#FFFFFFCC] body-6">
               {t("sections.backup.disaster.desc")}
             </p>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.backup.disaster.list.0")}</li>
               <li>{t("sections.backup.disaster.list.1")}</li>
               <li>{t("sections.backup.disaster.list.2")}</li>
@@ -437,7 +437,7 @@ const SecurityData = () => {
             <p className="text-[#FFFFFFCC] body-6">
               {t("sections.backup.business.desc")}
             </p>
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.backup.business.list.0")}</li>
               <li>{t("sections.backup.business.list.1")}</li>
               <li>{t("sections.backup.business.list.2")}</li>
@@ -461,7 +461,7 @@ const SecurityData = () => {
               {t("sections.processors.dataBackups.desc")}
             </p>
 
-            <ul className="list-disc list-inside text-[#FFFFFFCC] body-6 space-y-1">
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
               <li>{t("sections.processors.dataBackups.list.0")}</li>
               <li>{t("sections.processors.dataBackups.list.1")}</li>
               <li>{t("sections.processors.dataBackups.list.2")}</li>
