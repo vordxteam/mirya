@@ -10,42 +10,49 @@ export default function HowToUse() {
   const WorkFlow = [
     {
       id: 1,
-      title:t("work.process1.title"),
-      description:t("work.process1.disc"),
+      title: t("work.process1.title"),
+      description: t("work.process1.disc"),
       link: "#",
       image: "/images/logo1.png",
       text: t("miryaExperts.card1.badge"),
-      badges : [
-        "Automation Strategy","Workflow Design","Integration","Optimization",
-      ]
-      
+      badges: [
+        "Automation Strategy",
+        "Workflow Design",
+        "Integration",
+        "Optimization",
+      ],
     },
     {
       id: 2,
-      title:t("work.process2.title"),
-      description:t("work.process2.disc"),
+      title: t("work.process2.title"),
+      description: t("work.process2.disc"),
       link: "#",
-      image : "/images/logo2.png",
+      image: "/images/logo2.png",
       text: t("miryaExperts.card2.badge"),
-      badges : [
-        "Automation Strategy","Workflow Design","Integration","Optimization",
-      ]
+      badges: [
+        "Automation Strategy",
+        "Workflow Design",
+        "Integration",
+        "Optimization",
+      ],
     },
     {
       id: 3,
-      title:t("work.process3.title"),
-      description:t("work.process3.disc"),
+      title: t("work.process3.title"),
+      description: t("work.process3.disc"),
       link: "#",
-      image : "/images/logo2.png",
+      image: "/images/logo2.png",
       text: t("miryaExperts.card2.badge"),
-      badges : [
-        "Automation Strategy","Workflow Design","Integration","Optimization",
-      ]
+      badges: [
+        "Automation Strategy",
+        "Workflow Design",
+        "Integration",
+        "Optimization",
+      ],
     },
   ];
   return (
     <div className=" px-3 sm:px-20  mx-auto relative z-10 bg-[#00031C] max-w-[1440px] overflow-hidden pb-15">
-    
       <div className="flex z-100 bg-[#00031C] flex-col items-center justify-center pt-15   relative">
         {/* <div className="absolute top-0 -z-10 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#4F60FA] blur-[50px] w-[181px] h-[94px]"></div>
@@ -53,7 +60,7 @@ export default function HowToUse() {
         <div className="pb-3 flex items-center gap-5">
           <Image src="/images/label2.svg" width={78} height={16} alt="line" />
           <h1 className="text-[#959EFE] text-[12px] sm:text-[16px] font-normal leading-[20px] text-center">
-          {t("work.badge")}
+            {t("work.badge")}
           </h1>
           <Image src="/images/label.svg" width={78} height={16} alt="line" />
         </div>
@@ -63,45 +70,57 @@ export default function HowToUse() {
         <p className="text-[#CAC9D1] text-[14px] font-normal leading-5 text-center max-w-[506px]">
           {t("work.disc")}
         </p>
-        <div className="mt-15 flex flex-col md:flex-row justify-between items-center md:items-start relative w-full">
-            <div className="hidden lg:block">
-                <Image src='/images/line1.png' alt="line1" width={157} height={22} className="absolute top-43 left-[28%]"/>
-                <Image src='/images/line2.png' alt="line1" width={157} height={22} className="absolute top-0 right-[26%]"/>
+        <div className="mt-15 grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div className="hidden lg:block absolute inset-0 pointer-events-none">
+            <Image
+              src="/images/line1.png"
+              alt="line1"
+              width={157}
+              height={22}
+              className="absolute"
+              style={{
+                top: "174px",
+                left: "calc(33.33% - 111px)",
+              }}
+            />
+
+            <Image
+              src="/images/line2.png"
+              alt="line2"
+              width={157}
+              height={22}
+              className="absolute"
+              style={{
+                top: "0",
+                right: "calc(33.33% - 80px)",
+              }}
+            />
+          </div>
+          {WorkFlow.map((item) => (
+            <div key={item.id} className="mb-8">
+              <div className="flex items-center justify-center mb-6">
+                <span className="w-[56px] h-[56px] flex items-center justify-center rounded-full border border-[#9A9DC1] text-white text-[20px] font-medium">
+                  {`0${item.id}`}
+                </span>
+              </div>
+
+              <h3 className="text-[#FFFFFF] text-[24px] leading-8  font-medium mb-2 text-center max-w-[373px] w-full">
+                {item.title}
+              </h3>
+
+              <p
+                className="text-[#FFFFFFB2] text-[16px] leading-5 font-normal text-center max-w-[372px]"
+                style={{ fontFamily: "'Satoshi', sans-serif" }}
+              >
+                {item.description}
+              </p>
             </div>
-        {WorkFlow.map((item) => (
-  <div
-    key={item.id}
-    className="mb-8"
-  >
-   
- <div className="flex items-center justify-center mb-6">
-  <span className="w-[56px] h-[56px] flex items-center justify-center rounded-full border border-[#9A9DC1] text-white text-[20px] font-medium">
-   {`0${item.id}`}
-  </span>
-</div>
-
-
-    <h3 className="text-[#FFFFFF] text-[24px] leading-8  font-medium mb-2 text-center max-w-[373px] w-full">
-      {item.title}
-    </h3>
-
-    <p className="text-[#FFFFFFB2] text-[16px] leading-5 font-normal text-center max-w-[372px]" 
-style={{ fontFamily: "'Satoshi', sans-serif" }}
-
-    >
-      {item.description}
-    </p>
-  </div>
-))}
-
+          ))}
         </div>
-           {/* <div className="absolute -bottom-30 z-0 ">
+        {/* <div className="absolute -bottom-30 z-0 ">
               <div className="rounded-[68.75px] opacity-60 bg-[#5935E94D] blur-[50px] w-[458px] h-[318px]"></div>
             </div> */}
       </div>
-
-            
-   
     </div>
   );
 }

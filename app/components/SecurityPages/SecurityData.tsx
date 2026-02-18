@@ -80,6 +80,11 @@ const SecurityData = () => {
                   {t("toc.items.7.text")}
                 </Link>
               </li>
+               <li>
+                <Link className="body-6 underline" href="#data8">
+                  {t("toc.items.8.text")}
+                </Link>
+              </li>
             </ol>
           </div>
         </div>
@@ -447,7 +452,7 @@ const SecurityData = () => {
         </div>
 
         {/* Section 11: Backup, Recovery & Business Continuity */}
-        <div className="space-y-6 scroll-mt-[120px]" id="data7">
+        <div className="space-y-6 scroll-mt-[120px]" id="data8">
           <h1 className="heading-1 font-medium">
             {t("sections.processors.title")}
           </h1>

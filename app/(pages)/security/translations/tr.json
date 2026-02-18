@@ -30,7 +30,9 @@
       { "id": "#data4", "text": "Ağ Güvenliği" },
       { "id": "#data5", "text": "Kurumsal Güvenlik" },
       { "id": "#data6", "text": "Tehdit ve Güvenlik Açığı Yönetimi" },
-      { "id": "#data7", "text": "Yedekleme, Kurtarma ve İş Sürekliliği" }
+      { "id": "#data7", "text": "Yedekleme, Kurtarma ve İş Sürekliliği" },
+            { "id": "#data8", "text": "Alt İşlemciler ve Üçüncü Taraf Hizmetler" }
+
     ]
   },
   

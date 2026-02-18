@@ -6,7 +6,7 @@
     "lastUpdated": "Zuletzt aktualisiert am 12. Juli 2025",
     "buttonText": "Zuletzt aktualisiert am 12. Juli 2025"
   },
-  
+
   "summary": {
     "title": "Zusammenfassung der wichtigsten Punkte",
     "intro": "Diese Zusammenfassung enthält die wichtigsten Punkte aus unserer Datenschutzerklärung, aber Sie können weitere Details zu jedem dieser Themen finden, indem Sie unser",
@@ -19,7 +19,7 @@
       "Einige Automatisierungsfunktionen (z. B. OCR und Dokumentenverständnis) werden von vertrauenswürdigen Unterauftragsverarbeitern wie ABBYY bereitgestellt, die Daten streng nach den Anweisungen von MIRYA und gemäß datenschutzkonformen Vereinbarungen verarbeiten."
     ]
   },
-  
+
   "toc": {
     "title": "Inhaltsverzeichnis",
     "items": [
@@ -30,10 +30,14 @@
       { "id": "#data4", "text": "Netzwerksicherheit" },
       { "id": "#data5", "text": "Unternehmenssicherheit" },
       { "id": "#data6", "text": "Bedrohungs- & Schwachstellenmanagement" },
-      { "id": "#data7", "text": "Backup, Wiederherstellung & Geschäftskontinuität" }
+      {
+        "id": "#data7",
+        "text": "Backup, Wiederherstellung & Geschäftskontinuität"
+      },
+      { "id": "#data8", "text": "Subprozessoren & Dienste von Drittanbietern" }
     ]
   },
-  
+
   "sections": {
     "compliance": {
       "title": "1. Compliance",
@@ -56,7 +60,7 @@
         ]
       }
     },
-    
+
     "dataProtection": {
       "title": "2. Kundendatenschutz & Verschlüsselung",
       "auth": {
@@ -87,7 +91,7 @@
         ]
       }
     },
-    
+
     "cloudHosting": {
       "title": "3. Cloud-Hosting & Speicherung",
       "desc": "MIRYA Cloud verwendet Microsoft Azure oder gleichwertige Enterprise-Cloud-Anbieter mit starker physischer und Netzwerksicherheit.",
@@ -115,7 +119,7 @@
         ]
       }
     },
-    
+
     "encryption": {
       "title": "4. Verschlüsselung",
       "inTransit": {
@@ -142,7 +146,7 @@
         ]
       }
     },
-    
+
     "network": {
       "title": "5. Netzwerksicherheit",
       "desc": "Die MIRYA Cloud-Infrastruktur wird kontinuierlich mit automatisierten Audits und Alarm-Systemen überwacht.",
@@ -155,7 +159,7 @@
         "Rate-Limiting und Request-Filterung"
       ]
     },
-    
+
     "audit": {
       "title": "6. Audit-Protokollierung",
       "desc": "MIRYA protokolliert:",
@@ -166,7 +170,7 @@
         "Platform- und Infrastrukturereignisse"
       ]
     },
-    
+
     "development": {
       "title": "7. Sichere Entwicklungspraktiken",
       "codeManagement": {
@@ -194,7 +198,7 @@
         ]
       }
     },
-    
+
     "corporate": {
       "title": "8. Unternehmenssicherheit",
       "hiring": {
@@ -218,7 +222,7 @@
         ]
       }
     },
-    
+
     "threat": {
       "title": "9. Bedrohungs- & Schwachstellenmanagement",
       "vulnerability": {
@@ -238,7 +242,7 @@
         "desc": "Wir verwenden vertrauenswürdige Intelligenz-Feeds und Sicherheitstools, um über neue Bedrohungen informiert zu bleiben."
       }
     },
-    
+
     "backup": {
       "title": "10. Backup, Wiederherstellung & Geschäftskontinuität",
       "dataBackups": {
@@ -270,81 +274,79 @@
         ]
       }
     },
-    
-  "processors": {
-    "title": "12. Unterauftragsverarbeiter und Drittanbieterdienste",
-    "des": "MIRYA kann sorgfältig ausgewählte Drittanbieter („Unterauftragsverarbeiter“) einsetzen, um bestimmte technische Funktionen für Automatisierungsfeatures bereitzustellen. Diese handeln ausschließlich gemäß den dokumentierten Anweisungen von MIRYA und im Rahmen geltender Datenschutzgesetze, einschließlich Artikel 28 DSGVO.",
 
-    "dataBackups": {
-      "title": "2.1. Einsatz von Unterauftragsverarbeitern (ABBYY)",
-      "desc": "Beinhaltet:",
-      "list": [
-        "Klarstellung zu Artikel 28 DSGVO",
-        "Vorhandene Auftragsverarbeitungsvereinbarung (DPA)",
-        "Verarbeitung auf Weisungsbasis",
-        "Sicherheitsmaßnahmen",
-        "Kein Training / keine Wiederverwendung"
-      ],
-      "descs": "Dies ist Ihr rechtlicher Ankerabschnitt."
-    },
+    "processors": {
+      "title": "12. Unterauftragsverarbeiter und Drittanbieterdienste",
+      "des": "MIRYA kann sorgfältig ausgewählte Drittanbieter („Unterauftragsverarbeiter“) einsetzen, um bestimmte technische Funktionen für Automatisierungsfeatures bereitzustellen. Diese handeln ausschließlich gemäß den dokumentierten Anweisungen von MIRYA und im Rahmen geltender Datenschutzgesetze, einschließlich Artikel 28 DSGVO.",
 
-    "disaster": {
-      "title": "2.2. Datenfluss und Verarbeitungsumfang (OCR / IDP)",
-      "list": [
-        "Dokumente oder Bilder können zur automatisierten Texterkennung und strukturierten Datenextraktion sicher an ABBYY übertragen werden.",
-        "Die Verarbeitung ist auf maschinelle Analysen beschränkt, die zur Umwandlung unstrukturierter Inhalte in strukturierte, automatisierungsfähige Daten erforderlich sind.",
-        "MIRYA erlaubt ABBYY nicht, Rohdokumente dauerhaft zu speichern, es sei denn, dies ist technisch für die temporäre Verarbeitung notwendig.",
-        "Extrahierte Ergebnisse werden an MIRYA zurückgegeben und ausschließlich innerhalb kundendefinierter Automatisierungs-Workflows weiterverarbeitet.",
-        "ABBYY erhält keinen unabhängigen Zugriff auf Kundenumgebungen, Konten oder Metadaten von MIRYA, außer soweit dies technisch für die OCR-Funktion erforderlich ist."
-      ]
-    },
+      "dataBackups": {
+        "title": "2.1. Einsatz von Unterauftragsverarbeitern (ABBYY)",
+        "desc": "Beinhaltet:",
+        "list": [
+          "Klarstellung zu Artikel 28 DSGVO",
+          "Vorhandene Auftragsverarbeitungsvereinbarung (DPA)",
+          "Verarbeitung auf Weisungsbasis",
+          "Sicherheitsmaßnahmen",
+          "Kein Training / keine Wiederverwendung"
+        ],
+        "descs": "Dies ist Ihr rechtlicher Ankerabschnitt."
+      },
 
-    "business": {
-      "title": "2.3. Datenstandort und internationale Übermittlungen",
-      "desc": "Abhängig vom Bereitstellungsmodell und der Konfiguration:",
-      "list": [
-        "MIRYA-Cloud-Bereitstellungen können Daten innerhalb der EU oder in vertraglich genehmigten Regionen verarbeiten.",
-        "Wenn ABBYY-Dienste eine Verarbeitung außerhalb der EU/des EWR beinhalten, stellt MIRYA geeignete Garantien gemäß DSGVO sicher, einschließlich Standardvertragsklauseln (SCC).",
-        "Self-hosted MIRYA-Bereitstellungen ermöglichen es Kunden, die Nutzung von ABBYY-Cloud-Services oder eine OCR-Verarbeitung in eigenen Umgebungen zu konfigurieren."
-      ]
-    },
+      "disaster": {
+        "title": "2.2. Datenfluss und Verarbeitungsumfang (OCR / IDP)",
+        "list": [
+          "Dokumente oder Bilder können zur automatisierten Texterkennung und strukturierten Datenextraktion sicher an ABBYY übertragen werden.",
+          "Die Verarbeitung ist auf maschinelle Analysen beschränkt, die zur Umwandlung unstrukturierter Inhalte in strukturierte, automatisierungsfähige Daten erforderlich sind.",
+          "MIRYA erlaubt ABBYY nicht, Rohdokumente dauerhaft zu speichern, es sei denn, dies ist technisch für die temporäre Verarbeitung notwendig.",
+          "Extrahierte Ergebnisse werden an MIRYA zurückgegeben und ausschließlich innerhalb kundendefinierter Automatisierungs-Workflows weiterverarbeitet.",
+          "ABBYY erhält keinen unabhängigen Zugriff auf Kundenumgebungen, Konten oder Metadaten von MIRYA, außer soweit dies technisch für die OCR-Funktion erforderlich ist."
+        ]
+      },
 
-    "customer": {
-      "title": "2.4. Kundenkontrolle und Konfiguration",
-      "desc": "MIRYA bietet Kunden vollständige Transparenz und operative Kontrolle über OCR/IDP-Funktionen.",
-      "des": "Kunden behalten die Kontrolle über:",
-      "list": [
-        "Ob OCR/IDP-Funktionen überhaupt aktiviert sind.",
-        "Welche Workflows oder Dokumenttypen ABBYY-basierte Verarbeitung nutzen.",
-        "Aufbewahrungsfristen für verarbeitete Dokumente und extrahierte Daten.",
-        "Globale oder workflow-bezogene Deaktivierung von OCR in regulierten Umgebungen."
-      ]
-    },
+      "business": {
+        "title": "2.3. Datenstandort und internationale Übermittlungen",
+        "desc": "Abhängig vom Bereitstellungsmodell und der Konfiguration:",
+        "list": [
+          "MIRYA-Cloud-Bereitstellungen können Daten innerhalb der EU oder in vertraglich genehmigten Regionen verarbeiten.",
+          "Wenn ABBYY-Dienste eine Verarbeitung außerhalb der EU/des EWR beinhalten, stellt MIRYA geeignete Garantien gemäß DSGVO sicher, einschließlich Standardvertragsklauseln (SCC).",
+          "Self-hosted MIRYA-Bereitstellungen ermöglichen es Kunden, die Nutzung von ABBYY-Cloud-Services oder eine OCR-Verarbeitung in eigenen Umgebungen zu konfigurieren."
+        ]
+      },
 
-    "confidentiality": {
-      "title": "2.5. Vertraulichkeit und Nutzungsbeschränkung",
-      "desc": "Über ABBYY verarbeitete Kundendaten:",
-      "list": [
-        "Werden ausschließlich zur Durchführung der angeforderten OCR/IDP-Funktion verwendet.",
-        "Werden nicht länger als technisch erforderlich gespeichert.",
-        "Werden nicht mit weiteren Drittparteien geteilt.",
-        "Werden nicht für KI-Training oder Serviceverbesserungen außerhalb des MIRYA-Kontexts genutzt."
-      ]
-    },
+      "customer": {
+        "title": "2.4. Kundenkontrolle und Konfiguration",
+        "desc": "MIRYA bietet Kunden vollständige Transparenz und operative Kontrolle über OCR/IDP-Funktionen.",
+        "des": "Kunden behalten die Kontrolle über:",
+        "list": [
+          "Ob OCR/IDP-Funktionen überhaupt aktiviert sind.",
+          "Welche Workflows oder Dokumenttypen ABBYY-basierte Verarbeitung nutzen.",
+          "Aufbewahrungsfristen für verarbeitete Dokumente und extrahierte Daten.",
+          "Globale oder workflow-bezogene Deaktivierung von OCR in regulierten Umgebungen."
+        ]
+      },
 
-    "compliance": {
-      "title": "2.6. Compliance und Einsatz im öffentlichen Sektor",
-      "desc": "MIRYA wurde entwickelt, um den Anforderungen regulierter Branchen wie Finanzinstitute, Behörden und Steuerverwaltungen zu entsprechen.",
-      "des": "Zur Unterstützung von Beschaffung und Compliance stellt MIRYA bereit:",
-      "list": [
-        "Eine formelle Auftragsverarbeitungsvereinbarung (DPA).",
-        "Transparente Dokumentation der Unterauftragsverarbeiter, einschließlich ABBYY.",
-        "Technische Dokumentation zu Datenflüssen und Verarbeitungsgrenzen.",
-        "Unterstützung bei DPIA- und TOMs-Bewertungen."
-      ]
+      "confidentiality": {
+        "title": "2.5. Vertraulichkeit und Nutzungsbeschränkung",
+        "desc": "Über ABBYY verarbeitete Kundendaten:",
+        "list": [
+          "Werden ausschließlich zur Durchführung der angeforderten OCR/IDP-Funktion verwendet.",
+          "Werden nicht länger als technisch erforderlich gespeichert.",
+          "Werden nicht mit weiteren Drittparteien geteilt.",
+          "Werden nicht für KI-Training oder Serviceverbesserungen außerhalb des MIRYA-Kontexts genutzt."
+        ]
+      },
+
+      "compliance": {
+        "title": "2.6. Compliance und Einsatz im öffentlichen Sektor",
+        "desc": "MIRYA wurde entwickelt, um den Anforderungen regulierter Branchen wie Finanzinstitute, Behörden und Steuerverwaltungen zu entsprechen.",
+        "des": "Zur Unterstützung von Beschaffung und Compliance stellt MIRYA bereit:",
+        "list": [
+          "Eine formelle Auftragsverarbeitungsvereinbarung (DPA).",
+          "Transparente Dokumentation der Unterauftragsverarbeiter, einschließlich ABBYY.",
+          "Technische Dokumentation zu Datenflüssen und Verarbeitungsgrenzen.",
+          "Unterstützung bei DPIA- und TOMs-Bewertungen."
+        ]
+      }
     }
   }
-}
-
-  
 }
