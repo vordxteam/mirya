@@ -200,7 +200,7 @@ export default function ContactPage() {
                   label={
                     <span className="flex flex-wrap gap-1">
                       <span>{t("form.privacy")}</span>
-                      <Link href="#" className="text-[#0274FE] underline">
+                      <Link href="/privacy-policy" className="text-[#0274FE] underline">
                         {t("form.privacyLink")}
                       </Link>
                       <span>.</span>
