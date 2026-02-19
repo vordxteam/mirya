@@ -523,6 +523,21 @@ const SecurityData = () => {
               <li>{t("sections.processors.customer.list.3")}</li>
             </ul>
           </div>
+           <div className="space-y-5">
+            <h2 className="font-semibold heading-4">
+              {t("sections.processors.confidentiality.title")}
+            </h2>
+            <p className="text-[#FFFFFFCC] body-6">
+              {t("sections.processors.confidentiality.desc")}
+            </p>
+           
+            <ul className="list-disc list-outside text-[#FFFFFFCC] body-6 space-y-1 max-w-[759px] w-full pl-5">
+              <li>{t("sections.processors.confidentiality.list.0")}</li>
+              <li>{t("sections.processors.confidentiality.list.1")}</li>
+              <li>{t("sections.processors.confidentiality.list.2")}</li>
+              <li>{t("sections.processors.confidentiality.list.3")}</li>
+            </ul>
+          </div>
           <div className="space-y-5">
             <h2 className="font-semibold heading-4">
               {t("sections.processors.compliance.title")}

@@ -22,7 +22,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
   labelClassName = "text-[14px] leading-5",
 }) => {
   return (
-<label className={`flex items-center gap-2 cursor-pointer ${className}`}>
+    <label className={`flex items-center gap-2 cursor-pointer ${className}`}>
       {/* Checkbox */}
       <input
         type="checkbox"

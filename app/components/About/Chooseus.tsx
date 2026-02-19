@@ -168,7 +168,7 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                  <div className="absolute right-[-163.025px] top-[-91.622px]">
+                    <div className="absolute right-[-163.025px] top-[-91.622px]">
                       <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
@@ -337,7 +337,7 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                   <div className="absolute right-[-163.025px] top-[-91.622px]">
+                    <div className="absolute right-[-163.025px] top-[-91.622px]">
                       <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
@@ -354,7 +354,7 @@ const Chooseus = () => {
                           {cards[8]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          {cards[7]?.desc}
+                          {cards[8]?.desc}
                         </p>
                       </div>
                     </div>
@@ -370,7 +370,7 @@ const Chooseus = () => {
                   }}
                 >
                   <div className="bg-[#050A29] overflow-hidden relative h-[322px] px-7 py-8 rounded-xl">
-                   <div className="absolute right-[-163.025px] top-[-91.622px]">
+                    <div className="absolute right-[-163.025px] top-[-91.622px]">
                       <div className="rounded-[493px] opacity-[0.6] bg-[#211F9CCC] blur-[90px] w-[493px] h-[213px]"></div>
                     </div>
                     <div className="relative z-20 flex flex-col items-start justify-between h-full">
@@ -387,7 +387,7 @@ const Chooseus = () => {
                           {cards[9]?.title}
                         </h1>
                         <p className="text-[14px] md:text-[16px] font-normal leading-5">
-                          {cards[7]?.desc}
+                          {cards[9]?.desc}
                         </p>
                       </div>
                     </div>
