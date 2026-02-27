@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📂 Mirya -- Next.js 16 Multilingual Platform
 
-## Getting Started
+Mirya is a modern, scalable, and multilingual web platform built with
+Next.js 16 (App Router), React 19, TypeScript, TailwindCSS v4, and
+i18next.
 
-First, run the development server:
+------------------------------------------------------------------------
 
-```bash
+## 🚀 Tech Stack
+
+### Core Framework
+
+-   Next.js 16
+-   React 19
+-   TypeScript 5
+
+### UI & Styling
+
+-   Tailwind CSS v4
+-   PostCSS
+-   Autoprefixer
+-   MUI (Material UI v7)
+-   MUI X Date Pickers
+-   Emotion (React + Styled)
+-   Headless UI
+-   Heroicons
+-   Lucide React
+
+### Animations
+
+-   Framer Motion
+-   Motion
+-   GSAP
+
+### Internationalization
+
+-   i18next
+-   react-i18next
+-   i18next-browser-languagedetector
+
+Supported Languages: - English - German - Turkish
+
+### API & Utilities
+
+-   Axios
+-   @google/generative-ai
+-   js-cookie
+-   dayjs
+-   react-hot-toast
+
+### Development & Linting
+
+-   ESLint 9
+-   eslint-config-next
+-   TypeScript
+-   TailwindCSS PostCSS Plugin
+
+------------------------------------------------------------------------
+
+## 📦 Installation
+
+### 1. Clone the Repository
+
+git clone `<your-repository-url>`{=html} cd mirya
+
+### 2. Install Dependencies
+
+npm install \# or yarn install \# or pnpm install
+
+------------------------------------------------------------------------
+
+## 🏃 Running the Project
+
+### Development Mode
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm run build npm start
 
-## Learn More
+------------------------------------------------------------------------
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Mirya │ ├── app/ \# App Router main directory │ ├── (pages)/ \#
+Route-based pages │ ├── Layout/ \# Header, Footer, CTA │ ├── api/ \# API
+route handlers │ ├── components/ \# Reusable UI components │ ├── hooks/
+\# Custom hooks │ ├── i18n/ \# i18n configuration │ ├── data/ \# Static
+data files │ ├── ui/ \# Shared UI components │ ├── layout.tsx \# Root
+layout │ └── page.tsx \# Entry page │ ├── lib/ \# Utility libraries ├──
+messages/ \# Locale message files ├── public/ \# Static assets ├──
+next.config.ts \# Next.js configuration ├── tsconfig.json \# TypeScript
+configuration └── package.json
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+------------------------------------------------------------------------
 
-## Deploy on Vercel
+## 🌍 Internationalization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Mirya uses i18next with: - Namespace-based translation files -
+Page-specific translation folders - Global locale messages - Browser
+language detection
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Language switch handled via LanguageSwitcher component.
+
+------------------------------------------------------------------------
+
+## 📜 Available Scripts
+
+"dev": "next dev" "build": "next build" "start": "next start" "lint":
+"eslint"
+
+------------------------------------------------------------------------
+
+## 🚀 Deployment
+
+Recommended: - Vercel - Any Node.js hosting
+
+Build command: npm run build
+
+Start command: npm start
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Author
+
+Built with scalable architecture using Next.js 16 and TypeScript.
