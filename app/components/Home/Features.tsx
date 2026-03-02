@@ -305,7 +305,7 @@ export default function Features() {
 
             <div className="mt-8 relative w-full h-[400px]">
               <Image
-                src="/images/main-img.png"
+                src="/images/main-img2.png"
                 alt="Main image"
                 fill
                 className="rounded-lg"

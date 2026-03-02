@@ -98,11 +98,11 @@ const Footer = () => {
                 width={100}
               />
               <Image
-                src="/images/footer-logo1.png"
+                src="/images/footer-logo.svg"
                 alt="Guarantee card"
-                height={100}
-                width={274}
-                className="w-[179px] sm:w-[274px]"
+                height={56}
+                width={264}
+                className="w-[119px] sm:w-[264px]"
               />
             </div>
 
@@ -134,30 +134,30 @@ const Footer = () => {
                     ))}
                   </div> */}
                   <div className="flex flex-col gap-5">
-  {section.childs.map((link: any, idx: number) => (
-    /* Changed gap-2 to gap-[8px] (or gap-2) and ensured vertical alignment */
-    <div key={idx} className="flex gap-[8px] items-center">
-      {link.img && (
-        <Image
-          src={link.img}
-          width={20}
-          height={20}
-          alt={`${link.name} icon`}
-          /* flex-shrink-0 prevents the icon from distorting */
-          className="shrink-0 object-contain"
-        />
-      )}
-      <Link
-        href={link.href}
-        target={link.id === 14 ? "_blank" : ""}
-        /* Ensure line-height doesn't push the text away from the icon's center */
-        className="heading-5 font-normal text-[#FFFFFF] leading-none"
-      >
-        {link.name}
-      </Link>
-    </div>
-  ))}
-</div>
+                    {section.childs.map((link: any, idx: number) => (
+                      /* Changed gap-2 to gap-[8px] (or gap-2) and ensured vertical alignment */
+                      <div key={idx} className="flex gap-[8px] items-center">
+                        {link.img && (
+                          <Image
+                            src={link.img}
+                            width={20}
+                            height={20}
+                            alt={`${link.name} icon`}
+                            /* flex-shrink-0 prevents the icon from distorting */
+                            className="shrink-0 object-contain"
+                          />
+                        )}
+                        <Link
+                          href={link.href}
+                          target={link.id === 14 ? "_blank" : ""}
+                          /* Ensure line-height doesn't push the text away from the icon's center */
+                          className="heading-5 font-normal text-[#FFFFFF] leading-none"
+                        >
+                          {link.name}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

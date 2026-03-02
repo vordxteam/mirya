@@ -14,7 +14,7 @@ const slides: Slide[] = [
     title: "Planning Feature",
     description:
       "Create structured plans, break tasks into milestones, and visualize timelines with automated suggestions powered by intelligent workflow analysis.",
-    image: "/images/slide1.png",
+    image: "/images/slides1.png",
   },
   {
     id: 2,

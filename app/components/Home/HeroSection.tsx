@@ -83,7 +83,7 @@ const HeroSection = () => {
 
             {/* Image */}
             <Image
-              src="/images/mirya2.png"
+              src="/images/mirya2-update.png"
               width={1200}
               height={833}
               alt="MIRYA"
