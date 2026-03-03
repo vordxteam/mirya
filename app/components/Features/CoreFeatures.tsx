@@ -119,7 +119,7 @@ export default function CoreFeatures() {
 
             <div className="mt-8 relative w-full h-[400px]">
               <Image
-                src="/images/main-img.png"
+                src="/images/main-img2.png"
                 alt="Main image"
                 fill
                 className="rounded-lg"
@@ -169,7 +169,7 @@ export default function CoreFeatures() {
               </div>
               <div className="flex justify-center">
                 <Image
-                  src="/images/feature2.png"
+                  src="/images/feature5.png"
                   alt="Graph image"
                   height={259}
                   width={600}
@@ -272,7 +272,7 @@ export default function CoreFeatures() {
 
             <div className="mt-8 relative w-full h-[400px]">
               <Image
-                src="/images/features.png"
+                src="/images/feature4.png"
                 alt="Main image"
                 fill
                 className="rounded-lg"

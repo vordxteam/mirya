@@ -266,12 +266,12 @@ const Benefits = () => {
             <BenefitCard
               title={cards[0]?.title}
               description={cards[0]?.desc}
-              image="/images/benefit1.png"
+              image="/images/benefit.png"
               imageWidth={488}
               imageHeight={352}
               glowPosition="left"
               className="col-span-12 md:col-span-6 xl:col-span-4 "
-              imageTranslate="w-[100%] translate-x-10 -translate-y-6"
+              imageTranslate="w-[100%] translate-x-10 -translate-y-6 rounded-[10px]"
               imagePaddingBottom="pb-0"
             />
 
@@ -292,7 +292,7 @@ const Benefits = () => {
             <BenefitCard
               title={cards[2]?.title}
               description={cards[2]?.desc}
-              image="/images/benefit-3.png"
+              image="/images/benefit-3-update.png"
               imageWidth={351}
               imageHeight={399}
               glowPosition="right"

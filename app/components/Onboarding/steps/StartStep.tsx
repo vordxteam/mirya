@@ -7,7 +7,7 @@ export const StartStep: StepComponent = () => {
 
   return (
     <div className="text-white space-y-10">
-      <Image src="/images/miryaLogo.png" alt="Logo" height={32} width={54} />
+      <Image src="/images/logo-form.svg" alt="Logo" height={32} width={54} />
       <p className="heading-3 font-normal text-[#FFFFFF]">
         {t("start.intro")}
       </p>
