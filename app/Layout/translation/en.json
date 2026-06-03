@@ -10,9 +10,9 @@
     },
     "default": {
       "h1": "Make Your Productivity <br /> More Efficient. From This Time.",
-      "p": "Harnessing the power of artificial intelligence to revolutionize industries and enhance human experiences."
+      "p": "Book a live demo. We'll show you MIRYA automating a workflow from your own operations in real time."
     },
-    "button": "Get Started"
+    "button": "Book a Demo"
   },
 
   "footer": {
@@ -94,7 +94,7 @@
       { "label": "Hire an Expert", "href": "/hire-expert" }
     ],
     "community": "Community",
-    "button": "Get Started",
+    "button": "Contact Us",
     "signin": "Signin",
     "languageLabel": "Language"
   }

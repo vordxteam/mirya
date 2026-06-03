@@ -5,7 +5,7 @@ import Features from "@/app/components/Home/Features";
 import React, { useEffect, useState } from "react";
 import HowToUse from "@/app/components/Home/HowToUse";
 // import Faq from "@/app/components/Home/Faq";
-import Benefits from "@/app/components/Home/Benefits";
+// import Benefits from "@/app/components/Home/Benefits";
 // import Indicator from "@/app/components/Home/Indicator";
 // import Plans from "@/app/components/Home/Plans";
 import BuildForYou from "@/app/components/Home/BuildForYou";
@@ -16,6 +16,18 @@ import Image from "next/image";
 import Cookies from "./Cookies";
 import Chatbot from "./Chatbot";
 import { useTranslation } from "react-i18next"; 
+// new landing page components 
+import Hero from "@/app/components/NewHome/Hero";
+import Problem from "@/app/components/NewHome/Problem";
+import HowMiryaWorks from "@/app/components/NewHome/HowItWorks";
+import SeeInAction from "@/app/components/NewHome/SeeInAction";
+import EyeOfMirya from "@/app/components/NewHome/Eyeofmirya";
+import Benefits from "@/app/components/NewHome/MiryaBenefits";
+import Impact from "@/app/components/NewHome/Impact";
+import IndustryCard from "@/app/components/NewHome/IndustryCard";
+import Platform from "@/app/components/NewHome/Platform";
+import WhyMirya from "@/app/components/NewHome/WhyMirya";
+import NewTestimonials from "@/app/components/NewHome/NewTestimonials";
 const HomePage = () => {
   const { t } = useTranslation("home"); 
   const [cookiesOpen, setCookiesOpen] = useState(false);
@@ -104,16 +116,28 @@ const HomePage = () => {
 
   return (
   <div className="relative">
+    {/* // old home page content commented  */}
     {/* Page Content */}
-    <HeroSection />
-    <Demo />
-    <HowToUse />
-    <WorkFlow />
-    <Features />
-    <BuildForYou />
+    {/* <HeroSection /> */}
+    {/* <Demo /> */}
+    {/* <HowToUse /> */}
+    {/* <WorkFlow /> */}
+    {/* <Features /> */}
+    {/* <BuildForYou /> */}
+    {/* <Aiassistant /> */}
+    {/* <Testimonials /> */}
+{/* New home page content */}
+    <Hero />
+    <Problem />
+    <HowMiryaWorks />
+    <SeeInAction />
+    <EyeOfMirya />
     <Benefits />
-    <Aiassistant />
-    <Testimonials />
+    <Impact />
+    <IndustryCard />
+    <Platform />
+    <WhyMirya />
+    <NewTestimonials />
 
     {/* --- FLOATING OVERLAY UI --- */}
     

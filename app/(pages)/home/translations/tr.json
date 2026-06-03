@@ -5,7 +5,9 @@
     "description": "Karmaşık iş akışlarını basit, akıllı otomasyonlara dönüştürün — haftalar değil, saatler içinde.",
     "buttons": {
       "getStarted": "Başlayın",
-      "contactUs": "İletişime Geçin"
+      "contactUs": "İletişime Geçin",
+       "bookDemo": "Demo Talep Et"
+      
     }
   },
   
@@ -277,12 +279,310 @@
     "excel": "Excel (.xlsx)",
     "downloads": "[KLASÖR] İndirilenler",
     "run": "Çalıştır"
+  },
+  "problem": {
+  "badge": "SORUN",
+  "title": "En değerli çalışanlarınız, bir makinenin yapması gereken işlere gömülmüş durumda.",
+  "description": "Tekrarlayan görevler, kopyala-yapıştır iş akışları ve manuel veri girişi bilgi işi değildir. Bunlar maliyetli, hataya açık ve ekibinizi tüketen işlerdir.",
+  "cards": [
+    {
+      "id": 1,
+      "title": "Bitmeyen manuel tekrarlar",
+      "description": "Her gün aynı veri girişi, aynı rapor, aynı e-posta. Ekibiniz düşünmek yerine süreçleri yürütüyor."
+    },
+    {
+      "id": 2,
+      "title": "Sistemler birbiriyle konuşmuyor",
+      "description": "ERP, Excel, e-posta ve web portalları arasında çalışanlarınız, aslında kendiliğinden bağlanması gereken yazılımlar için entegrasyon katmanı görevi görüyor."
+    },
+    {
+      "id": 3,
+      "title": "Bağımsız bir oyuncak olarak yapay zeka",
+      "description": "Gerçek iş akışlarına bağlanmayan sohbet botları ve yapay zeka araçları iş yükünü azaltmaz; sadece yönetilecek yeni bir araç ekler."
+    }
+  ]
+},
+  "newHome": {
+    "howMiryaWorks": {
+      "badge": "MIRYA NASIL CALISIR",
+      "titleLine1": "Bir kez tiklayin. MIRYA ogrenir.",
+      "titleLine2": "Suresiz calisir.",
+      "description": "Geleneksel RPA'nin aksine MIRYA script gelistiricilerine ihtiyac duymaz. Is ekipleri isi bir kez yaparak ona ogretir.",
+      "buttonLabel": "Baslayin",
+      "imageAlt": "Planlama Ozelligi",
+      "imageTitle": "Planlama Ozelligi",
+      "imageDescription": "Lorem ipsum dolor sit amet consectetur. Ut nulla sed id tempor a. Sagittis suscipit non eget.",
+      "steps": [
+        {
+          "id": "01",
+          "title": "EYE of MIRYA gozlemler",
+          "description": "Surec kaydini etkinlestirin. MIRYA ekraninizi izler, tiklamalar, tus vuruslari ve kosullar dahil her eylemi yakalar ve sadece adimlari degil mantigi da anlar."
+        },
+        {
+          "id": "02",
+          "title": "Workflow otomatik olarak olusturulur",
+          "description": "MIRYA eylemlerinizi kod, sablon veya gelistirici gerektirmeden yapilandirilmis bir otomasyona cevirir. Gorsel editor uzerinden inceleyin, duzenleyin ve onaylayin."
+        },
+        {
+          "id": "03",
+          "title": "Otonom calisir",
+          "description": "Tek tikla yayinlayin. MIRYA workflow'u zamanlamaya, tetikleyiciye veya talebe gore calistirir ve istisnalari sizin yapacaginiz sekilde ele alir."
+        },
+        {
+          "id": "04",
+          "title": "Organizasyon genelinde olceklendirin",
+          "description": "Diger ekipler, departmanlar veya bolgelere yayin. Governance, roller ve izinler kurumsal kontrolu korur."
+        }
+      ]
+    },
+    "seeInAction": {
+      "badge": "NASIL CALISIR",
+      "title": "Mirya'yi calisirken gorun",
+      "description": "Calisanlarin nasil calistigini gozlemler, is sureclerini anlar ve tekrarlayan gorevleri akilli otomasyon workflow'larina donusturur.",
+      "imageAlt": "Mirya'yi calisirken gorun",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Gozlemle",
+          "description": "Uygulamalar, surecler ve sistemler arasinda gercek kullanici eylemlerini kaydedin."
+        },
+        {
+          "id": 2,
+          "title": "Ogren",
+          "description": "Desenleri ve otomasyon firsatlarini belirleyin."
+        },
+        {
+          "id": 3,
+          "title": "Calistir",
+          "description": "Workflow'lari hiz ve dogrulukla otonom olarak calistirin."
+        }
+      ]
+    },
+    "eyeOfMirya": {
+      "badge": "EYE OF MIRYA",
+      "titleLine1": "Ekibinizin calistigi her yol.",
+      "titleLine2": "MIRYA hepsini ogrenebilir.",
+      "description": "Masaustu uygulamalardan web portallarina, Excel sayfalarindan ERP sistemlerine kadar MIRYA her yuzeyi yakalar.",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Masaustu kaydi",
+          "description": "Windows veya Mac masaustu uygulamalarini, ERP'leri, eski araclari ve dahili yazilimlari yakalayin ve otomatiklestirin."
+        },
+        {
+          "id": 3,
+          "title": "E-posta ve Outlook kaydi",
+          "description": "E-posta siniflandirma, taslak olusturma, gonderme ve gelen kutusu yonetimi workflow'larini buyuk olcekte ve sadece birkac tikla yakalayin."
+        },
+        {
+          "id": 4,
+          "title": "Web kaydi",
+          "description": "Portal, CRM ve web uygulamalarindaki tarayici tabanli workflow'lari akilli element tanima ile otomatiklestirin."
+        },
+        {
+          "id": 5,
+          "title": "Prompt'tan workflow'a",
+          "description": "MIRYA'ya hedefinizi soyleyin; otomasyon sureci icin gereken mantigi, adimlari ve baglantilari otomatik olarak olustursun."
+        },
+        {
+          "id": 6,
+          "title": "Excel ve Office otomasyonu",
+          "description": "Karmasik Excel workflow'larini, formulleri ve veri donusumlerini kaydedin. Elektronik tablo acik olmadan calistirin."
+        },
+        {
+          "id": 7,
+          "title": "ERP/SAP surec kaydi",
+          "description": "Tam SAP veya ERP islemlerini, veri girisi, raporlama ve onaylari script yazmadan kaydedin ve tekrar calistirin."
+        },
+        {
+          "id": 8,
+          "title": "AI destekli akilli kayit",
+          "description": "MIRYA sadece eylemleri degil niyeti anlamak icin AI kullanir ve daha akilli otomasyon icin her adimin nedenini yakalar."
+        }
+      ]
+    },
+    "miryaBenefits": {
+      "badge": "FAYDALAR",
+      "title": "Akilli otomasyonun yarattigi farki gorun",
+      "description": "Zaman tasarrufundan hatasiz calismaya kadar MIRYA, workflow'unuzun her bolumunde aninda ve karmasiklik olmadan olculebilir iyilesmeler saglar.",
+      "buttonLabel": "Baslayin",
+      "topCards": [
+        {
+          "alt": "Hicbir seyi degistirmeden her seyi otomatiklestirin",
+          "title": "Hicbir seyi degistirmeden her seyi otomatiklestirin",
+          "description": "Workflow'lari yeniden tasarlamaniza veya sistemleri yeniden kurmaniza gerek yok. MIRYA zaten sahip olduklarinizla calisir."
+        },
+        {
+          "alt": "Yuzlerce saat kazanin",
+          "title": "Yuzlerce saat kazanin",
+          "description": "Ekibinizi tekrarlayan islerden kurtarin ve tum operasyonel gorevleri MIRYA'nin aninda halletmesine izin verin."
+        },
+        {
+          "alt": "Manuel hatalari azaltin",
+          "title": "Sifir hata ile calisma",
+          "description": "Insan hatalarini ve tutarsizliklari ortadan kaldirin. Surecleriniz her seferinde ayni guvenilir sekilde calisir."
+        }
+      ],
+      "bottomCards": [
+        {
+          "alt": "Operasyonlari daha hizli olceklendirin",
+          "title": "Verimlilik ve uretkenligi artirin",
+          "description": "MIRYA tekrarlayan gorevleri aninda otomatiklestirir, boylece ekibiniz yuksek degerli ise odaklanir. Surecler daha hizli, daha akici ve tutarli dogrulukla calisir."
+        },
+        {
+          "alt": "Net surec icgoruleri alin",
+          "title": "Uygulanabilir icgoruler",
+          "description": "Workflow'larinizi ve veri desenlerinizi anlayarak MIRYA iyilestirme firsatlarini gosterir ve performansi optimize etmenize yardim eden net icgoruler sunar."
+        }
+      ]
+    },
+    "impact": {
+      "badge": "ETKI",
+      "title": "MIRYA'nin gercek etki yarattigi yerler",
+      "description": "MIRYA manuel isi ortadan kaldirmak, operasyonlari hizlandirmak ve calisan sayisini artirmadan olceklenmek isteyen organizasyonlara akilli no-code otomasyon getirir. Veri yogun departmanlardan hizmet odakli sektorlere kadar MIRYA her yerde calisir.",
+      "buttonLabel": "Demo Talep Et",
+      "imageAlt": "MIRYA'nin gercek etki yarattigi yerler"
+    },
+    "industrySolutions": {
+      "badge": "SEKTOR COZUMLERI",
+      "title": "MIRYA bunu bizim icin cozebilir.",
+      "description": "Kurumsal alicilar ozellik degil sonuc satin alir. MIRYA'nin sektorunuzde sundugu deger budur.",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Lojistik ve nakliye",
+          "description": "Otomatik sevkiyat takibi, siparis isleme, gumruk dokumantasyonu ve ERP veri girisi ile operasyon ekibiniz veriye degil kararlara odaklanir."
+        },
+        {
+          "id": 2,
+          "title": "Finans ve muhasebe",
+          "description": "Fatura isleme, Excel otomasyonu, odeme mutabakati ve raporlama ile finans ekibiniz veri girisi degil icgoru sunar."
+        },
+        {
+          "id": 3,
+          "title": "Uretim ve imalat",
+          "description": "Uretim raporlari, kalite dokumantasyonu, ERP/SAP surecleri, siparis yonetimi ve onay workflow'lari ana sisteme dokunmadan otomatiklestirilir."
+        },
+        {
+          "id": 4,
+          "title": "E-ticaret ve musteri hizmetleri",
+          "description": "Musteri talepleri, iade yonetimi, urun verisi bakimi ve AI destekli destek daha dusuk maliyetle daha hizli yanitlar saglar."
+        },
+        {
+          "id": 5,
+          "title": "Saglik ve klinikler",
+          "description": "Hasta formu isleme, randevu yonetimi, belge siniflandirma (IDP) ve sistemler arasi veri aktarimi klinik personeli idari islerden kurtarir."
+        }
+      ]
+    },
+    "platform": {
+      "badge": "PLATFORM",
+      "title": "Kurumsal seviye. Once no-code.",
+      "description": "MIRYA, is ekiplerinin bagimsiz calismasi icin tasarlanmistir ve gelistiricilere genisletme ve ozellestirme icin gereken tum baglanti noktalarini verir.",
+      "imageAlt": "MIRYA Platform",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Once no-code, istediginizde code",
+          "description": "Is departmanlari kendi basina otomasyon kurar. Gelistiriciler gerektiginde ozel mantik, API ve karmasik kosullar ekler."
+        },
+        {
+          "id": 2,
+          "title": "Dijital ekip uyeleri olarak AI ajanlari",
+          "description": "Izole chatbotlar degil. Surecleri anlayan, kullanicilardan ogrenen ve mevcut workflow'larda otonom calisan AI ajanlari."
+        },
+        {
+          "id": 3,
+          "title": "Guvenli on-premise veya hibrit",
+          "description": "Tamamen kendi altyapinizda yayinlayin. Verileriniz ortaminizdan cikmaz. GDPR ve kurumsal uyumluluk varsayilan olarak gelir."
+        },
+        {
+          "id": 4,
+          "title": "Mevcut sistemlerle entegre olur",
+          "description": "SAP, ERP, Excel, Outlook, web portallari ve eski uygulamalar. MIRYA ekibinizin zaten calistigi yerde calisir."
+        },
+        {
+          "id": 5,
+          "title": "Kurumsal governance ve roller",
+          "description": "Ayrintili rol ve izin modelleri. Tam audit trail. Departman ozerkligi ile merkezi kontrol."
+        },
+        {
+          "id": 6,
+          "title": "Olceklenebilir uygulama",
+          "description": "Egitim, enablement ve degisim yonetimi dahil. Size sadece yazilim vermeyiz, benimsenmeyi ve ROI'yi saglariz."
+        }
+      ]
+    },
+    "whyMirya": {
+      "badge": "NEDEN MIRYA",
+      "title": "Dunyaniza entegre olan AI. Tersi degil.",
+      "description": "Cogu AI araci insanlarinizin degismesini ister. MIRYA insanlarinizdan ogrenir ve zaten var olan sistemler, surecler ve aliskanliklar icinde calisir.",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Karmasik IT projesi gerekmez",
+          "description": "Is ekipleri bagimsiz otomasyon kurar. IT is yukunu tasimadan kontrolu elinde tutar."
+        },
+        {
+          "id": 2,
+          "title": "Benimseme bastan dahil",
+          "description": "Egitim, enablement ve degisim sistemleri her uygulamanin parcasidir. Yazilim degil sonuc teslim ederiz."
+        },
+        {
+          "id": 3,
+          "title": "Mevcut sistemlerinizle calisir",
+          "description": "Sokup degistirme yok. MIRYA SAP, ERP, Office, e-posta ve zaten kullandiginiz eski sistemlerle entegre olur."
+        },
+        {
+          "id": 4,
+          "title": "Chatbot degil dijital ekip uyeleri",
+          "description": "MIRYA ajanlari surecleri anlar, eylemlerden ogrenir ve organizasyonunuzda uretken is arkadaslari gibi calisir."
+        },
+        {
+          "id": 5,
+          "title": "Tasarimdan itibaren kurumsal hazir",
+          "description": "Guvenlik, uyumluluk ve governance sonradan eklenen seyler degil, temel yapilardir. Guvenli on-premise ve hibrit kurulum."
+        }
+      ]
+    },
+    "newTestimonials": {
+      "badge": "REFERANSLAR",
+      "title": "MIRYA kullanan musterilerden yorumlar",
+      "description": "Yapay zekanin gucunu kullanarak sektorleri donusturuyor ve insan deneyimlerini gelistiriyoruz.",
+      "items": [
+        {
+          "review": "Kullandigimiz en kolay otomasyon araci. Ekibimiz bir gunde ogrendi. Mevcut sistemlerimizle entegrasyon gerektirmeden calisan bir arac. MIRYA'yi white-label kullandik ve artik musterilerimize kendi markamizla otomasyon sunuyoruz. Oyunu degistirdi.",
+          "name": "David Anderson",
+          "designation": "Direktor"
+        },
+        {
+          "review": "Kullandigimiz en kolay otomasyon araci. Ekibimiz bir gunde ogrendi. Mevcut sistemlerimizle entegrasyon gerektirmeden calisan bir arac. MIRYA'yi white-label kullandik ve artik musterilerimize kendi markamizla otomasyon sunuyoruz. Oyunu degistirdi.",
+          "name": "David Anderson",
+          "designation": "Direktor"
+        },
+        {
+          "review": "Kullandigimiz en kolay otomasyon araci. Ekibimiz bir gunde ogrendi. Mevcut sistemlerimizle entegrasyon gerektirmeden calisan bir arac. MIRYA'yi white-label kullandik ve artik musterilerimize kendi markamizla otomasyon sunuyoruz. Oyunu degistirdi.",
+          "name": "David Anderson",
+          "designation": "Direktor"
+        },
+        {
+          "review": "Kullandigimiz en kolay otomasyon araci. Ekibimiz bir gunde ogrendi. Mevcut sistemlerimizle entegrasyon gerektirmeden calisan bir arac. MIRYA'yi white-label kullandik ve artik musterilerimize kendi markamizla otomasyon sunuyoruz. Oyunu degistirdi.",
+          "name": "David Anderson",
+          "designation": "Direktor"
+        },
+        {
+          "review": "Workflow'umuzu sorunsuz sekilde hizlandiriyor ve her hafta sayisiz saat kazandiriyor. Sezgisel arayuz dik bir ogrenme egrisi olusturmuyor, ozellestirme secenekleri de ihtiyaclarimiza tam uyuyor.",
+          "name": "Samantha Lee",
+          "designation": "Urun Yoneticisi"
+        },
+        {
+          "review": "Bu platform projeleri yonetme seklimizi donusturdu. Gercek zamanli guncellemeler ve otomatik hatirlaticilar ekibimizi uyumlu ve zamaninda tutuyor. Destek ekibi sorulari hizla yanitliyor.",
+          "name": "Carlos Martinez",
+          "designation": "Operasyon Lideri"
+        }
+      ]
+    }
   }
 
 }
-
-
-
-
-
 

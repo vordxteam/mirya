@@ -2,10 +2,11 @@
   "hero": {
     "badge": "Made in Germany",
     "mainTitle": "Automation That Thinks, Learns & Works Like a Human",
-    "description": "Turn complex workflows into simple, intelligent automations — in hours, not weeks.",
+    "description": "MIRYA observes how your team works, builds automation workflows automatically, and executes repetitive tasks across desktop, web, email, Excel, ERP, and business systems.",
     "buttons": {
       "getStarted": "Get Started",
-      "contactUs": "Contact Us"
+      "contactUs": "Contact Us",
+      "bookDemo": "Book a Demo"
     }
   },
 
@@ -265,5 +266,308 @@
     "excel": "Excel (.xlsx)",
     "downloads": "[FOLDER] Downloads",
     "run": "Run"
+  },
+  "problem": {
+    "badge": "THE PROBLEM",
+    "title": "Your best people are buried in work a machine should do.",
+    "description": "Repetitive tasks, copy paste workflows, manual data entry this isn't knowledge work. It's expensive, error prone, and burning out your team.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Endless manual repetition",
+        "description": "The same data entry, the same report, the same email every day. Your team is executing processes instead of thinking."
+      },
+      {
+        "id": 2,
+        "title": "Systems don't talk to each other",
+        "description": "ERP, Excel, email, web portals your people are the integration layer between software that should connect itself."
+      },
+      {
+        "id": 3,
+        "title": "AI as a standalone toy",
+        "description": "Chatbots and AI tools that don't plug into real workflows don't reduce workload they just add another tool to manage."
+      }
+    ]
+  },
+  "newHome": {
+    "howMiryaWorks": {
+      "badge": "HOW MIRYA WORKS",
+      "titleLine1": "Click once. MIRYA learns.",
+      "titleLine2": "It runs forever.",
+      "description": "Unlike traditional RPA, MIRYA doesn't need script developers. Business teams teach it by simply doing their job once.",
+      "buttonLabel": "Get Started",
+      "imageAlt": "Planning Feature",
+      "imageTitle": "Planning Feature",
+      "imageDescription": "Lorem ipsum dolor sit amet consectetur. Ut nulla sed id tempor a. Sagittis suscipit non eget.",
+      "steps": [
+        {
+          "id": "01",
+          "title": "EYE of MIRYA observes",
+          "description": "Activate process recording. MIRYA watches your screen, captures every action clicks, keystrokes, conditions and understands the logic, not just the steps."
+        },
+        {
+          "id": "02",
+          "title": "Workflow is built automatically",
+          "description": "MIRYA translates your actions into a structured automation no code, no templates, no developer needed. Review, adjust, and approve in the visual editor."
+        },
+        {
+          "id": "03",
+          "title": "It runs autonomously",
+          "description": "Deploy with one click. MIRYA executes the workflow on schedule, on trigger, or on demand handling exceptions exactly as you would."
+        },
+        {
+          "id": "04",
+          "title": "Scale across your organisation",
+          "description": "Roll out to other teams, departments, or geographies. Governance, roles, and permissions keep enterprise control intact."
+        }
+      ]
+    },
+    "seeInAction": {
+      "badge": "HOW IT WORKS",
+      "title": "See Mirya in action",
+      "description": "It observes how employees work, understands business processes, and transforms repetitive tasks into intelligent automation workflows.",
+      "imageAlt": "See Mirya in action",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Observe",
+          "description": "Record real user actions across applications, processes and systems."
+        },
+        {
+          "id": 2,
+          "title": "Learn",
+          "description": "Identify patterns and automation opportunities."
+        },
+        {
+          "id": 3,
+          "title": "Execute",
+          "description": "Run workflows autonomously with speed and accuracy."
+        }
+      ]
+    },
+    "eyeOfMirya": {
+      "badge": "EYE OF MIRYA",
+      "titleLine1": "Every way your team works.",
+      "titleLine2": "MIRYA can learn it all.",
+      "description": "From desktop applications to web portals, Excel sheets to ERP systems MIRYA captures every surface.",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Desktop recording",
+          "description": "Capture and automate any Windows or Mac desktop application ERP, legacy tools, internal software."
+        },
+        {
+          "id": 3,
+          "title": "Email & outlook recording",
+          "description": "Capture email classification, drafting, sending, and inbox management workflows at scale and just a few clicks away."
+        },
+        {
+          "id": 4,
+          "title": "Web recording",
+          "description": "Automate browser-based workflows portals, CRMs, web apps with intelligent element recognition."
+        },
+        {
+          "id": 5,
+          "title": "Prompt to workflow",
+          "description": "Simply tell MIRYA your goal, and it automatically generates the logic, steps, and connections needed to automate the process."
+        },
+        {
+          "id": 6,
+          "title": "Excel & office automation",
+          "description": "Record complex Excel workflows, formulas, and data transformations. Run them without the spreadsheet open."
+        },
+        {
+          "id": 7,
+          "title": "ERP/SAP process recording",
+          "description": "Record and replay complete SAP or ERP transactions data entry, reporting, approvals without scripting."
+        },
+        {
+          "id": 8,
+          "title": "AI assisted smart recording",
+          "description": "MIRYA uses AI to understand intent, not just actions capturing the why behind each step for smarter automation."
+        }
+      ]
+    },
+    "miryaBenefits": {
+      "badge": "BENEFITS",
+      "title": "See the difference intelligent automation makes",
+      "description": "From time savings to error free execution, MIRYA delivers measurable improvements across every part of your workflow instantly and without complexity.",
+      "buttonLabel": "Get Started",
+      "topCards": [
+        {
+          "alt": "Automate Everything Without Changing Anything",
+          "title": "Automate Everything Without Changing Anything",
+          "description": "No need to redesign workflows or rebuild systems. MIRYA works with what you already have."
+        },
+        {
+          "alt": "Save Hundreds of Hours",
+          "title": "Save Hundreds of Hours",
+          "description": "Free your team from repetitive work and let MIRYA handle all operational tasks instantly."
+        },
+        {
+          "alt": "Reduce Manual Errors",
+          "title": "Zero-Error Execution",
+          "description": "Remove human errors and inconsistencies. Your processes run the same reliable way every time."
+        }
+      ],
+      "bottomCards": [
+        {
+          "alt": "Scale Operations Faster",
+          "title": "Boost Efficiency & Productivity",
+          "description": "MIRYA automates repetitive tasks instantly, allowing your team to focus on high-value work. Processes run faster, smoother, and with consistent accuracy."
+        },
+        {
+          "alt": "Get Clear Process Insights",
+          "title": "Actionable Insights",
+          "description": "By understanding your workflows and data patterns, MIRYA highlights opportunities for improvement and provides clear insights that help you optimize performance."
+        }
+      ]
+    },
+    "impact": {
+      "badge": "IMPACT",
+      "title": "Where MIRYA creates real impact",
+      "description": "MIRYA brings intelligent, no-code automation to organizations that want to eliminate manual work, accelerate operations, and scale without increasing headcount. From data-heavy departments to service-driven industries MIRYA works everywhere.",
+      "buttonLabel": "Book a Demo",
+      "imageAlt": "Where MIRYA creates real impact"
+    },
+    "industrySolutions": {
+      "badge": "INDUSTRY SOLUTIONS",
+      "title": "MIRYA can solve this for us.",
+      "description": "Enterprise buyers don't buy features they buy outcomes. Here's what MIRYA delivers in your industry.",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Logistics & freight forwarding",
+          "description": "Automated shipment tracking, order processing, customs documentation, and ERP data entry your operations team focuses on decisions, not data."
+        },
+        {
+          "id": 2,
+          "title": "Finance & accounting",
+          "description": "Invoice processing, Excel automation, payment reconciliation, and reporting your finance team delivers insights, not data entry."
+        },
+        {
+          "id": 3,
+          "title": "Manufacturing & production",
+          "description": "Production reports, quality documentation, ERP/SAP processes, order management, and approval workflows automated without touching the core system."
+        },
+        {
+          "id": 4,
+          "title": "E-commerce & customer service",
+          "description": "Customer inquiries, returns management, product data maintenance, and AI-powered support deliver faster responses at lower cost."
+        },
+        {
+          "id": 5,
+          "title": "Healthcare & clinics",
+          "description": "Patient form processing, appointment management, document classification (IDP), and data transfer between systems freeing clinical staff from administration."
+        }
+      ]
+    },
+    "platform": {
+      "badge": "PLATFORM",
+      "title": "Enterprise grade. No code first.",
+      "description": "MIRYA is built for business teams to operate independently while giving developers every hook they need to extend and customize.",
+      "imageAlt": "MIRYA Platform",
+      "cards": [
+        {
+          "id": 1,
+          "title": "No-code first, code when you want",
+          "description": "Business departments automate on their own. Developers add custom logic, APIs, and complex conditions whenever needed."
+        },
+        {
+          "id": 2,
+          "title": "AI agents as digital team members",
+          "description": "Not isolated chatbots. AI agents that understand processes, learn from users, and work autonomously within your existing workflows."
+        },
+        {
+          "id": 3,
+          "title": "Secure on premise or hybrid",
+          "description": "Deploy entirely within your infrastructure. Your data never leaves your environment. GDPR and enterprise compliance by default."
+        },
+        {
+          "id": 4,
+          "title": "Integrates with existing systems",
+          "description": "SAP, ERP, Excel, Outlook, web portals, and legacy applications. MIRYA works where your team already works."
+        },
+        {
+          "id": 5,
+          "title": "Enterprise governance & roles",
+          "description": "Granular role and permission models. Full audit trail. Centralised control with departmental autonomy."
+        },
+        {
+          "id": 6,
+          "title": "Scalable implementation",
+          "description": "Training, enablement, and change management included. We don't hand you software we ensure adoption and ROI."
+        }
+      ]
+    },
+    "whyMirya": {
+      "badge": "WHY MIRYA",
+      "title": "AI that integrates into your world. Not the other way around.",
+      "description": "Most AI tools require your people to change. MIRYA learns from your people and works within the systems, processes, and habits already in place.",
+      "cards": [
+        {
+          "id": 1,
+          "title": "No complex IT project required",
+          "description": "Business teams automate independently. IT retains control without carrying the workload."
+        },
+        {
+          "id": 2,
+          "title": "Adoption built in",
+          "description": "Training, enablement, and change systems are part of every implementation. We deliver outcomes, not software."
+        },
+        {
+          "id": 3,
+          "title": "Works with your existing stacks",
+          "description": "No rip-and-replace. MIRYA integrates with SAP, ERP, Office, email, and legacy systems you already depend on."
+        },
+        {
+          "id": 4,
+          "title": "Digital team members, not chatbots",
+          "description": "MIRYA agents understand processes, learn from actions, and operate as productive colleagues within your org."
+        },
+        {
+          "id": 5,
+          "title": "Enterprise ready by design",
+          "description": "Security, compliance, and governance not as afterthoughts, but as foundations. Secure on premise & hybrid deployment."
+        }
+      ]
+    },
+    "newTestimonials": {
+      "badge": "TESTIMONIALS",
+      "title": "Reviews from customers who use MIRYA",
+      "description": "Harnessing the power of artificial intelligence to revolutionize industries and enhance human experiences.",
+      "items": [
+        {
+          "review": "The easiest automation tool we've ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+          "name": "David Anderson",
+          "designation": "Director"
+        },
+        {
+          "review": "The easiest automation tool we've ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+          "name": "David Anderson",
+          "designation": "Director"
+        },
+        {
+          "review": "The easiest automation tool we've ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+          "name": "David Anderson",
+          "designation": "Director"
+        },
+        {
+          "review": "The easiest automation tool we've ever used. Our team learned it in one day. A tool that works exactly with the systems we already have no integrations needed. We white-labeled MIRYA and now deliver automation to our clients under our brand. Game-changing.",
+          "name": "David Anderson",
+          "designation": "Director"
+        },
+        {
+          "review": "Seamlessly streamlines our workflow, saving us countless hours each week. The intuitive interface means no steep learning curve, and the customization options allow us to tailor it to our exact needs. Our productivity has soared since adopting this tool.",
+          "name": "Samantha Lee",
+          "designation": "Product Manager"
+        },
+        {
+          "review": "This platform transformed how we manage projects. The real-time updates and automated reminders keep our team aligned and on schedule. Plus, the dedicated customer support team ensures any questions are promptly addressed.",
+          "name": "Carlos Martinez",
+          "designation": "Operations Lead"
+        }
+      ]
+    }
   }
 }
