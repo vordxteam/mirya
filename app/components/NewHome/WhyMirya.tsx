@@ -87,7 +87,7 @@ function WhyCardItem({ card }: { card: WhyCard }) {
       />
 
       <div
-        className="relative z-10 rounded-2xl h-full flex flex-col gap-8 bg-[#050A29] sm:py-8 py-4 sm:px-5"
+        className="relative z-10 rounded-2xl h-full flex flex-col gap-8 bg-[#050A29] sm:py-8 py-4 sm:px-5 px-4"
         
       >
         {/* Icon */}

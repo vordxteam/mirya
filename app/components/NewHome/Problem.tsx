@@ -154,8 +154,8 @@ export default function Problem(): React.ReactElement {
       <div className="py-20 flex flex-col items-center relative overflow-hidden">
         <div className="bg-[#00031C]"></div>
         {/* Blue dotted light behind section title */}
-        <div className="absolute top-[0px] left-1/2 -translate-x-1/2 z-0 pointer-events-none">
-          <div className="rounded-[68.75px] opacity-[0.6] bg-[#5935E94D] blur-[90px] w-[458px] h-[200px]" />
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 z-0 pointer-events-none">
+          <div className="rounded-[68.75px] opacity-[0.9] bg-[#5935E94D] blur-[90px] w-[458px] h-[200px]" />
         </div>
         {/* Background light between sections */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">

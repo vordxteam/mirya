@@ -47,7 +47,7 @@ const Footer = () => {
 
         <div className="px-5 z-0 relative sm:px-10 md:px-20 pt-[63px] pb-[80px] max-w-[1440px] m-auto">
           <div className="flex flex-col pb-5 sm:pb-[62px] border-b border-[#FFFFFF52] sm:flex-row items-center justify-between">
-            <h3 className="heading-3 font-normal text-[#FFFFFF] max-w-[320px] sm:text-[40px] text-[24px] sm:leading-[48px] leading-8">
+            <h3 className="heading-3 font-normal text-[#FFFFFF] max-w-[517px] sm:!text-[40px] text-[24px] sm:!leading-[48px] leading-8">
               {t("footer.newsletter")}
             </h3>
             <div className="flex flex-col sm:flex-row  gap-3">
@@ -62,7 +62,7 @@ const Footer = () => {
                   width={20}
                   height={20}
                   alt="person"
-                  className="absolute top-4 left-6"
+                  className="absolute top-[14px] left-6"
                 />
               </div>
               <button
