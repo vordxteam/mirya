@@ -76,10 +76,10 @@ function IndustryCardItem({ card }: { card: IndustryCard }) {
       style={{ background: cardBorder }}
     >
       <div
-        className="rounded-2xl h-full flex flex-col gap-8"
+        className="rounded-2xl h-full flex flex-col sm:gap-8 gap-4 sm:py-[54px] py-8 sm:px-10 px-5"
         style={{
           backgroundColor: "#050A29",
-          padding: "54px 40px",
+          // padding: "54px 40px",
         }}
       >
         {/* Icon */}
@@ -94,10 +94,10 @@ function IndustryCardItem({ card }: { card: IndustryCard }) {
 
         {/* Text */}
         <div className="flex flex-col gap-3">
-          <h3 className="text-white sm:text-[32px] text-[24px] font-normal leading-9">
+          <h3 className="text-white sm:text-[32px] text-[20px] leading-6 font-normal sm:leading-9">
             {card.title}
           </h3>
-          <p className="text-[#FFFFFF99] text-[18px] leading-7">
+          <p className="text-[#FFFFFF99] sm:text-[18px] text-[12px] leading-5 sm:leading-7">
             {card.description}
           </p>
         </div>
@@ -146,7 +146,7 @@ export default function IndustrySolutions(): React.ReactElement {
 
         {/* Header */}
         <motion.div
-          className="flex flex-col items-center gap-4 text-center mb-[48px]"
+          className="flex flex-col items-center gap-4 text-center sm:mb-[48px] mb-[32px]"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -163,7 +163,7 @@ export default function IndustrySolutions(): React.ReactElement {
 
           {/* Heading */}
           <motion.h2
-            className="text-white text-[40px] md:text-[52px] font-normal leading-[1.1] tracking-[-0.01em]"
+            className="text-white sm:text-[40px] text-[33px] md:text-[48px] font-normal leading-[1.1] tracking-[-0.01em]"
             variants={itemVariants}
           >
             {t("newHome.industrySolutions.title")}
@@ -171,7 +171,7 @@ export default function IndustrySolutions(): React.ReactElement {
 
           {/* Subtext */}
           <motion.p
-            className="text-[#CAC9D1] text-[18px] leading-6 max-w-[721px]"
+            className="text-[#CAC9D1] sm:text-[18px] text-[14px] leading-6 max-w-[721px]"
             variants={itemVariants}
           >
             {t("newHome.industrySolutions.description")}

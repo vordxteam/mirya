@@ -298,7 +298,7 @@
       "buttonLabel": "Get Started",
       "imageAlt": "Planning Feature",
       "imageTitle": "Planning Feature",
-      "imageDescription": "Lorem ipsum dolor sit amet consectetur. Ut nulla sed id tempor a. Sagittis suscipit non eget.",
+      "imageDescription": "Build plans, define milestones, and visualize timelines with AI-powered workflow suggestions.",
       "steps": [
         {
           "id": "01",
@@ -427,7 +427,7 @@
       "badge": "IMPACT",
       "title": "Where MIRYA creates real impact",
       "description": "MIRYA brings intelligent, no-code automation to organizations that want to eliminate manual work, accelerate operations, and scale without increasing headcount. From data-heavy departments to service-driven industries MIRYA works everywhere.",
-      "buttonLabel": "Book a Demo",
+      "buttonLabel": "Get a Demo",
       "imageAlt": "Where MIRYA creates real impact"
     },
     "industrySolutions": {

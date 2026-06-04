@@ -51,7 +51,7 @@ export default function SeeInAction(): React.ReactElement {
 
       {/* Content */}
       <div
-        className="relative z-10 mx-auto px-5 md:px-[80px] py-[80px]"
+        className="relative z-10 mx-auto px-5 md:px-[80px] sm:py-[80px] py-10"
         style={{ maxWidth: "1440px" }}
       >
         {/* Header */}
@@ -73,7 +73,7 @@ export default function SeeInAction(): React.ReactElement {
 
           {/* Heading */}
           <motion.h2
-            className="text-white text-[40px] md:text-[48px] font-normal leading-[1.1] tracking-[-0.01em]"
+            className="text-white sm:text-[40px] text-[30px] md:text-[48px] font-normal leading-[1.1] tracking-[-0.01em]"
             variants={itemVariants}
           >
             {t("newHome.seeInAction.title")}
@@ -81,7 +81,7 @@ export default function SeeInAction(): React.ReactElement {
 
           {/* Subtext */}
           <motion.p
-            className="text-[#CAC9D1] text-[16px] md:text-[18px] leading-[1.6] max-w-[721px]"
+            className="text-[#CAC9D1] sm:text-[16px] text-[14px] md:text-[18px] leading-[1.6] max-w-[721px]"
             variants={itemVariants}
           >
             {t("newHome.seeInAction.description")}

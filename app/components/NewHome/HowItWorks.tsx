@@ -55,7 +55,7 @@ export default function HowMiryaWorks(): React.ReactElement {
             </div>
 
             {/* Main content */}
-            <div className="relative z-10 px-5 md:px-[80px] py-[80px]">
+            <div className="relative z-10 px-5 md:px-[80px] sm:py-[80px] py-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-start">
 
                     {/* ── LEFT SIDE ── */}
@@ -69,7 +69,7 @@ export default function HowMiryaWorks(): React.ReactElement {
                         {/* Label */}
                         <motion.div className="flex items-center gap-5 px-16" variants={itemVariants}>
                             <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
-                            <h5 className="text-[#959EFE] text-[20px] leading-6 font-normal tracking-widest uppercase">
+                            <h5 className="text-[#959EFE] text-[20px] text-center leading-6 font-normal tracking-widest uppercase">
                                 {t("newHome.howMiryaWorks.badge")}
                             </h5>
                             <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
@@ -77,24 +77,24 @@ export default function HowMiryaWorks(): React.ReactElement {
 
                         {/* Heading */}
                         <motion.h2
-                            className="text-white text-[40px] md:text-[48px] font-normal leading-12 md:leading-[56px] tracking-[-0.02em]"
+                            className="text-white text-[33px] sm:text-[40px] md:text-[48px] font-normal leading-10 md:leading-[56px] tracking-[-0.02em] sm:mt-0 mt-2 sm:text-left text-center"
                             variants={itemVariants}
                         >
                             {t("newHome.howMiryaWorks.titleLine1")}
-                            <br />
+                            <br className="hidden sm:block" />
                             {t("newHome.howMiryaWorks.titleLine2")}
                         </motion.h2>
 
                         {/* Subtext */}
                         <motion.p
-                            className="text-[#CAC9D1] text-[18px] leading-6 max-w-[552px]"
+                            className="text-[#CAC9D1] sm:text-[18px] text-[14px] leading-6 max-w-[552px] sm:text-left text-center"
                             variants={itemVariants}
                         >
                             {t("newHome.howMiryaWorks.description")}
                         </motion.p>
 
                         {/* CTA Button */}
-                        <motion.div variants={itemVariants} className="mt-4">
+                        <motion.div variants={itemVariants} className="sm:mt-4 mt-2 flex justify-center sm:block">
                             <GradientButton
                                 label={t("newHome.howMiryaWorks.buttonLabel")}
                                 href="/contact"
@@ -124,11 +124,11 @@ export default function HowMiryaWorks(): React.ReactElement {
                                         {step.id}
                                     </span>
 
-                                    <h3 className="text-white text-[18px] font-normal leading-snug">
+                                    <h3 className="text-white text-[22px] xl:whitespace-nowrap font-normal leading-snug">
                                         {step.title}
                                     </h3>
 
-                                    <p className="text-[#FFFFFFCC] text-[16px] leading-5 font-light">
+                                    <p className="text-[#FFFFFFCC] sm:text-[16px] text-[14px] leading-5 font-light">
                                         {step.description}
                                     </p>
                                 </motion.div>

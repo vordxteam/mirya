@@ -151,9 +151,12 @@ export default function Problem(): React.ReactElement {
           }}
         ></div>
       </div>
-      <div className="py-15  flex flex-col items-center relative overflow-hidden">
+      <div className="py-20 flex flex-col items-center relative overflow-hidden">
         <div className="bg-[#00031C]"></div>
-
+        {/* Blue dotted light behind section title */}
+        <div className="absolute top-[0px] left-1/2 -translate-x-1/2 z-0 pointer-events-none">
+          <div className="rounded-[68.75px] opacity-[0.6] bg-[#5935E94D] blur-[90px] w-[458px] h-[200px]" />
+        </div>
         {/* Background light between sections */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
           <div className="rounded-[68.75px] opacity-[0.6] bg-[#5935E94D] blur-[90px] w-[458px] h-[318px]"></div>
@@ -183,7 +186,7 @@ export default function Problem(): React.ReactElement {
         </motion.div>
 
         <motion.div
-          className="w-full flex flex-col items-center relative px-5  z-10"
+          className="w-full flex flex-col items-center relative px-5 z-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -199,7 +202,7 @@ export default function Problem(): React.ReactElement {
               height={20}
               width={20}
             />
-            <h5 className="heading-5 font-regular text-[#959EFE] text-center text-[20px] leading-6">
+            <h5 className="heading-5 font-regular text-[#959EFE] text-center !text-[20px] leading-6">
               {t("problem.badge")}
             </h5>
             <Image
@@ -211,17 +214,17 @@ export default function Problem(): React.ReactElement {
           </motion.div>
 
           <motion.div
-            ref={paragraphRef}
-            className="pt-3 text-[20px]  md:text-[48px] sm:leading-[56px] leading-8 font-medium text-white max-w-[788px] text-center  relative z-10"
+            // ref={paragraphRef}
+            className="pt-4 text-[20px]  md:text-[48px] sm:leading-[56px] leading-8 font-normal text-white max-w-[788px] text-center  relative z-10"
             variants={itemVariants}
           >
             {t("problem.title")}
           </motion.div>
-          <motion.div className="relative z-10 max-w-[721px] text-center mt-4 text-[#CAC9D1] text-[18px] leading-6" variants={containerVariants}>
+          <motion.div className="relative z-10 max-w-[721px] text-center mt-4 text-[#CAC9D1] text-[14px] sm:text-[18px] leading-6" variants={containerVariants}>
             {t("problem.description")}
           </motion.div>
           <motion.div
-            className="relative z-10 w-full max-w-[1280px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+            className="relative z-10 w-full max-w-[1280px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 lg:mt-[72px]"
             variants={containerVariants}
           >
             {benefits.map((benefit) => (

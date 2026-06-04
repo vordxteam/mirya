@@ -125,7 +125,7 @@ export default function Benefits(): React.ReactElement {
 
                     {/* Heading */}
                     <motion.h2
-                        className="text-white text-[40px] md:text-[48px] font-normal leading-[1.1] tracking-[-0.01em] max-w-[788px]"
+                        className="text-white sm:text-[40px] text-[30px] md:text-[48px] font-normal leading-[1.3] tracking-[-0.01em] max-w-[788px]"
                         variants={itemVariants}
                     >
                         {t("newHome.miryaBenefits.title")}
@@ -133,7 +133,7 @@ export default function Benefits(): React.ReactElement {
 
                     {/* Subtext */}
                     <motion.p
-                        className="text-[#CAC9D1] text-[18px] leading-6 max-w-[721px]"
+                        className="text-[#CAC9D1] sm:text-[18px] text-[14px] leading-6 max-w-[721px]"
                         variants={itemVariants}
                     >
                         {t("newHome.miryaBenefits.description")}
@@ -175,11 +175,11 @@ export default function Benefits(): React.ReactElement {
                                     className="w-full h-auto rounded-2xl"
                                 />
 
-                                <div className="absolute top-6 left-8 right-8 z-10">
-                                    <h3 className="text-white text-[24px] leading-6 font-normal tracking-[-0.01em] mb-2">
+                                <div className="absolute sm:top-6 top-2 left-8 right-8 z-10">
+                                    <h3 className="text-white text-[20px] sm:leading-6 leading-8 font-medium tracking-[-0.01em] mb-2">
                                         {card.title}
                                     </h3>
-                                    <p className="text-[#CAC9D1] text-[14px] leading-5 font-normal">
+                                    <p className="sm:text-[#CAC9D1] text-[12px]  sm:text-[14px] leading-5 font-normal">
                                         {card.description}
                                     </p>
                                 </div>
@@ -203,11 +203,11 @@ export default function Benefits(): React.ReactElement {
                                     className="w-full h-auto rounded-2xl"
                                 />
 
-                                <div className="absolute top-6 left-8 right-8 z-10">
-                                    <h3 className="text-white text-[20px] leading-6 font-normal tracking-[-0.01em] mb-2">
+                                <div className="absolute sm:top-6 top-2 left-8 right-8 z-10">
+                                    <h3 className="text-white text-[20px]  leading-6 font-normal tracking-[-0.01em] sm:mb-2 mb-1">
                                         {card.title}
                                     </h3>
-                                    <p className="text-[#CAC9D1] text-[14px] leading-5 font-normal">
+                                    <p className="sm:text-[#CAC9D1] bg-[#00031C] rounded-lg sm:rounded-none p-1 sm:p-0 sm:bg-transparent sm:text-[14px] text-[12px] leading-5 font-normal">
                                         {card.description}
                                     </p>
                                 </div>

@@ -87,8 +87,8 @@ function WhyCardItem({ card }: { card: WhyCard }) {
       />
 
       <div
-        className="relative z-10 rounded-2xl h-full flex flex-col gap-8 bg-[#050A29]"
-        style={{ padding: "32px 28px" }}
+        className="relative z-10 rounded-2xl h-full flex flex-col gap-8 bg-[#050A29] sm:py-8 py-4 sm:px-5"
+        
       >
         {/* Icon */}
         <div className="flex-shrink-0">
@@ -101,11 +101,11 @@ function WhyCardItem({ card }: { card: WhyCard }) {
         </div>
 
         {/* Text */}
-        <div className="flex flex-col gap-3">
-          <h3 className="text-white text-[22px] font-normal leading-snug">
+        <div className="flex flex-col sm:gap-3 gap-1">
+          <h3 className="text-white sm:text-[24px] text-[20px] font-normal leading-snug">
             {card.title}
           </h3>
-          <p className="text-[#FFFFFFB2] text-[16px] leading-[1.65]">
+          <p className="text-[#FFFFFFB2] sm:text-[16px] text-[12px] leading-[1.65]">
             {card.description}
           </p>
         </div>
@@ -171,14 +171,14 @@ export default function WhyMirya(): React.ReactElement {
           </motion.div>
 
           <motion.h2
-            className="text-white text-[40px] md:text-[48px] font-normal leading-[56px] max-w-[820px]"
+            className="text-white sm:text-[40px] text-[30px] md:text-[48px] font-normal leading-[1.3] sm:leading-[56px] max-w-[820px]"
             variants={itemVariants}
           >
             {t("newHome.whyMirya.title")}
           </motion.h2>
 
           <motion.p
-            className="text-[#CAC9D1] text-[18px] leading-6 max-w-[721px]"
+            className="text-[#CAC9D1] sm:text-[18px] text-[14px] leading-6 max-w-[721px]"
             variants={itemVariants}
           >
             {t("newHome.whyMirya.description")}

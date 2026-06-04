@@ -7,7 +7,7 @@ const HeroSection = () => {
   const { t } = useTranslation("home");
   return (
     <div>
-      <div className="relative z-10 flex flex-col items-center justify-center pt-0 sm:pt-10 px-5 md:px-10 bg-[url('/images/herobg.png')] bg-no-repeat bg-bottom bg-contain">
+      <div className="relative z-10 flex flex-col items-center justify-center pt-0 sm:pt-6 px-5 md:px-10 bg-[url('/images/herobg.png')] bg-no-repeat bg-bottom bg-contain">
         <div className="absolute top-0 inset-x-0 flex justify-center pointer-events-none z-0">
           <div className="rounded-[68.75px] bg-[#4F60FA] opacity-[0.45] blur-[50px] w-[181px] h-[94px]"></div>
         </div>

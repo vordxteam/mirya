@@ -165,7 +165,7 @@ export default function EyeOfMirya(): React.ReactElement {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          <motion.div className="flex items-center gap-3 lg:mx-16" variants={itemVariants}>
+          <motion.div className="flex items-center justify-center sm:justify-start gap-3 lg:mx-16" variants={itemVariants}>
             <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
             <span className="text-[#959EFE] text-[20px] leading-6 font-normal tracking-widest uppercase">
               {t("newHome.eyeOfMirya.badge")}
@@ -174,16 +174,16 @@ export default function EyeOfMirya(): React.ReactElement {
           </motion.div>
 
           <motion.h2
-            className="text-white text-[40px] md:text-[48px] font-normal leading-[1.1] tracking-[-0.01em] max-w-[788px]"
+            className="text-white sm:text-[40px] text-[27px] sm:text-left text-center md:text-[48px] font-normal leading-[1.3] tracking-[-0.01em] max-w-[788px]"
             variants={itemVariants}
           >
             {t("newHome.eyeOfMirya.titleLine1")}
-            <br />
+            <br className="hidden sm:block" />
             {t("newHome.eyeOfMirya.titleLine2")}
           </motion.h2>
 
           <motion.p
-            className="text-[#CAC9D1] text-[18px] leading-[1.6] max-w-[721px]"
+            className="text-[#CAC9D1] sm:text-[18px] text-[14px] leading-[1.6] max-w-[721px] sm:text-left text-center"
             variants={itemVariants}
           >
             {t("newHome.eyeOfMirya.description")}
