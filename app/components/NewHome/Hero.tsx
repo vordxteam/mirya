@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
+
 const HeroSection = () => {
   const { t } = useTranslation("home");
   return (
@@ -25,7 +26,7 @@ const HeroSection = () => {
             textColor="#fff"
           />
           <div
-            className="rounded-full p-[1.5px]"
+            className="rounded-full p-[1.5px]  transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_18px_rgba(2,116,254,0.45)]"
             style={{
               background:
                 "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",

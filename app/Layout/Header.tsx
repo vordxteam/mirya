@@ -572,7 +572,7 @@ export default function Header() {
           </Link>
 
           <div
-            className="rounded-full p-0.5"
+            className="rounded-full p-0.5  transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_18px_rgba(2,116,254,0.45)]"
             style={{
               background:
                 "linear-gradient(180deg, #4D4D4D 0%, #FFF 49.5%, rgba(255, 255, 255, 0) 100%)",

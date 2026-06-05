@@ -80,7 +80,7 @@ export default function Impact(): React.ReactElement {
                         {/* CTA Button */}
                         <motion.div variants={itemVariants} className="flex justify-center sm:block">
                             <div
-                                className="rounded-full p-[1px] max-w-[155px] whitespace-nowrap"
+                                className="rounded-full p-[1px] max-w-[155px] whitespace-nowrap  transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_18px_rgba(2,116,254,0.45)]"
                                 style={{
                                     background:
                                         "linear-gradient(180deg, #4D4D4D 0%, #FFFFFF 49.5%, #4D4D4D 100%)",

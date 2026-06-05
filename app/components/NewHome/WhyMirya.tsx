@@ -69,12 +69,35 @@ const cardBorder =
   "linear-gradient(97.21deg, #22223C 14.82%, #22223C 25.27%, #686DDD 39.55%, #22223C 49.99%, #22223C 84.47%)";
 
 function WhyCardItem({ card }: { card: WhyCard }) {
+  const [stars] = React.useState(() =>
+    Array.from({ length: 35 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 2 + 1,
+      duration: Math.random() * 1.5 + 0.8,
+      delay: Math.random() * 2,
+    }))
+  );
+  const [hovered, setHovered] = React.useState(false);
   return (
     <motion.div
       variants={cardVariants}
       className="relative rounded-2xl p-[1px] h-full overflow-hidden"
       style={{ background: cardBorder }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
+      {hovered && stars.map(s => (
+        <motion.span
+          key={s.id}
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: [0, 1, 0], y: -30 }}
+          transition={{ duration: s.duration, delay: s.delay, repeat: Infinity }}
+          className="absolute rounded-full bg-white pointer-events-none z-30"
+          style={{ left: `${s.x}%`, top: `${s.y}%`, width: s.size, height: s.size }}
+        />
+      ))}
       {/* Top-right blue glow inside card */}
       <div
         className="absolute top-0 right-0 w-[160px] h-[160px] pointer-events-none z-20"
@@ -88,7 +111,7 @@ function WhyCardItem({ card }: { card: WhyCard }) {
 
       <div
         className="relative z-10 rounded-2xl h-full flex flex-col gap-8 bg-[#050A29] sm:py-8 py-4 sm:px-5 px-4"
-        
+
       >
         {/* Icon */}
         <div className="flex-shrink-0">

@@ -119,10 +119,12 @@ export default function SeeInAction(): React.ReactElement {
             <motion.div
               key={card.id}
               variants={cardVariants}
+              whileHover={{ y: -8, scale: 1.015 }}
               className="relative rounded-2xl p-[1px]"
               style={{
                 background:
                   "linear-gradient(173.77deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
+                     transition: "transform 0.45s cubic-bezier(0.23, 1, 0.32, 1)",
               }}
             >
               <div

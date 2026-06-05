@@ -95,12 +95,29 @@ const centerBorder =
 
 function FeatureCardItem({ card }: { card: FeatureCard }) {
   return (
+
     <motion.div
       variants={cardVariants}
-      className="relative rounded-2xl p-[1px] h-full"
-      style={{ background: regularBorder }}
+      className="relative rounded-2xl p-[1px] h-full cursor-pointer"
+      style={{
+        background: regularBorder,
+        transition: "filter 0.4s ease, box-shadow 0.4s ease",
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.filter = "brightness(1.8)";
+        e.currentTarget.style.boxShadow = "0 0 32px rgba(63, 73, 216, 0.4)";
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.filter = "brightness(1)";
+        e.currentTarget.style.boxShadow = "none";
+      }}
     >
-      <div className="rounded-2xl h-full flex flex-col gap-8 px-6 py-5 bg-[#050A29]">
+      <div
+        className="rounded-2xl h-full flex flex-col gap-8 px-6 py-5 bg-[#050A29]"
+        style={{ transition: "filter 0.4s ease" }}
+        onMouseEnter={e => e.currentTarget.style.filter = "brightness(0.556)"}
+        onMouseLeave={e => e.currentTarget.style.filter = "brightness(1)"}
+      >
         <div className="w-15 h-15 flex items-center justify-center">
           <Image src={card.icon} alt={card.title} width={60} height={60} />
         </div>
@@ -218,10 +235,26 @@ export default function EyeOfMirya(): React.ReactElement {
             {/* [col2, row1+2] Tall center card */}
             <motion.div
               variants={cardVariants}
-              className="relative rounded-2xl p-[1px] lg:col-start-2 lg:row-start-1 lg:row-span-2"
-              style={{ background: centerBorder }}
+              className="relative rounded-2xl p-[1px] lg:col-start-2 lg:row-start-1 lg:row-span-2 cursor-pointer"
+              style={{
+                background: centerBorder,
+                transition: "filter 0.4s ease, box-shadow 0.4s ease",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.filter = "brightness(1.8)";
+                e.currentTarget.style.boxShadow = "0 0 32px rgba(63, 73, 216, 0.4)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.filter = "brightness(1)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             >
-              <div className="rounded-2xl h-full flex flex-col justify-end gap-8 px-6 py-5 bg-[#050A29]">
+              <div
+                className="rounded-2xl h-full flex flex-col justify-end gap-8 px-6 py-5 bg-[#050A29]"
+                style={{ transition: "filter 0.4s ease" }}
+                onMouseEnter={e => e.currentTarget.style.filter = "brightness(0.556)"}
+                onMouseLeave={e => e.currentTarget.style.filter = "brightness(1)"}
+              >
                 <div className="w-15 h-15 flex items-center justify-center">
                   <Image
                     src={cards[4].icon}

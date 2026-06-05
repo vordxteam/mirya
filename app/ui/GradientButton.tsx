@@ -44,7 +44,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
 
   return (
     <div
-      className={`${width ? width : "w-fit"} p-[1px]`}
+      className={`${width ? width : "w-fit"} p-[1px] transition-transform duration-300 ease-out hover:scale-[1.02] cursor-pointer`}
       style={{
         borderRadius: "40px",
         background:
@@ -55,7 +55,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
         <a
           href={href}
           onClick={handleClick}
-          className="block font-normal py-3 px-6 text-center"
+          className="block font-normal py-3 px-6 text-center  transition-opacity duration-300 hover:opacity-85"
           style={{
             borderRadius: "40px",
             background: bgColor,
@@ -68,7 +68,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
         <Link
           href={href || ""}
           onClick={handleClick}
-          className="block font-normal py-3 px-6 text-center"
+          className="block font-normal py-3 px-6 text-center  transition-opacity duration-300 hover:opacity-85 "
           style={{
             borderRadius: "40px",
             background: bgColor,

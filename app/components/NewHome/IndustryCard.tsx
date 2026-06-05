@@ -73,14 +73,28 @@ function IndustryCardItem({ card }: { card: IndustryCard }) {
     <motion.div
       variants={cardVariants}
       className="relative rounded-2xl p-[1px] h-full"
-      style={{ background: cardBorder }}
+      style={{
+        background: cardBorder,
+        transition: "filter 0.4s ease, box-shadow 0.4s ease",
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.filter = "brightness(1.8)";
+        e.currentTarget.style.boxShadow = "0 0 40px rgba(70, 59, 191, 0.45)";
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.filter = "brightness(1)";
+        e.currentTarget.style.boxShadow = "none";
+      }}
     >
       <div
         className="rounded-2xl h-full flex flex-col sm:gap-8 gap-4 sm:py-[54px] py-8 sm:px-10 px-5"
         style={{
           backgroundColor: "#050A29",
           // padding: "54px 40px",
+          transition: "filter 0.4s ease",
         }}
+        onMouseEnter={e => e.currentTarget.style.filter = "brightness(0.556)"}
+        onMouseLeave={e => e.currentTarget.style.filter = "brightness(1)"}
       >
         {/* Icon */}
         <div className="flex-shrink-0">

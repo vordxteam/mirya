@@ -227,7 +227,7 @@ export default function Problem(): React.ReactElement {
             className="relative z-10 w-full max-w-[1280px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 lg:mt-[72px]"
             variants={containerVariants}
           >
-            {benefits.map((benefit) => (
+            {/* {benefits.map((benefit) => (
               <motion.div
                 key={benefit.id}
                 variants={benefitItemVariants}
@@ -249,6 +249,37 @@ export default function Problem(): React.ReactElement {
                       height={60}
                     />
                   </div>
+                  <div>
+                    <h3 className="text-white sm:text-[22px] text-[17px]  font-regular leading-[26px] mb-4">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-[#FFFFFFCC] text-[16px] leading-5 font-light">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))} */}
+            {benefits.map((benefit) => (
+              <motion.div
+                key={benefit.id}
+                variants={benefitItemVariants}
+                className="relative rounded-2xl p-[1px] transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_18px_45px_rgba(63,73,216,0.22)] group"
+                style={{
+                  background:
+                    "linear-gradient(173.77deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
+                }}
+              >
+                <div className="rounded-2xl h-full flex flex-col gap-8 px-6 py-5 bg-[#050A29] transition-all duration-500 ease-out group-hover:bg-[#08103A]">
+                  <div className="w-15 h-15 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110">
+                    <Image
+                      src={benefit.img}
+                      alt={benefit.title}
+                      width={60}
+                      height={60}
+                    />
+                  </div>
+
                   <div>
                     <h3 className="text-white sm:text-[22px] text-[17px]  font-regular leading-[26px] mb-4">
                       {benefit.title}
