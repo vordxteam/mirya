@@ -34,7 +34,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
       />
 
       <div
-        className="w-4 h-4 mt-[2px] border border-white rounded flex items-center justify-center
+        className="w-[18px] h-[18px] mt-[2px] border border-[#FFFFFFB2] rounded  flex items-center justify-center
                       peer-checked:[&_svg]:opacity-100"
       >
         <svg

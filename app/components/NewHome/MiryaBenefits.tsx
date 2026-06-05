@@ -116,11 +116,23 @@ export default function Benefits(): React.ReactElement {
                 >
                     {/* Label */}
                     <motion.div className="flex items-center gap-3" variants={itemVariants}>
-                        <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+                        <Image
+                            src="/images/label2.svg"
+                            alt="gradient1"
+                            height={16}
+                            width={78}
+                            priority={true}
+                        />
                         <span className="text-[#959EFE] text-[20px] leading-6 font-normal tracking-widest uppercase">
                             {t("newHome.miryaBenefits.badge")}
                         </span>
-                        <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+                        <Image
+                            src="/images/label.svg"
+                            alt="gradient1"
+                            height={16}
+                            width={78}
+                            priority={true}
+                        />
                     </motion.div>
 
                     {/* Heading */}

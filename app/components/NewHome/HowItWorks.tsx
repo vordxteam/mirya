@@ -68,11 +68,23 @@ export default function HowMiryaWorks(): React.ReactElement {
                     >
                         {/* Label */}
                         <motion.div className="flex items-center gap-5 px-16" variants={itemVariants}>
-                            <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+                            <Image
+                                src="/images/label2.svg"
+                                alt="gradient1"
+                                height={16}
+                                width={78}
+                                priority={true}
+                            />
                             <h5 className="text-[#959EFE] sm:text-[20px] text-[17px] text-center leading-6 font-normal tracking-widest uppercase">
                                 {t("newHome.howMiryaWorks.badge")}
                             </h5>
-                            <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+                            <Image
+                                src="/images/label.svg"
+                                alt="gradient1"
+                                height={16}
+                                width={78}
+                                priority={true}
+                            />
                         </motion.div>
 
                         {/* Heading */}

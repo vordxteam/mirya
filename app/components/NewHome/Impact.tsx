@@ -54,11 +54,23 @@ export default function Impact(): React.ReactElement {
                     >
                         {/* Label */}
                         <motion.div className="flex items-center justify-center sm:justify-start gap-3 lg:px-16" variants={itemVariants}>
-                            <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+                            <Image
+                                src="/images/label2.svg"
+                                alt="gradient1"
+                                height={16}
+                                width={78}
+                                priority={true}
+                            />
                             <span className="text-[#959EFE] text-[20px] leading-6 font-normal tracking-widest uppercase">
                                 {t("newHome.impact.badge")}
                             </span>
-                            <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+                            <Image
+                                src="/images/label.svg"
+                                alt="gradient1"
+                                height={16}
+                                width={78}
+                                priority={true}
+                            />
                         </motion.div>
 
                         {/* Heading */}
@@ -90,7 +102,7 @@ export default function Impact(): React.ReactElement {
                                     href="/user-testing"
                                     className="inline-block w-full text-center text-[16px] font-normal text-white py-3 px-6 bg-[#00031C] rounded-full"
                                 >
-                                   {t("newHome.impact.buttonLabel")}
+                                    {t("newHome.impact.buttonLabel")}
                                 </Link>
                             </div>
                         </motion.div>

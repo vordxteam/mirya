@@ -64,11 +64,23 @@ export default function SeeInAction(): React.ReactElement {
         >
           {/* Label */}
           <motion.div className="flex items-center gap-3" variants={itemVariants}>
-            <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+            <Image
+              src="/images/label2.svg"
+              alt="gradient1"
+              height={16}
+              width={78}
+              priority={true}
+            />
             <span className="text-[#959EFE] text-[20px] leading-6 font-normal tracking-widest uppercase">
               {t("newHome.seeInAction.badge")}
             </span>
-            <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+            <Image
+              src="/images/label.svg"
+              alt="gradient1"
+              height={16}
+              width={78}
+              priority={true}
+            />
           </motion.div>
 
           {/* Heading */}
@@ -91,7 +103,7 @@ export default function SeeInAction(): React.ReactElement {
         {/* Video / Image block */}
         <motion.div
           className="mt-[48px] w-full rounded-[16px] px-10   overflow-hidden"
-       
+
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -124,7 +136,7 @@ export default function SeeInAction(): React.ReactElement {
               style={{
                 background:
                   "linear-gradient(173.77deg, #3F49D8 3.3%, #1F1B48 33.52%, #00041E 55.73%)",
-                     transition: "transform 0.45s cubic-bezier(0.23, 1, 0.32, 1)",
+                transition: "transform 0.45s cubic-bezier(0.23, 1, 0.32, 1)",
               }}
             >
               <div

@@ -197,19 +197,21 @@ export default function Problem(): React.ReactElement {
             variants={itemVariants}
           >
             <Image
-              src="/images/label1-new.svg"
+              src="/images/label2.svg"
               alt="gradient1"
-              height={20}
-              width={20}
+              height={16}
+              width={78}
+              priority={true}
             />
             <h5 className="heading-5 font-regular text-[#959EFE] text-center !text-[20px] leading-6">
               {t("problem.badge")}
             </h5>
             <Image
-              src="/images/label1-new.svg"
+              src="/images/label.svg"
               alt="gradient1"
-              height={20}
-              width={20}
+              height={16}
+              width={78}
+              priority={true}
             />
           </motion.div>
 

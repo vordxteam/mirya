@@ -183,11 +183,23 @@ export default function EyeOfMirya(): React.ReactElement {
           viewport={{ once: true, margin: "-50px" }}
         >
           <motion.div className="flex items-center justify-center sm:justify-start gap-3 lg:mx-16" variants={itemVariants}>
-            <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+            <Image
+              src="/images/label2.svg"
+              alt="gradient1"
+              height={16}
+              width={78}
+              priority={true}
+            />
             <span className="text-[#959EFE] text-[20px] leading-6 font-normal tracking-widest uppercase">
               {t("newHome.eyeOfMirya.badge")}
             </span>
-            <Image src="/images/label1-new.svg" alt="" width={20} height={20} />
+            <Image
+              src="/images/label.svg"
+              alt="gradient1"
+              height={16}
+              width={78}
+              priority={true}
+            />
           </motion.div>
 
           <motion.h2
