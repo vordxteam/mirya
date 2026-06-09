@@ -175,7 +175,8 @@ export default function Benefits(): React.ReactElement {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         {localizedTopCards.map((card) => (
                             <motion.div
-                                key={card.title}
+                                // key={card.title}
+                                key={card.src}
                                 variants={cardVariants}
                                 className="relative w-full"
                             >
@@ -203,7 +204,8 @@ export default function Benefits(): React.ReactElement {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {localizedBottomCards.map((card) => (
                             <motion.div
-                                key={card.title}
+                                // key={card.title}
+                                key={card.src}
                                 variants={cardVariants}
                                 className="relative w-full"
                             >
